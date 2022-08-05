@@ -60,7 +60,7 @@ if(!isLoggedIn()){
   <div class="card" style="width: 24.1rem; margin-right: 10px; border-radius: 0 !important; border-color: #fff;">
   <div class="card-body">
   <div class="card-content" style="float: right;">
-    <h5 class="card-title text-end">Total Submitted Timesheets</h5>
+    <h5 class="card-title text-end">Total Timesheets</h5>
     <h6 class="card-subtitle mb-2 text-muted text-end" style="font-size: 40px !important;">3</h6>
     <p class="card-text text-end"><a href="#" class="detail-btn" style="">View Details</a></p>
     </div>
@@ -71,7 +71,7 @@ if(!isLoggedIn()){
 <div class="card" style="width: 24.1rem; margin-right: 10px; border-radius: 0 !important; border-color: #fff;">
   <div class="card-body">
     <div class="card-content" style="float: right;">
-    <h5 class="card-title text-end">Total Assignments Due</h5>
+    <h5 class="card-title text-end">Pending Timesheets</h5>
     <h6 class="card-subtitle mb-2 text-muted text-end" style="font-size: 40px !important;">6</h6>
     <p class="card-text text-end"><a href="#" class="detail-btn" style="">View Details</a></p>
     </div>
