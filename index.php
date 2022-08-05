@@ -45,7 +45,7 @@ session_start();
         <div class="row">
           <div class="col"></div>
           <div class="col"> -->
-            <div class="center-header text-center">
+            <div class="center-header text-center w-50">
               <h1 style="color: white;">Keep Track of your <br><span style="color:#48ceff;">Timesheets</span></h1>
               <p style="color: white; margin-bottom: -10px !important; font-weight: 100 !important;">Right at your fingertips</p>
               <span style="border-bottom: 3px solid #ffffff; color: rgba(0, 0, 0, 0);">color</span><span style="border-bottom: 3px solid #48ceff; color: rgba(0, 0, 0, 0);">color</span>
