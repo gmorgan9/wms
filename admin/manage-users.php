@@ -172,7 +172,7 @@ if (mysqli_num_rows($result) > 0) {
         </td>
 
         <?php } else {?>
-        <th scope="row"><?php echo $studentID; ?></th>
+        <th scope="row"><?php echo $employeeID; ?></th>
         <?php if($status == 1){ ?>
           <td>Admin</td>
         <?php } else { ?>
