@@ -50,7 +50,7 @@ if(!isLoggedIn()){
   </div>
 
 
-  <div class="page-content mx-auto">
+  <div class="page-content mx-auto mt-2">
 <form action="" method="post">
       <h3 class="mx-auto" style="width: 95%;">Employee Profile</h3>
       <?php
