@@ -29,10 +29,6 @@ header {
     height: 60px;
 }
 
-footer {
-    background-color: var(--secondary-color);
-}
-
 form .error-msg{
     margin:10px 0;
     display: block;
