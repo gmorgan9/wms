@@ -35,34 +35,36 @@ session_start();
     
 <?php include("app/includes/header.php"); ?>
 
-    <div class="container text-end">
-        <br><br><br><br><br><br><br>
-        <div class="row">
+    <!-- <div class="container text-end"> -->
+        <!-- <br><br><br><br><br><br><br> -->
+        <!-- <div class="row">
           <div class="col"></div>
           <div class="col"></div>
           <div class="col"></div>
         </div>
         <div class="row">
           <div class="col"></div>
-          <div class="col">
+          <div class="col"> -->
+            <div class="center-header text-center">
             <h1 style="color: white;">Where You should track your <span style="color:#48ceff;">Worked Hours</span></h1>
-          </div>
+          <!-- </div>
         </div>
         <div class="row">
             <div class="col"></div>
             <div class="col"></div>
-            <div class="col">
+            <div class="col"> -->
               <p style="color: white; font-weight: 100 !important;">Everyone wants to make money</p>
-            </div>
+              </div>
+            <!-- </div>
           </div>
           <div class="row">
             <div class="col"></div>
             <div class="col"></div>
-            <div class="col" style="margin-top: -23px;">
+            <div class="col" style="margin-top: -23px;"> -->
                 <span style="border-bottom: 3px solid #ffffff; color: rgba(0, 0, 0, 0);">color</span><span style="border-bottom: 3px solid #48ceff; margin-top: -150px !important; color: rgba(0, 0, 0, 0);">color</span>
-            </div>
+            <!-- </div>
           </div>
-      </div>
+      </div> -->
 
 
       <?php include("app/includes/footer.php"); ?>
