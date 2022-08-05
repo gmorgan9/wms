@@ -120,7 +120,7 @@ if (mysqli_num_rows($result) > 0) {
       ?> 
       <div class="row" style="margin-left: 20px;">
       <div class="form-group pt-3" style="width: 20%;">
-            <label for="employeeID">Student ID</label>
+            <label for="employeeID">Employee ID</label>
             <input class="form-control" style="width: 90%" id="employeeID" type="text" value="<?php echo $row['employeeID']; ?>" name="studentID" disabled>
          </div>
 
