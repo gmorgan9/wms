@@ -1,8 +1,8 @@
 <!-- WORKING -->
-<!-- <?php
+<?php
 
-require_once "app/database/connection.php";
-require_once "app/database/functions.php";
+//require_once "app/database/connection.php";
+//require_once "app/database/functions.php";
 require_once "path.php";
 session_start();
 
@@ -10,7 +10,7 @@ if(isLoggedIn()){
   header('location:/dashboard.php');
 }
 
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +33,7 @@ if(isLoggedIn()){
 </head>
 <body>
     
-<!-- <?php include("app/includes/header.php"); ?> -->
+<?php include("app/includes/header.php"); ?>
 
     <div class="container text-end">
         <br><br><br><br><br><br><br>
@@ -45,14 +45,14 @@ if(isLoggedIn()){
         <div class="row">
           <div class="col"></div>
           <div class="col">
-            <h1 style="color: white;">The Best Place to Track your <span style="color:#48ceff;">Assignments</span></h1>
+            <h1 style="color: white;">Where You should track your <span style="color:#48ceff;">Worked Hours</span></h1>
           </div>
         </div>
         <div class="row">
             <div class="col"></div>
             <div class="col"></div>
             <div class="col">
-              <p style="color: white; font-weight: 100 !important;">Successful Careers start with Proactive Education</p>
+              <p style="color: white; font-weight: 100 !important;">Everyone wants to make money</p>
             </div>
           </div>
           <div class="row">
