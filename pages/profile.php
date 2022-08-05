@@ -37,7 +37,7 @@ if(isset($_POST['update-profile'])){
       $update = "UPDATE employees SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
       mysqli_query($conn, $update);
       $success[] = 'Success';
-      header('location:' . BASE_URL . '/admin/profile.php');
+      header('location:' . BASE_URL . '/pages/profile.php');
    }else{
       
    } 
