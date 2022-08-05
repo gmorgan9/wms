@@ -42,10 +42,10 @@ if(!isLoggedIn()){
         
 <div class="main">
   <div class="page-header mx-auto">
-    <p class="page_title" style="float: left; padding-top: 2px;">Information</p>
+    <p class="page_title" style="float: left; padding-top: 2px;">Employee Information</p>
     <ul class="breadcrumb">
       <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
-      <li>Employee Information</li>
+      <li>Information</li>
     </ul>
   </div>
 </div>
