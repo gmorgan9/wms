@@ -8,7 +8,7 @@ require_once "../../path.php";
 session_start();
 
 if(isLoggedIn()){
-   header('location: /dashboard.php');
+   header('location:' . BASE_URL . '/pages/dashboard.php');
 }
 
 

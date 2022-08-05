@@ -8,10 +8,10 @@ require_once "../path.php";
 session_start();
 
 if(!isLoggedIn()){
-   header('location: /login.php');
+   header('location:' . BASE_URL . '/pages/entry/login.php');
 }
 if(!isAdmin()){
-   header('location: /dashboard.php');
+   header('location:' . BASE_URL . '/pages/dashboard.php');
 }
 
 

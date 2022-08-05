@@ -1,14 +1,14 @@
 <!-- WORKING -->
 <?php
 
-//require_once "app/database/connection.php";
-//require_once "app/database/functions.php";
+require_once "app/database/connection.php";
+require_once "app/database/functions.php";
 require_once "path.php";
 session_start();
 
-// if(isLoggedIn()){
-//   header('location:/dashboard.php');
-// }
+if(isLoggedIn()){
+  header('location:' . BASE_URL . '/pages/dashboard.php');
+}
 
 ?>
 
