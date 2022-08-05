@@ -6,6 +6,6 @@
     <footer class="fixed-bottom py-3" style="background-color: #17181C;">
         <div class="text-center text-muted" style="background-color: rgba(0, 0, 0, 0.05);">
 <?php }?>
-        &copy; 2022 Employee Timesheet System
+        &copy; 2022 Employee Time Entry System
     </div>
 </footer>
