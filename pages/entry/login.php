@@ -3,13 +3,13 @@
 
 require_once "../../app/database/connection.php";
 // require_once "app/database/functions.php";
-//require_once "../../path.php";
+require_once "../../path.php";
 
 session_start();
 
-if(isLoggedIn()){
-   header('location: /dashboard.php');
-}
+// if(isLoggedIn()){
+//    header('location: /dashboard.php');
+// }
 
 
 
@@ -43,7 +43,7 @@ if(isset($_POST['submit'])){
          $_SESSION['sID'] = $row['studentID'];
          $_SESSION['loggedin'] = $row['loggedin'];
          $_SESSION['isadmin'] = $row['isadmin'];
-         header('location: /admin/profile.php');
+         //header('location: /admin/profile.php');
       }elseif($row['isadmin'] == 0){
          if (mysqli_query($conn, $sql)) {
             echo "Record updated successfully";
@@ -72,7 +72,7 @@ if(isset($_POST['submit'])){
    <title>ETS | Login</title>
 
 <!-- Custom Styles -->
-<link rel="stylesheet" href="<?php //echo BASE_URL . '/assets/css/main-style.css?v='. time(); ?>">
+<link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/main-style.css?v='. time(); ?>">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
@@ -82,7 +82,7 @@ if(isset($_POST['submit'])){
 </head>
 <body>
 
-<?php //include("../../app/includes/header.php"); ?>
+<?php include("../../app/includes/header.php"); ?>
    
 <br><br><br>
 <div class="form-container mx-auto">
@@ -104,7 +104,7 @@ if(isset($_POST['submit'])){
 
 </div>
 
-<?php //include("../../app/includes/footer.php"); ?>
+<?php include("../../app/includes/footer.php"); ?>
 
 </body>
 </html>
