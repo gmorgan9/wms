@@ -31,7 +31,7 @@ session_start();
 
     <title>ETS | Home Page</title>
 </head>
-<body style="background-color: #333;">
+<body>
     
 <?php include("app/includes/header.php"); ?>
 
