@@ -1,14 +1,14 @@
 <!-- WORKING -->
 <?php
 
-require_once "../../app/database/connection.php";
-require_once "../../app/database/functions.php";
-require_once "../../path.php";
+require_once "app/database/connection.php";
+require_once "app/database/functions.php";
+require_once "path.php";
 
 session_start();
 
 if(isLoggedIn()){
-   header('location:' . BASE_URL . '/pages/dashboard.php');
+   header('location:' . BASE_URL . '/dashboard.php');
 }
 
 
@@ -94,7 +94,7 @@ if(isset($_POST['submit'])){
 </head>
 <body>
 
-<?php include("../../app/includes/header.php"); ?>
+<?php include("app/includes/header.php"); ?>
    
 <br><br><br>
 <div class="form-container mx-auto">
@@ -116,7 +116,7 @@ if(isset($_POST['submit'])){
 
 </div>
 
-<?php include("../../app/includes/footer.php"); ?>
+<?php include("app/includes/footer.php"); ?>
 
 </body>
 </html>

@@ -1,14 +1,14 @@
 <!-- WORKING -->
 <?php
 
-require_once "../app/database/connection.php";
-require_once "../app/database/functions.php";
-require_once "../path.php";
+require_once "app/database/connection.php";
+require_once "app/database/functions.php";
+require_once "path.php";
 
 session_start();
 
 if(!isLoggedIn()){
-   header('location:' . BASE_URL . '/pages/entry/login.php');
+   header('location:' . BASE_URL . '/login.php');
 }
 
 
@@ -37,7 +37,7 @@ if(isset($_POST['update-profile'])){
       $update = "UPDATE employees SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
       mysqli_query($conn, $update);
       $success[] = 'Success';
-      header('location:' . BASE_URL . '/pages/profile.php');
+      header('location:' . BASE_URL . '/profile.php');
    }else{
       
    } 
@@ -188,7 +188,7 @@ if (mysqli_num_rows($result) > 0) {
 </div> 
 
 
-<?php include(ROOT_PATH . "app/includes/footer.php"); ?>
+<?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
 <!-- <script>
    const togglePassword = document.querySelector("#togglePassword");

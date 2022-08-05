@@ -1,12 +1,12 @@
 <!-- WORKING -->
 <?php
-require_once "../app/database/connection.php";
-require_once "../app/database/functions.php";
-require_once "../path.php";
+require_once "app/database/connection.php";
+require_once "app/database/functions.php";
+require_once "path.php";
 session_start();
 
 if(!isLoggedIn()){
-  header('location:' . BASE_URL . '/pages/entry/login.php');
+  header('location:' . BASE_URL . '/login.php');
 }
 
 ?>
@@ -105,7 +105,7 @@ if(!isLoggedIn()){
 </div>
 
 
-<?php include(ROOT_PATH . "app/includes/footer.php"); ?>
+<?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
 
 </body>
