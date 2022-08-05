@@ -47,7 +47,7 @@ session_start();
           <div class="col"> -->
             <div class="center-header text-center">
               <h1 style="color: white;">Keep Track of your <br><span style="color:#48ceff;">Time Cards</span></h1>
-              <p style="color: white; margin-bottom: -50px !important; font-weight: 100 !important;">Employee Timesheets System</p>
+              <p style="color: white; margin-bottom: -10px !important; font-weight: 100 !important;">Employee Timesheets System</p>
               <span style="border-bottom: 3px solid #ffffff; color: rgba(0, 0, 0, 0);">color</span><span style="border-bottom: 3px solid #48ceff; color: rgba(0, 0, 0, 0);">color</span>
             </div>
           <!-- </div>
