@@ -31,7 +31,7 @@ if(!isLoggedIn()){
     </style>
 
 
-    <title>CAMS | Dashboard</title>
+    <title>ETES | Reports</title>
 </head>
 <body>
     
@@ -42,10 +42,10 @@ if(!isLoggedIn()){
         
 <div class="main">
   <div class="page-header mx-auto">
-    <p class="page_title" style="float: left; padding-top: 2px;">Paycheck</p>
+    <p class="page_title" style="float: left; padding-top: 2px;">Reports</p>
     <ul class="breadcrumb">
       <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
-      <li>Paycheck</li>
+      <li>Reports</li>
     </ul>
   </div>
 </div>
