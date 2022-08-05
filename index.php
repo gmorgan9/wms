@@ -46,7 +46,7 @@ session_start();
           <div class="col"></div>
           <div class="col"> -->
             <div class="center-header w-25">
-            <h1 class="text-center" style="color: white;">Where You should track your <span style="color:#48ceff;">Worked Hours</span></h1>
+            <h1 style="color: white; text-align: center !important;">Where You should track your <span style="color:#48ceff;">Worked Hours</span></h1>
           <!-- </div>
         </div>
         <div class="row">
