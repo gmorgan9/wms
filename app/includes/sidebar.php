@@ -5,15 +5,15 @@
                 <i class="bi bi-speedometer"></i>
                 <span>  Dashboard</span>
             </a>
-            <a href="<?php echo BASE_URL . '/pages/courses.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+            <a href="<?php echo BASE_URL . '/pages/timesheet.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
             <i class="bi bi-file-earmark-spreadsheet"></i>
                 <span>  Timesheet</span>
             </a>
-            <a href="<?php echo BASE_URL . '/pages/assignments.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+            <a href="<?php echo BASE_URL . '/pages/paycheck.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                 <i class="bi bi-cash-stack"></i>
                 <span>  Paycheck</span>
             </a>
-            <a href="<?php echo BASE_URL . '/pages/progress-report.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+            <a href="<?php echo BASE_URL . '/pages/projects.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                 <i class="bi bi-journal-bookmark"></i>
                 <span>  Projects</span>
             </a>
