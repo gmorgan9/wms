@@ -77,7 +77,7 @@ if(isset($_POST['update-profile'])){
 <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
 
-<?php include(ROOT_PATH . "/app/includes/sidebar.php") ?>
+<?php //include(ROOT_PATH . "/app/includes/sidebar.php") ?>
         
 <!-- start MAIN -->
 <div class="main"> 
