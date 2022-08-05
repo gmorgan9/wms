@@ -38,7 +38,7 @@ if(isset($_POST['submit'])){
       }else{
          $insert = "INSERT INTO employees (fname, lname, uname, email, password) VALUES('$fname','$lname','$uname','$email','$pass')";
          mysqli_query($conn, $insert);
-         header('location: /pages/entrylogin.php');
+         header('location: /pages/entry/login.php');
       }
    }
 
