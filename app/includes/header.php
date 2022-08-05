@@ -12,7 +12,7 @@
 
 <!-- Brand -->
         <a class="navbar-brand" href="/">
-            <h3><i class="bi bi-clock"></i> Employee Timesheets System</h3>
+            <h3><i class="bi bi-clock"></i> Employee Time Entry System</h3>
         </a>
 
         <ul class="navbar-nav ms-auto d-flex flex-row">
