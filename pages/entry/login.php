@@ -53,7 +53,7 @@ if(isset($_POST['submit'])){
           $_SESSION['sID'] = $row['studentID'];
           $_SESSION['loggedin'] = $row['loggedin'];
           $_SESSION['isadmin'] = $row['isadmin'];
-         header('location: profile.php');
+         header('location:' . BASE_URL . '/profile.php');
       }
      
    }else{
