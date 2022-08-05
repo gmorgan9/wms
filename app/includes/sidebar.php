@@ -2,16 +2,20 @@
     <div class="position-sticky">
         <div class="list-group list-group-flush mx-3 mt-4">
             <a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
-                <i class="bi bi-speedometer"></i>
+                <i class="bi bi-sliders2"></i>
                 <span>  Dashboard</span>
             </a>
             <a href="<?php echo BASE_URL . '/pages/timesheet.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
-            <i class="bi bi-file-earmark-spreadsheet"></i>
+                <i class="bi bi-clock"></i>
                 <span>  Timesheet</span>
             </a>
             <a href="<?php echo BASE_URL . '/pages/paycheck.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
-                <i class="bi bi-cash-stack"></i>
-                <span>  Paycheck</span>
+                <i class="bi bi-calendar3"></i>
+                <span>  Schedule</span>
+            </a>
+            <a href="<?php echo BASE_URL . '/pages/paycheck.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                <i class="bi bi-bar-chart"></i>
+                <span>  Reports</span>
             </a>
             <a href="<?php echo BASE_URL . '/pages/projects.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                 <i class="bi bi-journal-bookmark"></i>
