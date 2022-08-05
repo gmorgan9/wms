@@ -1,7 +1,7 @@
 <!-- WORKING -->
 <?php
 
-require_once "app/database/connection.php";
+require_once "../../app/database/connection.php";
 // require_once "app/database/functions.php";
 require_once "../../path.php";
 
@@ -82,7 +82,7 @@ if(isset($_POST['submit'])){
 </head>
 <body>
 
-<?php include("app/includes/header.php"); ?>
+<?php include("../../app/includes/header.php"); ?>
    
 <br><br><br>
 <div class="form-container mx-auto">
@@ -104,7 +104,7 @@ if(isset($_POST['submit'])){
 
 </div>
 
-<?php include("app/includes/footer.php"); ?>
+<?php include("../../app/includes/footer.php"); ?>
 
 </body>
 </html>
