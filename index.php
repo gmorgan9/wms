@@ -48,9 +48,7 @@ session_start();
               <p style="color: white; margin-bottom: -10px !important; font-weight: 100 !important;">Right at your fingertips</p>
               <span style="border-bottom: 3px solid #ffffff; color: rgba(0, 0, 0, 0);">color</span><span style="border-bottom: 3px solid #ffaa48; color: rgba(0, 0, 0, 0);">color</span>
           </div>
-          <div class="col">
-          <!-- <img src="/assets/img/laptop.png" alt=""> -->
-            </div>
+          
             <div class="col">
           <img src="/assets/img/laptop.png" alt="">
             </div>
