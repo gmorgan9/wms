@@ -10,12 +10,12 @@
                 <span>  Timesheet</span>
             </a>
             <a href="<?php echo BASE_URL . '/pages/assignments.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
-                <i class="bi bi-clipboard-data"></i>
-                <span>  </span>
+                <i class="bi bi-cash-stack"></i>
+                <span>  Paycheck</span>
             </a>
             <a href="<?php echo BASE_URL . '/pages/progress-report.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
-                <i class="bi bi-bar-chart"></i>
-                <span>  Progress Report</span>
+                <i class="bi bi-journal-bookmark"></i>
+                <span>  Projects</span>
             </a>
 
             <?php if($_SESSION['isadmin'] == 1){ ?>
