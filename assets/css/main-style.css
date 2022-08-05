@@ -11,10 +11,10 @@
     --font-color: #FFFFFF;
 }
 body {
-    /* background-image: url("/assets/img/bg-img.png"); */
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
-    background-color: #333;
+    background-image: url("/assets/img/bg-img.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: #333; */
 }
 
 header {
