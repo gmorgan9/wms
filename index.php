@@ -29,7 +29,7 @@ session_start();
 
 
 
-    <title>CAMS | Home Page</title>
+    <title>ETS | Home Page</title>
 </head>
 <body style="background-color: #333;">
     
