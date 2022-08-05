@@ -2,4 +2,4 @@
 <?php
 
 define("ROOT_PATH", realpath(dirname(__FILE__)));
-define("BASE_URL", "https://ets.morgancloud.us");
+define("BASE_URL", "https://etes.morgancloud.us");
