@@ -40,9 +40,15 @@ if(isset($_POST['submit'])){
             echo "Error updating record: " . mysqli_error($conn);
           }
          
-         $_SESSION['sID'] = $row['studentID'];
-         $_SESSION['loggedin'] = $row['loggedin'];
-         $_SESSION['isadmin'] = $row['isadmin'];
+          $_SESSION['admin_fname'] = $row['fname'];
+          $_SESSION['empID'] = $row['employeeID'];
+          $_SESSION['loggedin'] = $row['loggedin'];
+          $_SESSION['admin_lname'] = $row['lname'];
+          $_SESSION['isadmin'] = $row['isadmin'];
+          $_SESSION['uname'] = $row['uname'];
+          $_SESSION['email'] = $row['email'];
+          $_SESSION['pass'] = $row['password'];
+          $_SESSION['cpass'] = $row['cpassword'];
          //header('location: /admin/profile.php');
       }elseif($row['isadmin'] == 0){
          if (mysqli_query($conn, $sql)) {
@@ -50,9 +56,15 @@ if(isset($_POST['submit'])){
           } else {
             echo "Error updating record: " . mysqli_error($conn);
           }
-          $_SESSION['sID'] = $row['studentID'];
+          $_SESSION['user_fname'] = $row['fname'];
+          $_SESSION['empID'] = $row['employeeID'];
           $_SESSION['loggedin'] = $row['loggedin'];
+          $_SESSION['user_lname'] = $row['lname'];
           $_SESSION['isadmin'] = $row['isadmin'];
+          $_SESSION['uname'] = $row['uname'];
+         $_SESSION['email'] = $row['email'];
+         $_SESSION['pass'] = $row['password'];
+         $_SESSION['cpass'] = $row['cpassword'];
          header('location:' . BASE_URL . '/pages/profile.php');
       }
      
