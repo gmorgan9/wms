@@ -35,37 +35,36 @@ session_start();
     
 <?php include("app/includes/header.php"); ?>
 
-    <!-- <div class="container text-end"> -->
+    <div class="container text-start">
         <br><br><br><br><br><br><br>
-        <!-- <div class="row">
+        <div class="row">
           <div class="col"></div>
           <div class="col"></div>
           <div class="col"></div>
         </div>
         <div class="row">
           <div class="col"></div>
-          <div class="col"> -->
-            <div class="center-header w-50" style="margin-left: 75px;">
+          <div class="col">
               <h1 style="color: white;">Keep Track of your <br><span style="color: #ffaa48;">Timesheets</span></h1>
               <p style="color: white; margin-bottom: -10px !important; font-weight: 100 !important;">Right at your fingertips</p>
               <span style="border-bottom: 3px solid #ffffff; color: rgba(0, 0, 0, 0);">color</span><span style="border-bottom: 3px solid #ffaa48; color: rgba(0, 0, 0, 0);">color</span>
             </div>
-          <!-- </div>
+          </div>
         </div>
         <div class="row">
             <div class="col"></div>
             <div class="col"></div>
             <div class="col"> -->
               
-            <!-- </div>
+            </div>
           </div>
           <div class="row">
             <div class="col"></div>
             <div class="col"></div>
-            <div class="col" style="margin-top: -23px;"> -->
-            <!-- </div>
+            <div class="col" style="margin-top: -23px;">
+            </div>
           </div>
-      </div> -->
+      </div>
 
 
       <?php include("app/includes/footer.php"); ?>
