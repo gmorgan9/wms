@@ -50,7 +50,7 @@ session_start();
           </div>
           
             <div class="col">
-          <img src="/assets/img/laptop.png" alt="">
+          <img style="margin-left: 25px;" src="/assets/img/laptop.png" alt="">
             </div>
   
           </div>
