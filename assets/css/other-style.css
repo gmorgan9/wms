@@ -6,7 +6,7 @@
     font-family: 'Poppins', sans-serif;
 }
 :root {
-    --primary-color: #48ceff;
+    --primary-color: #ffaa48;
     --secondary-color: #17181C; 
     --font-color: #FFFFFF;
     --dark-font: #000;
@@ -18,7 +18,7 @@
     margin-right: 0;
 }
 .detail-btn:hover {
-    color: #48ceff;
+    color: var(--primary-color);
   }
 body {
     background-color: #eee !important;
