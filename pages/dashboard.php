@@ -31,7 +31,7 @@ if(!isLoggedIn()){
     </style>
 
 
-    <title>CAMS | Dashboard</title>
+    <title>ETES | Dashboard</title>
 </head>
 <body>
     
@@ -60,7 +60,7 @@ if(!isLoggedIn()){
   <div class="card" style="width: 24.1rem; margin-right: 10px; border-radius: 0 !important; border-color: #fff;">
   <div class="card-body">
   <div class="card-content" style="float: right;">
-    <h5 class="card-title text-end">Total Courses</h5>
+    <h5 class="card-title text-end">Total Submitted Timesheets</h5>
     <h6 class="card-subtitle mb-2 text-muted text-end" style="font-size: 40px !important;">3</h6>
     <p class="card-text text-end"><a href="#" class="detail-btn" style="">View Details</a></p>
     </div>
@@ -82,8 +82,8 @@ if(!isLoggedIn()){
 <div class="card" style="width: 24.1rem; border-radius: 0 !important; border-color: #fff;">
   <div class="card-body">
   <div class="card-content" style="float: right;">
-    <h5 class="card-title text-end">Course Schedule</h5>
-    <h6 class="card-subtitle mb-2 text-muted text-end text-wrap" style="font-size: 20px !important; width: 170px;">Course times and dates</h6>
+    <h5 class="card-title text-end">Total Projects</h5>
+    <h6 class="card-subtitle mb-2 text-muted text-end" style="font-size: 40px !important;">3</h6>
     <!-- <br> -->
     <p class="card-text text-end"><a href="#" class="detail-btn" style="">View Details</a></p>
     </div>

@@ -72,7 +72,7 @@ if(isset($_GET['employeeID'])) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>CAMS | Manage Users</title>
+   <title>ETES | Manage Users</title>
 
    <!-- Custom Styles -->
    <link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/other-style.css?v='. time(); ?>">
