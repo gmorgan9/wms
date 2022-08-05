@@ -31,7 +31,7 @@ session_start();
 
     <title>CAMS | Home Page</title>
 </head>
-<body>
+<body style="background-color: #333;">
     
 <?php include("app/includes/header.php"); ?>
 
