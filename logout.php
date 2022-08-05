@@ -14,6 +14,6 @@ if (mysqli_query($conn, $sql)) {
 
 session_unset();
 session_destroy();
-header('location:' . BASE_URL . '/login.php');
+header('location:' . BASE_URL . '/pages/entry/login.php');
 
 ?>

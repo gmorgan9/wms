@@ -1,14 +1,14 @@
 <!-- WORKING -->
 <?php
 
-require_once "app/database/connection.php";
-require_once "app/database/functions.php";
-require_once "path.php";
+require_once "../../app/database/connection.php";
+require_once "../../app/database/functions.php";
+require_once "../../path.php";
 
 session_start();
 
 if(isLoggedIn()){
-   header('location:' . BASE_URL . '/dashboard.php');
+   header('location:' . BASE_URL . '/pages/dashboard.php');
 }
 
 
@@ -94,7 +94,7 @@ if(isset($_POST['submit'])){
 </head>
 <body>
 
-<?php include("app/includes/header.php"); ?>
+<?php include("../../app/includes/header.php"); ?>
    
 <br><br><br>
 <div class="form-container mx-auto">
@@ -111,12 +111,12 @@ if(isset($_POST['submit'])){
       <input type="text" name="uname" required placeholder="enter your user name">
       <input type="password" name="password" required placeholder="enter your password">
       <input type="submit" name="submit" value="Login" class="form-btn">
-      <p>don't have an account? <a href="register.php">register now</a></p>
+      <p>don't have an account? <a href="/pages/entry/register.php">register now</a></p>
    </form>
 
 </div>
 
-<?php include("app/includes/footer.php"); ?>
+<?php include("../../app/includes/footer.php"); ?>
 
 </body>
 </html>

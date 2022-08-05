@@ -1,14 +1,14 @@
 <!-- WORKING -->
 <?php
 
-require_once "app/database/connection.php";
-require_once "app/database/functions.php";
-require_once "path.php";
+require_once "../../app/database/connection.php";
+require_once "../../app/database/functions.php";
+require_once "../../path.php";
 
 session_start();
 
 if(isLoggedIn()){
-   header('location:' . BASE_URL . '/dashboard.php');
+   header('location:' . BASE_URL . '/pages/dashboard.php');
 }
 
 
@@ -38,7 +38,7 @@ if(isset($_POST['submit'])){
       }else{
          $insert = "INSERT INTO employees (fname, lname, uname, email, password) VALUES('$fname','$lname','$uname','$email','$pass')";
          mysqli_query($conn, $insert);
-         header('location:login.php');
+         header('location: /pages/entrylogin.php');
       }
    }
 
@@ -65,7 +65,7 @@ if(isset($_POST['submit'])){
 
 </head>
 <body>
-<?php include("app/includes/header.php"); ?>
+<?php include("../../app/includes/header.php"); ?>
    
 <br><br><br>
 <div class="form-container mx-auto">
@@ -91,12 +91,12 @@ if(isset($_POST['submit'])){
          <option value="admin">admin</option>
       </select> -->
       <input type="submit" name="submit" value="register now" class="form-btn">
-      <p>already have an account? <a href="login.php">login now</a></p>
+      <p>already have an account? <a href="/pages/entry/login.php">login now</a></p>
    </form>
 
 </div>
 
-<?php include("app/includes/footer.php"); ?>
+<?php include("../../app/includes/footer.php"); ?>
 
 </body>
 </html>

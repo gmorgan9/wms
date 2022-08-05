@@ -1,12 +1,12 @@
 <!-- WORKING -->
 <?php
-require_once "app/database/connection.php";
-require_once "app/database/functions.php";
-require_once "path.php";
+require_once "../app/database/connection.php";
+require_once "../app/database/functions.php";
+require_once "../path.php";
 session_start();
 
 if(!isLoggedIn()){
-  header('location:' . BASE_URL . '/login.php');
+  header('location:' . BASE_URL . '/pages/entry/login.php');
 }
 
 ?>
@@ -44,7 +44,7 @@ if(!isLoggedIn()){
   <div class="page-header mx-auto">
     <p class="page_title" style="float: left; padding-top: 2px;">Projects</p>
     <ul class="breadcrumb">
-      <li><a href="<?php echo BASE_URL . '/dashboard.php' ?>">Dashboard</a></li>
+      <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
       <li>Projects</li>
     </ul>
   </div>
