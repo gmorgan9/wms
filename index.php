@@ -54,6 +54,9 @@ session_start();
             <div class="col">
           <img src="/assets/img/laptop.png" alt="">
             </div>
+            <div class="col">
+          <!-- <img src="/assets/img/laptop.png" alt=""> -->
+            </div>
           </div>
         </div>
         <div class="row">
