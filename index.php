@@ -6,9 +6,9 @@
 require_once "path.php";
 session_start();
 
-if(isLoggedIn()){
-  header('location:/dashboard.php');
-}
+// if(isLoggedIn()){
+//   header('location:/dashboard.php');
+// }
 
 ?>
 
@@ -65,7 +65,7 @@ if(isLoggedIn()){
       </div>
 
 
-      <!-- <?php include("app/includes/footer.php"); ?> -->
+      <?php include("app/includes/footer.php"); ?>
 
 
 </body>
