@@ -77,7 +77,7 @@ if(isset($_POST['update-profile'])){
 <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
 
-<?php //include(ROOT_PATH . "/app/includes/sidebar.php") ?>
+<?php include(ROOT_PATH . "/app/includes/sidebar.php") ?>
         
 <!-- start MAIN -->
 <div class="main"> 
@@ -133,7 +133,7 @@ if (mysqli_num_rows($result) > 0) {
             <?php 
             } else {
             ?>
-            <input class="form-control" style="width: 90%" id="status" type="text" value="Student" name="studentID" disabled>
+            <input class="form-control" style="width: 90%" id="status" type="text" value="Employee" name="studentID" disabled>
             <?php 
             }
             ?>
