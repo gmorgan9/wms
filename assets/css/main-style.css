@@ -184,7 +184,7 @@ footer {
 }
 
 .form-container form .form-btn{
-   background: #d0ebfb;
+   background: #fbedd0;
    color:var(--primary-color);
    text-transform: capitalize;
    font-size: 20px;
