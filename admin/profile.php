@@ -194,7 +194,7 @@ if (mysqli_num_rows($result) > 0) {
 </div> 
 
 
-<?php include(ROOT_PATH . "app/includes/footer.php"); ?>
+<?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
 <!-- <script>
    const togglePassword = document.querySelector("#togglePassword");
