@@ -15,7 +15,7 @@ function isLoggedIn()
 
 function isAdmin()
 {
-	if ($_SESSION['isadmin'] == 1) {
+	if ($_SESSION['acc_type'] == 1) {
 		return true;
 	}else{
 		return false;
