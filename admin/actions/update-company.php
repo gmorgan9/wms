@@ -40,7 +40,7 @@ if(isset($_POST['update-company'])){
     //    header('Location: ' . $_SERVER['HTTP_REFERER']);
        
     }else{
-       
+       $error[] = "Error";
     } 
  };
 ?>
@@ -110,11 +110,11 @@ if(isset($_POST['update-company'])){
 <form action="" method="post">
       <h3 class="mx-auto" style="width: 95%;">Update Company Data</h3>
       <?php
-    //   if(isset($error)){
-    //      foreach($error as $error){
-    //         echo '<span class="error-msg">'.$error.'</span>';
-    //      };
-    //   };
+      if(isset($error)){
+         foreach($error as $error){
+            echo '<span class="error-msg">'.$error.'</span>';
+         };
+      };
 
       if(isset($success)){
          foreach($success as $success){
