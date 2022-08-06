@@ -69,7 +69,14 @@ if(isset($_GET['companyID'])) {
 <!-- start MAIN -->
 <div class="main"> 
    
+<?php 
 
+  $select = " SELECT * FROM company";
+  $result = mysqli_query($conn, $select);
+
+  if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+?>
 
   <div class="page-header mx-auto">
     <p class="page_title" style="float: left; padding-top: 2px;">Companies</p>
@@ -105,13 +112,6 @@ if(isset($_GET['companyID'])) {
   <tbody class="table-group-divider">
 
   <?php
-
-  $select = " SELECT * FROM company";
-  $result = mysqli_query($conn, $select);
-
-  if (mysqli_num_rows($result) > 0) {
-    while($row = mysqli_fetch_assoc($result)) {
-      
       $sql = "SELECT * FROM company";
       $all = mysqli_query($conn, $sql);
       if($all) {
@@ -129,11 +129,11 @@ if(isset($_GET['companyID'])) {
         <td><?php echo $cstate; ?></td>
         <td><?php echo $czip; ?></td>
         <td><a style="text-decoration: none;" class="badge text-bg-danger" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a></td>
-        <?php }} ?>
+        <?php }}} ?>
       </tbody>
 </table> 
       <?php 
-     }
+     
    } else {
     echo "0 results";
   }
