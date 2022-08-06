@@ -15,16 +15,12 @@ if(!isAdmin()){
 }
 
 
-// $compID = $_SESSION['empID'];
-// $select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
-// $result = mysqli_query($conn, $select);
-
 if(isset($_POST['add-department'])){
 
     $deptID = mysqli_real_escape_string($conn, $_POST['deptID']);
     $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
     $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
-    $compID = mysqli_real_escape_string($conn, $_POST['companyID']);
+    // $compID = mysqli_real_escape_string($conn, $_POST['companyID']);
  
     $select = " SELECT * FROM department WHERE deptname = '$deptname' ";
  
@@ -94,26 +90,6 @@ if(isset($_POST['add-department'])){
             <label for="deptname">Department Name</label>
             <input class="form-control" id="deptname" type="text" name="deptname" value="" required>
          </div>
-
-         <?php 
-    $query ="SELECT company.companyname FROM department INNER JOIN company ON department.companyID=company.companyID;";
-    $all = mysqli_query($conn, $query);
-      if($all) {
-          while ($row = mysqli_fetch_assoc($all)) {
-            $compname   = $row['companyname'];
-
-?>
-            <!-- <label for="companyID">Department Name</label>
-            <select class="form-control" name="companyID" id="companyID">
-                <?php //foreach($options as $option) { ?>                         
-                    <option><?php //echo $option['companyID']; ?></option>
-                <?php //} ?>
-            </select> -->
-
-            <p><?php echo $compname; 
-            
-                }
-            }?></p>
 
       <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
       <input type="submit" name="add-department" value="Add Department" class="btn btn-secondary">
