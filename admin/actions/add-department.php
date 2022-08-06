@@ -106,7 +106,7 @@ if(isset($_POST['add-department'])){
             <label for="companyID">Department Name</label>
             <select class="form-control" name="companyID" id="companyID">
                 <?php foreach($options as $option) { ?>                         
-                    <option><?php echo $companyID['companyID']; ?></option>
+                    <option><?php echo $option['companyID']; ?></option>
                 <?php } ?>
             </select>
          </div>
