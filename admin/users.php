@@ -107,8 +107,8 @@ if(isset($_GET['employeeID'])) {
    
 <?php 
 
-if (mysqli_num_rows($result) > 0) {
-   while($row = mysqli_fetch_assoc($result)) {
+//if (mysqli_num_rows($result) > 0) {
+ //  while($row = mysqli_fetch_assoc($result)) {
 ?>
 
   <div class="page-header mx-auto">
@@ -126,7 +126,7 @@ if (mysqli_num_rows($result) > 0) {
 </div>
 
 <!-- start PAGE-CONTENT -->
-<div class="page-content mx-auto">
+<!-- <div class="page-content mx-auto">
     <table class="table">
   <thead>
     <tr>
@@ -139,58 +139,58 @@ if (mysqli_num_rows($result) > 0) {
       <th scope="col">Actions</th>
     </tr>
   </thead>
-  <tbody class="table-group-divider">
+  <tbody class="table-group-divider"> -->
 
   <?php
-      $sql = "SELECT * FROM employee";
-      $all = mysqli_query($conn, $sql);
-      if($all) {
-          while ($row = mysqli_fetch_assoc($all)) {
-            $employeeID   =$row['employeeID'];
-            $fname  = $row['fname'];
-            $lname  = $row['lname'];
-            $uname  = $row['uname'];
-            $email  = $row['email'];
-            $status = $row['acc_type'];
+      // $sql = "SELECT * FROM employee";
+      // $all = mysqli_query($conn, $sql);
+      // if($all) {
+      //     while ($row = mysqli_fetch_assoc($all)) {
+      //       $employeeID   =$row['employeeID'];
+      //       $fname  = $row['fname'];
+      //       $lname  = $row['lname'];
+      //       $uname  = $row['uname'];
+      //       $email  = $row['email'];
+      //       $status = $row['acc_type'];
             ?>
     <tr>
         <?php 
-        if($_SESSION['empID'] == $row['employeeID']){ 
+        //if($_SESSION['empID'] == $row['employeeID']){ 
         ?>
-        <th class="bg-warning" scope="row"><?php echo $employeeID; ?></th>
-        <?php if($status == 1){ ?>
-          <td class="bg-warning">Admin</td>
-        <?php } else { ?>
-          <td class="bg-warning">Employee</td>
-        <?php } ?>
-        <td class="bg-warning"><?php echo $fname; ?></td>
-        <td class="bg-warning"><?php echo $lname; ?></td>
-        <td class="bg-warning"><?php echo $uname; ?></td>
-        <td class="bg-warning"><?php echo $email; ?></td>
+        <!-- <th class="bg-warning" scope="row"><?php //echo $employeeID; ?></th> -->
+        <?php //if($status == 1){ ?>
+          <!-- <td class="bg-warning">Admin</td> -->
+        <?php //} else { ?>
+          <!-- <td class="bg-warning">Employee</td> -->
+        <?php //} ?>
+        <!-- <td class="bg-warning"><?php //echo $fname; ?></td>
+        <td class="bg-warning"><?php //echo $lname; ?></td>
+        <td class="bg-warning"><?php //echo $uname; ?></td>
+        <td class="bg-warning"><?php //echo $email; ?></td>
         <td class="bg-warning" colspan="2">
-            <a style="text-decoration: none;" class="badge text-bg-primary" href="<?php echo BASE_URL . '/admin/profile.php' ?>">My Profile</a>
-        </td>
+            <a style="text-decoration: none;" class="badge text-bg-primary" href="<?php //echo BASE_URL . '/admin/profile.php' ?>">My Profile</a>
+        </td> -->
 
-        <?php } else {?>
-        <th scope="row"><?php echo $employeeID; ?></th>
-        <?php if($status == 1){ ?>
-          <td>Admin</td>
-        <?php } else { ?>
-          <td>Employee</td>
-        <?php } ?>
-        <td><?php echo $fname; ?></td>
-        <td><?php echo $lname; ?></td>
-        <td><?php echo $uname; ?></td>
-        <td><?php echo $email; ?></td>
-        <td><a style="text-decoration: none;" class="badge text-bg-danger" href="manage-users.php?employeeID=<?php echo $employeeID; ?>">Delete</a></td>
-        <?php }}} ?>
-  </tbody>
-</table>
+        <?php //} else {?>
+        <!-- <th scope="row"><?php //echo $employeeID; ?></th> -->
+        <?php //if($status == 1){ ?>
+          <!-- <td>Admin</td> -->
+        <?php //} else { ?>
+          <!-- <td>Employee</td> -->
+        <?php //} ?>
+        <!-- <td><?php //echo $fname; ?></td>
+        <td><?php //echo $lname; ?></td>
+        <td><?php //echo $uname; ?></td>
+        <td><?php //echo $email; ?></td>
+        <td><a style="text-decoration: none;" class="badge text-bg-danger" href="manage-users.php?employeeID=<?php //echo $employeeID; ?>">Delete</a></td> -->
+        <?php// }}} ?>
+  <!-- </tbody>
+</table> -->
       <?php 
-      }
-   } else {
-     echo "0 results";
-   }
+     // }
+   //} else {
+    // echo "0 results";
+   //}
       ?>
  
  <!-- end PAGE-CONTENT -->
