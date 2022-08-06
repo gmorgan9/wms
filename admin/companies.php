@@ -128,7 +128,7 @@ if(isset($_GET['employeeID'])) {
 <!-- start PAGE-CONTENT -->
 <div class="page-content mx-auto mt-2">
 <div class="d-grid d-md-flex justify-content-md-end">
-  <button class="badge text-bg-secondary" style="border-color: rgba(0,0,0,0);" type="button"><a style="color: white;" href=""><i class="bi bi-plus-lg"></i> Company</a></button>
+  <button class="badge text-bg-secondary" style="border-color: rgba(0,0,0,0);" type="button"><a style="color: white;" href="<?php echo BASE_URL . '/admin/actions/add-company.php' ?>"><i class="bi bi-plus-lg"></i> Company</a></button>
   <!-- <button class="btn btn-primary" type="button">Button</button> -->
 </div>
     <table class="table">
