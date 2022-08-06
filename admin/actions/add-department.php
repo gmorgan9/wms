@@ -24,6 +24,7 @@ if(isset($_POST['add-department'])){
     $deptID = mysqli_real_escape_string($conn, $_POST['deptID']);
     $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
     $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
+    $compID = mysqli_real_escape_string($conn, $_POST['companyID']);
  
     $select = " SELECT * FROM department WHERE deptname = '$deptname' ";
  
@@ -34,7 +35,7 @@ if(isset($_POST['add-department'])){
        $error[] = 'Department already exist!';
  
     }else{
-          $insert = "INSERT INTO department (idno, deptname) VALUES('$idno', '$deptname')";
+          $insert = "INSERT INTO department (idno, deptname, companyID) VALUES ('$idno', '$deptname', '$compID')";
           mysqli_query($conn, $insert);
           header('location: /admin/departments.php');
        }
@@ -93,6 +94,27 @@ if(isset($_POST['add-department'])){
             <label for="deptname">Department Name</label>
             <input class="form-control" id="deptname" type="text" name="deptname" value="" required>
          </div>
+
+         <?php 
+    $query ="SELECT company.companyname FROM department INNER JOIN company ON departments.deptID=company.companyID;";
+    $result = $conn->query($query);
+    if($result->num_rows> 0){
+      $options= mysqli_fetch_all($result, MYSQLI_ASSOC);
+    }
+?>
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="companyID">Department Name</label>
+            <select class="form-control" name="companyID" id="companyID">
+                <?php foreach($options as $option) { ?>                         
+                    <option><?php echo $companyID['companyID']; ?></option>
+                <?php } ?>
+            </select>
+         </div>
+
+
+
+
+          
 
       <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
       <input type="submit" name="add-department" value="Add Department" class="btn btn-secondary">
