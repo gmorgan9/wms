@@ -30,6 +30,18 @@
                     <i class="bi bi-people"></i>
                     <span>  Manage Users</span>
                 </a>
+                <a style="margin-top: -15px;" href="<?php echo BASE_URL . '/admin/manage-users.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="bi bi-people"></i>
+                    <span>  Manage Companies</span>
+                </a>
+                <a style="margin-top: -15px;" href="<?php echo BASE_URL . '/admin/manage-users.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="bi bi-people"></i>
+                    <span>  Manage Departments</span>
+                </a>
+                <a style="margin-top: -15px;" href="<?php echo BASE_URL . '/admin/manage-users.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="bi bi-people"></i>
+                    <span>  Manage Jobs</span>
+                </a>
             <?php } else {} ?>
         </div>
     </div>
