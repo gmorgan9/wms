@@ -36,7 +36,8 @@ if(isset($_POST['update-company'])){
        $update = "UPDATE company SET companyname = '$cname', ccity = '$ccity', cstate = '$cstate', czip = '$czip' where companyID = '$compID' ";
        mysqli_query($conn, $update);
        //$success[] = 'Success';
-       header('location:' . BASE_URL . '/admin/companies.php');
+       //header('location:' . BASE_URL . '/admin/companies.php');
+       header('Location: ' . $_SERVER['HTTP_REFERER']);
        
     }else{
        
