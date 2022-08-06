@@ -127,7 +127,7 @@ if(isset($_GET['employeeID'])) {
 
 <!-- start PAGE-CONTENT -->
 <div class="page-content mx-auto mt-2">
-  <button class="justify-content-end btn btn-secondary"></button>
+  <button class="text-end btn btn-secondary"></button>
     <table class="table">
   <thead>
     <tr>
