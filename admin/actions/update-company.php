@@ -120,8 +120,8 @@ if(isset($_POST['update-company'])){
             $czip     = $row['czip'];
   ?>
       <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="companyId">Company ID</label>
-            <input class="form-control" style="width: 20%" id="companyId" type="text" value="<?php echo $compID; ?>" name="companyId" disabled>
+            <label for="companyID">Company ID</label>
+            <input class="form-control" style="width: 20%" id="companyID" type="text" value="<?php echo $compID; ?>" name="companyID" disabled>
          </div>
       <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="companyname">Company Name</label>
