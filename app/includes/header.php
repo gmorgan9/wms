@@ -21,7 +21,7 @@
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="<?php echo BASE_URL . '/pages/dashboard.php' ?>"><i class="bi bi-globe2"></i>  Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="<?php echo BASE_URL . '/admin/profile.php' ?>"><i class="bi bi-person"></i>  Profile</a></li>
             <?php } else { ?>
-                <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="<?php echo BASE_URL . '/dashboard.php' ?>"><i class="bi bi-globe2"></i>  Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="<?php echo BASE_URL . '/pages/dashboard.php' ?>"><i class="bi bi-globe2"></i>  Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="<?php echo BASE_URL . '/profile.php' ?>"><i class="bi bi-person"></i>  Profile</a></li>
             <?php }?>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="<?php echo BASE_URL . '/logout.php' ?>">Logout</a></li>
