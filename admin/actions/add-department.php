@@ -118,6 +118,7 @@ if(isset($_POST['add-department'])){
 
       <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
       <input type="submit" name="add-department" value="Add Department" class="btn btn-secondary">
+                </div>
  
    </form>
 </div>
