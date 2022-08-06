@@ -85,8 +85,8 @@ if(isset($_POST['update-company'])){
 <div class="main"> 
    
 <?php 
- if (mysqli_num_rows($result) > 0) {
-   while($row = mysqli_fetch_assoc($result)) {
+ if (mysqli_num_rows($update_result) > 0) {
+   while($row = mysqli_fetch_assoc($update_result)) {
 //       $acc_type = $row['acc_type'];
 ?>
 
