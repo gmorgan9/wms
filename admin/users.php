@@ -182,7 +182,10 @@ if (mysqli_num_rows($result) > 0) {
         <?php } else { ?>
           <td>Employee</td>
         <?php } ?>
-        <td><a style="text-decoration: none;" class="badge text-bg-danger" href="manage-users.php?employeeID=<?php echo $employeeID; ?>">Delete</a></td>
+        <td>
+          <a style="text-decoration: none;" class="badge text-bg-success" href="view-user.php?employeeID=<?php echo $employeeID; ?>">View</a>
+          <a style="text-decoration: none;" class="badge text-bg-danger" href="manage-users.php?employeeID=<?php echo $employeeID; ?>">Delete</a>
+        </td>
         <?php }}} ?>
   </tbody>
 </table>
