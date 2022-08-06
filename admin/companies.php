@@ -136,6 +136,9 @@ if (mysqli_num_rows($result) > 0) {
     <tr>
       <th scope="col">#</th>
       <th scope="col">Company Name</th>
+      <th scope="col">City</th>
+      <th scope="col">State</th>
+      <th scope="col">Zip Code</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
