@@ -17,7 +17,7 @@ if(!isAdmin()){
 
  $empID = $_SESSION['empID'];
  $up = " SELECT * FROM employee WHERE employeeID = '$empID' ";
-$result = mysqli_query($conn, $up);
+  $test = mysqli_query($conn, $up);
 
 
 // Delete User
