@@ -14,12 +14,6 @@ if(!isAdmin()){
   header('location: /dashboard.php');
 }
 
-
- // $empID = $_SESSION['empID'];
- $select = " SELECT * FROM company";
- $result = mysqli_query($conn, $select);
-
-
 // Delete User
 if(isset($_GET['companyID'])) {
     $id = $_GET['companyID'];
@@ -33,9 +27,6 @@ if(isset($_GET['companyID'])) {
         die(mysqli_error($conn));
     }
 }
-
-
-
 
 ?>
 
@@ -80,8 +71,11 @@ if(isset($_GET['companyID'])) {
    
 <?php 
 
-if (mysqli_num_rows($result) > 0) {
-  while($row = mysqli_fetch_assoc($result)) {
+  $select = " SELECT * FROM company";
+  $result = mysqli_query($conn, $select);
+
+  if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
 ?>
 
   <div class="page-header mx-auto">
