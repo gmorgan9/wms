@@ -15,47 +15,47 @@ if(!isAdmin()){
 }
 
 
-$empID = $_SESSION['empID'];
-$select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
-$result = mysqli_query($conn, $select);
+// $empID = $_SESSION['empID'];
+// $select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
+// $result = mysqli_query($conn, $select);
 
-if(isset($_POST['update-profile'])){
+// if(isset($_POST['update-profile'])){
 
-   //$sID   = mysqli_real_escape_string($conn, $_POST['studentID']);
-   $fname = mysqli_real_escape_string($conn, $_POST['fname']);
-   $lname = mysqli_real_escape_string($conn, $_POST['lname']);
-   $uname = mysqli_real_escape_string($conn, $_POST['uname']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   // $pass = md5($_POST['password']);
-   // $cpass = md5($_POST['cpassword']);
-   // $isadmin = $_POST['isadmin'];
+//    //$sID   = mysqli_real_escape_string($conn, $_POST['studentID']);
+//    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+//    $lname = mysqli_real_escape_string($conn, $_POST['lname']);
+//    $uname = mysqli_real_escape_string($conn, $_POST['uname']);
+//    $email = mysqli_real_escape_string($conn, $_POST['email']);
+//    // $pass = md5($_POST['password']);
+//    // $cpass = md5($_POST['cpassword']);
+//    // $isadmin = $_POST['isadmin'];
 
-   $update_select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' ";
+//    $update_select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' ";
 
-   $update_result = mysqli_query($conn, $update_select);
+//    $update_result = mysqli_query($conn, $update_select);
 
-   if(mysqli_num_rows($result) > 0){
+//    if(mysqli_num_rows($result) > 0){
 
-      // $error[] = 'user already exist!';
-      $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
-      mysqli_query($conn, $update);
-      $success[] = 'Success';
-      header('location:' . BASE_URL . '/admin/profile.php');
+//       // $error[] = 'user already exist!';
+//       $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
+//       mysqli_query($conn, $update);
+//       $success[] = 'Success';
+//       header('location:' . BASE_URL . '/admin/profile.php');
       
-   }else{
+//    }else{
       
-   } 
-};
+//    } 
+// };
 
 // Delete User
-if(isset($_GET['employeeID'])) {
-    $id = $_GET['employeeID'];
+if(isset($_GET['companyID'])) {
+    $id = $_GET['companyID'];
 
-    $sql = "DELETE FROM employees WHERE employeeID = $id";
+    $sql = "DELETE FROM company WHERE companyID = $id";
     $delete = mysqli_query($conn, $sql);
     if($delete) {
         // echo "Deleted Successfully";
-        header('location: manage-users.php'); // returns back to same page
+        header('location: companies.php'); // returns back to same page
     } else {
         die(mysqli_error($conn));
     }
@@ -146,12 +146,18 @@ if (mysqli_num_rows($result) > 0) {
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
-            $compID   =$row['companyID'];
-            $cname  = $row['companyname'];
+            $compID   = $row['companyID'];
+            $cname    = $row['companyname'];
+            $ccity    = $row['ccity'];
+            $cstate   = $row['cstate'];
+            $czip     = $row['czip'];
             ?>
     <tr>
         <th scope="row"><?php echo $compID; ?></th>
         <td><?php echo $cname; ?></td>
+        <td><?php echo $ccity; ?></td>
+        <td><?php echo $cstate; ?></td>
+        <td><?php echo $czip; ?></td>
         <td><a style="text-decoration: none;" class="badge text-bg-danger" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a></td>
         <?php }} ?>
       </tbody>
