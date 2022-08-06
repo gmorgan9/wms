@@ -119,7 +119,6 @@ if(isset($_POST['update-company'])){
             $cstate   = $row['cstate'];
             $czip     = $row['czip'];
   ?>
-      <div class="row" >
       <div class="form-group pt-3" style="width: 20%;">
             <label for="studentID">Student ID</label>
             <input class="form-control" style="width: 20%" id="studentID" type="text" value="<?php echo $compID; ?>" name="studentID" disabled>
@@ -140,7 +139,6 @@ if(isset($_POST['update-company'])){
             <label for="czip">Zip Code</label>
             <input class="form-control" id="czip" type="number" name="czip" value="" required>
          </div>
-        </div>
       <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
       <input type="submit" name="add-company" value="Add Company" class="btn btn-secondary">
       <?php 
