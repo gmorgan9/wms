@@ -22,6 +22,7 @@ if(!isAdmin()){
 if(isset($_POST['add-company'])){
 
     $compID = mysqli_real_escape_string($conn, $_POST['companyID']);
+    $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
     $cname = mysqli_real_escape_string($conn, $_POST['companyname']);
     $ccity = mysqli_real_escape_string($conn, $_POST['ccity']);
     $cstate = mysqli_real_escape_string($conn, $_POST['cstate']);
@@ -36,7 +37,7 @@ if(isset($_POST['add-company'])){
        $error[] = 'Company already exist!';
  
     }else{
-          $insert = "INSERT INTO company (companyname, ccity, cstate, czip) VALUES('$cname', '$ccity', '$cstate', '$czip')";
+          $insert = "INSERT INTO company (idno, companyname, ccity, cstate, czip) VALUES('$idno', '$cname', '$ccity', '$cstate', '$czip')";
           mysqli_query($conn, $insert);
           header('location: /admin/companies.php');
        }
