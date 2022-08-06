@@ -120,24 +120,24 @@ if(isset($_POST['update-company'])){
             $czip     = $row['czip'];
   ?>
       <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="studentID">Student ID</label>
-            <input class="form-control" style="width: 20%" id="studentID" type="text" value="<?php echo $compID; ?>" name="studentID" disabled>
+            <label for="companyId">Company ID</label>
+            <input class="form-control" style="width: 20%" id="companyId" type="text" value="<?php echo $compID; ?>" name="companyId" disabled>
          </div>
       <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="companyname">Company Name</label>
-            <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
+            <input class="form-control" id="companyname" type="text" name="companyname" value="<?php echo $cname; ?>" required>
          </div>
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="ccity">City</label>
-            <input class="form-control" id="ccity" type="text" name="ccity" value="" required>
+            <input class="form-control" id="ccity" type="text" name="ccity" value="<?php echo $ccity; ?>" required>
          </div>
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="cstate">State</label>
-            <input class="form-control" id="cstate" type="text" name="cstate" value="" required>
+            <input class="form-control" id="cstate" type="text" name="cstate" value="<?php echo $cstate; ?>" required>
          </div>
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="czip">Zip Code</label>
-            <input class="form-control" id="czip" type="number" name="czip" value="" required>
+            <input class="form-control" id="czip" type="number" name="czip" value="<?php echo $czip; ?>" required>
          </div>
       <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
       <input type="submit" name="add-company" value="Add Company" class="btn btn-secondary">
