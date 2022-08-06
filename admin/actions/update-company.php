@@ -29,7 +29,7 @@ if(isset($_POST['update-company'])){
    // $cpass = md5($_POST['cpassword']);
    // $isadmin = $_POST['isadmin'];
 
-   $update_select = " SELECT * FROM company WHERE companyname = '$companyname' ";
+   $update_select = " SELECT * FROM company WHERE companyID = '$companyID' ";
 
    $update_result = mysqli_query($conn, $update_select);
 
@@ -46,8 +46,8 @@ if(isset($_POST['update-company'])){
    } 
 };
 
-$select = " SELECT * FROM company WHERE companyID = '$companyID' ";
-$result = mysqli_query($conn, $select);
+// $select = " SELECT * FROM company WHERE companyID = '$companyID' ";
+$result = mysqli_query($conn, $update_select);
 
 ?>
 
