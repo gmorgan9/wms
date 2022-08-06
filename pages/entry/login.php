@@ -25,14 +25,14 @@ if(isset($_POST['submit'])){
    $isadmin = $_POST['isadmin'];
    $loggedin = $_POST['loggedin'];
 
-   $select = " SELECT * FROM employees WHERE uname = '$uname' && password = '$pass' ";
+   $select = " SELECT * FROM employee WHERE uname = '$uname' && password = '$pass' ";
 
    $result = mysqli_query($conn, $select);
 
    if(mysqli_num_rows($result) > 0){
 
       $row = mysqli_fetch_array($result);
-      $sql = "UPDATE employees SET loggedin='1' WHERE uname='$uname'";
+      $sql = "UPDATE employee SET loggedin='1' WHERE uname='$uname'";
       if($row['isadmin'] == 1){
          if (mysqli_query($conn, $sql)) {
             echo "Record updated successfully";
