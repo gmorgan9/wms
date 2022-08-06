@@ -8,10 +8,10 @@ require_once "../../path.php";
 session_start();
 
 if(!isLoggedIn()){
-   header('location: /login.php');
+   header('location:' . BASE_URL . '/pages/entry/login.php');
 }
 if(!isAdmin()){
-  header('location: /dashboard.php');
+   header('location:' . BASE_URL . '/pages/dashboard.php');
 }
 
 
@@ -46,23 +46,6 @@ if(isset($_POST['update-profile'])){
       
    } 
 };
-
-// Delete User
-if(isset($_GET['employeeID'])) {
-    $id = $_GET['employeeID'];
-
-    $sql = "DELETE FROM employees WHERE employeeID = $id";
-    $delete = mysqli_query($conn, $sql);
-    if($delete) {
-        // echo "Deleted Successfully";
-        header('location: manage-users.php'); // returns back to same page
-    } else {
-        die(mysqli_error($conn));
-    }
-}
-
-
-
 
 ?>
 
@@ -109,6 +92,7 @@ if(isset($_GET['employeeID'])) {
 
 if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
+      $acc_type = $row['acc_type'];
 ?>
 
   <div class="page-header mx-auto">
@@ -120,81 +104,91 @@ if (mysqli_num_rows($result) > 0) {
     </ul>
   </div>
 
-  <div class="jumbotron jumbotron-fluid bg-white m-2 mx-auto" style="width: 98%;">
+  <!-- <div class="jumbotron jumbotron-fluid bg-white m-2 mx-auto" style="width: 98%;">
   <div class="container">
-    <h3 class="display-6 text-center" style="padding-top: 5px !important;padding-bottom: 10px !important;">Welcome, <span style="text-transform: capitalize;"><?php echo $row['fname'] ?>!</span></h3>
+    <h3 class="display-6 text-center" style="padding-top: 5px !important;padding-bottom: 10px !important;">Welcome, <span style="text-transform: capitalize;"><?php //echo $row['fname'] ?>!</span></h3>
   </div>
-</div>
+</div> -->
 
-<!-- start PAGE-CONTENT -->
-<div class="page-content mx-auto">
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Status</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Username</th>
-      <th scope="col">Email</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody class="table-group-divider">
+<div class="page-content mx-auto mt-2">
+<form action="" method="post">
+      <h3 class="mx-auto" style="width: 95%;">Add Company Data</h3>
+      <?php
+      // if(isset($error)){
+      //    foreach($error as $error){
+      //       echo '<span class="error-msg">'.$error.'</span>';
+      //    };
+      // };
 
-  <?php
-      $sql = "SELECT * FROM employee";
-      $all = mysqli_query($conn, $sql);
-      if($all) {
-          while ($row = mysqli_fetch_assoc($all)) {
-            $employeeID   =$row['employeeID'];
-            $fname  = $row['fname'];
-            $lname  = $row['lname'];
-            $uname  = $row['uname'];
-            $email  = $row['email'];
-            $status = $row['acc_type'];
+      // if(isset($success)){
+      //    foreach($success as $success){
+      //       echo '<span class="error-msg">'.$success.'</span>';
+      //    };
+      // };
+      ?> 
+      <div class="row" style="margin-left: 20px;">
+      <div class="form-group pt-3" style="width: 20%;">
+            <label for="studentID">Student ID</label>
+            <input class="form-control" style="width: 90%" id="studentID" type="text" value="<?php echo $row['employeeID']; ?>" name="studentID" disabled>
+         </div>
+
+         <div class="form-group pt-3" style="width: 20%;">
+            <label for="status">Account Status</label>
+            <?php
+            if($acc_type == 1){ 
             ?>
-    <tr>
-        <?php 
-        if($_SESSION['empID'] == $row['employeeID']){ 
-        ?>
-        <th class="bg-warning" scope="row"><?php echo $employeeID; ?></th>
-        <?php if($status == 1){ ?>
-          <td class="bg-warning">Admin</td>
-        <?php } else { ?>
-          <td class="bg-warning">Employee</td>
-        <?php } ?>
-        <td class="bg-warning"><?php echo $fname; ?></td>
-        <td class="bg-warning"><?php echo $lname; ?></td>
-        <td class="bg-warning"><?php echo $uname; ?></td>
-        <td class="bg-warning"><?php echo $email; ?></td>
-        <td class="bg-warning" colspan="2">
-            <a style="text-decoration: none;" class="badge text-bg-primary" href="<?php echo BASE_URL . '/admin/profile.php' ?>">My Profile</a>
-        </td>
+            <input class="form-control" style="width: 90%" id="status" type="text" value="Admin" name="status" disabled>
+            <?php 
+            } else {
+            ?>
+            <input class="form-control" style="width: 90%" id="status" type="text" value="Student" name="status" disabled>
+            <?php 
+            }
+            ?>
+         </div>
+      </div>
+      <!-- <div class="row" style="margin-left: 20px;"> -->
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="fname">First Name</label>
+            <input class="form-control" id="fname" type="text" name="fname" value="<?php echo $row['fname']; ?>" required>
+         </div>
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="fname">Last Name</label>
+            <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['lname']; ?>" required>
+         </div>
+      <!-- </div>end ROW -->
+      <!-- <div class="row" style="margin-left: 20px;"> -->
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="fname">User Name</label>
+            <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
+         </div>   
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="fname">Email Address</label>
+            <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
+         </div> 
+      <!-- </div> end ROW -->
+      <!-- <div class="row" style="margin-left: 20px;">
+         <div class="form-group pt-3" style="width: 48.6%;">
+            <label for="fname">Password</label>
+            <input class="form-control" id="password" type="password" name="password" value="<?php //echo $row['password']; ?>" required>
+            <i class="bi bi-eye-slash" id="togglePassword" style="cursor: pointer;"></i>  Show/Hide Password
+         </div>   
+         <div class="form-group pt-3" style="width: 48.6%;">
+            <label for="fname">Confirm Password</label>
+            <input class="form-control" id="cpassword" type="password" name="cpassword" value="<?php //echo $row['password']; ?>" required>
+         </div>
+      </div> -->
+      <!-- end ROW -->
 
-        <?php } else {?>
-        <th scope="row"><?php echo $employeeID; ?></th>
-        <?php if($status == 1){ ?>
-          <td>Admin</td>
-        <?php } else { ?>
-          <td>Employee</td>
-        <?php } ?>
-        <td><?php echo $fname; ?></td>
-        <td><?php echo $lname; ?></td>
-        <td><?php echo $uname; ?></td>
-        <td><?php echo $email; ?></td>
-        <td><a style="text-decoration: none;" class="badge text-bg-danger" href="manage-users.php?employeeID=<?php echo $employeeID; ?>">Delete</a></td>
-        <?php }}} ?>
-  </tbody>
-</table>
+      <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
+      <input type="submit" name="update-profile" value="Update User" class="btn btn-secondary">
       <?php 
       }
    } else {
      echo "0 results";
    }
       ?>
- 
- <!-- end PAGE-CONTENT -->
+   </form>
 </div>
 
  
@@ -203,6 +197,26 @@ if (mysqli_num_rows($result) > 0) {
 
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
+
+<!-- <script>
+   const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            
+            // toggle the icon
+            this.classList.toggle("bi-eye");
+        });
+
+        // prevent form submit
+        const form = document.querySelector("form");
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+        });
+</script> -->
 
 </body>
 </html>
