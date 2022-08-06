@@ -86,6 +86,7 @@ if(isset($_POST['update-profile'])){
 
 if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
+      $acc_type = $row['acc_type'];
 ?>
 
   <div class="page-header mx-auto">
@@ -127,7 +128,7 @@ if (mysqli_num_rows($result) > 0) {
          <div class="form-group pt-3" style="width: 20%;">
             <label for="status">Account Status</label>
             <?php
-            if($row['acc_type'] == 1){ 
+            if($acc_type == 1){ 
             ?>
             <input class="form-control" style="width: 90%" id="status" type="text" value="Admin" name="status" disabled>
             <?php 
