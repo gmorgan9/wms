@@ -113,6 +113,8 @@ if(isset($_GET['companyID'])) {
 
   if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
+
+
       $sql = "SELECT * FROM company";
       $all = mysqli_query($conn, $sql);
       if($all) {
@@ -131,16 +133,16 @@ if(isset($_GET['companyID'])) {
         <td><?php echo $czip; ?></td>
         <td><a style="text-decoration: none;" class="badge text-bg-danger" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a></td>
         <?php }}} ?>
-        <?php 
-     
-   } else {
-    echo "0 results";
-  }
-      ?>
+        
+   
       </tbody>
 </table> 
-      
- 
+<?php 
+     
+} else {
+  echo "0 results";
+}
+    ?>
  <!-- end PAGE-CONTENT -->
 </div>
 
