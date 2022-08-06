@@ -119,7 +119,7 @@ if(isset($_POST['update-company'])){
             $cstate   = $row['cstate'];
             $czip     = $row['czip'];
   ?>
-      <div class="row" style="margin-left: 10px;">
+      <div class="row" >
       <div class="form-group pt-3" style="width: 20%;">
             <label for="studentID">Student ID</label>
             <input class="form-control" style="width: 20%" id="studentID" type="text" value="<?php echo $compID; ?>" name="studentID" disabled>
