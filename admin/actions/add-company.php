@@ -38,7 +38,7 @@ if(isset($_POST['add-company'])){
     }else{
           $insert = "INSERT INTO company (companyname, ccity, cstate, czip) VALUES('$cname', '$ccity', '$cstate', '$czip')";
           mysqli_query($conn, $insert);
-          header('location: /admin/actions/add-company.php');
+          header('location: /admin/companies.php');
        }
  
  };
