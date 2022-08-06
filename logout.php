@@ -5,7 +5,7 @@ require_once "app/database/connection.php";
 require_once "path.php";
 
 $empID = $_SESSION['empID'];
-$sql = "UPDATE employees SET loggedin='0' WHERE employeeID='$empID'";
+$sql = "UPDATE employee SET status='0' WHERE employeeID='$empID'";
 if (mysqli_query($conn, $sql)) {
     echo "Record updated successfully";
 } else {
