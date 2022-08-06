@@ -126,7 +126,7 @@ if(isset($_GET['employeeID'])) {
 </div> -->
 
 <!-- start PAGE-CONTENT -->
-<div class="page-content mx-auto">
+<div class="page-content mx-auto mt-2">
     <table class="table">
   <thead>
     <tr>
