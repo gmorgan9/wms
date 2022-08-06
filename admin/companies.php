@@ -92,7 +92,7 @@ if(isset($_GET['companyID'])) {
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">ID #</th>
       <th scope="col">Company Name</th>
       <th scope="col">City</th>
       <th scope="col">State</th>
@@ -108,13 +108,14 @@ if(isset($_GET['companyID'])) {
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
             $compID   = $row['companyID'];
+            $idno     = $row['idno'];
             $cname    = $row['companyname'];
             $ccity    = $row['ccity'];
             $cstate   = $row['cstate'];
             $czip     = $row['czip'];
   ?>
     <tr>
-        <th scope="row"><?php echo $compID; ?></th>
+        <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $cname; ?></td>
         <td><?php echo $ccity; ?></td>
         <td><?php echo $cstate; ?></td>
