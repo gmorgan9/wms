@@ -69,14 +69,7 @@ if(isset($_GET['companyID'])) {
 <!-- start MAIN -->
 <div class="main"> 
    
-<?php 
-$select = " SELECT * FROM company";
-$result = mysqli_query($conn, $select);
 
-if (mysqli_num_rows($result) > 0) {
-  while($row = mysqli_fetch_assoc($result)) {
-  
-?>
 
   <div class="page-header mx-auto">
     <p class="page_title" style="float: left; padding-top: 2px;">Companies</p>
@@ -99,6 +92,14 @@ if (mysqli_num_rows($result) > 0) {
   <!-- <button class="btn btn-primary" type="button">Button</button> -->
 </div>
     <table class="table">
+    <?php 
+$select = " SELECT * FROM company";
+$result = mysqli_query($conn, $select);
+
+if (mysqli_num_rows($result) > 0) {
+  while($row = mysqli_fetch_assoc($result)) {
+  
+?>
   <thead>
     <tr>
       <th scope="col">#</th>
