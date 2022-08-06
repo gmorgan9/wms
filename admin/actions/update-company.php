@@ -19,28 +19,28 @@ if(!isAdmin()){
 // $select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
 // $result = mysqli_query($conn, $select);
 
-if(isset($_POST['add-company'])){
+if(isset($_POST['update-company'])){
 
-    $compID = mysqli_real_escape_string($conn, $_POST['companyID']);
+    $compID   = mysqli_real_escape_string($conn, $_POST['companyID']);
     $cname = mysqli_real_escape_string($conn, $_POST['companyname']);
     $ccity = mysqli_real_escape_string($conn, $_POST['ccity']);
     $cstate = mysqli_real_escape_string($conn, $_POST['cstate']);
     $czip = mysqli_real_escape_string($conn, $_POST['czip']);
  
-    $select = " SELECT * FROM company WHERE companyname = '$cname' ";
- 
-    $result = mysqli_query($conn, $select);
+    $select = " SELECT * FROM company";
+    $update_result = mysqli_query($conn, $select);
  
     if(mysqli_num_rows($result) > 0){
  
-       $error[] = 'Company already exist!';
- 
+       // $error[] = 'user already exist!';
+       $update = "UPDATE company SET cname = '$cname', ccity = '$ccity', cstate = '$cstate', czip = '$czip' where companyID = '$compID' ";
+       mysqli_query($conn, $update);
+       $success[] = 'Success';
+       header('location:' . BASE_URL . '/admin/companies.php');
+       
     }else{
-          $insert = "INSERT INTO company (companyname, ccity, cstate, czip) VALUES('$cname', '$ccity', '$cstate', '$czip')";
-          mysqli_query($conn, $insert);
-          header('location: /admin/actions/add-company.php');
-       }
- 
+       
+    } 
  };
 ?>
 
@@ -50,7 +50,7 @@ if(isset($_POST['add-company'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>WMS | Add Company</title>
+   <title>WMS | Update Company</title>
 
    <!-- Custom Styles -->
    <link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/other-style.css?v='. time(); ?>">
@@ -112,7 +112,7 @@ if(isset($_POST['add-company'])){
       <div class="row" style="margin-left: 20px;">
       <div class="form-group pt-3" style="width: 20%;">
             <label for="studentID">Student ID</label>
-            <input class="form-control" style="width: 90%" id="studentID" type="text" value="<?php echo $row['companyID']; ?>" name="studentID" disabled>
+            <input class="form-control" style="width: 90%" id="studentID" type="text" value="<?php echo $compID; ?>" name="studentID" disabled>
          </div>
       <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="companyname">Company Name</label>
