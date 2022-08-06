@@ -30,12 +30,12 @@ if(isset($_POST['update-company'])){
     $select = " SELECT * FROM company";
     $update_result = mysqli_query($conn, $select);
  
-    if(mysqli_num_rows($result) > 0){
+    if(mysqli_num_rows($update_result) > 0){
  
        // $error[] = 'user already exist!';
        $update = "UPDATE company SET cname = '$cname', ccity = '$ccity', cstate = '$cstate', czip = '$czip' where companyID = '$compID' ";
        mysqli_query($conn, $update);
-       $success[] = 'Success';
+       //$success[] = 'Success';
        header('location:' . BASE_URL . '/admin/companies.php');
        
     }else{
