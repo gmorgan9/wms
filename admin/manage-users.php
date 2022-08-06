@@ -114,7 +114,7 @@ if (mysqli_num_rows($result) > 0) {
   <div class="page-header mx-auto">
     <p class="page_title" style="float: left; padding-top: 2px;">Manage Users</p>
     <ul class="breadcrumb">
-      <li><a href="<?php echo BASE_URL . '/dashboard.php' ?>">Dashboard</a></li>
+      <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
       <li>Manage Users</li>
     </ul>
   </div>
