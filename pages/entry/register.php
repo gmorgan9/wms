@@ -15,7 +15,7 @@ if(isLoggedIn()){
 if(isset($_POST['submit'])){
 
    $empID = mysqli_real_escape_string($conn, $_POST['employeeID']);
-   $idno  = rand(10000, 99999);
+   $idno  = uniqid(rand(10000, 99999), true);
    // $avatar = mysqli_real_escape_string($conn, $_POST['avatar']);
    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
    $lname = mysqli_real_escape_string($conn, $_POST['lname']);
