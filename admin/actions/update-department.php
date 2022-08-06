@@ -97,7 +97,7 @@ if (mysqli_num_rows($result) > 0) {
             <input class="form-control" id="deptname" type="text" name="deptname" value="<?php echo $row['deptname']; ?>" required>
          </div>
       <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
-      <input type="submit" name="update-department" value="Update Company" class="btn btn-secondary">
+      <input type="submit" name="update-department" value="Update Department" class="btn btn-secondary">
       <?php 
       }
    } else {
