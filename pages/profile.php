@@ -127,13 +127,13 @@ if (mysqli_num_rows($result) > 0) {
          <div class="form-group pt-3" style="width: 20%;">
             <label for="status">Account Status</label>
             <?php
-            if($_SESSION['isadmin'] == 1){ 
+            if($row['acc_type'] == 1){ 
             ?>
-            <input class="form-control" style="width: 90%" id="status" type="text" value="Admin" name="studentID" disabled>
+            <input class="form-control" style="width: 90%" id="status" type="text" value="Admin" name="status" disabled>
             <?php 
             } else {
             ?>
-            <input class="form-control" style="width: 90%" id="status" type="text" value="Employee" name="studentID" disabled>
+            <input class="form-control" style="width: 90%" id="status" type="text" value="Employee" name="status" disabled>
             <?php 
             }
             ?>
