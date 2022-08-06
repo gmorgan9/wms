@@ -128,7 +128,7 @@ if(isset($_GET['employeeID'])) {
 <!-- start PAGE-CONTENT -->
 <div class="page-content mx-auto mt-2">
 <div class="d-grid d-md-flex justify-content-md-end">
-  <button class="badge rounded-pill text-bg-secondary" style="border-color: rgb(110,117,124);" type="button"><i class="bi bi-plus-lg"></i> Company</button>
+  <button class="badge rounded-pill text-bg-secondary" style="border-color: rgb(110,117,124,0);" type="button"><i class="bi bi-plus-lg"></i> Company</button>
   <!-- <button class="btn btn-primary" type="button">Button</button> -->
 </div>
     <table class="table">
