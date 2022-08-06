@@ -33,7 +33,7 @@ if(isset($_POST['update-company'])){
     if(mysqli_num_rows($update_result) > 0){
  
        // $error[] = 'user already exist!';
-       $update = "UPDATE company SET cname = '$cname', ccity = '$ccity', cstate = '$cstate', czip = '$czip' where companyID = '$compID' ";
+       $update = "UPDATE company SET companyname = '$cname', ccity = '$ccity', cstate = '$cstate', czip = '$czip' where companyID = '$compID' ";
        mysqli_query($conn, $update);
        //$success[] = 'Success';
        header('location:' . BASE_URL . '/admin/companies.php');
