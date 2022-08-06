@@ -15,38 +15,30 @@ if(!isAdmin()){
 }
 
 
-$empID = $_SESSION['empID'];
-$select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
-$result = mysqli_query($conn, $select);
+// $compID = $_SESSION['empID'];
+// $select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
+// $result = mysqli_query($conn, $select);
 
-if(isset($_POST['update-profile'])){
+if(isset($_POST['add-company'])){
 
-   //$sID   = mysqli_real_escape_string($conn, $_POST['studentID']);
-   $fname = mysqli_real_escape_string($conn, $_POST['fname']);
-   $lname = mysqli_real_escape_string($conn, $_POST['lname']);
-   $uname = mysqli_real_escape_string($conn, $_POST['uname']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   // $pass = md5($_POST['password']);
-   // $cpass = md5($_POST['cpassword']);
-   // $isadmin = $_POST['isadmin'];
-
-   $update_select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' ";
-
-   $update_result = mysqli_query($conn, $update_select);
-
-   if(mysqli_num_rows($result) > 0){
-
-      // $error[] = 'user already exist!';
-      $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
-      mysqli_query($conn, $update);
-      $success[] = 'Success';
-      header('location:' . BASE_URL . '/admin/profile.php');
-      
-   }else{
-      
-   } 
-};
-
+    $compID = mysqli_real_escape_string($conn, $_POST['companyID']);
+    $cname = mysqli_real_escape_string($conn, $_POST['companyname']);
+ 
+    $select = " SELECT * FROM company WHERE companyname = '$cname' ";
+ 
+    $result = mysqli_query($conn, $select);
+ 
+    if(mysqli_num_rows($result) > 0){
+ 
+       $error[] = 'Company already exist!';
+ 
+    }else{
+          $insert = "INSERT INTO company (companyname) VALUES('$cname')";
+          mysqli_query($conn, $insert);
+          header('location: /admin/actions/add-company.php');
+       }
+ 
+ };
 ?>
 
 <!DOCTYPE html>
@@ -90,9 +82,9 @@ if(isset($_POST['update-profile'])){
    
 <?php 
 
-if (mysqli_num_rows($result) > 0) {
-   while($row = mysqli_fetch_assoc($result)) {
-      $acc_type = $row['acc_type'];
+// if (mysqli_num_rows($result) > 0) {
+//    while($row = mysqli_fetch_assoc($result)) {
+//       $acc_type = $row['acc_type'];
 ?>
 
   <div class="page-header mx-auto">
@@ -128,44 +120,44 @@ if (mysqli_num_rows($result) > 0) {
       ?> 
       <div class="row" style="margin-left: 20px;">
       <div class="form-group pt-3" style="width: 20%;">
-            <label for="studentID">Student ID</label>
-            <input class="form-control" style="width: 90%" id="studentID" type="text" value="<?php echo $row['employeeID']; ?>" name="studentID" disabled>
+            <label for="companyname">Company Name</label>
+            <input class="form-control" style="width: 90%" id="companyname" type="text" value="" name="companyname" disabled>
          </div>
 
-         <div class="form-group pt-3" style="width: 20%;">
+         <!-- <div class="form-group pt-3" style="width: 20%;">
             <label for="status">Account Status</label>
             <?php
-            if($acc_type == 1){ 
+            // if($acc_type == 1){ 
             ?>
             <input class="form-control" style="width: 90%" id="status" type="text" value="Admin" name="status" disabled>
             <?php 
-            } else {
+            // } else {
             ?>
             <input class="form-control" style="width: 90%" id="status" type="text" value="Student" name="status" disabled>
             <?php 
-            }
+            // }
             ?>
          </div>
-      </div>
+      </div> -->
       <!-- <div class="row" style="margin-left: 20px;"> -->
-         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+         <!-- <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="fname">First Name</label>
-            <input class="form-control" id="fname" type="text" name="fname" value="<?php echo $row['fname']; ?>" required>
+            <input class="form-control" id="fname" type="text" name="fname" value="<?php //echo $row['fname']; ?>" required>
          </div>
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="fname">Last Name</label>
-            <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['lname']; ?>" required>
+            <input class="form-control" id="lname" type="text" name="lname" value="<?php //echo $row['lname']; ?>" required>
          </div>
-      <!-- </div>end ROW -->
+      </div>end ROW -->
       <!-- <div class="row" style="margin-left: 20px;"> -->
-         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+         <!-- <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="fname">User Name</label>
-            <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
+            <input class="form-control" id="uname" type="text" name="uname" value="<?php //echo $row['uname']; ?>" required>
          </div>   
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="fname">Email Address</label>
-            <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
-         </div> 
+            <input class="form-control" id="email" type="email" name="email" value="<?php //echo $row['email']; ?>" required>
+            </div> -->
       <!-- </div> end ROW -->
       <!-- <div class="row" style="margin-left: 20px;">
          <div class="form-group pt-3" style="width: 48.6%;">
@@ -181,12 +173,12 @@ if (mysqli_num_rows($result) > 0) {
       <!-- end ROW -->
 
       <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
-      <input type="submit" name="update-profile" value="Update User" class="btn btn-secondary">
+      <input type="submit" name="add-company" value="Update User" class="btn btn-secondary">
       <?php 
-      }
-   } else {
-     echo "0 results";
-   }
+//       }
+//    } else {
+//      echo "0 results";
+//    }
       ?>
    </form>
 </div>
