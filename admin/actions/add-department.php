@@ -96,11 +96,11 @@ if(isset($_POST['add-department'])){
          </div>
 
          <?php 
-    $query ="SELECT company.companyname FROM department INNER JOIN company ON departments.deptID=company.companyID;";
-    $all = mysqli_query($conn, $query);
-      if($all) {
-          while ($row = mysqli_fetch_assoc($all)) {
-            $compname   = $row['companyname'];
+    //$query ="SELECT company.companyname FROM department INNER JOIN company ON departments.deptID=company.companyID;";
+    //$all = mysqli_query($conn, $query);
+      //if($all) {
+        //  while ($row = mysqli_fetch_assoc($all)) {
+         //   $compname   = $row['companyname'];
 
 ?>
             <!-- <label for="companyID">Department Name</label>
@@ -110,15 +110,10 @@ if(isset($_POST['add-department'])){
                 <?php //} ?>
             </select> -->
 
-            <p><?php echo $compname; 
+            <p><?php //echo $compname; 
             
-                }
-            }?></p>
-
-
-
-
-          
+              //  }
+            //}?></p>
 
       <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
       <input type="submit" name="add-department" value="Add Department" class="btn btn-secondary">
