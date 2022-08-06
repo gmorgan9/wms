@@ -130,14 +130,15 @@ if(isset($_GET['companyID'])) {
         <td><?php echo $czip; ?></td>
         <td><a style="text-decoration: none;" class="badge text-bg-danger" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a></td>
         <?php }}} ?>
-      </tbody>
-</table> 
-      <?php 
+        <?php 
      
    } else {
     echo "0 results";
   }
       ?>
+      </tbody>
+</table> 
+      
  
  <!-- end PAGE-CONTENT -->
 </div>
