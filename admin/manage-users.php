@@ -16,7 +16,7 @@ if(!isAdmin()){
 
 
 $empID = $_SESSION['empID'];
-$select = " SELECT * FROM employees WHERE employeeID = '$empID' ";
+$select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
 $result = mysqli_query($conn, $select);
 
 if(isset($_POST['update-profile'])){
@@ -30,14 +30,14 @@ if(isset($_POST['update-profile'])){
    // $cpass = md5($_POST['cpassword']);
    // $isadmin = $_POST['isadmin'];
 
-   $update_select = " SELECT * FROM employees WHERE uname = '$uname' && email = '$email' ";
+   $update_select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' ";
 
    $update_result = mysqli_query($conn, $update_select);
 
    if(mysqli_num_rows($result) > 0){
 
       // $error[] = 'user already exist!';
-      $update = "UPDATE employees SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
+      $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
       mysqli_query($conn, $update);
       $success[] = 'Success';
       header('location:' . BASE_URL . '/admin/profile.php');
@@ -142,7 +142,7 @@ if (mysqli_num_rows($result) > 0) {
   <tbody class="table-group-divider">
 
   <?php
-      $sql = "SELECT * FROM employees";
+      $sql = "SELECT * FROM employee";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
@@ -151,7 +151,7 @@ if (mysqli_num_rows($result) > 0) {
             $lname  = $row['lname'];
             $uname  = $row['uname'];
             $email  = $row['email'];
-            $status = $row['isadmin'];
+            $status = $row['acc_type'];
             ?>
     <tr>
         <?php 
