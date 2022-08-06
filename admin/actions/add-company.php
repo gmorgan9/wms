@@ -123,6 +123,18 @@ if(isset($_POST['add-company'])){
             <label for="companyname">Company Name</label>
             <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
          </div>
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="ccity">City</label>
+            <input class="form-control" id="ccity" type="text" name="ccity" value="" required>
+         </div>
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="cstate">State</label>
+            <input class="form-control" id="cstate" type="text" name="cstate" value="" required>
+         </div>
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="czip">Zip Code</label>
+            <input class="form-control" id="czip" type="number" name="czip" value="" required>
+         </div>
 
          <!-- <div class="form-group pt-3" style="width: 20%;">
             <label for="status">Account Status</label>
