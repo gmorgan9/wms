@@ -23,6 +23,9 @@ if(isset($_POST['add-company'])){
 
     $compID = mysqli_real_escape_string($conn, $_POST['companyID']);
     $cname = mysqli_real_escape_string($conn, $_POST['companyname']);
+    $ccity = mysqli_real_escape_string($conn, $_POST['ccity']);
+    $cstate = mysqli_real_escape_string($conn, $_POST['cstate']);
+    $czip = mysqli_real_escape_string($conn, $_POST['czip']);
  
     $select = " SELECT * FROM company WHERE companyname = '$cname' ";
  
@@ -33,7 +36,7 @@ if(isset($_POST['add-company'])){
        $error[] = 'Company already exist!';
  
     }else{
-          $insert = "INSERT INTO company (companyname) VALUES('$cname')";
+          $insert = "INSERT INTO company (companyname, ccity, cstate, czip) VALUES('$cname', '$ccity', '$cstate', '$czip')";
           mysqli_query($conn, $insert);
           header('location: /admin/actions/add-company.php');
        }
