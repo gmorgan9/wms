@@ -16,7 +16,8 @@ if(!isAdmin()){
 
 // Delete User
 if(isset($_GET['companyID'])) {
-    $id = $_GET['companyID'];
+  $_SESSION['compID'] = $_GET['companyID'];
+  $id = $_SESSION['compID'];
 
     $sql = "DELETE FROM company WHERE companyID = $id";
     $delete = mysqli_query($conn, $sql);
