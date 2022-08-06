@@ -15,12 +15,16 @@ if(!isAdmin()){
 }
 
 
+// $compID = $_SESSION['empID'];
+// $select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
+// $result = mysqli_query($conn, $select);
+
 if(isset($_POST['add-department'])){
 
     $deptID = mysqli_real_escape_string($conn, $_POST['deptID']);
     $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
     $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
-    // $compID = mysqli_real_escape_string($conn, $_POST['companyID']);
+    //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
  
     $select = " SELECT * FROM department WHERE deptname = '$deptname' ";
  
@@ -31,7 +35,7 @@ if(isset($_POST['add-department'])){
        $error[] = 'Department already exist!';
  
     }else{
-          $insert = "INSERT INTO department (idno, deptname, companyID) VALUES ('$idno', '$deptname', '$compID')";
+          $insert = "INSERT INTO department (idno, deptname) VALUES('$idno', '$deptname')";
           mysqli_query($conn, $insert);
           header('location: /admin/departments.php');
        }
@@ -93,7 +97,6 @@ if(isset($_POST['add-department'])){
 
       <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
       <input type="submit" name="add-department" value="Add Department" class="btn btn-secondary">
-                </div>
  
    </form>
 </div>
