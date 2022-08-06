@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
    $cpass = md5($_POST['cpassword']);
    $acc_type = $_POST['acc_type'];
 
-   $select = " SELECT * FROM employees WHERE uname = '$uname' && email = '$email' && password = '$pass' ";
+   $select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' && password = '$pass' ";
 
    $result = mysqli_query($conn, $select);
 
@@ -38,7 +38,7 @@ if(isset($_POST['submit'])){
       if($pass != $cpass){
          $error[] = 'passwords do not match!';
       }else{
-         $insert = "INSERT INTO employees (idno, fname, lname, uname, email, password) VALUES('$idno', '$fname','$lname','$uname','$email','$pass')";
+         $insert = "INSERT INTO employee (idno, fname, lname, uname, email, password) VALUES('$idno', '$fname','$lname','$uname','$email','$pass')";
          mysqli_query($conn, $insert);
          header('location: /pages/entry/login.php');
       }
