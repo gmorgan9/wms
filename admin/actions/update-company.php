@@ -16,8 +16,7 @@ if(!isAdmin()){
 
 
 // $empID = $_SESSION['empID'];
-// $select = " SELECT * FROM c WHERE employeeID = '$empID' ";
-// $result = mysqli_query($conn, $select);
+
 
 if(isset($_POST['update-company'])){
 
@@ -46,6 +45,9 @@ if(isset($_POST['update-company'])){
       
    } 
 };
+
+$select = " SELECT * FROM company WHERE companyID = '$compID' ";
+$result = mysqli_query($conn, $select);
 
 ?>
 
@@ -90,8 +92,8 @@ if(isset($_POST['update-company'])){
    
 <?php 
 
-if (mysqli_num_rows($update_result) > 0) {
-   while($row = mysqli_fetch_assoc($update_result)) {
+if (mysqli_num_rows($result) > 0) {
+   while($row = mysqli_fetch_assoc($result)) {
      // $acc_type = $row['acc_type'];
 ?>
 
