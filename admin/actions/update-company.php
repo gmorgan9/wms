@@ -85,9 +85,8 @@ if(isset($_POST['update-company'])){
 <div class="main"> 
    
 <?php 
-
-// if (mysqli_num_rows($result) > 0) {
-//    while($row = mysqli_fetch_assoc($result)) {
+ if (mysqli_num_rows($result) > 0) {
+   while($row = mysqli_fetch_assoc($result)) {
 //       $acc_type = $row['acc_type'];
 ?>
 
@@ -123,15 +122,15 @@ if(isset($_POST['update-company'])){
       };
       ?> 
       <?php
-      $sql = "SELECT * FROM company";
-      $all = mysqli_query($conn, $sql);
-      if($all) {
-          while ($row = mysqli_fetch_assoc($all)) {
-            $compID   = $row['companyID'];
-            $cname    = $row['companyname'];
-            $ccity    = $row['ccity'];
-            $cstate   = $row['cstate'];
-            $czip     = $row['czip'];
+    //   $sql = "SELECT * FROM company";
+    //   $all = mysqli_query($conn, $sql);
+    //   if($all) {
+    //       while ($row = mysqli_fetch_assoc($all)) {
+    //         $compID   = $row['companyID'];
+    //         $cname    = $row['companyname'];
+    //         $ccity    = $row['ccity'];
+    //         $cstate   = $row['cstate'];
+    //         $czip     = $row['czip'];
   ?>
       <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="companyID">Company ID</label>
