@@ -16,7 +16,7 @@ if(!isAdmin()){
 
 
 $empID = $_SESSION['empID'];
-$select = " SELECT * FROM employees WHERE employeeID = '$empID' ";
+$select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
 $result = mysqli_query($conn, $select);
 
 if(isset($_POST['update-profile'])){
@@ -30,14 +30,14 @@ if(isset($_POST['update-profile'])){
    // $cpass = md5($_POST['cpassword']);
    // $isadmin = $_POST['isadmin'];
 
-   $update_select = " SELECT * FROM employees WHERE uname = '$uname' && email = '$email' ";
+   $update_select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' ";
 
    $update_result = mysqli_query($conn, $update_select);
 
    if(mysqli_num_rows($result) > 0){
 
       // $error[] = 'user already exist!';
-      $update = "UPDATE employees SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
+      $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
       mysqli_query($conn, $update);
       $success[] = 'Success';
       header('location:' . BASE_URL . '/admin/profile.php');
@@ -92,6 +92,7 @@ if(isset($_POST['update-profile'])){
 
 if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
+      $acc_type = $row['acc_type'];
 ?>
 
   <div class="page-header mx-auto">
@@ -133,13 +134,13 @@ if (mysqli_num_rows($result) > 0) {
          <div class="form-group pt-3" style="width: 20%;">
             <label for="status">Account Status</label>
             <?php
-            if($_SESSION['isadmin'] == 1){ 
+            if($acc_type == 1){ 
             ?>
-            <input class="form-control" style="width: 90%" id="status" type="text" value="Admin" name="studentID" disabled>
+            <input class="form-control" style="width: 90%" id="status" type="text" value="Admin" name="status" disabled>
             <?php 
             } else {
             ?>
-            <input class="form-control" style="width: 90%" id="status" type="text" value="Student" name="studentID" disabled>
+            <input class="form-control" style="width: 90%" id="status" type="text" value="Student" name="status" disabled>
             <?php 
             }
             ?>
