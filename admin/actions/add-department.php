@@ -96,7 +96,7 @@ if(isset($_POST['add-department'])){
          </div>
 
          <?php 
-    $query ="SELECT company.companyname FROM department INNER JOIN company ON departments.deptID=company.companyID;";
+    $query ="SELECT company.companyname FROM department INNER JOIN company ON departments.companyID=company.companyID;";
     //$all = mysqli_query($conn, $query);
       //if($all) {
         //  while ($row = mysqli_fetch_assoc($all)) {
