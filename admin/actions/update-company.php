@@ -15,7 +15,9 @@ if(!isAdmin()){
 }
 
 
-// $empID = $_SESSION['empID'];
+$id = $_GET['companyID'];
+$select = " SELECT * FROM company WHERE companyID = '$id' ";
+$result = mysqli_query($conn, $select);
 
 
 if(isset($_POST['update-company'])){
@@ -29,11 +31,11 @@ if(isset($_POST['update-company'])){
    // $cpass = md5($_POST['cpassword']);
    // $isadmin = $_POST['isadmin'];
 
-   $update_select = " SELECT * FROM company WHERE companyname = '$cname' ";
+//    $update_select = " SELECT * FROM company WHERE companyname = '$cname' ";
 
-   $update_result = mysqli_query($conn, $update_select);
+//    $update_result = mysqli_query($conn, $update_select);
 
-   if(mysqli_num_rows($update_result) > 0){
+   if(mysqli_num_rows($result) > 0){
 
       // $error[] = 'user already exist!';
       $update = "UPDATE company SET companyname = '$cname', ccity = '$ccity', cstate = '$cstate', czip = '$czip' where companyID = '$compID' ";
@@ -46,9 +48,7 @@ if(isset($_POST['update-company'])){
    } 
 };
 
-$id = $_GET['companyID'];
-$select = " SELECT * FROM company WHERE companyID = '$id' ";
-$result = mysqli_query($conn, $select);
+
 
 ?>
 
