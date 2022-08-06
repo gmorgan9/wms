@@ -119,9 +119,9 @@ if(isset($_POST['add-company'])){
       // };
       ?> 
       <div class="row" style="margin-left: 20px;">
-      <div class="form-group pt-3" style="width: 20%;">
+      <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="companyname">Company Name</label>
-            <input class="form-control" style="width: 90%" id="companyname" type="text" value="" name="companyname" disabled>
+            <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
          </div>
 
          <!-- <div class="form-group pt-3" style="width: 20%;">
