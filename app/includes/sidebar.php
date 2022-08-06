@@ -32,7 +32,7 @@
                 </a>
                 <a style="margin-top: -15px;" href="<?php echo BASE_URL . '/admin/manage-users.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                     <i class="bi bi-people"></i>
-                    <span>  Manage Companies</span>
+                    <span>  Manage Company</span>
                 </a>
                 <a style="margin-top: -15px;" href="<?php echo BASE_URL . '/admin/manage-users.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                     <i class="bi bi-people"></i>
