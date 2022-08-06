@@ -108,7 +108,7 @@ if (mysqli_num_rows($result) > 0) {
 
   <div class="jumbotron jumbotron-fluid bg-white m-2 mx-auto" style="width: 98%;">
   <div class="container">
-    <h3 class="display-6 text-center" style="padding-top: 5px !important;padding-bottom: 10px !important;">Welcome, <span style="text-transform: capitalize;"><?php echo $_SESSION['companyID'] ?>!</span></h3>
+    <h3 class="display-6 text-center" style="padding-top: 5px !important;padding-bottom: 10px !important;">Welcome, <span style="text-transform: capitalize;"><?php echo $id ?>!</span></h3>
   </div>
 </div>
 
