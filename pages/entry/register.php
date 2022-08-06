@@ -15,7 +15,7 @@ if(isLoggedIn()){
 if(isset($_POST['submit'])){
 
    $empID = mysqli_real_escape_string($conn, $_POST['employeeID']);
-   $idno  = rand(00001, 99999); // figure how to not allow duplicates
+   $idno  = rand(00001, 00005); // figure how to not allow duplicates
    // $avatar = mysqli_real_escape_string($conn, $_POST['avatar']);
    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
    $lname = mysqli_real_escape_string($conn, $_POST['lname']);
