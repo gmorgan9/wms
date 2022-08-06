@@ -107,8 +107,8 @@ if(isset($_GET['employeeID'])) {
    
 <?php 
 
-//if (mysqli_num_rows($result) > 0) {
- //  while($row = mysqli_fetch_assoc($result)) {
+if (mysqli_num_rows($result) > 0) {
+  while($row = mysqli_fetch_assoc($result)) {
 ?>
 
   <div class="page-header mx-auto">
@@ -153,7 +153,8 @@ if(isset($_GET['employeeID'])) {
         <th scope="row"><?php echo $compID; ?></th>
         <td><?php echo $cname; ?></td>
         <td><a style="text-decoration: none;" class="badge text-bg-danger" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a></td>
-  </tbody>
+        <?php }} ?>
+      </tbody>
 </table> 
       <?php 
      }
