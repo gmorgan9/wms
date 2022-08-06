@@ -64,18 +64,6 @@ if(isset($_POST['update-company'])){
 </head>
 <body>
 
-   
-<!-- <div class="land-container">
-   <div class="content">
-
-      <h3><span>Admin Profile Page</span></h3>
-      <h1>welcome <span><?php //echo $_SESSION['admin_fname'] ?></span></h1>
-      <p>this is an admin profile</p>
-      <a href="logout.php" class="btn">logout</a>
-   </div>
-
-</div> -->
-
 <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
 
@@ -91,18 +79,13 @@ if (mysqli_num_rows($result) > 0) {
 ?>
 
   <div class="page-header mx-auto">
-    <p class="page_title" style="float: left; padding-top: 2px;">Profile</p>
+    <p class="page_title" style="float: left; padding-top: 2px;">Update Company</p>
     <ul class="breadcrumb">
       <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
-      <li>Admin Profile</li>
+      <li><a href="<?php echo BASE_URL . '/admin/companies.php' ?>">Companies</a></li>
+      <li>Update Company</li>
     </ul>
   </div>
-
-  <div class="jumbotron jumbotron-fluid bg-white m-2 mx-auto" style="width: 98%;">
-  <div class="container">
-    <h3 class="display-6 text-center" style="padding-top: 5px !important;padding-bottom: 10px !important;">Welcome, <span style="text-transform: capitalize;"><?php echo $id ?>!</span></h3>
-  </div>
-</div>
 
 <div class="page-content mx-auto">
 <form action="" method="post">
@@ -138,32 +121,11 @@ if (mysqli_num_rows($result) > 0) {
    </form>
 </div>
 
- 
 <!-- end MAIN -->
 </div> 
 
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
-
-<!-- <script>
-   const togglePassword = document.querySelector("#togglePassword");
-        const password = document.querySelector("#password");
-
-        togglePassword.addEventListener("click", function () {
-            // toggle the type attribute
-            const type = password.getAttribute("type") === "password" ? "text" : "password";
-            password.setAttribute("type", type);
-            
-            // toggle the icon
-            this.classList.toggle("bi-eye");
-        });
-
-        // prevent form submit
-        const form = document.querySelector("form");
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-        });
-</script> -->
 
 </body>
 </html>
