@@ -14,55 +14,19 @@ if(!isAdmin()){
   header('location: /dashboard.php');
 }
 
-
-$empID = $_SESSION['empID'];
-$select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
-$result = mysqli_query($conn, $select);
-
-if(isset($_POST['update-profile'])){
-
-   //$sID   = mysqli_real_escape_string($conn, $_POST['studentID']);
-   $fname = mysqli_real_escape_string($conn, $_POST['fname']);
-   $lname = mysqli_real_escape_string($conn, $_POST['lname']);
-   $uname = mysqli_real_escape_string($conn, $_POST['uname']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   // $pass = md5($_POST['password']);
-   // $cpass = md5($_POST['cpassword']);
-   // $isadmin = $_POST['isadmin'];
-
-   $update_select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' ";
-
-   $update_result = mysqli_query($conn, $update_select);
-
-   if(mysqli_num_rows($result) > 0){
-
-      // $error[] = 'user already exist!';
-      $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
-      mysqli_query($conn, $update);
-      $success[] = 'Success';
-      header('location:' . BASE_URL . '/admin/profile.php');
-      
-   }else{
-      
-   } 
-};
-
 // Delete User
-if(isset($_GET['employeeID'])) {
-    $id = $_GET['employeeID'];
+if(isset($_GET['deptID'])) {
+    $id = $_GET['deptID'];
 
-    $sql = "DELETE FROM employees WHERE employeeID = $id";
+    $sql = "DELETE FROM department WHERE deptID = $id";
     $delete = mysqli_query($conn, $sql);
     if($delete) {
         // echo "Deleted Successfully";
-        header('location: manage-users.php'); // returns back to same page
+        header('location: departments.php'); // returns back to same page
     } else {
         die(mysqli_error($conn));
     }
-}
-
-
-
+  }
 
 ?>
 
@@ -104,12 +68,6 @@ if(isset($_GET['employeeID'])) {
         
 <!-- start MAIN -->
 <div class="main"> 
-   
-<?php 
-
-//if (mysqli_num_rows($result) > 0) {
- //  while($row = mysqli_fetch_assoc($result)) {
-?>
 
   <div class="page-header mx-auto">
     <p class="page_title" style="float: left; padding-top: 2px;">Departments</p>
@@ -126,73 +84,50 @@ if(isset($_GET['employeeID'])) {
 </div> -->
 
 <!-- start PAGE-CONTENT -->
-<!-- <div class="page-content mx-auto">
+<div class="page-content mx-auto mt-2">
+<div class="d-grid d-md-flex justify-content-md-end">
+  <button class="badge text-bg-secondary" style="border-color: rgba(0,0,0,0);" type="button"><a style="color: white; text-decoration:none;" href="<?php echo BASE_URL . '/admin/actions/add-company.php' ?>"><i class="bi bi-plus-lg"></i> Company</a></button>
+  <!-- <button class="btn btn-primary" type="button">Button</button> -->
+</div>
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Status</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Username</th>
-      <th scope="col">Email</th>
+      <th scope="col">ID #</th>
+      <th scope="col">Department Name</th>
+      <!-- <th scope="col">City</th>
+      <th scope="col">State</th>
+      <th scope="col">Zip Code</th> -->
       <th scope="col">Actions</th>
     </tr>
   </thead>
-  <tbody class="table-group-divider"> -->
+  <tbody class="table-group-divider">
 
   <?php
-      // $sql = "SELECT * FROM employee";
-      // $all = mysqli_query($conn, $sql);
-      // if($all) {
-      //     while ($row = mysqli_fetch_assoc($all)) {
-      //       $employeeID   =$row['employeeID'];
-      //       $fname  = $row['fname'];
-      //       $lname  = $row['lname'];
-      //       $uname  = $row['uname'];
-      //       $email  = $row['email'];
-      //       $status = $row['acc_type'];
-            ?>
+      $sql = "SELECT * FROM company";
+      $all = mysqli_query($conn, $sql);
+      if($all) {
+          while ($row = mysqli_fetch_assoc($all)) {
+            $deptID   = $row['deptID'];
+            $idno     = $row['idno'];
+            $deptname    = $row['deptname'];
+            //$compID    = $row['compID'];
+  ?>
     <tr>
-        <?php 
-        //if($_SESSION['empID'] == $row['employeeID']){ 
-        ?>
-        <!-- <th class="bg-warning" scope="row"><?php //echo $employeeID; ?></th> -->
-        <?php //if($status == 1){ ?>
-          <!-- <td class="bg-warning">Admin</td> -->
-        <?php //} else { ?>
-          <!-- <td class="bg-warning">Employee</td> -->
-        <?php //} ?>
-        <!-- <td class="bg-warning"><?php //echo $fname; ?></td>
-        <td class="bg-warning"><?php //echo $lname; ?></td>
-        <td class="bg-warning"><?php //echo $uname; ?></td>
-        <td class="bg-warning"><?php //echo $email; ?></td>
-        <td class="bg-warning" colspan="2">
-            <a style="text-decoration: none;" class="badge text-bg-primary" href="<?php //echo BASE_URL . '/admin/profile.php' ?>">My Profile</a>
-        </td> -->
-
-        <?php //} else {?>
-        <!-- <th scope="row"><?php //echo $employeeID; ?></th> -->
-        <?php //if($status == 1){ ?>
-          <!-- <td>Admin</td> -->
-        <?php //} else { ?>
-          <!-- <td>Employee</td> -->
-        <?php //} ?>
-        <!-- <td><?php //echo $fname; ?></td>
-        <td><?php //echo $lname; ?></td>
-        <td><?php //echo $uname; ?></td>
-        <td><?php //echo $email; ?></td>
-        <td><a style="text-decoration: none;" class="badge text-bg-danger" href="manage-users.php?employeeID=<?php //echo $employeeID; ?>">Delete</a></td> -->
-        <?php// }}} ?>
-  <!-- </tbody>
-</table> -->
-      <?php 
-     // }
-   //} else {
-    // echo "0 results";
-   //}
-      ?>
- 
+        <th scope="row"><?php echo $idno; ?></th>
+        <td><?php echo $deptname; ?></td>
+        <td><a style="text-decoration: none;" class="badge text-bg-warning" href="/admin/actions/update-company.php?companyID=<?php echo $compID; ?>">Update</a>
+        <a style="text-decoration: none;" class="badge text-bg-danger" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a></td>
+        <?php } ?>
+        
+   
+      </tbody>
+</table> 
+<?php 
+     
+} else {
+  echo "0 results";
+}
+    ?>
  <!-- end PAGE-CONTENT -->
 </div>
 
