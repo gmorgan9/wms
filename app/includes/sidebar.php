@@ -22,7 +22,7 @@
                 <span>  Projects</span>
             </a>
 
-            <?php if($_SESSION['isadmin'] == 1){ ?>
+            <?php if($_SESSION['acc_type'] == 1){ ?>
                 <br>
                 <span style="margin-left: 38px; margin-bottom: -10px;">Admin Links</span>
                 <hr>
