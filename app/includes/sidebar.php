@@ -35,7 +35,7 @@
                     <span>  Companies</span>
                 </a>
                 <a href="<?php echo BASE_URL . '/admin/manage-users.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
-                    <i class="bi bi-people"></i>
+                    <i class="bi bi-collection"></i>
                     <span>  Departments</span>
                 </a>
                 <a href="<?php echo BASE_URL . '/admin/manage-users.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
