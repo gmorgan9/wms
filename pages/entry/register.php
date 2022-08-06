@@ -15,13 +15,15 @@ if(isLoggedIn()){
 if(isset($_POST['submit'])){
 
    $empID = mysqli_real_escape_string($conn, $_POST['employeeID']);
+   $idno  = rand(10000, 99999);
+   // $avatar = mysqli_real_escape_string($conn, $_POST['avatar']);
    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
    $lname = mysqli_real_escape_string($conn, $_POST['lname']);
    $uname = mysqli_real_escape_string($conn, $_POST['uname']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $pass = md5($_POST['password']);
    $cpass = md5($_POST['cpassword']);
-   $isadmin = $_POST['isadmin'];
+   $acc_type = $_POST['acc_type'];
 
    $select = " SELECT * FROM employees WHERE uname = '$uname' && email = '$email' && password = '$pass' ";
 
@@ -36,7 +38,7 @@ if(isset($_POST['submit'])){
       if($pass != $cpass){
          $error[] = 'passwords do not match!';
       }else{
-         $insert = "INSERT INTO employees (fname, lname, uname, email, password) VALUES('$fname','$lname','$uname','$email','$pass')";
+         $insert = "INSERT INTO employees (idno, fname, lname, uname, email, password) VALUES('$idno', '$fname','$lname','$uname','$email','$pass')";
          mysqli_query($conn, $insert);
          header('location: /pages/entry/login.php');
       }
