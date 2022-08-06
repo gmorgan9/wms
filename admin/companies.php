@@ -128,7 +128,7 @@ if(isset($_GET['employeeID'])) {
 <!-- start PAGE-CONTENT -->
 <div class="page-content mx-auto mt-2">
 <div class="d-grid d-md-flex justify-content-md-end">
-  <button class="btn btn-secondary" type="button">Button</button>
+  <button class="badge text-bg-secondary" type="button">Button</button>
   <!-- <button class="btn btn-primary" type="button">Button</button> -->
 </div>
     <table class="table">
