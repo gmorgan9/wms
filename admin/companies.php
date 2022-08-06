@@ -28,6 +28,9 @@ if(isset($_GET['companyID'])) {
     }
 }
 
+$select = " SELECT * FROM company";
+$result = mysqli_query($conn, $select);
+
 ?>
 
 <!DOCTYPE html>
@@ -93,8 +96,7 @@ if(isset($_GET['companyID'])) {
 </div>
     <table class="table">
     <?php 
-$select = " SELECT * FROM company";
-$result = mysqli_query($conn, $select);
+
 
 if (mysqli_num_rows($result) > 0) {
   while($row = mysqli_fetch_assoc($result)) {
