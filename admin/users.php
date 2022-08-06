@@ -131,11 +131,11 @@ if (mysqli_num_rows($result) > 0) {
   <thead>
     <tr>
       <th scope="col">ID #</th>
-      <th scope="col">Status</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
       <th scope="col">Username</th>
       <th scope="col">Email</th>
+      <th scope="col">Status</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
@@ -158,30 +158,30 @@ if (mysqli_num_rows($result) > 0) {
         if($_SESSION['empID'] == $row['employeeID']){ 
         ?>
         <th class="bg-warning" scope="row"><?php echo $idno; ?></th>
+        <td class="bg-warning"><?php echo $fname; ?></td>
+        <td class="bg-warning"><?php echo $lname; ?></td>
+        <td class="bg-warning"><?php echo $uname; ?></td>
+        <td class="bg-warning"><?php echo $email; ?></td>
         <?php if($status == 1){ ?>
           <td class="bg-warning">Admin</td>
         <?php } else { ?>
           <td class="bg-warning">Employee</td>
         <?php } ?>
-        <td class="bg-warning"><?php echo $fname; ?></td>
-        <td class="bg-warning"><?php echo $lname; ?></td>
-        <td class="bg-warning"><?php echo $uname; ?></td>
-        <td class="bg-warning"><?php echo $email; ?></td>
         <td class="bg-warning" colspan="2">
             <a style="text-decoration: none;" class="badge text-bg-primary" href="<?php echo BASE_URL . '/admin/profile.php' ?>">My Profile</a>
         </td>
 
         <?php } else {?>
         <th scope="row"><?php echo $idno; ?></th>
+        <td><?php echo $fname; ?></td>
+        <td><?php echo $lname; ?></td>
+        <td><?php echo $uname; ?></td>
+        <td><?php echo $email; ?></td>
         <?php if($status == 1){ ?>
           <td>Admin</td>
         <?php } else { ?>
           <td>Employee</td>
         <?php } ?>
-        <td><?php echo $fname; ?></td>
-        <td><?php echo $lname; ?></td>
-        <td><?php echo $uname; ?></td>
-        <td><?php echo $email; ?></td>
         <td><a style="text-decoration: none;" class="badge text-bg-danger" href="manage-users.php?employeeID=<?php echo $employeeID; ?>">Delete</a></td>
         <?php }}} ?>
   </tbody>
