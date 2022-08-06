@@ -140,7 +140,7 @@ if(isset($_POST['update-company'])){
             <input class="form-control" id="czip" type="number" name="czip" value="<?php echo $czip; ?>" required>
          </div>
       <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
-      <input type="submit" name="update-company" value="update Company" class="btn btn-secondary">
+      <input type="submit" name="update-company" value="Update Company" class="btn btn-secondary">
       <?php 
        }
     } else {
