@@ -97,18 +97,27 @@ if(isset($_POST['add-department'])){
 
          <?php 
     $query ="SELECT company.companyname FROM department INNER JOIN company ON departments.deptID=company.companyID;";
-    $result = $conn->query($query);
-    if($result->num_rows> 0){
-      $options= mysqli_fetch_all($result, MYSQLI_ASSOC);
-    }
+    $all = mysqli_query($conn, $sql);
+      if($all) {
+          while ($row = mysqli_fetch_assoc($all)) {
+            $compname   = $row['companyname'];
+    // $result = $conn->query($query);
+    // if($result->num_rows> 0){
+    //   $options= mysqli_fetch_all($result, MYSQLI_ASSOC);
+    // }
 ?>
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="companyID">Department Name</label>
+            <!-- <label for="companyID">Department Name</label>
             <select class="form-control" name="companyID" id="companyID">
-                <?php foreach($options as $option) { ?>                         
-                    <option><?php echo $option['companyID']; ?></option>
-                <?php } ?>
-            </select>
+                <?php //foreach($options as $option) { ?>                         
+                    <option><?php //echo $option['companyID']; ?></option>
+                <?php //} ?>
+            </select> -->
+
+            <p><?php echo $compname; 
+            
+                }
+            }?></p>
          </div>
 
 
