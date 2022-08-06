@@ -123,7 +123,7 @@ if(isset($_GET['companyID'])) {
         <td><?php echo $cstate; ?></td>
         <td><?php echo $czip; ?></td>
         <td><a style="text-decoration: none;" class="badge text-bg-danger" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a></td>
-        <?php }}} ?>
+        <?php } ?>
         
    
       </tbody>
