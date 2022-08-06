@@ -29,7 +29,7 @@ if(isLoggedIn()){
 
 
 
-    <title>ETS | Home Page</title>
+    <title>WMS | Home Page</title>
 </head>
 <body>
     
