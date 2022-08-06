@@ -37,7 +37,7 @@ if(isset($_POST['update-company'])){
        mysqli_query($conn, $update);
        $success[] = 'Success';
        //header('location:' . BASE_URL . '/admin/companies.php');
-       header('Location: ' . $_SERVER['HTTP_REFERER']);
+    //    header('Location: ' . $_SERVER['HTTP_REFERER']);
        
     }else{
        
