@@ -142,7 +142,7 @@ if (mysqli_num_rows($result) > 0) {
   <tbody class="table-group-divider">
 
   <?php
-      $sql = "SELECT * FROM comapny";
+      $sql = "SELECT * FROM company";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
