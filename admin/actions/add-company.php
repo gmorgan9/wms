@@ -173,7 +173,7 @@ if(isset($_POST['add-company'])){
       <!-- end ROW -->
 
       <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
-      <input type="submit" name="add-company" value="Update User" class="btn btn-secondary">
+      <input type="submit" name="add-company" value="Add Company" class="btn btn-secondary">
       <?php 
 //       }
 //    } else {
