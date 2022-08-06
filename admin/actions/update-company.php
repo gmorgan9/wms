@@ -45,8 +45,8 @@ if(isset($_POST['update-company'])){
       
    } 
 };
-
-$select = " SELECT * FROM company WHERE companyID = '$compID' ";
+$companyID = $_GET['companyID'];
+$select = " SELECT * FROM company WHERE companyID = '$companyID' ";
 $result = mysqli_query($conn, $select);
 
 ?>
