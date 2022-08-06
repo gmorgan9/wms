@@ -33,8 +33,8 @@ if(isset($_POST['update-company'])){
       // $error[] = 'user already exist!';
       $update = "UPDATE company SET companyname = '$cname', ccity = '$ccity', cstate = '$cstate', czip = '$czip' where companyID = '$id' ";
       mysqli_query($conn, $update);
-      $success[] = 'Success';
-      //header('location:' . BASE_URL . '/admin/profile.php');
+      // $success[] = 'Success';
+      header('location:' . BASE_URL . '/admin/companies.php');
       
    }else{
       
@@ -88,7 +88,6 @@ if(isset($_POST['update-company'])){
 
 if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
-     // $acc_type = $row['acc_type'];
 ?>
 
   <div class="page-header mx-auto">
@@ -108,26 +107,10 @@ if (mysqli_num_rows($result) > 0) {
 <div class="page-content mx-auto">
 <form action="" method="post">
       <h3 class="mx-auto" style="width: 95%;">Admin Profile</h3>
-      <?php
-      // if(isset($error)){
-      //    foreach($error as $error){
-      //       echo '<span class="error-msg">'.$error.'</span>';
-      //    };
-      // };
-
-      if(isset($success)){
-         foreach($success as $success){
-            echo '<span class="error-msg">'.$success.'</span>';
-         };
-      };
-      ?> 
-      <div class="row" style="margin-left: 20px;">
-      <div class="form-group pt-3" style="width: 20%;">
+      <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="companyID">Company ID</label>
-            <input class="form-control" style="width: 90%" id="companyID" type="text" value="<?php echo $row['companyID']; ?>" name="companyID" disabled>
+            <input class="form-control" style="width: 20%" id="companyID" type="text" value="<?php echo $row['companyID']; ?>" name="companyID" disabled>
          </div>
-
-      <!-- <div class="row" style="margin-left: 20px;"> -->
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="companyname">Company Name</label>
             <input class="form-control" id="companyname" type="text" name="companyname" value="<?php echo $row['companyname']; ?>" required>
@@ -136,8 +119,6 @@ if (mysqli_num_rows($result) > 0) {
             <label for="ccity">City</label>
             <input class="form-control" id="ccity" type="text" name="ccity" value="<?php echo $row['ccity']; ?>" required>
          </div>
-      <!-- </div>end ROW -->
-      <!-- <div class="row" style="margin-left: 20px;"> -->
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="cstate">State</label>
             <input class="form-control" id="cstate" type="text" name="cstate" value="<?php echo $row['cstate']; ?>" required>
@@ -145,21 +126,7 @@ if (mysqli_num_rows($result) > 0) {
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="czip">Zip Code</label>
             <input class="form-control" id="czip" type="number" name="czip" value="<?php echo $row['czip']; ?>" required>
-         </div> 
-      <!-- </div> end ROW -->
-      <!-- <div class="row" style="margin-left: 20px;">
-         <div class="form-group pt-3" style="width: 48.6%;">
-            <label for="fname">Password</label>
-            <input class="form-control" id="password" type="password" name="password" value="<?php //echo $row['password']; ?>" required>
-            <i class="bi bi-eye-slash" id="togglePassword" style="cursor: pointer;"></i>  Show/Hide Password
-         </div>   
-         <div class="form-group pt-3" style="width: 48.6%;">
-            <label for="fname">Confirm Password</label>
-            <input class="form-control" id="cpassword" type="password" name="cpassword" value="<?php //echo $row['password']; ?>" required>
          </div>
-      </div> -->
-      <!-- end ROW -->
-
       <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
       <input type="submit" name="update-company" value="Update Company" class="btn btn-secondary">
       <?php 
