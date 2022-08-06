@@ -126,7 +126,7 @@ if(isset($_GET['employeeID'])) {
 </div> -->
 
 <!-- start PAGE-CONTENT -->
-<!-- <div class="page-content mx-auto">
+<div class="page-content mx-auto">
     <table class="table">
   <thead>
     <tr>
@@ -139,7 +139,7 @@ if(isset($_GET['employeeID'])) {
       <th scope="col">Actions</th>
     </tr>
   </thead>
-  <tbody class="table-group-divider"> -->
+  <tbody class="table-group-divider">
 
   <?php
       // $sql = "SELECT * FROM employee";
