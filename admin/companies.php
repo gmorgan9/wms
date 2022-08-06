@@ -103,9 +103,6 @@ if(isset($_GET['companyID'])) {
   <tbody class="table-group-divider">
 
   <?php
-  
-
-
       $sql = "SELECT * FROM company";
       $all = mysqli_query($conn, $sql);
       if($all) {
@@ -115,7 +112,7 @@ if(isset($_GET['companyID'])) {
             $ccity    = $row['ccity'];
             $cstate   = $row['cstate'];
             $czip     = $row['czip'];
-            ?>
+  ?>
     <tr>
         <th scope="row"><?php echo $compID; ?></th>
         <td><?php echo $cname; ?></td>
