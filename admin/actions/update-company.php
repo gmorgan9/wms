@@ -35,7 +35,7 @@ if(isset($_POST['update-company'])){
        // $error[] = 'user already exist!';
        $update = "UPDATE company SET companyname = '$cname', ccity = '$ccity', cstate = '$cstate', czip = '$czip' where companyID = '$compID' ";
        mysqli_query($conn, $update);
-       //$success[] = 'Success';
+       $success[] = 'Success';
        //header('location:' . BASE_URL . '/admin/companies.php');
        header('Location: ' . $_SERVER['HTTP_REFERER']);
        
@@ -109,6 +109,19 @@ if(isset($_POST['update-company'])){
 <div class="page-content mx-auto mt-2">
 <form action="" method="post">
       <h3 class="mx-auto" style="width: 95%;">Update Company Data</h3>
+      <?php
+    //   if(isset($error)){
+    //      foreach($error as $error){
+    //         echo '<span class="error-msg">'.$error.'</span>';
+    //      };
+    //   };
+
+      if(isset($success)){
+         foreach($success as $success){
+            echo '<span class="success-msg">'.$success.'</span>';
+         };
+      };
+      ?> 
       <?php
       $sql = "SELECT * FROM company";
       $all = mysqli_query($conn, $sql);
