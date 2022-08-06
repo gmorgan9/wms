@@ -130,7 +130,7 @@ if (mysqli_num_rows($result) > 0) {
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">ID #</th>
       <th scope="col">Status</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
@@ -146,7 +146,7 @@ if (mysqli_num_rows($result) > 0) {
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
-            $employeeID   =$row['employeeID'];
+            $idno   =$row['idno'];
             $fname  = $row['fname'];
             $lname  = $row['lname'];
             $uname  = $row['uname'];
@@ -157,7 +157,7 @@ if (mysqli_num_rows($result) > 0) {
         <?php 
         if($_SESSION['empID'] == $row['employeeID']){ 
         ?>
-        <th class="bg-warning" scope="row"><?php echo $employeeID; ?></th>
+        <th class="bg-warning" scope="row"><?php echo $idno; ?></th>
         <?php if($status == 1){ ?>
           <td class="bg-warning">Admin</td>
         <?php } else { ?>
@@ -172,7 +172,7 @@ if (mysqli_num_rows($result) > 0) {
         </td>
 
         <?php } else {?>
-        <th scope="row"><?php echo $employeeID; ?></th>
+        <th scope="row"><?php echo $idno; ?></th>
         <?php if($status == 1){ ?>
           <td>Admin</td>
         <?php } else { ?>
