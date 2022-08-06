@@ -1,4 +1,4 @@
-a<!-- WORKING -->
+<!-- WORKING -->
 <?php
 
 require_once "../../app/database/connection.php";
