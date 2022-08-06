@@ -71,11 +71,7 @@ if(isset($_GET['companyID'])) {
    
 <?php 
 
-  $select = " SELECT * FROM company";
-  $result = mysqli_query($conn, $select);
-
-  if (mysqli_num_rows($result) > 0) {
-    while($row = mysqli_fetch_assoc($result)) {
+  
 ?>
 
   <div class="page-header mx-auto">
@@ -112,6 +108,11 @@ if(isset($_GET['companyID'])) {
   <tbody class="table-group-divider">
 
   <?php
+  $select = " SELECT * FROM company";
+  $result = mysqli_query($conn, $select);
+
+  if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
       $sql = "SELECT * FROM company";
       $all = mysqli_query($conn, $sql);
       if($all) {
