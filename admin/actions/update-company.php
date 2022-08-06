@@ -27,7 +27,7 @@ if(isset($_POST['update-company'])){
     $cstate = mysqli_real_escape_string($conn, $_POST['cstate']);
     $czip = mysqli_real_escape_string($conn, $_POST['czip']);
  
-    $select = " SELECT * FROM company WHERE companyID = '$compID'";
+    $select = " SELECT * FROM company WHERE companyname = '$cname'";
     $update_result = mysqli_query($conn, $select);
  
     if(mysqli_num_rows($update_result) > 0){
