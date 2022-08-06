@@ -70,7 +70,11 @@ if(isset($_GET['companyID'])) {
 <div class="main"> 
    
 <?php 
+$select = " SELECT * FROM company";
+$result = mysqli_query($conn, $select);
 
+if (mysqli_num_rows($result) > 0) {
+  while($row = mysqli_fetch_assoc($result)) {
   
 ?>
 
@@ -108,11 +112,7 @@ if(isset($_GET['companyID'])) {
   <tbody class="table-group-divider">
 
   <?php
-  $select = " SELECT * FROM company";
-  $result = mysqli_query($conn, $select);
-
-  if (mysqli_num_rows($result) > 0) {
-    while($row = mysqli_fetch_assoc($result)) {
+  
 
 
       $sql = "SELECT * FROM company";
