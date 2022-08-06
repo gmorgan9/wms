@@ -15,37 +15,37 @@ if(!isAdmin()){
 }
 
 
-// $empID = $_SESSION['empID'];
-// $select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
-// $result = mysqli_query($conn, $select);
+$empID = $_SESSION['empID'];
+$select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
+$result = mysqli_query($conn, $select);
 
-// if(isset($_POST['update-profile'])){
+if(isset($_POST['update-profile'])){
 
-//    //$sID   = mysqli_real_escape_string($conn, $_POST['studentID']);
-//    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
-//    $lname = mysqli_real_escape_string($conn, $_POST['lname']);
-//    $uname = mysqli_real_escape_string($conn, $_POST['uname']);
-//    $email = mysqli_real_escape_string($conn, $_POST['email']);
-//    // $pass = md5($_POST['password']);
-//    // $cpass = md5($_POST['cpassword']);
-//    // $isadmin = $_POST['isadmin'];
+   //$sID   = mysqli_real_escape_string($conn, $_POST['studentID']);
+   $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+   $lname = mysqli_real_escape_string($conn, $_POST['lname']);
+   $uname = mysqli_real_escape_string($conn, $_POST['uname']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   // $pass = md5($_POST['password']);
+   // $cpass = md5($_POST['cpassword']);
+   // $isadmin = $_POST['isadmin'];
 
-//    $update_select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' ";
+   $update_select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' ";
 
-//    $update_result = mysqli_query($conn, $update_select);
+   $update_result = mysqli_query($conn, $update_select);
 
-//    if(mysqli_num_rows($result) > 0){
+   if(mysqli_num_rows($result) > 0){
 
-//       // $error[] = 'user already exist!';
-//       $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
-//       mysqli_query($conn, $update);
-//       $success[] = 'Success';
-//       header('location:' . BASE_URL . '/admin/profile.php');
+      // $error[] = 'user already exist!';
+      $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
+      mysqli_query($conn, $update);
+      $success[] = 'Success';
+      header('location:' . BASE_URL . '/admin/profile.php');
       
-//    }else{
+   }else{
       
-//    } 
-// };
+   } 
+};
 
 // Delete User
 if(isset($_GET['companyID'])) {
