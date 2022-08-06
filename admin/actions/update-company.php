@@ -108,7 +108,17 @@ if(isset($_POST['update-company'])){
 <div class="page-content mx-auto mt-2">
 <form action="" method="post">
       <h3 class="mx-auto" style="width: 95%;">Update Company Data</h3>
-      
+      <?php
+      $sql = "SELECT * FROM company";
+      $all = mysqli_query($conn, $sql);
+      if($all) {
+          while ($row = mysqli_fetch_assoc($all)) {
+            $compID   = $row['companyID'];
+            $cname    = $row['companyname'];
+            $ccity    = $row['ccity'];
+            $cstate   = $row['cstate'];
+            $czip     = $row['czip'];
+  ?>
       <div class="row" style="margin-left: 20px;">
       <div class="form-group pt-3" style="width: 20%;">
             <label for="studentID">Student ID</label>
@@ -134,10 +144,10 @@ if(isset($_POST['update-company'])){
       <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
       <input type="submit" name="add-company" value="Add Company" class="btn btn-secondary">
       <?php 
-//       }
-//    } else {
-//      echo "0 results";
-//    }
+       }
+    } else {
+      echo "0 results";
+    }
       ?>
    </form>
 </div>
