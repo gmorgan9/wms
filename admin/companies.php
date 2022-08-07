@@ -188,10 +188,10 @@ if(isset($_GET['companyID'])) {
       </div>
       <div class="modal-body">
         <?php 
-          $sql = "SELECT * FROM company where companyID = '$compID'";
-          $all = mysqli_query($conn, $sql);
-          if($all) {
-              while ($row = mysqli_fetch_assoc($all)) {
+          $new = "SELECT * FROM company where companyID = '$compID'";
+          $newa = mysqli_query($conn, $new);
+          if($newa) {
+              while ($row = mysqli_fetch_assoc($newa)) {
                 $compID   = $row['companyID'];
                 $idno     = $row['idno'];
                 $cname    = $row['companyname'];
