@@ -134,7 +134,7 @@ if(isset($_GET['companyID'])) {
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">ID #</th>
+      <th scope="col" style="font-size: 14px;">ID #</th>
       <th scope="col" style="font-size: 14px;">Company Name</th>
       <!-- <th scope="col">City</th>
       <th scope="col">State</th>

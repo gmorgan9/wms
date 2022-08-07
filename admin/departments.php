@@ -150,12 +150,12 @@ if(isset($_GET['deptID'])) {
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">ID #</th>
-      <th scope="col">Department Name</th>
-      <th scope="col">Company</th>
+      <th scope="col" style="font-size: 14px;">ID #</th>
+      <th scope="col" style="font-size: 14px;">Department Name</th>
+      <th scope="col" style="font-size: 14px;">Company</th>
       <!-- <th scope="col">State</th>
       <th scope="col">Zip Code</th> -->
-      <th scope="col">Actions</th>
+      <th scope="col" style="font-size: 14px;">Actions</th>
     </tr>
   </thead>
   <tbody class="table-group-divider">

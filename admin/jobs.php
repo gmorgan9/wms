@@ -150,13 +150,13 @@ if(isset($_GET['jobID'])) {
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">ID #</th>
-      <th scope="col">Job Title</th>
-      <th scope="col">Department</th>
+      <th scope="col" style="font-size: 14px;">ID #</th>
+      <th scope="col" style="font-size: 14px;">Job Title</th>
+      <th scope="col" style="font-size: 14px;">Department</th>
       <!-- <th scope="col">City</th>
       <th scope="col">State</th>
       <th scope="col">Zip Code</th> -->
-      <th scope="col">Actions</th>
+      <th scope="col" style="font-size: 14px;">Actions</th>
     </tr>
   </thead>
   <tbody class="table-group-divider">
