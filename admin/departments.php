@@ -208,9 +208,9 @@ if(isset($_GET['deptID'])) {
                 $deptID   = $row['deptID'];
                 $deptname    = $row['deptname'];
         ?>
-        <div class="alert alert-danger" role="alert">
-        <span style="font-size: 10px;">This will delete all corresponding jobs with this department.</span>
-        </div>
+       
+        <span class="badge text-bg-danger" style="font-size: 10px;">This will delete all corresponding jobs with this department.</span>
+   
         <br>
         Are you sure you want to delete: <span class="text-muted"><?php echo $deptname; ?></span>?
         <?php }
