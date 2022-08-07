@@ -149,7 +149,7 @@ if(isset($_GET['jobID'])) {
     <tr>
       <th scope="col">ID #</th>
       <th scope="col">Job Title</th>
-      <th scope="col">Department Name</th>
+      <th scope="col">Department</th>
       <!-- <th scope="col">City</th>
       <th scope="col">State</th>
       <th scope="col">Zip Code</th> -->
