@@ -292,7 +292,7 @@ if (mysqli_num_rows($result) > 0) {
             <hr style="margin-bottom: -5px; margin-top: 5px;">
 
             <?php 
-            $count = "SELECT * FROM job";
+            $count = "SELECT * FROM job WHERE employee_code = '$empID'";
             $result_count = mysqli_query($conn, $count);
             $num_rows = mysqli_num_rows($result_count);
 
