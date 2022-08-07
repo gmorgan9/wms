@@ -108,7 +108,8 @@ if (mysqli_num_rows($result) > 0) {
 
 <div class="page-content mx-auto mt-2">
 <form action="" method="post">
-      <h3 class="mx-auto" style="width: 95%;">Admin Profile</h3>
+      <span class="mx-auto text-muted" style="width: 95%;">Admin Profile</span>
+      <hr>
       <div class="row" style="margin-left: 20px;">
       <div class="form-group pt-3" style="width: 20%;">
             <label for="idno">Employee ID Number</label>
