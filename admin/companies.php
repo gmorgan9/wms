@@ -111,7 +111,7 @@ if(isset($_GET['companyID'])) {
 
 
 <!-- start PAGE-CONTENT -->
-<div class="page-content mt-2 float-start" style="width: 23%;">
+<div class="page-content mt-2 float-start" style="width: 23%;margin-left: 0;">
   <form action="" method="post">
     <!-- <h6 class="mx-auto" style="width: 95%;">Add Company</h6> -->
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
