@@ -291,6 +291,14 @@ if (mysqli_num_rows($result) > 0) {
             </div>
             <hr style="margin-bottom: -5px; margin-top: 5px;">
 
+            <?php 
+            $count = "SELECT * FROM job";
+            $result_count = mysql_query($conn, $count);
+            $num_rows = mysql_num_rows($result_count);
+
+            ?>
+            Number of Jobs: <?php echo $num_rows ?>
+
 
 
             <!-- <form action="" method="post"> -->
