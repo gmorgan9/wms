@@ -149,8 +149,8 @@ if(isset($_GET['deptID'])) {
     <tr>
       <th scope="col">ID #</th>
       <th scope="col">Department Name</th>
-      <!-- <th scope="col">City</th>
-      <th scope="col">State</th>
+      <th scope="col">Company</th>
+      <!-- <th scope="col">State</th>
       <th scope="col">Zip Code</th> -->
       <th scope="col">Actions</th>
     </tr>
@@ -158,18 +158,19 @@ if(isset($_GET['deptID'])) {
   <tbody class="table-group-divider">
 
   <?php
-      $sql = "SELECT * FROM department";
+      $sql = "SELECT department.*, company.* FROM department INNER JOIN company ON company.companyID = department.company_code;";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
             $deptID   = $row['deptID'];
             $idno     = $row['idno'];
             $deptname    = $row['deptname'];
-            //$compID    = $row['compID'];
+            $companyname    = $row['companyname'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $deptname; ?></td>
+        <td><?php echo $companyname; ?></td>
         <td><a style="text-decoration: none;" class="badge text-bg-danger" href="departments.php?deptID=<?php echo $deptID; ?>">Delete</a></td>
         <?php } ?>
         
