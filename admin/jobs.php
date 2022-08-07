@@ -115,17 +115,14 @@ if(isset($_GET['jobID'])) {
     <!-- <h6 class="mx-auto" style="width: 95%;">Add Company</h6> -->
      <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="dept_code" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
-      
       <select class="form-control" name="dept_code" id="dept_code">
       <?php
       $sql = "SELECT * FROM department";
-      
       if($result = mysqli_query($conn, $sql)) {
         if(mysqli_num_rows($result) > 0) {
           while($row = mysqli_fetch_array($result)) {
             $option = $row['deptname'];
             $dept_code = $row['deptID'];
-
             echo "<option id='dept_code' name='dept_code' value=". $dept_code .">". $option. "</option>";
           }
         }
