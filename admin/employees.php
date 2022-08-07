@@ -242,7 +242,7 @@ if (mysqli_num_rows($result) > 0) {
               <div class="form-group pt-1 mx-auto" style="width: 95%;">
                 <label for="gender">Gender</label>
                 <!-- <input class="form-control" id="fname" type="text" name="fname" value="<?php //echo $row['fname']; ?>" required> -->
-                <select name="gender" id="gender">
+                <select class="form-control" name="gender" id="gender">
                   <option value="" active>Select an Option...</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
