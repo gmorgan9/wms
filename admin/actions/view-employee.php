@@ -102,7 +102,7 @@ if (mysqli_num_rows($result) > 0) {
     <ul class="breadcrumb">
       <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
       <li><a href="<?php echo BASE_URL . '/pages/employees.php' ?>">Employees</a></li>
-      <li>Viewing: <span style="text-transform: capitalize"><?php echo $row['fname']; ?>  </span></li>
+      <li>Viewing Employee: <span style="text-transform: capitalize"><?php echo $row['fname']; ?>  </span></li>
     </ul>
   </div>
 
