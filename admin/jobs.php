@@ -20,7 +20,7 @@ if(isset($_POST['add-job'])){
   $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
   $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
   $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
-  $dept_code = mysqli_real_escape_string($conn, $_POST['dept_code']);
+  // $dept_code = mysqli_real_escape_string($conn, $_POST['dept_code']);
   //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
 
   $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
@@ -152,7 +152,7 @@ if(isset($_GET['jobID'])) {
     <tr>
       <th scope="col">ID #</th>
       <th scope="col">Job Title</th>
-      <th scope="col">Department Name</th>
+      <!-- <th scope="col">Department Name</th> -->
       <!-- <th scope="col">City</th>
       <th scope="col">State</th>
       <th scope="col">Zip Code</th> -->
@@ -162,7 +162,7 @@ if(isset($_GET['jobID'])) {
   <tbody class="table-group-divider">
 
   <?php
-      $sql = "SELECT job.*, department.* FROM job INNER JOIN department ON department.deptID = job.dept_code";
+      $sql = "SELECT * FROM job;";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
@@ -174,7 +174,7 @@ if(isset($_GET['jobID'])) {
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
-        <td><?php echo $deptname; ?></td>
+        <!-- <td><?php //echo $deptname; ?></td> -->
         <td><a style="text-decoration: none;" class="badge text-bg-danger" href="departments.php?deptID=<?php echo $deptID; ?>">Delete</a></td>
         <?php } ?>
         
