@@ -169,13 +169,13 @@ if(isset($_GET['jobID'])) {
             $jobID   = $row['jobID'];
             $idno     = $row['idno'];
             $jobtitle    = $row['jobtitle'];
-            $deptname    = $row['deptname'];
+            // $deptname    = $row['deptname'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
         <!-- <td><?php //echo $deptname; ?></td> -->
-        <td><a style="text-decoration: none;" class="badge text-bg-danger" href="departments.php?deptID=<?php echo $jobID; ?>">Delete</a></td>
+        <td><a style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
         <?php } ?>
         
    
