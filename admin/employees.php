@@ -231,12 +231,12 @@ if (mysqli_num_rows($result) > 0) {
               <hr>
               <div class="row">
                 <div class="form-group" style="width: 40%;">
-                  <label for="idno">First Name</label>
-                  <input class="form-control" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" required>
+                  <label for="fname">First Name</label>
+                  <input class="form-control" id="fname" type="text" value="<?php echo $row['fname']; ?>" name="fname" required>
                 </div>
                 <div class="form-group" style="width: 40%;">
-                  <label for="status">Last Name</label>
-                  <input class="form-control" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" required>
+                  <label for="lname">Last Name</label>
+                  <input class="form-control" id="lname" type="text" value="<?php echo $row['lname']; ?>" name="lname" required>
                 </div>
               </div>
               <div class="form-group pt-1 mx-auto" style="width: 95%;">
