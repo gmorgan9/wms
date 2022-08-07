@@ -280,7 +280,7 @@ if (mysqli_num_rows($result) > 0) {
 
             <?php 
             $id = $_GET['employeeID'];
-            $new = " SELECT employee.*, employee_company_data.* FROM employee INNER JOIN employee_company_data ON employee.employeeID = employee_company_data.employee_code";
+            $new = " SELECT employee.*, employee_company_data.* FROM employee INNER JOIN employee_company_data ON employee.employeeID = employee_company_data.employee_code WHERE employee.employeeID = '$empID' ";
             $newresult = mysqli_query($conn, $new);          
             if (mysqli_num_rows($newresult) > 0) {
                while($newrow = mysqli_fetch_assoc($newresult)) {
