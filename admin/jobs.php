@@ -138,7 +138,6 @@ if(isset($_GET['jobID'])) {
           while($row = mysqli_fetch_array($result)) {
             $option = $row['deptname'];
             $dept_code = $row['deptID'];
-            $company_code = $row['company_code'];
             echo "<option id='dept_code' name='dept_code' selected value=". $dept_code .">". $option. "</option>";
           }
         }
@@ -146,10 +145,6 @@ if(isset($_GET['jobID'])) {
        ?>
       </select>
     </div>
-    <!-- <div  class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label  for="company_code" style="font-size: 14px;">Test <span class="text-muted" style="font-size: 10px;">e.g. "Cheif Executive Officer"</span></label>
-      <input class="form-control"  id="company_code" type="text" name="company_code" value="<?php echo $selected ?>">
-    </div> -->
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="jobtitle" style="font-size: 14px;">Job Title <span class="text-muted" style="font-size: 10px;">e.g. "Cheif Executive Officer"</span></label>
       <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="" required>
