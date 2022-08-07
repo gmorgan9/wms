@@ -84,7 +84,7 @@ if(isset($_GET['companyID'])) {
 </div> -->
 
 <!-- start PAGE-CONTENT -->
-<div class="page-content mr-1 mt-2 w-50 d-grid d-md-flex justify-content-md-end">
+<div class="page-content mr-1 mt-2 w-50 d-md-flex justify-content-md-end">
 <div class="d-grid d-md-flex justify-content-md-end">
   <button class="badge text-bg-secondary" style="border-color: rgba(0,0,0,0);" type="button"><a style="color: white; text-decoration:none;" href="<?php echo BASE_URL . '/admin/actions/add-company.php' ?>"><i class="bi bi-plus-lg"></i> Company</a></button>
   <!-- <button class="btn btn-primary" type="button">Button</button> -->
