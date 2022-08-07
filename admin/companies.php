@@ -92,12 +92,12 @@ if(isset($_GET['companyID'])) {
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">ID #</th>
+      <!-- <th scope="col">ID #</th> -->
       <th scope="col">Company Name</th>
-      <th scope="col">City</th>
+      <!-- <th scope="col">City</th>
       <th scope="col">State</th>
       <th scope="col">Zip Code</th>
-      <th scope="col">Actions</th>
+      <th scope="col">Actions</th> -->
     </tr>
   </thead>
   <tbody class="table-group-divider">
@@ -115,11 +115,11 @@ if(isset($_GET['companyID'])) {
             $czip     = $row['czip'];
   ?>
     <tr>
-        <th scope="row"><?php echo $idno; ?></th>
+        <!-- <th scope="row"><?php //echo $idno; ?></th> -->
         <td><?php echo $cname; ?></td>
-        <td><?php echo $ccity; ?></td>
-        <td><?php echo $cstate; ?></td>
-        <td><?php echo $czip; ?></td>
+        <!-- <td><?php //echo $ccity; ?></td>
+        <td><?php //echo $cstate; ?></td>
+        <td><?php //echo $czip; ?></td> -->
         <td><a style="text-decoration: none;" class="badge text-bg-warning" href="/admin/actions/update-company.php?companyID=<?php echo $compID; ?>">Update</a>
         <a style="text-decoration: none;" class="badge text-bg-danger" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a></td>
         <?php } ?>
