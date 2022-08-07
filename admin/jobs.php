@@ -152,7 +152,7 @@ if(isset($_GET['jobID'])) {
     <tr>
       <th scope="col">ID #</th>
       <th scope="col">Job Title</th>
-      <!-- <th scope="col">Department Name</th> -->
+      <th scope="col">Department Name</th>
       <!-- <th scope="col">City</th>
       <th scope="col">State</th>
       <th scope="col">Zip Code</th> -->
@@ -162,19 +162,19 @@ if(isset($_GET['jobID'])) {
   <tbody class="table-group-divider">
 
   <?php
-      $sql = "SELECT * FROM job;";
+      $sql = "SELECT jobs.*, department.* FROM job INNER JOIN department ON department.deptID = job.dept_code;";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
             $jobID   = $row['jobID'];
             $idno     = $row['idno'];
             $jobtitle    = $row['jobtitle'];
-            // $deptname    = $row['deptname'];
+            $deptname    = $row['deptname'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
-        <!-- <td><?php //echo $deptname; ?></td> -->
+        <td><?php echo $deptname; ?></td>
         <td><a style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
         <?php } ?>
         
