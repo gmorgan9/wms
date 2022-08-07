@@ -51,7 +51,7 @@ if(isset($_POST['update-profile'])){
 if(isset($_GET['employeeID'])) {
     $id = $_GET['employeeID'];
 
-    $sql = "DELETE FROM employees WHERE employeeID = $id";
+    $sql = "DELETE FROM employee WHERE employeeID = $id";
     $delete = mysqli_query($conn, $sql);
     if($delete) {
         // echo "Deleted Successfully";
