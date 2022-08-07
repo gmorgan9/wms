@@ -295,13 +295,14 @@ if (mysqli_num_rows($result) > 0) {
             $count = "SELECT * FROM job WHERE employee_code = '$empID'";
             $result_count = mysqli_query($conn, $count);
             if (mysqli_num_rows($result_count) > 0) {
-              while($newrow = mysqli_fetch_assoc($result_count)) {
+              while($count_row = mysqli_fetch_assoc($result_count)) {
+
 
             ?>
             <span class="fs-6" style="margin-top: 5px;">Employee Jobs</span>
-            <p><?php echo $newrow['jobtitle']; ?></p>
+            <p><?php echo $count_row['jobtitle']; ?></p>
 
-
+<?php } } ?>
 
 
             <!-- <form action="" method="post"> -->
