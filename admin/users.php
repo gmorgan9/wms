@@ -155,7 +155,7 @@ if (mysqli_num_rows($result) > 0) {
             ?>
     <tr>
         <?php 
-        if($_SESSION['empID'] == $row['employeeID']){ 
+        if($_SESSION['empID'] != $row['employeeID']){ 
         ?>
         <th class="bg-warning" scope="row"><?php echo $idno; ?></th>
         <td class="bg-warning"><?php echo $fname; ?></td>
