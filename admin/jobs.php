@@ -117,7 +117,8 @@ if(isset($_GET['deptID'])) {
       <!-- <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="" required> -->
       <select class="form-control" name="jobtitle" id="jobtitle">
       <?php
-      $sql = "SELECT uname FROM employee";
+      $sql = "SELECT department.dept_name FROM department ,job WHERE  department.deptID = job.dept_code";
+      
       if($result = mysqli_query($conn, $sql)) {
         if(mysqli_num_rows($result) > 0) {
           while($row = mysqli_fetch_array($result)) {
