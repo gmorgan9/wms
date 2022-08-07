@@ -305,26 +305,46 @@ if (mysqli_num_rows($result) > 0) {
             ?>
 
             <form action="" method="post">
-              <span class="mx-auto text-muted" style="padding-top: 10px; width: 95%;">Personal Information</span>
-              <hr>
-              <div class="form-group pt-1 mx-auto" style="width: 95%;">
-                <label for="idno">Company</label>
-                <input class="form-control" id="idno" type="text" value="<?php echo $newrow['idno']; ?>" name="idno" required>
+              <div class="section-header pt-3">
+                <span class="text-muted pt-4" style="width: 95%;">Personal Information</span>
               </div>
-              <div class="form-group pt-3 mx-auto" style="width: 95%;">
-                <label for="status">Department</label>
-                <input class="form-control" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" required>
+              <hr style="margin-bottom: -5px; margin-top: 5px;">
+              <div class="row">
+                <div class="form-group pt-3" style="width: 48%;">
+                  <label for="fname">First Name</label>
+                  <input class="form-control" id="fname" type="text" value="<?php echo $row['fname']; ?>" name="fname" required>
+                </div>
+                <div class="form-group pt-3" style="width: 48%;">
+                  <label for="lname">Last Name</label>
+                  <input class="form-control" id="lname" type="text" value="<?php echo $row['lname']; ?>" name="lname" required>
+                </div>
               </div>
-              <div class="form-group pt-1 mx-auto" style="width: 95%;">
-                <label for="fname">Job Title / Position</label>
-                <input class="form-control" id="fname" type="text" name="fname" value="<?php echo $row['fname']; ?>" required>
+              <div class="form-group pt-3" style="width: 95%;">
+                <label for="uname">Username</label>
+                <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
               </div>
-              <div class="form-group pt-3 mx-auto" style="width: 95%;">
-                <label for="lname">Company Email</label>
-                <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['lname']; ?>" required>
+              <div class="form-group pt-3" style="width: 95%;">
+                <label for="lname">Email <span class="text-muted" style="font-size: 10px;">Personal</span></label>
+                <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['email']; ?>" required>
               </div>
-              <span class="mx-auto text-muted" style="padding-top: 10px; width: 95%;">Employment Information</span>
-              <hr>
+              <div class="form-group pt-3" style="width: 95%;">
+                <label for="gender">Gender</label>
+                <!-- <input class="form-control" id="fname" type="text" name="fname" value="<?php //echo $row['fname']; ?>" required> -->
+                <select class="form-control" name="gender" id="gender">
+                  <option value="" active>Select an option...</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+              <div class="form-group pt-3" style="width: 95%;">
+                <label for="avatar">Profile Picture</label>
+                <input class="form-control" type="file" id="avatar" name="avatar">
+              </div>
+              <!-- Other -->
+              <div class="section-header pt-3">
+                <span class="text-muted pt-4" style="width: 95%;">Employment Information</span>
+              </div>
+              <hr style="margin-bottom: -5px; margin-top: 5px;">
               <div class="form-group pt-3 mx-auto" style="width: 95%;">
                 <label for="uname">Employment Type</label>
                 <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
