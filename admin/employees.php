@@ -208,7 +208,7 @@ if (mysqli_num_rows($result) > 0) {
         <span class="badge text-bg-danger" style="font-size: 10px;">Be Careful! This will delete all data corresponding with this employee!</span>
         <br>
         <br>
-        Are you sure you want to delete: <span class="text-muted"><?php echo $deptname; ?></span>?
+        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
         <?php }
         } ?>
       </div>
