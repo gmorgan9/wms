@@ -108,7 +108,7 @@ if (mysqli_num_rows($result) > 0) {
 
 <div class="page-content mx-auto mt-2">
 <form action="" method="post">
-      <span class="mx-auto text-muted" style="width: 95%;">Admin Profile</span>
+      <span class="mx-auto text-muted" style="margin-top: 10px; width: 95%;">Admin Profile</span>
       <hr>
       <div class="row" style="margin-left: 20px;">
       <div class="form-group pt-3" style="width: 20%;">
