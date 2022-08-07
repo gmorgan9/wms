@@ -127,12 +127,12 @@ if (mysqli_num_rows($result) > 0) {
       ?> 
       <div class="row" style="margin-left: 20px;">
       <div class="form-group pt-3" style="width: 20%;">
-            <label for="idno">Student ID</label>
+            <label for="idno">Employee ID Number</label>
             <input class="form-control" style="width: 90%" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" disabled>
          </div>
 
          <div class="form-group pt-3" style="width: 20%;">
-            <label for="status">Account Status</label>
+            <label for="status">Account Type</label>
             <?php
             if($acc_type == 1){ 
             ?>
