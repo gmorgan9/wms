@@ -111,9 +111,11 @@ if(isset($_GET['companyID'])) {
 
 
 <!-- start PAGE-CONTENT -->
+
 <div class="page-content mr-1 mt-2 float-start" style="width: 30%; margin-left: -60px;">
+<h6 class="mx-auto" style="width: 95%;">Add Company</h6>
   <form action="" method="post">
-    <!-- <h6 class="mx-auto" style="width: 95%;">Add Company</h6> -->
+    <!--  -->
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="companyname">Company Name <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
       <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
