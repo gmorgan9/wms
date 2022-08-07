@@ -286,33 +286,38 @@ if (mysqli_num_rows($result) > 0) {
                while($newrow = mysqli_fetch_assoc($newresult)) {
                   $acc_type = $newrow['acc_type'];
             ?>
+            <div class="section-header pt-3">
+                <span class="text-muted pt-4" style="width: 95%;">Employee Details</span>
+            </div>
+            <hr style="margin-bottom: -5px; margin-top: 5px;">
 
-            <form action="" method="post">
-              <div class="section-header pt-3">
-                <span class="text-muted pt-4" style="width: 95%;">Personal Information</span>
+
+
+            <!-- <form action="" method="post"> -->
+              <!-- <div class="section-header pt-3">
+                <span class="text-muted pt-4" style="width: 95%;">Employee Details</span>
               </div>
               <hr style="margin-bottom: -5px; margin-top: 5px;">
               <div class="row">
                 <div class="form-group pt-3" style="width: 48%;">
                   <label for="fname">First Name</label>
-                  <input class="form-control" id="fname" type="text" value="<?php echo $row['fname']; ?>" name="fname" required>
+                  <input class="form-control" id="fname" type="text" value="<?php //echo $row['fname']; ?>" name="fname" required>
                 </div>
                 <div class="form-group pt-3" style="width: 48%;">
                   <label for="lname">Last Name</label>
-                  <input class="form-control" id="lname" type="text" value="<?php echo $row['lname']; ?>" name="lname" required>
+                  <input class="form-control" id="lname" type="text" value="<?php //echo $row['lname']; ?>" name="lname" required>
                 </div>
               </div>
               <div class="form-group pt-3" style="width: 95%;">
                 <label for="uname">Username</label>
-                <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
+                <input class="form-control" id="uname" type="text" name="uname" value="<?php //echo $row['uname']; ?>" required>
               </div>
               <div class="form-group pt-3" style="width: 95%;">
                 <label for="lname">Email <span class="text-muted" style="font-size: 10px;">Personal</span></label>
-                <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['email']; ?>" required>
+                <input class="form-control" id="lname" type="text" name="lname" value="<?php //echo $row['email']; ?>" required>
               </div>
               <div class="form-group pt-3" style="width: 95%;">
                 <label for="gender">Gender</label>
-                <!-- <input class="form-control" id="fname" type="text" name="fname" value="<?php //echo $row['fname']; ?>" required> -->
                 <select class="form-control" name="gender" id="gender">
                   <option value="" active>Select an option...</option>
                   <option value="male">Male</option>
@@ -323,30 +328,29 @@ if (mysqli_num_rows($result) > 0) {
                 <label for="avatar">Profile Picture</label>
                 <input class="form-control" type="file" id="avatar" name="avatar">
               </div>
-              <!-- Other -->
               <div class="section-header pt-3">
                 <span class="text-muted pt-4" style="width: 95%;">Employment Information</span>
               </div>
               <hr style="margin-bottom: -5px; margin-top: 5px;">
               <div class="form-group pt-3 mx-auto" style="width: 95%;">
                 <label for="uname">Employment Type</label>
-                <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
+                <input class="form-control" id="uname" type="text" name="uname" value="<?php //echo $row['uname']; ?>" required>
               </div>   
               <div class="form-group pt-3 mx-auto" style="width: 95%;">
                 <label for="email">Employee Status</label>
-                <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
+                <input class="form-control" id="email" type="email" name="email" value="<?php //echo $row['email']; ?>" required>
               </div> 
               <div class="form-group pt-3 mx-auto" style="width: 95%;">
                 <label for="email">Official Start Date</label>
-                <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
-              </div> 
+                <input class="form-control" id="email" type="email" name="email" value="<?php //echo $row['email']; ?>" required>
+              </div>  -->
               <?php 
                 }
               } else {
                 echo "0 results";
               }
               ?>
-            </form>
+            <!-- </form> -->
 
 
             <!-- end col -->
