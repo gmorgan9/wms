@@ -216,7 +216,7 @@ if (mysqli_num_rows($result) > 0) {
         Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
         Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
         Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
-<br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
         Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
         Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
