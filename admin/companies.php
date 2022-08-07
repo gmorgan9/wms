@@ -87,13 +87,13 @@ if(isset($_GET['companyID'])) {
 <!-- start PAGE-CONTENT -->
 <div class="page-content mr-1 mt-2 float-start" style="width: 30%; margin-left: -60px;">
   <form action="" method="post">
-    <h3 class="mx-auto" style="width: 95%;">Add Company Data</h3>
+    <h5 class="mx-auto" style="width: 95%;">Add Company</h5>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="companyname">Company Name</label>
       <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
-      <input type="submit" name="add-company" value="Add Company" class="btn btn-secondary">
+      <input type="submit" name="add-company" value="Add Company" class="badge badge-secondary">
     </div>
   </form>
 
