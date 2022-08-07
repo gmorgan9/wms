@@ -313,11 +313,11 @@ if (mysqli_num_rows($result) > 0) {
                 <span class="fs-6 fw-bold pt-4" style="width: 95%;">Designation</span>
               </div>
               <hr style="margin-bottom: -5px; margin-top: 5px;">
-              <div class="form-group pt-3" style="width: 48%;">
+              <div class="form-group pt-3" style="width: 95%;">
                 <label for="companyname">Company</label>
                 <input class="form-control" id="companyname" type="text" value="<?php echo $row['companyname']; ?>" name="companyname" required>
               </div>
-              <div class="form-group pt-3" style="width: 48%;">
+              <div class="form-group pt-3" style="width: 95%;">
                 <label for="lname">Last Name</label>
                 <input class="form-control" id="lname" type="text" value="<?php echo $row['lname']; ?>" name="lname" required>
               </div>
