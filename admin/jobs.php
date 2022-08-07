@@ -14,6 +14,19 @@ if(!isAdmin()){
   header('location: /dashboard.php');
 }
 
+
+
+$sql = "SELECT job.*, department.* FROM job INNER JOIN department ON department.deptID = job.dept_code;";
+      $all = mysqli_query($conn, $sql);
+      if($all) {
+          while ($row = mysqli_fetch_assoc($all)) {
+            $company_code = $row['company_code'];
+
+          }}
+
+
+
+
 // Add Department
 if(isset($_POST['add-job'])){
 
@@ -36,7 +49,7 @@ if(isset($_POST['add-job'])){
 
   }else{
         
-        $insert = "INSERT INTO job (idno, jobtitle, dept_code, company_code) VALUES('$idno', '$jobtitle', '$dept_code', '$comp_code')";
+        $insert = "INSERT INTO job (idno, jobtitle, dept_code, company_code) VALUES('$idno', '$jobtitle', '$dept_code', '$company_code')";
         //$compdata2 = "INSERT INTO employee_company_data (company_code) SELECT company_code FROM department WHERE deptID= '$dept_code'";
         $compdata = "INSERT INTO employee_company_data (dept_code, job_code) SELECT dept_code, jobID FROM job";
         
@@ -168,7 +181,7 @@ if(isset($_GET['jobID'])) {
       <th scope="col" style="font-size: 14px;">ID #</th>
       <th scope="col" style="font-size: 14px;">Job Title</th>
       <th scope="col" style="font-size: 14px;">Department</th>
-      <th scope="col" style="font-size: 14px;">Company</th>
+      <th scope="col" style="font-size: 14px;">Department</th>
       <!-- <th scope="col">City</th>
       <th scope="col">State</th>
       <th scope="col">Zip Code</th> -->
