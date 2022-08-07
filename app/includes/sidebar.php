@@ -26,9 +26,9 @@
                 <br>
                 <span style="margin-left: 38px; margin-bottom: -10px;">Admin Links</span>
                 <hr>
-                <a style="margin-top: -15px;" href="<?php echo BASE_URL . '/admin/users.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                <a style="margin-top: -15px;" href="<?php echo BASE_URL . '/admin/employees.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                     <i class="bi bi-person-badge"></i>
-                    <span>  Users</span>
+                    <span>  Employees</span>
                 </a>
                 <a href="<?php echo BASE_URL . '/admin/companies.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                     <i class="bi bi-building"></i>
