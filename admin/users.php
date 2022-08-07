@@ -166,7 +166,7 @@ if (mysqli_num_rows($result) > 0) {
           <td>Employee</td>
         <?php } ?>
         <td>
-          <a style="text-decoration: none;" class="badge text-bg-success" href="action/view-user.php?employeeID=<?php echo $employeeID; ?>">View</a>
+          <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-user.php?employeeID=<?php echo $employeeID; ?>">View</a>
           <a style="text-decoration: none;" class="badge text-bg-danger" href="users.php?employeeID=<?php echo $employeeID; ?>">Delete</a>
         </td>
         <?php } else { }}}?>
