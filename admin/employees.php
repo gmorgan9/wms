@@ -346,8 +346,8 @@ if (mysqli_num_rows($result) > 0) {
               </div>
               <hr style="margin-bottom: -5px; margin-top: 5px;">
               <div class="form-group pt-3" style="width: 95%;">
-                <label for="uname">Employment Type</label>
-                <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
+                <label for="employmenttype">Employment Type</label>
+                <input class="form-control" id="employmenttype" type="text" name="employmenttype" value="<?php echo $row['employmenttype']; ?>" required>
               </div>   
               <div class="form-group pt-3" style="width: 95%;">
                 <label for="status">Employment Status</label>
@@ -358,8 +358,8 @@ if (mysqli_num_rows($result) > 0) {
                 </select>
               </div>
               <div class="form-group pt-3" style="width: 95%;">
-                <label for="email">Official Start Date</label>
-                <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
+                <label for="startdate">Official Start Date</label>
+                <input class="form-control" id="startdate" type="text" name="startdate" value="<?php echo $row['startdate']; ?>" required>
               </div> 
               <?php 
                 }
