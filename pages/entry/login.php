@@ -40,7 +40,7 @@ if(isset($_POST['submit'])){
             echo "Error updating record: " . mysqli_error($conn);
           }
          
-          $_SESSION['admin_fname'] = $row['fname'];
+          $_SESSION['fname'] = $row['fname'];
           $_SESSION['empID'] = $row['employeeID'];
           $_SESSION['loggedin'] = $row['loggedin'];
           $_SESSION['admin_lname'] = $row['lname'];
@@ -56,7 +56,7 @@ if(isset($_POST['submit'])){
           } else {
             echo "Error updating record: " . mysqli_error($conn);
           }
-          $_SESSION['user_fname'] = $row['fname'];
+          $_SESSION['fname'] = $row['fname'];
           $_SESSION['empID'] = $row['employeeID'];
           $_SESSION['loggedin'] = $row['loggedin'];
           $_SESSION['user_lname'] = $row['lname'];
