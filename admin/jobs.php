@@ -60,7 +60,7 @@ if(isset($_GET['deptID'])) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>WMS | Departments</title>
+   <title>WMS | Jobs</title>
 
    <!-- Custom Styles -->
    <link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/other-style.css?v='. time(); ?>">
@@ -94,10 +94,10 @@ if(isset($_GET['deptID'])) {
 <div class="main"> 
 
   <div class="page-header mx-auto">
-    <p class="page_title" style="float: left; padding-top: 2px;">Departments</p>
+    <p class="page_title" style="float: left; padding-top: 2px;">Jobs</p>
     <ul class="breadcrumb">
       <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
-      <li>Departments</li>
+      <li>Jobs</li>
     </ul>
   </div>
 
@@ -113,11 +113,11 @@ if(isset($_GET['deptID'])) {
   <form action="" method="post">
     <!-- <h6 class="mx-auto" style="width: 95%;">Add Company</h6> -->
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="deptname" style="font-size: 14px;">Department Name <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
-      <input class="form-control" id="deptname" type="text" name="deptname" value="" required>
+      <label for="jobtitle" style="font-size: 14px;">Job Title <span class="text-muted" style="font-size: 10px;">e.g. "Cheif Executive Officer"</span></label>
+      <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
-      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-department" class="badge text-bg-secondary">Add Department</button>
+      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-job" class="badge text-bg-secondary">Add Job</button>
     </div>
   </form>
 
