@@ -21,7 +21,7 @@ $result = mysqli_query($conn, $select);
 
 if(isset($_POST['update-profile'])){
 
-   //$sID   = mysqli_real_escape_string($conn, $_POST['studentID']);
+   $employeeID   = mysqli_real_escape_string($conn, $_POST['employeeID']);
    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
    $lname = mysqli_real_escape_string($conn, $_POST['lname']);
    $uname = mysqli_real_escape_string($conn, $_POST['uname']);
@@ -55,7 +55,7 @@ if(isset($_GET['employeeID'])) {
     $delete = mysqli_query($conn, $sql);
     if($delete) {
         // echo "Deleted Successfully";
-        header('location: manage-users.php'); // returns back to same page
+        header('location: users.php'); // returns back to same page
     } else {
         die(mysqli_error($conn));
     }
