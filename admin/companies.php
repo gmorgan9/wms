@@ -187,7 +187,21 @@ if(isset($_GET['companyID'])) {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <?php 
+          $sql = "SELECT * FROM company where companyID = '$compID'";
+          $all = mysqli_query($conn, $sql);
+          if($all) {
+              while ($row = mysqli_fetch_assoc($all)) {
+                $compID   = $row['companyID'];
+                $idno     = $row['idno'];
+                $cname    = $row['companyname'];
+                $ccity    = $row['ccity'];
+                $cstate   = $row['cstate'];
+                $czip     = $row['czip'];
+        ?>
+        Confirm that you want to delete <?php $cname ?>
+        <?php }
+        } ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
