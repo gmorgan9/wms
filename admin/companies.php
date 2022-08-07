@@ -201,7 +201,7 @@ if(isset($_GET['companyID'])) {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a style="text-decoration: none;" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a>
+        <a class="badge text-bg-danger" style="text-decoration: none;" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <a href=""></a>
       </div>
