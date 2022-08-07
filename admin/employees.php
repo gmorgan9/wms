@@ -260,7 +260,7 @@ if (mysqli_num_rows($result) > 0) {
               <div class="section-header pt-3">
                 <span class="text-muted pt-4" style="width: 95%;">Employment Information</span>
               </div>
-              <hr style="margin-bottom: -5px; margin-top: -1px;">
+              <hr style="margin-bottom: -5px; margin-top: -0px;">
               <div class="form-group pt-3 mx-auto" style="width: 95%;">
                 <label for="uname">Employment Type</label>
                 <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
