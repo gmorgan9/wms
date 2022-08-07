@@ -124,16 +124,10 @@ if(isset($_GET['deptID'])) {
             $option = $row['uname'];
 
             echo "<option value=". $option .">". $option. "</option>";
-
-
           }
         }
       }
       ?>
-
-
-      
-        <option value="test">test</option>
       </select>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
