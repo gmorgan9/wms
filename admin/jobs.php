@@ -113,10 +113,10 @@ if(isset($_GET['deptID'])) {
   <form action="" method="post">
     <!-- <h6 class="mx-auto" style="width: 95%;">Add Company</h6> -->
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="jobtitle" style="font-size: 14px;">Job Title <span class="text-muted" style="font-size: 10px;">e.g. "Cheif Executive Officer"</span></label>
+      <label for="jobtitle" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
       <!-- <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="" required> -->
       <select class="form-control" name="jobtitle" id="jobtitle">
-
+        <option value="test">test</option>
       </select>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
