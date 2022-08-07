@@ -289,7 +289,7 @@ if (mysqli_num_rows($result) > 0) {
             <div class="section-header pt-3">
                 <span class="text-muted pt-4" style="width: 95%;">Employee Details</span>
             </div>
-            <hr style="margin-bottom: -5px; margin-top: 5px;">
+            <hr style="margin-bottom: px; margin-top: 5px;">
 
             <?php 
             $count = "SELECT * FROM job WHERE employee_code = '$empID'";
