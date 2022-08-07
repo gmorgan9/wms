@@ -115,20 +115,24 @@ if(isset($_GET['deptID'])) {
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="jobtitle" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
       <!-- <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="" required> -->
-
+      <select class="form-control" name="jobtitle" id="jobtitle">
       <?php
       $sql = "SELECT uname FROM employee";
       if($result = mysqli_query($conn, $sql)) {
         if(mysqli_num_rows($result) > 0) {
           while($row = mysqli_fetch_array($result)) {
-            echo $row['uname'];
+            $option = $row['uname'];
+
+            echo "<option value=". $option .">". $option. "</option>";
+
+
           }
         }
       }
       ?>
 
 
-      <select class="form-control" name="jobtitle" id="jobtitle">
+      
         <option value="test">test</option>
       </select>
     </div>
