@@ -132,7 +132,7 @@ if(isset($_GET['companyID'])) {
 
 
 <!-- start PAGE-CONTENT -->
-<div class="page-content mt-2 float-end" style="width: 65%; margin-right: 1px;">
+<div class="page-content mt-2 float-end mr-1" style="width: 65%;">
     <table class="table">
   <thead>
     <tr>
