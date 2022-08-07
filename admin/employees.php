@@ -297,7 +297,7 @@ if (mysqli_num_rows($result) > 0) {
             $num_rows = mysql_num_rows($result_count);
 
             ?>
-            Number of Jobs: <?php echo $num_rows ?>
+            <p>Number of Jobs: <?php echo $num_rows; ?></p>
 
 
 
