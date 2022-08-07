@@ -253,8 +253,8 @@ if (mysqli_num_rows($result) > 0) {
                 <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['email']; ?>" required>
               </div>
               <div class="form-group pt-3" style="width: 95%;">
-                <label for="formFile" class="form-label">Profile Photo</label>
-                <input class="form-control" type="file" id="formFile">
+                <label for="avatar">Profile Picture</label>
+                <input class="form-control" type="file" id="avatar" name="avatar">
               </div>
               <!-- Other -->
               <span class="mx-auto text-muted pt-3" style="padding-top: 10px; width: 95%;">Employment Information</span>
