@@ -144,7 +144,7 @@ form .error-msg{
     background-color: #fff;
 }
 .page-content {
-    height:80%;
+    height:550px;
     overflow: auto;
     overflow-y:auto;
     position: relative;
