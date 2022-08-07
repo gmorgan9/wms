@@ -2,7 +2,7 @@
 <!--Main Navigation-->
 <header>
 <!-- Navbar -->
-    <?php if(isset($_SESSION['user_fname']) || isset($_SESSION['admin_fname'])){ ?>
+    <?php if(isset($_SESSION['fname'])){ ?>
         <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <?php } else { ?>
         <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
