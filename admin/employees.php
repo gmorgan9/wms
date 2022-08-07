@@ -289,7 +289,7 @@ if (mysqli_num_rows($result) > 0) {
               <hr>
               <div class="form-group pt-1 mx-auto" style="width: 95%;">
                 <label for="idno">Company</label>
-                <input class="form-control" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" required>
+                <input class="form-control" id="idno" type="text" value="<?php echo $newrow['idno']; ?>" name="idno" required>
               </div>
               <div class="form-group pt-3 mx-auto" style="width: 95%;">
                 <label for="status">Department</label>
