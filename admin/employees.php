@@ -310,7 +310,7 @@ if (mysqli_num_rows($result) > 0) {
               </div>
               <hr style="margin-bottom: -5px; margin-top: 5px;">
               <div class="section-header pt-3">
-                <span class="fs-5 fw-bold pt-4" style="width: 95%;">Designation</span>
+                <span class="fs-7 fw-bold pt-4" style="width: 95%;">Designation</span>
               </div>
               <hr style="margin-bottom: -5px; margin-top: 5px;">
               <div class="row">
