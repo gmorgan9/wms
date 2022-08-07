@@ -227,8 +227,10 @@ if (mysqli_num_rows($result) > 0) {
             ?>
 
             <form action="" method="post">
-              <span class="text-muted" style="padding-top: 10px; width: 95%;">Personal Information</span>
-              <hr>
+            <div class="section-header pt-3">
+                <span class="text-muted pt-4" style="width: 95%;">Personal Information</span>
+              </div>
+              <hr style="margin-bottom: -5px; margin-top: 5px;">
               <div class="row">
                 <div class="form-group" style="width: 40%;">
                   <label for="fname">First Name</label>
