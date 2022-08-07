@@ -219,7 +219,7 @@ if (mysqli_num_rows($result) > 0) {
 
             <?php 
             $id = $_GET['employeeID'];
-            $select = " SELECT * FROM employee WHERE employeeID = '$id' ";
+            $select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
             $result = mysqli_query($conn, $select);          
             if (mysqli_num_rows($result) > 0) {
                while($row = mysqli_fetch_assoc($result)) {
