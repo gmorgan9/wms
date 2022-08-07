@@ -124,9 +124,9 @@ if(isset($_GET['jobID'])) {
         if(mysqli_num_rows($result) > 0) {
           while($row = mysqli_fetch_array($result)) {
             $option = $row['deptname'];
-            $deptID = $row['deptID'];
+            $dept_code = $row['deptID'];
 
-            echo "<option name='dept_code' value=". $dept_code .">". $option. "</option>";
+            echo "<option value=". $dept_code .">". $option. "</option>";
           }
         }
       }
