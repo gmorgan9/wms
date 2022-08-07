@@ -106,7 +106,7 @@ if (mysqli_num_rows($result) > 0) {
     </ul>
   </div>
 
-<div class="page-content mt-2 float-start" style="margin-left: -55px; width: 45%;">
+  <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -101px;">
 <form action="" method="post">
       <span class="mx-auto text-muted" style="padding-top: 10px; width: 95%;">Personal Information</span>
       <hr>
@@ -169,7 +169,7 @@ if (mysqli_num_rows($result) > 0) {
 ?>
 
 
-<div class="page-content mt-2 float-end" style="margin-left: -180px !important; left: -25px; width: 45%;">
+<div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
 <form action="" method="post">
       <span class="mx-auto text-muted" style="padding-top: 10px; width: 95%;">Employee Information</span>
       <hr>
