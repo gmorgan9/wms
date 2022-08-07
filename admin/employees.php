@@ -257,7 +257,7 @@ if (mysqli_num_rows($result) > 0) {
                 <input class="form-control" type="file" id="avatar" name="avatar">
               </div>
               <!-- Other -->
-              <span class="text-muted" style="margin-top: 10px !important; margin-bottom: -10px; width: 95%;">Employment Information</span>
+              <span class="text-muted mt-4" style="margin-top: 10px !important; margin-bottom: -10px; width: 95%;">Employment Information</span>
               <hr style="margin-bottom: -5px;">
               <div class="form-group pt-3 mx-auto" style="width: 95%;">
                 <label for="uname">Employment Type</label>
