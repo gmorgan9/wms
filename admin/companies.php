@@ -199,7 +199,7 @@ if(isset($_GET['companyID'])) {
                 $cstate   = $row['cstate'];
                 $czip     = $row['czip'];
         ?>
-        Confirm that you want to delete <?php $cname ?>
+        Confirm that you want to delete <?php echo $cname; ?>
         <?php }
         } ?>
       </div>
