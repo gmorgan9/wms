@@ -248,7 +248,7 @@ if (mysqli_num_rows($result) > 0) {
                   <option value="female">Female</option>
                 </select>
               </div>
-              <div class="form-group pt-3 mx-auto" style="width: 95%;">
+              <div class="form-group pt-3" style="width: 95%;">
                 <label for="lname">Email <span class="text-muted" style="font-size: 10px;">Personal</span></label>
                 <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['email']; ?>" required>
               </div>
