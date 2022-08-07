@@ -257,8 +257,8 @@ if (mysqli_num_rows($result) > 0) {
                 <input class="form-control" type="file" id="avatar" name="avatar">
               </div>
               <!-- Other -->
-              <div class="section-header pt-3">
-                <span class="text-muted pt-4" style="margin-top: 10px !important; margin-bottom: -10px; width: 95%;">Employment Information</span>
+              <div class="section-header pt-3" style="margin-bottom: -5px;">
+                <span class="text-muted pt-4" style="width: 95%;">Employment Information</span>
               </div>
               <hr style="margin-bottom: -5px;">
               <div class="form-group pt-3 mx-auto" style="width: 95%;">
