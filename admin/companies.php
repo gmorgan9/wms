@@ -111,7 +111,7 @@ if(isset($_GET['companyID'])) {
 
 
 <!-- start PAGE-CONTENT -->
-<div class="page-content mt-2 float-start" style="width: 35%;">
+<div class="page-content mt-2 float-start" style="width: 25%;">
   <form action="" method="post">
     <!-- <h6 class="mx-auto" style="width: 95%;">Add Company</h6> -->
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
@@ -164,8 +164,7 @@ if(isset($_GET['companyID'])) {
         <!-- <td><?php //echo $ccity; ?></td>
         <td><?php //echo $cstate; ?></td>
         <td><?php //echo $czip; ?></td> -->
-        <td><a style="text-decoration: none;" class="badge text-bg-warning" href="/admin/actions/update-company.php?companyID=<?php echo $compID; ?>">Update</a>
-        <a style="text-decoration: none;" class="badge text-bg-danger" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a></td>
+        <td><a style="text-decoration: none;" class="badge text-bg-danger" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a></td>
         <?php } ?>
         
    
