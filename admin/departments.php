@@ -20,6 +20,7 @@ if(isset($_POST['add-department'])){
   $deptID = mysqli_real_escape_string($conn, $_POST['deptID']);
   $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
   $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
+  $company_code = mysqli_real_escape_string($conn, $_POST['company_code']);
   //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
 
   $select = " SELECT * FROM department WHERE deptname = '$deptname' ";
@@ -31,7 +32,7 @@ if(isset($_POST['add-department'])){
      $error[] = 'Department already exist!';
 
   }else{
-        $insert = "INSERT INTO department (idno, deptname) VALUES('$idno', '$deptname')";
+        $insert = "INSERT INTO department (idno, deptname, company_code) VALUES('$idno', '$deptname', '$company_code')";
         mysqli_query($conn, $insert);
         header('location: /admin/departments.php');
      }
@@ -112,6 +113,23 @@ if(isset($_GET['deptID'])) {
 <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -112px;">
   <form action="" method="post">
     <!-- <h6 class="mx-auto" style="width: 95%;">Add Company</h6> -->
+    <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <label for="company_code" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
+      <select class="form-control" name="company_code" id="company_code">
+      <?php
+      $sql = "SELECT * FROM company";
+      if($result = mysqli_query($conn, $sql)) {
+        if(mysqli_num_rows($result) > 0) {
+          while($row = mysqli_fetch_array($result)) {
+            $option = $row['companyname'];
+            $company_code = $row['companyID'];
+            echo "<option id='company_code' name='company_code' value=". $company_code .">". $option. "</option>";
+          }
+        }
+      }
+       ?>
+      </select>
+    </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="deptname" style="font-size: 14px;">Department Name <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
       <input class="form-control" id="deptname" type="text" name="deptname" value="" required>
