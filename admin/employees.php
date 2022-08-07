@@ -286,10 +286,10 @@ if (mysqli_num_rows($result) > 0) {
                while($newrow = mysqli_fetch_assoc($newresult)) {
                   $acc_type = $newrow['acc_type'];
             ?>
-            <div class="section-header pt-3">
+            <!-- <div class="section-header pt-3">
                 <span class="text-muted pt-4" style="width: 95%;">Employee Details</span>
             </div>
-            <hr style="margin-top: 5px;">
+            <hr style="margin-top: 5px;"> -->
             <!-- <span class="fs-6" style="margin-top: 5px;">Employee Jobs</span> -->
 
             <?php 
