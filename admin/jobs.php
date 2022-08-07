@@ -136,6 +136,7 @@ if(isset($_GET['jobID'])) {
             $option = $row['deptname'];
             $dept_code = $row['deptID'];
             echo "<option id='dept_code' name='dept_code' value=". $dept_code .">". $option. "</option>";
+            echo "<option class='visually-hidden' id='dept_code' name='dept_code' value=". $dept_code .">". $option. "</option>";
           }
         }
       }
