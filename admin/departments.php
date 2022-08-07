@@ -14,7 +14,31 @@ if(!isAdmin()){
   header('location: /dashboard.php');
 }
 
-// Delete User
+// Add Department
+if(isset($_POST['add-department'])){
+
+  $deptID = mysqli_real_escape_string($conn, $_POST['deptID']);
+  $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
+  $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
+  //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
+
+  $select = " SELECT * FROM department WHERE deptname = '$deptname' ";
+
+  $result = mysqli_query($conn, $select);
+
+  if(mysqli_num_rows($result) > 0){
+
+     $error[] = 'Department already exist!';
+
+  }else{
+        $insert = "INSERT INTO department (idno, deptname) VALUES('$idno', '$deptname')";
+        mysqli_query($conn, $insert);
+        header('location: /admin/departments.php');
+     }
+
+};
+
+// Delete Department
 if(isset($_GET['deptID'])) {
     $id = $_GET['deptID'];
 
@@ -93,7 +117,7 @@ if(isset($_GET['deptID'])) {
       <input class="form-control" id="deptname" type="text" name="deptname" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
-      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-company" class="badge text-bg-secondary">Add Department</button>
+      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-department" class="badge text-bg-secondary">Add Department</button>
     </div>
   </form>
 
