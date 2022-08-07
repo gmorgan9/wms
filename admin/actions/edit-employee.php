@@ -112,7 +112,7 @@ if (mysqli_num_rows($result) > 0) {
       <hr>
       <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="idno">Employee ID Number</label>
-            <input class="form-control" style="width: 90%" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" disabled>
+            <input class="form-control" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" disabled>
          </div>
 
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
