@@ -93,7 +93,7 @@ if(isset($_GET['companyID'])) {
       <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
-      <button type="submit" name="add-company" class="badge text-bg-secondary">Add Company</button>
+      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-company" class="badge text-bg-secondary">Add Company</button>
     </div>
   </form>
 
