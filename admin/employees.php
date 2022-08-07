@@ -149,13 +149,14 @@ if (mysqli_num_rows($result) > 0) {
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
-            $empID  = $row['employeeID'];
-            $idno   = $row['idno'];
-            $fname  = $row['fname'];
-            $lname  = $row['lname'];
-            $uname  = $row['uname'];
-            $email  = $row['email'];
-            $status = $row['acc_type'];
+            $empID     = $row['employeeID'];
+            $idno      = $row['idno'];
+            $fname     = $row['fname'];
+            $lname     = $row['lname'];
+            $uname     = $row['uname'];
+            $email     = $row['email'];
+            $acc_type  = $row['acc_type'];
+            $status    = $row['status'];
             ?>
     <tr>
         <?php if($_SESSION['empID'] != $row['employeeID']){ ?>
@@ -164,10 +165,15 @@ if (mysqli_num_rows($result) > 0) {
         <td><?php echo $lname; ?></td>
         <td><?php echo $uname; ?></td>
         <td><?php echo $email; ?></td>
-        <?php if($status == 1){ ?>
+        <?php if($acc_type == 1){ ?>
           <td>Admin</td>
         <?php } else { ?>
           <td>Employee</td>
+        <?php } ?>
+        <?php if($status == 1){ ?>
+          <td>Active</td>
+        <?php } else { ?>
+          <td>Inactive</td>
         <?php } ?>
         <td>
           <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-employee.php?employeeID=<?php echo $empID; ?>">View</a>
