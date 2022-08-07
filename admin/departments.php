@@ -210,7 +210,7 @@ if(isset($_GET['deptID'])) {
         ?>
        
         <span class="badge text-bg-danger" style="font-size: 10px;">This will delete all corresponding jobs with this department.</span>
-   
+        <br>
         <br>
         Are you sure you want to delete: <span class="text-muted"><?php echo $deptname; ?></span>?
         <?php }
