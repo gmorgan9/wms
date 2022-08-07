@@ -230,11 +230,11 @@ if (mysqli_num_rows($result) > 0) {
               <span class="mx-auto text-muted" style="padding-top: 10px; width: 95%;">Personal Information</span>
               <hr>
               <div class="row">
-                <div class="form-group" style="width: 20%;">
+                <div class="form-group" style="width: 30%;">
                   <label for="idno">First Name</label>
                   <input class="form-control" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" required>
                 </div>
-                <div class="form-group" style="width: 20%;">
+                <div class="form-group" style="width: 30%;">
                   <label for="status">Last Name</label>
                   <input class="form-control" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" required>
                 </div>
