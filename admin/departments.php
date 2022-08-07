@@ -83,12 +83,25 @@ if(isset($_GET['deptID'])) {
   </div>
 </div> -->
 
+
+<!-- start PAGE-CONTENT -->
+<div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -101px;">
+  <form action="" method="post">
+    <!-- <h6 class="mx-auto" style="width: 95%;">Add Company</h6> -->
+    <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <label for="deptname" style="font-size: 14px;">Department Name <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
+      <input class="form-control" id="deptname" type="text" name="deptname" value="" required>
+    </div>
+    <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
+      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-company" class="badge text-bg-secondary">Add Department</button>
+    </div>
+  </form>
+
+ <!-- end PAGE-CONTENT -->
+</div>
+
 <!-- start PAGE-CONTENT -->
 <div class="page-content mx-auto mt-2">
-<div class="d-grid d-md-flex justify-content-md-end">
-  <button class="badge text-bg-secondary" style="border-color: rgba(0,0,0,0);" type="button"><a style="color: white; text-decoration:none;" href="<?php echo BASE_URL . '/admin/actions/add-department.php' ?>"><i class="bi bi-plus-lg"></i> Department</a></button>
-  <!-- <button class="btn btn-primary" type="button">Button</button> -->
-</div>
     <table class="table">
   <thead>
     <tr>
