@@ -36,13 +36,13 @@ if(isset($_POST['add-job'])){
 
   }else{
         
-        $insert = "INSERT INTO job (idno, jobtitle, dept_code) VALUES('$idno', '$jobtitle', '$dept_code')";
-        $compdata2 = "INSERT INTO employee_company_data (company_code) SELECT company_code FROM department WHERE deptID= '$dept_code'";
+        $insert = "INSERT INTO job (idno, jobtitle, dept_code, company_code) VALUES('$idno', '$jobtitle', '$dept_code', '$comp_code')";
+        //$compdata2 = "INSERT INTO employee_company_data (company_code) SELECT company_code FROM department WHERE deptID= '$dept_code'";
         $compdata = "INSERT INTO employee_company_data (dept_code, job_code) SELECT dept_code, jobID FROM job";
         
         mysqli_query($conn, $insert);
         mysqli_query($conn, $compdata);
-        mysqli_query($conn, $compdata2);
+       // mysqli_query($conn, $compdata2);
         header('location: /admin/jobs.php');
      }
 
