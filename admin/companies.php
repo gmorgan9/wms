@@ -85,7 +85,7 @@ if(isset($_GET['companyID'])) {
 
 
 <!-- start PAGE-CONTENT -->
-<div class="page-content mr-1 mt-2 float-start" style="width: 38%; margin-left: -100px;">
+<div class="page-content mr-1 mt-2 float-start" style="width: 30%; margin-left: -100px;">
 
 test
 
