@@ -232,11 +232,11 @@ if (mysqli_num_rows($result) > 0) {
               </div>
               <hr style="margin-bottom: -5px; margin-top: 5px;">
               <div class="row">
-                <div class="form-group" style="width: 40%;">
+                <div class="form-group pt-3" style="width: 40%;">
                   <label for="fname">First Name</label>
                   <input class="form-control" id="fname" type="text" value="<?php echo $row['fname']; ?>" name="fname" required>
                 </div>
-                <div class="form-group" style="width: 40%;">
+                <div class="form-group pt-3" style="width: 40%;">
                   <label for="lname">Last Name</label>
                   <input class="form-control" id="lname" type="text" value="<?php echo $row['lname']; ?>" name="lname" required>
                 </div>
