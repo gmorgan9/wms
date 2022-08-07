@@ -96,8 +96,8 @@ if(isset($_GET['companyID'])) {
       <th scope="col">Company Name</th>
       <!-- <th scope="col">City</th>
       <th scope="col">State</th>
-      <th scope="col">Zip Code</th>
-      <th scope="col">Actions</th> -->
+      <th scope="col">Zip Code</th> -->
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody class="table-group-divider">
