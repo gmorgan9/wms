@@ -309,6 +309,10 @@ if (mysqli_num_rows($result) > 0) {
                 <span class="text-muted pt-4" style="width: 95%;">Employee Details</span>
               </div>
               <hr style="margin-bottom: -5px; margin-top: 5px;">
+              <div class="section-header pt-3">
+                <span class="fs-5 fw-bold pt-4" style="width: 95%;">Designation</span>
+              </div>
+              <hr style="margin-bottom: -5px; margin-top: 5px;">
               <div class="row">
                 <div class="form-group pt-3" style="width: 48%;">
                   <label for="fname">First Name</label>
