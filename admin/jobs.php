@@ -114,9 +114,9 @@ if(isset($_GET['jobID'])) {
   <form action="" method="post">
     <!-- <h6 class="mx-auto" style="width: 95%;">Add Company</h6> -->
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="jobtitle" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
+      <label for="dept_code" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
       <!-- <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="" required> -->
-      <select class="form-control" name="jobtitle" id="jobtitle">
+      <select class="form-control" name="dept_code" id="dept_code">
       <?php
       $sql = "SELECT * FROM department";
       
