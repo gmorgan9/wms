@@ -14,7 +14,33 @@ if(!isAdmin()){
   header('location: /dashboard.php');
 }
 
-// Delete User
+// Add Company
+if(isset($_POST['add-company'])){
+
+  $compID = mysqli_real_escape_string($conn, $_POST['companyID']);
+  $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
+  $cname = mysqli_real_escape_string($conn, $_POST['companyname']);
+  $ccity = mysqli_real_escape_string($conn, $_POST['ccity']);
+  $cstate = mysqli_real_escape_string($conn, $_POST['cstate']);
+  $czip = mysqli_real_escape_string($conn, $_POST['czip']);
+
+  $select = " SELECT * FROM company WHERE companyname = '$cname' ";
+
+  $result = mysqli_query($conn, $select);
+
+  if(mysqli_num_rows($result) > 0){
+
+     $error[] = 'Company already exist!';
+
+  }else{
+        $insert = "INSERT INTO company (idno, companyname) VALUES('$idno', '$cname')";
+        mysqli_query($conn, $insert);
+        header('location: /admin/companies.php');
+     }
+
+};
+
+// Delete Company
 if(isset($_GET['companyID'])) {
     $id = $_GET['companyID'];
 
