@@ -101,7 +101,7 @@ if (mysqli_num_rows($result) > 0) {
     <p class="page_title" style="float: left; padding-top: 2px;">Profile</p>
     <ul class="breadcrumb">
       <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
-      <li><a href="<?php echo BASE_URL . '/pages/employees.php' ?>">Employees</a></li>
+      <li><a href="<?php echo BASE_URL . '/admin/employees.php' ?>">Employees</a></li>
       <li>Viewing Employee: <span class="text-muted" style="text-transform: capitalize"><?php echo $row['fname']; ?>  </span></li>
     </ul>
   </div>
