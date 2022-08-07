@@ -147,6 +147,10 @@ if(isset($_GET['jobID'])) {
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="jobtitle" style="font-size: 14px;">Job Title <span class="text-muted" style="font-size: 10px;">e.g. "Cheif Executive Officer"</span></label>
+      <input class="form-control" class="visually-hidden" id="jobtitle" type="text" name="jobtitle" value="" required>
+    </div>
+    <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <label for="jobtitle" style="font-size: 14px;">Job Title <span class="text-muted" style="font-size: 10px;">e.g. "Cheif Executive Officer"</span></label>
       <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
