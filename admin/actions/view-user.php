@@ -55,7 +55,7 @@ $result = mysqli_query($conn, $select);
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>WMS | Admin Profile</title>
+   <title>WMS | View User</title>
 
    <!-- Custom Styles -->
    <link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/other-style.css?v='. time(); ?>">
@@ -92,7 +92,7 @@ $result = mysqli_query($conn, $select);
 
 if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
-      //$acc_type = $row['acc_type'];
+      $acc_type = $row['acc_type'];
 ?>
 
   <div class="page-header mx-auto">
