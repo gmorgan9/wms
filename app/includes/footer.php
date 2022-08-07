@@ -1,5 +1,5 @@
 <!-- WORKING -->
-<?php if(isset($_SESSION['user_fname']) || isset($_SESSION['admin_fname'])){ ?>
+<?php if(isset($_SESSION['fname'])){ ?>
     <footer class="fixed-bottom py-3" style="background-color: white">
         <div class="text-center text-muted" style="background-color: white;">
 <?php } else { ?>
