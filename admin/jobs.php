@@ -16,11 +16,11 @@ if(!isAdmin()){
 
 
 
-$sql = "SELECT job.*, department.* FROM job INNER JOIN department ON department.deptID = job.dept_code;";
-      $all = mysqli_query($conn, $sql);
-      if($all) {
-          while ($row = mysqli_fetch_assoc($all)) {
-            $company_code = $row['company_code'];
+$test = "SELECT * FROM department";
+      $testall = mysqli_query($conn, $test);
+      if($testall) {
+          while ($testrow = mysqli_fetch_assoc($testall)) {
+            $company_code = $testrow['company_code'];
 
           
 
