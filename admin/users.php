@@ -146,7 +146,8 @@ if (mysqli_num_rows($result) > 0) {
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
-            $idno   =$row['idno'];
+            $empID  = $row['employeeID'];
+            $idno   = $row['idno'];
             $fname  = $row['fname'];
             $lname  = $row['lname'];
             $uname  = $row['uname'];
@@ -166,8 +167,8 @@ if (mysqli_num_rows($result) > 0) {
           <td>Employee</td>
         <?php } ?>
         <td>
-          <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-user.php?employeeID=<?php echo $employeeID; ?>">View</a>
-          <a style="text-decoration: none;" class="badge text-bg-danger" href="users.php?employeeID=<?php echo $employeeID; ?>">Delete</a>
+          <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-user.php?employeeID=<?php echo $empID; ?>">View</a>
+          <a style="text-decoration: none;" class="badge text-bg-danger" href="users.php?employeeID=<?php echo $empID; ?>">Delete</a>
         </td>
         <?php } else { }}}?>
   </tbody>
