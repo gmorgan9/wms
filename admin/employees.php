@@ -135,8 +135,8 @@ if (mysqli_num_rows($result) > 0) {
     <tr>
       <th scope="col">ID #</th>
       <th scope="col">Employee</th>
-      <th scope="col">Username</th>
-      <th scope="col">Email</th>
+      <!-- <th scope="col">Username</th> -->
+      <!-- <th scope="col">Email</th> -->
       <th scope="col">Status</th>
       <th scope="col">Actions</th>
     </tr>
