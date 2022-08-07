@@ -171,27 +171,25 @@ if (mysqli_num_rows($result) > 0) {
 <form action="" method="post">
       <span class="mx-auto text-muted" style="padding-top: 10px; width: 95%;">Employee Information</span>
       <hr>
-      <div class="row" style="margin-left: 20px;">
-      <div class="form-group pt-3" style="width: 20%;">
+      <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="idno">Employee ID Number</label>
-            <input class="form-control" style="width: 90%" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" disabled>
+            <input class="form-control" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" disabled>
          </div>
 
-         <div class="form-group pt-3" style="width: 20%;">
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="status">Account Type</label>
             <?php
             if($acc_type == 1){ 
             ?>
-            <input class="form-control" style="width: 90%" id="status" type="text" value="Admin" name="status" disabled>
+            <input class="form-control" id="status" type="text" value="Admin" name="status" disabled>
             <?php 
             } else {
             ?>
-            <input class="form-control" style="width: 90%" id="status" type="text" value="Employee" name="status" disabled>
+            <input class="form-control" id="status" type="text" value="Employee" name="status" disabled>
             <?php 
             }
             ?>
          </div>
-      </div>
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="fname">First Name</label>
             <input class="form-control" id="fname" type="text" name="fname" value="<?php echo $row['fname']; ?>" required>
