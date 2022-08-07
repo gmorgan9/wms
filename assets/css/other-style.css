@@ -7,7 +7,7 @@
 }
 html {
     height: 100%;
-    overflow-x: hidden;
+        margin: auto;
  }
 :root {
     --primary-color: #ffaa48;
@@ -124,7 +124,7 @@ form .error-msg{
 /* Sidebar */
 .sidebar {
     /* background-color: #eee; */
-    position:fixed;
+    position:absolute;
     top: 0;
     bottom: 0;
     left: 0;
