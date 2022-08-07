@@ -156,6 +156,80 @@ if (mysqli_num_rows($result) > 0) {
    </form>
 </div>
 
+
+<?php 
+
+$id = $_GET['employeeID'];
+$select = " SELECT * FROM employee WHERE employeeID = '$id' ";
+$result = mysqli_query($conn, $select);
+
+if (mysqli_num_rows($result) > 0) {
+   while($row = mysqli_fetch_assoc($result)) {
+      $acc_type = $row['acc_type'];
+?>
+
+
+<div class="page-content mt-2 float-end" style=" margin-left: 12px; width: 48%;">
+<form action="" method="post">
+      <span class="mx-auto text-muted" style="padding-top: 10px; width: 95%;">Personal Information</span>
+      <hr>
+      <div class="row" style="margin-left: 20px;">
+      <div class="form-group pt-3" style="width: 20%;">
+            <label for="idno">Employee ID Number</label>
+            <input class="form-control" style="width: 90%" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" disabled>
+         </div>
+
+         <div class="form-group pt-3" style="width: 20%;">
+            <label for="status">Account Type</label>
+            <?php
+            if($acc_type == 1){ 
+            ?>
+            <input class="form-control" style="width: 90%" id="status" type="text" value="Admin" name="status" disabled>
+            <?php 
+            } else {
+            ?>
+            <input class="form-control" style="width: 90%" id="status" type="text" value="Employee" name="status" disabled>
+            <?php 
+            }
+            ?>
+         </div>
+      </div>
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="fname">First Name</label>
+            <input class="form-control" id="fname" type="text" name="fname" value="<?php echo $row['fname']; ?>" required>
+         </div>
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="lname">Last Name</label>
+            <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['lname']; ?>" required>
+         </div>
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="uname">User Name</label>
+            <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
+         </div>   
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="email">Email Address</label>
+            <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
+         </div> 
+      <?php 
+      }
+   } else {
+     echo "0 results";
+   }
+      ?>
+   </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
  
 <!-- end MAIN -->
 </div> 
