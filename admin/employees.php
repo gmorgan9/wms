@@ -277,11 +277,11 @@ if (mysqli_num_rows($result) > 0) {
 
             <?php 
             $id = $_GET['employeeID'];
-            $select = " SELECT * FROM employee WHERE employeeID = '$id' ";
-            $result = mysqli_query($conn, $select);          
-            if (mysqli_num_rows($result) > 0) {
-               while($row = mysqli_fetch_assoc($result)) {
-                  $acc_type = $row['acc_type'];
+            $new = " SELECT * FROM employee WHERE employeeID = '$empID' ";
+            $newresult = mysqli_query($conn, $new);          
+            if (mysqli_num_rows($newresult) > 0) {
+               while($newrow = mysqli_fetch_assoc($newresult)) {
+                  $acc_type = $newrow['acc_type'];
             ?>
 
             <form action="" method="post">
