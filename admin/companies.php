@@ -131,7 +131,7 @@ if(isset($_GET['companyID'])) {
     <table class="table">
   <thead>
     <tr>
-      <!-- <th scope="col">ID #</th> -->
+      <th scope="col">ID #</th>
       <th scope="col" style="font-size: 14px;">Company Name</th>
       <!-- <th scope="col">City</th>
       <th scope="col">State</th>
@@ -154,7 +154,7 @@ if(isset($_GET['companyID'])) {
             $czip     = $row['czip'];
   ?>
     <tr>
-        <!-- <th scope="row"><?php //echo $idno; ?></th> -->
+        <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $cname; ?></td>
         <!-- <td><?php //echo $ccity; ?></td>
         <td><?php //echo $cstate; ?></td>
