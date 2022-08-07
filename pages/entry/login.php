@@ -49,7 +49,7 @@ if(isset($_POST['submit'])){
           $_SESSION['email'] = $row['email'];
           $_SESSION['pass'] = $row['password'];
           $_SESSION['cpass'] = $row['cpassword'];
-         header('location: /admin/profile.php');
+          header('location:' . BASE_URL . '/pages/dashboard.php');
       }elseif($row['isadmin'] == 0){
          if (mysqli_query($conn, $sql)) {
             echo "Record updated successfully";
@@ -65,7 +65,7 @@ if(isset($_POST['submit'])){
          $_SESSION['email'] = $row['email'];
          $_SESSION['pass'] = $row['password'];
          $_SESSION['cpass'] = $row['cpassword'];
-         header('location:' . BASE_URL . '/pages/profile.php');
+         header('location:' . BASE_URL . '/pages/dashboard.php');
       }
      
    }else{
