@@ -106,9 +106,9 @@ if (mysqli_num_rows($result) > 0) {
     </ul>
   </div>
 
-<div class="page-content mx-auto mt-2">
+<div class="page-content mx-auto mt-2 w-50">
 <form action="" method="post">
-      <span class="mx-auto text-muted" style="padding-top: 10px; width: 95%;">Personal Details</span>
+      <span class="mx-auto text-muted" style="padding-top: 10px; width: 95%;">Personal Information</span>
       <hr>
       <div class="row" style="margin-left: 20px;">
       <div class="form-group pt-3" style="width: 20%;">
