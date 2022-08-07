@@ -28,7 +28,7 @@ if(isset($_POST['add-job'])){
   // $comp_code = mysqli_real_escape_string($conn, $_POST['company_code']);
   //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
 
-  $select = " SELECT job.*, department.* FROM job INNER JOIN department ON job.dept_code = '$dept_code' ";
+  $select = " SELECT * FROM job WHERE jobID = '$jobID' ";
   // $test = "SELECT * FROM department where deptID = '$dept_code'";
 
 
