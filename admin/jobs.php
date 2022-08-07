@@ -71,6 +71,9 @@ if(isset($_GET['jobID'])) {
 <!-- Bootstrap Icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
+<!-- scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body>
 
@@ -172,7 +175,7 @@ if(isset($_GET['jobID'])) {
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
         <td><?php echo $deptname; ?></td>
-        <td><a style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
+        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
         <?php } ?>
         
    
@@ -185,6 +188,38 @@ if(isset($_GET['jobID'])) {
 }
     ?>
  <!-- end PAGE-CONTENT -->
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="confirmDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Job Deletion Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <?php 
+          $new = "SELECT * FROM job where jobID = '$jobID'";
+          $newa = mysqli_query($conn, $new);
+          if($newa) {
+              while ($row = mysqli_fetch_assoc($newa)) {
+                $jobID   = $row['jobID'];
+                $jobtitle    = $row['jobtitle'];
+        ?>
+        Are you sure you want to delete: <span class="text-muted"><?php echo $jobtitle; ?></span>?
+        <?php }
+        } ?>
+      </div>
+      <div class="modal-footer">
+        <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
+        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="departments.php?deptID=<?php echo $deptID; ?>">Delete</a>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        <a href=""></a>
+      </div>
+    </div>
+  </div>
 </div>
 
  
