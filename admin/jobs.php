@@ -112,7 +112,7 @@ if(isset($_GET['jobID'])) {
 <!-- start PAGE-CONTENT -->
 <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -45px;">
   <form action="" method="post">
-    <h6 class="mx-auto" style="width: 95%;">Add Company</h6>
+    <!-- <h6 class="mx-auto" style="width: 95%;">Add Company</h6> -->
      <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="dept_code" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
       
