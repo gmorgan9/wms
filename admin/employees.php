@@ -212,6 +212,7 @@ if (mysqli_num_rows($result) > 0) {
        
         <span class="badge text-bg-danger" style="font-size: 10px;">Be Careful! This will delete all data corresponding with this employee!</span>
         
+        <div class="col">
           <div class="row">
         <?php 
         $id = $_GET['employeeID'];
@@ -330,6 +331,8 @@ if (mysqli_num_rows($result) > 0) {
    }
       ?>
    </form>
+  </div>
+   </div>
   </div>
 
 
