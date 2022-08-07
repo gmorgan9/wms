@@ -297,7 +297,7 @@ if (mysqli_num_rows($result) > 0) {
             $result_count = mysqli_query($conn, $count);
             if (mysqli_num_rows($result_count) > 0) {
               while($count_row = mysqli_fetch_assoc($result_count)) {
-                $jobtitle = $count_row['jobtitl']; ?>
+                $jobtitle = $count_row['jobtitle']; ?>
             
             <p><?php echo $jobtitle; ?></p>
             <?php } } ?>
