@@ -242,6 +242,14 @@ if (mysqli_num_rows($result) > 0) {
                 </div>
               </div>
               <div class="form-group pt-3" style="width: 95%;">
+                <label for="uname">Username</label>
+                <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
+              </div>
+              <div class="form-group pt-3" style="width: 95%;">
+                <label for="lname">Email <span class="text-muted" style="font-size: 10px;">Personal</span></label>
+                <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['email']; ?>" required>
+              </div>
+              <div class="form-group pt-3" style="width: 95%;">
                 <label for="gender">Gender</label>
                 <!-- <input class="form-control" id="fname" type="text" name="fname" value="<?php //echo $row['fname']; ?>" required> -->
                 <select class="form-control" name="gender" id="gender">
@@ -249,10 +257,6 @@ if (mysqli_num_rows($result) > 0) {
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                 </select>
-              </div>
-              <div class="form-group pt-3" style="width: 95%;">
-                <label for="lname">Email <span class="text-muted" style="font-size: 10px;">Personal</span></label>
-                <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['email']; ?>" required>
               </div>
               <div class="form-group pt-3" style="width: 95%;">
                 <label for="avatar">Profile Picture</label>
