@@ -19,6 +19,7 @@ if(isset($_POST['add-job'])){
 
   $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
   $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
+  $idno_comp_data  = rand(1000000, 9999999); // figure how to not allow duplicates
   $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
   $dept_code = mysqli_real_escape_string($conn, $_POST['dept_code']);
   //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
@@ -33,6 +34,7 @@ if(isset($_POST['add-job'])){
 
   }else{
         $insert = "INSERT INTO job (idno, jobtitle, dept_code) VALUES('$idno', '$jobtitle', '$dept_code')";
+        $compdata = "INSERT INTO employee_company_data (company_code, employee_code, dept_code, job_code) SELECT company_code, employee_code, dept_code, jobID FROM job";
         mysqli_query($conn, $insert);
         header('location: /admin/jobs.php');
      }
