@@ -137,7 +137,7 @@ if(isset($_GET['jobID'])) {
             $dept_code = $row['deptID'];
             $company_code = $row['company_code'];
             echo "<option id='dept_code' name='dept_code' value=". $dept_code .">". $option. "</option>";
-            $selected = $dept_code;
+            $selected = $_POST['dept_code'];
             echo "<option class='visually-hidden' id='company_code' name='company_code' value=". $company_code .">". $selected. "</option>";
           }
         }
@@ -146,8 +146,8 @@ if(isset($_GET['jobID'])) {
       </select>
     </div>
     <div class="visually-hidden" class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label class="visually-hidden" for="jobtitle" style="font-size: 14px;">Job Title <span class="text-muted" style="font-size: 10px;">e.g. "Cheif Executive Officer"</span></label>
-      <input class="form-control" class="visually-hidden" id="jobtitle" type="text" name="jobtitle" value="" required>
+      <label class="visually-hidden" for="company_code" style="font-size: 14px;">Job Title <span class="text-muted" style="font-size: 10px;">e.g. "Cheif Executive Officer"</span></label>
+      <input class="form-control" class="visually-hidden" id="company_code" type="text" name="company_code" value="<?php ?>" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="jobtitle" style="font-size: 14px;">Job Title <span class="text-muted" style="font-size: 10px;">e.g. "Cheif Executive Officer"</span></label>
