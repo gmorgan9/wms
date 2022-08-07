@@ -55,7 +55,7 @@ if(isset($_GET['employeeID'])) {
     $delete = mysqli_query($conn, $sql);
     if($delete) {
         // echo "Deleted Successfully";
-        header('location: users.php'); // returns back to same page
+        header('location: employees.php'); // returns back to same page
     } else {
         die(mysqli_error($conn));
     }
