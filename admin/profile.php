@@ -136,7 +136,7 @@ if (mysqli_num_rows($result) > 0) {
             <?php
             if($acc_type == 1){ 
             ?>
-            <input class="form-control" style="width: 90%" id="status" type="text" value="Admin" name="status" disabled>
+            <input class="form-control" style="width: 90%" id="status" type="text" value="Site Administrator" name="status" disabled>
             <?php 
             } else {
             ?>
