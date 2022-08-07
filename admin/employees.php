@@ -219,7 +219,7 @@ if (mysqli_num_rows($result) > 0) {
       </div>
       <div class="modal-footer">
         <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
-        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="employees.php?employeeID=<?php echo $empID; ?>">Delete</a>
+        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="employees.php?employeeID=<?php echo $empID; ?>">Save</a>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <a href=""></a>
       </div>
@@ -229,7 +229,7 @@ if (mysqli_num_rows($result) > 0) {
 
 <!-- DELETE Modal -->
 <div class="modal fade" id="confirmDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Employee Deletion Confirmation</h5>
