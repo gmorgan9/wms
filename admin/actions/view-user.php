@@ -1,9 +1,9 @@
 <!-- WORKING -->
 <?php
 
-require_once "../../app/database/connection.php";
-require_once "../../app/database/functions.php";
-require_once "../../path.php";
+require_once "../app/database/connection.php";
+require_once "../app/database/functions.php";
+require_once "../path.php";
 
 session_start();
 
@@ -19,27 +19,33 @@ $id = $_GET['employeeID'];
 $select = " SELECT * FROM employee WHERE employeeID = '$id' ";
 $result = mysqli_query($conn, $select);
 
+// if(isset($_POST['update-profile'])){
 
-// if(isset($_POST['update-department'])){
+//    //$sID   = mysqli_real_escape_string($conn, $_POST['studentID']);
+//    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+//    $lname = mysqli_real_escape_string($conn, $_POST['lname']);
+//    $uname = mysqli_real_escape_string($conn, $_POST['uname']);
+//    $email = mysqli_real_escape_string($conn, $_POST['email']);
+//    // $pass = md5($_POST['password']);
+//    // $cpass = md5($_POST['cpassword']);
+//    // $isadmin = $_POST['isadmin'];
 
-//    $deptID   = mysqli_real_escape_string($conn, $_POST['deptID']);
-//    $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
-//    //$companyID = mysqli_real_escape_string($conn, $_POST['companyID']);
+//    $update_select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' ";
+
+//    $update_result = mysqli_query($conn, $update_select);
 
 //    if(mysqli_num_rows($result) > 0){
 
 //       // $error[] = 'user already exist!';
-//       $update = "UPDATE department SET deptname = '$deptname' where deptID = '$id' ";
+//       $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
 //       mysqli_query($conn, $update);
-//       // $success[] = 'Success';
-//       header('location:' . BASE_URL . '/admin/departments.php');
+//       $success[] = 'Success';
+//       header('location:' . BASE_URL . '/admin/profile.php');
       
 //    }else{
       
 //    } 
 // };
-
-
 
 ?>
 
@@ -62,6 +68,18 @@ $result = mysqli_query($conn, $select);
 </head>
 <body>
 
+   
+<!-- <div class="land-container">
+   <div class="content">
+
+      <h3><span>Admin Profile Page</span></h3>
+      <h1>welcome <span><?php //echo $_SESSION['admin_fname'] ?></span></h1>
+      <p>this is an admin profile</p>
+      <a href="logout.php" class="btn">logout</a>
+   </div>
+
+</div> -->
+
 <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
 
@@ -74,30 +92,95 @@ $result = mysqli_query($conn, $select);
 
 if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
+      //$acc_type = $row['acc_type'];
 ?>
 
   <div class="page-header mx-auto">
-    <p class="page_title" style="float: left; padding-top: 2px;">Update Department</p>
+    <p class="page_title" style="float: left; padding-top: 2px;">Profile</p>
     <ul class="breadcrumb">
       <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
-      <li><a href="<?php echo BASE_URL . '/admin/departments.php' ?>">Departments</a></li>
-      <li>Update Department</li>
+      <li>Admin Profile</li>
     </ul>
   </div>
 
-<div class="page-content mx-auto mt-2">
+  <div class="jumbotron jumbotron-fluid bg-white m-2 mx-auto" style="width: 98%;">
+  <div class="container">
+    <h3 class="display-6 text-center" style="padding-top: 5px !important;padding-bottom: 10px !important;">Welcome, <span style="text-transform: capitalize;"><?php echo $row['fname'] ?>!</span></h3>
+  </div>
+</div>
+
+<div class="page-content mx-auto">
 <form action="" method="post">
       <h3 class="mx-auto" style="width: 95%;">Admin Profile</h3>
-      <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="deptID">Department ID</label>
-            <input class="form-control" style="width: 20%" id="deptID" type="text" value="<?php echo $row['idno']; ?>" name="deptID" disabled>
+      <?php
+      // if(isset($error)){
+      //    foreach($error as $error){
+      //       echo '<span class="error-msg">'.$error.'</span>';
+      //    };
+      // };
+
+      // if(isset($success)){
+      //    foreach($success as $success){
+      //       echo '<span class="error-msg">'.$success.'</span>';
+      //    };
+      // };
+      ?> 
+      <div class="row" style="margin-left: 20px;">
+      <div class="form-group pt-3" style="width: 20%;">
+            <label for="idno">Employee ID Number</label>
+            <input class="form-control" style="width: 90%" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" disabled>
+         </div>
+
+         <div class="form-group pt-3" style="width: 20%;">
+            <label for="status">Account Type</label>
+            <?php
+            if($acc_type == 1){ 
+            ?>
+            <input class="form-control" style="width: 90%" id="status" type="text" value="Admin" name="status" disabled>
+            <?php 
+            } else {
+            ?>
+            <input class="form-control" style="width: 90%" id="status" type="text" value="Student" name="status" disabled>
+            <?php 
+            }
+            ?>
+         </div>
+      </div>
+      <!-- <div class="row" style="margin-left: 20px;"> -->
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="fname">First Name</label>
+            <input class="form-control" id="fname" type="text" name="fname" value="<?php echo $row['fname']; ?>" required>
          </div>
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="deptname">Department Name</label>
-            <input class="form-control" id="deptname" type="text" name="deptname" value="<?php echo $row['uname']; ?>" required>
+            <label for="fname">Last Name</label>
+            <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['lname']; ?>" required>
          </div>
+      <!-- </div>end ROW -->
+      <!-- <div class="row" style="margin-left: 20px;"> -->
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="fname">User Name</label>
+            <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
+         </div>   
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="fname">Email Address</label>
+            <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
+         </div> 
+      <!-- </div> end ROW -->
+      <!-- <div class="row" style="margin-left: 20px;">
+         <div class="form-group pt-3" style="width: 48.6%;">
+            <label for="fname">Password</label>
+            <input class="form-control" id="password" type="password" name="password" value="<?php //echo $row['password']; ?>" required>
+            <i class="bi bi-eye-slash" id="togglePassword" style="cursor: pointer;"></i>  Show/Hide Password
+         </div>   
+         <div class="form-group pt-3" style="width: 48.6%;">
+            <label for="fname">Confirm Password</label>
+            <input class="form-control" id="cpassword" type="password" name="cpassword" value="<?php //echo $row['password']; ?>" required>
+         </div>
+      </div> -->
+      <!-- end ROW -->
+
       <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
-      <input type="submit" name="update-department" value="Update Department" class="btn btn-secondary">
+      <input type="submit" name="update-profile" value="Update User" class="btn btn-secondary">
       <?php 
       }
    } else {
@@ -107,11 +190,32 @@ if (mysqli_num_rows($result) > 0) {
    </form>
 </div>
 
+ 
 <!-- end MAIN -->
 </div> 
 
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
+
+<!-- <script>
+   const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            
+            // toggle the icon
+            this.classList.toggle("bi-eye");
+        });
+
+        // prevent form submit
+        const form = document.querySelector("form");
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+        });
+</script> -->
 
 </body>
 </html>
