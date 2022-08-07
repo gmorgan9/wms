@@ -345,7 +345,7 @@ if (mysqli_num_rows($result) > 0) {
                 <span class="text-muted pt-4" style="width: 95%;">Employment Information</span>
               </div>
               <hr style="margin-bottom: -5px; margin-top: 5px;">
-              <div class="form-group pt-3 mx-auto" style="width: 95%;">
+              <div class="form-group pt-3" style="width: 95%;">
                 <label for="uname">Employment Type</label>
                 <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
               </div>   
@@ -357,7 +357,7 @@ if (mysqli_num_rows($result) > 0) {
                   <option value="0">Inactive</option>
                 </select>
               </div>
-              <div class="form-group pt-3 mx-auto" style="width: 95%;">
+              <div class="form-group pt-3" style="width: 95%;">
                 <label for="email">Official Start Date</label>
                 <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
               </div> 
