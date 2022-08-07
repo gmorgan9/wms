@@ -152,8 +152,7 @@ if(isset($_GET['deptID'])) {
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $deptname; ?></td>
-        <td><a style="text-decoration: none;" class="badge text-bg-warning" href="/admin/actions/update-department.php?deptID=<?php echo $deptID; ?>">Update</a>
-        <a style="text-decoration: none;" class="badge text-bg-danger" href="departments.php?deptID=<?php echo $deptID; ?>">Delete</a></td>
+        <td><a style="text-decoration: none;" class="badge text-bg-danger" href="departments.php?deptID=<?php echo $deptID; ?>">Delete</a></td>
         <?php } ?>
         
    
