@@ -16,16 +16,6 @@ if(!isAdmin()){
 
 
 
-$test = "SELECT * FROM department";
-      $testall = mysqli_query($conn, $test);
-      if($testall) {
-          while ($testrow = mysqli_fetch_assoc($testall)) {
-            $company_code = $testrow['company_code'];
-
-          
-
-
-
 
 // Add Department
 if(isset($_POST['add-job'])){
@@ -62,7 +52,7 @@ if(isset($_POST['add-job'])){
 
 };
 
-}}
+
 
 // Delete Department
 if(isset($_GET['jobID'])) {
