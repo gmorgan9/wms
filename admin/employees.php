@@ -285,6 +285,7 @@ if (mysqli_num_rows($result) > 0) {
             if (mysqli_num_rows($newresult) > 0) {
                while($newrow = mysqli_fetch_assoc($newresult)) {
                   $acc_type = $newrow['acc_type'];
+                  $compname = $newrow['companyname'];
             ?>
             <!-- <div class="section-header pt-3">
                 <span class="text-muted pt-4" style="width: 95%;">Employee Details</span>
@@ -315,7 +316,7 @@ if (mysqli_num_rows($result) > 0) {
               <hr style="margin-bottom: -5px; margin-top: 5px;">
               <div class="form-group pt-3" style="width: 95%;">
                 <label for="companyname">Company</label>
-                <input class="form-control" id="companyname" type="text" value="<?php echo $row['companyname']; ?>" name="companyname" required>
+                <input class="form-control" id="companyname" type="text" value="<?php echo $newrow['companyname']; ?>" name="companyname" required>
               </div>
               <div class="form-group pt-3" style="width: 95%;">
                 <label for="deptname">Department</label>
