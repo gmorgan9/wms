@@ -173,7 +173,7 @@ if (mysqli_num_rows($result) > 0) {
           <td>Inactive</td>
         <?php } ?>
         <td>
-          <a style="text-decoration: none;" class="badge text-bg-primary" href="actions/edit-employee.php?employeeID=<?php echo $empID; ?>">Edit</a>
+          <a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editEmployee" class="badge text-bg-primary" href="actions/edit-employee.php?employeeID=<?php echo $empID; ?>">Edit</a>
           <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-employee.php?employeeID=<?php echo $empID; ?>">View</a>
           <a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="employees.php?employeeID=<?php echo $empID; ?>">Delete</a>
         </td>
@@ -191,7 +191,43 @@ if (mysqli_num_rows($result) > 0) {
 </div>
 
 
-<!-- Modal -->
+
+<!-- EDIT Modal -->
+<div class="modal fade" id="editEmployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Employee Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <?php 
+          $new = "SELECT * FROM employee where employeeID = '$empID'";
+          $newa = mysqli_query($conn, $new);
+          if($newa) {
+              while ($row = mysqli_fetch_assoc($newa)) {
+                $empID   = $row['employeeID'];
+                $fname    = $row['fname'];
+        ?>
+       
+        <span class="badge text-bg-danger" style="font-size: 10px;">Be Careful! This will delete all data corresponding with this employee!</span>
+        <br>
+        <br>
+        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
+        <?php }
+        } ?>
+      </div>
+      <div class="modal-footer">
+        <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
+        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="employees.php?employeeID=<?php echo $empID; ?>">Delete</a>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        <a href=""></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DELETE Modal -->
 <div class="modal fade" id="confirmDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
