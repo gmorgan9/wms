@@ -122,7 +122,7 @@ if(isset($_GET['deptID'])) {
       if($result = mysqli_query($conn, $sql)) {
         if(mysqli_num_rows($result) > 0) {
           while($row = mysqli_fetch_array($result)) {
-            $option = $row['uname'];
+            $option = $row['deptname'];
 
             echo "<option value=". $option .">". $option. "</option>";
           }
