@@ -39,11 +39,12 @@ if(isset($_POST['add-job'])){
   //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
 
   $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
+  $test = "SELECT * FROM department where deptID = '$dept_code'";
 
-
+  $dept_result = mysqli_query($conn, $test);
   $result = mysqli_query($conn, $select);
 
-  if(mysqli_num_rows($result) > 0){
+  if(mysqli_num_rows($result) > 0 && mysqli_num_rows($dept_result)){
 
      $error[] = 'Job already exist!';
 
