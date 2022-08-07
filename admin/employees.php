@@ -290,19 +290,17 @@ if (mysqli_num_rows($result) > 0) {
                 <span class="text-muted pt-4" style="width: 95%;">Employee Details</span>
             </div>
             <hr style="margin-top: 5px;">
+            <span class="fs-6" style="margin-top: 5px;">Employee Jobs</span>
 
             <?php 
             $count = "SELECT * FROM job WHERE employee_code = '$empID'";
             $result_count = mysqli_query($conn, $count);
             if (mysqli_num_rows($result_count) > 0) {
               while($count_row = mysqli_fetch_assoc($result_count)) {
-
-
-            ?>
-            <span class="fs-6" style="margin-top: 5px;">Employee Jobs</span>
-            <p><?php echo $count_row['jobtitle']; ?></p>
-
-<?php } } ?>
+                $jobtitle = $count_row['jobtitl']; ?>
+            
+            <p><?php echo $jobtitle; ?></p>
+            <?php } } ?>
 
 
             <!-- <form action="" method="post"> -->
