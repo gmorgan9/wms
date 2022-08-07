@@ -38,8 +38,8 @@ if(isset($_POST['add-job'])){
   if(mysqli_num_rows($result) > 0){
         
         $insert = "INSERT INTO job (idno, jobtitle, dept_code, company_code) VALUES('$idno', '$jobtitle', '$dept_code', '$company_code')";
-        $compdata2 = "INSERT INTO job (company_code) SELECT company_code FROM department WHERE deptID = '$dept_id'";
-        $compdata = "INSERT INTO employee_company_data (dept_code, job_code) SELECT dept_code, jobID FROM job";
+        $compdata2 = "INSERT INTO job (company_code) SELECT company_code FROM department WHERE deptID = '$dept_code'";
+        // $compdata = "INSERT INTO employee_company_data (dept_code, job_code) SELECT dept_code, jobID FROM job";
         
         mysqli_query($conn, $insert);
         mysqli_query($conn, $compdata);
