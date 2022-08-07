@@ -92,7 +92,7 @@ if(isset($_GET['companyID'])) {
       <label for="companyname">Company Name</label>
       <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
     </div>
-    <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
+    <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
       <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-company" class="badge text-bg-secondary">Add Company</button>
     </div>
   </form>
@@ -107,10 +107,6 @@ if(isset($_GET['companyID'])) {
 
 <!-- start PAGE-CONTENT -->
 <div class="page-content mr-1 mt-2 float-end" style="width: 60%;margin-right: -170px;">
-<div class="d-grid d-md-flex justify-content-md-end">
-  <button class="badge text-bg-secondary" style="border-color: rgba(0,0,0,0);" type="button"><a style="color: white; text-decoration:none;" href="<?php echo BASE_URL . '/admin/actions/add-company.php' ?>"><i class="bi bi-plus-lg"></i> Company</a></button>
-  <!-- <button class="btn btn-primary" type="button">Button</button> -->
-</div>
     <table class="table">
   <thead>
     <tr>
