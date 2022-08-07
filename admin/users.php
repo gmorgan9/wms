@@ -154,24 +154,7 @@ if (mysqli_num_rows($result) > 0) {
             $status = $row['acc_type'];
             ?>
     <tr>
-        <?php 
-        if($_SESSION['empID'] == $row['employeeID']){ 
-        ?>
-        <!-- <th class="bg-warning" scope="row"><?php //echo $idno; ?></th>
-        <td class="bg-warning"><?php //echo $fname; ?></td>
-        <td class="bg-warning"><?php //echo $lname; ?></td>
-        <td class="bg-warning"><?php //echo $uname; ?></td>
-        <td class="bg-warning"><?php //echo $email; ?></td>
-        <?php //if($status == 1){ ?>
-          <td class="bg-warning">Admin</td>
-        <?php //} else { ?>
-          <td class="bg-warning">Employee</td>
-        <?php //} ?>
-        <td class="bg-warning" colspan="2">
-            <a style="text-decoration: none;" class="badge text-bg-primary" href="<?php //echo BASE_URL . '/admin/profile.php' ?>">My Profile</a>
-        </td> -->
-
-        <?php } else {?>
+        <?php if($_SESSION['empID'] != $row['employeeID']){ ?>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $fname; ?></td>
         <td><?php echo $lname; ?></td>
@@ -186,7 +169,7 @@ if (mysqli_num_rows($result) > 0) {
           <a style="text-decoration: none;" class="badge text-bg-success" href="view-user.php?employeeID=<?php echo $employeeID; ?>">View</a>
           <a style="text-decoration: none;" class="badge text-bg-danger" href="manage-users.php?employeeID=<?php echo $employeeID; ?>">Delete</a>
         </td>
-        <?php }}} ?>
+        <?php } else { }}}?>
   </tbody>
 </table>
       <?php 
