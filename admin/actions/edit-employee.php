@@ -110,7 +110,6 @@ if (mysqli_num_rows($result) > 0) {
 <form action="" method="post">
       <span class="mx-auto text-muted" style="padding-top: 10px; width: 95%;">Personal Information</span>
       <hr>
-      <div class="row" style="margin-left: 20px;">
       <div class="form-group pt-3" style="width: 20%;">
             <label for="idno">Employee ID Number</label>
             <input class="form-control" style="width: 90%" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" disabled>
@@ -130,7 +129,6 @@ if (mysqli_num_rows($result) > 0) {
             }
             ?>
          </div>
-      </div>
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="fname">First Name</label>
             <input class="form-control" id="fname" type="text" name="fname" value="<?php echo $row['fname']; ?>" required>
