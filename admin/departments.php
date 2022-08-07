@@ -71,6 +71,9 @@ if(isset($_GET['deptID'])) {
 <!-- Bootstrap Icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
+<!-- scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body>
 
@@ -171,7 +174,7 @@ if(isset($_GET['deptID'])) {
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $deptname; ?></td>
         <td><?php echo $companyname; ?></td>
-        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger">Delete</a></td>
+        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="departments.php?deptID=<?php echo $deptID; ?>">Delete</a></td>
         <?php } ?>
         
    
