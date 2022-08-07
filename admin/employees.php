@@ -134,8 +134,7 @@ if (mysqli_num_rows($result) > 0) {
   <thead>
     <tr>
       <th scope="col">ID #</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
+      <th scope="col">Employee</th>
       <th scope="col">Username</th>
       <th scope="col">Email</th>
       <th scope="col">Status</th>
@@ -161,8 +160,7 @@ if (mysqli_num_rows($result) > 0) {
     <tr>
         <?php if($_SESSION['empID'] != $row['employeeID']){ ?>
         <th scope="row"><?php echo $idno; ?></th>
-        <td><?php echo $fname; ?></td>
-        <td><?php echo $lname; ?></td>
+        <td><?php echo $lname; ?>, <?php echo $fname; ?></td>
         <td><?php echo $uname; ?></td>
         <td><?php echo $email; ?></td>
         <!-- <?php //if($acc_type == 1){ ?>
