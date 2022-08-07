@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
    if(mysqli_num_rows($result) > 0){
 
       $row = mysqli_fetch_array($result);
-      $sql = "UPDATE employee SET status='1' WHERE uname='$uname'";
+      $sql = "UPDATE employee SET loggedin='1' WHERE uname='$uname'";
       if($row['isadmin'] == 1){
          if (mysqli_query($conn, $sql)) {
             echo "Record updated successfully";

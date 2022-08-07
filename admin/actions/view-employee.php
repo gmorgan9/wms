@@ -109,19 +109,6 @@ if (mysqli_num_rows($result) > 0) {
 <div class="page-content mx-auto mt-2">
 <form action="" method="post">
       <h3 class="mx-auto" style="width: 95%;">Admin Profile</h3>
-      <?php
-      // if(isset($error)){
-      //    foreach($error as $error){
-      //       echo '<span class="error-msg">'.$error.'</span>';
-      //    };
-      // };
-
-      // if(isset($success)){
-      //    foreach($success as $success){
-      //       echo '<span class="error-msg">'.$success.'</span>';
-      //    };
-      // };
-      ?> 
       <div class="row" style="margin-left: 20px;">
       <div class="form-group pt-3" style="width: 20%;">
             <label for="idno">Employee ID Number</label>
@@ -143,7 +130,6 @@ if (mysqli_num_rows($result) > 0) {
             ?>
          </div>
       </div>
-      <!-- <div class="row" style="margin-left: 20px;"> -->
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="fname">First Name</label>
             <input class="form-control" id="fname" type="text" name="fname" value="<?php echo $row['fname']; ?>" required>
@@ -152,8 +138,6 @@ if (mysqli_num_rows($result) > 0) {
             <label for="lname">Last Name</label>
             <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['lname']; ?>" required>
          </div>
-      <!-- </div>end ROW -->
-      <!-- <div class="row" style="margin-left: 20px;"> -->
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
             <label for="uname">User Name</label>
             <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
@@ -162,22 +146,6 @@ if (mysqli_num_rows($result) > 0) {
             <label for="email">Email Address</label>
             <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
          </div> 
-      <!-- </div> end ROW -->
-      <!-- <div class="row" style="margin-left: 20px;">
-         <div class="form-group pt-3" style="width: 48.6%;">
-            <label for="fname">Password</label>
-            <input class="form-control" id="password" type="password" name="password" value="<?php //echo $row['password']; ?>" required>
-            <i class="bi bi-eye-slash" id="togglePassword" style="cursor: pointer;"></i>  Show/Hide Password
-         </div>   
-         <div class="form-group pt-3" style="width: 48.6%;">
-            <label for="fname">Confirm Password</label>
-            <input class="form-control" id="cpassword" type="password" name="cpassword" value="<?php //echo $row['password']; ?>" required>
-         </div>
-      </div> -->
-      <!-- end ROW -->
-
-      <!-- <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;"> -->
-      <!-- <input type="submit" name="update-profile" value="Update User" class="btn btn-secondary"> -->
       <?php 
       }
    } else {
