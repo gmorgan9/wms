@@ -243,14 +243,14 @@ if (mysqli_num_rows($result) > 0) {
                 <label for="gender">Gender</label>
                 <!-- <input class="form-control" id="fname" type="text" name="fname" value="<?php //echo $row['fname']; ?>" required> -->
                 <select class="form-control" name="gender" id="gender">
-                  <option value="" active><span class="text-muted">Select an option...</span></option>
+                  <option value="" active>Select an option...</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                 </select>
               </div>
               <div class="form-group pt-3 mx-auto" style="width: 95%;">
-                <label for="lname">Company Email</label>
-                <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['lname']; ?>" required>
+                <label for="lname">Email <span class="text-muted" style="font-size: 10px;">Personal</span></label>
+                <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['email']; ?>" required>
               </div>
               <span class="mx-auto text-muted" style="padding-top: 10px; width: 95%;">Employment Information</span>
               <hr>
