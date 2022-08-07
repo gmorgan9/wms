@@ -106,23 +106,10 @@ if (mysqli_num_rows($result) > 0) {
 <div class="page-content mx-auto">
 <form action="" method="post">
       <h3 class="mx-auto" style="width: 95%;">Employee Profile</h3>
-      <?php
-      // if(isset($error)){
-      //    foreach($error as $error){
-      //       echo '<span class="error-msg">'.$error.'</span>';
-      //    };
-      // };
-
-      // if(isset($success)){
-      //    foreach($success as $success){
-      //       echo '<span class="error-msg">'.$success.'</span>';
-      //    };
-      // };
-      ?> 
       <div class="row" style="margin-left: 20px;">
       <div class="form-group pt-3" style="width: 20%;">
-            <label for="employeeID">Employee ID</label>
-            <input class="form-control" style="width: 90%" id="employeeID" type="text" value="<?php echo $row['employeeID']; ?>" name="studentID" disabled>
+            <label for="idno">Employee ID Number</label>
+            <input class="form-control" style="width: 90%" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" disabled>
          </div>
 
          <div class="form-group pt-3" style="width: 20%;">
@@ -130,7 +117,7 @@ if (mysqli_num_rows($result) > 0) {
             <?php
             if($acc_type == 1){ 
             ?>
-            <input class="form-control" style="width: 90%" id="status" type="text" value="Admin" name="status" disabled>
+            <input class="form-control" style="width: 90%" id="status" type="text" value="Site Administrator" name="status" disabled>
             <?php 
             } else {
             ?>
