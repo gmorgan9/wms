@@ -15,9 +15,7 @@ if(!isAdmin()){
 }
 
 
-$id = $_GET['employeeID'];
-$select = " SELECT * FROM employee WHERE employeeID = '$id' ";
-$result = mysqli_query($conn, $select);
+
 
 // if(isset($_POST['update-profile'])){
 
@@ -90,6 +88,10 @@ $result = mysqli_query($conn, $select);
    
 <?php 
 
+$id = $_GET['employeeID'];
+$select = " SELECT * FROM employee WHERE employeeID = '$id' ";
+$result = mysqli_query($conn, $select);
+
 if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
       $acc_type = $row['acc_type'];
@@ -140,7 +142,7 @@ if (mysqli_num_rows($result) > 0) {
             <?php 
             } else {
             ?>
-            <input class="form-control" style="width: 90%" id="status" type="text" value="Student" name="status" disabled>
+            <input class="form-control" style="width: 90%" id="status" type="text" value="Employee" name="status" disabled>
             <?php 
             }
             ?>
@@ -152,17 +154,17 @@ if (mysqli_num_rows($result) > 0) {
             <input class="form-control" id="fname" type="text" name="fname" value="<?php echo $row['fname']; ?>" required>
          </div>
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="fname">Last Name</label>
+            <label for="lname">Last Name</label>
             <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['lname']; ?>" required>
          </div>
       <!-- </div>end ROW -->
       <!-- <div class="row" style="margin-left: 20px;"> -->
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="fname">User Name</label>
+            <label for="uname">User Name</label>
             <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
          </div>   
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="fname">Email Address</label>
+            <label for="email">Email Address</label>
             <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
          </div> 
       <!-- </div> end ROW -->
@@ -179,8 +181,8 @@ if (mysqli_num_rows($result) > 0) {
       </div> -->
       <!-- end ROW -->
 
-      <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
-      <input type="submit" name="update-profile" value="Update User" class="btn btn-secondary">
+      <!-- <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;"> -->
+      <!-- <input type="submit" name="update-profile" value="Update User" class="btn btn-secondary"> -->
       <?php 
       }
    } else {
