@@ -22,7 +22,7 @@ $sql = "SELECT job.*, department.* FROM job INNER JOIN department ON department.
           while ($row = mysqli_fetch_assoc($all)) {
             $company_code = $row['company_code'];
 
-          }}
+          
 
 
 
@@ -60,6 +60,8 @@ if(isset($_POST['add-job'])){
      }
 
 };
+
+}}
 
 // Delete Department
 if(isset($_GET['jobID'])) {
