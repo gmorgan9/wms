@@ -318,25 +318,29 @@ if (mysqli_num_rows($result) > 0) {
                 <input class="form-control" id="companyname" type="text" value="<?php echo $row['companyname']; ?>" name="companyname" required>
               </div>
               <div class="form-group pt-3" style="width: 95%;">
-                <label for="lname">Last Name</label>
-                <input class="form-control" id="lname" type="text" value="<?php echo $row['lname']; ?>" name="lname" required>
+                <label for="deptname">Department</label>
+                <input class="form-control" id="deptname" type="text" value="<?php echo $row['deptname']; ?>" name="deptname" required>
               </div>
               <div class="form-group pt-3" style="width: 95%;">
-                <label for="uname">Username</label>
-                <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
+                <label for="jobtitle">Job Title / Position</label>
+                <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="<?php echo $row['jobtitle']; ?>" required>
               </div>
               <div class="form-group pt-3" style="width: 95%;">
-                <label for="lname">Email <span class="text-muted" style="font-size: 10px;">Personal</span></label>
-                <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['email']; ?>" required>
+                <label for="jobtitle">Employee ID Number</label>
+                <input class="form-control" id="idno" type="text" name="idno" value="<?php echo $row['idno']; ?>" required>
               </div>
               <div class="form-group pt-3" style="width: 95%;">
-                <label for="gender">Gender</label>
+                <label for="companyemail">Email <span class="text-muted" style="font-size: 10px;">Company</span></label>
+                <input class="form-control" id="companyemail" type="text" name="companyemail" value="<?php echo $row['companyemail']; ?>" required>
+              </div>
+              <!-- <div class="form-group pt-3" style="width: 95%;">
+                <label for="gender">Leave Privileges</label>
                 <select class="form-control" name="gender" id="gender">
                   <option value="" active>Select an option...</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                 </select>
-              </div>
+              </div> -->
               <div class="form-group pt-3" style="width: 95%;">
                 <label for="avatar">Profile Picture</label>
                 <input class="form-control" type="file" id="avatar" name="avatar">
