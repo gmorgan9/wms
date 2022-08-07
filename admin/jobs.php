@@ -28,13 +28,13 @@ if(isset($_POST['add-job'])){
   // $comp_code = mysqli_real_escape_string($conn, $_POST['company_code']);
   //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
 
-  $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
+  $select = " SELECT job.*, deptartment.* FROM job INNER JOIN department ON job.dept_code = '$dept_code' ";
   $test = "SELECT * FROM department where deptID = '$dept_code'";
 
-  $dept_result = mysqli_query($conn, $test);
+  // $dept_result = mysqli_query($conn, $test);
   $result = mysqli_query($conn, $select);
 
-  if(mysqli_num_rows($result) > 0 && mysqli_num_rows($dept_result)){
+  if(mysqli_num_rows($result) > 0){
         
         $insert = "INSERT INTO job (idno, jobtitle, dept_code, company_code) VALUES('$idno', '$jobtitle', '$dept_code', '$company_code')";
         //$compdata2 = "INSERT INTO employee_company_data (company_code) SELECT company_code FROM department WHERE deptID= '$dept_code'";
