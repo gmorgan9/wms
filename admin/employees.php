@@ -223,7 +223,7 @@ if (mysqli_num_rows($result) > 0) {
         ?>
 
 
-
+<div class="col">
         <form action="" method="post">
       <span class="mx-auto text-muted" style="padding-top: 10px; width: 95%;">Employee Details</span>
       <hr>
@@ -268,6 +268,7 @@ if (mysqli_num_rows($result) > 0) {
    }
       ?>
    </form>
+   </div>
 
 
 
