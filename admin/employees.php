@@ -211,29 +211,80 @@ if (mysqli_num_rows($result) > 0) {
         ?>
        
         <span class="badge text-bg-danger" style="font-size: 10px;">Be Careful! This will delete all data corresponding with this employee!</span>
-        <br>
-        <br>
-        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
-        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
-        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
-        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
-        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
-        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
-        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
-        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
-        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
-        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
-        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
-        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
-        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
+        
+
+        <?php 
+
+$id = $_GET['employeeID'];
+$select = " SELECT * FROM employee WHERE employeeID = '$id' ";
+$result = mysqli_query($conn, $select);
+
+if (mysqli_num_rows($result) > 0) {
+   while($row = mysqli_fetch_assoc($result)) {
+      $acc_type = $row['acc_type'];
+?>
+
+
+
+        <form action="" method="post">
+      <span class="mx-auto text-muted" style="padding-top: 10px; width: 95%;">Employee Details</span>
+      <hr>
+      <span class="mx-auto text-muted" style="padding-top: 10px; width: 95%;">Designation</span>
+      <hr>
+      <div class="form-group pt-1 mx-auto" style="width: 95%;">
+            <label for="idno">Company</label>
+            <input class="form-control" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" required>
+         </div>
+
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="status">Department</label>
+            <input class="form-control" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" required>
+         </div>
+         <div class="form-group pt-1 mx-auto" style="width: 95%;">
+            <label for="fname">Job Title / Position</label>
+            <input class="form-control" id="fname" type="text" name="fname" value="<?php echo $row['fname']; ?>" required>
+         </div>
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="lname">Company Email</label>
+            <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['lname']; ?>" required>
+         </div>
+
+         <span class="mx-auto text-muted" style="padding-top: 10px; width: 95%;">Employment Information</span>
+        <hr>
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="uname">Employment Type</label>
+            <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
+         </div>   
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="email">Employee Status</label>
+            <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
+         </div> 
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="email">Official Start Date</label>
+            <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
+         </div> 
+      <?php 
+      }
+   } else {
+     echo "0 results";
+   }
+      ?>
+   </form>
+
+
+
+
+
+
+
+
+
         <?php }
         } ?>
       </div>
       <div class="modal-footer">
         <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
-        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="employees.php?employeeID=<?php echo $empID; ?>">Save</a>
+        <a class="badge text-bg-success" style="text-decoration: none; cursor: pointer;" href="employees.php?employeeID=<?php echo $empID; ?>">Save</a>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <a href=""></a>
       </div>
