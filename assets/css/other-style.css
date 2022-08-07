@@ -124,7 +124,7 @@ form .error-msg{
 /* Sidebar */
 .sidebar {
     /* background-color: #eee; */
-    position:absolute;
+    position:fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -144,6 +144,7 @@ form .error-msg{
     background-color: #fff;
 }
 .page-content {
+    position: relative;
     padding: 5px 8px;
     /* height: 40px; */
     width: 98%;
