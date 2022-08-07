@@ -171,7 +171,7 @@ if(isset($_GET['deptID'])) {
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $deptname; ?></td>
         <td><?php echo $companyname; ?></td>
-        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="departments.php?deptID=<?php echo $deptID; ?>">Delete</a></td>
+        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger">Delete</a></td>
         <?php } ?>
         
    
