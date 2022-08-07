@@ -127,8 +127,8 @@ if (mysqli_num_rows($result) > 0) {
       ?> 
       <div class="row" style="margin-left: 20px;">
       <div class="form-group pt-3" style="width: 20%;">
-            <label for="studentID">Student ID</label>
-            <input class="form-control" style="width: 90%" id="studentID" type="text" value="<?php echo $row['employeeID']; ?>" name="studentID" disabled>
+            <label for="idno">Student ID</label>
+            <input class="form-control" style="width: 90%" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" disabled>
          </div>
 
          <div class="form-group pt-3" style="width: 20%;">
