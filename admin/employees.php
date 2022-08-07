@@ -165,11 +165,11 @@ if (mysqli_num_rows($result) > 0) {
         <td><?php echo $lname; ?></td>
         <td><?php echo $uname; ?></td>
         <td><?php echo $email; ?></td>
-        <?php if($acc_type == 1){ ?>
+        <!-- <?php //if($acc_type == 1){ ?>
           <td>Admin</td>
-        <?php } else { ?>
+        <?php //} else { ?>
           <td>Employee</td>
-        <?php } ?>
+        <?php //} ?> -->
         <?php if($status == 1){ ?>
           <td>Active</td>
         <?php } else { ?>
