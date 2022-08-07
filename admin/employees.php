@@ -297,7 +297,9 @@ if (mysqli_num_rows($result) > 0) {
             $num_rows = mysqli_num_rows($result_count);
 
             ?>
+            <span class="fs-5">Employee Jobs</span>
             <p>Number of Jobs: <?php echo $num_rows; ?></p>
+
 
 
 
