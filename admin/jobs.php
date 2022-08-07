@@ -15,38 +15,39 @@ if(!isAdmin()){
 }
 
 // Add Department
-if(isset($_POST['add-department'])){
+if(isset($_POST['add-job'])){
 
-  $deptID = mysqli_real_escape_string($conn, $_POST['deptID']);
+  $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
   $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
-  $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
+  $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
+  $dept_code = mysqli_real_escape_string($conn, $_POST['dept_code']);
   //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
 
-  $select = " SELECT * FROM department WHERE deptname = '$deptname' ";
+  $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
 
   $result = mysqli_query($conn, $select);
 
   if(mysqli_num_rows($result) > 0){
 
-     $error[] = 'Department already exist!';
+     $error[] = 'Job already exist!';
 
   }else{
-        $insert = "INSERT INTO department (idno, deptname) VALUES('$idno', '$deptname')";
+        $insert = "INSERT INTO job (idno, jobtitle) VALUES('$idno', '$jobtitle')";
         mysqli_query($conn, $insert);
-        header('location: /admin/departments.php');
+        header('location: /admin/jobs.php');
      }
 
 };
 
 // Delete Department
-if(isset($_GET['deptID'])) {
-    $id = $_GET['deptID'];
+if(isset($_GET['jobID'])) {
+    $id = $_GET['jobID'];
 
-    $sql = "DELETE FROM department WHERE deptID = $id";
+    $sql = "DELETE FROM job WHERE jobID = $id";
     $delete = mysqli_query($conn, $sql);
     if($delete) {
         // echo "Deleted Successfully";
-        header('location: departments.php'); // returns back to same page
+        header('location: jobs.php'); // returns back to same page
     } else {
         die(mysqli_error($conn));
     }
