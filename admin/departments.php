@@ -125,7 +125,7 @@ if(isset($_GET['deptID'])) {
 </div>
 
 <!-- start PAGE-CONTENT -->
-<div class="page-content mx-auto mt-2">
+<div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
     <table class="table">
   <thead>
     <tr>
