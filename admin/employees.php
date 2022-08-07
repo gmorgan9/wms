@@ -293,8 +293,8 @@ if (mysqli_num_rows($result) > 0) {
 
             <?php 
             $count = "SELECT * FROM job";
-            $result_count = mysql_query($conn, $count);
-            $num_rows = mysql_num_rows($result_count);
+            $result_count = mysqli_query($conn, $count);
+            $num_rows = mysqli_num_rows($result_count);
 
             ?>
             <p>Number of Jobs: <?php echo $num_rows; ?></p>
