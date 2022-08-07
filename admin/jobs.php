@@ -175,7 +175,7 @@ if(isset($_GET['jobID'])) {
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
         <!-- <td><?php //echo $deptname; ?></td> -->
-        <td><a style="text-decoration: none;" class="badge text-bg-danger" href="departments.php?deptID=<?php echo $deptID; ?>">Delete</a></td>
+        <td><a style="text-decoration: none;" class="badge text-bg-danger" href="departments.php?deptID=<?php echo $jobID; ?>">Delete</a></td>
         <?php } ?>
         
    
