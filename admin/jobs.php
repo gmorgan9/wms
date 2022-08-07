@@ -144,10 +144,10 @@ if(isset($_GET['jobID'])) {
        ?>
       </select>
     </div>
-    <div  class="form-group pt-3 mx-auto" style="width: 95%;">
+    <!-- <div  class="form-group pt-3 mx-auto" style="width: 95%;">
       <label  for="company_code" style="font-size: 14px;">Test <span class="text-muted" style="font-size: 10px;">e.g. "Cheif Executive Officer"</span></label>
       <input class="form-control"  id="company_code" type="text" name="company_code" value="<?php echo $selected ?>">
-    </div>
+    </div> -->
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="jobtitle" style="font-size: 14px;">Job Title <span class="text-muted" style="font-size: 10px;">e.g. "Cheif Executive Officer"</span></label>
       <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="" required>
@@ -168,6 +168,7 @@ if(isset($_GET['jobID'])) {
       <th scope="col" style="font-size: 14px;">ID #</th>
       <th scope="col" style="font-size: 14px;">Job Title</th>
       <th scope="col" style="font-size: 14px;">Department</th>
+      <th scope="col" style="font-size: 14px;">Company</th>
       <!-- <th scope="col">City</th>
       <th scope="col">State</th>
       <th scope="col">Zip Code</th> -->
@@ -185,11 +186,13 @@ if(isset($_GET['jobID'])) {
             $idno     = $row['idno'];
             $jobtitle    = $row['jobtitle'];
             $deptname    = $row['deptname'];
+            $company_code = $row['company_code'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
         <td><?php echo $deptname; ?></td>
+        <td><?php echo $company_code; ?></td>
         <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
         <?php } ?>
         
