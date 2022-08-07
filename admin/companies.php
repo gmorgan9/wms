@@ -183,7 +183,7 @@ if(isset($_GET['companyID'])) {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Company Deletion Confirmation</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -193,13 +193,9 @@ if(isset($_GET['companyID'])) {
           if($newa) {
               while ($row = mysqli_fetch_assoc($newa)) {
                 $compID   = $row['companyID'];
-                $idno     = $row['idno'];
                 $cname    = $row['companyname'];
-                $ccity    = $row['ccity'];
-                $cstate   = $row['cstate'];
-                $czip     = $row['czip'];
         ?>
-        Confirm that you want to delete the company titled: <span class="text-muted"><?php echo $cname; ?></span>?
+        Are you sure you want to delete: <span class="text-muted"><?php echo $cname; ?></span>?
         <?php }
         } ?>
       </div>
