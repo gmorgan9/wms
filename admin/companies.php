@@ -137,11 +137,11 @@ if(isset($_GET['companyID'])) {
   <thead>
     <tr>
       <!-- <th scope="col">ID #</th> -->
-      <th scope="col">Company Name</th>
+      <th scope="col" style="font-size: 14px;">Company Name</th>
       <!-- <th scope="col">City</th>
       <th scope="col">State</th>
       <th scope="col">Zip Code</th> -->
-      <th scope="col">Actions</th>
+      <th scope="col"  style="font-size: 14px;">Actions</th>
     </tr>
   </thead>
   <tbody class="table-group-divider">
