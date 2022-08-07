@@ -32,6 +32,7 @@ if(isset($_POST['add-department'])){
      $error[] = 'Department already exist!';
 
   }else{
+        $compdata = "INSERT INTO department (company_code) SELECT companyID FROM company";
         $insert = "INSERT INTO department (idno, deptname, company_code) VALUES('$idno', '$deptname', '$company_code')";
         mysqli_query($conn, $insert);
         header('location: /admin/departments.php');
