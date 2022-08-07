@@ -117,7 +117,7 @@ if(isset($_GET['deptID'])) {
       <!-- <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="" required> -->
       <select class="form-control" name="jobtitle" id="jobtitle">
       <?php
-      $sql = "SELECT deptname FROM department INNER JOIN job";
+      $sql = "SELECT deptname FROM department";
       
       if($result = mysqli_query($conn, $sql)) {
         if(mysqli_num_rows($result) > 0) {
