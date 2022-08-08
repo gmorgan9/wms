@@ -153,7 +153,7 @@ if(isset($_GET['jobID'])) {
             $fname = $row['fname'];
             $lname = $row['lname'];
             $emp_code = $row['employeeID'];
-            echo "<option id='emp_code' name='emp_code' value=". $emp_code .">". $lname . "," .$fname. "</option>";
+            echo "<option id='emp_code' name='emp_code' value=". $emp_code .">". $lname . ", " .$fname. "</option>";
           }
         }
       }
