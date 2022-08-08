@@ -143,8 +143,8 @@ if(isset($_GET['jobID'])) {
       </select>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="emp_code" style="font-size: 14px;">Employee</label>
-      <select class="form-control" name="emp_code" id="emp_code">
+      <label for="employee_code" style="font-size: 14px;">Employee</label>
+      <select class="form-control" name="employee_code" id="employee_code">
       <?php
       $sql = "SELECT * FROM employee";
       if($result = mysqli_query($conn, $sql)) {
@@ -152,8 +152,8 @@ if(isset($_GET['jobID'])) {
           while($row = mysqli_fetch_array($result)) {
             $option = $row['fname'];
             //$lname = $row['lname'];
-            $emp_code = $row['employeeID'];
-            echo "<option id='emp_code' name='emp_code' value=". $emp_code .">". $option . "</option>";
+            $employee_code = $row['employeeID'];
+            echo "<option id='employee_code' name='employee_code' value=". $employee_code .">". $option . "</option>";
           }
         }
       }
