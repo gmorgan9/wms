@@ -41,8 +41,14 @@ if(isset($_POST['update-job'])){
 };
 
 if(isset($_POST['approve'])) {
-  
-}
+  $app_status = mysqli_real_escape_string($conn, $_POST['approval_status']);
+
+
+      $update = "UPDATE employee SET approval_status = '$app_status' where jobID = '$jobID' ";
+      mysqli_query($conn, $update);
+      //$success[] = 'Success';
+      header('location:' . BASE_URL . '/admin/jobs.php');
+};
 
 // Delete Department
 if(isset($_GET['jobID'])) {
@@ -149,8 +155,8 @@ if(isset($_GET['jobID'])) {
     <tr>
         <th scope="row"><?php echo $jobtitle; ?></th>
         <td>
-
-        <select name="approval_status" required class="c">
+<form action="" method="post">
+        <select name="approval_status" required class="">
 					<option value="">Choose your option</option>
 				  <option value="approved">Approved</option>
 				  <option value="rejected">Rejected</option>
@@ -161,6 +167,7 @@ if(isset($_GET['jobID'])) {
       </td>
         <td>
         <input type="submit" name="approve" value="approve" class="btn btn-success btn-sm">
+          </form>
           <!-- <a style="text-decoration: none;" class="badge text-bg-success" href="jobs.php?approval_status='approved'">Approve</a> -->
           <!-- <a style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID='rejected'">Reject</a> -->
         </td>
