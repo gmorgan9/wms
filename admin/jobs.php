@@ -131,16 +131,16 @@ if(isset($_GET['jobID'])) {
   <tbody class="table-group-divider">
 
   <?php
-      $pend = "SELECT * FROM job where approval_status = 'pending'";
-      $pendR = mysqli_query($conn, $pend);
-      if($pendR) {
-          while ($pending = mysqli_fetch_assoc($pendR)) {
-            $jobID       = $pending['jobID'];
-            $idno        = $pending['idno'];
-            $jobtitle    = $pending['jobtitle'];
-            $companyname = $pending['companyname'];
-            $deptname    = $pending['deptname'];
-            $status      = $pending['approval_status'];
+      $sql = "SELECT * FROM job where approval_status = 'pending'";
+      $result = mysqli_query($conn, $sql);
+      if($result) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $jobID       = $row['jobID'];
+            $idno        = $row['idno'];
+            $jobtitle    = $row['jobtitle'];
+            $companyname = $row['companyname'];
+            $deptname    = $row['deptname'];
+            $status      = $row['approval_status'];
             // $companyname    = $row['companyname'];
   ?>
     <tr>
