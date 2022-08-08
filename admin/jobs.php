@@ -14,12 +14,14 @@ if(!isAdmin()){
   header('location: /dashboard.php');
 }
 
-// Add Company
+// Add Department
 if(isset($_POST['add-job'])){
 
   $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
   $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
   $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
+  $dept_code = mysqli_real_escape_string($conn, $_POST['dept_code']);
+  //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
 
   $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
 
@@ -30,14 +32,15 @@ if(isset($_POST['add-job'])){
      $error[] = 'Job already exist!';
 
   }else{
-        $insert = "INSERT INTO job (idno, jobtitle) VALUES('$idno', '$jobtitle')";
+        // $compdata = "INSERT INTO department (company_code) SELECT companyID FROM company";
+        $insert = "INSERT INTO job (idno, jobtitle, dept_code) VALUES('$idno', '$jobtitle', '$dept_code')";
         mysqli_query($conn, $insert);
         header('location: /admin/jobs.php');
      }
 
 };
 
-// Delete Company
+// Delete Department
 if(isset($_GET['jobID'])) {
     $id = $_GET['jobID'];
 
@@ -59,7 +62,7 @@ if(isset($_GET['jobID'])) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>WMS | Jobs</title>
+   <title>WMS | Departments</title>
 
    <!-- Custom Styles -->
    <link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/other-style.css?v='. time(); ?>">
@@ -111,11 +114,28 @@ if(isset($_GET['jobID'])) {
 
 
 <!-- start PAGE-CONTENT -->
-<div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -101px; height: unset !important;">
+<div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -112px; height: unset !important;">
   <form action="" method="post">
     <!-- <h6 class="mx-auto" style="width: 95%;">Add Company</h6> -->
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="jobtitle" style="font-size: 14px;">Job Title / Position <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
+      <label for="dept_code" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
+      <select class="form-control" name="dept_code" id="dept_code">
+      <?php
+      $sql = "SELECT * FROM department";
+      if($result = mysqli_query($conn, $sql)) {
+        if(mysqli_num_rows($result) > 0) {
+          while($row = mysqli_fetch_array($result)) {
+            $option = $row['deptname'];
+            $dept_code = $row['deptID'];
+            echo "<option id='dept_code' name='dept_code' value=". $dept_code .">". $option. "</option>";
+          }
+        }
+      }
+       ?>
+      </select>
+    </div>
+    <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <label for="jobtitle" style="font-size: 14px;">Job Title / Position <span class="text-muted" style="font-size: 10px;">e.g. "Chief Executive Officer"</span></label>
       <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
@@ -133,30 +153,29 @@ if(isset($_GET['jobID'])) {
     <tr>
       <th scope="col" style="font-size: 14px;">ID #</th>
       <th scope="col" style="font-size: 14px;">Job Title / Position</th>
-      <!-- <th scope="col">City</th>
-      <th scope="col">State</th>
+      <!-- <th scope="col" style="font-size: 14px;">Company</th> -->
+      <!-- <th scope="col">State</th>
       <th scope="col">Zip Code</th> -->
-      <th scope="col"  style="font-size: 14px;">Actions</th>
+      <th scope="col" style="font-size: 14px;">Actions</th>
     </tr>
   </thead>
   <tbody class="table-group-divider">
 
   <?php
-      $sql = "SELECT * FROM job";
+      $sql = "SELECT job.*, department.* FROM job INNER JOIN department ON job.dept_code = department.deptID;";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
             $jobID   = $row['jobID'];
             $idno     = $row['idno'];
             $jobtitle    = $row['jobtitle'];
+            //$companyname    = $row['companyname'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
-        <!-- <td><?php //echo $ccity; ?></td>
-        <td><?php //echo $cstate; ?></td>
-        <td><?php //echo $czip; ?></td> -->
-        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
+        <!-- <td><?php //echo $companyname; ?></td> -->
+        <td><a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
         <?php } ?>
         
    
@@ -170,44 +189,6 @@ if(isset($_GET['jobID'])) {
     ?>
  <!-- end PAGE-CONTENT -->
 </div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="confirmDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Company Deletion Confirmation</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <?php 
-          $new = "SELECT * FROM job where jobID = '$jobID'";
-          $newa = mysqli_query($conn, $new);
-          if($newa) {
-              while ($row = mysqli_fetch_assoc($newa)) {
-                //$jobid   = $row['jobID'];
-                $jobtitle    = $row['jobtitle'];
-        ?>
-        <span class="badge text-bg-danger" style="font-size: 10px;">This will delete all corresponding departments and jobs with this company</span>
-        <br>
-        <br>
-        Are you sure you want to delete: <span class="text-muted"><?php echo $jobtitle; ?></span>?
-        <?php }
-        } ?>
-      </div>
-      <div class="modal-footer">
-        <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
-        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a>
-        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-        <a href=""></a>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
 
  
 <!-- end MAIN -->
