@@ -134,16 +134,7 @@ if(isset($_GET['jobID'])) {
             $option = $row['deptname'];
             $dept_code = $row['deptID'];
             $comp_code = $row['company_code'];
-
-            foreach($option as $options){
-              if($option == $options) {
-                  echo "<option id='dept_code' name='dept_code' selected='selected' value='$options'>$options</option>";
-              }
-              else {
-                  echo "<option id='dept_code' name='dept_code' value='$options'>$options</option>";
-              }
-          }
-            // echo "<option id='dept_code' name='dept_code' value=". $dept_code .">". $option. "</option>";
+            echo "<option id='dept_code' name='dept_code' selected='selected' value=". $dept_code .">". $option. "</option>";
           }
         }
       }
