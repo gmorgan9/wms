@@ -193,14 +193,14 @@ if(isset($_GET['jobID'])) {
       $sql = "SELECT job.*, department.* FROM job INNER JOIN department ON department.deptID = job.dept_code;";
       $all = mysqli_query($conn, $sql);
       if($all) {
-          while ($row = mysqli_fetch_assoc($all)) {
-            $jobID   = $row['jobID'];
-            $idno     = $row['idno'];
-            $jobtitle    = $row['jobtitle'];
-            $deptname    = $row['deptname'];
-            $dept_id  = $row['dept_code'];
-            $employee = $row['employee_code'];
-            $company = $row['company_code'];
+          while ($all = mysqli_fetch_assoc($all)) {
+            $jobID   = $all['jobID'];
+            $idno     = $all['idno'];
+            $jobtitle    = $all['jobtitle'];
+            $deptname    = $all['deptname'];
+            $dept_id  = $all['dept_code'];
+            $employee = $all['employee_code'];
+            $company = $all['company_code'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
