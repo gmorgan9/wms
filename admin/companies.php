@@ -170,7 +170,7 @@ if(isset($_GET['companyID'])) {
 
 var del=confirm("Are you sure you want to delete this record?");
 if (del==true){
-   alert ("record deleted")
+   alert ("Company will be deleted after refresh.")
 }else{
     alert("Record Not Deleted")
 }
