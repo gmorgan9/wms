@@ -137,10 +137,10 @@ if(isset($_GET['jobID'])) {
 
             foreach($option as $options){
               if($option == $options) {
-                  echo "<option selected='selected' value='$options'>$options</option>";
+                  echo "<option id='dept_code' name='dept_code' selected='selected' value='$options'>$options</option>";
               }
               else {
-                  echo "<option value='$options'>$options</option>";
+                  echo "<option id='dept_code' name='dept_code' value='$options'>$options</option>";
               }
           }
             // echo "<option id='dept_code' name='dept_code' value=". $dept_code .">". $option. "</option>";
