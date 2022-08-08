@@ -62,7 +62,7 @@ if(isset($_GET['jobID'])) {
     $app_status = mysqli_real_escape_string($conn, $_POST['approval_status']);
   
   
-        $update = "UPDATE employee SET approval_status = '$app_status' where jobID = '$id' ";
+        $update = "UPDATE job SET approval_status = '$app_status' where jobID = '$id' ";
         mysqli_query($conn, $update);
         //$success[] = 'Success';
         header('location:' . BASE_URL . '/admin/jobs.php');
@@ -161,9 +161,9 @@ if(isset($_GET['jobID'])) {
         <td>
 <form action="" method="post">
         <select name="approval_status" required class="">
-					<option value="">Choose your option</option>
-				  <option value="approved">Approved</option>
-				  <option value="rejected">Rejected</option>
+					<option name="approval_status" value="">Choose your option</option>
+				  <option name="approval_status" value="approved">Approved</option>
+				  <option name="approval_status" value="rejected">Rejected</option>
 				</select>
           
       
