@@ -134,6 +134,15 @@ if(isset($_GET['jobID'])) {
             $option = $row['deptname'];
             $dept_code = $row['deptID'];
             $comp_code = $row['company_code'];
+
+            foreach($option as $options){
+              if($option == $options) {
+                  echo "<option selected='selected' value='$options'>$options</option>";
+              }
+              else {
+                  echo "<option value='$options'>$options</option>";
+              }
+          }
             echo "<option id='dept_code' name='dept_code' value=". $dept_code .">". $option. "</option>";
           }
         }
@@ -142,14 +151,15 @@ if(isset($_GET['jobID'])) {
       </select>
     </div>
     <?php 
-  
-      if(!empty($_POST['deptname'])) {
-          $selected = $_POST['deptname'];
+    
+    if(isset($_POST['submit'])){
+      if(!empty($_POST['Fruit'])) {
+          $selected = $_POST['Fruit'];
           echo 'You have chosen: ' . $selected;
       } else {
           echo 'Please select the value.';
       }
-
+      }
     
     
     ?>
