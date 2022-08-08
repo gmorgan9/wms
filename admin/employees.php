@@ -159,13 +159,14 @@ if (mysqli_num_rows($result) > 0) {
             $status    = $row['status'];
             $compID = $row['company_code'];
 
-            $comp = "SELECT companyname FROM company where companyID = '$compID'"
+            $comp = "SELECT companyname FROM company where companyID = '$compID'";
+            $compname = mysqli_query($conn, $comp);
             ?>
     <tr>
         <?php if($_SESSION['empID'] != $row['employeeID']){ ?>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $lname; ?>, <?php echo $fname; ?></td>
-        <td><?php echo $compID; ?></td>
+        <td><?php echo $compname; ?></td>
         <!-- <?php //if($acc_type == 1){ ?>
           <td>Admin</td>
         <?php //} else { ?>
