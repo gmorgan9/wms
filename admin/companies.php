@@ -185,7 +185,7 @@ if(isset($_GET['companyID'])) {
       </div>
       <div class="modal-body">
         <?php 
-          $new = "SELECT * FROM company where companyID = '$compID'";
+          $new = "SELECT * FROM company where companyID = '$comp_id'";
           $newa = mysqli_query($conn, $new);
           if($newa) {
               while ($row = mysqli_fetch_assoc($newa)) {
