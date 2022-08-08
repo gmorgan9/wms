@@ -157,7 +157,7 @@ if (mysqli_num_rows($result) > 0) {
             $email     = $row['email'];
             $acc_type  = $row['acc_type'];
             $status    = $row['status'];
-            $compID = $row['company_code'];
+            $compID = $row['companyname'];
             ?>
     <tr>
         <?php if($_SESSION['empID'] != $row['employeeID']){ ?>
