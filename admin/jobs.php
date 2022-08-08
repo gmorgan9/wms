@@ -168,7 +168,7 @@ if(isset($_GET['jobID'])) {
         <th scope="row"><?php echo $jobtitle; ?></th>
         <td>
           <div class="forms d-flex" style="">
-        <form class="mr-2" method="post" action="">
+        <form class="me-2" method="post" action="">
         <?php $jobid = $row['jobID']; ?>
           <input type="hidden" name="jobID" value="<?php echo $jobid; ?>" />
           <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved"><span class="badge text-bg-success">Approve</span></button>
