@@ -185,19 +185,20 @@ if(isset($_GET['jobID'])) {
         <br>
         <br>
         Are you sure you want to delete: <span class="text-muted"><?php echo $jobtitle; ?></span>?
-        <?php }
-        }} ?>
+        
       </div>
       <div class="modal-footer">
         <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
-        <?php $id = $_GET['jobID']; ?>
-        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="jobs.php?jobID=<?php echo $id; ?>">Delete</a>
+       
+        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <a href=""></a>
       </div>
     </div>
   </div>
 </div>
+<?php }
+        }} ?>
 <!-- end modal -->
 
 
