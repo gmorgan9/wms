@@ -225,7 +225,7 @@ if(isset($_GET['jobID'])) {
         <td><?php echo $jobtitle; ?></td>
         <!-- <td><?php //echo $companyname; ?></td> -->
         <td>
-          <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none;" class="badge text-bg-success" href="jobs.php?jobID=<?php echo $jobID; ?>">View</a>
+        <button type="button" class="btn btn-info viewbtn"> VIEW </button>
           <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a>
         </td>
         <?php } ?>
@@ -243,7 +243,7 @@ if(isset($_GET['jobID'])) {
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -286,6 +286,25 @@ if(isset($_GET['jobID'])) {
  
 <!-- end MAIN -->
 </div> 
+
+<script>
+        $(document).ready(function () {
+
+            $('.viewbtn').on('click', function () {
+                $('#viewModal').modal('show');
+                $.ajax({ //create an ajax request to display.php
+                    type: "GET",
+                    url: "jobs.php",
+                    dataType: "html", //expect html to be returned                
+                    success: function (response) {
+                        $("#responsecontainer").html(response);
+                        //alert(response);
+                    }
+                });
+            });
+
+        });
+    </script>
 
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
