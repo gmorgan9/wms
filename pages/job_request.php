@@ -20,7 +20,7 @@ if(isset($_POST['add-job'])){
   $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
   $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
   $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
-  $eployee = mysqli_real_escape_string($conn, $_POST['employee']);
+  $employee = mysqli_real_escape_string($conn, $_POST['employee']);
 
   $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
   $result = mysqli_query($conn, $select);
