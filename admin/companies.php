@@ -188,9 +188,8 @@ if(isset($_GET['companyID'])) {
       </div>
       <div class="modal-body">
         <?php 
-        if(isset($_GET['companyID'])) {
-          $id = $_GET['companyID'];
-          $sql = "SELECT * FROM company where companyID = '$id'";
+        
+          $sql = "SELECT * FROM company where companyID = '$compID'";
           $result = mysqli_query($conn, $sql);
           if($result) {
               while ($row = mysqli_fetch_assoc($result)) {
@@ -203,7 +202,7 @@ if(isset($_GET['companyID'])) {
         Are you sure you want to delete: <span class="text-muted"><?php echo $cname; ?></span>?
         <?php }
         } 
-      }?>
+      ?>
       </div>
       <div class="modal-footer">
         <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
