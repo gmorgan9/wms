@@ -178,10 +178,10 @@ if (mysqli_num_rows($result) > 0) {
                         <span class="text-danger">Inactive</span>
                      <?php } ?>
                     </div>
-                    <div class="col-sm-12">
+                    <div class="col-sm-3">
                       <h6 class="mb-0">Employment Status</h6>
                     </div>
-                    <div class="col-sm-18 text-secondary">
+                    <div class="col-sm-9 text-secondary">
                     <?php if($row['status'] == 1) { ?>
                         <span class="text-success">Active</span>
                      <?php } if($row['status'] == 0) { ?>
