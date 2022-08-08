@@ -19,12 +19,7 @@ $dept = " SELECT * FROM department WHERE deptID = '$dept_code' ";
 
 // $dept_r = mysqli_query($conn, $dept);
 
-if($dept_r = mysqli_query($conn, $dept)) {
-  if(mysqli_num_rows($dept_r) > 0) {
-    while($row = mysqli_fetch_array($dept_r)) {
-      $comp_code = $row['company_code'];
 
-    }}}
 
 
 
@@ -44,6 +39,12 @@ if(isset($_POST['add-job'])){
   //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
 
   $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
+  if($dept_r = mysqli_query($conn, $dept)) {
+    if(mysqli_num_rows($dept_r) > 0) {
+      while($row = mysqli_fetch_array($dept_r)) {
+        $comp_code = $row['company_code'];
+  
+      }}}
 
   $result = mysqli_query($conn, $select);
 
