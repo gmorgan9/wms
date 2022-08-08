@@ -127,12 +127,13 @@ if(isset($_GET['jobID'])) {
       <label for="dept_code" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
       <select class="form-control" name="dept_code" id="dept_code">
       <?php
-      $sql = "SELECT job.*, department.* FROM job INNER JOIN department ON department.deptID = job.dept_code;";
+      $sql = "SELECT * FROM department";
       if($result = mysqli_query($conn, $sql)) {
         if(mysqli_num_rows($result) > 0) {
           while($row = mysqli_fetch_array($result)) {
             $option = $row['deptname'];
             $dept_code = $row['deptID'];
+            $comp_code = $row['company_code'];
             echo "<option id='dept_code' name='dept_code' value=". $dept_code .">". $option. "</option>";
           }
         }
@@ -140,6 +141,7 @@ if(isset($_GET['jobID'])) {
        ?>
       </select>
     </div>
+    <?php echo $comp_code; ?>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="jobtitle" style="font-size: 14px;">Job Title <span class="text-muted" style="font-size: 10px;">e.g. "Cheif Executive Officer"</span></label>
       <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="" required>
