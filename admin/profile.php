@@ -128,6 +128,19 @@ if (mysqli_num_rows($result) > 0) {
       <div class="col-md-8 float-end me-4">
               <div class="card mb-3">
                 <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Account Type</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <?php if($row['acc_type'] == 1) { ?>
+                        <span class="text-success">Admin</span>
+                     <?php } if($row['acc_type'] == 0) { ?>
+                        <span class="text-danger">Employee</span>
+                     <?php } ?>
+                    </div>
+                  </div>
+                  <hr>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Employee</h6>
@@ -176,19 +189,6 @@ if (mysqli_num_rows($result) > 0) {
                         <span class="text-success">Active</span>
                      <?php } if($row['status'] == 0) { ?>
                         <span class="text-danger">Inactive</span>
-                     <?php } ?>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Account Type</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <?php if($row['acc_type'] == 1) { ?>
-                        <span class="text-success">Admin</span>
-                     <?php } if($row['acc_type'] == 0) { ?>
-                        <span class="text-danger">Employee</span>
                      <?php } ?>
                     </div>
                   </div>
