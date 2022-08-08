@@ -76,7 +76,7 @@ if (mysqli_num_rows($result) > 0) {
                       <h6 class="mb-0">Full Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Kenneth Valdez
+                      <?php echo $row['employee_lname']; ?>, <?php echo $row['employee_fname']; ?>
                     </div>
                   </div>
                   <hr>
