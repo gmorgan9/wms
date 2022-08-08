@@ -91,6 +91,14 @@ if (mysqli_num_rows($result) > 0) {
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
+                      <h6 class="mb-0">Status</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
                       <h6 class="mb-0">Gender</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
@@ -108,21 +116,6 @@ if (mysqli_num_rows($result) > 0) {
                      <?php } if($row['status'] == 0) { ?>
                         <span class="text-danger">Inactive</span>
                      <?php } ?>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Status</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                        <?php if($row['approval_status'] == 'approved') { ?>
-                            <span class="text-success text-capitalize"><?php echo $row['approval_status']; ?></span>
-                        <?php } if($row['approval_status'] == 'rejected') { ?>
-                            <span class="text-danger text-capitalize"><?php echo $row['approval_status']; ?></span>
-                        <?php } if($row['approval_status'] == 'pending') { ?>
-                            <span class="text-primary text-capitalize"><?php echo $row['approval_status']; ?></span>
-                        <?php } ?>
                     </div>
                   </div>
                 </div>
