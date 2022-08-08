@@ -41,6 +41,7 @@ if(isset($_POST['update-job'])){
 };
 
 if(isset($_POST['approve'])) {
+  $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
   $app_status = mysqli_real_escape_string($conn, $_POST['approval_status']);
 
 
