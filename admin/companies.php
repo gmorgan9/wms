@@ -189,7 +189,7 @@ if(isset($_GET['companyID'])) {
       <div class="modal-body">
         <?php 
         
-          $sql = "SELECT * FROM company where companyID = '$compID'";
+          $sql = "SELECT * FROM company where idno = '$idno'";
           $result = mysqli_query($conn, $sql);
           if($result) {
               while ($row = mysqli_fetch_assoc($result)) {
