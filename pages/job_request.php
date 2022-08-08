@@ -118,7 +118,6 @@ if(isset($_GET['jobID'])) {
       <span class="text-muted pt-4" style="width: 95%;">Job Requests</span>
     </div>
     <hr style="margin-bottom: -5px; margin-top: 5px;">
-
     <?php 
 
     $sql = "SELECT * FROM employee";
@@ -130,6 +129,10 @@ if(isset($_GET['jobID'])) {
     <?php }} ?>
       <input class="form-control" id="employee" type="hidden" name="employee" value="<?php echo $emp_code; ?>">
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
+      <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
+    </div>
+    <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="deptname" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
       <input class="form-control" id="deptname" type="text" name="deptname" value="" required>
     </div>
@@ -140,7 +143,6 @@ if(isset($_GET['jobID'])) {
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
       <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-job" class="badge text-bg-secondary">Add Job</button>
     </div>
-    
   </form>
 
  <!-- end PAGE-CONTENT -->
