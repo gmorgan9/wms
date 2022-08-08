@@ -252,7 +252,7 @@ if(isset($_GET['jobID'])) {
       </div>
       <div class="modal-body">
       <?php 
-          $sql = "SELECT * FROM job where approval_status = 'approved'";
+          $sql = "SELECT * FROM job where jobID = '$jobID'";
           $all = mysqli_query($conn, $sql);
           if($all) {
               while ($row = mysqli_fetch_assoc($all)) {
