@@ -135,9 +135,9 @@ if (mysqli_num_rows($result) > 0) {
     <tr>
       <th scope="col">ID #</th>
       <th scope="col">Employee</th>
-      <th scope="col">Company</th>
-      <th scope="col">Department</th>
-      <th scope="col">Postion</th>
+      <!-- <th scope="col">Company</th> -->
+      <!-- <th scope="col">Department</th> -->
+      <!-- <th scope="col">Postion</th> -->
       <th scope="col">Status</th>
       <th scope="col">Actions</th>
     </tr>
@@ -158,15 +158,11 @@ if (mysqli_num_rows($result) > 0) {
             $acc_type  = $row['acc_type'];
             $status    = $row['status'];
             $compID = $row['company_code'];
-
-            $comp = "SELECT companyname FROM company where companyID = '$compID'";
-            $compname = mysqli_query($conn, $comp);
             ?>
     <tr>
         <?php if($_SESSION['empID'] != $row['employeeID']){ ?>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $lname; ?>, <?php echo $fname; ?></td>
-        <td><?php echo $compname; ?></td>
         <!-- <?php //if($acc_type == 1){ ?>
           <td>Admin</td>
         <?php //} else { ?>
