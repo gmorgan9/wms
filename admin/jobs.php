@@ -194,11 +194,12 @@ if(isset($_GET['jobID'])) {
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <a href=""></a>
       </div>
+      <?php }
+        }} ?>
     </div>
   </div>
 </div>
-<?php }
-        }} ?>
+
 <!-- end modal -->
 
 
