@@ -14,37 +14,6 @@ if(!isAdmin()){
    header('location:' . BASE_URL . '/pages/dashboard.php');
 }
 
-
-
-
-// if(isset($_POST['update-profile'])){
-
-//    //$sID   = mysqli_real_escape_string($conn, $_POST['studentID']);
-//    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
-//    $lname = mysqli_real_escape_string($conn, $_POST['lname']);
-//    $uname = mysqli_real_escape_string($conn, $_POST['uname']);
-//    $email = mysqli_real_escape_string($conn, $_POST['email']);
-//    // $pass = md5($_POST['password']);
-//    // $cpass = md5($_POST['cpassword']);
-//    // $isadmin = $_POST['isadmin'];
-
-//    $update_select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' ";
-
-//    $update_result = mysqli_query($conn, $update_select);
-
-//    if(mysqli_num_rows($result) > 0){
-
-//       // $error[] = 'user already exist!';
-//       $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
-//       mysqli_query($conn, $update);
-//       $success[] = 'Success';
-//       header('location:' . BASE_URL . '/admin/profile.php');
-      
-//    }else{
-      
-//    } 
-// };
-
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +22,7 @@ if(!isAdmin()){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>WMS | View User</title>
+   <title>WMS | View Job</title>
 
    <!-- Custom Styles -->
    <link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/other-style.css?v='. time(); ?>">
@@ -66,18 +35,6 @@ if(!isAdmin()){
 </head>
 <body>
 
-   
-<!-- <div class="land-container">
-   <div class="content">
-
-      <h3><span>Admin Profile Page</span></h3>
-      <h1>welcome <span><?php //echo $_SESSION['admin_fname'] ?></span></h1>
-      <p>this is an admin profile</p>
-      <a href="logout.php" class="btn">logout</a>
-   </div>
-
-</div> -->
-
 <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
 
@@ -89,7 +46,7 @@ if(!isAdmin()){
 <?php 
 
 $id = $_GET['jobID'];
-$select = " SELECT * FROM job WHERE jobID = '$id' ";
+$select = " SELECT * FROM job WHERE jobID = '$jobID' ";
 $result = mysqli_query($conn, $select);
 
 if (mysqli_num_rows($result) > 0) {
