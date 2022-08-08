@@ -253,7 +253,7 @@ if(isset($_GET['jobID'])) {
       <div class="modal-body">
       <?php 
       if(isset($_GET['viewID'])) {
-        $id = $_GET['viewID'];
+        $id = $_GET['jobID'];
           $sql = "SELECT * FROM job where jobID = '$id'";
           $all = mysqli_query($conn, $sql);
           if($all) {
