@@ -40,6 +40,10 @@ if(isset($_POST['update-job'])){
 
 };
 
+if(isset($_POST['approve'])) {
+  
+}
+
 // Delete Department
 if(isset($_GET['jobID'])) {
     $id = $_GET['jobID'];
@@ -145,7 +149,17 @@ if(isset($_GET['jobID'])) {
   ?>
     <tr>
         <th scope="row"><?php echo $jobtitle; ?></th>
-        <td><?php echo $status; ?></td>
+        <td>
+
+        <select name="approval_status" required class="custom-select form-control">
+					<option value="">Choose your option</option>
+				  <option value="approved">Approved</option>
+				  <option value="rejected">Rejected</option>
+				</select>
+          
+      
+      
+      </td>
         <!-- <td><?php //echo $companyname; ?></td> -->
         <td>
         <input type="submit" name="approve" value="approve" class="btn btn-success">
