@@ -200,7 +200,7 @@ if(isset($_GET['jobID'])) {
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
-        <!-- <td><?php //echo $companyname; ?></td> -->
+        <td><?php echo $companyname; ?></td>
         <td><a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
         <?php } ?>
         
