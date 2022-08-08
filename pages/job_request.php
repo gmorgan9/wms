@@ -127,6 +127,7 @@ if(isset($_GET['jobID'])) {
         while ($row = mysqli_fetch_assoc($all)) {
     
     $emp_code = $row['employeeID']; ?>
+    <?php }} ?>
       <input class="form-control" id="employeeID" type="text" name="employeeID" value="<?php echo $emp_code; ?>">
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="deptname" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
@@ -139,7 +140,7 @@ if(isset($_GET['jobID'])) {
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
       <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-job" class="badge text-bg-secondary">Add Job</button>
     </div>
-    <?php }} ?>
+    
   </form>
 
  <!-- end PAGE-CONTENT -->
