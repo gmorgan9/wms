@@ -150,10 +150,10 @@ if(isset($_GET['jobID'])) {
       if($result = mysqli_query($conn, $sql)) {
         if(mysqli_num_rows($result) > 0) {
           while($row = mysqli_fetch_array($result)) {
-            $fname = $row['fname'];
-            $lname = $row['lname'];
+            $option = $row['fname'];
+            //$lname = $row['lname'];
             $emp_code = $row['employeeID'];
-            echo "<option id='emp_code' name='emp_code' value=". $emp_code .">". $lname . ", " .$fname. "</option>";
+            echo "<option id='emp_code' name='emp_code' value=". $emp_code .">". $option . "</option>";
           }
         }
       }
