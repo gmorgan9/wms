@@ -143,6 +143,9 @@ if (mysqli_num_rows($result) > 0) {
                     </div>
                     <div class="col-sm-9 text-secondary">
                       <?php echo $row['uname']; ?>
+                      <?php if($row['acc_type'] == 1) { ?> 
+                        <span class="fst-italic">admin</span>
+                      <?php } ?>
                     </div>
                   </div>
                   <hr>
