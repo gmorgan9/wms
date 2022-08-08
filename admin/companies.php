@@ -193,7 +193,7 @@ if(isset($_GET['companyID'])) {
           $newr = mysqli_query($conn, $new);
           if($newr) {
               while ($row = mysqli_fetch_assoc($newr)) {
-                $comp_ID   = $_GET['companyID'];
+                //$comp_ID   = $_GET['companyID'];
                 $cname    = $row['companyname'];
         ?>
         <span class="badge text-bg-danger" style="font-size: 10px;">This will delete all corresponding departments and jobs with this company</span>
