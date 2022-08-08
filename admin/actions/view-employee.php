@@ -71,7 +71,7 @@ if (mysqli_num_rows($result) > 0) {
       <div class="col-md-8 float-start w-25 ms-4">
               <div class="card mb-3">
                 <div class="card-body">
-                  <img src="../../assets/img/pic_holder.jpg" alt="">
+                  <img src="../../assets/img/pic_holder.jpg" style="height: 50px; width: 50px; border-radius: 50px;" alt="">
                   </div>
                 </div>
               </div>
