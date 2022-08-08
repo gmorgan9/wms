@@ -10,9 +10,7 @@ session_start();
 if(!isLoggedIn()){
    header('location: /login.php');
 }
-if(!isAdmin()){
-  header('location: /dashboard.php');
-}
+
 
 // Add Department
 if(isset($_POST['add-job'])){
