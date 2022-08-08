@@ -85,7 +85,7 @@ if (mysqli_num_rows($result) > 0) {
                       <h6 class="mb-0">Job Title / Position</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <?php echo $row['jobtitle']; ?>
+                      <?php echo $row['jobtitle']; ?> &nbsp; (<?php echo $row['idno']; ?>)
                     </div>
                   </div>
                   <hr>
