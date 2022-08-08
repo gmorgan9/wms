@@ -150,12 +150,12 @@ if(isset($_GET['jobID'])) {
           <?php 
 
 if(isset($_POST['approve'])) {
-  //$id = $_GET['jobID'];
+  $id = $_GET['jobID'];
   $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
   $app_status = mysqli_real_escape_string($conn, $_POST['approval_status']);
 
 
-      $update = "UPDATE job SET approval_status = '$app_status' where jobID = '$jobID' ";
+      $update = "UPDATE job SET approval_status = '$app_status' where jobID = '$id' ";
       mysqli_query($conn, $update);
       //$success[] = 'Success';
       header('location:' . BASE_URL . '/admin/jobs.php');
