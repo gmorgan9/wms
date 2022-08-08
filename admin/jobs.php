@@ -120,6 +120,7 @@ if(isset($_GET['jobID'])) {
       <span class="text-muted pt-4" style="width: 95%;">Job Requests</span>
     </div>
     <hr style="margin-bottom: -5px; margin-top: 5px;">
+
     <!-- <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
       <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
@@ -153,7 +154,7 @@ if(isset($_GET['jobID'])) {
   <tbody class="table-group-divider">
 
   <?php
-      $sql = "SELECT * FROM job";
+      $sql = "SELECT * FROM job where status = 'approved'";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
