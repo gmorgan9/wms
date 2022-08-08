@@ -200,13 +200,14 @@ if(isset($_GET['companyID'])) {
         <br>
         <br>
         Are you sure you want to delete: <span class="text-muted"><?php echo $cname; ?></span>?
-        <?php }
-        } 
-      ?>
+        
       </div>
       <div class="modal-footer">
         <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
         <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="companies.php?companyID=<?php echo $allr['companyID']; ?>">Delete</a>
+        <?php }
+        } 
+      ?>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <a href=""></a>
       </div>
