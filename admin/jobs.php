@@ -15,9 +15,16 @@ if(!isAdmin()){
 }
 
 
-// $dept = " SELECT * FROM department WHERE deptID = '$dept_code' ";
+$dept = " SELECT * FROM department WHERE deptID = '$dept_code' ";
 
 // $dept_r = mysqli_query($conn, $dept);
+
+if($dept_r = mysqli_query($conn, $dept)) {
+  if(mysqli_num_rows($dept_r) > 0) {
+    while($row = mysqli_fetch_array($dept_r)) {
+      $comp_code = $row['company_code'];
+
+    }}}
 
 
 
@@ -30,7 +37,7 @@ if(isset($_POST['add-job'])){
   $idno_comp_data  = rand(1000000, 9999999); // figure how to not allow duplicates
   $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
   $dept_code = mysqli_real_escape_string($conn, $_POST['dept_code']);
-  $comp_code = mysqli_real_escape_string($conn, $_POST['company_code']);
+  // $comp_code = mysqli_real_escape_string($conn, $_POST['company_code']);
   $emp_code = mysqli_real_escape_string($conn, $_POST['employee_code']);
   
   
@@ -45,7 +52,7 @@ if(isset($_POST['add-job'])){
      $error[] = 'Job already exist!';
 
   }else{
-        $insert = "INSERT INTO job (idno, jobtitle, dept_code) VALUES('$idno', '$jobtitle', '$dept_code')";
+        $insert = "INSERT INTO job (idno, jobtitle, dept_code, company_code) VALUES('$idno', '$jobtitle', '$dept_code','$comp_code')";
         $compdata = "INSERT INTO job (company_code) SELECT company_code FROM department WHERE deptID = '17'";
         mysqli_query($conn, $insert);
         mysqli_query($conn, $compdata);
