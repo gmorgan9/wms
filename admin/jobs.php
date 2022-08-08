@@ -46,7 +46,7 @@ if(isset($_POST['add-job'])){
 
   }else{
         $insert = "INSERT INTO job (idno, jobtitle, dept_code) VALUES('$idno', '$jobtitle', '$dept_code')";
-        $compdata = "INSERT INTO job (company_code) SELECT company_code FROM department WHERE deptID = '$dept_code";
+        $compdata = "INSERT INTO job (company_code) SELECT company_code FROM department WHERE deptID = '22'";
         mysqli_query($conn, $insert);
         mysqli_query($conn, $compdata);
         header('location: /admin/jobs.php');
