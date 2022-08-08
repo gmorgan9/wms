@@ -68,7 +68,17 @@ if (mysqli_num_rows($result) > 0) {
       <h3 class="mx-auto" style="width: 95%;">Employee View</h3>
 
 
-      <div class="col-md-8 mx-end">
+      <div class="col-md-8 float-start">
+              <div class="card mb-3">
+                <div class="card-body">
+                  
+                  </div>
+                </div>
+              </div>
+
+
+
+      <div class="col-md-8 float-end">
               <div class="card mb-3">
                 <div class="card-body">
                   <div class="row">
