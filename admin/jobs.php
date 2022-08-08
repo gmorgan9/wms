@@ -248,7 +248,10 @@ if(isset($_GET['jobID'])) {
     <div class="modal-content">
       <div class="modal-header">
       <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <?php 
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <?php 
           $sql = "SELECT * FROM job where approval_status = 'approved'";
           $all = mysqli_query($conn, $sql);
           if($all) {
@@ -262,11 +265,7 @@ if(isset($_GET['jobID'])) {
 
 
         ?>
-        <p><?php echo $jobtitle; ?></p>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
+      <p><?php echo $jobtitle; ?></p>
       </div>
       <?php }} ?>
       <div class="modal-footer">
