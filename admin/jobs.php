@@ -15,7 +15,7 @@ if(!isAdmin()){
 }
 
 // Add Department
-if(isset($_POST['add-job'])){
+if(isset($_POST['update-job'])){
 
   $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
   $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
@@ -125,7 +125,7 @@ if(isset($_GET['jobID'])) {
     <tr>
       <th scope="col" style="font-size: 14px;">Job Title / Position</th>
       <th scope="col" style="font-size: 14px;">Status</th>
-      <!-- <th scope="col" style="font-size: 14px;">Actions</th> -->
+      <th scope="col" style="font-size: 14px;">Actions</th>
     </tr>
   </thead>
   <tbody class="table-group-divider">
@@ -147,7 +147,8 @@ if(isset($_GET['jobID'])) {
         <th scope="row"><?php echo $jobtitle; ?></th>
         <td><?php echo $status; ?></td>
         <!-- <td><?php //echo $companyname; ?></td> -->
-        <!-- <td><a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php //echo $jobID; ?>">Delete</a></td> -->
+        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#updateModal" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Update</a></td>
+        <!--  onclick="return confirm('Be Careful! \r\nOK to delete?')" -->
         <?php } ?>
         
    
@@ -220,6 +221,45 @@ if(isset($_GET['jobID'])) {
 }
     ?>
  <!-- end PAGE-CONTENT -->
+</div>
+
+
+
+
+
+<!-- UPDATE Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Employee Deletion Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <?php 
+          $new = "SELECT * FROM employee where employeeID = '$empID'";
+          $newa = mysqli_query($conn, $new);
+          if($newa) {
+              while ($row = mysqli_fetch_assoc($newa)) {
+                $empID   = $row['employeeID'];
+                $fname    = $row['fname'];
+        ?>
+       
+        <span class="badge text-bg-danger" style="font-size: 10px;">Be Careful! This will delete all data corresponding with this employee!</span>
+        <br>
+        <br>
+        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
+        <?php }
+        } ?>
+      </div>
+      <div class="modal-footer">
+        <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
+        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="employees.php?employeeID=<?php echo $empID; ?>">Delete</a>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        <a href=""></a>
+      </div>
+    </div>
+  </div>
 </div>
 
  
