@@ -144,7 +144,7 @@ if(isset($_GET['jobID'])) {
     <?php 
     
       if(!empty($_POST['dept_code'])) {
-          $selected = $_POST['dept_code'];
+          $selected = $_POST['option'];
           echo 'You have chosen: ' . $selected;
       } else {
           echo 'Please select the value.';
