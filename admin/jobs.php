@@ -55,9 +55,9 @@ if(isset($_POST['add-job'])){
 
   }else{
         $insert = "INSERT INTO job (idno, jobtitle, dept_code, company_code) VALUES('$idno', '$jobtitle', '$dept_code','$comp_code')";
-        // $compdata = "INSERT INTO job (company_code) SELECT company_code FROM department WHERE deptID = '17'";
+        $compdata = "INSERT INTO job (company_code) SELECT company_code FROM department WHERE deptID = '17'";
         mysqli_query($conn, $insert);
-        // mysqli_query($conn, $compdata);
+        mysqli_query($conn, $compdata);
         header('location: /admin/jobs.php');
      }
 
@@ -235,12 +235,12 @@ if(isset($_GET['jobID'])) {
       </div>
       <div class="modal-body">
         <?php 
-          $job = "SELECT * FROM job where jobID = '$jobID'";
-          $jobr = mysqli_query($conn, $job);
-          if($jobr) {
-              while ($jobrow = mysqli_fetch_assoc($jobr)) {
-                $jobID   = $jobrow['jobID'];
-                $jobtitle    = $jobrow['jobtitle'];
+          $new = "SELECT * FROM job where jobID = '$jobID'";
+          $newa = mysqli_query($conn, $new);
+          if($newa) {
+              while ($row = mysqli_fetch_assoc($newa)) {
+                $jobID   = $row['jobID'];
+                $jobtitle    = $row['jobtitle'];
         ?>
         Are you sure you want to delete: <span class="text-muted"><?php echo $jobtitle; ?></span>?
         <?php }
