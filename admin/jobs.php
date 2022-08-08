@@ -147,7 +147,7 @@ if(isset($_GET['jobID'])) {
         <th scope="row"><?php echo $jobtitle; ?></th>
         <td><?php echo $status; ?></td>
         <!-- <td><?php //echo $companyname; ?></td> -->
-        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#updateModal" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Update</a></td>
+        <td><button style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#updateModal" class="badge text-bg-danger">Update</button></td>
         <!--  onclick="return confirm('Be Careful! \r\nOK to delete?')" -->
         <?php } ?>
         
@@ -188,7 +188,7 @@ if(isset($_GET['jobID'])) {
       <div class="modal-footer">
         <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
        
-        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="jobs.php?jobID=<?php echo $id; ?>">Delete</a>
+        <a class="badge text-bg-warning" style="text-decoration: none; cursor: pointer;" href="jobs.php?jobID=<?php echo $id; ?>">Update</a>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <a href=""></a>
         <?php }
