@@ -116,7 +116,10 @@ if(isset($_GET['jobID'])) {
 <!-- start PAGE-CONTENT -->
 <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -45px; height: unset !important;">
   <form action="" method="post">
-    <!-- <h6 class="mx-auto" style="width: 95%;">Add Company</h6> -->
+    <div class="section-header pt-3">
+      <span class="text-muted pt-4" style="width: 95%;">Job Requests</span>
+    </div>
+    <hr style="margin-bottom: -5px; margin-top: 5px;">
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
       <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
