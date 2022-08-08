@@ -193,9 +193,10 @@ if(isset($_GET['jobID'])) {
         <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <a href=""></a>
-      </div>
-      <?php }
+        <?php }
         }} ?>
+      </div>
+     
     </div>
   </div>
 </div>
