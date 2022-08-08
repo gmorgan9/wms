@@ -180,9 +180,9 @@ if(isset($_GET['jobID'])) {
             $idno     = $row['idno'];
             $jobtitle    = $row['jobtitle'];
             $deptname    = $row['deptname'];
-            $dept_id  = $row['dept_id'];
+            $dept_id  = $row['dept_code'];
             $employee = $row['employee_code'];
-            $company = $row['company_row'];
+            $company = $row['company_code'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
