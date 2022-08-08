@@ -197,7 +197,7 @@ if(isset($_GET['jobID'])) {
 </div>
 
 <!-- start PAGE-CONTENT -->
-<div class="page-content mt-2 float-end" style="width: 53%; margin-right: 10px;">
+<div class="page-content mt-2 float-end" style="width: 63%; margin-right: 10px;">
     <table class="table">
   <thead>
     <tr>
