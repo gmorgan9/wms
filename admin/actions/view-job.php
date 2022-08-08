@@ -112,7 +112,13 @@ if (mysqli_num_rows($result) > 0) {
                       <h6 class="mb-0">Status</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        <span class="text-success"><?php echo $row['approval_status']; ?></span>
+                        <?php if($row['approval_status'] == 'approved') { ?>
+                            <span class="text-success"><?php echo $row['approval_status']; ?></span>
+                        <?php } if($row['approval_status'] == 'rejected') { ?>
+                            <span class="text-danger"><?php echo $row['approval_status']; ?></span>
+                        <?php } if($row['approval_status'] == 'pending') { ?>
+                            <span class="text-primary"><?php echo $row['approval_status']; ?></span>
+                        <?php } ?>
                     </div>
                   </div>
                 </div>
