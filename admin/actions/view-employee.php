@@ -58,14 +58,14 @@ if (mysqli_num_rows($result) > 0) {
     <p class="page_title" style="float: left; padding-top: 2px;"></p>
     <ul class="breadcrumb">
       <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
-      <li><a href="<?php echo BASE_URL . '/admin/jobs.php' ?>">Jobs</a></li>
+      <li><a href="<?php echo BASE_URL . '/admin/jobs.php' ?>">Employees</a></li>
       <li>Viewing: <span class="text-muted" style="text-transform: capitalize"><?php echo $row['fname']; ?>  </span></li>
     </ul>
   </div>
 
 <div class="page-content mx-auto mt-2">
 <form action="" method="post">
-      <h3 class="mx-auto" style="width: 95%;">Job View</h3>
+      <h3 class="mx-auto" style="width: 95%;">Employee View</h3>
 
 
       <div class="col-md-8">
@@ -76,7 +76,7 @@ if (mysqli_num_rows($result) > 0) {
                       <h6 class="mb-0">Employee</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <span class="text-capitalize"><?php echo $row['employee_lname']; ?>, <?php echo $row['employee_fname']; ?></span>
+                    <span class="text-capitalize"><?php echo $row['lname']; ?>, <?php echo $row['fname']; ?> &nbsp; (<?php echo $row['idno']; ?>)</span>
                     </div>
                   </div>
                   <hr>
