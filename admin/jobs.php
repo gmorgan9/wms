@@ -58,21 +58,7 @@ if(isset($_GET['jobID'])) {
 
   
   
-  if (isset($_POST['approved']))
-    {
-        $appUpdateQuery = "UPDATE job SET approval_status = 'approved' WHERE jobID = '".$_POST['jobID']."'";
-        $appUpdateResult = mysqli_query($conn, $appUpdateQuery);
-        // $appInsertQuery = "INSERT INTO approved(id,status) VALUES ('".$_POST['row_id']."','Approved')";
-        // $appInsertResult = mysqli_query($conn, $appInsertQuery);
-    }
-        
-    if (isset($_POST['rejected']))
-    {
-        $rejUpdateQuery = "UPDATE job SET approval_status = 'rejected' WHERE jobID = '".$_POST['jobID']."'";
-        $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
-        // $rejInsertQuery = "INSERT INTO rejected(id,status) VALUES ('".$_POST['row_id']."','Rejected')";
-        // $rejInsertResult = mysqli_query($conn, $rejInsertQuery);
-    }
+  
 
 ?>
 
@@ -175,7 +161,25 @@ if(isset($_GET['jobID'])) {
         </form>
         </td>
         <!--  onclick="return confirm('Be Careful! \r\nOK to delete?')" -->
-        <?php } ?>
+        <?php } 
+        
+        if (isset($_POST['approved']))
+    {
+        $appUpdateQuery = "UPDATE job SET approval_status = 'approved' WHERE jobID = '".$_POST['jobID']."'";
+        $appUpdateResult = mysqli_query($conn, $appUpdateQuery);
+        // $appInsertQuery = "INSERT INTO approved(id,status) VALUES ('".$_POST['row_id']."','Approved')";
+        // $appInsertResult = mysqli_query($conn, $appInsertQuery);
+    }
+        
+    if (isset($_POST['rejected']))
+    {
+        $rejUpdateQuery = "UPDATE job SET approval_status = 'rejected' WHERE jobID = '".$_POST['jobID']."'";
+        $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
+        // $rejInsertQuery = "INSERT INTO rejected(id,status) VALUES ('".$_POST['row_id']."','Rejected')";
+        // $rejInsertResult = mysqli_query($conn, $rejInsertQuery);
+    }
+        
+        ?>
         
    
       </tbody>
