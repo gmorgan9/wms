@@ -195,7 +195,7 @@ if(isset($_GET['jobID'])) {
             $jobID   = $row['jobID'];
             $idno     = $row['idno'];
             $jobtitle    = $row['jobtitle'];
-            //$companyname    = $row['companyname'];
+            $companyname    = $row['companyname'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
