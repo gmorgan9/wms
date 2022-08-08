@@ -113,11 +113,11 @@ if (mysqli_num_rows($result) > 0) {
                     </div>
                     <div class="col-sm-9 text-secondary">
                         <?php if($row['approval_status'] == 'approved') { ?>
-                            <span class="text-success"><?php echo $row['approval_status']; ?></span>
+                            <span class="text-success text-capitalize"><?php echo $row['approval_status']; ?></span>
                         <?php } if($row['approval_status'] == 'rejected') { ?>
-                            <span class="text-danger"><?php echo $row['approval_status']; ?></span>
+                            <span class="text-danger text-capitalize"><?php echo $row['approval_status']; ?></span>
                         <?php } if($row['approval_status'] == 'pending') { ?>
-                            <span class="text-primary"><?php echo $row['approval_status']; ?></span>
+                            <span class="text-primary text-capitalize"><?php echo $row['approval_status']; ?></span>
                         <?php } ?>
                     </div>
                   </div>
