@@ -171,12 +171,12 @@ if(isset($_GET['jobID'])) {
         </td>
         <td>
         <form method="post" action="">
-        <input  name="jobID" value="<?= $row['jobID']; ?>" />
-            <button type="submit" name="approved">Approve</button>
+          <input type="hidden" name="jobID" value="<?php $row['jobID']; ?>" />
+          <button type="submit" name="approved">Approve</button>
         </form>
         <form method="post" action="">
-        <input  name="jobID" value="<?= $row['jobID']; ?>" />
-            <button type="submit" name="rejected" >Reject</button>
+          <input type="hidden" name="jobID" value="<?php $row['jobID']; ?>" />
+          <button type="submit" name="rejected" >Reject</button>
         </form>
         </td>
         <!--  onclick="return confirm('Be Careful! \r\nOK to delete?')" -->
