@@ -170,17 +170,11 @@ if(isset($_GET['jobID'])) {
         <form method="post" action="">
         <?php $jobid = $row['jobID']; ?>
           <input type="hidden" name="jobID" value="<?php echo $jobid; ?>" />
-          <button style="background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;" type="submit" name="approved"><span class="badge text-bg-success">Approve</span></button>
+          <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved"><span class="badge text-bg-success">Approve</span></button>
         </form>
         <form method="post" action="">
           <input type="hidden" name="jobID" value="<?php echo $jobid; ?>" />
-          <button class="btn btn-danger btn-sm" type="submit" name="rejected" >Reject</button>
+          <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="rejected"><span class="badge text-bg-danger">Reject</span></button>
         </form>
         </td>
         <!--  onclick="return confirm('Be Careful! \r\nOK to delete?')" -->
