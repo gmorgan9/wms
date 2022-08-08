@@ -147,7 +147,7 @@ if(isset($_GET['jobID'])) {
         <th scope="row"><?php echo $jobtitle; ?></th>
         <td><?php echo $status; ?></td>
         <!-- <td><?php //echo $companyname; ?></td> -->
-        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#updateModal" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Update</a></td>
+        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#updateModal" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $id; ?>">Update</a></td>
         <!--  onclick="return confirm('Be Careful! \r\nOK to delete?')" -->
         <?php } ?>
         
