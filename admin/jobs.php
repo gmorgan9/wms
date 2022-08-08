@@ -148,9 +148,9 @@ if(isset($_GET['jobID'])) {
         <td><?php echo $status; ?></td>
         <!-- <td><?php //echo $companyname; ?></td> -->
         <td>
-        <input type="submit" name="approve" value="approve" class="badge text-bg-success">
+        <input type="submit" name="approve" value="approve" class="btn btn-success">
           <!-- <a style="text-decoration: none;" class="badge text-bg-success" href="jobs.php?approval_status='approved'">Approve</a> -->
-          <a style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID='rejected'">Reject</a>
+          <!-- <a style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID='rejected'">Reject</a> -->
         </td>
         <!--  onclick="return confirm('Be Careful! \r\nOK to delete?')" -->
         <?php } ?>
