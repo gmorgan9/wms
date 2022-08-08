@@ -120,6 +120,44 @@ if(isset($_GET['jobID'])) {
       <span class="text-muted pt-4" style="width: 95%;">Job Requests</span>
     </div>
     <hr style="margin-bottom: -5px; margin-top: 5px;">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col" style="font-size: 14px;">Job Title / Position</th>
+      <!-- <th scope="col" style="font-size: 14px;"></th> -->
+      <!-- <th scope="col" style="font-size: 14px;">Actions</th> -->
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+
+  <?php
+      $sql = "SELECT * FROM job where status = 'pending'";
+      $all = mysqli_query($conn, $sql);
+      if($all) {
+          while ($row = mysqli_fetch_assoc($all)) {
+            $jobID       = $row['jobID'];
+            $idno        = $row['idno'];
+            $jobtitle    = $row['jobtitle'];
+            $companyname = $row['companyname'];
+            $deptname    = $row['deptname'];
+            // $companyname    = $row['companyname'];
+  ?>
+    <tr>
+        <th scope="row"><?php echo $jobtitle; ?></th>
+        <td><?php echo $status; ?></td>
+        <!-- <td><?php //echo $companyname; ?></td> -->
+        <!-- <td><a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php //echo $jobID; ?>">Delete</a></td> -->
+        <?php } ?>
+        
+   
+      </tbody>
+</table> 
+<?php 
+     
+} else {
+  echo "0 results";
+}
+    ?>
 
     <!-- <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
