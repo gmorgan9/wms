@@ -171,7 +171,8 @@ if(isset($_GET['jobID'])) {
       </div>
       <div class="modal-body">
         <?php 
-        $id = $_GET['jobID'];
+          if(isset($_GET['jobID'])) {
+            $id = $_GET['jobID'];
           $sql = "SELECT * FROM job where jobID = '$id'";
           $result = mysqli_query($conn, $sql);
           if($result) {
@@ -185,7 +186,7 @@ if(isset($_GET['jobID'])) {
         <br>
         Are you sure you want to delete: <span class="text-muted"><?php echo $jobtitle; ?></span>?
         <?php }
-        } ?>
+        }} ?>
       </div>
       <div class="modal-footer">
         <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
