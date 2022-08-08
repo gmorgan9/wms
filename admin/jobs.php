@@ -155,7 +155,7 @@ if(isset($_POST['approve'])) {
   $app_status = mysqli_real_escape_string($conn, $_POST['approval_status']);
 
 
-      $update = "UPDATE job SET approval_status = '$app_status' where jobID = '$id' ";
+      $update = "UPDATE job SET approval_status = '$app_status' where jobtitle = '$jobtitle' ";
       mysqli_query($conn, $update);
       //$success[] = 'Success';
       header('location:' . BASE_URL . '/admin/jobs.php');
