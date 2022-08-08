@@ -15,14 +15,11 @@ if(!isAdmin()){
 }
 
 // Add Company
-if(isset($_POST['add-company'])){
+if(isset($_POST['add-job'])){
 
   $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
   $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
   $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
-  // $ccity = mysqli_real_escape_string($conn, $_POST['ccity']);
-  // $cstate = mysqli_real_escape_string($conn, $_POST['cstate']);
-  // $czip = mysqli_real_escape_string($conn, $_POST['czip']);
 
   $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
 
@@ -33,9 +30,9 @@ if(isset($_POST['add-company'])){
      $error[] = 'Job already exist!';
 
   }else{
-        $insert = "INSERT INTO company (idno, jobtitle) VALUES('$idno', '$jobtitle')";
+        $insert = "INSERT INTO job (idno, jobtitle) VALUES('$idno', '$jobtitle')";
         mysqli_query($conn, $insert);
-        header('location: /admin/companies.php');
+        header('location: /admin/jobs.php');
      }
 
 };
@@ -114,12 +111,12 @@ if(isset($_GET['jobID'])) {
 
 
 <!-- start PAGE-CONTENT -->
-<div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -45px; height: unset !important;">
+<div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -101px; height: unset !important;">
   <form action="" method="post">
     <!-- <h6 class="mx-auto" style="width: 95%;">Add Company</h6> -->
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="companyname" style="font-size: 14px;">Job Title / Position <span class="text-muted" style="font-size: 10px;">e.g. "Chief Executive Officer"</span></label>
-      <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
+      <label for="jobtitle" style="font-size: 14px;">Job Title / Position <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
+      <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
       <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-job" class="badge text-bg-secondary">Add Job</button>
@@ -135,7 +132,7 @@ if(isset($_GET['jobID'])) {
   <thead>
     <tr>
       <th scope="col" style="font-size: 14px;">ID #</th>
-      <th scope="col" style="font-size: 14px;">Job Title</th>
+      <th scope="col" style="font-size: 14px;">Job Title / Position</th>
       <!-- <th scope="col">City</th>
       <th scope="col">State</th>
       <th scope="col">Zip Code</th> -->
@@ -180,15 +177,15 @@ if(isset($_GET['jobID'])) {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Job Deletion Confirmation</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Company Deletion Confirmation</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <?php 
-          $job = "SELECT * FROM job where jobID = '$jobID'";
-          $jobr = mysqli_query($conn, $job);
-          if($jobr) {
-              while ($row = mysqli_fetch_assoc($jobr)) {
+          $new = "SELECT * FROM job where jobID = '$jobID'";
+          $newa = mysqli_query($conn, $new);
+          if($newa) {
+              while ($row = mysqli_fetch_assoc($newa)) {
                 $jobID   = $row['jobID'];
                 $jobtitle    = $row['jobtitle'];
         ?>
