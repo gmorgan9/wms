@@ -127,38 +127,11 @@ if(isset($_GET['jobID'])) {
     <!-- <h6 class="mx-auto" style="width: 95%;">Add Company</h6> -->
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
-      <select class="form-control" name="companyname" id="companyname">
-      <?php
-      $sql = "SELECT * FROM job";
-      if($result = mysqli_query($conn, $sql)) {
-        if(mysqli_num_rows($result) > 0) {
-          while($row = mysqli_fetch_array($result)) {
-            $comp = $row['companyname'];
-            //$dept_code = $row['deptID'];
-            echo "<option id='companyname' name='companyname' value=". $comp .">". $comp. "</option>";
-          }
-        }
-      }
-       ?>
-      </select>
+      <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="employee_code" style="font-size: 14px;">Employee</label>
-      <select class="form-control" name="employee_code" id="employee_code">
-      <?php
-      $sql = "SELECT * FROM employee";
-      if($result = mysqli_query($conn, $sql)) {
-        if(mysqli_num_rows($result) > 0) {
-          while($row = mysqli_fetch_array($result)) {
-            $option = $row['fname'];
-            //$lname = $row['lname'];
-            $employee_code = $row['employeeID'];
-            echo "<option id='employee_code' name='employee_code' value=". $employee_code .">". $option . "</option>";
-          }
-        }
-      }
-       ?>
-      </select>
+      <label for="deptname" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
+      <input class="form-control" id="deptname" type="text" name="deptname" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="jobtitle" style="font-size: 14px;">Job Title / Position <span class="text-muted" style="font-size: 10px;">e.g. "Chief Executive Officer"</span></label>
