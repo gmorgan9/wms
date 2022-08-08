@@ -252,7 +252,7 @@ if(isset($_GET['jobID'])) {
       </div>
       <div class="modal-body">
       <?php 
-      $id = $_GET['viewID'];
+          $id = $_GET['viewID'];
           $sql = "SELECT * FROM job where jobID = '$id'";
           $all = mysqli_query($conn, $sql);
           if($all) {
@@ -266,7 +266,7 @@ if(isset($_GET['jobID'])) {
 
 
         ?>
-      <p><?php echo $jobtitle; ?></p>
+      <p><?php echo $id; ?></p>
       <?php }} ?>
       </div>
       
