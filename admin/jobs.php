@@ -192,7 +192,7 @@ if(isset($_GET['jobID'])) {
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
             $jobid   = $row['jobID'];
-            $idnum     = $row['idno'];
+            $idnum     = $row['job.idno'];
             $jobtitle    = $row['jobtitle'];
             $deptname    = $row['deptname'];
   ?>
