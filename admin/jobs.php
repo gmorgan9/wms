@@ -175,7 +175,7 @@ if(isset($_GET['jobID'])) {
           $result = mysqli_query($conn, $sql);
           if($result) {
               while ($row = mysqli_fetch_assoc($result)) {
-                $empID   = $row['employeeID'];
+                $jobID   = $row['jobID'];
                 $jobtitle    = $row['jobtitle'];
         ?>
        
