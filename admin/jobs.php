@@ -62,7 +62,7 @@ if(isset($_GET['jobID'])) {
     {
         $appUpdateQuery = "UPDATE job SET approval_status = 'approved' WHERE jobID = '$jobid'";
         $appUpdateResult = mysqli_query($conn, $appUpdateQuery);
-        header('location: admin/jobs.php');
+        header('location: jobs.php');
         // $appInsertQuery = "INSERT INTO approved(id,status) VALUES ('".$_POST['row_id']."','Approved')";
         // $appInsertResult = mysqli_query($conn, $appInsertQuery);
     }
@@ -71,7 +71,7 @@ if(isset($_GET['jobID'])) {
     {
         $rejUpdateQuery = "UPDATE job SET approval_status = 'rejected' WHERE jobID = '$jobid'";
         $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
-        header('location: admin/jobs.php');
+        header('location: jobs.php');
         // $rejInsertQuery = "INSERT INTO rejected(id,status) VALUES ('".$_POST['row_id']."','Rejected')";
         // $rejInsertResult = mysqli_query($conn, $rejInsertQuery);
     }
