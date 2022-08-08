@@ -145,6 +145,7 @@ if(isset($_GET['jobID'])) {
     <tr>
       <th scope="col" style="font-size: 14px;">ID #</th>
       <th scope="col" style="font-size: 14px;">Job Title / Position</th>
+      <th scope="col" style="font-size: 14px;">Status</th>
       <th scope="col" style="font-size: 14px;">Actions</th>
     </tr>
   </thead>
@@ -160,11 +161,13 @@ if(isset($_GET['jobID'])) {
             $jobtitle    = $row['jobtitle'];
             $companyname = $row['companyname'];
             $deptname    = $row['deptname'];
+            $app_status  = $row['approval_status'];
             // $companyname    = $row['companyname'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
+        <td><?php echo $app_status; ?></td>
         <!-- <td><?php //echo $companyname; ?></td> -->
         <td><a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
         <?php } ?>
