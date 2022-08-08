@@ -14,16 +14,6 @@ if(!isAdmin()){
   header('location: /dashboard.php');
 }
 
-
-
-
-// $dept_r = mysqli_query($conn, $dept);
-
-
-
-
-
-
 // Add Department
 if(isset($_POST['add-job'])){
 
@@ -32,20 +22,13 @@ if(isset($_POST['add-job'])){
   $idno_comp_data  = rand(1000000, 9999999); // figure how to not allow duplicates
   $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
   $dept_code = mysqli_real_escape_string($conn, $_POST['dept_code']);
-  // $comp_code = mysqli_real_escape_string($conn, $_POST['company_code']);
+  $comp_code = mysqli_real_escape_string($conn, $_POST['company_code']);
   $emp_code = mysqli_real_escape_string($conn, $_POST['employee_code']);
   
   
   //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
 
   $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
-  $dept = " SELECT * FROM department WHERE deptID = '$dept_code' ";
-  if($dept_r = mysqli_query($conn, $dept)) {
-    if(mysqli_num_rows($dept_r) > 0) {
-      while($deptr = mysqli_fetch_array($dept_r)) {
-        $comp_code = $deptr['company_code'];
-  
-      }}}
 
   $result = mysqli_query($conn, $select);
 
@@ -54,10 +37,10 @@ if(isset($_POST['add-job'])){
      $error[] = 'Job already exist!';
 
   }else{
-        $insert = "INSERT INTO job (idno, jobtitle, dept_code, company_code) VALUES('$idno', '$jobtitle', '$dept_code','$comp_code')";
-        $compdata = "INSERT INTO job (company_code) SELECT company_code FROM department WHERE deptID = '17'";
+        $insert = "INSERT INTO job (idno, jobtitle, dept_code, company_code) VALUES('$idno', '$jobtitle', '$dept_code', '$company')";
+        // $compdata = "INSERT INTO employee_company_data (employee_code, dept_code, job_code) SELECT employee_code, dept_code, jobID FROM job";
         mysqli_query($conn, $insert);
-        mysqli_query($conn, $compdata);
+        // mysqli_query($conn, $compdata);
         header('location: /admin/jobs.php');
      }
 
@@ -178,6 +161,9 @@ if(isset($_GET['jobID'])) {
       <th scope="col" style="font-size: 14px;">ID #</th>
       <th scope="col" style="font-size: 14px;">Job Title</th>
       <th scope="col" style="font-size: 14px;">Department</th>
+      <th scope="col" style="font-size: 14px;">dept id</th>
+      <th scope="col" style="font-size: 14px;">employee</th>
+      <th scope="col" style="font-size: 14px;">company</th>
       <!-- <th scope="col">City</th>
       <th scope="col">State</th>
       <th scope="col">Zip Code</th> -->
@@ -187,20 +173,26 @@ if(isset($_GET['jobID'])) {
   <tbody class="table-group-divider">
 
   <?php
-      $sql = "SELECT * FROM job";
+      $sql = "SELECT job.*, department.* FROM job INNER JOIN department ON department.deptID = job.dept_code;";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
-            $jobid   = $row['jobID'];
-            $idnum     = $row['idno'];
+            $jobID   = $row['jobID'];
+            $idno     = $row['idno'];
             $jobtitle    = $row['jobtitle'];
             $deptname    = $row['deptname'];
+            $dept_id  = $row['dept_code'];
+            $employee = $row['employee_code'];
+            $company = $row['company_code'];
   ?>
     <tr>
-        <th scope="row"><?php echo $idnum; ?></th>
+        <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
         <td><?php echo $deptname; ?></td>
-        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobid; ?>">Delete</a></td>
+        <td><?php echo $dept_id; ?></td>
+        <td><?php echo $employee; ?></td>
+        <td><?php echo $company; ?></td>
+        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
         <?php } ?>
         
    
@@ -226,7 +218,7 @@ if(isset($_GET['jobID'])) {
       </div>
       <div class="modal-body">
         <?php 
-          $new = "SELECT * FROM job where jobID = '$jobid'";
+          $new = "SELECT * FROM job where jobID = '$jobID'";
           $newa = mysqli_query($conn, $new);
           if($newa) {
               while ($row = mysqli_fetch_assoc($newa)) {
