@@ -235,12 +235,12 @@ if(isset($_GET['jobID'])) {
       </div>
       <div class="modal-body">
         <?php 
-          $new = "SELECT * FROM job where jobID = '$jobID'";
-          $newa = mysqli_query($conn, $new);
-          if($newa) {
-              while ($row = mysqli_fetch_assoc($newa)) {
-                $jobID   = $row['jobID'];
-                $jobtitle    = $row['jobtitle'];
+          $job = "SELECT * FROM job where jobID = '$jobID'";
+          $jobr = mysqli_query($conn, $job);
+          if($jobr) {
+              while ($jobrow = mysqli_fetch_assoc($jobr)) {
+                $jobID   = $jobrow['jobID'];
+                $jobtitle    = $jobrow['jobtitle'];
         ?>
         Are you sure you want to delete: <span class="text-muted"><?php echo $jobtitle; ?></span>?
         <?php }
