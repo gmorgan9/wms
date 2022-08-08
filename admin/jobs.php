@@ -223,7 +223,7 @@ if(isset($_GET['jobID'])) {
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
-        <td><?php echo $id; ?></td>
+        <td><?php echo $_GET['viewID']; ?></td>
         <!-- <td><?php //echo $companyname; ?></td> -->
         <td>
           <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none;" class="badge text-bg-success" href="jobs.php?viewID=<?php echo $jobID; ?>">View</a>
