@@ -241,10 +241,10 @@ if(isset($_GET['jobID'])) {
 										<div class="modal-content">
 											<div class="modal-body text-center font-18">
 												<h4 class="mb-20">Leave take action</h4>
-												<select name="status" required class="custom-select form-control">
+												<select name="approval_status" required class="custom-select form-control">
 													<option value="">Choose your option</option>
-				                                          <option value="1">Approved</option>
-				                                          <option value="2">Rejected</option>
+				                                          <option value="approved">Approved</option>
+				                                          <option value="rejected">Rejected</option>
 												</select>
 
 												<div class="form-group">
@@ -253,7 +253,7 @@ if(isset($_GET['jobID'])) {
 												</div>
 											</div>
 											<div class="modal-footer justify-content-center">
-												<input type="submit" class="btn btn-primary" name="update" value="Submit">
+												<input type="submit" class="btn btn-primary" name="approve" value="Submit">
 											</div>
 										</div>
 									</div>
