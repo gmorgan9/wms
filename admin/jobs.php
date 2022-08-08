@@ -121,14 +121,13 @@ if(isset($_GET['jobID'])) {
 <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -45px; height: unset !important;">
   <!-- <form action="" method="post"> -->
     <div class="section-header pt-2">
-      <span class="text-muted pt-4" style="width: 95%;">Job Requests</span>
+      <span class="text-muted pt-4" style="width: 95%;">Pending Job Requests</span>
     </div>
     <hr style="margin-bottom: -5px; margin-top: 5px;">
     <table class="table">
   <thead>
     <tr>
       <th scope="col" style="font-size: 14px;">Job Title / Position</th>
-      <th scope="col" style="font-size: 14px;">Status</th>
       <th scope="col" style="font-size: 14px;">Actions</th>
     </tr>
   </thead>
@@ -160,9 +159,8 @@ if(isset($_GET['jobID'])) {
       
       
       </td>
-        <!-- <td><?php //echo $companyname; ?></td> -->
         <td>
-        <!-- <input type="submit" name="approve" value="approve" class="btn btn-success"> -->
+        <input type="submit" name="approve" value="approve" class="btn btn-success"> -->
           <!-- <a style="text-decoration: none;" class="badge text-bg-success" href="jobs.php?approval_status='approved'">Approve</a> -->
           <!-- <a style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID='rejected'">Reject</a> -->
         </td>
