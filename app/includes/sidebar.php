@@ -42,7 +42,16 @@
                     <i class="bi bi-briefcase"></i>
                     <span>  Jobs</span>
                 </a>
-            <?php } else {} ?>
+            <?php } else {?>
+                <br>
+                <span style="margin-left: 38px; margin-bottom: -10px;">Employee Links</span>
+                <hr>
+                <a style="margin-top: -15px;" href="<?php echo BASE_URL . '/pages/job_request.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="bi bi-briefcase"></i>
+                    <span>  Request Job</span>
+                </a>
+
+           <?php } ?>
         </div>
     </div>
 </nav>
