@@ -162,21 +162,8 @@ if(isset($_GET['companyID'])) {
         <!-- <td><?php //echo $ccity; ?></td>
         <td><?php //echo $cstate; ?></td>
         <td><?php //echo $czip; ?></td> -->
-        <td><a onclick="return deleletconfig()" style="text-decoration: none;"  class="badge text-bg-danger" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a></td>
+        <td><a onclick="return confirm('Be Careful! <br> OK to delete?')" style="text-decoration: none;"  class="badge text-bg-danger" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a></td>
         <?php } ?>
-
-        <script>
-          function deleletconfig(){
-
-var del=confirm("Are you sure you want to delete this record?");
-if (del==true){
-   alert ("Company will be deleted after refresh.")
-}else{
-    alert("Record Not Deleted")
-}
-return del;
-}
-        </script>
         
    
       </tbody>
