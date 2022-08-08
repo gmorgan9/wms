@@ -91,7 +91,7 @@ if (mysqli_num_rows($result) > 0) {
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Email <span class="text-muted" style="font-size: 10px;">Personal</span></h6>
+                      <h6 class="mb-0">Email <span class="text-muted" style="font-size: 10px;">(Personal)</span></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                      <?php echo $row['email']; ?>
