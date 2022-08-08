@@ -14,9 +14,6 @@ if(!isAdmin()){
   header('location: /dashboard.php');
 }
 
-
-
-
 // Add Department
 if(isset($_POST['add-job'])){
 
@@ -25,31 +22,26 @@ if(isset($_POST['add-job'])){
   $idno_comp_data  = rand(1000000, 9999999); // figure how to not allow duplicates
   $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
   $dept_code = mysqli_real_escape_string($conn, $_POST['dept_code']);
-  // $comp_code = mysqli_real_escape_string($conn, $_POST['company_code']);
+  
   //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
 
-  $select = " SELECT * FROM job WHERE jobID = '$jobID' ";
-  // $test = "SELECT * FROM department where deptID = '$dept_code'";
+  $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
 
-
-  // $dept_result = mysqli_query($conn, $test);
   $result = mysqli_query($conn, $select);
 
   if(mysqli_num_rows($result) > 0){
-        
+
+     $error[] = 'Job already exist!';
+
+  }else{
         $insert = "INSERT INTO job (idno, jobtitle, dept_code) VALUES('$idno', '$jobtitle', '$dept_code')";
-        // $compdata2 = "INSERT INTO job (company_code) SELECT company_code FROM department";
-        // $compdata = "INSERT INTO employee_company_data (dept_code, job_code) SELECT dept_code, jobID FROM job";
-        
+        $compdata = "INSERT INTO employee_company_data (company_code, employee_code, dept_code, job_code) SELECT dept_code, jobID FROM job";
         mysqli_query($conn, $insert);
-        // mysqli_query($conn, $compdata2);
-       // mysqli_query($conn, $compdata2);
+        mysqli_query($conn, $compdata);
         header('location: /admin/jobs.php');
      }
 
 };
-
-
 
 // Delete Department
 if(isset($_GET['jobID'])) {
@@ -130,7 +122,7 @@ if(isset($_GET['jobID'])) {
     <!-- <h6 class="mx-auto" style="width: 95%;">Add Company</h6> -->
      <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="dept_code" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
-      <select class="form-control" name="dept" id="dept_code">
+      <select class="form-control" name="dept_code" id="dept_code">
       <?php
       $sql = "SELECT * FROM department";
       if($result = mysqli_query($conn, $sql)) {
@@ -138,7 +130,7 @@ if(isset($_GET['jobID'])) {
           while($row = mysqli_fetch_array($result)) {
             $option = $row['deptname'];
             $dept_code = $row['deptID'];
-            echo "<option id='dept_code' name='dept_code' selected value=". $dept_code .">". $option. "</option>";
+            echo "<option id='dept_code' name='dept_code' value=". $dept_code .">". $option. "</option>";
           }
         }
       }
@@ -165,7 +157,6 @@ if(isset($_GET['jobID'])) {
       <th scope="col" style="font-size: 14px;">ID #</th>
       <th scope="col" style="font-size: 14px;">Job Title</th>
       <th scope="col" style="font-size: 14px;">Department</th>
-      <th scope="col" style="font-size: 14px;">Department</th>
       <!-- <th scope="col">City</th>
       <th scope="col">State</th>
       <th scope="col">Zip Code</th> -->
@@ -183,13 +174,11 @@ if(isset($_GET['jobID'])) {
             $idno     = $row['idno'];
             $jobtitle    = $row['jobtitle'];
             $deptname    = $row['deptname'];
-            $company_code = $row['company_code'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
         <td><?php echo $deptname; ?></td>
-        <td><?php echo $company_code; ?></td>
         <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
         <?php } ?>
         
