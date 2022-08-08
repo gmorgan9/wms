@@ -211,10 +211,10 @@ if(isset($_GET['jobID'])) {
 				                                          <option value="rejected">Rejected</option>
 												</select>
 
-												<div class="form-group">
+												<!-- <div class="form-group">
 													<label></label>
 													<textarea id="textarea1" name="description" class="form-control" required placeholder="Description" length="300" maxlength="300"></textarea>
-												</div>
+												</div> -->
 											</div>
 											<div class="modal-footer justify-content-center">
 												<input type="submit" class="btn btn-primary" name="approve" value="Update">
