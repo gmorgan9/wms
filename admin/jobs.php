@@ -254,10 +254,10 @@ if(isset($_GET['jobID'])) {
       <?php 
       // if(isset($_GET['viewID'])) {
         //$id = $_GET['jobID'];
-          $sql = "SELECT * FROM job where idno = '$idno'";
-          $all = mysqli_query($conn, $sql);
-          if($all) {
-              while ($row = mysqli_fetch_assoc($all)) {
+          // $sql = "SELECT * FROM job where idno = '$idno'";
+          $result = mysqli_query($conn, $sql);
+          if($result) {
+              while ($row = mysqli_fetch_assoc($result)) {
                 //$jobID       = $row['jobID'];
                 //$idno        = $row['idno'];
                 $jobtitle    = $row['jobtitle'];
