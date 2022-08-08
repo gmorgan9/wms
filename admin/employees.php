@@ -164,10 +164,10 @@ if (mysqli_num_rows($result) > 0) {
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $lname; ?>, <?php echo $fname; ?></td>
        <?php 
-        $sql = "SELECT * FROM company WHERE companyID='$compID'";
-        $all = mysqli_query($conn, $sql);
-      if($all) {
-          while ($row = mysqli_fetch_assoc($all)) {
+        $new = "SELECT * FROM company WHERE companyID='$compID'";
+        $newr = mysqli_query($conn, $new);
+      if($newr) {
+          while ($row = mysqli_fetch_assoc($newr)) {
             $comp_id     = $row['companyID'];
             $idno      = $row['idno'];
             $comp_name     = $row['companyname'];
