@@ -150,13 +150,15 @@ if(isset($_GET['jobID'])) {
   <tbody class="table-group-divider">
 
   <?php
-      $sql = "SELECT job.*, department.* FROM job INNER JOIN department ON job.dept_code = department.deptID;";
+      $sql = "SELECT * FROM job";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
-            $jobID   = $row['jobID'];
-            $idno     = $row['idno'];
+            $jobID       = $row['jobID'];
+            $idno        = $row['idno'];
             $jobtitle    = $row['jobtitle'];
+            $companyname = $row['companyname'];
+            $deptname    = $row['deptname'];
             // $companyname    = $row['companyname'];
   ?>
     <tr>
