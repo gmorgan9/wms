@@ -161,21 +161,45 @@ if(isset($_GET['jobID'])) {
 }
     ?>
 
-    <!-- <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
-      <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
+  <!-- UPDATE Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Employee Deletion Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <?php 
+          $sql = "SELECT * FROM job where jobID = '$jobID'";
+          $result = mysqli_query($conn, $sql);
+          if($result) {
+              while ($row = mysqli_fetch_assoc($result)) {
+                $empID   = $row['employeeID'];
+                $jobtitle    = $row['jobtitle'];
+        ?>
+       
+        <span class="badge text-bg-danger" style="font-size: 10px;">Be Careful! This will delete all data corresponding with this employee!</span>
+        <br>
+        <br>
+        Are you sure you want to delete: <span class="text-muted"><?php echo $jobtitle; ?></span>?
+        <?php }
+        } ?>
+      </div>
+      <div class="modal-footer">
+        <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
+        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="employees.php?employeeID=<?php echo $empID; ?>">Delete</a>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        <a href=""></a>
+      </div>
     </div>
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="deptname" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
-      <input class="form-control" id="deptname" type="text" name="deptname" value="" required>
-    </div>
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="jobtitle" style="font-size: 14px;">Job Title / Position <span class="text-muted" style="font-size: 10px;">e.g. "Chief Executive Officer"</span></label>
-      <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="" required>
-    </div>
-    <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
-      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-job" class="badge text-bg-secondary">Add Job</button>
-    </div> -->
+  </div>
+</div>
+<!-- end modal -->
+
+
+
+
 
  <!-- end PAGE-CONTENT -->
 </div>
@@ -226,41 +250,6 @@ if(isset($_GET['jobID'])) {
 
 
 
-
-<!-- UPDATE Modal -->
-<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Employee Deletion Confirmation</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <?php 
-          $new = "SELECT * FROM employee where employeeID = '$empID'";
-          $newa = mysqli_query($conn, $new);
-          if($newa) {
-              while ($row = mysqli_fetch_assoc($newa)) {
-                $empID   = $row['employeeID'];
-                $fname    = $row['fname'];
-        ?>
-       
-        <span class="badge text-bg-danger" style="font-size: 10px;">Be Careful! This will delete all data corresponding with this employee!</span>
-        <br>
-        <br>
-        Are you sure you want to delete: <span class="text-muted"><?php echo $fname; ?></span>?
-        <?php }
-        } ?>
-      </div>
-      <div class="modal-footer">
-        <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
-        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="employees.php?employeeID=<?php echo $empID; ?>">Delete</a>
-        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-        <a href=""></a>
-      </div>
-    </div>
-  </div>
-</div>
 
  
 <!-- end MAIN -->
