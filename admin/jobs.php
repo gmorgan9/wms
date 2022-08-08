@@ -151,7 +151,7 @@ if(isset($_GET['jobID'])) {
         <th scope="row"><?php echo $jobtitle; ?></th>
         <td>
 
-        <select name="approval_status" required class="custom-select form-control">
+        <select name="approval_status" required class="c">
 					<option value="">Choose your option</option>
 				  <option value="approved">Approved</option>
 				  <option value="rejected">Rejected</option>
