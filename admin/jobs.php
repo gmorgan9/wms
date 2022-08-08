@@ -225,7 +225,7 @@ if(isset($_GET['jobID'])) {
         <td><?php echo $jobtitle; ?></td>
         <!-- <td><?php //echo $companyname; ?></td> -->
         <td>
-          <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-primary" href="jobs.php?jobID=<?php echo $jobID; ?>">Edit</a>
+          <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-success" href="jobs.php?jobID=<?php echo $jobID; ?>">View</a>
           <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a>
         </td>
         <?php } ?>
