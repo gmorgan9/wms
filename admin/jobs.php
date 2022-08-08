@@ -209,6 +209,8 @@ if(isset($_GET['jobID'])) {
   <tbody class="table-group-divider">
 
   <?php
+  if(isset($_GET['viewID'])) {
+    $id = $_GET['viewID'];
       $sql = "SELECT * FROM job where approval_status = 'approved'";
       $all = mysqli_query($conn, $sql);
       if($all) {
@@ -228,7 +230,7 @@ if(isset($_GET['jobID'])) {
           <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none;" class="badge text-bg-success" href="jobs.php?viewID=<?php echo $jobID; ?>">View</a>
           <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a>
         </td>
-        <?php } ?>
+        <?php }} ?>
         
    
       </tbody>
