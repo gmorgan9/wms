@@ -225,7 +225,7 @@ if(isset($_GET['jobID'])) {
         <td><?php echo $jobtitle; ?></td>
         <!-- <td><?php //echo $companyname; ?></td> -->
         <td>
-          <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none;" class="badge text-bg-success" href="jobs.php?jobID=<?php echo $jobID; ?>>View</a>
+          <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none;" class="badge text-bg-success" href="jobs.php?jobID=<?php echo $jobID; ?>">View</a>
           <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a>
         </td>
         <?php } ?>
