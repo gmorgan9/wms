@@ -134,9 +134,9 @@ if (mysqli_num_rows($result) > 0) {
                     </div>
                     <div class="col-sm-9 text-secondary">
                     <?php if($row['acc_type'] == 1) { ?>
-                        <span class="text-success">Admin</span>
+                        Admin
                      <?php } if($row['acc_type'] == 0) { ?>
-                        <span class="text-danger">Employee</span>
+                        Employee
                      <?php } ?>
                     </div>
                   </div>
@@ -156,9 +156,6 @@ if (mysqli_num_rows($result) > 0) {
                     </div>
                     <div class="col-sm-9 text-secondary">
                       <?php echo $row['uname']; ?>
-                      <?php if($row['acc_type'] == 1) { ?> 
-                        (<span class="fst-italic text-info text-opacity-50">admin</span>)
-                      <?php } ?>
                     </div>
                   </div>
                   <hr>
