@@ -147,7 +147,10 @@ if(isset($_GET['jobID'])) {
         <th scope="row"><?php echo $jobtitle; ?></th>
         <td><?php echo $status; ?></td>
         <!-- <td><?php //echo $companyname; ?></td> -->
-        <td><button style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#updateModal" class="badge text-bg-danger">Update</button></td>
+        <td>
+          <a style="text-decoration: none;" class="badge text-bg-success" href="jobs.php?approval_status='approved'">Approve</a>
+          <a style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID='rejected'">Reject</a>
+        </td>
         <!--  onclick="return confirm('Be Careful! \r\nOK to delete?')" -->
         <?php } ?>
         
@@ -160,46 +163,6 @@ if(isset($_GET['jobID'])) {
   echo "0 results";
 }
     ?>
-
-  <!-- UPDATE Modal -->
-<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Employee Deletion Confirmation</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <?php 
-          $sql = "SELECT * FROM job where jobID = '$jobID'";
-          $result = mysqli_query($conn, $sql);
-          if($result) {
-              while ($row = mysqli_fetch_assoc($result)) {
-                $id   = $row['jobID'];
-                $jobtitle    = $row['jobtitle'];
-        ?>
-       
-        <span class="badge text-bg-danger" style="font-size: 10px;">Be Careful! This will delete all data corresponding with this employee!</span>
-        <br>
-        <br>
-        Are you sure you want to delete: <span class="text-muted"><?php echo $jobtitle; ?></span>?
-        
-      </div>
-      <div class="modal-footer">
-        <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
-       
-        <a class="badge text-bg-warning" style="text-decoration: none; cursor: pointer;" href="jobs.php?jobID=<?php echo $id; ?>">Update</a>
-        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-        <a href=""></a>
-        <?php }
-        } ?>
-      </div>
-     
-    </div>
-  </div>
-</div>
-
-<!-- end modal -->
 
 
 
