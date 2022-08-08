@@ -152,7 +152,7 @@ if(isset($_GET['jobID'])) {
         <th scope="row"><?php echo $jobtitle; ?></th>
         <td>
         <form method="post" action="">
-          <input type="hidden" name="jobID" value="<?php $row['jobID']; ?>" />
+          <input type="hidden" name="jobID" value="<?php $jobid = $row['jobID']; ?>" />
           <button class="btn btn-success btn-sm" type="submit" name="approved">Approve</button>
         </form>
         <form method="post" action="">
@@ -165,7 +165,7 @@ if(isset($_GET['jobID'])) {
         
         if (isset($_POST['approved']))
     {
-        $appUpdateQuery = "UPDATE job SET approval_status = 'approved' WHERE jobID = '$jobID'";
+        $appUpdateQuery = "UPDATE job SET approval_status = 'approved' WHERE jobID = '$jobid'";
         $appUpdateResult = mysqli_query($conn, $appUpdateQuery);
         // $appInsertQuery = "INSERT INTO approved(id,status) VALUES ('".$_POST['row_id']."','Approved')";
         // $appInsertResult = mysqli_query($conn, $appInsertQuery);
@@ -173,7 +173,7 @@ if(isset($_GET['jobID'])) {
         
     if (isset($_POST['rejected']))
     {
-        $rejUpdateQuery = "UPDATE job SET approval_status = 'rejected' WHERE jobID = '$jobID'";
+        $rejUpdateQuery = "UPDATE job SET approval_status = 'rejected' WHERE jobID = '$jobid'";
         $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
         // $rejInsertQuery = "INSERT INTO rejected(id,status) VALUES ('".$_POST['row_id']."','Rejected')";
         // $rejInsertResult = mysqli_query($conn, $rejInsertQuery);
