@@ -128,7 +128,7 @@ if(isset($_GET['jobID'])) {
     
     $emp_code = $row['employeeID']; ?>
     <?php }} ?>
-      <input class="form-control" id="employeeID" type="text" name="employeeID" value="<?php echo $emp_code; ?>">
+      <input class="form-control" id="employee" type="hiddent" name="employee" value="<?php echo $emp_code; ?>">
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="deptname" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
       <input class="form-control" id="deptname" type="text" name="deptname" value="" required>
