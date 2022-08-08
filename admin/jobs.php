@@ -157,7 +157,7 @@ if(isset($_GET['jobID'])) {
           <button class="btn btn-success btn-sm" type="submit" name="approved">Approve</button>
         </form>
         <form method="post" action="">
-          <input type="hidden" name="jobID" value="<?php echo $jobid; ?>" />
+          <input name="jobID" value="<?php echo $jobid; ?>" />
           <button class="btn btn-danger btn-sm" type="submit" name="rejected" >Reject</button>
         </form>
         </td>
