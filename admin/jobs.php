@@ -149,7 +149,7 @@ if(isset($_GET['jobID'])) {
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
-            $jobID   = $row['companyID'];
+            $jobID   = $row['jobID'];
             $idno     = $row['idno'];
             $jobtitle    = $row['jobtitle'];
   ?>
