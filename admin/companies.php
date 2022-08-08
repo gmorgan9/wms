@@ -149,12 +149,9 @@ if(isset($_GET['companyID'])) {
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
-            $compID   = $row['companyID'];
+            $comp_id   = $row['companyID'];
             $idno     = $row['idno'];
             $cname    = $row['companyname'];
-            $ccity    = $row['ccity'];
-            $cstate   = $row['cstate'];
-            $czip     = $row['czip'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
@@ -162,7 +159,7 @@ if(isset($_GET['companyID'])) {
         <!-- <td><?php //echo $ccity; ?></td>
         <td><?php //echo $cstate; ?></td>
         <td><?php //echo $czip; ?></td> -->
-        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a></td>
+        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="companies.php?companyID=<?php echo $comp_id; ?>">Delete</a></td>
         <?php } ?>
         
    
