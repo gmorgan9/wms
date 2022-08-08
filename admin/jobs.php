@@ -28,7 +28,7 @@ if(isset($_POST['add-job'])){
   
   //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
 
-  $select = "SELECT job.*, department.* FROM job INNER JOIN department ON department.deptID = job.dept_code;";
+  $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
 
   $result = mysqli_query($conn, $select);
 
@@ -127,7 +127,7 @@ if(isset($_GET['jobID'])) {
       <label for="dept_code" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
       <select class="form-control" name="dept_code" id="dept_code">
       <?php
-      $sql = "SELECT * FROM department";
+      $sql = "SELECT job.*, department.* FROM job INNER JOIN department ON department.deptID = job.dept_code;";
       if($result = mysqli_query($conn, $sql)) {
         if(mysqli_num_rows($result) > 0) {
           while($row = mysqli_fetch_array($result)) {
