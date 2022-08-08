@@ -192,12 +192,12 @@ if(isset($_GET['jobID'])) {
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
             $jobid   = $row['jobID'];
-            $idno     = $row['idno'];
+            $idnum     = $row['idno'];
             $jobtitle    = $row['jobtitle'];
             $deptname    = $row['deptname'];
   ?>
     <tr>
-        <th scope="row"><?php echo $idno; ?></th>
+        <th scope="row"><?php echo $idnum; ?></th>
         <td><?php echo $jobtitle; ?></td>
         <td><?php echo $deptname; ?></td>
         <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobid; ?>">Delete</a></td>
