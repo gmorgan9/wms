@@ -153,7 +153,7 @@ if(isset($_GET['jobID'])) {
             $fname = $row['fname'];
             $lname = $row['lname'];
             $emp_code = $row['employeeID'];
-            echo "<option id='emp_code' name='emp_code' value=". $emp_code ."><span style='text-transform:capitalize;'>". $lname . "</span>, <span style='text-transform:capitalize;'>" .$fname. "</span></option>";
+            echo "<option id='emp_code' name='emp_code' value=". $emp_code ."><span class='text-capitalize'>". $lname . "</span>, <span class='text-capitalize'>" .$fname. "</span></option>";
           }
         }
       }
