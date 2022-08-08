@@ -140,6 +140,7 @@ if(isset($_GET['jobID'])) {
             $jobtitle    = $row['jobtitle'];
             $companyname = $row['companyname'];
             $deptname    = $row['deptname'];
+            $status      = $row['status'];
             // $companyname    = $row['companyname'];
   ?>
     <tr>
