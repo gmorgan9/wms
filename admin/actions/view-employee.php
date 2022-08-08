@@ -68,7 +68,7 @@ if (mysqli_num_rows($result) > 0) {
       <h3 class="mx-auto" style="width: 95%;">Employee View</h3>
 
 
-      <div class="col-md-8 float-start w-25 ms-5" style="margin-left: -15px !important;">
+      <div class="col-md-8 float-start w-25 ms-5" style="margin-left: -2px !important;">
               <div class="card mb-3">
                 <div class="card-body">
                   image place holder
