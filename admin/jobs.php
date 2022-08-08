@@ -253,7 +253,7 @@ if(isset($_GET['jobID'])) {
       <div class="modal-body">
       <?php 
       $id = $_GET['viewID'];
-          $sql = "SELECT * FROM job where jobID = '$jobID'";
+          $sql = "SELECT * FROM job where jobID = '$id'";
           $all = mysqli_query($conn, $sql);
           if($all) {
               while ($row = mysqli_fetch_assoc($all)) {
