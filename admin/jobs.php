@@ -126,16 +126,16 @@ if(isset($_GET['jobID'])) {
   <form action="" method="post">
     <!-- <h6 class="mx-auto" style="width: 95%;">Add Company</h6> -->
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="dept_code" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
-      <select class="form-control" name="dept_code" id="dept_code">
+      <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
+      <select class="form-control" name="companyname" id="companyname">
       <?php
-      $sql = "SELECT * FROM department";
+      $sql = "SELECT * FROM job";
       if($result = mysqli_query($conn, $sql)) {
         if(mysqli_num_rows($result) > 0) {
           while($row = mysqli_fetch_array($result)) {
-            $option = $row['deptname'];
-            $dept_code = $row['deptID'];
-            echo "<option id='dept_code' name='dept_code' value=". $dept_code .">". $option. "</option>";
+            $option = $row['companyname'];
+            //$dept_code = $row['deptID'];
+            echo "<option id='dept_code' name='dept_code' value=". $option .">". $option. "</option>";
           }
         }
       }
@@ -179,9 +179,6 @@ if(isset($_GET['jobID'])) {
     <tr>
       <th scope="col" style="font-size: 14px;">ID #</th>
       <th scope="col" style="font-size: 14px;">Job Title / Position</th>
-      <!-- <th scope="col" style="font-size: 14px;">Company</th> -->
-      <!-- <th scope="col">State</th>
-      <th scope="col">Zip Code</th> -->
       <th scope="col" style="font-size: 14px;">Actions</th>
     </tr>
   </thead>
