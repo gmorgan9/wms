@@ -194,7 +194,7 @@ if(isset($_GET['companyID'])) {
           $result = mysqli_query($conn, $sql);
           if($result) {
               while ($row = mysqli_fetch_assoc($result)) {
-                $compID   = $row['companyID'];
+                $comp_ID   = $row['companyID'];
                 $cname    = $row['companyname'];
         ?>
         <span class="badge text-bg-danger" style="font-size: 10px;">This will delete all corresponding departments and jobs with this company</span>
@@ -207,7 +207,7 @@ if(isset($_GET['companyID'])) {
       </div>
       <div class="modal-footer">
         <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
-        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="companies.php?companyID=<?php echo $id; ?>">Delete</a>
+        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="companies.php?companyID=<?php echo $comp_ID; ?>">Delete</a>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <a href=""></a>
       </div>
