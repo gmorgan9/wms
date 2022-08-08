@@ -163,17 +163,7 @@ if (mysqli_num_rows($result) > 0) {
         <?php if($_SESSION['empID'] != $row['employeeID']){ ?>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $lname; ?>, <?php echo $fname; ?></td>
-       <?php 
-        $new = "SELECT * FROM company WHERE companyID='$compID'";
-        $newr = mysqli_query($conn, $new);
-      if($newr) {
-          while ($row = mysqli_fetch_assoc($newr)) {
-            $comp_id     = $row['companyID'];
-            $idno      = $row['idno'];
-            $comp_name     = $row['companyname'];
-            ?>
         <td><?php echo $comp_name; ?></td>
-        <?php }} ?>
         <!-- <?php //if($acc_type == 1){ ?>
           <td>Admin</td>
         <?php //} else { ?>
