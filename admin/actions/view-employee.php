@@ -78,7 +78,7 @@ if (mysqli_num_rows($result) > 0) {
 
 
 
-      <div class="col-md-8 float-end">
+      <div class="col-md-8 float-end me-2">
               <div class="card mb-3">
                 <div class="card-body">
                   <div class="row">
