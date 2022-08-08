@@ -209,6 +209,7 @@ if(isset($_GET['jobID'])) {
   <tbody class="table-group-divider">
 
   <?php
+  $id = $_GET['viewID'];
       $sql = "SELECT * FROM job where approval_status = 'approved'";
       $all = mysqli_query($conn, $sql);
       if($all) {
@@ -222,7 +223,7 @@ if(isset($_GET['jobID'])) {
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
-        <td><?php echo $jobtitle; ?></td>
+        <td><?php echo $id; ?></td>
         <!-- <td><?php //echo $companyname; ?></td> -->
         <td>
           <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none;" class="badge text-bg-success" href="jobs.php?viewID=<?php echo $jobID; ?>">View</a>
@@ -252,7 +253,7 @@ if(isset($_GET['jobID'])) {
       </div>
       <div class="modal-body">
       <?php 
-          $id = $_GET['viewID'];
+          
           $sql = "SELECT * FROM job where jobID = '$id'";
           $all = mysqli_query($conn, $sql);
           if($all) {
@@ -266,7 +267,7 @@ if(isset($_GET['jobID'])) {
 
 
         ?>
-      <p><?php echo $id; ?></p>
+      <p><?php echo $jobtitle; ?></p>
       <?php }} ?>
       </div>
       
