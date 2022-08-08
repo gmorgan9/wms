@@ -162,8 +162,17 @@ if(isset($_GET['companyID'])) {
         <!-- <td><?php //echo $ccity; ?></td>
         <td><?php //echo $cstate; ?></td>
         <td><?php //echo $czip; ?></td> -->
-        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a></td>
+        <td><a onclick="confirmationDelete($(this));return false;" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a></td>
         <?php } ?>
+
+        <script>
+          function confirmationDelete(anchor)
+{
+   var conf = confirm('Are you sure want to delete this record?');
+   if(conf)
+      window.location=anchor.attr("href");
+}
+        </script>
         
    
       </tbody>
@@ -178,7 +187,7 @@ if(isset($_GET['companyID'])) {
 </div>
 
 
-<!-- Modal -->
+<!-- 
 <div class="modal fade" id="confirmDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -189,31 +198,31 @@ if(isset($_GET['companyID'])) {
       <div class="modal-body">
         <?php 
         
-        $sql = "SELECT * FROM company WHERE idno = '$idno'";
-        $all = mysqli_query($conn, $sql);
-        if($all) {
-            while ($allr = mysqli_fetch_assoc($all)) {
-                //$comp_ID   = $_GET['companyID'];
-                $cname    = $allr['companyname'];
+        // $sql = "SELECT * FROM company WHERE idno = '$idno'";
+        // $all = mysqli_query($conn, $sql);
+        // if($all) {
+        //     while ($allr = mysqli_fetch_assoc($all)) {
+        //         //$comp_ID   = $_GET['companyID'];
+        //         $cname    = $allr['companyname'];
         ?>
         <span class="badge text-bg-danger" style="font-size: 10px;">This will delete all corresponding departments and jobs with this company</span>
         <br>
         <br>
-        Are you sure you want to delete: <span class="text-muted"><?php echo $cname; ?></span>?
+        Are you sure you want to delete: <span class="text-muted"><?php //echo $cname; ?></span>?
         
       </div>
       <div class="modal-footer">
         <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
-        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="companies.php?companyID=<?php echo $allr['companyID']; ?>">Delete</a>
-        <?php }
-        } 
+        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="companies.php?companyID=<?php //echo $allr['companyID']; ?>">Delete</a>
+        <?php //}
+        //} 
       ?>
-        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        
         <a href=""></a>
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
