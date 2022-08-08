@@ -169,11 +169,11 @@ if(isset($_GET['jobID'])) {
         <td>
         <form method="post" action="">
         <?php $jobid = $row['jobID']; ?>
-          <input name="jobID" value="<?php echo $jobid; ?>" />
+          <input type="hidden" name="jobID" value="<?php echo $jobid; ?>" />
           <button class="btn btn-success btn-sm" type="submit" name="approved">Approve</button>
         </form>
         <form method="post" action="">
-          <input name="jobID" value="<?php echo $jobid; ?>" />
+          <input type="hidden" name="jobID" value="<?php echo $jobid; ?>" />
           <button class="btn btn-danger btn-sm" type="submit" name="rejected" >Reject</button>
         </form>
         </td>
