@@ -94,7 +94,7 @@ if (mysqli_num_rows($result) > 0) {
                       <h6 class="mb-0">Gender</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <?php echo $row['gender']; ?>
+                    <span class="text-capitalize"><?php echo $row['gender']; ?></span>
                     </div>
                   </div>
                   <hr>
