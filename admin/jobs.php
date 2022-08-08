@@ -254,7 +254,7 @@ if(isset($_GET['jobID'])) {
       <?php 
       // if(isset($_GET['viewID'])) {
         //$id = $_GET['jobID'];
-          $test = "SELECT * FROM job where idno = '$idno'";
+          $test = "SELECT * FROM job where jobID = '$jobID'";
           $testr = mysqli_query($conn, $test);
           if($testr) {
               while ($row = mysqli_fetch_assoc($testr)) {
