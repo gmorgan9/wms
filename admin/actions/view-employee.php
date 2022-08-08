@@ -104,9 +104,9 @@ if (mysqli_num_rows($result) > 0) {
                     </div>
                     <div class="col-sm-9 text-secondary">
                     <?php if($row['status'] == 1) { ?>
-                        Active
+                        <span class="text-success">Active</span>
                      <?php } if($row['status'] == 0) { ?>
-                        Inactive
+                        <span class="text-danger">Inactive</span>
                      <?php } ?>
                     </div>
                   </div>
