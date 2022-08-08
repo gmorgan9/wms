@@ -32,7 +32,7 @@ if(isset($_POST['add-job'])){
      $error[] = 'Job already exist!';
 
   }else{
-        $insert2 = "INSERT INTO job (company_code) SELECT company_code FROM department where dept_id='$dept_code'";
+        $insert2 = "INSERT INTO job (company_code) SELECT company_code FROM department where deptID='$dept_code'";
         $insert = "INSERT INTO job (idno, jobtitle, dept_code) VALUES('$idno', '$jobtitle', '$dept_code')";
         mysqli_query($conn, $insert);
         mysqli_query($conn, $insert2);
