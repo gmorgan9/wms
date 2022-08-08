@@ -21,7 +21,7 @@ if(isset($_POST['add-job'])){
   $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
   $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
   $dept_code = mysqli_real_escape_string($conn, $_POST['dept_code']);
-  //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
+  $emp_code = mysqli_real_escape_string($conn, $_POST['employee_code']);
 
   
   $comp = " SELECT * FROM department WHERE deptID = '$dept_code' ";
@@ -40,7 +40,7 @@ if(isset($_POST['add-job'])){
 
   }else{
         //$insert2 = "INSERT INTO job (company_code) SELECT company_code FROM department where deptID='$dept_code'";
-        $insert = "INSERT INTO job (idno, jobtitle, dept_code, company_code) VALUES('$idno', '$jobtitle', '$dept_code', '$comp_code')";
+        $insert = "INSERT INTO job (idno, jobtitle, dept_code, company_code, employee_code) VALUES('$idno', '$jobtitle', '$dept_code', '$comp_code', '$emp_code')";
         mysqli_query($conn, $insert);
         //mysqli_query($conn, $insert2);
         header('location: /admin/jobs.php');
@@ -136,6 +136,24 @@ if(isset($_GET['jobID'])) {
             $option = $row['deptname'];
             $dept_code = $row['deptID'];
             echo "<option id='dept_code' name='dept_code' value=". $dept_code .">". $option. "</option>";
+          }
+        }
+      }
+       ?>
+      </select>
+    </div>
+    <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <label for="emp_code" style="font-size: 14px;">Employee</label>
+      <select class="form-control" name="emp_code" id="emp_code">
+      <?php
+      $sql = "SELECT * FROM employee";
+      if($result = mysqli_query($conn, $sql)) {
+        if(mysqli_num_rows($result) > 0) {
+          while($row = mysqli_fetch_array($result)) {
+            $fname = $row['fname'];
+            $lname = $row['lname'];
+            $emp_code = $row['employeeID'];
+            echo "<option id='emp_code' name='emp_code' value=". $emp_code .">". $lname . "," .$fname. "</option>";
           }
         }
       }
