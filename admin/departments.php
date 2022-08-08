@@ -175,7 +175,7 @@ if(isset($_GET['deptID'])) {
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $deptname; ?></td>
         <td><?php echo $companyname; ?></td>
-        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="departments.php?deptID=<?php echo $deptID; ?>">Delete</a></td>
+        <td><a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="departments.php?deptID=<?php echo $deptID; ?>">Delete</a></td>
         <?php } ?>
         
    
@@ -188,43 +188,6 @@ if(isset($_GET['deptID'])) {
 }
     ?>
  <!-- end PAGE-CONTENT -->
-</div>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="confirmDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Department Deletion Confirmation</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <?php 
-          $new = "SELECT * FROM department where deptID = '$deptID'";
-          $newa = mysqli_query($conn, $new);
-          if($newa) {
-              while ($row = mysqli_fetch_assoc($newa)) {
-                $deptID   = $row['deptID'];
-                $deptname    = $row['deptname'];
-        ?>
-       
-        <span class="badge text-bg-danger" style="font-size: 10px;">This will delete all corresponding jobs with this department</span>
-        <br>
-        <br>
-        Are you sure you want to delete: <span class="text-muted"><?php echo $deptname; ?></span>?
-        <?php }
-        } ?>
-      </div>
-      <div class="modal-footer">
-        <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
-        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="departments.php?deptID=<?php echo $deptID; ?>">Delete</a>
-        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-        <a href=""></a>
-      </div>
-    </div>
-  </div>
 </div>
 
  
