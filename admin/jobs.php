@@ -146,7 +146,7 @@ if(isset($_GET['jobID'])) {
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
-            // $jobid   = $row['jobID'];
+            $jobid   = $row['jobID'];
             $idno     = $row['idno'];
             $jobtitle    = $row['jobtitle'];
   ?>
@@ -186,7 +186,7 @@ if(isset($_GET['jobID'])) {
           $newa = mysqli_query($conn, $new);
           if($newa) {
               while ($row = mysqli_fetch_assoc($newa)) {
-                $jobID   = $row['jobID'];
+                //$jobID   = $row['jobID'];
                 $jobtitle    = $row['jobtitle'];
         ?>
         <span class="badge text-bg-danger" style="font-size: 10px;">This will delete all corresponding departments and jobs with this company</span>
