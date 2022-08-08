@@ -57,7 +57,6 @@ if(isset($_GET['jobID'])) {
   }
 
   if(isset($_POST['approve'])) {
-    $id = $_GET['jobID'];
     $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
     $app_status = mysqli_real_escape_string($conn, $_POST['approval_status']);
   
@@ -171,9 +170,14 @@ if(isset($_GET['jobID'])) {
 
         </td>
         <td>
-        <!-- <input type="submit" name="approve" value="approve" class="btn btn-success btn-sm"> -->
-          <!-- <a style="text-decoration: none;" class="badge text-bg-success" href="jobs.php?approval_status='approved'">Approve</a> -->
-          <!-- <a style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID='rejected'">Reject</a> -->
+        <form method="post" action="">
+        <input  name="jobID" value="<?= $row['jobID']; ?>" />
+            <button type="submit" name="approved">Approve</button>
+        </form>
+        <form method="post" action="">
+        <input type="hidden" name="jobID" value="<?= $row['jobID']; ?>" />
+            <button type="submit" name="rejected" >Reject</button>
+        </form>
         </td>
         <!--  onclick="return confirm('Be Careful! \r\nOK to delete?')" -->
         <?php } ?>
@@ -187,56 +191,6 @@ if(isset($_GET['jobID'])) {
   echo "0 results";
 }
     ?>
-
-
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button> -->
-
-<!-- Modal -->
-<form action="" method="post">
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Job Take Action</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        
-      <select name="approval_status" required class="custom-select form-control">
-													<option value="">Choose your option</option>
-				                                          <option value="approved">Approved</option>
-				                                          <option value="rejected">Rejected</option>
-												</select>
-
-												<!-- <div class="form-group">
-													<label></label>
-													<textarea id="textarea1" name="description" class="form-control" required placeholder="Description" length="300" maxlength="300"></textarea>
-												</div> -->
-											</div>
-											<div class="modal-footer justify-content-center">
-												<input type="submit" class="btn btn-primary" name="approve" value="Update">
-											</div>
-      </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div> -->
-    </div>
-  </div>
-</div>
-</form>
-
-
-
-
-
-
-
-
-
  <!-- end PAGE-CONTENT -->
 </div>
 
