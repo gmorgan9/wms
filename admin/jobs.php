@@ -288,22 +288,17 @@ if(isset($_GET['jobID'])) {
 <!-- end MAIN -->
 </div> 
 
+<?php include('view-job-modal.php'); ?>
 <script>
-        $(document).ready(function () {
+        $(document).ready(function(){
+          $(document).on('click', '.view', function(){
 
-            $('.viewbtn').on('click', function () {
-                $('#viewmodal').modal('show');
-                $.ajax({ //create an ajax request to display.php
-                    type: "GET",
-                    url: "display.php",
-                    dataType: "html", //expect html to be returned                
-                    success: function (response) {
-                        $("#responsecontainer").html(response);
-                        //alert(response);
-                    }
-                });
-            });
+          
+            var first = $('#employee_fname'),text();
 
+            $('#view').modal('show');
+            $('#employee_fname').val(first);
+          });
         });
     </script>
 
