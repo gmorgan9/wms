@@ -170,7 +170,7 @@ if(isset($_GET['jobID'])) {
         <form method="post" action="">
         <?php $jobid = $row['jobID']; ?>
           <input type="hidden" name="jobID" value="<?php echo $jobid; ?>" />
-          <button class="btn btn-success btn-sm" type="submit" name="approved">Approve</button>
+          <button type="submit" name="approved"><span class="badge text-bg-success">Approve</span></button>
         </form>
         <form method="post" action="">
           <input type="hidden" name="jobID" value="<?php echo $jobid; ?>" />
