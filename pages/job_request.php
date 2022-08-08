@@ -20,6 +20,7 @@ if(isset($_POST['add-job'])){
   $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
   $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
   $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
+  $eployee = mysqli_real_escape_string($conn, $_POST['employee']);
 
   $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
   $result = mysqli_query($conn, $select);
@@ -30,7 +31,7 @@ if(isset($_POST['add-job'])){
 
   }else{
         // $insert2 = "INSERT INTO employee_company_data (employee_code, company_code, dept_code, job_code) SELECT employee_code, company_code, dept_code, jobID FROM job";
-        $insert = "INSERT INTO job (idno, jobtitle, companyname, deptname) VALUES('$idno', '$jobtitle', '$companyname', '$deptname')";
+        $insert = "INSERT INTO job (idno, jobtitle, companyname, deptname, employee) VALUES('$idno', '$jobtitle', '$companyname', '$deptname', '$employee')";
         mysqli_query($conn, $insert);
         // mysqli_query($conn, $insert2);
         header('location: job_request.php');
