@@ -190,7 +190,8 @@ if(isset($_GET['jobID'])) {
       </div>
       <div class="modal-footer">
         <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
-        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a>
+        <?php $id = $_GET['jobID']; ?>
+        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="jobs.php?jobID=<?php echo $id; ?>">Delete</a>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <a href=""></a>
       </div>
