@@ -179,7 +179,7 @@ if(isset($_GET['jobID'])) {
     <tr>
       <th scope="col" style="font-size: 14px;">ID #</th>
       <th scope="col" style="font-size: 14px;">Job Title / Position</th>
-      <th scope="col" style="font-size: 14px;">Company</th>
+      <!-- <th scope="col" style="font-size: 14px;">Company</th> -->
       <!-- <th scope="col">State</th>
       <th scope="col">Zip Code</th> -->
       <th scope="col" style="font-size: 14px;">Actions</th>
@@ -195,12 +195,12 @@ if(isset($_GET['jobID'])) {
             $jobID   = $row['jobID'];
             $idno     = $row['idno'];
             $jobtitle    = $row['jobtitle'];
-            $companyname    = $row['companyname'];
+            // $companyname    = $row['companyname'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
-        <td><?php echo $companyname; ?></td>
+        <!-- <td><?php //echo $companyname; ?></td> -->
         <td><a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
         <?php } ?>
         
