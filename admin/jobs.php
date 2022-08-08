@@ -22,6 +22,9 @@ if(isset($_POST['add-job'])){
   $idno_comp_data  = rand(1000000, 9999999); // figure how to not allow duplicates
   $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
   $dept_code = mysqli_real_escape_string($conn, $_POST['dept_code']);
+  $comp_code = mysqli_real_escape_string($conn, $_POST['company_code']);
+  $emp_code = mysqli_real_escape_string($conn, $_POST['employee_code']);
+  
   
   //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
 
@@ -157,6 +160,9 @@ if(isset($_GET['jobID'])) {
       <th scope="col" style="font-size: 14px;">ID #</th>
       <th scope="col" style="font-size: 14px;">Job Title</th>
       <th scope="col" style="font-size: 14px;">Department</th>
+      <th scope="col" style="font-size: 14px;">dept id</th>
+      <th scope="col" style="font-size: 14px;">employee</th>
+      <th scope="col" style="font-size: 14px;">company</th>
       <!-- <th scope="col">City</th>
       <th scope="col">State</th>
       <th scope="col">Zip Code</th> -->
@@ -174,11 +180,17 @@ if(isset($_GET['jobID'])) {
             $idno     = $row['idno'];
             $jobtitle    = $row['jobtitle'];
             $deptname    = $row['deptname'];
+            $dept_id  = $row['dept_id'];
+            $employee = $row['employee_code'];
+            $company = $row['company_row'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
         <td><?php echo $deptname; ?></td>
+        <td><?php echo $dept_id; ?></td>
+        <td><?php echo $employee; ?></td>
+        <td><?php echo $company; ?></td>
         <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
         <?php } ?>
         
