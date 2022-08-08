@@ -145,7 +145,7 @@ if (mysqli_num_rows($result) > 0) {
   <tbody class="table-group-divider">
 
   <?php
-      $sql = "SELECT employee.*, job.* FROM employee INNER JOIN job ON employee.employeeID = job.employee_code";
+      $sql = "SELECT * FROM employee";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
