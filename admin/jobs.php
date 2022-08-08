@@ -20,16 +20,8 @@ if(isset($_POST['add-job'])){
   $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
   $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
   $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
-  $dept_code = mysqli_real_escape_string($conn, $_POST['dept_code']);
-  $emp_code = mysqli_real_escape_string($conn, $_POST['employee_code']);
-
-  
-  $comp = " SELECT * FROM department WHERE deptID = '$dept_code' ";
-  if($compr = mysqli_query($conn, $comp)) {
-    while($row = mysqli_fetch_array($compr)) {
-      $comp_code = $row['company_code'];
-  }
-}
+  $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
+  $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
 
   $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
   $result = mysqli_query($conn, $select);
@@ -40,7 +32,7 @@ if(isset($_POST['add-job'])){
 
   }else{
         // $insert2 = "INSERT INTO employee_company_data (employee_code, company_code, dept_code, job_code) SELECT employee_code, company_code, dept_code, jobID FROM job";
-        $insert = "INSERT INTO job (idno, jobtitle, dept_code, company_code, employee_code) VALUES('$idno', '$jobtitle', '$dept_code', '$comp_code', '$emp_code')";
+        $insert = "INSERT INTO job (idno, jobtitle, companyname, deptname) VALUES('$idno', '$jobtitle', '$companyname', '$deptname')";
         mysqli_query($conn, $insert);
         // mysqli_query($conn, $insert2);
         header('location: /admin/jobs.php');
