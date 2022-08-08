@@ -158,25 +158,13 @@ if(isset($_GET['jobID'])) {
     <tr>
         <th scope="row"><?php echo $jobtitle; ?></th>
         <td>
-
-        <div class="col-md-3">
-								<div class="form-group">
-									<label style="font-size:16px;"><b></b></label>
-									<div class="modal-footer justify-content-center">
-										<a class="badge bg-text-primary" id="action_take" data-bs-toggle="modal" data-bs-target="#exampleModal" href="jobs.php?jobID=<?php echo $jobID; ?>">Take&nbsp;Action</a>
-									</div>
-								</div>
-							</div>
-
-        </td>
-        <td>
         <form method="post" action="">
           <input type="hidden" name="jobID" value="<?php $row['jobID']; ?>" />
-          <button type="submit" name="approved">Approve</button>
+          <button class="btn btn-success btn-sm" type="submit" name="approved">Approve</button>
         </form>
         <form method="post" action="">
           <input type="hidden" name="jobID" value="<?php $row['jobID']; ?>" />
-          <button type="submit" name="rejected" >Reject</button>
+          <button class="btn btn-danger btn-sm" type="submit" name="rejected" >Reject</button>
         </form>
         </td>
         <!--  onclick="return confirm('Be Careful! \r\nOK to delete?')" -->
