@@ -20,7 +20,8 @@ if(isset($_POST['add-job'])){
   $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
   $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
   $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
-  $employee = mysqli_real_escape_string($conn, $_POST['employee']);
+  $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
+  $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
 
   $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
   $result = mysqli_query($conn, $select);
@@ -31,7 +32,7 @@ if(isset($_POST['add-job'])){
 
   }else{
         // $insert2 = "INSERT INTO employee_company_data (employee_code, company_code, dept_code, job_code) SELECT employee_code, company_code, dept_code, jobID FROM job";
-        $insert = "INSERT INTO job (idno, jobtitle, companyname, deptname, employee) VALUES('$idno', '$jobtitle', '$companyname', '$deptname', '$employee')";
+        $insert = "INSERT INTO job (idno, jobtitle, companyname, deptname, employee_fname, employee_lname) VALUES('$idno', '$jobtitle', '$companyname', '$deptname', '$employee_fname', '$employee_lname')";
         mysqli_query($conn, $insert);
         // mysqli_query($conn, $insert2);
         header('location: job_request.php');
@@ -129,7 +130,8 @@ if(isset($_GET['jobID'])) {
     $fname = $row['fname'];
     $lname = $row['lname']; ?>
     <?php }} ?>
-      <input class="form-control" id="employee" type="text" name="employee" value="<?php echo $fname; ?>">
+      <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
+      <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
       <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
