@@ -23,8 +23,15 @@ if(isset($_POST['add-job'])){
   $dept_code = mysqli_real_escape_string($conn, $_POST['dept_code']);
   //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
 
-  $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
+  
+  $comp = " SELECT * FROM department WHERE deptID = '$dept_code' ";
+  if($compr = mysqli_query($conn, $comp)) {
+    while($row = mysqli_fetch_array($compr)) {
+      $comp_code = $row['company_code'];
+  }
+}
 
+  $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
   $result = mysqli_query($conn, $select);
 
   if(mysqli_num_rows($result) > 0){
@@ -32,10 +39,10 @@ if(isset($_POST['add-job'])){
      $error[] = 'Job already exist!';
 
   }else{
-        $insert2 = "INSERT INTO job (company_code) SELECT company_code FROM department where deptID='$dept_code'";
-        $insert = "INSERT INTO job (idno, jobtitle, dept_code) VALUES('$idno', '$jobtitle', '$dept_code')";
+        //$insert2 = "INSERT INTO job (company_code) SELECT company_code FROM department where deptID='$dept_code'";
+        $insert = "INSERT INTO job (idno, jobtitle, dept_code, company_code) VALUES('$idno', '$jobtitle', '$dept_code', '$comp_code')";
         mysqli_query($conn, $insert);
-        mysqli_query($conn, $insert2);
+        //mysqli_query($conn, $insert2);
         header('location: /admin/jobs.php');
      }
 
