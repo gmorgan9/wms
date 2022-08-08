@@ -162,7 +162,7 @@ if(isset($_GET['companyID'])) {
         <!-- <td><?php //echo $ccity; ?></td>
         <td><?php //echo $cstate; ?></td>
         <td><?php //echo $czip; ?></td> -->
-        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="companies.php?companyID=<?php echo $id; ?>">Delete</a></td>
+        <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a></td>
         <?php } ?>
         
    
@@ -189,10 +189,10 @@ if(isset($_GET['companyID'])) {
       <div class="modal-body">
         <?php 
         
-          $new = "SELECT * FROM company where idno = '$idno'";
-          $newr = mysqli_query($conn, $new);
-          if($newr) {
-              while ($row = mysqli_fetch_assoc($newr)) {
+        $sql = "SELECT * FROM company WHERE companyID = '$compID'";
+        $all = mysqli_query($conn, $sql);
+        if($all) {
+            while ($row = mysqli_fetch_assoc($all)) {
                 //$comp_ID   = $_GET['companyID'];
                 $cname    = $row['companyname'];
         ?>
@@ -206,7 +206,7 @@ if(isset($_GET['companyID'])) {
       </div>
       <div class="modal-footer">
         <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
-        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="companies.php?companyID=<?php echo $id; ?>">Delete</a>
+        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <a href=""></a>
       </div>
