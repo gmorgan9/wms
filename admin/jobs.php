@@ -159,19 +159,19 @@ if(isset($_GET['jobID'])) {
     <tr>
         <th scope="row"><?php echo $jobtitle; ?></th>
         <td>
-<form action="" method="post">
-        <select name="approval_status" required class="">
-					<option value="">Choose your option</option>
-				  <option value="approved">Approved</option>
-				  <option value="rejected">Rejected</option>
-				</select>
-          
-      
-      
-      </td>
+
+        <div class="col-md-3">
+								<div class="form-group">
+									<label style="font-size:16px;"><b></b></label>
+									<div class="modal-footer justify-content-center">
+										<button class="btn btn-primary" id="action_take" data-toggle="modal" data-target="#success-modal">Take&nbsp;Action</button>
+									</div>
+								</div>
+							</div>
+
+        </td>
         <td>
-        <input type="submit" name="approve" value="approve" class="btn btn-success btn-sm">
-          </form>
+        <!-- <input type="submit" name="approve" value="approve" class="btn btn-success btn-sm"> -->
           <!-- <a style="text-decoration: none;" class="badge text-bg-success" href="jobs.php?approval_status='approved'">Approve</a> -->
           <!-- <a style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID='rejected'">Reject</a> -->
         </td>
@@ -187,6 +187,31 @@ if(isset($_GET['jobID'])) {
   echo "0 results";
 }
     ?>
+
+<form name="adminaction" method="post">
+  								<div class="modal fade" id="success-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered" role="document">
+										<div class="modal-content">
+											<div class="modal-body text-center font-18">
+												<h4 class="mb-20">Leave take action</h4>
+												<select name="status" required class="custom-select form-control">
+													<option value="">Choose your option</option>
+				                                          <option value="1">Approved</option>
+				                                          <option value="2">Rejected</option>
+												</select>
+
+												<div class="form-group">
+													<label></label>
+													<textarea id="textarea1" name="description" class="form-control" required placeholder="Description" length="300" maxlength="300"></textarea>
+												</div>
+											</div>
+											<div class="modal-footer justify-content-center">
+												<input type="submit" class="btn btn-primary" name="update" value="Submit">
+											</div>
+										</div>
+									</div>
+								</div>
+  							</form>
 
 
 
