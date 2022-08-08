@@ -171,8 +171,6 @@ if(isset($_GET['jobID'])) {
       </div>
       <div class="modal-body">
         <?php 
-          if(isset($_GET['jobID'])) {
-            $id = $_GET['jobID'];
           $sql = "SELECT * FROM job where jobID = '$jobID'";
           $result = mysqli_query($conn, $sql);
           if($result) {
@@ -194,7 +192,7 @@ if(isset($_GET['jobID'])) {
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <a href=""></a>
         <?php }
-        }} ?>
+        } ?>
       </div>
      
     </div>
