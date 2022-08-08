@@ -40,16 +40,7 @@ if(isset($_POST['update-job'])){
 
 };
 
-if(isset($_POST['approve'])) {
-  $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
-  $app_status = mysqli_real_escape_string($conn, $_POST['approval_status']);
 
-
-      $update = "UPDATE employee SET approval_status = '$app_status' where jobID = '$jobID' ";
-      mysqli_query($conn, $update);
-      //$success[] = 'Success';
-      header('location:' . BASE_URL . '/admin/jobs.php');
-};
 
 // Delete Department
 if(isset($_GET['jobID'])) {
@@ -64,6 +55,18 @@ if(isset($_GET['jobID'])) {
         die(mysqli_error($conn));
     }
   }
+
+  if(isset($_POST['approve'])) {
+    $id = $_GET['jobID'];
+    $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
+    $app_status = mysqli_real_escape_string($conn, $_POST['approval_status']);
+  
+  
+        $update = "UPDATE employee SET approval_status = '$app_status' where jobID = '$id' ";
+        mysqli_query($conn, $update);
+        //$success[] = 'Success';
+        header('location:' . BASE_URL . '/admin/jobs.php');
+  };
 
 ?>
 
