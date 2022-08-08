@@ -97,72 +97,95 @@ if (mysqli_num_rows($result) > 0) {
     </ul>
   </div>
 
-  <div class="jumbotron jumbotron-fluid bg-white m-2 mx-auto" style="width: 98%;">
+  <!-- <div class="jumbotron jumbotron-fluid bg-white m-2 mx-auto" style="width: 98%;">
   <div class="container">
-    <h3 class="display-6 text-center" style="padding-top: 5px !important;padding-bottom: 10px !important;">Welcome, <span style="text-transform: capitalize;"><?php echo $row['fname'] ?>!</span></h3>
+    <h3 class="display-6 text-center" style="padding-top: 5px !important;padding-bottom: 10px !important;">Welcome, <span style="text-transform: capitalize;"><?php //echo $row['fname'] ?>!</span></h3>
   </div>
-</div>
+</div> -->
 
-<div class="page-content mx-auto">
+
+<div class="page-content mx-auto mt-2">
 <form action="" method="post">
-      <h3 class="mx-auto" style="width: 95%;">Employee Profile</h3>
-      <div class="row" style="margin-left: 20px;">
-      <div class="form-group pt-3" style="width: 20%;">
-            <label for="idno">Employee ID Number</label>
-            <input class="form-control" style="width: 90%" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" disabled>
-         </div>
+      <h3 class="mx-auto" style="width: 95%;">My Profile</h3>
 
-         <div class="form-group pt-3" style="width: 20%;">
-            <label for="status">Account Status</label>
-            <?php
-            if($acc_type == 1){ 
-            ?>
-            <input class="form-control" style="width: 90%" id="status" type="text" value="Site Administrator" name="status" disabled>
-            <?php 
-            } else {
-            ?>
-            <input class="form-control" style="width: 90%" id="status" type="text" value="Employee" name="status" disabled>
-            <?php 
-            }
-            ?>
-         </div>
-      </div>
-      <!-- <div class="row" style="margin-left: 20px;"> -->
-         <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="fname">First Name</label>
-            <input class="form-control" id="fname" type="text" name="fname" value="<?php echo $row['fname']; ?>" required>
-         </div>
-         <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="fname">Last Name</label>
-            <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['lname']; ?>" required>
-         </div>
-      <!-- </div>end ROW -->
-      <!-- <div class="row" style="margin-left: 20px;"> -->
-         <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="fname">User Name</label>
-            <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
-         </div>   
-         <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="fname">Email Address</label>
-            <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
-         </div> 
-      <!-- </div> end ROW -->
-      <!-- <div class="row" style="margin-left: 20px;">
-         <div class="form-group pt-3" style="width: 48.6%;">
-            <label for="fname">Password</label>
-            <input class="form-control" id="password" type="password" name="password" value="<?php //echo $row['password']; ?>" required>
-            <i class="bi bi-eye-slash" id="togglePassword" style="cursor: pointer;"></i>  Show/Hide Password
-         </div>   
-         <div class="form-group pt-3" style="width: 48.6%;">
-            <label for="fname">Confirm Password</label>
-            <input class="form-control" id="cpassword" type="password" name="cpassword" value="<?php //echo $row['password']; ?>" required>
-         </div>
-      </div> -->
-      <!-- end ROW -->
 
-      <div class="form-group pt-3 mx-auto" style="width: 95%; margin-bottom: 10px;">
-      <input type="submit" name="update-profile" value="Update User" class="btn btn-secondary">
-      <?php 
+      <div class="col-md-8 float-start w-25 ms-4">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <img class="ms-1" src="../../assets/img/pic_holder.jpg" style="height: 250px; width: 250px; border-radius: 150px;" alt="">
+                  </div>
+                </div>
+              </div>
+
+
+
+      <div class="col-md-8 float-end me-4">
+              <div class="card mb-3">
+                <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Account Type</h6>
+                    </div>
+                    <div class="col-sm-9 text-info">
+                    <?php if($row['acc_type'] == 1) { ?>
+                        Admin
+                     <?php } if($row['acc_type'] == 0) { ?>
+                        Employee
+                     <?php } ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Employee</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <span class="text-capitalize"><?php echo $row['lname']; ?>, <?php echo $row['fname']; ?> &nbsp; (<?php echo $row['idno']; ?>)</span>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Username</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <?php echo $row['uname']; ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email <span class="text-muted" style="font-size: 10px;">Personal</span></h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                     <?php echo $row['email']; ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Gender</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <span class="text-capitalize"><?php echo $row['gender']; ?></span>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Employment Status</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <?php if($row['status'] == 1) { ?>
+                        <span class="text-success">Active</span>
+                     <?php } if($row['status'] == 0) { ?>
+                        <span class="text-danger">Inactive</span>
+                     <?php } ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <?php 
       }
    } else {
      echo "0 results";
