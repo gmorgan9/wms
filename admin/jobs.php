@@ -164,7 +164,7 @@ if(isset($_GET['jobID'])) {
 								<div class="form-group">
 									<label style="font-size:16px;"><b></b></label>
 									<div class="modal-footer justify-content-center">
-										<button class="btn btn-primary" id="action_take" data-bs-toggle="modal" data-bs-target="#exampleModal">Take&nbsp;Action</button>
+										<a class="badge bg-text-primary" id="action_take" data-bs-toggle="modal" data-bs-target="#exampleModal" href="jobs.php?jobID=<?php echo $jobID; ?>">Take&nbsp;Action</a>
 									</div>
 								</div>
 							</div>
