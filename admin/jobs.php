@@ -175,7 +175,7 @@ if(isset($_GET['jobID'])) {
             <button type="submit" name="approved">Approve</button>
         </form>
         <form method="post" action="">
-        <input type="hidden" name="jobID" value="<?= $row['jobID']; ?>" />
+        <input  name="jobID" value="<?= $row['jobID']; ?>" />
             <button type="submit" name="rejected" >Reject</button>
         </form>
         </td>
