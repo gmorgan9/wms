@@ -133,9 +133,9 @@ if(isset($_GET['jobID'])) {
       if($result = mysqli_query($conn, $sql)) {
         if(mysqli_num_rows($result) > 0) {
           while($row = mysqli_fetch_array($result)) {
-            $option = $row['companyname'];
+            $comp = $row['companyname'];
             //$dept_code = $row['deptID'];
-            echo "<option id='dept_code' name='dept_code' value=". $option .">". $option. "</option>";
+            echo "<option id='companyname' name='companyname' value=". $comp .">". $comp. "</option>";
           }
         }
       }
