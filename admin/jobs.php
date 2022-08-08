@@ -115,7 +115,7 @@ if(isset($_GET['jobID'])) {
 
 <!-- start PAGE-CONTENT -->
 <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -45px; height: unset !important;">
-  <form action="" method="post">
+  <!-- <form action="" method="post"> -->
     <div class="section-header pt-2">
       <span class="text-muted pt-4" style="width: 95%;">Job Requests</span>
     </div>
@@ -124,7 +124,7 @@ if(isset($_GET['jobID'])) {
   <thead>
     <tr>
       <th scope="col" style="font-size: 14px;">Job Title / Position</th>
-      <!-- <th scope="col" style="font-size: 14px;"></th> -->
+      <th scope="col" style="font-size: 14px;">Status</th>
       <!-- <th scope="col" style="font-size: 14px;">Actions</th> -->
     </tr>
   </thead>
@@ -175,7 +175,6 @@ if(isset($_GET['jobID'])) {
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
       <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-job" class="badge text-bg-secondary">Add Job</button>
     </div> -->
-  </form>
 
  <!-- end PAGE-CONTENT -->
 </div>
