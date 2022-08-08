@@ -161,9 +161,9 @@ if(isset($_GET['jobID'])) {
         <td>
 <form action="" method="post">
         <select name="approval_status" required class="">
-					<option name="approval_status" value="">Choose your option</option>
-				  <option name="approval_status" value="approved">Approved</option>
-				  <option name="approval_status" value="rejected">Rejected</option>
+					<option value="">Choose your option</option>
+				  <option value="approved">Approved</option>
+				  <option value="rejected">Rejected</option>
 				</select>
           
       
