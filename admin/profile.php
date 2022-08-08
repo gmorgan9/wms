@@ -178,7 +178,7 @@ if (mysqli_num_rows($result) > 0) {
                         <span class="text-danger">Inactive</span>
                      <?php } ?>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-5">
                       <h6 class="mb-0">Employment Status</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
