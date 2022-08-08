@@ -56,6 +56,18 @@ if(isset($_GET['jobID'])) {
     }
   }
 
+  if(isset($_POST['approve'])) {
+    $id = $_GET['jobID'];
+    $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
+    $app_status = mysqli_real_escape_string($conn, $_POST['approval_status']);
+  
+  
+        $update = "UPDATE job SET approval_status = '$app_status' where jobID = '$jobID' ";
+        mysqli_query($conn, $update);
+        //$success[] = 'Success';
+        header('location:' . BASE_URL . '/admin/jobs.php');
+  };
+
 ?>
 
 <!DOCTYPE html>
@@ -147,23 +159,6 @@ if(isset($_GET['jobID'])) {
     <tr>
         <th scope="row"><?php echo $jobtitle; ?></th>
         <td>
-          <?php 
-
-if(isset($_POST['approve'])) {
-  $id = $_GET['jobID'];
-  $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
-  $app_status = mysqli_real_escape_string($conn, $_POST['approval_status']);
-
-
-      $update = "UPDATE job SET approval_status = '$app_status' where jobtitle = '$jobtitle' ";
-      mysqli_query($conn, $update);
-      //$success[] = 'Success';
-      header('location:' . BASE_URL . '/admin/jobs.php');
-};
-
-
-
-?>
 <form action="" method="post">
         <select name="approval_status" required class="">
 					<option value="">Choose your option</option>
