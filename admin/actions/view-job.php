@@ -46,7 +46,7 @@ if(!isAdmin()){
 <?php 
 
 $id = $_GET['jobID'];
-$select = " SELECT * FROM job WHERE jobID = '$jobID' ";
+$select = " SELECT * FROM job WHERE jobID = '$id' ";
 $result = mysqli_query($conn, $select);
 
 if (mysqli_num_rows($result) > 0) {
