@@ -131,7 +131,7 @@ if(isset($_GET['jobID'])) {
   <tbody class="table-group-divider">
 
   <?php
-      $pend = "SELECT * FROM job where status = 'pending'";
+      $pend = "SELECT * FROM job where approval_status = 'pending'";
       $pendR = mysqli_query($conn, $pend);
       if($pendR) {
           while ($pending = mysqli_fetch_assoc($pendR)) {
@@ -140,7 +140,7 @@ if(isset($_GET['jobID'])) {
             $jobtitle    = $pending['jobtitle'];
             $companyname = $pending['companyname'];
             $deptname    = $pending['deptname'];
-            $status      = $pending['status'];
+            $status      = $pending['approval_status'];
             // $companyname    = $row['companyname'];
   ?>
     <tr>
@@ -192,7 +192,7 @@ if(isset($_GET['jobID'])) {
   <tbody class="table-group-divider">
 
   <?php
-      $sql = "SELECT * FROM job where status = 'approved'";
+      $sql = "SELECT * FROM job where approval_status = 'approved'";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
