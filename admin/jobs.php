@@ -152,11 +152,12 @@ if(isset($_GET['jobID'])) {
         <th scope="row"><?php echo $jobtitle; ?></th>
         <td>
         <form method="post" action="">
-          <input type="hidden" name="jobID" value="<?php $jobid = $row['jobID']; ?>" />
+        <?php $jobid = $row['jobID']; ?>
+          <input name="jobID" value="<?php echo $jobid; ?>" />
           <button class="btn btn-success btn-sm" type="submit" name="approved">Approve</button>
         </form>
         <form method="post" action="">
-          <input type="hidden" name="jobID" value="<?php $row['jobID']; ?>" />
+          <input type="hidden" name="jobID" value="<?php echo $jobid; ?>" />
           <button class="btn btn-danger btn-sm" type="submit" name="rejected" >Reject</button>
         </form>
         </td>
