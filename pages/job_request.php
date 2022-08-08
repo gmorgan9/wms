@@ -126,9 +126,10 @@ if(isset($_GET['jobID'])) {
       if($all) {
         while ($row = mysqli_fetch_assoc($all)) {
     
-    $emp_code = $row['employeeID']; ?>
+    $fname = $row['fname'];
+    $lname = $row['lname']; ?>
     <?php }} ?>
-      <input class="form-control" id="employee" type="hidden" name="employee" value="<?php echo $emp_code; ?>">
+      <input class="form-control" id="employee" type="hidden" name="employee" value="<?php echo $fname; ?>">
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
       <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
