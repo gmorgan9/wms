@@ -33,7 +33,7 @@ if(isset($_POST['add-job'])){
         $insert = "INSERT INTO job (idno, jobtitle, companyname, deptname) VALUES('$idno', '$jobtitle', '$companyname', '$deptname')";
         mysqli_query($conn, $insert);
         // mysqli_query($conn, $insert2);
-        header('location: /admin/jobs.php');
+        header('location: job_request.php');
      }
 
 };
