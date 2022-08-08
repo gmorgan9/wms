@@ -148,7 +148,7 @@ if(isset($_GET['jobID'])) {
         <td><?php echo $status; ?></td>
         <!-- <td><?php //echo $companyname; ?></td> -->
         <td>
-        <input type="submit" name="approve" value="register now" class="form-btn">
+        <input type="submit" name="approve" value="approve" class="badge text-bg-success">
           <a style="text-decoration: none;" class="badge text-bg-success" href="jobs.php?approval_status='approved'">Approve</a>
           <a style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID='rejected'">Reject</a>
         </td>
