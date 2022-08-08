@@ -218,11 +218,13 @@ if(isset($_GET['jobID'])) {
             $jobtitle    = $row['jobtitle'];
             $companyname = $row['companyname'];
             $deptname    = $row['deptname'];
+            $employee_fname = $row['employee_fname']
             // $companyname    = $row['companyname'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
+        <td><span id="employee_fname"><?php echo $employee_fname; ?></span></td>
         <!-- <td><?php //echo $companyname; ?></td> -->
         <td>
           <button type="button" class="btn btn-success view" value="<?php echo $row['jobID'] ?>">View</button>
@@ -242,48 +244,6 @@ if(isset($_GET['jobID'])) {
     ?>
  <!-- end PAGE-CONTENT -->
 </div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <?php 
-      // if(isset($_GET['viewID'])) {
-        // $id = $_GET['jobID'];
-          $test = "SELECT * FROM job where jobID = '$id'";
-          $testr = mysqli_query($conn, $test);
-          if($testr) {
-              while ($row = mysqli_fetch_assoc($testr)) {
-                //$jobID       = $row['jobID'];
-                //$idno        = $row['idno'];
-                $jobtitle    = $row['jobtitle'];
-                $companyname = $row['companyname'];
-                $deptname    = $row['deptname'];
-                // $companyname    = $row['companyname'];
-
-
-        ?>
-      <p><?php echo $jobtitle; ?></p>
-      <?php }} ?>
-      </div>
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
  
 <!-- end MAIN -->
 </div> 
