@@ -56,16 +56,23 @@ if(isset($_GET['jobID'])) {
     }
   }
 
-  if(isset($_POST['approve'])) {
-    $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
-    $app_status = mysqli_real_escape_string($conn, $_POST['approval_status']);
   
   
-        $update = "UPDATE job SET approval_status = '$app_status' where jobID = '$jobID' ";
-        mysqli_query($conn, $update);
-        //$success[] = 'Success';
-        header('location:' . BASE_URL . '/admin/jobs.php');
-  };
+  if (isset($_POST['approved']))
+    {
+        $appUpdateQuery = "UPDATE job SET approval_status = 'approved' WHERE jobID = '".$_POST['jobID']."'";
+        $appUpdateResult = mysqli_query($conn, $appUpdateQuery);
+        // $appInsertQuery = "INSERT INTO approved(id,status) VALUES ('".$_POST['row_id']."','Approved')";
+        // $appInsertResult = mysqli_query($conn, $appInsertQuery);
+    }
+        
+    if (isset($_POST['rejected']))
+    {
+        $rejUpdateQuery = "UPDATE job SET approval_status = 'rejected' WHERE jobID = '".$_POST['jobID']."'";
+        $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
+        // $rejInsertQuery = "INSERT INTO rejected(id,status) VALUES ('".$_POST['row_id']."','Rejected')";
+        // $rejInsertResult = mysqli_query($conn, $rejInsertQuery);
+    }
 
 ?>
 
