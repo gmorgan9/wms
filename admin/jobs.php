@@ -19,13 +19,8 @@ if(isset($_POST['add-job'])){
 
   $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
   $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
-  $idno_comp_data  = rand(1000000, 9999999); // figure how to not allow duplicates
   $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
   $dept_code = mysqli_real_escape_string($conn, $_POST['dept_code']);
-  $comp_code = mysqli_real_escape_string($conn, $_POST['company_code']);
-  $emp_code = mysqli_real_escape_string($conn, $_POST['employee_code']);
-  
-  
   //$compID = mysqli_real_escape_string($conn, $_POST['companyID']);
 
   $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
@@ -37,10 +32,8 @@ if(isset($_POST['add-job'])){
      $error[] = 'Job already exist!';
 
   }else{
-        $insert = "INSERT INTO job (idno, jobtitle, dept_code, company_code) VALUES('$idno', '$jobtitle', '$dept_code', '$company')";
-        // $compdata = "INSERT INTO employee_company_data (employee_code, dept_code, job_code) SELECT employee_code, dept_code, jobID FROM job";
+        $insert = "INSERT INTO job (idno, jobtitle, dept_code) VALUES('$idno', '$jobtitle', '$dept_code')";
         mysqli_query($conn, $insert);
-        // mysqli_query($conn, $compdata);
         header('location: /admin/jobs.php');
      }
 
@@ -133,7 +126,6 @@ if(isset($_GET['jobID'])) {
           while($row = mysqli_fetch_array($result)) {
             $option = $row['deptname'];
             $dept_code = $row['deptID'];
-            $comp_code = $row['company_code'];
             echo "<option id='dept_code' name='dept_code' value=". $dept_code .">". $option. "</option>";
           }
         }
@@ -161,9 +153,6 @@ if(isset($_GET['jobID'])) {
       <th scope="col" style="font-size: 14px;">ID #</th>
       <th scope="col" style="font-size: 14px;">Job Title</th>
       <th scope="col" style="font-size: 14px;">Department</th>
-      <th scope="col" style="font-size: 14px;">dept id</th>
-      <th scope="col" style="font-size: 14px;">employee</th>
-      <th scope="col" style="font-size: 14px;">company</th>
       <!-- <th scope="col">City</th>
       <th scope="col">State</th>
       <th scope="col">Zip Code</th> -->
@@ -181,17 +170,11 @@ if(isset($_GET['jobID'])) {
             $idno     = $row['idno'];
             $jobtitle    = $row['jobtitle'];
             $deptname    = $row['deptname'];
-            $dept_id  = $row['dept_code'];
-            $employee = $row['employee_code'];
-            $company = $row['company_code'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
         <td><?php echo $deptname; ?></td>
-        <td><?php echo $dept_id; ?></td>
-        <td><?php echo $employee; ?></td>
-        <td><?php echo $company; ?></td>
         <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
         <?php } ?>
         
