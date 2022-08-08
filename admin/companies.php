@@ -192,9 +192,9 @@ if(isset($_GET['companyID'])) {
         $sql = "SELECT * FROM company WHERE companyID = '$compID'";
         $all = mysqli_query($conn, $sql);
         if($all) {
-            while ($row = mysqli_fetch_assoc($all)) {
+            while ($allr = mysqli_fetch_assoc($all)) {
                 //$comp_ID   = $_GET['companyID'];
-                $cname    = $row['companyname'];
+                $cname    = $allr['companyname'];
         ?>
         <span class="badge text-bg-danger" style="font-size: 10px;">This will delete all corresponding departments and jobs with this company</span>
         <br>
@@ -206,7 +206,7 @@ if(isset($_GET['companyID'])) {
       </div>
       <div class="modal-footer">
         <a class="badge text-bg-primary" style="text-decoration: none; cursor: pointer;" data-bs-dismiss="modal">Cancel</a>
-        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="companies.php?companyID=<?php echo $compID; ?>">Delete</a>
+        <a class="badge text-bg-danger" style="text-decoration: none; cursor: pointer;" href="companies.php?companyID=<?php echo $allr['compID']; ?>">Delete</a>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <a href=""></a>
       </div>
