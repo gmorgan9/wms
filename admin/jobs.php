@@ -178,9 +178,6 @@ if(isset($_GET['jobID'])) {
       <th scope="col" style="font-size: 14px;">ID #</th>
       <th scope="col" style="font-size: 14px;">Job Title</th>
       <th scope="col" style="font-size: 14px;">Department</th>
-      <th scope="col" style="font-size: 14px;">dept id</th>
-      <th scope="col" style="font-size: 14px;">employee</th>
-      <th scope="col" style="font-size: 14px;">company</th>
       <!-- <th scope="col">City</th>
       <th scope="col">State</th>
       <th scope="col">Zip Code</th> -->
@@ -203,9 +200,6 @@ if(isset($_GET['jobID'])) {
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
         <td><?php echo $deptname; ?></td>
-        <td><?php echo $dept_id; ?></td>
-        <td><?php echo $employee; ?></td>
-        <td><?php echo $company; ?></td>
         <td><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobid; ?>">Delete</a></td>
         <?php } ?>
         
