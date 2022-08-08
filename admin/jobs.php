@@ -14,6 +14,14 @@ if(!isAdmin()){
   header('location: /dashboard.php');
 }
 
+
+// $dept = " SELECT * FROM department WHERE deptID = '$dept_code' ";
+
+// $dept_r = mysqli_query($conn, $dept);
+
+
+
+
 // Add Department
 if(isset($_POST['add-job'])){
 
@@ -38,9 +46,9 @@ if(isset($_POST['add-job'])){
 
   }else{
         $insert = "INSERT INTO job (idno, jobtitle, dept_code) VALUES('$idno', '$jobtitle', '$dept_code')";
-        // $compdata = "INSERT INTO employee_company_data (employee_code, dept_code, job_code) SELECT employee_code, dept_code, jobID FROM job";
+        $compdata = "INSERT INTO job (company_code) SELECT company_code FROM department WHERE deptID = '$dept_code";
         mysqli_query($conn, $insert);
-        // mysqli_query($conn, $compdata);
+        mysqli_query($conn, $compdata);
         header('location: /admin/jobs.php');
      }
 
@@ -141,19 +149,6 @@ if(isset($_GET['jobID'])) {
        ?>
       </select>
     </div>
-    <?php 
-    
-    if(isset($_POST['add-job'])){
-      if(!empty($_POST['dept_code'])) {
-          $selected = $_POST['dept_code'];
-          echo 'You have chosen: ' . $selected;
-      } else {
-          echo 'Please select the value.';
-      }
-      }
-    
-    
-    ?>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="jobtitle" style="font-size: 14px;">Job Title <span class="text-muted" style="font-size: 10px;">e.g. "Cheif Executive Officer"</span></label>
       <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="" required>
