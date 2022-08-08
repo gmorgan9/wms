@@ -157,13 +157,13 @@ if (mysqli_num_rows($result) > 0) {
             $email     = $row['email'];
             $acc_type  = $row['acc_type'];
             $status    = $row['status'];
-            $compID = $row['companyID'];
+            $compID = $row['company_code'];
             ?>
     <tr>
         <?php if($_SESSION['empID'] != $row['employeeID']){ ?>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $lname; ?>, <?php echo $fname; ?></td>
-        <td><?php echo $comp_name; ?></td>
+        <td><?php echo $compID; ?></td>
         <!-- <?php //if($acc_type == 1){ ?>
           <td>Admin</td>
         <?php //} else { ?>
