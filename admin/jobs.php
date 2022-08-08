@@ -213,7 +213,7 @@ if(isset($_GET['jobID'])) {
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
-            $jobID       = $row['jobID'];
+            $jobid       = $row['jobID'];
             $idno        = $row['idno'];
             $jobtitle    = $row['jobtitle'];
             $companyname = $row['companyname'];
@@ -225,7 +225,7 @@ if(isset($_GET['jobID'])) {
         <td><?php echo $jobtitle; ?></td>
         <!-- <td><?php //echo $companyname; ?></td> -->
         <td>
-          <a data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-id="<?php echo $jobID; ?>" style="text-decoration: none;" class="passingID badge text-bg-success" href="jobs.php?jobID=<?php echo $jobID; ?>">View</a>
+          <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none;" class="badge text-bg-success" href="jobs.php?jobID=<?php echo $jobID; ?>">View</a>
           <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a>
         </td>
         <?php } ?>
@@ -254,7 +254,7 @@ if(isset($_GET['jobID'])) {
       <?php 
       // if(isset($_GET['viewID'])) {
         //$id = $_GET['jobID'];
-          $sql = "SELECT * FROM job where jobID = '$jobID'";
+          $sql = "SELECT * FROM job where jobID = '$jobid'";
           $all = mysqli_query($conn, $sql);
           if($all) {
               while ($row = mysqli_fetch_assoc($all)) {
@@ -286,14 +286,6 @@ if(isset($_GET['jobID'])) {
  
 <!-- end MAIN -->
 </div> 
-
-<script>
-  $(".passingID").click(function () {
-    var jobID = $(this).attr('data-bs-id');
-    $("#jobID").val( jobID );
-    $('#exampleModal').modal('show');
-});
-</script>
 
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
