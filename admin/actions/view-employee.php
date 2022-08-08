@@ -14,37 +14,6 @@ if(!isAdmin()){
    header('location:' . BASE_URL . '/pages/dashboard.php');
 }
 
-
-
-
-// if(isset($_POST['update-profile'])){
-
-//    //$sID   = mysqli_real_escape_string($conn, $_POST['studentID']);
-//    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
-//    $lname = mysqli_real_escape_string($conn, $_POST['lname']);
-//    $uname = mysqli_real_escape_string($conn, $_POST['uname']);
-//    $email = mysqli_real_escape_string($conn, $_POST['email']);
-//    // $pass = md5($_POST['password']);
-//    // $cpass = md5($_POST['cpassword']);
-//    // $isadmin = $_POST['isadmin'];
-
-//    $update_select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' ";
-
-//    $update_result = mysqli_query($conn, $update_select);
-
-//    if(mysqli_num_rows($result) > 0){
-
-//       // $error[] = 'user already exist!';
-//       $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
-//       mysqli_query($conn, $update);
-//       $success[] = 'Success';
-//       header('location:' . BASE_URL . '/admin/profile.php');
-      
-//    }else{
-      
-//    } 
-// };
-
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +22,7 @@ if(!isAdmin()){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>WMS | View User</title>
+   <title>WMS | View Job</title>
 
    <!-- Custom Styles -->
    <link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/other-style.css?v='. time(); ?>">
@@ -65,18 +34,6 @@ if(!isAdmin()){
 
 </head>
 <body>
-
-   
-<!-- <div class="land-container">
-   <div class="content">
-
-      <h3><span>Admin Profile Page</span></h3>
-      <h1>welcome <span><?php //echo $_SESSION['admin_fname'] ?></span></h1>
-      <p>this is an admin profile</p>
-      <a href="logout.php" class="btn">logout</a>
-   </div>
-
-</div> -->
 
 <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
@@ -94,58 +51,110 @@ $result = mysqli_query($conn, $select);
 
 if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
-      $acc_type = $row['acc_type'];
+      //$acc_type = $row['acc_type'];
 ?>
 
   <div class="page-header mx-auto">
-    <p class="page_title" style="float: left; padding-top: 2px;">Profile</p>
+    <p class="page_title" style="float: left; padding-top: 2px;"></p>
     <ul class="breadcrumb">
       <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
-      <li><a href="<?php echo BASE_URL . '/admin/employees.php' ?>">Employees</a></li>
-      <li>Viewing Employee: <span class="text-muted" style="text-transform: capitalize"><?php echo $row['fname']; ?>  </span></li>
+      <li><a href="<?php echo BASE_URL . '/admin/jobs.php' ?>">Jobs</a></li>
+      <li>Viewing: <span class="text-muted" style="text-transform: capitalize"><?php echo $row['fname']; ?>  </span></li>
     </ul>
   </div>
 
 <div class="page-content mx-auto mt-2">
 <form action="" method="post">
-      <h3 class="mx-auto" style="width: 95%;">Admin Profile</h3>
-      <div class="row" style="margin-left: 20px;">
-      <div class="form-group pt-3" style="width: 20%;">
-            <label for="idno">Employee ID Number</label>
-            <input class="form-control" style="width: 90%" id="idno" type="text" value="<?php echo $row['idno']; ?>" name="idno" disabled>
-         </div>
+      <h3 class="mx-auto" style="width: 95%;">Job View</h3>
 
-         <div class="form-group pt-3" style="width: 20%;">
-            <label for="status">Account Type</label>
-            <?php
-            if($acc_type == 1){ 
-            ?>
-            <input class="form-control" style="width: 90%" id="status" type="text" value="Admin" name="status" disabled>
-            <?php 
-            } else {
-            ?>
-            <input class="form-control" style="width: 90%" id="status" type="text" value="Employee" name="status" disabled>
-            <?php 
-            }
-            ?>
-         </div>
+
+      <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Employee</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <span class="text-capitalize"><?php echo $row['employee_lname']; ?>, <?php echo $row['employee_fname']; ?></span>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Job Title / Position</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <?php echo $row['jobtitle']; ?> &nbsp; (<?php echo $row['idno']; ?>)
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Company</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <?php echo $row['companyname']; ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Department</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <?php echo $row['deptname']; ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Status</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <?php if($row['approval_status'] == 'approved') { ?>
+                            <span class="text-success text-capitalize"><?php echo $row['approval_status']; ?></span>
+                        <?php } if($row['approval_status'] == 'rejected') { ?>
+                            <span class="text-danger text-capitalize"><?php echo $row['approval_status']; ?></span>
+                        <?php } if($row['approval_status'] == 'pending') { ?>
+                            <span class="text-primary text-capitalize"><?php echo $row['approval_status']; ?></span>
+                        <?php } ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+      <!-- <div class="row" style="margin-left: 20px;">
+        <div class="form-group pt-3" style="width: 20%;">
+            <label for="idno">Job ID Number</label>
+            <input class="form-control" style="width: 90%" id="idno" type="text" value="<?php //echo $row['idno']; ?>" name="idno" disabled>
+        </div>
       </div>
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="fname">First Name</label>
-            <input class="form-control" id="fname" type="text" name="fname" value="<?php echo $row['fname']; ?>" required>
+            <label for="fname">Job Title / Position</label>
+            <input class="form-control" id="fname" type="text" name="fname" value="<?php //echo $row['jobtitle']; ?>" required>
          </div>
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="lname">Last Name</label>
-            <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['lname']; ?>" required>
+            <label for="employee_fname">Employee First Name</label>
+            <input class="form-control" id="employee_fname" type="text" name="employee_fname" value="<?php //echo $row['employee_fname']; ?>" required>
          </div>
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="uname">User Name</label>
-            <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
+            <label for="employee_lname">Employee Last Name</label>
+            <input class="form-control" id="employee_lname" type="text" name="employee_lname" value="<?php //echo $row['employee_lname']; ?>" required>
+         </div>
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
+            <label for="companyname">Comapny</label>
+            <input class="form-control" id="companyname" type="text" name="companyname" value="<?php //echo $row['companyname']; ?>" required>
          </div>   
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="email">Email Address</label>
-            <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
-         </div> 
+            <label for="deptname">Department</label>
+            <input class="form-control" id="deptname" type="email" name="deptname" value="<?php //echo $row['deptname']; ?>" required>
+         </div>  -->
       <?php 
       }
    } else {
@@ -161,26 +170,6 @@ if (mysqli_num_rows($result) > 0) {
 
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
-
-<!-- <script>
-   const togglePassword = document.querySelector("#togglePassword");
-        const password = document.querySelector("#password");
-
-        togglePassword.addEventListener("click", function () {
-            // toggle the type attribute
-            const type = password.getAttribute("type") === "password" ? "text" : "password";
-            password.setAttribute("type", type);
-            
-            // toggle the icon
-            this.classList.toggle("bi-eye");
-        });
-
-        // prevent form submit
-        const form = document.querySelector("form");
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-        });
-</script> -->
 
 </body>
 </html>
