@@ -143,7 +143,7 @@ if(isset($_GET['jobID'])) {
                   echo "<option value='$options'>$options</option>";
               }
           }
-            echo "<option id='dept_code' name='dept_code' value=". $dept_code .">". $option. "</option>";
+            // echo "<option id='dept_code' name='dept_code' value=". $dept_code .">". $option. "</option>";
           }
         }
       }
