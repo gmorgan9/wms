@@ -218,13 +218,13 @@ if(isset($_GET['jobID'])) {
             $jobtitle    = $row['jobtitle'];
             $companyname = $row['companyname'];
             $deptname    = $row['deptname'];
-            $employee_fname = $row['employee_fname']
+            $employee_fname = $row['employee_fname'];
             // $companyname    = $row['companyname'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
-        <td><span id="employee_fname"><?php echo $employee_fname; ?></span></td>
+        <td><span id="employee_fname"><?php echo $row['employee_fname']; ?></span></td>
         <!-- <td><?php //echo $companyname; ?></td> -->
         <td>
           <button type="button" class="btn btn-success view" value="<?php echo $row['jobID'] ?>">View</button>
