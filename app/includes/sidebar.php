@@ -68,7 +68,7 @@
 
                 <span>  Timesheet</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
                 
-                <?php } ?>
+                <?php } } ?>
                 <?php } else { ?>
 
             </a>
@@ -81,7 +81,7 @@
                     <span>  Request Job</span>
                 </a>
 
-           <?php } } ?>
+           <?php }  ?>
         </div>
     </div>
 </nav>
