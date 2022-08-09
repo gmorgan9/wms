@@ -110,8 +110,8 @@ if(isset($_GET['employeeID'])) {
    
 <?php 
 
-if (mysqli_num_rows($result) > 0) {
-   while($row = mysqli_fetch_assoc($result)) {
+// if (mysqli_num_rows($result) > 0) {
+//    while($row = mysqli_fetch_assoc($result)) {
 ?>
 
   <div class="page-header mx-auto">
@@ -182,10 +182,10 @@ if (mysqli_num_rows($result) > 0) {
   </tbody>
 </table>
       <?php 
-      }
-   } else {
-     echo "0 results";
-   }
+  //     }
+  //  } else {
+  //    echo "0 results";
+  //  }
       ?>
  
  <!-- end PAGE-CONTENT -->
