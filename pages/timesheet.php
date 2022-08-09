@@ -110,6 +110,12 @@ if(isset($_GET['timeID'])) {
       <label for="timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
       <input class="form-control" id="timein" type="time" name="timein" value="" required>
     </div>
+    <section class="w-100 p-4 d-flex justify-content-center pb-4">
+      <div style="width: 22rem;" class="form-outline timepicker">
+        <input type="text" class="form-control" id="form1" />
+        <label class="form-label" for="form1">Select a time</label>
+      </div>
+    </section>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
       <input class="form-control" id="timeout" type="time" name="timeout" value="" required>
