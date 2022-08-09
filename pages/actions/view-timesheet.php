@@ -114,9 +114,13 @@ if (mysqli_num_rows($result) > 0) {
                     <div class="col-sm-9 text-secondary">
                         <?php 
                         $orgDate = $row['date'];
-                        $newDate = date("M d, Y", strtotime($orgDate));
+                        $date = date("M d, Y", strtotime($orgDate));
                         ?>
-                      <?php echo $newDate; ?>
+                        <?php if($row['new_date'] == null) { ?>
+                            <?php echo $date; ?>
+                        <?php } else { ?>
+                            <?php echo $row['new_date']; ?>
+                        <?php } ?>
                     </div>
                   </div>
                   <hr>
@@ -127,9 +131,13 @@ if (mysqli_num_rows($result) > 0) {
                     <div class="col-sm-9 text-secondary">
                         <?php 
                         $orgTimein = $row['timein'];
-                        $newTimein = date("h:i A", strtotime($orgTimein));
+                        $timein = date("h:i A", strtotime($orgTimein));
                         ?>
-                     <?php echo $newTimein; ?>
+                     <?php if($row['new_timein'] == null) { ?>
+                            <?php echo $timein; ?>
+                        <?php } else { ?>
+                            <?php echo $row['new_timein']; ?>
+                        <?php } ?>
                     </div>
                   </div>
                   <hr>
@@ -142,7 +150,11 @@ if (mysqli_num_rows($result) > 0) {
                         $orgTimeout = $row['timeout'];
                         $newTimeout = date("h:i A", strtotime($orgTimeout));
                         ?>
-                    <?php echo $newTimeout; ?>
+                    <?php if($row['new_timeout'] == null) { ?>
+                            <?php echo $timeout; ?>
+                        <?php } else { ?>
+                            <?php echo $row['new_timeout']; ?>
+                        <?php } ?>
                     </div>
                   </div>
                   <hr>
