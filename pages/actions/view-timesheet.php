@@ -184,15 +184,17 @@ if (mysqli_num_rows($result) > 0) {
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
-      <input class="form-control" id="timein" type="time" name="timein" value="" required>
+      <input class="form-control" id="timein" type="time" name="timein" value="<?php echo $row['date']; ?>" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
-      <input class="form-control" id="timeout" type="time" name="timeout" value="" required>
+      <input class="form-control" id="timeout" type="time" name="timeout" value="<?php echo $row['date']; ?>" required>
     </div>
-    <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
-      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-time" class="badge text-bg-secondary">Add Time</button>
+    <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <label for="reason" style="font-size: 14px;">Reason <span class="text-muted" style="font-size: 10px;">Give reason for changing time</span></label>
+      <textarea class="form-control" id="reason" type="text" name="reason" value="" required></textarea>
     </div>
+    
   </form>
 
 
@@ -206,7 +208,7 @@ if (mysqli_num_rows($result) > 0) {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" name="update-time">Save</button>
       </div>
     </div>
   </div>
