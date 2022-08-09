@@ -121,10 +121,10 @@ if(isset($_GET['timeID'])) {
     <?php 
     $fname = $_SESSION['fname'];
     $lname = $_SESSION['lname']; 
-    $employeeID = $_SESSION['employee_idno']?>
+    $employee_idno = $_SESSION['employee_idno']?>
       <input class="form-control" id="employee_fname" type="text" name="employee_fname" value="<?php echo $fname; ?>">
       <input class="form-control" id="employee_lname" type="text" name="employee_lname" value="<?php echo $lname; ?>">
-      <input class="form-control" id="employee_idno" type="text" name="employee_idno" value="<?php echo $employeeID; ?>">
+      <input class="form-control" id="employee_idno" type="text" name="employee_idno" value="<?php echo $employee_idno; ?>">
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
       <input class="form-control" id="date" type="date" name="date" value="" required>
