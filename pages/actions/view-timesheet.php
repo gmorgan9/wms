@@ -97,7 +97,7 @@ if (mysqli_num_rows($result) > 0) {
                     <div class="col-sm-9 text-secondary">
                         <?php 
                         $orgDate = $row['date'];
-                        $newDate = date("m-d-Y", strtotime($orgDate));
+                        $newDate = date("M-d-Y", strtotime($orgDate));
 
 
                         ?>
