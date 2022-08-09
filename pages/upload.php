@@ -4,7 +4,7 @@ require_once "../app/database/connection.php";
  
 // If file upload form is submitted 
 $status = $statusMsg = ''; 
-if(isset($_POST["submit"])){ 
+if(isset($_POST["image"])){ 
     $status = 'error'; 
     if(!empty($_FILES["image"]["name"])) { 
         // Get file info 
