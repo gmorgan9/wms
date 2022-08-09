@@ -152,20 +152,25 @@ if(isset($_GET['timeID'])) {
   <tbody class="table-group-divider">
 
   <?php
-      $sql = "SELECT * FROM job where approval_status = 'pending'";
+      $sql = "SELECT * FROM timesheet where approval_status = 'pending'";
       $result = mysqli_query($conn, $sql);
       if($result) {
           while ($row = mysqli_fetch_assoc($result)) {
-            $jobID       = $row['jobID'];
-            $idno        = $row['idno'];
-            $jobtitle    = $row['jobtitle'];
-            $companyname = $row['companyname'];
-            $deptname    = $row['deptname'];
-            $status      = $row['approval_status'];
+            $timeID           = $row['timeID'];
+            $idno             = $row['idno'];
+            $date             = $row['date'];
+            $timein           = $row['timein'];
+            $timeout          = $row['timeout'];
+            $totalhours       = $row['totalhours'];
+            $employee_fname   = $row['employee_fname'];
+            $employee_lname   = $row['employee_lname'];
+            $employee_idno    = $row['employee_idno'];
+            $comment          = $row['comment'];
+            $reason           = $row['reason'];
             // $companyname    = $row['companyname'];
   ?>
     <tr>
-        <th scope="row"><?php echo $jobtitle; ?></th>
+        <th scope="row"><?php echo $idno; ?></th>
         <td>
           <div class="forms d-flex" style="">
         <form class="me-2" method="post" action="">
