@@ -144,7 +144,7 @@ if (mysqli_num_rows($result) > 0) {
                 </div>
               </div>
 
-              <a class="text-decoration-none text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" href="edit-timesheet.php?editID=<?php echo $timeID; ?>">Edit</a>
+              <a class="text-decoration-none text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Edit</a>
 
       <?php 
       }
