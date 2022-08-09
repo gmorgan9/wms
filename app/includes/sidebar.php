@@ -14,7 +14,7 @@
                 <i class="bi bi-clock"></i>
                 <?php if($_SESSION['acc_type'] == 1){ 
 
-                $sql = " SELECT * FROM job WHERE approval_status = 'pending' ";
+                $sql = " SELECT * FROM timesheet WHERE approval_status = 'pending' ";
                 if ($result = mysqli_query($conn, $sql)) {
                     $rowcount = mysqli_num_rows( $result );
                     
