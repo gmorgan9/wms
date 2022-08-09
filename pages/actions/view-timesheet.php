@@ -221,8 +221,8 @@ if (mysqli_num_rows($result) > 0) {
       <textarea class="form-control" id="reason" type="text" name="reason" value="" required></textarea>
     </div>
     
-  
-
+    <button type="button" class="btn btn-primary" name="update-time">Save</button>
+    </form>
 
               <?php }} ?>
 
@@ -234,9 +234,9 @@ if (mysqli_num_rows($result) > 0) {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" name="update-time">Save</button>
+        
       </div>
-      </form>
+      
     </div>
   </div>
   
