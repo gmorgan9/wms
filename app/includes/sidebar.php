@@ -38,10 +38,21 @@
                     <i class="bi bi-people"></i>
                     <span>  Departments</span>
                 </a> --> 
+
+                <?php 
+                $sql = " SELECT * FROM job WHERE approval_status = 'pending' ";
+                // $result = mysqli_query($conn, $sql);
+                
+                if ($result = mysqli_query($conn, $sql)) {
+                    $rowcount = mysqli_num_rows( $result );
+
+
+                ?>
                 <a href="<?php echo BASE_URL . '/admin/jobs.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                     <i class="bi bi-briefcase"></i>
-                    <span>  Jobs</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;">4</span>
+                    <span>  Jobs</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
                 </a>
+                <?php } ?>
             <?php } else {?>
                 <br>
                 <span style="margin-left: 38px; margin-bottom: -10px;">Employee Links</span>
