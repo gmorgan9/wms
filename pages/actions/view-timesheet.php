@@ -217,18 +217,18 @@ if (mysqli_num_rows($result) > 0) {
                     </div>
                   </div>
                   <hr>
-                  <div class="row">
+                  <!-- <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Employment Status</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <?php if($row['status'] == 1) { ?>
+                    <?php// if($row['status'] == 1) { ?>
                         <span class="text-success">Active</span>
-                     <?php } if($row['status'] == 0) { ?>
+                     <?php //} if($row['status'] == 0) { ?>
                         <span class="text-danger">Inactive</span>
-                     <?php } ?>
+                     <?php //} ?>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
 
