@@ -111,7 +111,7 @@ if(isset($_GET['timeID'])) {
       <input class="form-control" id="timein" type="time" name="timein" value="" required>
     </div>
     <section class="w-100 p-4 d-flex justify-content-center pb-4">
-      <div style="width: 22rem;" class="form-outline timepicker">
+      <div style="width: 22rem;" class="form-outline timepicker-inline-12">
         <input type="text" class="form-control" id="form1" />
         <label class="form-label" for="form1">Select a time</label>
       </div>
@@ -129,7 +129,8 @@ if(isset($_GET['timeID'])) {
 </div>
 <script>
 
-const pickerInline12 = document.querySelector('.timepicker-inline-12');
+ //Inline 12h
+ const pickerInline12 = document.querySelector('.timepicker-inline-12');
   const timepickerInline12 = new mdb.Timepicker(pickerInline12, {
     inline: true,
     format12: true,
