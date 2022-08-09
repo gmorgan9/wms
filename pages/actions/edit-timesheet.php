@@ -10,9 +10,6 @@ session_start();
 if(!isLoggedIn()){
    header('location:' . BASE_URL . '/pages/entry/login.php');
 }
-if(!isAdmin()){
-   header('location:' . BASE_URL . '/pages/dashboard.php');
-}
 
 ?>
 
@@ -83,7 +80,7 @@ if (mysqli_num_rows($result) > 0) {
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Timesheet Entry ID</h6>
+                      <h6 class="mb-0">EDIT Timesheet Entry ID</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                     <span class="text-capitalize"><?php echo $row['idno']; ?></span>
@@ -143,7 +140,7 @@ if (mysqli_num_rows($result) > 0) {
                   </div>
                 </div>
               </div>
-              <a class="text-decoration-none text-dark" href="edit-timesheet.php?timeID=<?php echo $timeID; ?>">Edit</a>
+              <!-- <a class="text-decoration-none text-dark" href="edit-timesheet.php?timeID=<?php echo $timeID; ?>">Edit</a> -->
 
       <?php 
       }
