@@ -180,11 +180,11 @@ if (mysqli_num_rows($result) > 0) {
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
-      <input class="form-control" id="timein" type="time" name="timein" value="<?php echo $row['date']; ?>" required>
+      <input class="form-control" id="timein" type="time" name="timein" value="<?php echo $row['timein']; ?>" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
-      <input class="form-control" id="timeout" type="time" name="timeout" value="<?php echo $row['date']; ?>" required>
+      <input class="form-control" id="timeout" type="time" name="timeout" value="<?php echo $row['timeout']; ?>" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="reason" style="font-size: 14px;">Reason <span class="text-muted" style="font-size: 10px;">Give reason for changing time</span></label>
