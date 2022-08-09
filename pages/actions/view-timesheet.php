@@ -10,9 +10,6 @@ session_start();
 if(!isLoggedIn()){
    header('location:' . BASE_URL . '/pages/entry/login.php');
 }
-if(!isAdmin()){
-   header('location:' . BASE_URL . '/pages/dashboard.php');
-}
 
 ?>
 
@@ -68,19 +65,6 @@ if (mysqli_num_rows($result) > 0) {
 
 <div class="page-content mx-auto mt-2">
 <form action="" method="post">
-      <!-- <h3 class="mx-auto" style="width: 95%;">Employee View</h3> -->
-
-
-      <!-- <div class="col-md-8 float-start w-25 ms-4">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <img class="ms-1" src="../../assets/img/pic_holder.jpg" style="height: 250px; width: 250px; border-radius: 150px;" alt="">
-                  </div>
-                </div>
-              </div> -->
-
-
-
       <div class="col-md-8 me-4">
               <div class="card mb-3">
                 <div class="card-body">
@@ -172,7 +156,71 @@ if (mysqli_num_rows($result) > 0) {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+      <div class="col-md-8 me-4">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">EDIT Timesheet Entry ID</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <span class="text-capitalize"><?php echo $row['idno']; ?></span>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Date</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <?php 
+                        $orgDate = $row['date'];
+                        $newDate = date("M d, Y", strtotime($orgDate));
+                        ?>
+                      <?php echo $newDate; ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Time In</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <?php 
+                        $orgTimein = $row['timein'];
+                        $newTimein = date("H:i A", strtotime($orgTimein));
+                        ?>
+                     <?php echo $newTimein; ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Time Out</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <?php 
+                        $orgTimeout = $row['timeout'];
+                        $newTimeout = date("H:i A", strtotime($orgTimeout));
+                        ?>
+                    <?php echo $newTimeout; ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Employment Status</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <?php if($row['status'] == 1) { ?>
+                        <span class="text-success">Active</span>
+                     <?php } if($row['status'] == 0) { ?>
+                        <span class="text-danger">Inactive</span>
+                     <?php } ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
