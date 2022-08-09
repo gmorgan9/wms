@@ -81,7 +81,7 @@ if(isset($_GET['timeID'])) {
 <div class="main"> 
 
   <div class="page-header mx-auto">
-    <p class="page_title" style="float: left; padding-top: 2px;">Timesheet for <span class="text-muted text-capitalize"><?php $_SESSION['fname']; ?></span></p>
+    <p class="page_title" style="float: left; padding-top: 2px;">Timesheet for <span class="text-muted text-capitalize"><?php echo $_SESSION['fname']; ?></span></p>
     <ul class="breadcrumb">
       <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
       <li>Timesheet</li>

@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
 
       $row = mysqli_fetch_array($result);
       $sql = "UPDATE employee SET loggedin='1' WHERE uname='$uname'";
-      if($row['isadmin'] == 1){
+      if($row['acc_type'] == 1){
          if (mysqli_query($conn, $sql)) {
             echo "Record updated successfully";
           } else {
@@ -51,7 +51,7 @@ if(isset($_POST['submit'])){
           $_SESSION['pass'] = $row['password'];
           $_SESSION['cpass'] = $row['cpassword'];
           header('location:' . BASE_URL . '/pages/dashboard.php');
-      }elseif($row['isadmin'] == 0){
+      }elseif($row['acc_type'] == 0){
          if (mysqli_query($conn, $sql)) {
             echo "Record updated successfully";
           } else {
