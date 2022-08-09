@@ -27,20 +27,9 @@ if(isset($_POST['add-time'])){
   $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
   $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
 
-  // $select = " SELECT * FROM timesheet WHERE idno = '$idno' ";
-  // $result = mysqli_query($conn, $select);
-
-  // if(mysqli_num_rows($result) > 0){
-
-  //    $error[] = 'Timesheet already exist!';
-
-  // }else{
-        // $insert2 = "INSERT INTO employee_company_data (employee_code, company_code, dept_code, job_code) SELECT employee_code, company_code, dept_code, jobID FROM job";
-        $insert = "INSERT INTO timesheet (idno, date, timein, timeout, employee_fname, employee_lname, employee_idno) VALUES('$idno', '$date', '$timein', '$timeout', '$employee_fname', '$employee_lname', '$employee_idno')";
-        mysqli_query($conn, $insert);
-        // mysqli_query($conn, $insert2);
-        header('location: timesheet.php');
-     //}
+  $insert = "INSERT INTO timesheet (idno, date, timein, timeout, employee_fname, employee_lname, employee_idno) VALUES('$idno', '$date', '$timein', '$timeout', '$employee_fname', '$employee_lname', '$employee_idno')";
+  mysqli_query($conn, $insert);
+  header('location: timesheet.php');
 
 };
 
@@ -82,18 +71,6 @@ if(isset($_GET['timeID'])) {
 </head>
 <body>
 
-   
-<!-- <div class="land-container">
-   <div class="content">
-
-      <h3><span>Admin Profile Page</span></h3>
-      <h1>welcome <span><?php //echo $_SESSION['admin_fname'] ?></span></h1>
-      <p>this is an admin profile</p>
-      <a href="logout.php" class="btn">logout</a>
-   </div>
-
-</div> -->
-
 <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
 
@@ -132,6 +109,7 @@ if(isset($_GET['timeID'])) {
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
       <input class="form-control" id="timein" type="time" name="timein" value="" required>
+      <b-form-timepicker></b-form-timepicker>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
@@ -200,7 +178,6 @@ if(isset($_GET['timeID'])) {
  
 <!-- end MAIN -->
 </div> 
-
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
