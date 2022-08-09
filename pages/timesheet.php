@@ -123,7 +123,7 @@ if(isset($_GET['timeID'])) {
  <!-- end PAGE-CONTENT -->
 </div>
 <!-- start PAGE-CONTENT -->
-<div class="page-content float-start" style="margin-top: 380px; width: 32%;margin-left: -382px; height: unset !important;">
+<div class="page-content float-start" style="margin-top: 380px; width: 32%;margin-left: -383px; height: unset !important;">
   <form action="" method="post">
     <div class="section-header pt-2">
       <span class="text-muted pt-4" style="width: 95%;">Time Entry</span>
