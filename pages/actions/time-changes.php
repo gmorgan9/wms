@@ -15,30 +15,30 @@ if(!isAdmin()){
 }
 
 // Add Department
-if(isset($_POST['update-job'])){
+// if(isset($_POST['update-job'])){
 
-  $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
-  $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
-  $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
-  $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
-  $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
+//   $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
+//   $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
+//   $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
+//   $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
+//   $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
 
-  $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
-  $result = mysqli_query($conn, $select);
+//   $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
+//   $result = mysqli_query($conn, $select);
 
-  if(mysqli_num_rows($result) > 0){
+//   if(mysqli_num_rows($result) > 0){
 
-     $error[] = 'Job already exist!';
+//      $error[] = 'Job already exist!';
 
-  }else{
-        // $insert2 = "INSERT INTO employee_company_data (employee_code, company_code, dept_code, job_code) SELECT employee_code, company_code, dept_code, jobID FROM job";
-        $insert = "INSERT INTO job (idno, jobtitle, companyname, deptname) VALUES('$idno', '$jobtitle', '$companyname', '$deptname')";
-        mysqli_query($conn, $insert);
-        // mysqli_query($conn, $insert2);
-        header('location: /admin/jobs.php');
-     }
+//   }else{
+//         // $insert2 = "INSERT INTO employee_company_data (employee_code, company_code, dept_code, job_code) SELECT employee_code, company_code, dept_code, jobID FROM job";
+//         $insert = "INSERT INTO job (idno, jobtitle, companyname, deptname) VALUES('$idno', '$jobtitle', '$companyname', '$deptname')";
+//         mysqli_query($conn, $insert);
+//         // mysqli_query($conn, $insert2);
+//         header('location: /admin/jobs.php');
+//      }
 
-};
+// };
 
 
 
@@ -62,7 +62,7 @@ if(isset($_GET['timeID'])) {
     {
         $appUpdateQuery = "UPDATE timesheet SET approval_status = 'approved' WHERE time = '".$_POST['timeID']."'";
         $appUpdateResult = mysqli_query($conn, $appUpdateQuery);
-        header('location: timesheet.php');
+        header('location: time-changes.php');
         // $appInsertQuery = "INSERT INTO approved(id,status) VALUES ('".$_POST['row_id']."','Approved')";
         // $appInsertResult = mysqli_query($conn, $appInsertQuery);
     }
@@ -71,7 +71,7 @@ if(isset($_GET['timeID'])) {
     {
         $rejUpdateQuery = "UPDATE timesheet SET approval_status = 'rejected' WHERE timeID = '".$_POST['timeID']."'";
         $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
-        header('location: timesheet.php');
+        header('location: time-changes.php');
         // $rejInsertQuery = "INSERT INTO rejected(id,status) VALUES ('".$_POST['row_id']."','Rejected')";
         // $rejInsertResult = mysqli_query($conn, $rejInsertQuery);
     }
