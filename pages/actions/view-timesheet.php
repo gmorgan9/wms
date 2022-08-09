@@ -83,10 +83,10 @@ if (mysqli_num_rows($result) > 0) {
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Employee</h6>
+                      <h6 class="mb-0">Timesheet Entry ID</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <span class="text-capitalize"><?php echo $row['lname']; ?>, <?php echo $row['fname']; ?> &nbsp; (<?php echo $row['idno']; ?>)</span>
+                    <span class="text-capitalize"><?php echo $row['idno']; ?></span>
                     </div>
                   </div>
                   <hr>
