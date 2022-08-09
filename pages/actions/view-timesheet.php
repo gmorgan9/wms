@@ -118,20 +118,16 @@ if (mysqli_num_rows($result) > 0) {
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Employment Status</h6>
+                      <h6 class="mb-0">Actions</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <?php if($row['status'] == 1) { ?>
-                        <span class="text-success">Active</span>
-                     <?php } if($row['status'] == 0) { ?>
-                        <span class="text-danger">Inactive</span>
-                     <?php } ?>
+                    <a class="text-decoration-none text-dark badge text-bg-success" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Edit</a>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <a class="text-decoration-none text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Edit</a>
+             
 
       <?php 
       }
