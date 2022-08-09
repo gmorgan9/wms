@@ -166,71 +166,34 @@ if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
     ?>
 
-      <div class="col-md-8 me-4">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">EDIT Timesheet Entry ID</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <span class="text-capitalize"><?php echo $row['idno']; ?></span>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Date</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                        <?php 
-                        $orgDate = $row['date'];
-                        $newDate = date("M d, Y", strtotime($orgDate));
-                        ?>
-                      <?php echo $newDate; ?>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Time In</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                        <?php 
-                        $orgTimein = $row['timein'];
-                        $newTimein = date("H:i A", strtotime($orgTimein));
-                        ?>
-                     <?php echo $newTimein; ?>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Time Out</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                        <?php 
-                        $orgTimeout = $row['timeout'];
-                        $newTimeout = date("H:i A", strtotime($orgTimeout));
-                        ?>
-                    <?php echo $newTimeout; ?>
-                    </div>
-                  </div>
-                  <hr>
-                  <!-- <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Employment Status</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <?php// if($row['status'] == 1) { ?>
-                        <span class="text-success">Active</span>
-                     <?php //} if($row['status'] == 0) { ?>
-                        <span class="text-danger">Inactive</span>
-                     <?php //} ?>
-                    </div>
-                  </div> -->
-                </div>
-              </div>
+<form action="" method="post">
+    <div class="section-header pt-2">
+      <span class="text-muted pt-4" style="width: 95%;">Time Entry</span>
+    </div>
+    <hr style="margin-bottom: -5px; margin-top: 5px;">
+    <?php 
+    $fname = $_SESSION['fname'];
+    $lname = $_SESSION['lname']; 
+    $employee_idno = $_SESSION['employee_idno'];?>
+      <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
+      <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
+      <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employee_idno; ?>">
+    <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <label for="date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
+      <input class="form-control" id="date" type="date" name="date" value="<?php echo $row['date']; ?>" required>
+    </div>
+    <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <label for="timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
+      <input class="form-control" id="timein" type="time" name="timein" value="" required>
+    </div>
+    <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <label for="timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
+      <input class="form-control" id="timeout" type="time" name="timeout" value="" required>
+    </div>
+    <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
+      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-time" class="badge text-bg-secondary">Add Time</button>
+    </div>
+  </form>
 
 
               <?php }} ?>
