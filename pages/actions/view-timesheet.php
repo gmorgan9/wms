@@ -236,7 +236,11 @@ if (mysqli_num_rows($result) > 0) {
                         $orgDate = $row['new_date'];
                         $new_date = date("M d, Y", strtotime($orgDate));
                         ?>
-                        <?php echo $new_date; ?>
+                        <?php if($new_date != $row['date']) { ?>
+                            <span class="text-warning"><?php echo $new_date; ?></span>
+                        <?php } else { ?>
+                            <?php echo $new_date; ?>
+                        <?php } ?>
                     </div>
                   </div>
                   <hr>
@@ -249,7 +253,11 @@ if (mysqli_num_rows($result) > 0) {
                         $orgTimein = $row['new_timein'];
                         $new_timein = date("h:i A", strtotime($orgTimein));
                         ?>
-                        <?php echo $new_timein; ?>
+                        <?php if($new_timein != $row['timein']) { ?>
+                            <span class="text-warning"><?php echo $new_timein; ?></span>
+                        <?php } else { ?>
+                            <?php echo $new_timein; ?>
+                        <?php } ?>
                     </div>
                   </div>
                   <hr>
@@ -262,7 +270,11 @@ if (mysqli_num_rows($result) > 0) {
                         $orgTimeout = $row['new_timeout'];
                         $new_timeout = date("h:i A", strtotime($orgTimeout));
                         ?>
-                        <?php echo $new_timeout; ?>
+                        <?php if($new_timein != $row['timein']) { ?>
+                            <span class="text-warning"><?php echo $new_timeout; ?></span>
+                        <?php } else { ?>
+                            <?php echo $new_timeout; ?>
+                        <?php } ?>
                     </div>
                   </div>
                   <hr>
