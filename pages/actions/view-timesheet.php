@@ -116,10 +116,10 @@ if (mysqli_num_rows($result) > 0) {
                         $orgDate = $row['date'];
                         $date = date("M d, Y", strtotime($orgDate));
                         ?>
-                        <?php if($row['new_date'] == null && $row['approval_status'] == 'pending') { ?>
-                            <?php echo $date; ?>
-                        <?php } else { ?>
+                        <?php if($row['new_date'] != null && $row['approval_status'] == 'pending') { ?>
                             <?php echo $row['new_date']; ?>
+                        <?php } else { ?>
+                            <?php echo $date; ?>
                         <?php } ?>
                     </div>
                   </div>
@@ -133,10 +133,10 @@ if (mysqli_num_rows($result) > 0) {
                         $orgTimein = $row['timein'];
                         $timein = date("h:i A", strtotime($orgTimein));
                         ?>
-                     <?php if($row['new_timein'] == null && $row['approval_status'] == 'pending') { ?>
-                            <?php echo $timein; ?>
-                        <?php } else { ?>
+                     <?php if($row['new_timein'] != null && $row['approval_status'] == 'pending') { ?>
                             <?php echo $row['new_timein']; ?>
+                        <?php } else { ?>
+                            <?php echo $timein; ?> 
                         <?php } ?>
                     </div>
                   </div>
@@ -150,10 +150,10 @@ if (mysqli_num_rows($result) > 0) {
                         $orgTimeout = $row['timeout'];
                         $timeout = date("h:i A", strtotime($orgTimeout));
                         ?>
-                    <?php if($row['new_timeout'] == null && $row['approval_status'] == 'pending') { ?>
-                            <?php echo $timeout; ?>
-                        <?php } else { ?>
+                    <?php if($row['new_timeout'] != null && $row['approval_status'] == 'pending') { ?>
                             <?php echo $row['new_timeout']; ?>
+                        <?php } else { ?>
+                            <?php echo $timeout; ?>
                         <?php } ?>
                     </div>
                   </div>
