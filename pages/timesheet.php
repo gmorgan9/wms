@@ -129,8 +129,8 @@ if(isset($_GET['timeID'])) {
     $lname = $row['lname']; 
     $employeeID = $row['idno']?>
     <?php }} ?>
-      <input class="form-control" id="employee_fname" type="text" name="employee_fname" value="<?php echo $fname; ?>">
-      <input class="form-control" id="employee_lname" type="text" name="employee_lname" value="<?php echo $lname; ?>">
+      <input class="form-control" id="employee_fname" type="text" name="employee_fname" value="<?php echo $_SESSION['fname']; ?>">
+      <input class="form-control" id="employee_lname" type="text" name="employee_lname" value="<?php echo $_SESSION['lname']; ?>">
       <input class="form-control" id="employee_idno" type="text" name="employee_idno" value="<?php echo $employeeID; ?>">
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
