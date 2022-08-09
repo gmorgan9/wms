@@ -223,7 +223,7 @@ if (mysqli_num_rows($result) > 0) {
                     </div>
                     <div class="col-sm-9 text-secondary">
                         
-                    <span class="text-capitalize"><?php echo $row['employee_fname']; ?></span>
+                    <span class="text-capitalize"><?php echo $row['employee_lname']; ?>, <?php echo $row['employee_fname']; ?></span>
                     </div>
                   </div>
                   <hr>
