@@ -40,7 +40,7 @@
                 </a> -->
                 <a href="<?php echo BASE_URL . '/admin/jobs.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                     <i class="bi bi-briefcase"></i>
-                    <span>  Jobs</span>
+                    <span>  Jobs</span><span class="badge text-bg-secondary">4</span>
                 </a>
             <?php } else {?>
                 <br>
