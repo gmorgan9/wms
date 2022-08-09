@@ -16,7 +16,7 @@ if(!isLoggedIn()){
 
 // Add Department
 if(isset($_POST['update-time'])){
-
+    $id = $_GET['timeID'];
     $timeID = mysqli_real_escape_string($conn, $_POST['jobID']);
     $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
     $date = mysqli_real_escape_string($conn, $_POST['date']);
@@ -29,7 +29,7 @@ if(isset($_POST['update-time'])){
     $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
     $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
   
-    $update = "UPDATE timesheet SET approval_status = 'pending', date = '$date', timein = '$timein', timeout = '$timeout', reason = '$reason' WHERE timeID = '$timeID'";
+    $update = "UPDATE timesheet SET approval_status = 'pending', date = '$date', timein = '$timein', timeout = '$timeout', reason = '$reason' WHERE timeID = '$id'";
     mysqli_query($conn, $update);
     header('location: view-timesheet.php');
   
