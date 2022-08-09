@@ -52,7 +52,11 @@ if(isset($_GET['timeID'])) {
 
   if (isset($_POST['approved']))
     {
-        $appUpdateQuery = "UPDATE timesheet SET approval_status = 'approved' WHERE timeID = '".$_POST['timeID']."'";
+        $date = mysqli_real_escape_string($conn, $_POST['date']);
+        $timein = mysqli_real_escape_string($conn, $_POST['timein']);
+        $timeout = mysqli_real_escape_string($conn, $_POST['timeout']);
+
+        $appUpdateQuery = "UPDATE timesheet SET date = '$date', timein = '$timein', timeout = '$timeout', approval_status = 'approved' WHERE timeID = '".$_POST['timeID']."'";
         $appUpdateResult = mysqli_query($conn, $appUpdateQuery);
         header('location: timesheet.php');
         // $appInsertQuery = "INSERT INTO approved(id,status) VALUES ('".$_POST['row_id']."','Approved')";
@@ -182,6 +186,10 @@ if(isset($_GET['timeID'])) {
             $employee_idno    = $row['employee_idno'];
             $comment          = $row['comment'];
             $reason           = $row['reason'];
+
+            $new_date         = $row['new_date'];
+            $new_timein       = $row['new_timein'];
+            $new_timeout      = $row['new_timeout'];
             // $companyname    = $row['companyname'];
   ?>
     <tr>
@@ -191,6 +199,9 @@ if(isset($_GET['timeID'])) {
         <form class="me-2" method="post" action="">
         <?php $timeid = $row['timeID']; ?>
           <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
+          <input type="hidden" name="date" value="<?php echo $new_date; ?>" />
+          <input type="hidden" name="timein" value="<?php echo $new_timein; ?>" />
+          <input type="hidden" name="timeout" value="<?php echo $new_timeout; ?>" />
           <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved"><span class="badge text-bg-success">Approve</span></button>
         </form>
         &nbsp;
