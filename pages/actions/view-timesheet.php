@@ -121,7 +121,11 @@ if (mysqli_num_rows($result) > 0) {
                       <h6 class="mb-0">Time Out</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <?php echo $row['timeout']; ?>
+                        <?php 
+                        $orgTimeout = $row['timeout'];
+                        $newTimeout = date("H:i A", strtotime($orgTimeout));
+                        ?>
+                    <?php echo $newTimeout; ?>
                     </div>
                   </div>
                   <hr>
