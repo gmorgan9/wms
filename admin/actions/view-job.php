@@ -128,33 +128,6 @@ if (mysqli_num_rows($result) > 0) {
 
 
 
-
-      <!-- <div class="row" style="margin-left: 20px;">
-        <div class="form-group pt-3" style="width: 20%;">
-            <label for="idno">Job ID Number</label>
-            <input class="form-control" style="width: 90%" id="idno" type="text" value="<?php //echo $row['idno']; ?>" name="idno" disabled>
-        </div>
-      </div>
-         <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="fname">Job Title / Position</label>
-            <input class="form-control" id="fname" type="text" name="fname" value="<?php //echo $row['jobtitle']; ?>" required>
-         </div>
-         <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="employee_fname">Employee First Name</label>
-            <input class="form-control" id="employee_fname" type="text" name="employee_fname" value="<?php //echo $row['employee_fname']; ?>" required>
-         </div>
-         <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="employee_lname">Employee Last Name</label>
-            <input class="form-control" id="employee_lname" type="text" name="employee_lname" value="<?php //echo $row['employee_lname']; ?>" required>
-         </div>
-         <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="companyname">Comapny</label>
-            <input class="form-control" id="companyname" type="text" name="companyname" value="<?php //echo $row['companyname']; ?>" required>
-         </div>   
-         <div class="form-group pt-3 mx-auto" style="width: 95%;">
-            <label for="deptname">Department</label>
-            <input class="form-control" id="deptname" type="email" name="deptname" value="<?php //echo $row['deptname']; ?>" required>
-         </div>  -->
       <?php 
       }
    } else {
