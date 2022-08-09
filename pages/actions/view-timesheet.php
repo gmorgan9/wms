@@ -221,7 +221,7 @@ if (mysqli_num_rows($result) > 0) {
       <textarea class="form-control" id="reason" type="text" name="reason" value="" required></textarea>
     </div>
     
-  </form>
+  
 
 
               <?php }} ?>
@@ -236,8 +236,10 @@ if (mysqli_num_rows($result) > 0) {
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" name="update-time">Save</button>
       </div>
+      </form>
     </div>
   </div>
+  
 </div>
 
 
