@@ -99,7 +99,7 @@ if(isset($_GET['timeID'])) {
     <?php 
     $fname = $_SESSION['fname'];
     $lname = $_SESSION['lname']; 
-    $employee_idno = $_SESSION['employee_idno']?>
+    $employee_idno = $_SESSION['employee_idno'];?>
       <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
       <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
       <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employee_idno; ?>">
@@ -137,7 +137,7 @@ if(isset($_GET['timeID'])) {
   <tbody class="table-group-divider">
 
   <?php
-      $sql = "SELECT * FROM job";
+      $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}'";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
