@@ -95,7 +95,13 @@ if (mysqli_num_rows($result) > 0) {
                       <h6 class="mb-0">Date</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <?php echo $row['date']; ?>
+                        <?php 
+                        $orgDate = $row['date'];
+                        $newDate = date("m-d-Y", strtotime($orgDate));
+
+
+                        ?>
+                      <?php echo $newDate; ?>
                     </div>
                   </div>
                   <hr>
