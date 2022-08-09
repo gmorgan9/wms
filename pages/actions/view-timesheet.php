@@ -148,7 +148,7 @@ if (mysqli_num_rows($result) > 0) {
                     <div class="col-sm-9 text-secondary">
                         <?php 
                         $orgTimeout = $row['timeout'];
-                        $newTimeout = date("h:i A", strtotime($orgTimeout));
+                        $timeout = date("h:i A", strtotime($orgTimeout));
                         ?>
                     <?php if($row['new_timeout'] == null) { ?>
                             <?php echo $timeout; ?>
