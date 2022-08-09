@@ -106,19 +106,10 @@ if(isset($_GET['timeID'])) {
       <label for="date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
       <input class="form-control" id="date" type="date" name="date" value="" required>
     </div>
-    <div class="form-group pt-3 mx-auto" id='datetimepicker3' style="width: 95%;">
+    <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
       <input class="form-control" id="timein" type="time" name="timein" value="" required>
-      <span class="input-group-addon">
-               <span class="bi bi-time"></span>
-               </span>
     </div>
-    <div class='input-group date' id='datetimepicker3'>
-               <input type='text' class="form-control" />
-               <span class="input-group-addon">
-               <span class="bi bi-time"></span>
-               </span>
-            </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
       <input class="form-control" id="timeout" type="time" name="timeout" value="" required>
@@ -186,14 +177,6 @@ if(isset($_GET['timeID'])) {
  
 <!-- end MAIN -->
 </div> 
-
-<script type="text/javascript">
-         $(function () {
-             $('#datetimepicker3').datetimepicker({
-                 format: 'LT'
-             });
-         });
-      </script>
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
