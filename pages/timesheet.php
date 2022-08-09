@@ -245,6 +245,7 @@ if(isset($_GET['timeID'])) {
       <th scope="col" style="font-size: 14px;">ID #</th>
       <th scope="col" style="font-size: 14px;">Date</th>
       <th scope="col" style="font-size: 14px;">Time in / Time out</th>
+      <th scope="col" style="font-size: 14px;">Status</th>
       <th scope="col" style="font-size: 14px;">Actions</th>
     </tr>
   </thead>
