@@ -31,7 +31,7 @@ if(isset($_POST['update-time'])){
   
     $update = "UPDATE timesheet SET approval_status = 'pending', date = '$date', timein = '$timein', timeout = '$timeout', reason = '$reason' WHERE timeID = '$timeID'";
     mysqli_query($conn, $update);
-    header('location: timesheet.php');
+    header('location: ../timesheet.php');
   
   };
 
