@@ -72,6 +72,8 @@ if(isset($_POST['update-time'])){
         
 <!-- start MAIN -->
 <div class="main"> 
+
+<?php if($_SESSION['acc_type'] == 0) { ?>
    
 <?php 
 
@@ -83,7 +85,6 @@ if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
       //$acc_type = $row['acc_type'];
 ?>
-
   <div class="page-header mx-auto">
     <p class="page_title" style="float: left; padding-top: 2px;"></p>
     <ul class="breadcrumb">
@@ -179,7 +180,111 @@ if (mysqli_num_rows($result) > 0) {
       ?>
    </form>
 </div>
+<?php } else { ?>
 
+
+
+    <?php 
+
+$id = $_GET['timeID'];
+$select = " SELECT * FROM timesheet WHERE timeID = '$id' ";
+$result = mysqli_query($conn, $select);
+
+if (mysqli_num_rows($result) > 0) {
+   while($row = mysqli_fetch_assoc($result)) {
+      //$acc_type = $row['acc_type'];
+?>
+  <div class="page-header mx-auto">
+    <p class="page_title" style="float: left; padding-top: 2px;"></p>
+    <ul class="breadcrumb">
+      <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
+      <li><a href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">Timesheets</a></li>
+      <li>Viewing: <span class="text-muted" style="text-transform: capitalize"><?php echo $row['idno']; ?>  </span></li>
+    </ul>
+  </div>
+
+<div class="page-content mx-auto mt-2">
+<form action="" method="post">
+      <div class="col-md-8 me-4">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Timesheet Entry ID</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <span class="text-capitalize"><?php echo $row['idno']; ?></span>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Date</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <?php 
+                        $orgDate = $row['new_date'];
+                        $new_date = date("M d, Y", strtotime($orgDate));
+                        ?>
+                        <?php echo $new_date; ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Time In</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <?php 
+                        $orgTimein = $row['new_timein'];
+                        $new_timein = date("h:i A", strtotime($orgTimein));
+                        ?>
+                        <?php echo $new_timein; ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Time Out</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <?php 
+                        $orgTimeout = $row['new_timeout'];
+                        $new_timeout = date("h:i A", strtotime($orgTimeout));
+                        ?>
+                        <?php echo $new_timeout; ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Actions</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <a class="text-decoration-none badge text-bg-success" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Edit</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+             
+
+      <?php 
+      }
+   } else {
+     echo "0 results";
+   }
+      ?>
+   </form>
+</div>
+
+
+
+
+
+
+
+<?php } ?>
  
 <!-- end MAIN -->
 </div> 
