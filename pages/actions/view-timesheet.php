@@ -221,7 +221,9 @@ if (mysqli_num_rows($result) > 0) {
       <textarea class="form-control" id="reason" type="text" name="reason" value="" required></textarea>
     </div>
     
-    <button type="button" class="btn btn-primary" name="update-time">Save</button>
+    <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
+      <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-time" class="badge text-bg-secondary">Add Time</button>
+    </div>
     </form>
 
               <?php }} ?>
