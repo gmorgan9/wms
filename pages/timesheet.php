@@ -160,6 +160,7 @@ if(isset($_GET['timeID'])) {
         <td><?php echo $date; ?></td>
         <td><?php echo $timein; ?> / <?php echo $timeout; ?></td>
         <!-- <td><?php //echo $companyname; ?></td> -->
+        <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
         <td><a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
         <?php } ?>
         
