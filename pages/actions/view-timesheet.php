@@ -117,7 +117,7 @@ if (mysqli_num_rows($result) > 0) {
                         $orgDate = $row['date'];
                         $date = date("M d, Y", strtotime($orgDate));
                         ?>
-                        <?php if($row['new_date'] != null) { ?>
+                        <?php if($row['new_date'] != null && $orgDate != $row['new_date']) { ?>
                           Change in Progress
                         <?php } else { ?>
                           <?php echo $date; ?>
@@ -134,7 +134,7 @@ if (mysqli_num_rows($result) > 0) {
                         $orgTimein = $row['timein'];
                         $timein = date("h:i A", strtotime($orgTimein));
                         ?>
-                     <?php if($row['new_timein'] != null) { ?>
+                     <?php if($row['new_timein'] != null && $orgTimein != $row['new_timein']) { ?>
                           Change in Progress  
                         <?php } else { ?>
                           <?php echo $timein; ?>
@@ -151,7 +151,7 @@ if (mysqli_num_rows($result) > 0) {
                         $orgTimeout = $row['timeout'];
                         $timeout = date("h:i A", strtotime($orgTimeout));
                         ?>
-                    <?php if($row['new_timeout'] != null) { ?>
+                    <?php if($row['new_timeout'] != null && $orgTimeout != $row['new_timeout']) { ?>
                           Change in Progress
                         <?php } else { ?>
                           <?php echo $timeout; ?>
