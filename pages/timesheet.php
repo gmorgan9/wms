@@ -106,7 +106,7 @@ if(isset($_GET['timeID'])) {
       <label for="date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
       <input class="form-control" id="date" type="date" name="date" value="" required>
     </div>
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
+    <div class="form-group pt-3 mx-auto" id='datetimepicker3' style="width: 95%;">
       <label for="timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
       <input class="form-control" id="timein" type="time" name="timein" value="" required>
       <span class="input-group-addon">
