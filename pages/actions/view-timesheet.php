@@ -29,7 +29,7 @@ if(isset($_POST['update-time'])){
     $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
     $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
   
-    $update = "UPDATE timesheet SET approval_status = 'pending', date = '$date', timein = '$timein', timeout = '$timeout', reason = '$reason' WHERE timeID = '".$_POST['timeID']."'";
+    $update = "UPDATE timesheet SET approval_status = 'pending', date = '$date', timein = '$timein', timeout = '$timeout', reason = '$reason' WHERE timeID = '$timeID'";
     mysqli_query($conn, $update);
     header('location: timesheet.php');
   
