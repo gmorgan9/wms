@@ -24,7 +24,7 @@
                 
                 <?php }else { ?>
                     
-                <?php }} ?>
+                <?php } ?>
             </a>
             <a href="<?php echo BASE_URL . '/pages/reports.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                 <i class="bi bi-bar-chart"></i>
@@ -81,7 +81,7 @@
                     <span>  Request Job</span>
                 </a>
 
-           <?php } ?>
+           <?php } } ?>
         </div>
     </div>
 </nav>
