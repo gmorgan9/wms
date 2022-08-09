@@ -278,7 +278,7 @@ if(isset($_GET['timeID'])) {
         <td><?php echo $date; ?></td>
         <td><?php echo $timein; ?> / <?php echo $timeout; ?></td>
         <?php if($app_status == 'pending') { ?>
-          <td><span class="text-warning">Change in Progress</span></td>
+          <td><span class="text-primary">Pending</span></td>
         <?php } if($app_status == 'approved') { ?>
           <td><span class="text-success">Approved</span></td>
         <?php } if($app_status == 'rejected') { ?>
