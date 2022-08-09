@@ -52,7 +52,7 @@ if(isset($_GET['timeID'])) {
 
   if (isset($_POST['approved']))
     {
-        $appUpdateQuery = "UPDATE timesheet SET approval_status = 'approved' WHERE time = '".$_GET['timeID']."'";
+        $appUpdateQuery = "UPDATE timesheet SET approval_status = 'approved' WHERE timeID = '".$_POST['timeID']."'";
         $appUpdateResult = mysqli_query($conn, $appUpdateQuery);
         header('location: time-changes.php');
         // $appInsertQuery = "INSERT INTO approved(id,status) VALUES ('".$_POST['row_id']."','Approved')";
@@ -61,7 +61,7 @@ if(isset($_GET['timeID'])) {
         
     if (isset($_POST['rejected']))
     {
-        $rejUpdateQuery = "UPDATE timesheet SET approval_status = 'rejected' WHERE timeID = '".$_GET['timeID']."'";
+        $rejUpdateQuery = "UPDATE timesheet SET approval_status = 'rejected' WHERE timeID = '".$_POST['timeID']."'";
         $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
         header('location: time-changes.php');
         // $rejInsertQuery = "INSERT INTO rejected(id,status) VALUES ('".$_POST['row_id']."','Rejected')";
