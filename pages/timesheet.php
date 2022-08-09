@@ -90,7 +90,7 @@ if(isset($_GET['timeID'])) {
 
 
 <!-- start PAGE-CONTENT -->
-<div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -90px; height: unset !important;">
+<div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -95px; height: unset !important;">
   <form action="" method="post">
     <div class="section-header pt-2">
       <span class="text-muted pt-4" style="width: 95%;">Time Entry</span>
@@ -125,7 +125,7 @@ if(isset($_GET['timeID'])) {
 
 <!-- start PAGE-CONTENT -->
 <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
-<span>Timesheet for <span class="text-muted text-capitalize"><?php echo $_SESSION['fname']; ?></span></span>
+<span class="text-center">Timesheet for <span class="text-muted text-capitalize"><?php echo $_SESSION['fname']; ?></span></span>
     <table class="table">
   <thead>
     <tr>
