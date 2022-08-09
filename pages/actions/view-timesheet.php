@@ -143,7 +143,7 @@ if (mysqli_num_rows($result) > 0) {
                   </div>
                 </div>
               </div>
-              <a class="text-decoration-none text-dark" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>"><?php echo $idno; ?></a>
+              <a class="text-decoration-none text-dark" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">Edit</a>
 
       <?php 
       }
