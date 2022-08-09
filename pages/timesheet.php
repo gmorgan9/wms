@@ -125,7 +125,7 @@ if(isset($_GET['timeID'])) {
 
 <!-- start PAGE-CONTENT -->
 <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
-<span class="mx-auto">Timesheet for <span class="text-muted text-capitalize"><?php echo $_SESSION['fname']; ?></span></span>
+<!-- <span class="mx-auto">Timesheet for <span class="text-muted text-capitalize"><?php //echo $_SESSION['fname']; ?></span></span> -->
     <table class="table">
   <thead>
     <tr>
