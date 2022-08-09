@@ -30,23 +30,10 @@
                     <i class="bi bi-person-badge"></i>
                     <span>  Employees</span>
                 </a>
-                <!-- <a href="<?php //echo BASE_URL . '/admin/companies.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
-                    <i class="bi bi-building"></i>
-                    <span>  Companies</span>
-                </a> -->
-                <!-- <a href="<?php //echo BASE_URL . '/admin/departments.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
-                    <i class="bi bi-people"></i>
-                    <span>  Departments</span>
-                </a> --> 
-
                 <?php 
                 $sql = " SELECT * FROM job WHERE approval_status = 'pending' ";
-                // $result = mysqli_query($conn, $sql);
-                
                 if ($result = mysqli_query($conn, $sql)) {
                     $rowcount = mysqli_num_rows( $result );
-
-
                 ?>
                 <a href="<?php echo BASE_URL . '/admin/jobs.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                     <i class="bi bi-briefcase"></i>
