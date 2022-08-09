@@ -192,7 +192,7 @@ if(isset($_GET['jobID'])) {
           <td><span class="text-capitalize text-primary"><?php echo $app_status; ?><span></td>
         <?php }?>
         <!-- <td><?php //echo $companyname; ?></td> -->
-        <td><a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
+        <td><a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="job_request.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
         <?php } ?>
         
    
