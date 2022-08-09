@@ -19,9 +19,9 @@ if(isset($_POST['update-time'])){
     $id = $_GET['timeID'];
     $timeID = mysqli_real_escape_string($conn, $_POST['jobID']);
     $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
-    $date = mysqli_real_escape_string($conn, $_POST['date']);
-    $timein = mysqli_real_escape_string($conn, $_POST['timein']);
-    $timeout = mysqli_real_escape_string($conn, $_POST['timeout']);
+    $date = mysqli_real_escape_string($conn, $_POST['new_date']);
+    $timein = mysqli_real_escape_string($conn, $_POST['new_timein']);
+    $timeout = mysqli_real_escape_string($conn, $_POST['new_timeout']);
     $totalhours = mysqli_real_escape_string($conn, $_POST['totalhours']);
     //$comment = mysqli_real_escape_string($conn, $_POST['comment']);
     $reason = mysqli_real_escape_string($conn, $_POST['reason']);
@@ -29,9 +29,9 @@ if(isset($_POST['update-time'])){
     $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
     $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
   
-    $update = "UPDATE timesheet SET approval_status = 'pending', date = '$date', timein = '$timein', timeout = '$timeout', reason = '$reason' WHERE timeID = '$id'";
+    $update = "UPDATE timesheet SET approval_status = 'pending', new_date = '$date', new_timein = '$timein', new_timeout = '$timeout', reason = '$reason' WHERE timeID = '$id'";
     mysqli_query($conn, $update);
-    header('location: view-timesheet.php');
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
   
   };
 
@@ -205,16 +205,16 @@ if (mysqli_num_rows($result) > 0) {
       <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
       <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employee_idno; ?>">
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
-      <input class="form-control" id="date" type="date" name="date" value="<?php echo $row['date']; ?>" required>
+      <label for="new_date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
+      <input class="form-control" id="new_date" type="date" name="new_date" value="<?php echo $row['date']; ?>" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
-      <input class="form-control" id="timein" type="time" name="timein" value="<?php echo $row['timein']; ?>" required>
+      <label for="new_timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
+      <input class="form-control" id="new_timein" type="time" name="new_timein" value="<?php echo $row['timein']; ?>" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
-      <input class="form-control" id="timeout" type="time" name="timeout" value="<?php echo $row['timeout']; ?>" required>
+      <label for="new_timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
+      <input class="form-control" id="new_timeout" type="time" name="new_timeout" value="<?php echo $row['timeout']; ?>" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="reason" style="font-size: 14px;">Reason <span class="text-muted" style="font-size: 10px;">Give reason for changing time</span></label>
