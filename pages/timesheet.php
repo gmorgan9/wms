@@ -185,7 +185,7 @@ if(isset($_GET['timeID'])) {
             // $companyname    = $row['companyname'];
   ?>
     <tr>
-        <th scope="row"><?php echo $idno; ?></th>
+        <th scope="row"><a class="text-decoration-none text-dark" href="#"><?php echo $idno; ?></a></th>
         <td>
           <div class="forms d-flex" style="">
         <form class="me-2" method="post" action="">
