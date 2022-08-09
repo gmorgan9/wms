@@ -50,7 +50,7 @@
                 if ($result = mysqli_query($conn, $sql)) {
                     $rowcount = mysqli_num_rows( $result );
                 ?>
-                <a href="<?php echo BASE_URL . '/pages/actions/time-changes.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                <a href="<?php echo BASE_URL . '/pages/timesheet.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                     <i class="bi bi-clock-history"></i>
                     <?php if($rowcount == 0){ ?>
                         <span>  Time Changes</span>
