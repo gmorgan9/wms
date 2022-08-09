@@ -258,7 +258,7 @@ if (mysqli_num_rows($result) > 0) {
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Actions</h6>
+                      <h6 class="mb-0">Reason</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                     <?php echo $row['reason']; ?>
