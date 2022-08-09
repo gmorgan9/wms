@@ -13,7 +13,18 @@
             <a href="<?php echo BASE_URL . '/pages/timesheet.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                 <i class="bi bi-clock"></i>
                 <span>  Timesheet</span>
-                <?php }else {} ?>
+                <?php
+                $sql = " SELECT * FROM timesheet WHERE approval_status = 'pending' ";
+                if ($result = mysqli_query($conn, $sql)) {
+                    $rowcount = mysqli_num_rows( $result );
+
+                    ?>
+
+                <span>  Timesheet</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
+                
+                <?php }else { ?>
+                    
+                <?php }} ?>
             </a>
             <a href="<?php echo BASE_URL . '/pages/reports.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                 <i class="bi bi-bar-chart"></i>
@@ -58,8 +69,9 @@
                 
                 <?php }else { ?>
                     
-                <?php }?>
-                </a>
+                <?php }} ?>
+            </a>
+
                 <br>
                 <span style="margin-left: 38px; margin-bottom: -10px;">Employee Links</span>
                 <hr>
@@ -68,7 +80,7 @@
                     <span>  Request Job</span>
                 </a>
 
-           <?php }} ?>
+           <?php } ?>
         </div>
     </div>
 </nav>
