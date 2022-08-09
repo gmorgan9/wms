@@ -11,6 +11,36 @@ if(!isLoggedIn()){
    header('location:' . BASE_URL . '/pages/entry/login.php');
 }
 
+
+
+
+// Add Department
+if(isset($_POST['update-time'])){
+
+    $timeID = mysqli_real_escape_string($conn, $_POST['jobID']);
+    $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
+    $date = mysqli_real_escape_string($conn, $_POST['date']);
+    $timein = mysqli_real_escape_string($conn, $_POST['timein']);
+    $timeout = mysqli_real_escape_string($conn, $_POST['timeout']);
+    $totalhours = mysqli_real_escape_string($conn, $_POST['totalhours']);
+    //$comment = mysqli_real_escape_string($conn, $_POST['comment']);
+    $reason = mysqli_real_escape_string($conn, $_POST['reason']);
+    $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
+    $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
+    $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
+  
+    $update = "UPDATE timesheet SET approval_status = 'pending', date = '$date', timein = '$timein', timeout = '$timeout', reason = '$reason' WHERE timeID = '".$_POST['timeID']."'";
+    mysqli_query($conn, $update);
+    header('location: timesheet.php');
+  
+  };
+
+
+
+
+
+
+
 ?>
 
 <!DOCTYPE html>
