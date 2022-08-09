@@ -125,32 +125,66 @@ if(isset($_GET['timeID'])) {
 <!-- start PAGE-CONTENT -->
 <div class="page-content float-start" style="margin-top: 380px; width: 32%;margin-left: -383px; height: unset !important;">
   <form action="" method="post">
-    <div class="section-header pt-2">
-      <span class="text-muted pt-4" style="width: 95%;">Time Entry</span>
+  <div class="section-header pt-2">
+      <span class="text-muted pt-4" style="width: 95%;">Pending Time Change Requests</span>
     </div>
     <hr style="margin-bottom: -5px; margin-top: 5px;">
-    <?php 
-    $fname = $_SESSION['fname'];
-    $lname = $_SESSION['lname']; 
-    $employee_idno = $_SESSION['employee_idno'];?>
-      <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
-      <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
-      <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employee_idno; ?>">
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
-      <input class="form-control" id="date" type="date" name="date" value="" required>
-    </div>
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
-      <input class="form-control" id="timein" type="time" name="timein" value="" required>
-    </div>
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
-      <input class="form-control" id="timeout" type="time" name="timeout" value="" required>
-    </div>
-    <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
-      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-time" class="badge text-bg-secondary">Add Time</button>
-    </div>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col" style="font-size: 14px;">Timesheet ID</th>
+      <th scope="col" style="font-size: 14px;">Actions</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+
+  <?php
+      $sql = "SELECT * FROM timesheet where approval_status = 'pending'";
+      $result = mysqli_query($conn, $sql);
+      if($result) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $timeID           = $row['timeID'];
+            $idno             = $row['idno'];
+            $date             = $row['date'];
+            $timein           = $row['timein'];
+            $timeout          = $row['timeout'];
+            $totalhours       = $row['totalhours'];
+            $employee_fname   = $row['employee_fname'];
+            $employee_lname   = $row['employee_lname'];
+            $employee_idno    = $row['employee_idno'];
+            $comment          = $row['comment'];
+            $reason           = $row['reason'];
+            // $companyname    = $row['companyname'];
+  ?>
+    <tr>
+        <th scope="row"><?php echo $idno; ?></th>
+        <td>
+          <div class="forms d-flex" style="">
+        <form class="me-2" method="post" action="">
+        <?php $timeid = $row['timeID']; ?>
+          <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
+          <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved"><span class="badge text-bg-success">Approve</span></button>
+        </form>
+        <form method="post" action="">
+          <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
+          <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="rejected"><span class="badge text-bg-danger">Reject</span></button>
+        </form>
+        </div>
+        </td>
+        <!--  onclick="return confirm('Be Careful! \r\nOK to delete?')" -->
+        <?php } 
+        
+        ?>
+        
+   
+      </tbody>
+</table> 
+<?php 
+     
+} else {
+  echo "0 results";
+}
+    ?>
   </form>
 
  <!-- end PAGE-CONTENT -->
