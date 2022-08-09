@@ -45,7 +45,7 @@ if(!isAdmin()){
    
 <?php 
 
-$id = $_GET['timeID'];
+$id = $_GET['editID'];
 $select = " SELECT * FROM timesheet WHERE timeID = '$id' ";
 $result = mysqli_query($conn, $select);
 
@@ -143,6 +143,7 @@ if (mysqli_num_rows($result) > 0) {
                   </div>
                 </div>
               </div>
+
               <a class="text-decoration-none text-dark" href="edit-timesheet.php?editID=<?php echo $timeID; ?>">Edit</a>
 
       <?php 
