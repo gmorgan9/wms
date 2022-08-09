@@ -68,7 +68,6 @@ if(isset($_GET['timeID'])) {
 <!-- scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<script type="text/javascript" src="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/js/dist/mdb5/standard/modules/0a348b55c7b346c6205166c353ec4c44.min.js"></script>
 
 </head>
 <body>
@@ -112,12 +111,6 @@ if(isset($_GET['timeID'])) {
       <label for="timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
       <input class="form-control" id="timein" type="time" name="timein" value="" required>
     </div>
-    <section class="w-100 p-4 d-flex justify-content-center pb-4">
-      <div style="width: 22rem;" class="form-outline timepicker-inline-12">
-        <input type="text" class="form-control" id="form4" />
-        <label class="form-label" for="form4">Select a time</label>
-      </div>
-    </section>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
       <input class="form-control" id="timeout" type="time" name="timeout" value="" required>
@@ -129,15 +122,6 @@ if(isset($_GET['timeID'])) {
 
  <!-- end PAGE-CONTENT -->
 </div>
-<script>
-
- //Inline 12h
- const pickerInline12 = document.querySelector('.timepicker-inline-12');
-  const timepickerInline12 = new mdb.Timepicker(pickerInline12, {
-    inline: true,
-    format12: true,
-  });
-</script>
 
 <!-- start PAGE-CONTENT -->
 <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
