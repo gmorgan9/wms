@@ -174,12 +174,12 @@ if(isset($_GET['timeID'])) {
         <td>
           <div class="forms d-flex" style="">
         <form class="me-2" method="post" action="">
-        <?php $jobid = $row['jobID']; ?>
-          <input type="text" name="jobID" value="<?php echo $timeID; ?>" />
+        <?php $timeid = $row['timeID']; ?>
+          <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
           <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved"><span class="badge text-bg-success">Approve</span></button>
         </form>
         <form method="post" action="">
-          <input type="text" name="jobID" value="<?php echo $timeID; ?>" />
+          <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
           <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="rejected"><span class="badge text-bg-danger">Reject</span></button>
         </form>
         </div>
