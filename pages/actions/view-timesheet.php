@@ -219,7 +219,7 @@ if (mysqli_num_rows($result) > 0) {
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Date</h6>
+                      <h6 class="mb-0">New Date</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                         <?php 
@@ -232,7 +232,7 @@ if (mysqli_num_rows($result) > 0) {
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Time In</h6>
+                      <h6 class="mb-0">New Time In</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                         <?php 
@@ -245,7 +245,7 @@ if (mysqli_num_rows($result) > 0) {
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Time Out</h6>
+                      <h6 class="mb-0">New Time Out</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                         <?php 
@@ -261,7 +261,7 @@ if (mysqli_num_rows($result) > 0) {
                       <h6 class="mb-0">Actions</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <a class="text-decoration-none badge text-bg-success" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Edit</a>
+                    <?php echo $row['reason']; ?>
                     </div>
                   </div>
                 </div>
