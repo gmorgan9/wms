@@ -156,6 +156,16 @@ if (mysqli_num_rows($result) > 0) {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+
+<?php 
+$id = $_GET['timeID'];
+$select = " SELECT * FROM timesheet WHERE timeID = '$id' ";
+$result = mysqli_query($conn, $select);
+
+if (mysqli_num_rows($result) > 0) {
+   while($row = mysqli_fetch_assoc($result)) {
+    ?>
+
       <div class="col-md-8 me-4">
               <div class="card mb-3">
                 <div class="card-body">
@@ -221,6 +231,15 @@ if (mysqli_num_rows($result) > 0) {
                   </div>
                 </div>
               </div>
+
+
+              <?php }} ?>
+
+
+
+
+
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
