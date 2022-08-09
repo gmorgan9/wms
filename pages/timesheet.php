@@ -49,15 +49,21 @@ if(!isLoggedIn()){
     </ul>
   </div>
 
-
+<!-- start page content -->
   <div class="page-content mx-auto mt-2">
     <h3 class="mx-auto" style="width: 95%;">Employee Timesheet</h3>
+    <a style="text-decoration: none;" class="badge text-bg-success" href=""><i class="bi bi-plus-lg"></i> Timesheet</a>
+
+
+
+
+<!-- end page content -->
   </div>
 
 
 
 
-
+<!-- End MAIN -->
 </div>
 
 
