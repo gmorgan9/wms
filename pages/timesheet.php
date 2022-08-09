@@ -110,7 +110,7 @@ if(isset($_GET['timeID'])) {
       <label for="timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
       <input class="form-control" id="timein" type="time" name="timein" value="" required>
       <span class="input-group-addon">
-               <span class="glyphicon glyphicon-time"></span>
+               <span class="bi bi-time"></span>
                </span>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
