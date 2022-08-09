@@ -65,16 +65,16 @@ if (mysqli_num_rows($result) > 0) {
 
 <div class="page-content mx-auto mt-2">
 <form action="" method="post">
-      <h3 class="mx-auto" style="width: 95%;">Employee View</h3>
+      <!-- <h3 class="mx-auto" style="width: 95%;">Employee View</h3> -->
 
 
-      <div class="col-md-8 float-start w-25 ms-4">
+      <!-- <div class="col-md-8 float-start w-25 ms-4">
               <div class="card mb-3">
                 <div class="card-body">
                   <img class="ms-1" src="../../assets/img/pic_holder.jpg" style="height: 250px; width: 250px; border-radius: 150px;" alt="">
                   </div>
                 </div>
-              </div>
+              </div> -->
 
 
 
@@ -92,28 +92,28 @@ if (mysqli_num_rows($result) > 0) {
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Username</h6>
+                      <h6 class="mb-0">Date</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <?php echo $row['uname']; ?>
+                      <?php echo $row['date']; ?>
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Email <span class="text-muted" style="font-size: 10px;">Personal</span></h6>
+                      <h6 class="mb-0">Time In</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                     <?php echo $row['email']; ?>
+                     <?php echo $row['timein']; ?>
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Gender</h6>
+                      <h6 class="mb-0">Time Out</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <span class="text-capitalize"><?php echo $row['gender']; ?></span>
+                    <?php echo $row['timeout']; ?>
                     </div>
                   </div>
                   <hr>
