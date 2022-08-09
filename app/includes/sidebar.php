@@ -44,7 +44,7 @@
                     <?php } ?>
                 </a>
                 <?php 
-                $sql = " SELECT * FROM job WHERE approval_status = 'pending' ";
+                $sql = " SELECT * FROM timesheet WHERE approval_status = 'pending' ";
                 if ($result = mysqli_query($conn, $sql)) {
                     $rowcount = mysqli_num_rows( $result );
                 ?>
@@ -53,7 +53,7 @@
                     <?php if($rowcount == 0){ ?>
                         <span>  Timesheet Changes</span>
                     <?php } else { ?>
-                        <span>  Jobs</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
+                        <span>  Timesheet Changes</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
                     <?php }} ?>
                 </a>
                 <?php } ?>
