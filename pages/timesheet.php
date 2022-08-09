@@ -57,7 +57,7 @@ if(isset($_GET['timeID'])) {
         $timeout = mysqli_real_escape_string($conn, $_POST['timeout']);
         
 
-        $appUpdateQuery = "UPDATE timesheet SET date = '$date', timein = '$timein', timeout = '$timeout', new_date = null, new_timein = null, new_timeout = null, approval_status = 'approved' WHERE timeID = '".$_POST['timeID']."'";
+        $appUpdateQuery = "UPDATE timesheet SET date = '$date', timein = '$timein', timeout = '$timeout', new_date = null, new_timein = null, new_timeout = null, reason = null, approval_status = 'approved' WHERE timeID = '".$_POST['timeID']."'";
         $appUpdateResult = mysqli_query($conn, $appUpdateQuery);
         header('location: timesheet.php');
         // $appInsertQuery = "INSERT INTO approved(id,status) VALUES ('".$_POST['row_id']."','Approved')";
