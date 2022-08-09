@@ -45,7 +45,7 @@ if(!isAdmin()){
    
 <?php 
 
-$id = $_GET['timeID'];
+$id = $_GET['editID'];
 $select = " SELECT * FROM timesheet WHERE timeID = '$id' ";
 $result = mysqli_query($conn, $select);
 
