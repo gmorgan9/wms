@@ -37,7 +37,11 @@
                 ?>
                 <a href="<?php echo BASE_URL . '/admin/jobs.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                     <i class="bi bi-briefcase"></i>
-                    <span>  Jobs</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
+                    <?php if($rowcount == 0){ ?>
+                        <span>  Jobs</span>
+                    <?php } else { ?>
+                        <span>  Jobs</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
+                    <?php } ?>
                 </a>
                 <?php } ?>
             <?php } else {?>
