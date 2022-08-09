@@ -52,7 +52,7 @@ if(!isLoggedIn()){
 <!-- start page content -->
   <div class="page-content mx-auto mt-2">
     <h3 class="mx-auto" style="width: 95%;">Employee Timesheet</h3>
-    <a style="text-decoration: none;" class="badge text-bg-success" href=""><i class="bi bi-plus-lg"></i> Timesheet</a>
+    <a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#exampleModal" class="badge text-bg-success" href=""><i class="bi bi-plus-lg"></i> Timesheet</a>
 
 
 
@@ -68,6 +68,26 @@ if(!isLoggedIn()){
 
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 </body>
