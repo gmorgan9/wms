@@ -98,8 +98,6 @@ if (mysqli_num_rows($result) > 0) {
                         <?php 
                         $orgDate = $row['date'];
                         $newDate = date("M d, Y", strtotime($orgDate));
-
-
                         ?>
                       <?php echo $newDate; ?>
                     </div>
@@ -110,6 +108,10 @@ if (mysqli_num_rows($result) > 0) {
                       <h6 class="mb-0">Time In</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
+                        <?php 
+                        $orgTimein = $row['timein'];
+                        $newTimein = date("H:i a", strtotime($orgTimein));
+                        ?>
                      <?php echo $row['timein']; ?>
                     </div>
                   </div>
