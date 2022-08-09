@@ -56,6 +56,7 @@
                         <span>  Jobs</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
                     <?php } ?>
                 </a>
+                <?php }?>
                 <a href="<?php echo BASE_URL . '/pages/timesheet.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                     <i class="bi bi-clock"></i>
                 <?php
@@ -67,9 +68,9 @@
 
                 <span>  Timesheet</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
                 
-                <?php }else { ?>
-                    
-                <?php }} ?>
+                <?php } ?>
+                <?php } else { ?>
+
             </a>
 
                 <br>
