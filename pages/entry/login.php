@@ -43,7 +43,7 @@ if(isset($_POST['submit'])){
           $_SESSION['fname'] = $row['fname'];
           $_SESSION['empID'] = $row['employeeID'];
           $_SESSION['loggedin'] = $row['loggedin'];
-          $_SESSION['admin_lname'] = $row['lname'];
+          $_SESSION['lname'] = $row['lname'];
           $_SESSION['acc_type'] = $row['acc_type'];
           $_SESSION['uname'] = $row['uname'];
           $_SESSION['email'] = $row['email'];
@@ -59,7 +59,7 @@ if(isset($_POST['submit'])){
           $_SESSION['fname'] = $row['fname'];
           $_SESSION['empID'] = $row['employeeID'];
           $_SESSION['loggedin'] = $row['loggedin'];
-          $_SESSION['user_lname'] = $row['lname'];
+          $_SESSION['lname'] = $row['lname'];
           $_SESSION['acc_type'] = $row['acc_type'];
           $_SESSION['uname'] = $row['uname'];
          $_SESSION['email'] = $row['email'];
