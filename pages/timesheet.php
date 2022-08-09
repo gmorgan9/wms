@@ -36,7 +36,7 @@ if(isset($_POST['add-time'])){
 
   }else{
         // $insert2 = "INSERT INTO employee_company_data (employee_code, company_code, dept_code, job_code) SELECT employee_code, company_code, dept_code, jobID FROM job";
-        $insert = "INSERT INTO timesheet (idno, date, timein, timeout) VALUES('$idno', '$date', '$timein', '$timeout')";
+        $insert = "INSERT INTO timesheet (idno, date) VALUES('$idno', )";
         mysqli_query($conn, $insert);
         // mysqli_query($conn, $insert2);
         header('location: timesheet.php');
