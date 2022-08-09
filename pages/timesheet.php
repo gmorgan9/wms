@@ -109,7 +109,9 @@ if(isset($_GET['timeID'])) {
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
       <input class="form-control" id="timein" type="time" name="timein" value="" required>
-      <b-form-timepicker></b-form-timepicker>
+      <span class="input-group-addon">
+               <span class="glyphicon glyphicon-time"></span>
+               </span>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
@@ -178,6 +180,14 @@ if(isset($_GET['timeID'])) {
  
 <!-- end MAIN -->
 </div> 
+
+<script type="text/javascript">
+         $(function () {
+             $('#datetimepicker3').datetimepicker({
+                 format: 'LT'
+             });
+         });
+      </script>
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
