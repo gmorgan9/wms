@@ -78,7 +78,30 @@ if(!isLoggedIn()){
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        
+
+      <?php 
+
+    $sql = "SELECT * FROM job where ";
+    $all = mysqli_query($conn, $sql);
+      if($all) {
+        while ($row = mysqli_fetch_assoc($all)) {
+    
+    $fname = $row['fname'];
+    $lname = $row['lname']; ?>
+    <?php }} ?>
+      <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
+      <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
+    <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
+      <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
+    </div>
+
+
+
+
+
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
