@@ -120,7 +120,7 @@ if(isset($_GET['timeID'])) {
     <hr style="margin-bottom: -5px; margin-top: 5px;">
     <?php 
 
-    $sql = "SELECT * FROM employee";
+    $sql = "SELECT * FROM employee where employeeID = '$empID'";
     $all = mysqli_query($conn, $sql);
       if($all) {
         while ($row = mysqli_fetch_assoc($all)) {
