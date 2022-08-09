@@ -113,6 +113,12 @@ if(isset($_GET['timeID'])) {
                <span class="bi bi-time"></span>
                </span>
     </div>
+    <div class='input-group date' id='datetimepicker3'>
+               <input type='text' class="form-control" />
+               <span class="input-group-addon">
+               <span class="bi bi-time"></span>
+               </span>
+            </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
       <input class="form-control" id="timeout" type="time" name="timeout" value="" required>
