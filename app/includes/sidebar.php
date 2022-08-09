@@ -56,9 +56,7 @@
 
                 <span>  Timesheet</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
                 
-                <?php }else { ?>
-                    
-                <?php }} ?>
+                <?php } }?>
                 </a>
                 <br>
                 <span style="margin-left: 38px; margin-bottom: -10px;">Employee Links</span>
