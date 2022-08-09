@@ -269,12 +269,20 @@ if(isset($_GET['timeID'])) {
             $employee_idno    = $row['employee_idno'];
             $comment          = $row['comment'];
             $reason           = $row['reason'];
+            $app_status       = $row['approval_status'];
             // $companyname    = $row['companyname'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $date; ?></td>
         <td><?php echo $timein; ?> / <?php echo $timeout; ?></td>
+        <?php if($app_status == 'pending') { ?>
+          <td><span class="text-warning">Change in Progress</span></td>
+        <?php } if($app_status == 'approved') { ?>
+          <td><span class="text-success">Approved</span></td>
+        <?php } if($app_status == 'rejected') { ?>
+          <td><span class="text-danger">Rejected</span></td>
+        <?php } ?>
         <!-- <td><?php //echo $companyname; ?></td> -->
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
         <!-- <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="timesheet.php?timeID=<?php //echo $timeID; ?>">Delete</a></td> -->
