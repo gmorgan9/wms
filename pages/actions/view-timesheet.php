@@ -292,7 +292,7 @@ if (mysqli_num_rows($result) > 0) {
                       <h6 class="mb-0">Actions</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        <a href="javascript:history.back()">Go Back</a>
+                        <a class="text-decoration-none badge text-bg-primary" href="javascript:history.back()">Go Back</a>
                     </div>
                   </div>
                 </div>
