@@ -284,6 +284,7 @@ if(isset($_GET['timeID'])) {
     <tr>
       <th scope="col" style="font-size: 14px;">ID #</th>
       <th scope="col" style="font-size: 14px;">Employee</th>
+      <th scope="col" style="font-size: 14px;">Status</th>
       <th scope="col" style="font-size: 14px;">Actions</th>
     </tr>
   </thead>
@@ -305,11 +306,19 @@ if(isset($_GET['timeID'])) {
             $employee_idno    = $row['employee_idno'];
             $comment          = $row['comment'];
             $reason           = $row['reason'];
+            $app_status           = $row['approval_status'];
             // $companyname    = $row['companyname'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $employee_lname; ?>, <?php echo $employee_fname; ?></td>
+        <?php if($app_status == 'approved'){ ?>
+        <td><span class="text-capitalize text-success"><?php echo $app_status; ?><span></td>
+        <?php } if($app_status == 'rejected') { ?>
+          <td><span class="text-capitalize text-danger"><?php echo $app_status; ?><span></td>
+        <?php } if($app_status == 'pending') { ?>
+          <td><span class="text-capitalize text-primary"><?php echo $app_status; ?><span></td>
+        <?php }?>
         <!-- <td><?php //echo $companyname; ?></td> -->
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
         <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobID; ?>">Delete</a></td>
