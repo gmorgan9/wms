@@ -110,7 +110,7 @@ if (mysqli_num_rows($result) > 0) {
                     <div class="col-sm-9 text-secondary">
                         <?php 
                         $orgTimein = $row['timein'];
-                        $newTimein = date("H:i a", strtotime($orgTimein));
+                        $newTimein = date("H:i A", strtotime($orgTimein));
                         ?>
                      <?php echo $newTimein; ?>
                     </div>
