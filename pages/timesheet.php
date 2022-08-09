@@ -247,9 +247,9 @@ if(isset($_GET['timeID'])) {
             $orgDate          = $row['date'];
             $date             = date("M d, Y", strtotime($orgDate));
             $orgTimein        = $row['timein'];
-            $timein           = date("H:i A", strtotime($orgTimein));
+            $timein           = date("h:i A", strtotime($orgTimein));
             $orgTimeout       = $row['timeout'];
-            $timeout          = date("H:i A", strtotime($orgTimeout));
+            $timeout          = date("h:i A", strtotime($orgTimeout));
             $totalhours       = $row['totalhours'];
             $employee_fname   = $row['employee_fname'];
             $employee_lname   = $row['employee_lname'];
@@ -306,9 +306,9 @@ if(isset($_GET['timeID'])) {
             $orgDate          = $row['date'];
             $date             = date("M d, Y", strtotime($orgDate));
             $orgTimein        = $row['timein'];
-            $timein           = date("H:i A", strtotime($orgTimein));
+            $timein           = date("h:i A", strtotime($orgTimein));
             $orgTimeout       = $row['timeout'];
-            $timeout          = date("H:i A", strtotime($orgTimeout));
+            $timeout          = date("h:i A", strtotime($orgTimeout));
             $totalhours       = $row['totalhours'];
             $employee_fname   = $row['employee_fname'];
             $employee_lname   = $row['employee_lname'];
