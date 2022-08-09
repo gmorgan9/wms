@@ -303,9 +303,12 @@ if(isset($_GET['timeID'])) {
           while ($row = mysqli_fetch_assoc($all)) {
             $timeID           = $row['timeID'];
             $idno             = $row['idno'];
-            $date             = $row['date'];
-            $timein           = $row['timein'];
-            $timeout          = $row['timeout'];
+            $orgDate          = $row['date'];
+            $date             = date("M d, Y", strtotime($orgDate));
+            $orgTimein        = $row['timein'];
+            $timein           = $date("H:i A", strtotime($orgTimein));
+            $orgTimeout       = $row['timeout'];
+            $timeout          = date("H:i A", strtotime($orgTimeout));
             $totalhours       = $row['totalhours'];
             $employee_fname   = $row['employee_fname'];
             $employee_lname   = $row['employee_lname'];
