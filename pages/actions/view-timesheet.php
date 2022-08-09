@@ -270,7 +270,7 @@ if (mysqli_num_rows($result) > 0) {
                         $orgTimeout = $row['new_timeout'];
                         $new_timeout = date("h:i A", strtotime($orgTimeout));
                         ?>
-                        <?php if($new_timein != $row['timein']) { ?>
+                        <?php if($new_timeout != $row['timeout']) { ?>
                             <span class="text-warning"><?php echo $new_timeout; ?></span>
                         <?php } else { ?>
                             <?php echo $new_timeout; ?>
