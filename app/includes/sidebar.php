@@ -9,20 +9,9 @@
                 <i class="bi bi-info-circle"></i>
                 <span>  Information</span>
             </a>
-            <?php if($_SESSION['acc_type'] == 0){ ?>
             <a href="<?php echo BASE_URL . '/pages/timesheet.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                 <i class="bi bi-clock"></i>
                 <span>  Timesheet</span>
-                <?php
-                $sql = " SELECT * FROM timesheet WHERE approval_status = 'pending' ";
-                if ($result = mysqli_query($conn, $sql)) {
-                    $rowcount = mysqli_num_rows( $result );
-
-                    ?>
-
-                <span>  Timesheet</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
-                
-                <?php }}  ?>
             </a>
             <a href="<?php echo BASE_URL . '/pages/reports.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                 <i class="bi bi-bar-chart"></i>
@@ -54,23 +43,21 @@
                         <span>  Jobs</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
                     <?php } ?>
                 </a>
-                <?php }?>
-                <a href="<?php echo BASE_URL . '/pages/timesheet.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
-                    <i class="bi bi-clock"></i>
-                <?php
+                <?php 
                 $sql = " SELECT * FROM timesheet WHERE approval_status = 'pending' ";
                 if ($result = mysqli_query($conn, $sql)) {
                     $rowcount = mysqli_num_rows( $result );
-
-                    ?>
-
-                <span>  Timesheet</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
-                
-                <?php }  ?>
-                <?php } else { ?>
-
-            </a>
-
+                ?>
+                <a href="<?php echo BASE_URL . '/pages/actions/time-changes.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="bi bi-clock-history"></i>
+                    <?php if($rowcount == 0){ ?>
+                        <span>  Time Changes</span>
+                    <?php } else { ?>
+                        <span>  Time Changes</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
+                    <?php }} ?>
+                </a>
+                <?php } ?>
+            <?php } else {?>
                 <br>
                 <span style="margin-left: 38px; margin-bottom: -10px;">Employee Links</span>
                 <hr>
@@ -79,7 +66,7 @@
                     <span>  Request Job</span>
                 </a>
 
-           <?php }  ?>
+           <?php } ?>
         </div>
     </div>
 </nav>
