@@ -127,6 +127,14 @@ if(isset($_GET['timeID'])) {
 
  <!-- end PAGE-CONTENT -->
 </div>
+<script>
+
+const pickerInline12 = document.querySelector('.timepicker-inline-12');
+  const timepickerInline12 = new mdb.Timepicker(pickerInline12, {
+    inline: true,
+    format12: true,
+  });
+</script>
 
 <!-- start PAGE-CONTENT -->
 <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
