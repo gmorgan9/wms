@@ -68,6 +68,8 @@ if(isset($_GET['timeID'])) {
 <!-- scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<script type="text/javascript" src="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/js/dist/mdb5/standard/modules/0a348b55c7b346c6205166c353ec4c44.min.js"></script>
+
 </head>
 <body>
 
