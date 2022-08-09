@@ -286,8 +286,19 @@ if (mysqli_num_rows($result) > 0) {
                     <?php echo $row['reason']; ?>
                     </div>
                   </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Actions</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <a href="javascript:history.back()">Go Back</a>
+                    </div>
+                  </div>
                 </div>
               </div>
+
+              
 
              
 
