@@ -193,6 +193,7 @@ if(isset($_GET['timeID'])) {
           <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
           <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved"><span class="badge text-bg-success">Approve</span></button>
         </form>
+        &nbsp;
         <form method="post" action="">
           <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
           <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="rejected"><span class="badge text-bg-danger">Reject</span></button>
@@ -315,7 +316,7 @@ if(isset($_GET['timeID'])) {
             $employee_idno    = $row['employee_idno'];
             $comment          = $row['comment'];
             $reason           = $row['reason'];
-            $app_status           = $row['approval_status'];
+            $app_status       = $row['approval_status'];
             // $companyname    = $row['companyname'];
   ?>
     <tr>
