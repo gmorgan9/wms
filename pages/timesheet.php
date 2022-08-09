@@ -134,15 +134,15 @@ if(isset($_GET['timeID'])) {
       <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employeeID; ?>">
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
-      <input class="form-control" id="date" type="text" name="date" value="" required>
+      <input class="form-control" id="date" type="date" name="date" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
-      <input class="form-control" id="timein" type="text" name="timein" value="" required>
+      <input class="form-control" id="timein" type="time" name="timein" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
-      <input class="form-control" id="timeout" type="text" name="timeout" value="" required>
+      <input class="form-control" id="timeout" type="time" name="timeout" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
       <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-time" class="badge text-bg-secondary">Add Time</button>
