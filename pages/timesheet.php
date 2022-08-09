@@ -27,20 +27,20 @@ if(isset($_POST['add-time'])){
   $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
   $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
 
-  $select = " SELECT * FROM timesheet WHERE idno = '$idno' ";
-  $result = mysqli_query($conn, $select);
+  // $select = " SELECT * FROM timesheet WHERE idno = '$idno' ";
+  // $result = mysqli_query($conn, $select);
 
-  if(mysqli_num_rows($result) > 0){
+  // if(mysqli_num_rows($result) > 0){
 
-     $error[] = 'Timesheet already exist!';
+  //    $error[] = 'Timesheet already exist!';
 
-  }else{
+  // }else{
         // $insert2 = "INSERT INTO employee_company_data (employee_code, company_code, dept_code, job_code) SELECT employee_code, company_code, dept_code, jobID FROM job";
-        $insert = "INSERT INTO timesheet (idno, date) VALUES('$idno', )";
+        $insert = "INSERT INTO timesheet (idno, date, timein, timeout, employee_fname, employee_lname, employee_idno) VALUES('$idno', '$date', '$timein', '$timeout', '$employee_fname', '$employee_lname', '$employee_idno')";
         mysqli_query($conn, $insert);
         // mysqli_query($conn, $insert2);
         header('location: timesheet.php');
-     }
+     //}
 
 };
 
