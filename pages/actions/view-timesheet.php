@@ -120,7 +120,7 @@ if (mysqli_num_rows($result) > 0) {
                         <?php if($row['new_date'] != null) { ?>
                           Change in Progress
                         <?php } else { ?>
-                          <?php echo $row['date']; ?>
+                          <?php echo $date; ?>
                         <?php } ?>
                     </div>
                   </div>
@@ -137,7 +137,7 @@ if (mysqli_num_rows($result) > 0) {
                      <?php if($row['new_timein'] != null) { ?>
                           Change in Progress  
                         <?php } else { ?>
-                          <?php echo $row['timein']; ?>
+                          <?php echo $timein; ?>
                         <?php } ?>
                     </div>
                   </div>
@@ -154,7 +154,7 @@ if (mysqli_num_rows($result) > 0) {
                     <?php if($row['new_timeout'] != null) { ?>
                           Change in Progress
                         <?php } else { ?>
-                          <?php echo $row['timeout']; ?>
+                          <?php echo $timeout; ?>
                         <?php } ?>
                     </div>
                   </div>
