@@ -13,43 +13,46 @@ if(!isLoggedIn()){
 
 
 // Add Department
-if(isset($_POST['add-job'])){
+if(isset($_POST['add-time'])){
 
-  $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
+  $timeID = mysqli_real_escape_string($conn, $_POST['jobID']);
   $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
-  $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
-  $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
-  $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
+  $date = mysqli_real_escape_string($conn, $_POST['date']);
+  $timein = mysqli_real_escape_string($conn, $_POST['timein']);
+  $timeout = mysqli_real_escape_string($conn, $_POST['timeout']);
+  $totalhours = mysqli_real_escape_string($conn, $_POST['totalhours']);
+  $comment = mysqli_real_escape_string($conn, $_POST['comment']);
+  $reason = mysqli_real_escape_string($conn, $_POST['reason']);
   $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
   $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
   $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
 
-  $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
+  $select = " SELECT * FROM timesheet WHERE idno = '$idno' ";
   $result = mysqli_query($conn, $select);
 
   if(mysqli_num_rows($result) > 0){
 
-     $error[] = 'Job already exist!';
+     $error[] = 'Timesheet already exist!';
 
   }else{
         // $insert2 = "INSERT INTO employee_company_data (employee_code, company_code, dept_code, job_code) SELECT employee_code, company_code, dept_code, jobID FROM job";
-        $insert = "INSERT INTO job (idno, jobtitle, companyname, deptname, employee_fname, employee_lname, employee_idno) VALUES('$idno', '$jobtitle', '$companyname', '$deptname', '$employee_fname', '$employee_lname', '$employee_idno')";
+        $insert = "INSERT INTO timesheet (idno, date, timein, timeout, employee_fname, employee_lname, employee_idno) VALUES('$idno', '$date', '$timein', '$timeout', '$employee_fname', '$employee_lname', '$employee_idno')";
         mysqli_query($conn, $insert);
         // mysqli_query($conn, $insert2);
-        header('location: job_request.php');
+        header('location: timesheet.php');
      }
 
 };
 
 // Delete Department
-if(isset($_GET['jobID'])) {
-    $id = $_GET['jobID'];
+if(isset($_GET['timeID'])) {
+    $id = $_GET['timeID'];
 
-    $sql = "DELETE FROM job WHERE jobID = $id";
+    $sql = "DELETE FROM timesheet WHERE timeID = $id";
     $delete = mysqli_query($conn, $sql);
     if($delete) {
         // echo "Deleted Successfully";
-        header('location: jobs.php'); // returns back to same page
+        header('location: timesheet.php'); // returns back to same page
     } else {
         die(mysqli_error($conn));
     }
@@ -63,7 +66,7 @@ if(isset($_GET['jobID'])) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>WMS | Departments</title>
+   <title>WMS | Timesheet</title>
 
    <!-- Custom Styles -->
    <link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/other-style.css?v='. time(); ?>">
@@ -100,18 +103,12 @@ if(isset($_GET['jobID'])) {
 <div class="main"> 
 
   <div class="page-header mx-auto">
-    <p class="page_title" style="float: left; padding-top: 2px;">Jobs</p>
+    <p class="page_title" style="float: left; padding-top: 2px;">Timesheet</p>
     <ul class="breadcrumb">
       <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
-      <li>Jobs</li>
+      <li>Timesheet</li>
     </ul>
   </div>
-
-  <!-- <div class="jumbotron jumbotron-fluid bg-white m-2 mx-auto" style="width: 98%;">
-  <div class="container">
-    <h3 class="display-6 text-center" style="padding-top: 5px !important;padding-bottom: 10px !important;">Welcome, <span style="text-transform: capitalize;"><?php //echo $row['fname'] ?>!</span></h3>
-  </div>
-</div> -->
 
 
 <!-- start PAGE-CONTENT -->
@@ -136,19 +133,19 @@ if(isset($_GET['jobID'])) {
       <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
       <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employeeID; ?>">
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
-      <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
+      <label for="date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
+      <input class="form-control" id="date" type="text" name="date" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="deptname" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
-      <input class="form-control" id="deptname" type="text" name="deptname" value="" required>
+      <label for="timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
+      <input class="form-control" id="timein" type="text" name="timein" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="jobtitle" style="font-size: 14px;">Job Title / Position <span class="text-muted" style="font-size: 10px;">e.g. "Chief Executive Officer"</span></label>
-      <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="" required>
+      <label for="timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
+      <input class="form-control" id="timeout" type="text" name="timeout" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
-      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-job" class="badge text-bg-secondary">Add Job</button>
+      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-time" class="badge text-bg-secondary">Add Time</button>
     </div>
   </form>
 
