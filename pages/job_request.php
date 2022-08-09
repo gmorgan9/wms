@@ -49,7 +49,7 @@ if(isset($_GET['jobID'])) {
     $delete = mysqli_query($conn, $sql);
     if($delete) {
         // echo "Deleted Successfully";
-        header('location: jobs.php'); // returns back to same page
+        header('location: jobs_request.php'); // returns back to same page
     } else {
         die(mysqli_error($conn));
     }
