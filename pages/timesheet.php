@@ -305,7 +305,7 @@ if(isset($_GET['timeID'])) {
           ?>
 
               <?php //if($totalhrs < 0) { ?>
-                <?php //echo $totalmin; ?> Min
+                <?php echo $totalmin; ?> Min
               <?php //} else { ?>
                 <?php echo $totalhrs; ?> Hrs
               <? //} ?>
