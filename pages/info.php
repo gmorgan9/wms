@@ -73,8 +73,8 @@ if (mysqli_num_rows($result) > 0) {
                     <div class="col-sm-3">
                       <h6 class="mb-0">Current Job</h6>
                     </div>
-                    <div class="col-sm-9 text-info">
-                    <?php echo $row['jobtitle']; ?>
+                    <div class="col-sm-9 text-secondary">
+                    <span class="text-capitalize"><?php echo $row['jobtitle']; ?></span>
                     </div>
                   </div>
                   
