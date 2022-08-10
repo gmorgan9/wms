@@ -217,11 +217,7 @@ if(isset($_GET['timeID'])) {
         
         ?>
         
-   
-      </tbody>
-</table> 
-
-<?php
+        <?php
 $monday_this_week = date("Y-m-d",strtotime('monday this week'));
 ?>
 <?php for($i=0;$i<=4;$i++): ?>
@@ -229,6 +225,11 @@ $monday_this_week = date("Y-m-d",strtotime('monday this week'));
     <label ><?php echo $date; ?></label>
     <label ><?php echo date('l', strtotime($date)); ?></label><br>   
 <?php endfor; ?>
+   
+      </tbody>
+</table> 
+
+
 
 
 
