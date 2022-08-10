@@ -307,6 +307,12 @@ if(isset($_GET['timeID'])) {
 ?>
 <label ><?php echo $week_start; ?> - </label>
 <label ><?php echo $week_end; ?></label> <br>
+<?php 
+$day = date('w');
+          $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
+           $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
+
+?>
 <?php for($i=0;$i<=4;$i++): ?>
     <?php $date = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); ?>
       <label ><?php echo $date; ?></label>
