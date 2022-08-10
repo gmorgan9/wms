@@ -331,8 +331,17 @@ if(isset($_GET['timeID'])) {
 
 <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
 <span class="mx-auto">Timesheet for <span class="text-muted text-capitalize"><?php echo $week_start; ?> - <?php echo $week_end; ?></span></span> 
+<?php
+$sql = "SELECT date FROM timesheet";
+$result = mysqli_query($conn, $sql);
 
-<?php $all = mysql_fetch_array(mysql_query($conn, "SELECT * FROM `timesheet`")) ?>
+if (mysqli_num_rows($result) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result)) {
+    // echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+
+
+?>
 
 
 <div class="page-content mx-auto mt-2">
@@ -440,7 +449,13 @@ if(isset($_GET['timeID'])) {
                 </div>
               </div>
 
+<?php 
+  }
+} else {
+  echo "0 results";
+}
 
+?>
  <!-- end PAGE-CONTENT -->
 </div>
 <?php } else { ?>
