@@ -351,7 +351,7 @@ if(isset($_GET['timeID'])) {
   </thead>
   <tbody class="table-group-divider">
 <?php
-  $sql = "SELECT * FROM timesheet WHERE timeID = '$timeID' ";
+  $sql = "SELECT * FROM timesheet WHERE employee_idno = '{$_SESSION['employee_idno']}' ";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
