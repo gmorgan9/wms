@@ -85,7 +85,15 @@ if (mysqli_num_rows($result) > 0) {
     </ul>
   </div>
 
+  <?php
+                  $empidno = $_SESSION['employee_idno'];
+                  $select = "SELECT * FROM job WHERE employee_idno = '$empidno' ";
+                  $result = mysqli_query($conn, $select);
+                  if (mysqli_num_rows($result) > 0) {
+                     while($row = mysqli_fetch_assoc($result)) {
 
+                  ?>
+                      <?php }} ?>
 
 
 <div class="page-content mx-auto mt-2">
@@ -105,17 +113,7 @@ if (mysqli_num_rows($result) > 0) {
                 </div>
               </div>
 
-              <?php
-                  $empidno = $_SESSION['employee_idno'];
-                  $select = "SELECT * FROM job WHERE employee_idno = '$empidno' ";
-                  $result = mysqli_query($conn, $select);
-                  if (mysqli_num_rows($result) > 0) {
-                     while($row = mysqli_fetch_assoc($result)) {
-
-                  ?>
-                      
-
-                    <?php }} ?>
+              
 
       <div class="col-md-8 float-end me-4">
               <div class="card mb-3">
