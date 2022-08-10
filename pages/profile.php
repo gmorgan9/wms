@@ -43,6 +43,23 @@ if(isset($_POST['update-profile'])){
    } 
 };
 
+// Add Department
+if(isset($_POST['update-profile'])){
+  $id = $_GET['employeeID'];
+  $timeID = mysqli_real_escape_string($conn, $_POST['jobID']);
+  $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
+  $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+  $lname = mysqli_real_escape_string($conn, $_POST['lname']);
+  $uname = mysqli_real_escape_string($conn, $_POST['uname']);
+  $gender = mysqli_real_escape_string($conn, $_POST['gender']);
+  $email = mysqli_real_escape_string($conn, $_POST['email']);
+
+  $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', gender = '$gender', email = '$email' WHERE employeeID = '$id'";
+  mysqli_query($conn, $update);
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
+
+};
+
 ?>
 
 <!DOCTYPE html>
@@ -289,7 +306,7 @@ if (mysqli_num_rows($result) > 0) {
       <div class="modal-footer">
         <div class="form-group pt-3" style="margin-bottom: 10px;">
           <button type="button" style="border-color: rgba(0,0,0,0);" class="badge text-bg-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-time" class="badge text-bg-secondary">Update Profile</button>
+          <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-profile" class="badge text-bg-secondary">Update Profile</button>
         </div>
       </div>
       </form>
