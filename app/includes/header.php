@@ -6,7 +6,7 @@ $select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
 $result = mysqli_query($conn, $select);
 if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
-   }}
+   
 ?>
 
 
@@ -40,7 +40,7 @@ if (mysqli_num_rows($result) > 0) {
             <?php } else { ?>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="/">Home</a></li>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="pages/entry/login.php">Login/Signup</a></li>
-            <?php } ?>
+            <?php }}} ?>
         </ul>
     </div>
     
