@@ -222,7 +222,7 @@ if (mysqli_num_rows($result) > 0) {
 
 <?php 
 $id = $_GET['employeeID'];
-$select = " SELECT * FROM employee WHERE employeeID = '$id' ";
+$select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
 $result = mysqli_query($conn, $select);
 
 if (mysqli_num_rows($result) > 0) {
@@ -238,9 +238,9 @@ if (mysqli_num_rows($result) > 0) {
     $fname = $_SESSION['fname'];
     $lname = $_SESSION['lname']; 
     $employee_idno = $_SESSION['employee_idno'];?>
-      <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
-      <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
-      <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employee_idno; ?>">
+      <input class="form-control" id="fname" type="text" name="fname" value="<?php echo $fname; ?>">
+      <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $lname; ?>">
+      <input class="form-control" id="idno" type="text" name="idno" value="<?php echo $idno; ?>">
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="new_date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
       <input class="form-control" id="new_date" type="date" name="new_date" value="<?php echo $row['date']; ?>" required>
