@@ -296,7 +296,7 @@ if(isset($_GET['timeID'])) {
             $reason           = $row['reason'];
             $app_status       = $row['approval_status'];
             $companyname    = $row['companyname'];
-          }}
+          
 
           $day = date('w');
           $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
@@ -389,6 +389,7 @@ if(isset($_GET['timeID'])) {
 </table> 
  <!-- end PAGE-CONTENT -->
 </div>
+<?php }} ?>
 <?php } else { ?>
 
 
