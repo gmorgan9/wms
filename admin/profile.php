@@ -74,6 +74,7 @@ $result = mysqli_query($conn, $select);
 if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
       $acc_type = $row['acc_type'];
+      $employee_idno = $row['idno'];
 ?>
 
   <div class="page-header mx-auto">
@@ -91,11 +92,24 @@ if (mysqli_num_rows($result) > 0) {
 <form action="" method="post">
       <h3 class="mx-auto" style="width: 95%;">My Profile</h3>
 
-
+    <div class="row">
       <div class="col-md-8 float-start w-25 ms-4">
               <div class="card mb-3">
                 <div class="card-body">
                   <img class="ms-1" src="../../assets/img/pic_holder.jpg" style="height: 250px; width: 250px; border-radius: 150px;" alt="">
+
+                  <br><br>
+
+                  <?php
+                  $select = " SELECT * FROM job WHERE employee_idno = '$employee_idno' ";
+                  $result = mysqli_query($conn, $select);
+                  if (mysqli_num_rows($result) > 0) {
+                     while($row = mysqli_fetch_assoc($result)) {
+
+                  ?>
+                      <?php echo $row['jobtitle']; ?>
+
+                    <?php }} ?>
                   </div>
                 </div>
               </div>
@@ -177,6 +191,7 @@ if (mysqli_num_rows($result) > 0) {
                   </div>
                 </div>
               </div>
+            </div>
               <?php 
       }
    } else {
