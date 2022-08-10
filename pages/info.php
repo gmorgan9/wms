@@ -26,6 +26,9 @@ if(!isLoggedIn()){
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
+    <!-- scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <style>
       
     </style>
@@ -134,6 +137,78 @@ if (mysqli_num_rows($result) > 0) {
 
 </div>
 <!-- END MAIN -->
+
+
+<!-- EDIT MODAL -->
+<div class="modal fade" id="editEmployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+  <?php 
+  $id = $_GET['timeID'];
+  $select = " SELECT * FROM timesheet WHERE timeID = '$id' ";
+  $result = mysqli_query($conn, $select);
+
+  if (mysqli_num_rows($result) > 0) {
+     while($row = mysqli_fetch_assoc($result)) {
+      ?>
+
+  <form action="" method="post">
+      <div class="section-header pt-2">
+        <span class="text-muted pt-4" style="width: 95%;">Time Entry</span>
+      </div>
+      <hr style="margin-bottom: -5px; margin-top: 5px;">
+      <?php 
+      $fname = $_SESSION['fname'];
+      $lname = $_SESSION['lname']; 
+      $employee_idno = $_SESSION['employee_idno'];?>
+        <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
+        <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
+        <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employee_idno; ?>">
+      <div class="form-group pt-3 mx-auto" style="width: 95%;">
+        <label for="new_date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
+        <input class="form-control" id="new_date" type="date" name="new_date" value="<?php echo $row['date']; ?>" required>
+      </div>
+      <div class="form-group pt-3 mx-auto" style="width: 95%;">
+        <label for="new_timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
+        <input class="form-control" id="new_timein" type="time" name="new_timein" value="<?php echo $row['timein']; ?>" required>
+      </div>
+      <div class="form-group pt-3 mx-auto" style="width: 95%;">
+        <label for="new_timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
+        <input class="form-control" id="new_timeout" type="time" name="new_timeout" value="<?php echo $row['timeout']; ?>" required>
+      </div>
+      <div class="form-group pt-3 mx-auto" style="width: 95%;">
+        <label for="reason" style="font-size: 14px;">Reason <span class="text-muted" style="font-size: 10px;">Give reason for changing time</span></label>
+        <textarea class="form-control" id="reason" type="text" name="reason" value="" required></textarea>
+      </div>
+
+      <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
+        <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-time" class="badge text-bg-secondary">Update Time</button>
+      </div>
+      </form>
+
+                <?php }} ?>
+
+
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+    
+  </div>
+<!-- END EDIT MODAL -->
 
 
 
