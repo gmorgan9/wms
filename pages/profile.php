@@ -229,7 +229,7 @@ if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
     ?>
 
-<form action="" method="post">
+<form action="" method="post" class="mx-auto">
     <!-- <div class="section-header pt-2">
       <span class="text-muted pt-4" style="width: 95%;"></span>
     </div> -->
