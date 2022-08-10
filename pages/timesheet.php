@@ -301,10 +301,10 @@ if(isset($_GET['timeID'])) {
           //$totalhrs = $timeout - $timein;
           $totalhrs = round((strtotime($timeout) - strtotime($timein)) / 3600, 1);
           $totalmin = round((strtotime($timeout) - strtotime($timein)) / 60, 2);
-          $maxmin = 59;
+          $maxmin = '59';
           ?>
 
-              <?php if($totalmin == '59')  { ?>
+              <?php if($totalmin > $maxmin)  { ?>
                 <?php echo $totalmin; ?> Min
               <?php } else { ?>
                 <?php echo $totalhrs; ?> Hrs
