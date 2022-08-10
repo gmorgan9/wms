@@ -308,9 +308,9 @@ if(isset($_GET['timeID'])) {
 <label ><?php echo $week_start; ?> - </label>
 <label ><?php echo $week_end; ?></label> <br>
 <?php 
-$day = date('w');
-          $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
-           $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
+// $day = date('w');
+//           $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
+//            $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
 
 ?>
     <?php 
