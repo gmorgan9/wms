@@ -6,7 +6,6 @@ $select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
 $result = mysqli_query($conn, $select);
 if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
-   
 ?>
 
 
@@ -14,11 +13,9 @@ if (mysqli_num_rows($result) > 0) {
 <!--Main Navigation-->
 <header>
 <!-- Navbar -->
-    <?php if(isset($row['fname'])){ ?>
+    <?php if(isset($_SESSION['fname'])){ ?>
         <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-    <?php } 
-    
-    if(!isset($row['fname'])){ ?>
+    <?php } else { ?>
         <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
     <?php }?>
       <!-- Container wrapper -->
@@ -30,7 +27,7 @@ if (mysqli_num_rows($result) > 0) {
         </a>
 
         <ul class="navbar-nav ms-auto d-flex flex-row">
-            <?php if(isset($row['fname'])){ ?>
+            <?php if(isset($_SESSION['fname'])){ ?>
             <?php if($row['acc_type'] == 1){ ?>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0">Welcome, <span style="text-transform: capitalize;"><?php echo $row['fname']; ?></span>!</a></li>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="<?php echo BASE_URL . '/admin/profile.php' ?>"><i class="bi bi-person"></i>  Profile</a></li>
@@ -39,17 +36,12 @@ if (mysqli_num_rows($result) > 0) {
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="<?php echo BASE_URL . '/pages/profile.php' ?>"><i class="bi bi-person"></i>  Profile</a></li>
             <?php }?>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="<?php echo BASE_URL . '/logout.php' ?>">Logout</a></li>
-            <?php } 
-            
-            if (!isset($row['fname'])) { ?>
+            <?php } else { ?>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="/">Home</a></li>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="pages/entry/login.php">Login/Signup</a></li>
-            <?php } 
-        
-        }}?>
+            <?php } ?>
         </ul>
     </div>
-    
 <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
@@ -60,3 +52,4 @@ if (mysqli_num_rows($result) > 0) {
   <div class="container pt-4"></div>
 </main> -->
 <!--Main layout-->
+<?php }} ?>
