@@ -130,10 +130,6 @@ if(isset($_GET['timeID'])) {
          <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
          <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
          <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employee_idno; ?>">
-       <div class="form-group pt-3 mx-auto" style="width: 95%;">
-         <label for="jobtitle" style="font-size: 14px;"> <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
-         <input class="form-control" id="date" type="date" name="date" value="" required>
-       </div>
          <div class="form-group pt-3 mx-auto" style="width: 95%;">
          <label for="date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
          <input class="form-control" id="date" type="date" name="date" value="" required>
