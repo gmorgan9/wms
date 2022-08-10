@@ -171,7 +171,7 @@ $monday_this_week = date("Y-m-d",strtotime('monday this week'));
 <?php for($i=0;$i<=4;$i++): ?>
     <?php $date = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); ?>
       <label ><?php echo $date; ?></label>
-      <label ><(<?php echo date('l', strtotime($date)); ?>)</label><br>
+      <label >(<?php echo date('l', strtotime($date)); ?>)</label><br>
        
 <?php endfor;  ?>
 
