@@ -52,11 +52,11 @@ if(!isLoggedIn()){
   <?php 
 
 $empID = $_SESSION['empID'];
-$select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
+$select = " SELECT * FROM job WHERE employeeID = '$empID' ";
 $result = mysqli_query($conn, $select);
 if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
-      $acc_type = $row['acc_type'];
+      //$acc_type = $row['acc_type'];
 ?>
 
 
@@ -74,7 +74,7 @@ if (mysqli_num_rows($result) > 0) {
                       <h6 class="mb-0">Current Job</h6>
                     </div>
                     <div class="col-sm-9 text-info">
-                    
+                    <?php echo $row['jobtitle']; ?>
                     </div>
                   </div>
                   
