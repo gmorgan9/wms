@@ -299,7 +299,7 @@ if(isset($_GET['timeID'])) {
 
           <?php
           //$totalhrs = $timeout - $timein;
-          $totalhrs(strtotime($timeout) - strtotime($timein)) / 3600;
+          $totalhrs = (strtotime($timeout) - strtotime($timein)) / 3600;
 
           ?>
 
