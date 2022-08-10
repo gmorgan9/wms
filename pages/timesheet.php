@@ -217,14 +217,7 @@ if(isset($_GET['timeID'])) {
         
         ?>
         
-        <?php
-$monday_this_week = date("Y-m-d",strtotime('monday this week'));
-?>
-<?php for($i=0;$i<=4;$i++): ?>
-    <?php $date = date('d-M-Y', strtotime("+$i days", strtotime($monday_this_week))); ?>
-    <label ><?php echo $date; ?></label>
-    <label ><?php echo date('l', strtotime($date)); ?></label><br>   
-<?php endfor; ?>
+        
    
       </tbody>
 </table> 
@@ -372,6 +365,14 @@ $monday_this_week = date("Y-m-d",strtotime('monday this week'));
         <?php } ?>
         
    
+        <?php
+$monday_this_week = date("Y-m-d",strtotime('monday this week'));
+?>
+<?php for($i=0;$i<=4;$i++): ?>
+    <?php $date = date('d-M-Y', strtotime("+$i days", strtotime($monday_this_week))); ?>
+    <label ><?php echo $date; ?></label>
+    <label ><?php echo date('l', strtotime($date)); ?></label><br>   
+<?php endfor; ?>
       </tbody>
 </table> 
 <?php 
