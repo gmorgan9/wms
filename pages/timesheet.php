@@ -304,7 +304,7 @@ if(isset($_GET['timeID'])) {
           //$maxmin = '59';
           ?>
 
-          <?php echo $totalhrs ?>, <?php echo $total ?>
+          <?php echo $total_time ?>, <?php echo $total ?>
           </td>
           <?php if($app_status == 'pending') { ?>
             <td><span class="text-primary">Pending</span></td>
