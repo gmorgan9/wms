@@ -15,7 +15,9 @@ if (mysqli_num_rows($result) > 0) {
 <!-- Navbar -->
     <?php if(isset($_SESSION['fname'])){ ?>
         <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-    <?php } else { ?>
+    <?php } 
+    
+    if(!isset($_SESSION['fname'])){ ?>
         <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
     <?php }?>
       <!-- Container wrapper -->
