@@ -305,8 +305,8 @@ if(isset($_GET['timeID'])) {
 
           $monday_this_week = date("Y-m-d",strtotime('monday this week'));
 ?>
-<label ><?php echo $week_start; ?> - </label>
-<label ><?php echo $week_end; ?></label> <br>
+<!-- <label ><?php //echo $week_start; ?> - </label>
+<label ><?php //echo $week_end; ?></label> <br> -->
 <?php 
 // $day = date('w');
 //           $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
