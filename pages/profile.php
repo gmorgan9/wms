@@ -70,7 +70,7 @@ if(isset($_POST['update-profile'])){
 
 if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
-      $acc_type = $row['acc_type'];
+      $acc_type = $_SESSION['acc_type'];
 ?>
 
   <div class="page-header mx-auto">
