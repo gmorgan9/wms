@@ -229,7 +229,7 @@ if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
     ?>
 
-<form action="" method="post" class="mx-auto">
+<form action="" method="post">
     <!-- <div class="section-header pt-2">
       <span class="text-muted pt-4" style="width: 95%;"></span>
     </div> -->
@@ -270,13 +270,10 @@ if (mysqli_num_rows($result) > 0) {
       <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="new_timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
-      <input class="form-control" id="new_timeout" type="time" name="new_timeout" value="<?php echo $row['timeout']; ?>" required>
+      <label for="avatar" style="font-size: 14px;">Profile Picture</label>
+      <input class="form-control" id="avatar" type="file" name="avatar" value="<?php echo $row['avatar']; ?>" required>
     </div>
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="reason" style="font-size: 14px;">Reason <span class="text-muted" style="font-size: 10px;">Give reason for changing time</span></label>
-      <textarea class="form-control" id="reason" type="text" name="reason" value="" required></textarea>
-    </div>
+    
     
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
       <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-time" class="badge text-bg-secondary">Update Time</button>
