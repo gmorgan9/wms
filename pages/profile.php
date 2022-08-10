@@ -287,8 +287,8 @@ if (mysqli_num_rows($result) > 0) {
 
       </div>
       <div class="modal-footer">
-      <button type="submit" name="update-time" class="btn btn-Primary">Update Profile</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" name="update-time" class="btn btn-Primary">Update Profile</button>
       </div>
       </form>
     </div>
