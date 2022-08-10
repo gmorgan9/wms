@@ -245,13 +245,15 @@ if (mysqli_num_rows($result) > 0) {
       <label for="idno" style="font-size: 14px;">Employee ID Number</label>
       <input class="form-control" id="idno" type="text" name="idno" value="<?php echo $row['idno']; ?>" disabled>
     </div>
-    <div class="form-group pt-3" style="width: 20%;">
-      <label for="fname" style="font-size: 14px;">First Name</label>
-      <input class="form-control" id="fname" type="text" name="fname" value="<?php echo $row['fname']; ?>" required>
-    </div>
-    <div class="form-group pt-3" style="width: 20%;">
-      <label for="lname" style="font-size: 14px;">Last Name</label>
-      <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['lname']; ?>" required>
+    <div class="row">
+      <div class="form-group pt-3" style="width: 20%;">
+        <label for="fname" style="font-size: 14px;">First Name</label>
+        <input class="form-control" id="fname" type="text" name="fname" value="<?php echo $row['fname']; ?>" required>
+      </div>
+      <div class="form-group pt-3" style="width: 20%;">
+        <label for="lname" style="font-size: 14px;">Last Name</label>
+        <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['lname']; ?>" required>
+      </div>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="new_timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
