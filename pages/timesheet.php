@@ -315,13 +315,13 @@ $monday_this_week = date("Y-m-d",strtotime('monday this week'));
           $day = date('w');
           $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
           $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
-          $week_num = date('w');
+          $week_num = date('W', strtotime($week_start));
 
   ?>
     <tr>
         <th scope="row"><a href=""><?php echo $week_start; ?> - <?php echo $week_end; ?></a></th>
         <td><?php echo $employee_fname; ?> <?php echo $employee_lname; ?></td>
-        <td><?php echo $day; ?></td>
+        <td><?php echo $week_num; ?></td>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
         <!-- <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="timesheet.php?timeID=<?php //echo $timeID; ?>">Delete</a></td> -->
         <?php  ?>
