@@ -245,9 +245,12 @@ if(isset($_GET['timeID'])) {
           $week_start = date('Y-m-d', strtotime('-'.(5-$day).' days'));
           $week_end = date('Y-m-d', strtotime('+'.(5-$day).' days'));
           $week_num = date('W', strtotime($week_start));
+
+          $new_week_start = date('M d, y', strtotime('-'.(5-$day).' days'));
+          $new_week_end   = date('M d, y', strtotime('+'.(5-$day).' days'));
           ?>
 <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
-<p class="text-center"><span>Timesheet for <span class="text-muted text-capitalize"><?php echo $week_start; ?> - <?php echo $week_end; ?></span></span></p>
+<p class="text-center"><span>Timesheet for <span class="text-muted text-capitalize"><?php echo $new_week_start; ?> - <?php echo $new_week_end; ?></span></span></p>
     <table class="table">
   <thead>
     <tr>
