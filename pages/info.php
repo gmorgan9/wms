@@ -62,7 +62,7 @@ if (mysqli_num_rows($result) > 0) {
 
   <div class="page-content mx-auto mt-2">
 <form action="" method="post">
-      <h3 class="mx-auto" style="width: 95%;">Employment Information</h3>
+      <h3 class="text-center">Employment Information</h3>
 
 
 
