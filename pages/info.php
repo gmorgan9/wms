@@ -150,13 +150,13 @@ if (mysqli_num_rows($result) > 0) {
         <div class="modal-body">
 
   <?php 
-  $id = $_GET['jobID'];
-  $select = " SELECT * FROM job WHERE jobID = '$id' ";
-  $result = mysqli_query($conn, $select);
-
-  if (mysqli_num_rows($result) > 0) {
-     while($row = mysqli_fetch_assoc($result)) {
-      ?>
+ $empID = $_SESSION['employee_idno'];
+ $select = " SELECT * FROM job WHERE employee_idno = '$empID' ";
+ $result = mysqli_query($conn, $select);
+ if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+       //$acc_type = $row['acc_type'];
+ ?>
 
   <form action="" method="post">
       <div class="section-header pt-2">
