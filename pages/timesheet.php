@@ -156,13 +156,14 @@ $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
+            $timesheetDate = $row['date'];
 
 
 $monday_this_week = date("Y-m-d",strtotime('monday this week'));
 ?>
 <?php for($i=0;$i<=4;$i++): ?>
     <?php $date = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); ?>
-     <?php if($date == $row['date']) { ?>
+     <?php if($date == $timesheetDate) { ?>
       <label > <span class="text-primary"><?php echo $date; ?></span></label>
       <label ><span class="text-primary">(<?php echo date('l', strtotime($date)); ?>)</span></label><br>
     <?php }else { ?>
