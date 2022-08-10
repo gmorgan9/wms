@@ -318,7 +318,7 @@ $monday_this_week = date("Y-m-d",strtotime('monday this week'));
   ?>
     <tr>
         <th scope="row"><?php echo $week_start; ?> - <?php echo $week_end; ?></th>
-        <td><?php echo $employee_fname; ?></td>
+        <td><?php echo $employee_fname; ?> <?php echo $employee_lname; ?></td>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
         <!-- <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="timesheet.php?timeID=<?php //echo $timeID; ?>">Delete</a></td> -->
         <?php  ?>
