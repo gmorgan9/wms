@@ -283,6 +283,7 @@ $monday_this_week = date("Y-m-d",strtotime('monday this week'));
       <!-- <th scope="col" style="font-size: 14px;">Date</th> -->
       <!-- <th scope="col" style="font-size: 14px;">Time in / Time out</th> -->
       <th scope="col" style="font-size: 14px;">Employee</th>
+      <th scope="col" style="font-size: 14px;">Week Num</th>
       <th scope="col" style="font-size: 14px;">Actions</th>
     </tr>
   </thead>
@@ -311,14 +312,16 @@ $monday_this_week = date("Y-m-d",strtotime('monday this week'));
             $companyname    = $row['companyname'];
           }}
 
-      $day = date('w');
+          $day = date('w');
           $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
           $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
+          $week_num = date('w');
 
   ?>
     <tr>
-        <th scope="row"><?php echo $week_start; ?> - <?php echo $week_end; ?></th>
+        <th scope="row"><a href=""><?php echo $week_start; ?> - <?php echo $week_end; ?></a></th>
         <td><?php echo $employee_fname; ?> <?php echo $employee_lname; ?></td>
+        <td><?php echo $week_num; ?></td>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
         <!-- <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="timesheet.php?timeID=<?php //echo $timeID; ?>">Delete</a></td> -->
         <?php  ?>
