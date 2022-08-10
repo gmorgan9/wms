@@ -19,50 +19,27 @@ $empID = $_SESSION['empID'];
 $select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
 $result = mysqli_query($conn, $select);
 
-// if(isset($_POST['update-profile'])){
-
-//    //$sID   = mysqli_real_escape_string($conn, $_POST['studentID']);
-//    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
-//    $lname = mysqli_real_escape_string($conn, $_POST['lname']);
-//    $uname = mysqli_real_escape_string($conn, $_POST['uname']);
-//    $email = mysqli_real_escape_string($conn, $_POST['email']);
-//    // $pass = md5($_POST['password']);
-//    // $cpass = md5($_POST['cpassword']);
-//    // $isadmin = $_POST['isadmin'];
-
-//    $update_select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' ";
-
-//    $update_result = mysqli_query($conn, $update_select);
-
-//    if(mysqli_num_rows($result) > 0){
-
-//       // $error[] = 'user already exist!';
-//       $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
-//       mysqli_query($conn, $update);
-//       //$success[] = 'Success';
-//       header('location:' . BASE_URL . '/admin/profile.php');
-      
-//    }else{
-      
-//    } 
-// };
-
-// Update Profile
 if(isset($_POST['update-profile'])){
-  $id = $_GET['employeeID'];
-  $timeID = mysqli_real_escape_string($conn, $_POST['jobID']);
-  $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
+
   $fname = mysqli_real_escape_string($conn, $_POST['fname']);
   $lname = mysqli_real_escape_string($conn, $_POST['lname']);
   $uname = mysqli_real_escape_string($conn, $_POST['uname']);
-  $gender = mysqli_real_escape_string($conn, $_POST['gender']);
   $email = mysqli_real_escape_string($conn, $_POST['email']);
+  $gender = mysqli_real_escape_string($conn, $_POST['gender']);
 
-  $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', gender = '$gender', email = '$email' WHERE employeeID = '$id'";
-  mysqli_query($conn, $update);
-  header('Location: ' . $_SERVER['HTTP_REFERER']);
+  $update_select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' ";
 
+  $update_result = mysqli_query($conn, $update_select);
+
+  if(mysqli_num_rows($result) > 0){
+
+     $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email', gender = '$gender' where employeeID = '$empID' ";
+     mysqli_query($conn, $update);
+     $success[] = 'Success';
+     header('Location: ' . $_SERVER['HTTP_REFERER']);
+  } 
 };
+
 
 ?>
 
@@ -88,21 +65,7 @@ if(isset($_POST['update-profile'])){
 </head>
 <body>
 
-   
-<!-- <div class="land-container">
-   <div class="content">
-
-      <h3><span>Admin Profile Page</span></h3>
-      <h1>welcome <span><?php //echo $_SESSION['admin_fname'] ?></span></h1>
-      <p>this is an admin profile</p>
-      <a href="logout.php" class="btn">logout</a>
-   </div>
-
-</div> -->
-
 <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
-
-
 <?php include(ROOT_PATH . "/app/includes/sidebar.php") ?>
         
 <!-- start MAIN -->
