@@ -242,8 +242,8 @@ if (mysqli_num_rows($result) > 0) {
       <!-- <input class="form-control" id="lname" type="text" name="lname" value="<?php //echo $lname; ?>"> -->
       <!-- <input class="form-control" id="idno" type="text" name="idno" value="<?php //echo $idno; ?>"> -->
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="new_date" style="font-size: 14px;">Employee ID Number</label>
-      <input class="form-control" id="new_date" type="date" name="new_date" value="<?php echo $row['idno']; ?>" disabled>
+      <label for="idno" style="font-size: 14px;">Employee ID Number</label>
+      <input class="form-control" id="idno" type="text" name="idno" value="<?php echo $row['idno']; ?>" disabled>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="new_timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
