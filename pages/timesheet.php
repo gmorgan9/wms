@@ -157,6 +157,7 @@ $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
             $timesheetDate = $row['date'];
+          }}
 
 
 $monday_this_week = date("Y-m-d",strtotime('monday this week'));
@@ -171,7 +172,7 @@ $monday_this_week = date("Y-m-d",strtotime('monday this week'));
       <label >(<?php echo date('l', strtotime($date)); ?>)</label><br>
     <?php } ?>
        
-<?php endfor; }} ?>
+<?php endfor;  ?>
 
  <!-- end PAGE-CONTENT -->
 </div>
