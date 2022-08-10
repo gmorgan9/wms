@@ -341,6 +341,7 @@ if (mysqli_num_rows($result) > 0) {
     $new_date_now = $row['date'];
 
   }
+}
 ?>
 
 
@@ -451,9 +452,9 @@ if (mysqli_num_rows($result) > 0) {
 
 <?php 
 
-} else {
-  echo "0 results";
-}
+// }else {
+//   echo "0 results";
+// }
 
 ?>
  <!-- end PAGE-CONTENT -->
