@@ -304,13 +304,6 @@ if(isset($_GET['timeID'])) {
           $week_num = date('W', strtotime($week_start));
 
           $monday_this_week = date("Y-m-d",strtotime('monday this week'));
-?>
-<!-- <label ><?php //echo $week_start; ?> - </label>
-<label ><?php //echo $week_end; ?></label> <br> -->
-<?php 
-// $day = date('w');
-//           $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
-//            $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
 
 ?>
     <?php 
@@ -353,31 +346,31 @@ if(isset($_GET['timeID'])) {
 
   
     <tr> 
-      <?php if($orgDate == $mon) { ?>
+      <?php if($time_date == $mon) { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
       <?php } else { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
       <?php } ?>
 
-      <?php if($orgDate == $tues) { ?>
+      <?php if($time_date == $tues) { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
       <?php } else { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
       <?php } ?>
 
-      <?php if($orgDate == $wed) { ?>
+      <?php if($time_date == $wed) { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
       <?php } else { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
       <?php } ?>
 
-      <?php if($orgDate == $thurs) { ?>
+      <?php if($orgDtime_dateate == $thurs) { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
       <?php } else { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
       <?php } ?>
 
-      <?php if($orgDate == $fri) { ?>
+      <?php if($time_date == $fri) { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
       <?php } else { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
