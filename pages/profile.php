@@ -215,7 +215,7 @@ if (mysqli_num_rows($result) > 0) {
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Edit My Profile</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -230,10 +230,10 @@ if (mysqli_num_rows($result) > 0) {
     ?>
 
 <form action="" method="post">
-    <div class="section-header pt-2">
-      <span class="text-muted pt-4" style="width: 95%;">Time Entry</span>
-    </div>
-    <hr style="margin-bottom: -5px; margin-top: 5px;">
+    <!-- <div class="section-header pt-2">
+      <span class="text-muted pt-4" style="width: 95%;"></span>
+    </div> -->
+    <!-- <hr style="margin-bottom: -5px; margin-top: 5px;"> -->
     <?php 
     $fname = $_SESSION['fname'];
     $lname = $_SESSION['lname']; 
