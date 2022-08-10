@@ -346,7 +346,7 @@ $day = date('w');
       <th scope="col" style="font-size: 14px;"><?php echo $wed; ?></th>
       <th scope="col" style="font-size: 14px;"><?php echo $thurs; ?></th>
       <th scope="col" style="font-size: 14px;"><?php echo $fri; ?></th>
-      <th scope="col" style="font-size: 14px;">Actions</th>
+      <!-- <th scope="col" style="font-size: 14px;">Actions</th> -->
     </tr>
   </thead>
   <tbody class="table-group-divider">
