@@ -151,9 +151,9 @@ if (mysqli_num_rows($result) > 0) {
 
   <?php 
  $empID = $_SESSION['employee_idno'];
- $select = " SELECT * FROM job WHERE employee_idno = '$empID' ";
- $result = mysqli_query($conn, $select);
- if (mysqli_num_rows($result) > 0) {
+ $news = " SELECT * FROM job WHERE employee_idno = '$empID' ";
+ $new = mysqli_query($conn, $news);
+ if (mysqli_num_rows($new) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
        //$acc_type = $row['acc_type'];
 
