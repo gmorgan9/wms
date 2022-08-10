@@ -157,7 +157,6 @@ if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
        //$acc_type = $row['acc_type'];
 
-      $compname = $row['comapnyname'];
 
       
  ?>
@@ -177,7 +176,7 @@ if (mysqli_num_rows($result) > 0) {
         <!-- <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php //echo $employee_idno; ?>"> -->
         <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
-      <input class="form-control" id="companyname" type="text" name="companyname" value="<?php echo $row['companyname']; ?>" required>
+      <input class="form-control" id="companyname" type="text" name="companyname" value="<?php echo $row['idno']; ?>" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="deptname" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
