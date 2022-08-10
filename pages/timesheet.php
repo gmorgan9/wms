@@ -365,6 +365,16 @@ if(isset($_GET['timeID'])) {
                     </div>
                     <div class="col-sm-9 text-secondary">
                     
+
+                    <?php if($row['date'] == $mon) { ?>
+        <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
+      <?php } else { ?>
+        <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
+      <?php } ?>
+
+
+
+
                     </div>
                   </div>
                   <hr>
