@@ -338,9 +338,9 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
   // output data of each row
   while($row = mysqli_fetch_assoc($result)) {
-    // echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+    $new_date_now = $row['date'];
 
-
+  }
 ?>
 
 
@@ -356,7 +356,7 @@ if (mysqli_num_rows($result) > 0) {
                     <div class="col-sm-9 text-secondary">
                     
 
-                    <?php if($row['date'] == $mon) { ?>
+                    <?php if($new_date_now == $mon) { ?>
                       <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
                     <?php } else { ?>
                       <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
@@ -376,7 +376,7 @@ if (mysqli_num_rows($result) > 0) {
                         
 
 
-                    <?php if($row['date'] == $tues) { ?>
+                    <?php if($new_date_now == $tues) { ?>
                       <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
                     <?php } else { ?>
                       <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
@@ -397,7 +397,7 @@ if (mysqli_num_rows($result) > 0) {
                         
 
 
-                    <?php if($row['date'] == $wed) { ?>
+                    <?php if($new_date_now == $wed) { ?>
                       <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
                     <?php } else { ?>
                       <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
@@ -416,7 +416,7 @@ if (mysqli_num_rows($result) > 0) {
                         
 
 
-                    <?php if($date == $thurs) { ?>
+                    <?php if($new_date_now == $thurs) { ?>
                       <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
                     <?php } else { ?>
                       <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
@@ -435,7 +435,7 @@ if (mysqli_num_rows($result) > 0) {
                         
 
 
-                    <?php if($date == $fri) { ?>
+                    <?php if($new_date_now == $fri) { ?>
                       <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
                     <?php } else { ?>
                       <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
@@ -450,7 +450,7 @@ if (mysqli_num_rows($result) > 0) {
               </div>
 
 <?php 
-  }
+
 } else {
   echo "0 results";
 }
