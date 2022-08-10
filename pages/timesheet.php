@@ -355,7 +355,9 @@ $day = date('w');
     <tr> 
       <?php if($date == $mon) { ?>
     <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-        <?php } else { echo "no timesheet";} ?>
+        <?php } else { ?>
+          <td>No Time Sheet</a>
+        <?php } ?>
     <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
     <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
     <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
