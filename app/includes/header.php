@@ -42,6 +42,7 @@ if (mysqli_num_rows($result) > 0) {
             <?php } ?>
         </ul>
     </div>
+    <?php }} ?>
 <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
@@ -52,4 +53,3 @@ if (mysqli_num_rows($result) > 0) {
   <div class="container pt-4"></div>
 </main> -->
 <!--Main layout-->
-<?php }} ?>
