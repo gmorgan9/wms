@@ -332,7 +332,7 @@ if(isset($_GET['timeID'])) {
 <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
 <span class="mx-auto">Timesheet for <span class="text-muted text-capitalize"><?php echo $week_start; ?> - <?php echo $week_end; ?></span></span> 
 
-<?php $result = mysql_fetch_array(mysql_query("SELECT * FROM `timesheet`")) ?>
+<?php $all = mysql_fetch_array(mysql_query("SELECT * FROM `timesheet`")) ?>
 
 
 <div class="page-content mx-auto mt-2">
