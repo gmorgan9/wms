@@ -279,7 +279,7 @@ $monday_this_week = date("Y-m-d",strtotime('monday this week'));
     <table class="table">
   <thead>
     <tr>
-      <th scope="col" style="font-size: 14px;">ID #</th>
+      <th scope="col" style="font-size: 14px;">Date Range</th>
       <th scope="col" style="font-size: 14px;">Date</th>
       <th scope="col" style="font-size: 14px;">Time in / Time out</th>
       <th scope="col" style="font-size: 14px;">Status</th>
@@ -289,52 +289,43 @@ $monday_this_week = date("Y-m-d",strtotime('monday this week'));
   <tbody class="table-group-divider">
 
   <?php
-      $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}'";
-      $all = mysqli_query($conn, $sql);
-      if($all) {
-          while ($row = mysqli_fetch_assoc($all)) {
-            $timeID           = $row['timeID'];
-            $idno             = $row['idno'];
-            $orgDate          = $row['date'];
-            $date             = date("M d, Y", strtotime($orgDate));
-            $orgTimein        = $row['timein'];
-            $timein           = date("h:i A", strtotime($orgTimein));
-            $orgTimeout       = $row['timeout'];
-            $timeout          = date("h:i A", strtotime($orgTimeout));
-            $totalhours       = $row['totalhours'];
-            $employee_fname   = $row['employee_fname'];
-            $employee_lname   = $row['employee_lname'];
-            $employee_idno    = $row['employee_idno'];
-            $comment          = $row['comment'];
-            $reason           = $row['reason'];
-            $app_status       = $row['approval_status'];
-            // $companyname    = $row['companyname'];
+      // $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}'";
+      // $all = mysqli_query($conn, $sql);
+      // if($all) {
+      //     while ($row = mysqli_fetch_assoc($all)) {
+      //       $timeID           = $row['timeID'];
+      //       $idno             = $row['idno'];
+      //       $orgDate          = $row['date'];
+      //       $date             = date("M d, Y", strtotime($orgDate));
+      //       $orgTimein        = $row['timein'];
+      //       $timein           = date("h:i A", strtotime($orgTimein));
+      //       $orgTimeout       = $row['timeout'];
+      //       $timeout          = date("h:i A", strtotime($orgTimeout));
+      //       $totalhours       = $row['totalhours'];
+      //       $employee_fname   = $row['employee_fname'];
+      //       $employee_lname   = $row['employee_lname'];
+      //       $employee_idno    = $row['employee_idno'];
+      //       $comment          = $row['comment'];
+      //       $reason           = $row['reason'];
+      //       $app_status       = $row['approval_status'];
+      //       $companyname    = $row['companyname'];
+
+
+      $day = date('w');
+          $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
+          $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
+
   ?>
     <tr>
-        <th scope="row"><?php echo $idno; ?></th>
+        <th scope="row"><?php echo $week_start; ?> - <?php echo $week_end; ?></th>
         <td><?php echo $date; ?></td>
-        <td><?php echo $timein; ?> / <?php echo $timeout; ?></td>
-        <?php if($app_status == 'pending') { ?>
-          <td><span class="text-primary">Pending</span></td>
-        <?php } if($app_status == 'approved') { ?>
-          <td><span class="text-success">Approved</span></td>
-        <?php } if($app_status == 'rejected') { ?>
-          <td><span class="text-danger">Rejected</span></td>
-        <?php } ?>
-        <!-- <td><?php //echo $companyname; ?></td> -->
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
         <!-- <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="timesheet.php?timeID=<?php //echo $timeID; ?>">Delete</a></td> -->
-        <?php } ?>
+        <?php //} ?>
         
    
       </tbody>
 </table> 
-<?php 
-     
-} else {
-  echo "0 results";
-}
-    ?>
  <!-- end PAGE-CONTENT -->
 </div>
 <?php } else { ?>
