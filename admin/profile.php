@@ -100,7 +100,12 @@ if (mysqli_num_rows($result) > 0) {
 
                   <br><br>
 
-                  <?php
+                  
+                  </div>
+                </div>
+              </div>
+
+              <?php
                   $empidno = $_SESSION['employee_idno'];
                   $select = "SELECT * FROM job WHERE employee_idno = '$empidno' ";
                   $result = mysqli_query($conn, $select);
@@ -111,11 +116,6 @@ if (mysqli_num_rows($result) > 0) {
                       <p><?php echo $row['jobtitle']; ?></p>
 
                     <?php }} ?>
-                  </div>
-                </div>
-              </div>
-
-
 
       <div class="col-md-8 float-end me-4">
               <div class="card mb-3">
