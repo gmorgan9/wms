@@ -47,6 +47,23 @@ if(isset($_POST['update-profile'])){
    } 
 };
 
+// Update Profile
+if(isset($_POST['update-profile'])){
+  $id = $_GET['employeeID'];
+  $timeID = mysqli_real_escape_string($conn, $_POST['jobID']);
+  $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
+  $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+  $lname = mysqli_real_escape_string($conn, $_POST['lname']);
+  $uname = mysqli_real_escape_string($conn, $_POST['uname']);
+  $gender = mysqli_real_escape_string($conn, $_POST['gender']);
+  $email = mysqli_real_escape_string($conn, $_POST['email']);
+
+  $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', gender = '$gender', email = '$email' WHERE employeeID = '$id'";
+  mysqli_query($conn, $update);
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
+
+};
+
 ?>
 
 <!DOCTYPE html>
@@ -64,6 +81,9 @@ if(isset($_POST['update-profile'])){
 
 <!-- Bootstrap Icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+<!-- scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
 <body>
@@ -189,6 +209,15 @@ if (mysqli_num_rows($result) > 0) {
                      <?php } ?>
                     </div>
                   </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Actions</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editEmployee" class="badge text-bg-primary" href="#">Edit</a>
+                    </div>
+                  </div>
                 </div>
               </div>
               <?php 
@@ -206,6 +235,101 @@ if (mysqli_num_rows($result) > 0) {
 
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="editEmployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit My Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+<?php 
+//$id = $_GET['employeeID'];
+$select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
+$result = mysqli_query($conn, $select);
+
+if (mysqli_num_rows($result) > 0) {
+   while($row = mysqli_fetch_assoc($result)) {
+    ?>
+
+<form action="" method="post">
+    <!-- <div class="section-header pt-2">
+      <span class="text-muted pt-4" style="width: 95%;"></span>
+    </div> -->
+    <!-- <hr style="margin-bottom: -5px; margin-top: 5px;"> -->
+    <?php 
+    $fname = $_SESSION['fname'];
+    $lname = $_SESSION['lname']; 
+    $employee_idno = $_SESSION['employee_idno'];?>
+      <!-- <input class="form-control" id="fname" type="text" name="fname" value="<?php //echo $fname; ?>"> -->
+      <!-- <input class="form-control" id="lname" type="text" name="lname" value="<?php //echo $lname; ?>"> -->
+      <!-- <input class="form-control" id="idno" type="text" name="idno" value="<?php //echo $idno; ?>"> -->
+    <div class="form-group pt-3" style="width: 35%;">
+      <label for="idno" style="font-size: 14px;">Employee ID</label>
+      <input class="form-control" id="idno" type="text" name="idno" value="<?php echo $row['idno']; ?>" disabled>
+    </div>
+    <div class="row">
+      <div class="form-group pt-3" style="width: 50%;">
+        <label for="fname" style="font-size: 14px;">First Name</label>
+        <input class="form-control" id="fname" type="text" name="fname" value="<?php echo $row['fname']; ?>" required>
+      </div>
+      <div class="form-group pt-3" style="width: 50%;">
+        <label for="lname" style="font-size: 14px;">Last Name</label>
+        <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['lname']; ?>" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group pt-3" style="width: 50%;">
+        <label for="uname" style="font-size: 14px;">User Name</label>
+        <input class="form-control" id="uname" type="text" name="uname" value="<?php echo $row['uname']; ?>" required>
+      </div>
+      <div class="form-group pt-3" style="width: 50%;">
+        <label for="gender" style="font-size: 14px;">Gender</label>
+        <input class="form-control" id="gender" type="text" name="gender" value="<?php echo $row['gender']; ?>" required>
+      </div>
+    </div>
+    <div class="form-group pt-3">
+      <label for="email" style="font-size: 14px;">Email <span class="text-muted" style="font-size: 10px;">Personal</span></label>
+      <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
+    </div>
+    <div class="form-group pt-3">
+      <label for="avatar" style="font-size: 14px;">Profile Picture</label>
+      <input class="form-control" id="avatar" type="file" name="avatar" value="<?php echo $row['avatar']; ?>">
+    </div>
+    
+    
+    
+    
+
+              <?php }} ?>
+
+
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <div class="form-group pt-3" style="margin-bottom: 10px;">
+          <button type="button" style="border-color: rgba(0,0,0,0);" class="badge text-bg-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-profile" class="badge text-bg-secondary">Update Profile</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+  <!-- end modal -->
+</div>
+
+
+
+
 
 </body>
 </html>

@@ -43,7 +43,7 @@ if(isset($_POST['update-profile'])){
    } 
 };
 
-// Add Department
+// Update Profile
 if(isset($_POST['update-profile'])){
   $id = $_GET['employeeID'];
   $timeID = mysqli_real_escape_string($conn, $_POST['jobID']);
