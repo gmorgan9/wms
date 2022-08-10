@@ -167,6 +167,7 @@ if (mysqli_num_rows($result) > 0) {
         <span class="text-muted pt-4" style="width: 95%;">Time Entry</span>
       </div>
       <hr style="margin-bottom: -5px; margin-top: 5px;">
+      <?php echo $compname; ?>
       <?php 
       $fname = $_SESSION['fname'];
       $lname = $_SESSION['lname']; 
