@@ -331,28 +331,6 @@ if(isset($_GET['timeID'])) {
 
 <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
 <span class="mx-auto">Timesheet for <span class="text-muted text-capitalize"><?php echo $week_start; ?> - <?php echo $week_end; ?></span></span> 
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col" style="font-size: 14px;"><?php echo $mon; ?></th>
-      <th scope="col" style="font-size: 14px;"><?php echo $tues; ?></th>
-      <th scope="col" style="font-size: 14px;"><?php echo $wed; ?></th>
-      <th scope="col" style="font-size: 14px;"><?php echo $thurs; ?></th>
-      <th scope="col" style="font-size: 14px;"><?php echo $fri; ?></th>
-      <!-- <th scope="col" style="font-size: 14px;">Actions</th> -->
-    </tr>
-  </thead>
-  <tbody class="table-group-divider">
-  
-  <?php 
-
-  $sql = "SELECT date FROM timesheet WHERE employee_idno = '{$_SESSION['employee_idno']}'";
-  $all = mysqli_query($conn, $sql);
-  if($row = mysqli_fetch_assoc($all)) {
-
-
-
-?>
 
 <div class="page-content mx-auto mt-2">
 <form action="" method="post">
@@ -367,10 +345,10 @@ if(isset($_GET['timeID'])) {
                     
 
                     <?php if($date == $mon) { ?>
-        <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-      <?php } else { ?>
-        <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
-      <?php } ?>
+                      <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
+                    <?php } else { ?>
+                      <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
+                    <?php } ?>
 
 
 
@@ -384,6 +362,18 @@ if(isset($_GET['timeID'])) {
                     </div>
                     <div class="col-sm-9 text-secondary">
                         
+
+
+                    <?php if($date == $tues) { ?>
+                      <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
+                    <?php } else { ?>
+                      <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
+                    <?php } ?>
+
+
+
+
+
                     </div>
                   </div>
                   <hr>
