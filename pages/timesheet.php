@@ -344,7 +344,7 @@ if(isset($_GET['timeID'])) {
                     <div class="col-sm-9 text-secondary">
                     
 
-                    <?php if($date == $mon) { ?>
+                    <?php if($orgDate == $mon) { ?>
                       <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
                     <?php } else { ?>
                       <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
@@ -364,7 +364,7 @@ if(isset($_GET['timeID'])) {
                         
 
 
-                    <?php if($date == $tues) { ?>
+                    <?php if($orgDate == $tues) { ?>
                       <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
                     <?php } else { ?>
                       <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
@@ -408,49 +408,6 @@ if(isset($_GET['timeID'])) {
               </div>
 
 
-    <!-- <tr> 
-      <td>
-      <?php //if($row['date'] == $mon) { ?>
-        <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-      <?php //} else { ?>
-        <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
-      <?php //} ?>
-      </td>
-
-      <td>
-      <?php //if($row['date'] == $tues) { ?>
-        <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-      <?php //} else { ?>
-        <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
-      <?php //} ?>
-
-      <td>
-      <?php //if($row['date'] == $wed) { ?>
-        <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-      <?php //} else { ?>
-        <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
-      <?php //} ?>
-      </td>
-
-      <td>
-      <?php //if($row['date'] == $thurs) { ?>
-        <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-      <?php //} else { ?>
-        <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
-      <?php //} ?>
-      </td>
-
-      <td>
-      <?php //if($row['date'] == $fri) { ?>
-        <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-      <?php //} else { ?>
-        <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
-      <?php //} ?>
-      </td>
-        
-   
-      </tbody>
-</table>  -->
  <!-- end PAGE-CONTENT -->
 </div>
 <?php } else { ?>
