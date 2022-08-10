@@ -329,7 +329,7 @@ if(isset($_GET['timeID'])) {
                       <h6 class="mb-0"><?php echo $mon; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    
+                    <?php echo $idno; ?>
                     </div>
                   </div>
                   <hr>
@@ -338,7 +338,7 @@ if(isset($_GET['timeID'])) {
                       <h6 class="mb-0"><?php echo $tues; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        
+                    <?php echo $idno; ?>
                     </div>
                   </div>
                   <hr>
@@ -347,7 +347,7 @@ if(isset($_GET['timeID'])) {
                       <h6 class="mb-0"><?php echo $wed; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        
+                    <?php echo $idno; ?>
                     </div>
                   </div>
                   <hr>
@@ -356,7 +356,7 @@ if(isset($_GET['timeID'])) {
                       <h6 class="mb-0"><?php echo $thurs; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        
+                    <?php echo $idno; ?>
                     </div>
                   </div>
                   <hr>
@@ -365,7 +365,7 @@ if(isset($_GET['timeID'])) {
                       <h6 class="mb-0"><?php echo $fri; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    
+                    <?php echo $idno; ?>
                     </div>
                   </div>
                 </div>
