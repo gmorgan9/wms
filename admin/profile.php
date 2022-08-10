@@ -94,25 +94,6 @@ if (mysqli_num_rows($result) > 0) {
 
                   ?>
                       <?php }} ?>
-
-
-<div class="page-content mx-auto mt-2">
-<form action="" method="post">
-      <h3 class="mx-auto" style="width: 95%;">My Profile</h3>
-
-    <div class="row">
-      <div class="col-md-8 float-start w-25 ms-4">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <img class="ms-1" src="../../assets/img/pic_holder.jpg" style="height: 250px; width: 250px; border-radius: 150px;" alt="">
-
-                  <br><br>
-
-                  
-                  </div>
-                </div>
-              </div>
-
               
 
       <div class="col-md-8 float-end me-4">
