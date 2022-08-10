@@ -346,7 +346,7 @@ if(isset($_GET['timeID'])) {
   
     <tr> 
       <td>
-      <?php if($date == $mon) { ?>
+      <?php if($row['date'] == $mon) { ?>
         <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
       <?php } else { ?>
         <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
@@ -354,22 +354,14 @@ if(isset($_GET['timeID'])) {
       </td>
 
       <td>
-      <?php if($date == $tues) { ?>
+      <?php if($row['date'] == $tues) { ?>
         <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
       <?php } else { ?>
         <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
       <?php } ?>
 
       <td>
-      <?php if($date == $wed) { ?>
-        <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-      <?php } else { ?>
-        <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
-      <?php } ?>
-      </td>
-
-      <td>
-      <?php if($date == $thurs) { ?>
+      <?php if($row['date'] == $wed) { ?>
         <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
       <?php } else { ?>
         <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
@@ -377,7 +369,15 @@ if(isset($_GET['timeID'])) {
       </td>
 
       <td>
-      <?php if($date == $fri) { ?>
+      <?php if($row['date'] == $thurs) { ?>
+        <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
+      <?php } else { ?>
+        <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
+      <?php } ?>
+      </td>
+
+      <td>
+      <?php if($$row['date'] == $fri) { ?>
         <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
       <?php } else { ?>
         <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
