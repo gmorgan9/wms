@@ -300,11 +300,11 @@ if(isset($_GET['timeID'])) {
           <?php
           $total_time = strtotime($timeout) - strtotime($timein);
           $total = round($total_time / 3600);
-          $totalhrs = round($total / 60);
+          $totalhrs = round($total_time / 60);
           //$maxmin = '59';
           ?>
 
-          <?php echo $total_time ?>, <?php echo $total ?>
+          <?php echo $totalhrs ?>, <?php echo $total ?>
           </td>
           <?php if($app_status == 'pending') { ?>
             <td><span class="text-primary">Pending</span></td>
