@@ -16,49 +16,50 @@ $empID = $_SESSION['empID'];
 $select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
 $result = mysqli_query($conn, $select);
 
-// if(isset($_POST['update-profile'])){
-
-//    //$sID   = mysqli_real_escape_string($conn, $_POST['studentID']);
-//    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
-//    $lname = mysqli_real_escape_string($conn, $_POST['lname']);
-//    $uname = mysqli_real_escape_string($conn, $_POST['uname']);
-//    $email = mysqli_real_escape_string($conn, $_POST['email']);
-//    // $pass = md5($_POST['password']);
-//    // $cpass = md5($_POST['cpassword']);
-//    // $isadmin = $_POST['isadmin'];
-
-//    $update_select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' ";
-
-//    $update_result = mysqli_query($conn, $update_select);
-
-//    if(mysqli_num_rows($result) > 0){
-
-//       // $error[] = 'user already exist!';
-//       $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
-//       mysqli_query($conn, $update);
-//       $success[] = 'Success';
-//       header('location:' . BASE_URL . '/pages/profile.php');
-//    }else{
-      
-//    } 
-// };
-
-// Update Profile
 if(isset($_POST['update-profile'])){
-  $id = $_GET['employeeID'];
-  $timeID = mysqli_real_escape_string($conn, $_POST['jobID']);
-  $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
-  $fname = mysqli_real_escape_string($conn, $_POST['fname']);
-  $lname = mysqli_real_escape_string($conn, $_POST['lname']);
-  $uname = mysqli_real_escape_string($conn, $_POST['uname']);
-  $gender = mysqli_real_escape_string($conn, $_POST['gender']);
-  $email = mysqli_real_escape_string($conn, $_POST['email']);
 
-  $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', gender = '$gender', email = '$email' WHERE employeeID = '$id'";
-  mysqli_query($conn, $update);
-  header('Location: ' . $_SERVER['HTTP_REFERER']);
+   //$sID   = mysqli_real_escape_string($conn, $_POST['studentID']);
+   $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+   $lname = mysqli_real_escape_string($conn, $_POST['lname']);
+   $uname = mysqli_real_escape_string($conn, $_POST['uname']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $gender = mysqli_real_escape_string($conn, $_POST['gender']);
+   // $pass = md5($_POST['password']);
+   // $cpass = md5($_POST['cpassword']);
+   // $isadmin = $_POST['isadmin'];
 
+   $update_select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' ";
+
+   $update_result = mysqli_query($conn, $update_select);
+
+   if(mysqli_num_rows($result) > 0){
+
+      // $error[] = 'user already exist!';
+      $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email', gender = '$gender' where employeeID = '$empID' ";
+      mysqli_query($conn, $update);
+      $success[] = 'Success';
+      header('Location: ' . $_SERVER['HTTP_REFERER']);
+   }else{
+      
+   } 
 };
+
+// // Update Profile
+// if(isset($_POST['update-profile'])){
+//   $id = $_GET['employeeID'];
+//   $timeID = mysqli_real_escape_string($conn, $_POST['jobID']);
+//   $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
+//   $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+//   $lname = mysqli_real_escape_string($conn, $_POST['lname']);
+//   $uname = mysqli_real_escape_string($conn, $_POST['uname']);
+//   $gender = mysqli_real_escape_string($conn, $_POST['gender']);
+//   $email = mysqli_real_escape_string($conn, $_POST['email']);
+
+//   $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', gender = '$gender', email = '$email' WHERE employeeID = '$id'";
+//   mysqli_query($conn, $update);
+//   header('Location: ' . $_SERVER['HTTP_REFERER']);
+
+// };
 
 ?>
 

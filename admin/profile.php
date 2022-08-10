@@ -10,6 +10,9 @@ session_start();
 if(!isLoggedIn()){
    header('location:' . BASE_URL . '/pages/entry/login.php');
 }
+if(!isAdmin()){
+   header('location:' . BASE_URL . '/pages/dashboard.php');
+}
 
 
 $empID = $_SESSION['empID'];
@@ -36,8 +39,9 @@ $result = mysqli_query($conn, $select);
 //       // $error[] = 'user already exist!';
 //       $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email' where employeeID = '$empID' ";
 //       mysqli_query($conn, $update);
-//       $success[] = 'Success';
-//       header('location:' . BASE_URL . '/pages/profile.php');
+//       //$success[] = 'Success';
+//       header('location:' . BASE_URL . '/admin/profile.php');
+      
 //    }else{
       
 //    } 
@@ -68,7 +72,7 @@ if(isset($_POST['update-profile'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>CAMS | Student Profile</title>
+   <title>WMS | Admin Profile</title>
 
    <!-- Custom Styles -->
    <link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/other-style.css?v='. time(); ?>">
@@ -87,11 +91,13 @@ if(isset($_POST['update-profile'])){
    
 <!-- <div class="land-container">
    <div class="content">
+
       <h3><span>Admin Profile Page</span></h3>
       <h1>welcome <span><?php //echo $_SESSION['admin_fname'] ?></span></h1>
       <p>this is an admin profile</p>
       <a href="logout.php" class="btn">logout</a>
    </div>
+
 </div> -->
 
 <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
@@ -112,12 +118,16 @@ if (mysqli_num_rows($result) > 0) {
   <div class="page-header mx-auto">
     <p class="page_title" style="float: left; padding-top: 2px;">Profile</p>
     <ul class="breadcrumb">
-      <li><a href="<?php echo BASE_URL . '/dashboard.php' ?>">Dashboard</a></li>
-      <li>Employee Profile</li>
+      <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
+      <li>Admin Profile</li>
     </ul>
   </div>
 
-
+  <!-- <div class="jumbotron jumbotron-fluid bg-white m-2 mx-auto" style="width: 98%;">
+  <div class="container">
+    <h3 class="display-6 text-center" style="padding-top: 5px !important;padding-bottom: 10px !important;">Welcome, <span style="text-transform: capitalize;"><?php //echo $row['fname'] ?>!</span></h3>
+  </div>
+</div> -->
 
 
 <div class="page-content mx-auto mt-2">
@@ -227,6 +237,8 @@ if (mysqli_num_rows($result) > 0) {
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
 
+
+
 <!-- Modal -->
 <div class="modal fade" id="editEmployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -314,6 +326,10 @@ if (mysqli_num_rows($result) > 0) {
   </div>
   <!-- end modal -->
 </div>
+
+
+
+
 
 </body>
 </html>
