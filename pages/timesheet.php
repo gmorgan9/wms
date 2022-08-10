@@ -104,7 +104,7 @@ if(isset($_GET['timeID'])) {
 <?php include(ROOT_PATH . "/app/includes/sidebar.php") ?>
         
 <!-- start MAIN -->
-<div class="main"> 
+  <div class="main"> 
 
   <div class="page-header mx-auto">
     <p class="page_title" style="float: left; padding-top: 2px;">Timeesheet</p>
@@ -114,315 +114,280 @@ if(isset($_GET['timeID'])) {
     </ul>
   </div>
 
+  <!-- NON ADMIN TIMESHEET (LEFT SIDE) -->
+     <?php if($_SESSION['acc_type'] == 0){ ?>
+     <!-- start PAGE-CONTENT -->
+     <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -100px; height: unset !important;">
+     <form action="" method="post">
+       <div class="section-header pt-2">
+         <span class="text-muted pt-4" style="width: 95%;">Time Entry</span>
+       </div>
+       <hr style="margin-bottom: -5px; margin-top: 5px;">
+       <?php 
+       $fname = $_SESSION['fname'];
+       $lname = $_SESSION['lname']; 
+       $employee_idno = $_SESSION['employee_idno'];?>
+         <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
+         <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
+         <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employee_idno; ?>">
+       <div class="form-group pt-3 mx-auto" style="width: 95%;">
+         <label for="date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
+         <input class="form-control" id="date" type="date" name="date" value="" required>
+       </div>
+       <div class="form-group pt-3 mx-auto" style="width: 95%;">
+         <label for="timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
+         <input class="form-control" id="timein" type="time" name="timein" value="" required>
+       </div>
+       <div class="form-group pt-3 mx-auto" style="width: 95%;">
+         <label for="timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
+         <input class="form-control" id="timeout" type="time" name="timeout" value="" required>
+       </div>
+       <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
+         <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-time" class="badge text-bg-secondary">Add Time</button>
+       </div>
+     </form>
 
-  <?php if($_SESSION['acc_type'] == 0){ ?>
-<!-- start PAGE-CONTENT -->
-<div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -100px; height: unset !important;">
-  <form action="" method="post">
+     <!-- end PAGE-CONTENT -->
+     </div>
+  <!-- END NON ADMIN TIMESHEET (LEFT SIDE) -->
+
+  <!-- ADMIN TIME SHEET (LEFT SIDE) -->
+    <?php } else { ?>
+    <!-- start PAGE-CONTENT -->
+    <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -100px; height: unset !important;">
+    <form action="" method="post">
     <div class="section-header pt-2">
-      <span class="text-muted pt-4" style="width: 95%;">Time Entry</span>
-    </div>
-    <hr style="margin-bottom: -5px; margin-top: 5px;">
-    <?php 
-    $fname = $_SESSION['fname'];
-    $lname = $_SESSION['lname']; 
-    $employee_idno = $_SESSION['employee_idno'];?>
-      <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
-      <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
-      <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employee_idno; ?>">
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
-      <input class="form-control" id="date" type="date" name="date" value="" required>
-    </div>
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
-      <input class="form-control" id="timein" type="time" name="timein" value="" required>
-    </div>
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
-      <input class="form-control" id="timeout" type="time" name="timeout" value="" required>
-    </div>
-    <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
-      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-time" class="badge text-bg-secondary">Add Time</button>
-    </div>
-  </form>
+        <span class="text-muted pt-4" style="width: 95%;">Pending Time Change Requests</span>
+      </div>
+      <hr style="margin-bottom: -5px; margin-top: 5px;">
+      <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" style="font-size: 14px;">Timesheet ID</th>
+        <th scope="col" style="font-size: 14px;">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
 
- <!-- end PAGE-CONTENT -->
-</div>
+    <?php
+        $sql = "SELECT * FROM timesheet where approval_status = 'pending'";
+        $result = mysqli_query($conn, $sql);
+        if($result) {
+            while ($row = mysqli_fetch_assoc($result)) {
+              $timeID           = $row['timeID'];
+              $idno             = $row['idno'];
+              $orgDate          = $row['date'];
+              $date             = date("M d, Y", strtotime($orgDate));
+              $orgTimein        = $row['timein'];
+              $timein           = date("h:i A", strtotime($orgTimein));
+              $orgTimeout       = $row['timeout'];
+              $timeout          = date("h:i A", strtotime($orgTimeout));
+              $totalhours       = $row['totalhours'];
+              $employee_fname   = $row['employee_fname'];
+              $employee_lname   = $row['employee_lname'];
+              $employee_idno    = $row['employee_idno'];
+              $comment          = $row['comment'];
+              $reason           = $row['reason'];
 
-<?php } else { ?>
-
-<!-- start PAGE-CONTENT -->
-<div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -100px; height: unset !important;">
-  <form action="" method="post">
-  <div class="section-header pt-2">
-      <span class="text-muted pt-4" style="width: 95%;">Pending Time Change Requests</span>
-    </div>
-    <hr style="margin-bottom: -5px; margin-top: 5px;">
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col" style="font-size: 14px;">Timesheet ID</th>
-      <th scope="col" style="font-size: 14px;">Actions</th>
-    </tr>
-  </thead>
-  <tbody class="table-group-divider">
-
-  <?php
-      $sql = "SELECT * FROM timesheet where approval_status = 'pending'";
-      $result = mysqli_query($conn, $sql);
-      if($result) {
-          while ($row = mysqli_fetch_assoc($result)) {
-            $timeID           = $row['timeID'];
-            $idno             = $row['idno'];
-            $orgDate          = $row['date'];
-            $date             = date("M d, Y", strtotime($orgDate));
-            $orgTimein        = $row['timein'];
-            $timein           = date("h:i A", strtotime($orgTimein));
-            $orgTimeout       = $row['timeout'];
-            $timeout          = date("h:i A", strtotime($orgTimeout));
-            $totalhours       = $row['totalhours'];
-            $employee_fname   = $row['employee_fname'];
-            $employee_lname   = $row['employee_lname'];
-            $employee_idno    = $row['employee_idno'];
-            $comment          = $row['comment'];
-            $reason           = $row['reason'];
-
-            $new_date         = $row['new_date'];
-            $new_timein       = $row['new_timein'];
-            $new_timeout      = $row['new_timeout'];
-            // $companyname    = $row['companyname'];
-  ?>
-    <tr>
-        <th scope="row"><a class="text-decoration-none text-dark" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>"><?php echo $idno; ?></a></th>
-        <td>
-          <div class="forms d-flex" style="">
-        <form class="me-2" method="post" action="">
-        <?php $timeid = $row['timeID']; ?>
-          <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
-          <input type="hidden" name="date" value="<?php echo $new_date; ?>" />
-          <input type="hidden" name="timein" value="<?php echo $new_timein; ?>" />
-          <input type="hidden" name="timeout" value="<?php echo $new_timeout; ?>" />
-          <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved"><span class="badge text-bg-success">Approve</span></button>
-        </form>
-        &nbsp;
-        <form method="post" action="">
-          <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
-          <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="rejected"><span class="badge text-bg-danger">Reject</span></button>
-        </form>
-        </div>
-        </td>
-        <!--  onclick="return confirm('Be Careful! \r\nOK to delete?')" -->
-        <?php } 
-        
-        ?>
-        
-   
-      </tbody>
-</table> 
-<?php 
-     
-} else {
-  echo "0 results";
-}
+              $new_date         = $row['new_date'];
+              $new_timein       = $row['new_timein'];
+              $new_timeout      = $row['new_timeout'];
+              // $companyname    = $row['companyname'];
     ?>
-  </form>
+      <tr>
+          <th scope="row"><a class="text-decoration-none text-dark" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>"><?php echo $idno; ?></a></th>
+          <td>
+            <div class="forms d-flex" style="">
+          <form class="me-2" method="post" action="">
+          <?php $timeid = $row['timeID']; ?>
+            <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
+            <input type="hidden" name="date" value="<?php echo $new_date; ?>" />
+            <input type="hidden" name="timein" value="<?php echo $new_timein; ?>" />
+            <input type="hidden" name="timeout" value="<?php echo $new_timeout; ?>" />
+            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved"><span class="badge text-bg-success">Approve</span></button>
+          </form>
+          &nbsp;
+          <form method="post" action="">
+            <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
+            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="rejected"><span class="badge text-bg-danger">Reject</span></button>
+          </form>
+          </div>
+          </td>
+          <!--  onclick="return confirm('Be Careful! \r\nOK to delete?')" -->
+          <?php } 
 
- <!-- end PAGE-CONTENT -->
-</div>
-<?php } ?>
-
-
-
-
-<?php if($_SESSION['acc_type'] == 0){ ?>
-<!-- start PAGE-CONTENT -->
-
-
-<?php
-
-          $day = date('w');
-          $week_start = date('Y-m-d', strtotime('-'.(5-$day).' days'));
-          $week_end = date('Y-m-d', strtotime('+'.(5-$day).' days'));
-          $week_num = date('W', strtotime($week_start));
-
-          $new_week_start = date('F d, Y', strtotime('-'.(5-$day).' days'));
-          $new_week_end   = date('F d, Y', strtotime('+'.(5-$day).' days'));
           ?>
-<div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
-<p class="text-center fs-4"><span>Timesheet for <span class="text-muted text-capitalize"><?php echo $new_week_start; ?> - <?php echo $new_week_end; ?></span></span></p>
+
+            
+        </tbody>
+    </table> 
+    <?php 
+    } else {
+      echo "0 results";
+    }
+    ?>
+    </form>
+
+    <!-- end PAGE-CONTENT -->
+    </div>
+    <?php } ?>
+  <!-- END ADMIN TIME SHEET (LEFT SIDE) -->
+
+  <!-- NON ADMIN TIMESHEET (RIGHT SIDE) -->
+    <?php if($_SESSION['acc_type'] == 0){ ?>
+    <!-- start PAGE-CONTENT -->
+    <?php
+      $day = date('w');
+      $week_start = date('Y-m-d', strtotime('-'.(5-$day).' days'));
+      $week_end = date('Y-m-d', strtotime('+'.(5-$day).' days'));
+      $week_num = date('W', strtotime($week_start));
+      $display_week_start = date('F d, Y', strtotime('-'.(5-$day).' days'));
+      $display_week_end   = date('F d, Y', strtotime('+'.(5-$day).' days'));
+    ?>
+    <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
+    <p class="text-center fs-4"><span>Timesheet for <span class="text-muted text-capitalize"><?php echo $display_week_start; ?> - <?php echo $display_week_end; ?></span></span></p>
+      <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" style="font-size: 14px;">ID #</th>
+        <th scope="col" style="font-size: 14px;">Date</th>
+        <th scope="col" style="font-size: 14px;">Time in / Time out</th>
+        <th scope="col" style="font-size: 14px;">Status</th>
+        <th scope="col" style="font-size: 14px;">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+
+    <?php
+
+            $day = date('w');
+            $week_start = date('Y-m-d', strtotime('-'.(5-$day).' days'));
+            $week_end = date('Y-m-d', strtotime('+'.(5-$day).' days'));
+            $week_num = date('W', strtotime($week_start));
+
+        $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}' AND date BETWEEN '$week_start' AND '$week_end' ";
+        $all = mysqli_query($conn, $sql);
+        if($all) {
+            while ($row = mysqli_fetch_assoc($all)) {
+              $timeID           = $row['timeID'];
+              $idno             = $row['idno'];
+              $orgDate          = $row['date'];
+              $date             = date("M d, Y", strtotime($orgDate));
+              $orgTimein        = $row['timein'];
+              $timein           = date("h:i A", strtotime($orgTimein));
+              $orgTimeout       = $row['timeout'];
+              $timeout          = date("h:i A", strtotime($orgTimeout));
+              $totalhours       = $row['totalhours'];
+              $employee_fname   = $row['employee_fname'];
+              $employee_lname   = $row['employee_lname'];
+              $employee_idno    = $row['employee_idno'];
+              $comment          = $row['comment'];
+              $reason           = $row['reason'];
+              $app_status       = $row['approval_status'];
+              // $companyname    = $row['companyname'];
+    ?>
+      <tr>
+          <th scope="row"><?php echo $idno; ?></th>
+          <td><?php echo $date; ?></td>
+          <td><?php echo $timein; ?> / <?php echo $timeout; ?></td>
+          <?php if($app_status == 'pending') { ?>
+            <td><span class="text-primary">Pending</span></td>
+          <?php } if($app_status == 'approved') { ?>
+            <td><span class="text-success">Approved</span></td>
+          <?php } if($app_status == 'rejected') { ?>
+            <td><span class="text-danger">Rejected</span></td>
+          <?php } ?>
+          <!-- <td><?php //echo $companyname; ?></td> -->
+          <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
+          <!-- <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="timesheet.php?timeID=<?php //echo $timeID; ?>">Delete</a></td> -->
+          <?php } ?>
+          
+          
+        </tbody>
+    </table> 
+    <?php 
+    } else {
+      echo "0 results";
+    }
+    ?>
+    <!-- end PAGE-CONTENT -->
+    </div>
+  <!-- END NON ADMIN TIMESHEET (RIGHT SIDE) -->
+
+  <!-- ADMIN TIME SHEET (RIGHT SIDE) -->
+    <?php } else { ?>
+    <!-- start PAGE-CONTENT -->
+    <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
+    <!-- <span class="mx-auto">Timesheet for <span class="text-muted text-capitalize"><?php //echo $_SESSION['fname']; ?></span></span> -->
     <table class="table">
-  <thead>
-    <tr>
-      <th scope="col" style="font-size: 14px;">ID #</th>
-      <th scope="col" style="font-size: 14px;">Date</th>
-      <th scope="col" style="font-size: 14px;">Time in / Time out</th>
-      <th scope="col" style="font-size: 14px;">Status</th>
-      <th scope="col" style="font-size: 14px;">Actions</th>
-    </tr>
-  </thead>
-  <tbody class="table-group-divider">
+      <thead>
+        <tr>
+          <th scope="col" style="font-size: 14px;">ID #</th>
+          <th scope="col" style="font-size: 14px;">Employee</th>
+          <th scope="col" style="font-size: 14px;">Status</th>
+          <th scope="col" style="font-size: 14px;">Actions</th>
+        </tr>
+      </thead>
+    <tbody class="table-group-divider">
 
-  <?php
-
-          $day = date('w');
-          $week_start = date('Y-m-d', strtotime('-'.(5-$day).' days'));
-          $week_end = date('Y-m-d', strtotime('+'.(5-$day).' days'));
-          $week_num = date('W', strtotime($week_start));
-
-      $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}' AND date BETWEEN '$week_start' AND '$week_end' ";
-      $all = mysqli_query($conn, $sql);
-      if($all) {
-          while ($row = mysqli_fetch_assoc($all)) {
-            $timeID           = $row['timeID'];
-            $idno             = $row['idno'];
-            $orgDate          = $row['date'];
-            $date             = date("M d, Y", strtotime($orgDate));
-            $orgTimein        = $row['timein'];
-            $timein           = date("h:i A", strtotime($orgTimein));
-            $orgTimeout       = $row['timeout'];
-            $timeout          = date("h:i A", strtotime($orgTimeout));
-            $totalhours       = $row['totalhours'];
-            $employee_fname   = $row['employee_fname'];
-            $employee_lname   = $row['employee_lname'];
-            $employee_idno    = $row['employee_idno'];
-            $comment          = $row['comment'];
-            $reason           = $row['reason'];
-            $app_status       = $row['approval_status'];
-            // $companyname    = $row['companyname'];
-  ?>
-    <tr>
-        <th scope="row"><?php echo $idno; ?></th>
-        <td><?php echo $date; ?></td>
-        <td><?php echo $timein; ?> / <?php echo $timeout; ?></td>
-        <?php if($app_status == 'pending') { ?>
-          <td><span class="text-primary">Pending</span></td>
-        <?php } if($app_status == 'approved') { ?>
-          <td><span class="text-success">Approved</span></td>
-        <?php } if($app_status == 'rejected') { ?>
-          <td><span class="text-danger">Rejected</span></td>
-        <?php } ?>
-        <!-- <td><?php //echo $companyname; ?></td> -->
-        <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-        <!-- <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="timesheet.php?timeID=<?php //echo $timeID; ?>">Delete</a></td> -->
-        <?php } ?>
-        
-   
-      </tbody>
-</table> 
-
-
-<?php
-          $day = date('w');
-          $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
-          $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
-          $week_num = date('W', strtotime($week_start));
-
-          $monday_this_week = date("Y-m-d",strtotime('monday this week'));
-
-
-    $i=0;
-    $mon = date('m/d/y', strtotime("+$i days", strtotime($monday_this_week))); 
-    $i=1;
-    $tues = date('m/d/y', strtotime("+$i days", strtotime($monday_this_week)));
-    $i=2;
-    $wed = date('m/d/y', strtotime("+$i days", strtotime($monday_this_week))); 
-    $i=3;
-    $thurs = date('m/d/y', strtotime("+$i days", strtotime($monday_this_week)));
-    $i=4;
-    $fri = date('m/d/y', strtotime("+$i days", strtotime($monday_this_week))); 
-    
-    
-    
+    <?php
+        $sql = "SELECT * FROM timesheet";
+        $all = mysqli_query($conn, $sql);
+        if($all) {
+            while ($row = mysqli_fetch_assoc($all)) {
+              $timeID           = $row['timeID'];
+              $idno             = $row['idno'];
+              $orgDate          = $row['date'];
+              $date             = date("M d, Y", strtotime($orgDate));
+              $orgTimein        = $row['timein'];
+              $timein           = date("h:i A", strtotime($orgTimein));
+              $orgTimeout       = $row['timeout'];
+              $timeout          = date("h:i A", strtotime($orgTimeout));
+              $totalhours       = $row['totalhours'];
+              $employee_fname   = $row['employee_fname'];
+              $employee_lname   = $row['employee_lname'];
+              $employee_idno    = $row['employee_idno'];
+              $comment          = $row['comment'];
+              $reason           = $row['reason'];
+              $app_status       = $row['approval_status'];
+              // $companyname    = $row['companyname'];
     ?>
-
-
-
-
-
-
-<?php 
-     
-} else {
-  echo "0 results";
-}
+      <tr>
+          <th scope="row"><?php echo $idno; ?></th>
+          <td><?php echo $employee_lname; ?>, <?php echo $employee_fname; ?></td>
+          <?php if($app_status == 'approved'){ ?>
+          <td><span class="text-capitalize text-success"><?php echo $app_status; ?><span></td>
+          <?php } if($app_status == 'rejected') { ?>
+            <td><span class="text-capitalize text-danger"><?php echo $app_status; ?><span></td>
+          <?php } if($app_status == 'pending') { ?>
+            <td><span class="text-capitalize text-primary"><?php echo $app_status; ?><span></td>
+          <?php }?>
+          <!-- <td><?php //echo $companyname; ?></td> -->
+          <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
+          <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="timesheet.php?timeID=<?php echo $timeID; ?>">Delete</a></td>
+          <?php } ?>
+          
+          
+        </tbody>
+    </table> 
+    <?php 
+    } else {
+      echo "0 results";
+    }
     ?>
- <!-- end PAGE-CONTENT -->
-</div>
-<?php } else { ?>
+    <!-- end PAGE-CONTENT -->
+    </div>
+    <?php } ?>
+  <!-- END ADMIN TIME SHEET (RIGHT SIDE)  -->
 
 
 
-  <!-- start PAGE-CONTENT -->
-<div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
-<!-- <span class="mx-auto">Timesheet for <span class="text-muted text-capitalize"><?php //echo $_SESSION['fname']; ?></span></span> -->
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col" style="font-size: 14px;">ID #</th>
-      <th scope="col" style="font-size: 14px;">Employee</th>
-      <th scope="col" style="font-size: 14px;">Status</th>
-      <th scope="col" style="font-size: 14px;">Actions</th>
-    </tr>
-  </thead>
-  <tbody class="table-group-divider">
-
-  <?php
-      $sql = "SELECT * FROM timesheet";
-      $all = mysqli_query($conn, $sql);
-      if($all) {
-          while ($row = mysqli_fetch_assoc($all)) {
-            $timeID           = $row['timeID'];
-            $idno             = $row['idno'];
-            $orgDate          = $row['date'];
-            $date             = date("M d, Y", strtotime($orgDate));
-            $orgTimein        = $row['timein'];
-            $timein           = date("h:i A", strtotime($orgTimein));
-            $orgTimeout       = $row['timeout'];
-            $timeout          = date("h:i A", strtotime($orgTimeout));
-            $totalhours       = $row['totalhours'];
-            $employee_fname   = $row['employee_fname'];
-            $employee_lname   = $row['employee_lname'];
-            $employee_idno    = $row['employee_idno'];
-            $comment          = $row['comment'];
-            $reason           = $row['reason'];
-            $app_status       = $row['approval_status'];
-            // $companyname    = $row['companyname'];
-  ?>
-    <tr>
-        <th scope="row"><?php echo $idno; ?></th>
-        <td><?php echo $employee_lname; ?>, <?php echo $employee_fname; ?></td>
-        <?php if($app_status == 'approved'){ ?>
-        <td><span class="text-capitalize text-success"><?php echo $app_status; ?><span></td>
-        <?php } if($app_status == 'rejected') { ?>
-          <td><span class="text-capitalize text-danger"><?php echo $app_status; ?><span></td>
-        <?php } if($app_status == 'pending') { ?>
-          <td><span class="text-capitalize text-primary"><?php echo $app_status; ?><span></td>
-        <?php }?>
-        <!-- <td><?php //echo $companyname; ?></td> -->
-        <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-        <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="timesheet.php?timeID=<?php echo $timeID; ?>">Delete</a></td>
-        <?php } ?>
-        
-   
-      </tbody>
-</table> 
-<?php 
-     
-} else {
-  echo "0 results";
-}
-    ?>
- <!-- end PAGE-CONTENT -->
-</div>
-
-
-
-  <?php } ?>
+  
 
  
+
+  </div> 
 <!-- end MAIN -->
-</div> 
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
