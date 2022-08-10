@@ -348,7 +348,7 @@ if(isset($_GET['timeID'])) {
 
   $sql = "SELECT date FROM timesheet WHERE employee_idno = '{$_SESSION['employee_idno']}'";
   $all = mysqli_query($conn, $sql);
-  $row = mysqli_fetch_assoc($all);
+  if($row = mysqli_fetch_assoc($all)) {
 
 
 
@@ -398,6 +398,7 @@ if(isset($_GET['timeID'])) {
    
       </tbody>
 </table> 
+<?php } ?>
  <!-- end PAGE-CONTENT -->
 </div>
 <?php } else { ?>
