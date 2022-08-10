@@ -171,7 +171,7 @@ if (mysqli_num_rows($result) > 0) {
         <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php //echo $employee_idno; ?>"> -->
       <div class="form-group pt-3 mx-auto" style="width: 95%;">
         <label for="new_date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
-        <input class="form-control" id="new_date" type="text" name="new_date" value="<?php echo $row['idno']; ?>" required>
+        <input class="form-control" id="new_date" type="text" name="new_date" value="<?php echo $row['companyname']; ?>" required>
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 95%;">
         <label for="new_timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
