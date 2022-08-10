@@ -279,7 +279,7 @@ if(isset($_GET['timeID'])) {
       $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}'";
       $all = mysqli_query($conn, $sql);
       if($all) {
-          while ($row = mysqli_fetch_field($all)) {
+          while ($row = mysqli_fetch_array($all)) {
             $timeID           = $row['timeID'];
             $idno             = $row['idno'];
             $orgDate          = $row['date'];
@@ -297,6 +297,7 @@ if(isset($_GET['timeID'])) {
             $app_status       = $row['approval_status'];
             $companyname    = $row['companyname'];
           }}
+         
 
           $day = date('w');
           $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
