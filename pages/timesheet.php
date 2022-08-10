@@ -152,28 +152,28 @@ if(isset($_GET['timeID'])) {
 
   <?php
 
-$sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}'";
-      $all = mysqli_query($conn, $sql);
-      if($all) {
-          while ($row = mysqli_fetch_assoc($all)) {
-            $timesheetDate = $row['date'];
-          }}
+// $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}'";
+//       $all = mysqli_query($conn, $sql);
+//       if($all) {
+//           while ($row = mysqli_fetch_assoc($all)) {
+//             $timesheetDate = $row['date'];
+//           }}
 
-          $day = date('w');
-          $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
-          $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
+//           $day = date('w');
+//           $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
+//           $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
 
 
-$monday_this_week = date("Y-m-d",strtotime('monday this week'));
+// $monday_this_week = date("Y-m-d",strtotime('monday this week'));
 ?>
-<label ><?php echo $week_start; ?> - </label>
-<label ><?php echo $week_end; ?></label> <br>
-<?php for($i=0;$i<=4;$i++): ?>
-    <?php $date = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); ?>
-      <label ><?php echo $date; ?></label>
-      <label >(<?php echo date('l', strtotime($date)); ?>)</label><br>
+<!-- <label ><?php //echo $week_start; ?> - </label>
+<label ><?php //echo $week_end; ?></label> <br>
+<?php //for($i=0;$i<=4;$i++): ?>
+    <?php //$date = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); ?>
+      <label ><?php //echo $date; ?></label>
+      <label >(<?php //echo date('l', strtotime($date)); ?>)</label><br>
        
-<?php endfor;  ?>
+<?php //endfor;  ?> -->
 
  <!-- end PAGE-CONTENT -->
 </div>
