@@ -139,7 +139,6 @@ if (mysqli_num_rows($result) > 0) {
 <!-- END MAIN -->
 
 
-<!-- EDIT MODAL -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -150,46 +149,47 @@ if (mysqli_num_rows($result) > 0) {
         <div class="modal-body">
 
   <?php 
- $empID = $_SESSION['employee_idno'];
- $news = " SELECT * FROM job WHERE employee_idno = '$empID' ";
- $new = mysqli_query($conn, $news);
- if (mysqli_num_rows($new) > 0) {
-    while($row = mysqli_fetch_assoc($result)) {
-       //$acc_type = $row['acc_type'];
+  $id = $_GET['timeID'];
+  $select = " SELECT * FROM timesheet WHERE timeID = '$id' ";
+  $result = mysqli_query($conn, $select);
 
-
-      
- ?>
+  if (mysqli_num_rows($result) > 0) {
+     while($row = mysqli_fetch_assoc($result)) {
+      ?>
 
   <form action="" method="post">
       <div class="section-header pt-2">
         <span class="text-muted pt-4" style="width: 95%;">Time Entry</span>
       </div>
       <hr style="margin-bottom: -5px; margin-top: 5px;">
-      <?php echo $compname; ?>
       <?php 
       $fname = $_SESSION['fname'];
       $lname = $_SESSION['lname']; 
       $employee_idno = $_SESSION['employee_idno'];?>
-        <!-- <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php //echo $fname; ?>"> -->
-        <!-- <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php //echo $lname; ?>"> -->
-        <!-- <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php //echo $employee_idno; ?>"> -->
-        <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
-      <input class="form-control" id="companyname" type="text" name="companyname" value="<?php echo $row['idno']; ?>" required>
-    </div>
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="deptname" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
-      <input class="form-control" id="deptname" type="text" name="deptname" value="" required>
-    </div>
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="jobtitle" style="font-size: 14px;">Job Title / Position <span class="text-muted" style="font-size: 10px;">e.g. "Chief Executive Officer"</span></label>
-      <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="" required>
-    </div>
-    <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
-      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-job" class="badge text-bg-secondary">Add Job</button>
-    </div>
-  </form>
+        <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
+        <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
+        <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employee_idno; ?>">
+      <div class="form-group pt-3 mx-auto" style="width: 95%;">
+        <label for="new_date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
+        <input class="form-control" id="new_date" type="date" name="new_date" value="<?php echo $row['date']; ?>" required>
+      </div>
+      <div class="form-group pt-3 mx-auto" style="width: 95%;">
+        <label for="new_timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
+        <input class="form-control" id="new_timein" type="time" name="new_timein" value="<?php echo $row['timein']; ?>" required>
+      </div>
+      <div class="form-group pt-3 mx-auto" style="width: 95%;">
+        <label for="new_timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
+        <input class="form-control" id="new_timeout" type="time" name="new_timeout" value="<?php echo $row['timeout']; ?>" required>
+      </div>
+      <div class="form-group pt-3 mx-auto" style="width: 95%;">
+        <label for="reason" style="font-size: 14px;">Reason <span class="text-muted" style="font-size: 10px;">Give reason for changing time</span></label>
+        <textarea class="form-control" id="reason" type="text" name="reason" value="" required></textarea>
+      </div>
+
+      <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
+        <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-time" class="badge text-bg-secondary">Update Time</button>
+      </div>
+      </form>
 
                 <?php }} ?>
 
