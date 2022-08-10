@@ -279,7 +279,7 @@ if(isset($_GET['timeID'])) {
       $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}'";
       $all = mysqli_query($conn, $sql);
       if($all) {
-          while ($row = mysqli_fetch_array($all)) {
+          while ($row = mysqli_fetch_assoc($all)) {
             $timeID           = $row['timeID'];
             $idno             = $row['idno'];
             $orgDate          = $row['date'];
@@ -297,7 +297,6 @@ if(isset($_GET['timeID'])) {
             $app_status       = $row['approval_status'];
             $companyname    = $row['companyname'];
           }}
-         
 
           $day = date('w');
           $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
@@ -345,9 +344,20 @@ if(isset($_GET['timeID'])) {
   </thead>
   <tbody class="table-group-divider">
   
+  <?php 
+
+  $sql = "SELECT date FROM timesheet WHERE employee_idno = '{$_SESSION['employee_idno']}'";
+  $all = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_assoc($all);
+
+
+
+?>
+
+
     <tr> 
       <td>
-      <?php if($date == $mon) { ?>
+      <?php if($row['date'] == $mon) { ?>
         <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
       <?php } else { ?>
         <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
@@ -355,7 +365,7 @@ if(isset($_GET['timeID'])) {
       </td>
 
       <td>
-      <?php if($date == $tues) { ?>
+      <?php if($row['date'] == $tues) { ?>
         <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
       <?php } else { ?>
         <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
