@@ -340,7 +340,9 @@ if(isset($_GET['timeID'])) {
                       <h6 class="mb-0"><?php echo $tues; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
+                    <?php if($date == $tues) { ?>
                     <?php echo $idno; ?>
+                    <?php } ?>
                     </div>
                   </div>
                   <hr>
