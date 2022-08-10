@@ -147,34 +147,6 @@ if(isset($_GET['timeID'])) {
     </div>
   </form>
 
-
-
-
-  <?php
-
-// $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}'";
-//       $all = mysqli_query($conn, $sql);
-//       if($all) {
-//           while ($row = mysqli_fetch_assoc($all)) {
-//             $timesheetDate = $row['date'];
-//           }}
-
-//           $day = date('w');
-//           $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
-//           $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
-
-
-// $monday_this_week = date("Y-m-d",strtotime('monday this week'));
-?>
-<!-- <label ><?php //echo $week_start; ?> - </label>
-<label ><?php //echo $week_end; ?></label> <br>
-<?php //for($i=0;$i<=4;$i++): ?>
-    <?php //$date = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); ?>
-      <label ><?php //echo $date; ?></label>
-      <label >(<?php //echo date('l', strtotime($date)); ?>)</label><br>
-       
-<?php //endfor;  ?> -->
-
  <!-- end PAGE-CONTENT -->
 </div>
 
@@ -245,18 +217,9 @@ if(isset($_GET['timeID'])) {
         
         ?>
         
-        
    
       </tbody>
 </table> 
-
-
-
-
-
-
-
-
 <?php 
      
 } else {
@@ -274,9 +237,22 @@ if(isset($_GET['timeID'])) {
 
 <?php if($_SESSION['acc_type'] == 0){ ?>
 <!-- start PAGE-CONTENT -->
+<div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
+<!-- <span class="mx-auto">Timesheet for <span class="text-muted text-capitalize"><?php //echo $_SESSION['fname']; ?></span></span> -->
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col" style="font-size: 14px;">ID #</th>
+      <th scope="col" style="font-size: 14px;">Date</th>
+      <th scope="col" style="font-size: 14px;">Time in / Time out</th>
+      <th scope="col" style="font-size: 14px;">Status</th>
+      <th scope="col" style="font-size: 14px;">Actions</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
 
-<?php
-      $sql = "SELECT * FROM timesheet";
+  <?php
+      $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}'";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
@@ -295,168 +271,33 @@ if(isset($_GET['timeID'])) {
             $comment          = $row['comment'];
             $reason           = $row['reason'];
             $app_status       = $row['approval_status'];
-            $companyname    = $row['companyname'];
-          }}
-
-          $day = date('w');
-          $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
-          $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
-          $week_num = date('W', strtotime($week_start));
-
-          $monday_this_week = date("Y-m-d",strtotime('monday this week'));
-
-?>
-    <?php 
-    $i=0;
-    $mon = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); 
-    $i=1;
-    $tues = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week)));
-    $i=2;
-    $wed = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); 
-    $i=3;
-    $thurs = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week)));
-    $i=4;
-    $fri = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); 
-    
-    
-    
-    ?>
-      <!-- <label ><?php //echo $date; ?></label>
-      <label >(<?php// echo date('l', strtotime($date)); ?>)</label><br>
-        -->
-
-
-
-
-
-<div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
-<span class="mx-auto">Timesheet for <span class="text-muted text-capitalize"><?php echo $week_start; ?> - <?php echo $week_end; ?></span></span> 
-<?php
-$sql = "SELECT date FROM timesheet";
-$result = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($result) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
-    $new_date_now = $row['date'];
-
-  }
-
-?>
-
-
-<div class="page-content mx-auto mt-2">
-<form action="" method="post">
-      <div class="col-md-8 me-4">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0"><?php echo $mon; ?></h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    
-
-                    <?php if($new_date_now == $mon) { ?>
-                      <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-                    <?php } else { ?>
-                      <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
-                    <?php } ?>
-
-
-
-
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0"><?php echo $tues; ?></h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                        
-
-
-                    <?php if($new_date_now == $tues) { ?>
-                      <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-                    <?php } else { ?>
-                      <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
-                    <?php } ?>
-
-
-
-
-
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0"><?php echo $wed; ?></h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                        
-
-
-                    <?php if($wed == $row['date']) { ?>
-                      <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-                    <?php } else { ?>
-                      <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
-                    <?php } ?>
-
-
-
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0"><?php echo $thurs; ?></h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                        
-
-
-                    <?php if($new_date_now == $thurs) { ?>
-                      <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-                    <?php } else { ?>
-                      <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
-                    <?php } ?>
-
-
-
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0"><?php echo $fri; ?></h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                        
-
-
-                    <?php if($new_date_now == $fri) { ?>
-                      <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-                    <?php } else { ?>
-                      <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
-                    <?php } ?>
-
-
-
-                    </div>
-                  </div>
-                  
-                </div>
-              </div>
-
+            // $companyname    = $row['companyname'];
+  ?>
+    <tr>
+        <th scope="row"><?php echo $idno; ?></th>
+        <td><?php echo $date; ?></td>
+        <td><?php echo $timein; ?> / <?php echo $timeout; ?></td>
+        <?php if($app_status == 'pending') { ?>
+          <td><span class="text-primary">Pending</span></td>
+        <?php } if($app_status == 'approved') { ?>
+          <td><span class="text-success">Approved</span></td>
+        <?php } if($app_status == 'rejected') { ?>
+          <td><span class="text-danger">Rejected</span></td>
+        <?php } ?>
+        <!-- <td><?php //echo $companyname; ?></td> -->
+        <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
+        <!-- <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="timesheet.php?timeID=<?php //echo $timeID; ?>">Delete</a></td> -->
+        <?php } ?>
+        
+   
+      </tbody>
+</table> 
 <?php 
+     
+} else {
+  echo "0 results";
 }
-// }else {
-//   echo "0 results";
-// }
-
-?>
+    ?>
  <!-- end PAGE-CONTENT -->
 </div>
 <?php } else { ?>
@@ -515,7 +356,6 @@ if (mysqli_num_rows($result) > 0) {
         <?php } ?>
         
    
-
       </tbody>
 </table> 
 <?php 
