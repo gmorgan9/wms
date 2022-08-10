@@ -280,9 +280,9 @@ $monday_this_week = date("Y-m-d",strtotime('monday this week'));
   <thead>
     <tr>
       <th scope="col" style="font-size: 14px;">Date Range</th>
-      <th scope="col" style="font-size: 14px;">Date</th>
-      <th scope="col" style="font-size: 14px;">Time in / Time out</th>
-      <th scope="col" style="font-size: 14px;">Status</th>
+      <!-- <th scope="col" style="font-size: 14px;">Date</th> -->
+      <!-- <th scope="col" style="font-size: 14px;">Time in / Time out</th> -->
+      <!-- <th scope="col" style="font-size: 14px;">Status</th> -->
       <th scope="col" style="font-size: 14px;">Actions</th>
     </tr>
   </thead>
