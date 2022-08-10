@@ -380,12 +380,6 @@ if(isset($_GET['timeID'])) {
     <?php } ?>
   <!-- END ADMIN TIME SHEET (RIGHT SIDE)  -->
 
-
-
-  
-
- 
-
   </div> 
 <!-- end MAIN -->
 
