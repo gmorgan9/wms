@@ -341,7 +341,7 @@ if (mysqli_num_rows($result) > 0) {
     $new_date_now = $row['date'];
 
   }
-}
+
 ?>
 
 
@@ -398,7 +398,7 @@ if (mysqli_num_rows($result) > 0) {
                         
 
 
-                    <?php if($new_date_now == $wed) { ?>
+                    <?php if($wed == $row['date']) { ?>
                       <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
                     <?php } else { ?>
                       <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
@@ -451,7 +451,7 @@ if (mysqli_num_rows($result) > 0) {
               </div>
 
 <?php 
-
+}
 // }else {
 //   echo "0 results";
 // }
