@@ -314,9 +314,9 @@ $day = date('w');
 
 ?>
     <?php 
-    $i=1;
+    $i=0;
     $monday = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); 
-    $i=2;
+    $i=1;
     $tuesday = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week)));
     
     
