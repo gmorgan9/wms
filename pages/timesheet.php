@@ -274,22 +274,8 @@ if(isset($_GET['timeID'])) {
 
 <?php if($_SESSION['acc_type'] == 0){ ?>
 <!-- start PAGE-CONTENT -->
-<div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
-<!-- <span class="mx-auto">Timesheet for <span class="text-muted text-capitalize"><?php //echo $_SESSION['fname']; ?></span></span> -->
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col" style="font-size: 14px;">Date Range</th>
-      <!-- <th scope="col" style="font-size: 14px;">Date</th> -->
-      <!-- <th scope="col" style="font-size: 14px;">Time in / Time out</th> -->
-      <th scope="col" style="font-size: 14px;">Employee</th>
-      <th scope="col" style="font-size: 14px;">Week Num</th>
-      <th scope="col" style="font-size: 14px;">Actions</th>
-    </tr>
-  </thead>
-  <tbody class="table-group-divider">
 
-  <?php
+<?php
       $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}'";
       $all = mysqli_query($conn, $sql);
       if($all) {
@@ -318,6 +304,25 @@ if(isset($_GET['timeID'])) {
           $week_num = date('W', strtotime($week_start));
 
   ?>
+
+
+
+<div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
+<span class="mx-auto">Timesheet for <span class="text-muted text-capitalize"><?php echo $week_start; ?> - <?php echo $week_end; ?></span></span> 
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col" style="font-size: 14px;">Date Range</th>
+      <!-- <th scope="col" style="font-size: 14px;">Date</th> -->
+      <!-- <th scope="col" style="font-size: 14px;">Time in / Time out</th> -->
+      <th scope="col" style="font-size: 14px;">Employee</th>
+      <th scope="col" style="font-size: 14px;">Week Num</th>
+      <th scope="col" style="font-size: 14px;">Actions</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+
+  
     <tr>
         <th scope="row"><a href=""><?php echo $week_start; ?> - <?php echo $week_end; ?></a></th>
         <td><?php echo $employee_fname; ?> <?php echo $employee_lname; ?></td>
