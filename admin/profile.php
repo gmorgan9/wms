@@ -181,8 +181,8 @@ if (mysqli_num_rows($result) > 0) {
                 </div>
               </div>
         </div>
-      <div class="row" style="margin-top: -15px;">
-        <div class="col-md-8 w-25 float-start ms-4">
+      <div class="row" >
+        <div class="col-md-8 w-25 float-start ms-4" style="margin-top: -15px;">
               <div class="card mb-3">
                 <div class="card-body">
                   <img class="ms-1" src="../../assets/img/pic_holder.jpg" style="height: 250px; width: 250px; border-radius: 150px;" alt="">
