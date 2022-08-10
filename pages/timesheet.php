@@ -303,7 +303,15 @@ if(isset($_GET['timeID'])) {
           $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
           $week_num = date('W', strtotime($week_start));
 
-  ?>
+          // $monday_this_week = date("Y-m-d",strtotime('monday this week'));
+?>
+<label ><?php echo $week_start; ?> - </label>
+<label ><?php echo $week_end; ?></label> <br>
+
+    
+       
+
+
 
 
 
@@ -312,7 +320,7 @@ if(isset($_GET['timeID'])) {
     <table class="table">
   <thead>
     <tr>
-      <th scope="col" style="font-size: 14px;">Date Range</th>
+      <th scope="col" style="font-size: 14px;">Day</th>
       <!-- <th scope="col" style="font-size: 14px;">Date</th> -->
       <!-- <th scope="col" style="font-size: 14px;">Time in / Time out</th> -->
       <th scope="col" style="font-size: 14px;">Employee</th>
@@ -324,14 +332,17 @@ if(isset($_GET['timeID'])) {
 
   
     <tr>
-        <th scope="row"><a href=""><?php echo $week_start; ?> - <?php echo $week_end; ?></a></th>
+      <?php for($i=0;$i<=4;$i++): ?>
+        <?php $date = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); ?>
+      <th scope="row"><?php echo $date; ?>
+      <label >(<?php echo date('l', strtotime($date)); ?>)</label><br></th>
         <td><?php echo $employee_fname; ?> <?php echo $employee_lname; ?></td>
         <td><?php echo $week_num; ?></td>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
         <!-- <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="timesheet.php?timeID=<?php //echo $timeID; ?>">Delete</a></td> -->
         <?php  ?>
         
-   
+        <?php endfor;  ?>
       </tbody>
 </table> 
  <!-- end PAGE-CONTENT -->
