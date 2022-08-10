@@ -101,7 +101,8 @@ if (mysqli_num_rows($result) > 0) {
                   <br><br>
 
                   <?php
-                  $select = " SELECT * FROM job WHERE employee_idno = '$employee_idno' ";
+                  $empidno = $_SESSION['employee_idno'];
+                  $select = "SELECT * FROM job WHERE employee_idno = '$empidno' ";
                   $result = mysqli_query($conn, $select);
                   if (mysqli_num_rows($result) > 0) {
                      while($row = mysqli_fetch_assoc($result)) {
