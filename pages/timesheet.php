@@ -162,19 +162,16 @@ $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno
           $day = date('w');
           $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
           $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
+
+
 $monday_this_week = date("Y-m-d",strtotime('monday this week'));
 ?>
 <label ><?php echo $week_start; ?> - </label>
 <label ><?php echo $week_end; ?></label> <br>
 <?php for($i=0;$i<=4;$i++): ?>
     <?php $date = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); ?>
-     <?php if($date == $timesheetDate) { ?>
-      <label > <span class="text-primary"><?php echo $date; ?></span></label>
-      <label ><span class="text-primary">(<?php echo date('l', strtotime($date)); ?>)</span></label><br>
-    <?php }else { ?>
       <label ><?php echo $date; ?></label>
-      <label >(<?php echo date('l', strtotime($date)); ?>)</label><br>
-    <?php } ?>
+      <label ><(<?php echo date('l', strtotime($date)); ?>)</label><br>
        
 <?php endfor;  ?>
 
