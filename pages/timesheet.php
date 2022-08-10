@@ -344,7 +344,7 @@ if(isset($_GET['timeID'])) {
                     <div class="col-sm-9 text-secondary">
                     
 
-                    <?php if($orgDate == $mon) { ?>
+                    <?php if($date == $mon) { ?>
                       <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
                     <?php } else { ?>
                       <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
@@ -364,7 +364,7 @@ if(isset($_GET['timeID'])) {
                         
 
 
-                    <?php if($orgDate == $tues) { ?>
+                    <?php if($date == $tues) { ?>
                       <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
                     <?php } else { ?>
                       <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
@@ -385,7 +385,7 @@ if(isset($_GET['timeID'])) {
                         
 
 
-                    <?php if($orgDate == $wed) { ?>
+                    <?php if($date == $wed) { ?>
                       <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
                     <?php } else { ?>
                       <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
@@ -404,7 +404,7 @@ if(isset($_GET['timeID'])) {
                         
 
 
-                    <?php if($orgDate == $thurs) { ?>
+                    <?php if($date == $thurs) { ?>
                       <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
                     <?php } else { ?>
                       <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
@@ -423,7 +423,7 @@ if(isset($_GET['timeID'])) {
                         
 
 
-                    <?php if($orgDate == $fri) { ?>
+                    <?php if($date == $fri) { ?>
                       <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
                     <?php } else { ?>
                       <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
