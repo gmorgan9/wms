@@ -294,6 +294,31 @@ if(isset($_GET['timeID'])) {
 </table> 
 
 
+<?php
+          $day = date('w');
+          $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
+          $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
+          $week_num = date('W', strtotime($week_start));
+
+          $monday_this_week = date("Y-m-d",strtotime('monday this week'));
+
+
+    $i=0;
+    $mon = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); 
+    $i=1;
+    $tues = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week)));
+    $i=2;
+    $wed = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); 
+    $i=3;
+    $thurs = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week)));
+    $i=4;
+    $fri = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); 
+    
+    
+    
+    ?>
+
+
 <div class="page-content mx-auto mt-2">
 <form action="" method="post">
       <div class="col-md-8 me-4">
@@ -304,7 +329,7 @@ if(isset($_GET['timeID'])) {
                       <h6 class="mb-0">Timesheet Entry ID</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <span class="text-capitalize"><?php echo $row['idno']; ?></span>
+                    <span class="text-capitalize"><?php echo $mon; ?></span>
                     </div>
                   </div>
                   <hr>
