@@ -271,7 +271,7 @@ if (mysqli_num_rows($result) > 0) {
     </div>
     <div class="form-group pt-3">
       <label for="avatar" style="font-size: 14px;">Profile Picture</label>
-      <input class="form-control" id="avatar" type="file" name="avatar" value="<?php echo $row['avatar']; ?>" required>
+      <input class="form-control" id="avatar" type="file" name="avatar" value="<?php echo $row['avatar']; ?>">
     </div>
     
     
