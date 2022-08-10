@@ -255,7 +255,7 @@ if (mysqli_num_rows($result) > 0) {
         <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $row['lname']; ?>" required>
       </div>
     </div>
-    <div class="form-group pt-3" style="width: 45%;">
+    <div class="form-group pt-3" style="width: 50%;">
       <label for="email" style="font-size: 14px;">Email <span class="text-muted" style="font-size: 10px;">Personal</span></label>
       <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
     </div>
