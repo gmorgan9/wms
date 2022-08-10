@@ -237,8 +237,17 @@ if(isset($_GET['timeID'])) {
 
 <?php if($_SESSION['acc_type'] == 0){ ?>
 <!-- start PAGE-CONTENT -->
+
+
+<?php
+
+          $day = date('w');
+          $week_start = date('Y-m-d', strtotime('-'.(5-$day).' days'));
+          $week_end = date('Y-m-d', strtotime('+'.(5-$day).' days'));
+          $week_num = date('W', strtotime($week_start));
+          ?>
 <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
-<!-- <span class="mx-auto">Timesheet for <span class="text-muted text-capitalize"><?php //echo $_SESSION['fname']; ?></span></span> -->
+<span class="mx-auto">Timesheet for <span class="text-muted text-capitalize"><?php echo $week_start; ?> - <?php echo $week_end; ?></span></span>
     <table class="table">
   <thead>
     <tr>
