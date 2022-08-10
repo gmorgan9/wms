@@ -131,6 +131,10 @@ if(isset($_GET['timeID'])) {
          <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
          <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employee_idno; ?>">
        <div class="form-group pt-3 mx-auto" style="width: 95%;">
+         <label for="jobtitle" style="font-size: 14px;"> <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
+         <input class="form-control" id="date" type="date" name="date" value="" required>
+       </div>
+         <div class="form-group pt-3 mx-auto" style="width: 95%;">
          <label for="date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
          <input class="form-control" id="date" type="date" name="date" value="" required>
        </div>
@@ -252,6 +256,7 @@ if(isset($_GET['timeID'])) {
         <th scope="col" style="font-size: 14px;">ID #</th>
         <th scope="col" style="font-size: 14px;">Date</th>
         <th scope="col" style="font-size: 14px;">Time in / Time out</th>
+        <th scope="col" style="font-size: 14px;">Total Hours</th>
         <th scope="col" style="font-size: 14px;">Status</th>
         <th scope="col" style="font-size: 14px;">Actions</th>
       </tr>
@@ -290,6 +295,16 @@ if(isset($_GET['timeID'])) {
           <th scope="row"><?php echo $idno; ?></th>
           <td><?php echo $date; ?></td>
           <td><?php echo $timein; ?> / <?php echo $timeout; ?></td>
+          <td>
+
+          <?php
+          $totalhrs = $timeout - $timein;
+
+          ?>
+
+
+              <?php echo $totalhrs; ?>
+          </td>
           <?php if($app_status == 'pending') { ?>
             <td><span class="text-primary">Pending</span></td>
           <?php } if($app_status == 'approved') { ?>
