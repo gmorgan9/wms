@@ -221,7 +221,7 @@ if (mysqli_num_rows($result) > 0) {
       <div class="modal-body">
 
 <?php 
-$id = $_GET['employeeID'];
+//$id = $_GET['employeeID'];
 $select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
 $result = mysqli_query($conn, $select);
 
@@ -238,12 +238,12 @@ if (mysqli_num_rows($result) > 0) {
     $fname = $_SESSION['fname'];
     $lname = $_SESSION['lname']; 
     $employee_idno = $_SESSION['employee_idno'];?>
-      <input class="form-control" id="fname" type="text" name="fname" value="<?php echo $fname; ?>">
-      <input class="form-control" id="lname" type="text" name="lname" value="<?php echo $lname; ?>">
-      <input class="form-control" id="idno" type="text" name="idno" value="<?php echo $idno; ?>">
+      <!-- <input class="form-control" id="fname" type="text" name="fname" value="<?php //echo $fname; ?>"> -->
+      <!-- <input class="form-control" id="lname" type="text" name="lname" value="<?php //echo $lname; ?>"> -->
+      <!-- <input class="form-control" id="idno" type="text" name="idno" value="<?php //echo $idno; ?>"> -->
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="new_date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
-      <input class="form-control" id="new_date" type="date" name="new_date" value="<?php echo $row['date']; ?>" required>
+      <label for="new_date" style="font-size: 14px;">Employee ID Number</label>
+      <input class="form-control" id="new_date" type="date" name="new_date" value="<?php echo $row['idno']; ?>" disabled>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="new_timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
