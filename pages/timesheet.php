@@ -258,7 +258,7 @@ if(isset($_GET['timeID'])) {
           $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
           $week_num = date('W', strtotime($week_start));
 
-      $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}'  ";
+      $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}' AND date BETWEEN '$week_start' AND '$week_end' ";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
@@ -281,7 +281,7 @@ if(isset($_GET['timeID'])) {
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
-        <td><?php echo $week_start; ?></td>
+        <td><?php echo $date; ?></td>
         <td><?php echo $timein; ?> / <?php echo $timeout; ?></td>
         <?php if($app_status == 'pending') { ?>
           <td><span class="text-primary">Pending</span></td>
