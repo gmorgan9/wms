@@ -34,7 +34,7 @@ if (mysqli_num_rows($result) > 0) {
             <?php } else { ?>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0">Welcome, <span style="text-transform: capitalize;"><?php echo $row['fname']; ?></span>!</a></li>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="<?php echo BASE_URL . '/pages/profile.php' ?>"><i class="bi bi-person"></i>  Profile</a></li>
-            <?php }?>
+            <?php }}}?>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="<?php echo BASE_URL . '/logout.php' ?>">Logout</a></li>
             <?php } else { ?>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="/">Home</a></li>
@@ -52,4 +52,4 @@ if (mysqli_num_rows($result) > 0) {
   <div class="container pt-4"></div>
 </main> -->
 <!--Main layout-->
-<?php }} ?>
+<?php  ?>
