@@ -358,10 +358,26 @@ $day = date('w');
         <?php } else { ?>
           <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
         <?php } ?>
+        <?php if($date == $tues) { ?>
     <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
+        <?php } else { ?>
+          <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
+        <?php } ?>
+        <?php if($date == $wed) { ?>
     <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
+        <?php } else { ?>
+          <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
+        <?php } ?>
+        <?php if($date == $thurs) { ?>
     <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
+        <?php } else { ?>
+          <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
+        <?php } ?>
+        <?php if($date == $fri) { ?>
     <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
+        <?php } else { ?>
+          <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
+        <?php } ?>
         <!-- <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="timesheet.php?timeID=<?php //echo $timeID; ?>">Delete</a></td> -->
         <?php  ?>
         
