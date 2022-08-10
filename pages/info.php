@@ -9,6 +9,23 @@ if(!isLoggedIn()){
   header('location:' . BASE_URL . '/pages/entry/login.php');
 }
 
+// UPDATE JOB FUNCTION
+if(isset($_POST['update-job'])){
+  $id = $_GET['jobID'];
+  $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
+  $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
+  $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
+  $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
+  $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
+  $reason = mysqli_real_escape_string($conn, $_POST['reason']);
+
+  $update = "UPDATE job SET approval_status = 'pending', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', reason = '$reason' WHERE jobID = '$id'";
+  mysqli_query($conn, $update);
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
+
+};
+// END UPDATE JOB FUNCTION
+
 ?>
 
 <!DOCTYPE html>
@@ -187,7 +204,7 @@ if (mysqli_num_rows($result) > 0) {
       </div>
 
       <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
-        <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-time" class="badge text-bg-secondary">Update Time</button>
+        <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-job" class="badge text-bg-secondary">Update Job</button>
       </div>
       </form>
 
