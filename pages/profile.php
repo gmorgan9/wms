@@ -183,6 +183,15 @@ if (mysqli_num_rows($result) > 0) {
                      <?php } ?>
                     </div>
                   </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Employment Status</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editEmployee" class="badge text-bg-primary" href="edit-employee.php?employeeID=<?php echo $row['employeeID']; ?>">Edit</a>
+                    </div>
+                  </div>
                 </div>
               </div>
               <?php 
