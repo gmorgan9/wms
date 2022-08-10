@@ -95,6 +95,15 @@ if (mysqli_num_rows($result) > 0) {
                     <span class="text-capitalize"><?php echo $row['deptname']; ?></span>
                     </div>
                   </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Pay</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <span class="text-capitalize"><?php echo $row['pay']; ?></span>
+                    </div>
+                  </div>
                   
                   <hr>
                   <div class="row">
