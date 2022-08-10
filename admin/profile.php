@@ -12,29 +12,30 @@ if(!isLoggedIn()){
 }
 
 
-$employeeID = $_SESSION['empID'];
-$select = " SELECT * FROM employee WHERE employeeID = '$employeeID' ";
+$empID = $_SESSION['empID'];
+$select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
 $result = mysqli_query($conn, $select);
 
 if(isset($_POST['update-profile'])){
 
-  $fname = mysqli_real_escape_string($conn, $_POST['fname']);
-  $lname = mysqli_real_escape_string($conn, $_POST['lname']);
-  $uname = mysqli_real_escape_string($conn, $_POST['uname']);
-  $email = mysqli_real_escape_string($conn, $_POST['email']);
-  $gender = mysqli_real_escape_string($conn, $_POST['gender']);
+   $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+   $lname = mysqli_real_escape_string($conn, $_POST['lname']);
+   $uname = mysqli_real_escape_string($conn, $_POST['uname']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $gender = mysqli_real_escape_string($conn, $_POST['gender']);
 
-  $update_select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' ";
+   $update_select = " SELECT * FROM employee WHERE uname = '$uname' && email = '$email' ";
 
-  $update_result = mysqli_query($conn, $update_select);
+   $update_result = mysqli_query($conn, $update_select);
 
-  if(mysqli_num_rows($result) > 0){
-     $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email', gender = '$gender' where employeeID = '$empID' ";
-     mysqli_query($conn, $update);
-     header('Location: ' . $_SERVER['HTTP_REFERER']);
-  } 
+   if(mysqli_num_rows($result) > 0){
+
+      $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email', gender = '$gender' where employeeID = '$empID' ";
+      mysqli_query($conn, $update);
+      $success[] = 'Success';
+      header('Location: ' . $_SERVER['HTTP_REFERER']);
+   } 
 };
-
 
 ?>
 
@@ -44,7 +45,7 @@ if(isset($_POST['update-profile'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>WMS | Admin Profile</title>
+   <title>CAMS | Student Profile</title>
 
    <!-- Custom Styles -->
    <link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/other-style.css?v='. time(); ?>">
@@ -65,7 +66,6 @@ if(isset($_POST['update-profile'])){
         
 <!-- start MAIN -->
 <div class="main"> 
-   
 <?php 
 
 if (mysqli_num_rows($result) > 0) {
@@ -77,15 +77,11 @@ if (mysqli_num_rows($result) > 0) {
     <p class="page_title" style="float: left; padding-top: 2px;">Profile</p>
     <ul class="breadcrumb">
       <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
-      <li>Admin Profile</li>
+      <li>Employee Profile</li>
     </ul>
   </div>
 
-  <!-- <div class="jumbotron jumbotron-fluid bg-white m-2 mx-auto" style="width: 98%;">
-  <div class="container">
-    <h3 class="display-6 text-center" style="padding-top: 5px !important;padding-bottom: 10px !important;">Welcome, <span style="text-transform: capitalize;"><?php //echo $row['fname'] ?>!</span></h3>
-  </div>
-</div> -->
+
 
 
 <div class="page-content mx-auto mt-2">
@@ -181,7 +177,7 @@ if (mysqli_num_rows($result) > 0) {
               <?php 
       }
    } else {
-     echo "0 results ". $row['idno'] ." employee";
+     echo "0 results";
    }
       ?>
    </form>
@@ -193,8 +189,6 @@ if (mysqli_num_rows($result) > 0) {
 
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
-
-
 
 
 <!-- Modal -->
@@ -284,10 +278,6 @@ if (mysqli_num_rows($result) > 0) {
   </div>
   <!-- end modal -->
 </div>
-
-
-
-
 
 </body>
 </html>
