@@ -101,7 +101,7 @@ if (mysqli_num_rows($result) > 0) {
                       <h6 class="mb-0">Pay</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <span class="text-capitalize"><?php echo $row['pay']; ?></span>
+                    <span class="text-capitalize">$<?php echo $row['pay']; ?>.00</span>
                     </div>
                   </div>
                   
