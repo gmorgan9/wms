@@ -114,7 +114,7 @@ if (mysqli_num_rows($result) > 0) {
                       <h6 class="mb-0">Actions</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editEmployee" class="badge text-bg-primary" href="#">Edit</a>
+                    <a class="text-decoration-none badge text-bg-success" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Edit</a>
                     </div>
                   </div>
                 </div>
@@ -140,7 +140,7 @@ if (mysqli_num_rows($result) > 0) {
 
 
 <!-- EDIT MODAL -->
-<div class="modal fade" id="editEmployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
