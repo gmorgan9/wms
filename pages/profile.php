@@ -241,7 +241,7 @@ if (mysqli_num_rows($result) > 0) {
       <!-- <input class="form-control" id="fname" type="text" name="fname" value="<?php //echo $fname; ?>"> -->
       <!-- <input class="form-control" id="lname" type="text" name="lname" value="<?php //echo $lname; ?>"> -->
       <!-- <input class="form-control" id="idno" type="text" name="idno" value="<?php //echo $idno; ?>"> -->
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
+    <div class="form-group pt-3 mx-auto" style="width: 25%;">
       <label for="idno" style="font-size: 14px;">Employee ID Number</label>
       <input class="form-control" id="idno" type="text" name="idno" value="<?php echo $row['idno']; ?>" disabled>
     </div>
