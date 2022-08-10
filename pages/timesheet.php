@@ -294,7 +294,7 @@ if(isset($_GET['timeID'])) {
           <td>
 
           <?php
-          $total_time = round((strtotime($timein) - strtotime($timeout))/3600, 1);
+          $total_time = round((strtotime($timeout) - strtotime($timein))/3600, 1);
           $total = round($total_time / 3600);
           $totalhrs = round($total_time / 60);
           //$maxmin = '59';
