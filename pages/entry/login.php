@@ -51,7 +51,7 @@ if(isset($_POST['submit'])){
           $_SESSION['pass'] = $row['password'];
           $_SESSION['cpass'] = $row['cpassword'];
           header('location:' . BASE_URL . '/pages/dashboard.php');
-      }elseif($row['acc_type'] == 0){
+      }else{
          if (mysqli_query($conn, $sql)) {
             echo "Record updated successfully";
           } else {
