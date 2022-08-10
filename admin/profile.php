@@ -12,8 +12,8 @@ if(!isLoggedIn()){
 }
 
 
-$empID = $_SESSION['empID'];
-$select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
+$employeeID = $_SESSION['empID'];
+$select = " SELECT * FROM employee WHERE employeeID = '$employeeID' ";
 $result = mysqli_query($conn, $select);
 
 if(isset($_POST['update-profile'])){

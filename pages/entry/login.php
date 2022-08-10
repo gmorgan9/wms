@@ -40,16 +40,16 @@ if(isset($_POST['submit'])){
             echo "Error updating record: " . mysqli_error($conn);
           }
          
-          $_SESSION['fname'] = $row['fname'];
-          $_SESSION['empID'] = $row['employeeID'];
-          $_SESSION['employee_idno'] = $row['idno'];
-          $_SESSION['loggedin'] = $row['loggedin'];
-          $_SESSION['lname'] = $row['lname'];
-          $_SESSION['acc_type'] = $row['acc_type'];
-          $_SESSION['uname'] = $row['uname'];
-          $_SESSION['email'] = $row['email'];
-          $_SESSION['pass'] = $row['password'];
-          $_SESSION['cpass'] = $row['cpassword'];
+          $_SESSION['fname']           = $row['fname'];
+          $_SESSION['empID']           = $row['employeeID'];
+          $_SESSION['employee_idno']   = $row['idno'];
+          $_SESSION['loggedin']        = $row['loggedin'];
+          $_SESSION['lname']           = $row['lname'];
+          $_SESSION['acc_type']        = $row['acc_type'];
+          $_SESSION['uname']           = $row['uname'];
+          $_SESSION['email']           = $row['email'];
+          $_SESSION['pass']            = $row['password'];
+          $_SESSION['cpass']           = $row['cpassword'];
           header('location:' . BASE_URL . '/pages/dashboard.php');
       }else{
          if (mysqli_query($conn, $sql)) {
@@ -57,16 +57,16 @@ if(isset($_POST['submit'])){
           } else {
             echo "Error updating record: " . mysqli_error($conn);
           }
-          $_SESSION['fname'] = $row['fname'];
-          $_SESSION['empID'] = $row['employeeID'];
-          $_SESSION['loggedin'] = $row['loggedin'];
-          $_SESSION['employee_idno'] = $row['idno'];
-          $_SESSION['lname'] = $row['lname'];
-          $_SESSION['acc_type'] = $row['acc_type'];
-          $_SESSION['uname'] = $row['uname'];
-         $_SESSION['email'] = $row['email'];
-         $_SESSION['pass'] = $row['password'];
-         $_SESSION['cpass'] = $row['cpassword'];
+          $_SESSION['fname']           = $row['fname'];
+          $_SESSION['empID']           = $row['employeeID'];
+          $_SESSION['loggedin']        = $row['loggedin'];
+          $_SESSION['employee_idno']   = $row['idno'];
+          $_SESSION['lname']           = $row['lname'];
+          $_SESSION['acc_type']        = $row['acc_type'];
+          $_SESSION['uname']           = $row['uname'];
+         $_SESSION['email']            = $row['email'];
+         $_SESSION['pass']             = $row['password'];
+         $_SESSION['cpass']            = $row['cpassword'];
          header('location:' . BASE_URL . '/pages/dashboard.php');
       }
      
