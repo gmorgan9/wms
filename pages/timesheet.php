@@ -335,61 +335,37 @@ if(isset($_GET['timeID'])) {
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Date</h6>
+                      <h6 class="mb-0"><?php echo $tues; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        <?php 
-                        $orgDate = $row['date'];
-                        $date = date("M d, Y", strtotime($orgDate));
-                        ?>
-                        <?php if($row['new_date'] != null && $orgDate != $row['new_date']) { ?>
-                          <span class="text-warning">Change in Progress</span>
-                        <?php } else { ?>
-                          <?php echo $date; ?>
-                        <?php } ?>
+                        
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Time In</h6>
+                      <h6 class="mb-0"><?php echo $wed; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        <?php 
-                        $orgTimein = $row['timein'];
-                        $timein = date("h:i A", strtotime($orgTimein));
-                        ?>
-                     <?php if($row['new_timein'] != null && $orgTimein != $row['new_timein']) { ?>
-                          <span class="text-warning">Change in Progress</span>  
-                        <?php } else { ?>
-                          <?php echo $timein; ?>
-                        <?php } ?>
+                        
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Time Out</h6>
+                      <h6 class="mb-0"><?php echo $thurs; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        <?php 
-                        $orgTimeout = $row['timeout'];
-                        $timeout = date("h:i A", strtotime($orgTimeout));
-                        ?>
-                    <?php if($row['new_timeout'] != null && $orgTimeout != $row['new_timeout']) { ?>
-                          <span class="text-warning">Change in Progress</span>
-                        <?php } else { ?>
-                          <?php echo $timeout; ?>
-                        <?php } ?>
+                        
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Actions</h6>
+                      <h6 class="mb-0"><?php echo $fri; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <a class="text-decoration-none badge text-bg-success" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Edit</a>
+                    
                     </div>
                   </div>
                 </div>
