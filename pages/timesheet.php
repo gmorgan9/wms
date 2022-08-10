@@ -328,9 +328,9 @@ $day = date('w');
     
     
     ?>
-      <label ><?php echo $date; ?></label>
-      <label >(<?php echo date('l', strtotime($date)); ?>)</label><br>
-       
+      <!-- <label ><?php //echo $date; ?></label>
+      <label >(<?php// echo date('l', strtotime($date)); ?>)</label><br>
+        -->
 
 
 
