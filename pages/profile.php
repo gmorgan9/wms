@@ -185,7 +185,7 @@ if (mysqli_num_rows($result) > 0) {
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Employment Status</h6>
+                      <h6 class="mb-0">Actions</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                     <a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editEmployee" class="badge text-bg-primary" href="#">Edit</a>
@@ -221,8 +221,8 @@ if (mysqli_num_rows($result) > 0) {
       <div class="modal-body">
 
 <?php 
-$id = $_GET['timeID'];
-$select = " SELECT * FROM timesheet WHERE timeID = '$id' ";
+$id = $_GET['employeeID'];
+$select = " SELECT * FROM employee WHERE employeeID = '$id' ";
 $result = mysqli_query($conn, $select);
 
 if (mysqli_num_rows($result) > 0) {
