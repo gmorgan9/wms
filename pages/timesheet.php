@@ -332,6 +332,9 @@ if(isset($_GET['timeID'])) {
 <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
 <span class="mx-auto">Timesheet for <span class="text-muted text-capitalize"><?php echo $week_start; ?> - <?php echo $week_end; ?></span></span> 
 
+<?php $result = mysql_fetch_array(mysql_query("SELECT * FROM `timesheet`")) ?>
+
+
 <div class="page-content mx-auto mt-2">
 <form action="" method="post">
       <div class="col-md-8 me-4">
@@ -344,7 +347,7 @@ if(isset($_GET['timeID'])) {
                     <div class="col-sm-9 text-secondary">
                     
 
-                    <?php if($date == $mon) { ?>
+                    <?php if($row['date'] == $mon) { ?>
                       <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
                     <?php } else { ?>
                       <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
@@ -364,7 +367,7 @@ if(isset($_GET['timeID'])) {
                         
 
 
-                    <?php if($date == $tues) { ?>
+                    <?php if($row['date'] == $tues) { ?>
                       <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
                     <?php } else { ?>
                       <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
@@ -385,7 +388,7 @@ if(isset($_GET['timeID'])) {
                         
 
 
-                    <?php if($date == $wed) { ?>
+                    <?php if($row['date'] == $wed) { ?>
                       <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
                     <?php } else { ?>
                       <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
