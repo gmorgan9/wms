@@ -146,12 +146,23 @@ if(isset($_GET['timeID'])) {
       <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-time" class="badge text-bg-secondary">Add Time</button>
     </div>
   </form>
+
+
+
+
   <?php
+
+$sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}'";
+      $all = mysqli_query($conn, $sql);
+      if($all) {
+          while ($row = mysqli_fetch_assoc($all)) {
+
+
 $monday_this_week = date("Y-m-d",strtotime('monday this week'));
 ?>
 <?php for($i=0;$i<=4;$i++): ?>
     <?php $date = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); ?>
-    <?php if($date == date('M d, Y')) { ?>
+     <?php if($date == date('M d, Y') || $date == $row['date']) { ?>
       <label > <span class="text-primary"><?php echo $date; ?></span></label>
       <label ><span class="text-primary">(<?php echo date('l', strtotime($date)); ?>)</span></label><br>
     <?php }else { ?>
@@ -159,7 +170,7 @@ $monday_this_week = date("Y-m-d",strtotime('monday this week'));
       <label >(<?php echo date('l', strtotime($date)); ?>)</label><br>
     <?php } ?>
        
-<?php endfor; ?>
+<?php endfor; }} ?>
 
  <!-- end PAGE-CONTENT -->
 </div>
