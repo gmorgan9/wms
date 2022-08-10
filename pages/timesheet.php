@@ -252,7 +252,13 @@ if(isset($_GET['timeID'])) {
   <tbody class="table-group-divider">
 
   <?php
-      $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}'";
+
+          $day = date('w');
+          $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
+          $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
+          $week_num = date('W', strtotime($week_start));
+
+      $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}' && date BETWEEN '$week_start' AND '$week_end' ";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
@@ -317,63 +323,6 @@ if(isset($_GET['timeID'])) {
     
     
     ?>
-
-
-<!-- <div class="page-content mx-auto mt-2">
-<form action="" method="post">
-      <div class="col-md-8 me-4">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0"><?php //echo $mon; ?></h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      <?php //if($date == $mon) { ?>
-                    <?php //echo $idno; ?>
-                    <?php //} ?>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0"><?php //echo $tues; ?></h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <?php //if($date == $tues) { ?>
-                    <?php //echo $idno; ?>
-                    <?php //} ?>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0"><?php //echo $wed; ?></h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <?php //echo $idno; ?>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0"><?php //echo $thurs; ?></h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <?php //echo $idno; ?>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0"><?php //echo $fri; ?></h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <?php //echo $idno; ?>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
 
 
 
