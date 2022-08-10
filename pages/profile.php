@@ -212,7 +212,7 @@ if (mysqli_num_rows($result) > 0) {
 
 <!-- Modal -->
 <div class="modal fade" id="editEmployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Edit My Profile</h5>
@@ -269,7 +269,7 @@ if (mysqli_num_rows($result) > 0) {
       <label for="email" style="font-size: 14px;">Email <span class="text-muted" style="font-size: 10px;">Personal</span></label>
       <input class="form-control" id="email" type="email" name="email" value="<?php echo $row['email']; ?>" required>
     </div>
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
+    <div class="form-group pt-3" style="width: 48.5%;">
       <label for="avatar" style="font-size: 14px;">Profile Picture</label>
       <input class="form-control" id="avatar" type="file" name="avatar" value="<?php echo $row['avatar']; ?>" required>
     </div>
