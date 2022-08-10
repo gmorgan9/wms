@@ -70,7 +70,7 @@ if(isset($_POST['update-profile'])){
 
 if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
-      $acc_type = $_SESSION['acc_type'];
+      $acc_type = $row['acc_type'];
 ?>
 
   <div class="page-header mx-auto">
@@ -107,11 +107,11 @@ if (mysqli_num_rows($result) > 0) {
                       <h6 class="mb-0">Account Type</h6>
                     </div>
                     <div class="col-sm-9 text-info">
-                    <?php //if($row['acc_type'] == 1) { ?>
-                        <!-- Admin -->
-                     <?php //} if($row['acc_type'] == 0) { ?>
+                    <?php if($row['acc_type'] == 1) { ?>
+                        Admin
+                     <?php } if($row['acc_type'] == 0) { ?>
                         Employee
-                     <?php //} ?>
+                     <?php } ?>
                     </div>
                   </div>
                   <hr>

@@ -177,7 +177,7 @@ if (mysqli_num_rows($result) > 0) {
               <?php 
       }
    } else {
-     echo "0 results";
+     echo "0 results" . $_SESSION['empID'];
    }
       ?>
    </form>
