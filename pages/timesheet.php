@@ -314,7 +314,15 @@ $day = date('w');
 
 ?>
 <?php for($i=0;$i<=4;$i++): ?>
-    <?php $date = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); ?>
+    <?php 
+    $i=1;
+    $monday = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); 
+    $i=2;
+    $tuesday = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week)));
+    
+    
+    
+    ?>
       <label ><?php echo $date; ?></label>
       <label >(<?php echo date('l', strtotime($date)); ?>)</label><br>
        
@@ -328,7 +336,7 @@ $day = date('w');
     <table class="table">
   <thead>
     <tr>
-      <th scope="col" style="font-size: 14px;">Day</th>
+      <th scope="col" style="font-size: 14px;"><?php echo $monday; ?></th>
       <!-- <th scope="col" style="font-size: 14px;">Date</th> -->
       <!-- <th scope="col" style="font-size: 14px;">Time in / Time out</th> -->
       <th scope="col" style="font-size: 14px;">Employee</th>
