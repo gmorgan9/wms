@@ -164,8 +164,8 @@ $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno
           $week_end = date('m-d-Y', strtotime('+'.(5-$day).' days'));
 $monday_this_week = date("Y-m-d",strtotime('monday this week'));
 ?>
-<label ><?php echo $week_start; ?></label>
-<label ><?php echo $week_end; ?></label>
+<label ><?php echo $week_start; ?> - </label>
+<label ><?php echo $week_end; ?></label> <br>
 <?php for($i=0;$i<=4;$i++): ?>
     <?php $date = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); ?>
      <?php if($date == $timesheetDate) { ?>
