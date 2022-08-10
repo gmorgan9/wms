@@ -91,7 +91,7 @@ if (mysqli_num_rows($result) > 0) {
 <form action="" method="post">
       <h3 class="mx-auto" style="width: 95%;">My Profile</h3>
 
-    <div class="row">
+
       <div class="col-md-8 float-start w-25 ms-4">
               <div class="card mb-3">
                 <div class="card-body">
@@ -176,7 +176,6 @@ if (mysqli_num_rows($result) > 0) {
                     </div>
                   </div>
                 </div>
-              </div>
               </div>
               <?php 
       }
