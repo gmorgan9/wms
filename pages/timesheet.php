@@ -146,6 +146,14 @@ if(isset($_GET['timeID'])) {
       <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-time" class="badge text-bg-secondary">Add Time</button>
     </div>
   </form>
+  <?php
+$monday_this_week = date("Y-m-d",strtotime('monday this week'));
+?>
+<?php for($i=0;$i<=4;$i++): ?>
+    <?php $date = date('d-M-Y', strtotime("+$i days", strtotime($monday_this_week))); ?>
+    <label ><?php echo $date; ?></label>
+    <label ><?php echo date('l', strtotime($date)); ?></label><br>   
+<?php endfor; ?>
 
  <!-- end PAGE-CONTENT -->
 </div>
@@ -365,14 +373,7 @@ if(isset($_GET['timeID'])) {
         <?php } ?>
         
    
-        <?php
-$monday_this_week = date("Y-m-d",strtotime('monday this week'));
-?>
-<?php for($i=0;$i<=4;$i++): ?>
-    <?php $date = date('d-M-Y', strtotime("+$i days", strtotime($monday_this_week))); ?>
-    <label ><?php echo $date; ?></label>
-    <label ><?php echo date('l', strtotime($date)); ?></label><br>   
-<?php endfor; ?>
+
       </tbody>
 </table> 
 <?php 
