@@ -361,91 +361,49 @@ if(isset($_GET['timeID'])) {
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Timesheet Entry ID</h6>
+                      <h6 class="mb-0"><?php echo $mon; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <span class="text-capitalize"><?php echo $row['idno']; ?></span>
+                    
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Employee</h6>
+                      <h6 class="mb-0"><?php echo $tues; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                         
-                    <span class="text-capitalize"><?php echo $row['employee_lname']; ?>, <?php echo $row['employee_fname']; ?></span>
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">New Date</h6>
+                      <h6 class="mb-0"><?php echo $wed; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        <?php 
-                        $orgDate = $row['new_date'];
-                        $new_date = date("M d, Y", strtotime($orgDate));
-                        ?>
-                        <?php if($orgDate != $row['date']) { ?>
-                            <span class="text-warning"><?php echo $new_date; ?></span>
-                        <?php } else { ?>
-                            <?php echo $new_date; ?>
-                        <?php } ?>
+                        
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">New Time In</h6>
+                      <h6 class="mb-0"><?php echo $thurs; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        <?php 
-                        $orgTimein = $row['new_timein'];
-                        $new_timein = date("h:i A", strtotime($orgTimein));
-                        ?>
-                        <?php if($orgTimein != $row['timein']) { ?>
-                            <span class="text-warning"><?php echo $new_timein; ?></span>
-                        <?php } else { ?>
-                            <?php echo $new_timein; ?>
-                        <?php } ?>
+                        
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">New Time Out</h6>
+                      <h6 class="mb-0"><?php echo $fri; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        <?php 
-                        $orgTimeout = $row['new_timeout'];
-                        $new_timeout = date("h:i A", strtotime($orgTimeout));
-                        ?>
-                        <?php if($orgTimeout != $row['timeout']) { ?>
-                            <span class="text-warning"><?php echo $new_timeout; ?></span>
-                        <?php } else { ?>
-                            <?php echo $new_timeout; ?>
-                        <?php } ?>
+                        
                     </div>
                   </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Reason</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <?php echo $row['reason']; ?>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Actions</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                        <a class="text-decoration-none badge text-bg-primary" href="javascript:history.back()">Go Back</a>
-                    </div>
-                  </div>
+                  
                 </div>
               </div>
 
