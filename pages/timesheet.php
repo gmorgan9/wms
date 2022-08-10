@@ -258,7 +258,7 @@ if(isset($_GET['timeID'])) {
           $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
           $week_num = date('W', strtotime($week_start));
 
-      $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}' && date BETWEEN '$week_start' AND '$week_end' ";
+      $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}'  ";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
