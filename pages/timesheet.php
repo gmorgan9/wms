@@ -276,7 +276,7 @@ if(isset($_GET['timeID'])) {
 <!-- start PAGE-CONTENT -->
 
 <?php
-      $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}'";
+      $sql = "SELECT * FROM timesheet";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
