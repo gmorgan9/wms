@@ -315,9 +315,15 @@ $day = date('w');
 ?>
     <?php 
     $i=0;
-    $monday = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); 
+    $mon = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); 
     $i=1;
-    $tuesday = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week)));
+    $tues = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week)));
+    $i=2;
+    $wed = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); 
+    $i=3;
+    $thurs = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week)));
+    $i=4;
+    $fri = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); 
     
     
     
@@ -335,11 +341,11 @@ $day = date('w');
     <table class="table">
   <thead>
     <tr>
-      <th scope="col" style="font-size: 14px;"><?php echo $monday; ?></th>
-      <!-- <th scope="col" style="font-size: 14px;">Date</th> -->
-      <!-- <th scope="col" style="font-size: 14px;">Time in / Time out</th> -->
-      <th scope="col" style="font-size: 14px;">Employee</th>
-      <th scope="col" style="font-size: 14px;">Week Num</th>
+      <th scope="col" style="font-size: 14px;"><?php echo $mon; ?></th>
+      <th scope="col" style="font-size: 14px;"><?php echo $tues; ?></th>
+      <th scope="col" style="font-size: 14px;"><?php echo $wed; ?></th>
+      <th scope="col" style="font-size: 14px;"><?php echo $thurs; ?></th>
+      <th scope="col" style="font-size: 14px;"><?php echo $fri; ?></th>
       <th scope="col" style="font-size: 14px;">Actions</th>
     </tr>
   </thead>
