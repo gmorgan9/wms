@@ -149,8 +149,8 @@ if (mysqli_num_rows($result) > 0) {
         <div class="modal-body">
 
   <?php 
-  $id = $_GET['timeID'];
-  $select = " SELECT * FROM timesheet WHERE timeID = '$id' ";
+  $id = $_SESSION['employee_idno'];
+  $select = " SELECT * FROM job WHERE employee_idno = '$id' ";
   $result = mysqli_query($conn, $select);
 
   if (mysqli_num_rows($result) > 0) {
@@ -166,12 +166,12 @@ if (mysqli_num_rows($result) > 0) {
       $fname = $_SESSION['fname'];
       $lname = $_SESSION['lname']; 
       $employee_idno = $_SESSION['employee_idno'];?>
-        <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
-        <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
-        <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employee_idno; ?>">
+        <!-- <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php //echo $fname; ?>">
+        <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php //echo $lname; ?>">
+        <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php //echo $employee_idno; ?>"> -->
       <div class="form-group pt-3 mx-auto" style="width: 95%;">
         <label for="new_date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
-        <input class="form-control" id="new_date" type="date" name="new_date" value="<?php echo $row['date']; ?>" required>
+        <input class="form-control" id="new_date" type="date" name="new_date" value="<?php echo $row['idno']; ?>" required>
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 95%;">
         <label for="new_timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
