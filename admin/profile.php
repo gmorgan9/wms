@@ -93,7 +93,7 @@ if (mysqli_num_rows($result) > 0) {
 
       
 <div class="row">
-      <div class="col-md-8 float-start w-25 ms-4">
+      <div class="col-md-8 float-start w-25 ms-4 me-3">
               <div class="card mb-3">
                 <div class="card-body">
                   <img class="ms-1" src="../../assets/img/pic_holder.jpg" style="height: 250px; width: 250px; border-radius: 150px;" alt="">
@@ -105,7 +105,7 @@ if (mysqli_num_rows($result) > 0) {
 
 
 
-      <div class="col-md-8 float-end me-4">
+      <div class="col-md-8 float-end me-3">
               <div class="card mb-3">
                 <div class="card-body">
                 <div class="row">
