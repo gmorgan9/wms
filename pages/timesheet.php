@@ -366,7 +366,7 @@ if(isset($_GET['timeID'])) {
                     <div class="col-sm-9 text-secondary">
                     
 
-                    <?php if($row['date'] == $mon) { ?>
+                    <?php if($date == $mon) { ?>
         <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
       <?php } else { ?>
         <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
