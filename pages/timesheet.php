@@ -451,7 +451,6 @@ if(isset($_GET['timeID'])) {
    
       </tbody>
 </table>  -->
-<?php } ?>
  <!-- end PAGE-CONTENT -->
 </div>
 <?php } else { ?>
