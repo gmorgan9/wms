@@ -350,41 +350,34 @@ if(isset($_GET['timeID'])) {
     </tr>
   </thead>
   <tbody class="table-group-divider">
-<?php
-  $sql = "SELECT * FROM timesheet WHERE employee_idno = '{$_SESSION['employee_idno']}' ";
-      $all = mysqli_query($conn, $sql);
-      if($all) {
-          while ($row = mysqli_fetch_assoc($all)) {
-            $date = $row['date'];
 
-          }}
-          ?>
+  
     <tr> 
-      <?php if($date == $mon) { ?>
+      <?php if($orgDate == $mon) { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
       <?php } else { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
       <?php } ?>
 
-      <?php if($date == $tues) { ?>
+      <?php if($orgDate == $tues) { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
       <?php } else { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
       <?php } ?>
 
-      <?php if($date == $wed) { ?>
+      <?php if($orgDate == $wed) { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
       <?php } else { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
       <?php } ?>
 
-      <?php if($date == $thurs) { ?>
+      <?php if($orgDate == $thurs) { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
       <?php } else { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
       <?php } ?>
 
-      <?php if($date == $fri) { ?>
+      <?php if($orgDate == $fri) { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
       <?php } else { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
