@@ -319,61 +319,61 @@ if(isset($_GET['timeID'])) {
     ?>
 
 
-<div class="page-content mx-auto mt-2">
+<!-- <div class="page-content mx-auto mt-2">
 <form action="" method="post">
       <div class="col-md-8 me-4">
               <div class="card mb-3">
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0"><?php echo $mon; ?></h6>
+                      <h6 class="mb-0"><?php //echo $mon; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <?php if($date == $mon) { ?>
-                    <?php echo $idno; ?>
-                    <?php } ?>
+                      <?php //if($date == $mon) { ?>
+                    <?php //echo $idno; ?>
+                    <?php //} ?>
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0"><?php echo $tues; ?></h6>
+                      <h6 class="mb-0"><?php //echo $tues; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <?php if($date == $tues) { ?>
-                    <?php echo $idno; ?>
-                    <?php } ?>
+                    <?php //if($date == $tues) { ?>
+                    <?php //echo $idno; ?>
+                    <?php //} ?>
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0"><?php echo $wed; ?></h6>
+                      <h6 class="mb-0"><?php //echo $wed; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <?php echo $idno; ?>
+                    <?php //echo $idno; ?>
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0"><?php echo $thurs; ?></h6>
+                      <h6 class="mb-0"><?php //echo $thurs; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <?php echo $idno; ?>
+                    <?php //echo $idno; ?>
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0"><?php echo $fri; ?></h6>
+                      <h6 class="mb-0"><?php //echo $fri; ?></h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <?php echo $idno; ?>
+                    <?php //echo $idno; ?>
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
 
 
