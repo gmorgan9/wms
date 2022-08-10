@@ -281,7 +281,7 @@ if(isset($_GET['timeID'])) {
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
-        <td><?php echo $date; ?></td>
+        <td><?php echo $week_start; ?></td>
         <td><?php echo $timein; ?> / <?php echo $timeout; ?></td>
         <?php if($app_status == 'pending') { ?>
           <td><span class="text-primary">Pending</span></td>
