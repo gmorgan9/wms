@@ -10,9 +10,6 @@ session_start();
 if(!isLoggedIn()){
    header('location:' . BASE_URL . '/pages/entry/login.php');
 }
-if(!isAdmin()){
-   header('location:' . BASE_URL . '/pages/dashboard.php');
-}
 
 
 $empID = $_SESSION['empID'];
@@ -32,10 +29,8 @@ if(isset($_POST['update-profile'])){
   $update_result = mysqli_query($conn, $update_select);
 
   if(mysqli_num_rows($result) > 0){
-
      $update = "UPDATE employee SET fname = '$fname', lname = '$lname', uname = '$uname', email = '$email', gender = '$gender' where employeeID = '$empID' ";
      mysqli_query($conn, $update);
-     $success[] = 'Success';
      header('Location: ' . $_SERVER['HTTP_REFERER']);
   } 
 };
