@@ -181,7 +181,7 @@ if (mysqli_num_rows($result) > 0) {
               <?php 
       }
    } else {
-     echo "0 results ". $row['idno'];
+     echo "0 results ". $row['idno'] ." employee";
    }
       ?>
    </form>
