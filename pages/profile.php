@@ -11,7 +11,9 @@ if(!isLoggedIn()){
    header('location:' . BASE_URL . '/pages/entry/login.php');
 }
 
-
+$empID = $_SESSION['empID'];
+$select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
+$result = mysqli_query($conn, $select);
 if(isset($_POST['update-profile'])){
 
    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
