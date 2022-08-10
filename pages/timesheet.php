@@ -359,11 +359,13 @@ if(isset($_GET['timeID'])) {
 ?>
   
     <tr> 
+      <td>
       <?php if($date == $mon) { ?>
-        <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
+        <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
       <?php } else { ?>
-        <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
+        <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
       <?php } ?>
+      </td>
 
       <?php if($date == $tues) { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
