@@ -354,50 +354,145 @@ if(isset($_GET['timeID'])) {
 
 ?>
 
+<div class="page-content mx-auto mt-2">
+<form action="" method="post">
+      <div class="col-md-8 me-4">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Timesheet Entry ID</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <span class="text-capitalize"><?php echo $row['idno']; ?></span>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Employee</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        
+                    <span class="text-capitalize"><?php echo $row['employee_lname']; ?>, <?php echo $row['employee_fname']; ?></span>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">New Date</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <?php 
+                        $orgDate = $row['new_date'];
+                        $new_date = date("M d, Y", strtotime($orgDate));
+                        ?>
+                        <?php if($orgDate != $row['date']) { ?>
+                            <span class="text-warning"><?php echo $new_date; ?></span>
+                        <?php } else { ?>
+                            <?php echo $new_date; ?>
+                        <?php } ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">New Time In</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <?php 
+                        $orgTimein = $row['new_timein'];
+                        $new_timein = date("h:i A", strtotime($orgTimein));
+                        ?>
+                        <?php if($orgTimein != $row['timein']) { ?>
+                            <span class="text-warning"><?php echo $new_timein; ?></span>
+                        <?php } else { ?>
+                            <?php echo $new_timein; ?>
+                        <?php } ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">New Time Out</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <?php 
+                        $orgTimeout = $row['new_timeout'];
+                        $new_timeout = date("h:i A", strtotime($orgTimeout));
+                        ?>
+                        <?php if($orgTimeout != $row['timeout']) { ?>
+                            <span class="text-warning"><?php echo $new_timeout; ?></span>
+                        <?php } else { ?>
+                            <?php echo $new_timeout; ?>
+                        <?php } ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Reason</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <?php echo $row['reason']; ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Actions</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <a class="text-decoration-none badge text-bg-primary" href="javascript:history.back()">Go Back</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-    <tr> 
+
+    <!-- <tr> 
       <td>
-      <?php if($row['date'] == $mon) { ?>
+      <?php //if($row['date'] == $mon) { ?>
         <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-      <?php } else { ?>
+      <?php //} else { ?>
         <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
-      <?php } ?>
+      <?php //} ?>
       </td>
 
       <td>
-      <?php if($row['date'] == $tues) { ?>
+      <?php //if($row['date'] == $tues) { ?>
         <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-      <?php } else { ?>
+      <?php //} else { ?>
         <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
-      <?php } ?>
+      <?php //} ?>
 
       <td>
-      <?php if($row['date'] == $wed) { ?>
+      <?php //if($row['date'] == $wed) { ?>
         <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-      <?php } else { ?>
+      <?php //} else { ?>
         <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
-      <?php } ?>
+      <?php //} ?>
       </td>
 
       <td>
-      <?php if($row['date'] == $thurs) { ?>
+      <?php //if($row['date'] == $thurs) { ?>
         <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-      <?php } else { ?>
+      <?php //} else { ?>
         <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
-      <?php } ?>
+      <?php //} ?>
       </td>
 
       <td>
-      <?php if($row['date'] == $fri) { ?>
+      <?php //if($row['date'] == $fri) { ?>
         <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
-      <?php } else { ?>
+      <?php //} else { ?>
         <a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a>
-      <?php } ?>
+      <?php //} ?>
       </td>
         
    
       </tbody>
-</table> 
+</table>  -->
 <?php } ?>
  <!-- end PAGE-CONTENT -->
 </div>
