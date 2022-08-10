@@ -313,7 +313,6 @@ $day = date('w');
            $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
 
 ?>
-<?php for($i=0;$i<=4;$i++): ?>
     <?php 
     $i=1;
     $monday = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); 
@@ -326,7 +325,7 @@ $day = date('w');
       <label ><?php echo $date; ?></label>
       <label >(<?php echo date('l', strtotime($date)); ?>)</label><br>
        
-<?php endfor;  ?>
+
 
 
 
