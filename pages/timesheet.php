@@ -254,8 +254,8 @@ if(isset($_GET['timeID'])) {
   <?php
 
           $day = date('w');
-          $week_start = date('m/d/y', strtotime('-'.(5-$day).' days'));
-          $week_end = date('m/d/y', strtotime('+'.(5-$day).' days'));
+          $week_start = date(strtotime('-'.(5-$day).' days'));
+          $week_end = date(strtotime('+'.(5-$day).' days'));
           $week_num = date('W', strtotime($week_start));
 
       $sql = "SELECT * FROM timesheet where date BETWEEN '$week_start' AND '$week_end' ";
