@@ -12,9 +12,7 @@ if(!isLoggedIn()){
 }
 
 
-$empID = $_SESSION['empID'];
-$select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
-$result = mysqli_query($conn, $select);
+
 
 if(isset($_POST['update-profile'])){
 
@@ -68,6 +66,9 @@ if(isset($_POST['update-profile'])){
 <div class="main"> 
 <?php 
 
+$employID = $_SESSION['empID'];
+$select = " SELECT * FROM employee WHERE employeeID = '$employID' ";
+$result = mysqli_query($conn, $select);
 if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
       $acc_type = $row['acc_type'];
