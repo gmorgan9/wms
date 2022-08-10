@@ -345,15 +345,15 @@ if(isset($_GET['timeID'])) {
   <tbody class="table-group-divider">
 <?php 
 
-$sql = "SELECT * FROM timesheet WHERE date = '$mon' ";
-      $all = mysqli_query($conn, $sql);
-      if($all) {
-          while ($row = mysqli_fetch_assoc($all)) {
+// $sql = "SELECT * FROM timesheet WHERE date = '$mon' ";
+//       $all = mysqli_query($conn, $sql);
+//       if($all) {
+//           while ($row = mysqli_fetch_assoc($all)) {
 
-            $date = $row['date'];
+//             $date = $row['date'];
 
-          }
-        }
+//           }
+//         }
 
 
 ?>
