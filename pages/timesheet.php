@@ -350,34 +350,41 @@ if(isset($_GET['timeID'])) {
     </tr>
   </thead>
   <tbody class="table-group-divider">
+<?php
+  $sql = "SELECT * FROM timesheet";
+      $all = mysqli_query($conn, $sql);
+      if($all) {
+          while ($row = mysqli_fetch_assoc($all)) {
+            $date = $row['date'];
 
-  
+          }}
+          ?>
     <tr> 
-      <?php if($time_date == $mon) { ?>
+      <?php if($date == $mon) { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
       <?php } else { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
       <?php } ?>
 
-      <?php if($time_date == $tues) { ?>
+      <?php if($date == $tues) { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
       <?php } else { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
       <?php } ?>
 
-      <?php if($time_date == $wed) { ?>
+      <?php if($date == $wed) { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
       <?php } else { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
       <?php } ?>
 
-      <?php if($time_date == $thurs) { ?>
+      <?php if($date == $thurs) { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
       <?php } else { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
       <?php } ?>
 
-      <?php if($time_date == $fri) { ?>
+      <?php if($date == $fri) { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a></td>
       <?php } else { ?>
         <td><a style="text-decoration: none;" class="badge text-bg-warning" href="#">None</a></td>
