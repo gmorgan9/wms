@@ -19,7 +19,7 @@
             <?php if(isset($_SESSION['fname'])){ ?>
             <?php if($_SESSION['acc_type'] == 1){ ?>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0">Welcome, <span style="text-transform: capitalize;"><?php echo $_SESSION['fname']; ?></span>!</a></li>
-                <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="<?php echo BASE_URL . '/admin/profile.php' ?>"><i class="bi bi-person"></i>  Profile</a></li>
+                <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="<?php echo BASE_URL . '/pages/profile.php' ?>"><i class="bi bi-person"></i>  Profile</a></li>
             <?php } else { ?>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0">Welcome, <span style="text-transform: capitalize;"><?php echo $_SESSION['fname']; ?></span>!</a></li>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="<?php echo BASE_URL . '/pages/profile.php' ?>"><i class="bi bi-person"></i>  Profile</a></li>
