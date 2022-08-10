@@ -305,12 +305,14 @@ if(isset($_GET['timeID'])) {
 
           // $monday_this_week = date("Y-m-d",strtotime('monday this week'));
 ?>
-<!-- <label ><?php //echo $week_start; ?> - </label>
-<label ><?php //echo $week_end; ?></label> <br> -->
-
-    
+<label ><?php echo $week_start; ?> - </label>
+<label ><?php echo $week_end; ?></label> <br>
+<?php for($i=0;$i<=4;$i++): ?>
+    <?php $date = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); ?>
+      <label ><?php echo $date; ?></label>
+      <label >(<?php echo date('l', strtotime($date)); ?>)</label><br>
        
-
+<?php endfor;  ?>
 
 
 
@@ -332,17 +334,14 @@ if(isset($_GET['timeID'])) {
 
   
     <tr>
-      <?php for($i=0;$i<=4;$i++): ?>
-        <?php $date = date('M d, Y', strtotime("+$i days", strtotime($monday_this_week))); ?>
-      <th scope="row"><?php echo $date; ?>
-      <label >(<?php echo date('l', strtotime($date)); ?>)</label><br></th>
+        <th scope="row"><?php echo $date; ?></th>
         <td><?php echo $employee_fname; ?> <?php echo $employee_lname; ?></td>
         <td><?php echo $week_num; ?></td>
         <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
         <!-- <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="timesheet.php?timeID=<?php //echo $timeID; ?>">Delete</a></td> -->
         <?php  ?>
         
-        <?php endfor;  ?>
+   
       </tbody>
 </table> 
  <!-- end PAGE-CONTENT -->
