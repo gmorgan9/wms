@@ -178,7 +178,7 @@ if(isset($_GET['jobID'])) {
   <tbody class="table-group-divider">
 
   <?php
-      $sql = "SELECT * FROM job";
+      $sql = "SELECT * FROM job WHERE approval_status != 'terminated'";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
