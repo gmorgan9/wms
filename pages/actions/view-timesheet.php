@@ -233,7 +233,7 @@ if(!isLoggedIn()){
                             $date_form = date("M d, Y", strtotime($date));
                           ?>
                         <div class="col-sm-3">
-                          <?php if($orgDate == null) { ?>
+                          <?php if($orgDate == $date) { ?>
                             <h6 class="mb-0">Date</h6>
                           <?php } else { ?>
                             <h6 class="mb-0">New Date</h6>
