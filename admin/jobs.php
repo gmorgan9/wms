@@ -56,6 +56,14 @@ if(isset($_GET['jobID'])) {
     }
   }
 
+  if (isset($_POST['terminated']))
+    {
+        $terUpdateQuery = "UPDATE job SET approval_status = 'terminated' WHERE jobID = '".$_POST['jobID']."'";
+        $terUpdateResult = mysqli_query($conn, $terUpdateQuery);
+        header('location: jobs.php');
+        // $appInsertQuery = "INSERT INTO approved(id,status) VALUES ('".$_POST['row_id']."','Approved')";
+        // $appInsertResult = mysqli_query($conn, $appInsertQuery);
+    }
   
   
   if (isset($_POST['approved']))
