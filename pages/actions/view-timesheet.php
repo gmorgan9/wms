@@ -298,6 +298,7 @@ if(!isLoggedIn()){
                             <?php } ?>
                         </div>
                       </div>
+                      <?php if($row['reason'] != null) { ?>
                       <hr>
                       <div class="row">
                         <div class="col-sm-3">
@@ -307,6 +308,7 @@ if(!isLoggedIn()){
                         <?php echo $row['reason']; ?>
                         </div>
                       </div>
+                      <?php }else {} ?>
                       <hr>
                       <div class="row">
                         <div class="col-sm-3">
