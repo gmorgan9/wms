@@ -222,7 +222,7 @@ if(isset($_GET['jobID'])) {
             // $companyname    = $row['companyname'];
   ?>
     <tr>
-        <th scope="row"><?php echo $idno; ?></th>
+        <th scope="row"><a class="text-decoration-none text-dark" href="actions/view-timesheet.php?jobID=<?php echo $jobid; ?>"><?php echo $idno; ?></a></th>
         <td><?php echo $jobtitle; ?></td>
         <td>
           <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-job.php?jobID=<?php echo $jobid; ?>">View</a>
