@@ -12,26 +12,25 @@ if(!isLoggedIn()){
 }
 
 
-// ADD TIME
-if(isset($_POST['add-time'])){
+// ADD TIME FUNCTION
+  if(isset($_POST['add-time'])) {
+    $timeID = mysqli_real_escape_string($conn, $_POST['jobID']);
+    $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
+    $date = mysqli_real_escape_string($conn, $_POST['date']);
+    $timein = mysqli_real_escape_string($conn, $_POST['timein']);
+    $timeout = mysqli_real_escape_string($conn, $_POST['timeout']);
+    $totalhours = mysqli_real_escape_string($conn, $_POST['totalhours']);
+    $comment = mysqli_real_escape_string($conn, $_POST['comment']);
+    $reason = mysqli_real_escape_string($conn, $_POST['reason']);
+    $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
+    $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
+    $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
 
-  $timeID = mysqli_real_escape_string($conn, $_POST['jobID']);
-  $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
-  $date = mysqli_real_escape_string($conn, $_POST['date']);
-  $timein = mysqli_real_escape_string($conn, $_POST['timein']);
-  $timeout = mysqli_real_escape_string($conn, $_POST['timeout']);
-  $totalhours = mysqli_real_escape_string($conn, $_POST['totalhours']);
-  $comment = mysqli_real_escape_string($conn, $_POST['comment']);
-  $reason = mysqli_real_escape_string($conn, $_POST['reason']);
-  $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
-  $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
-  $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
-
-  $insert = "INSERT INTO timesheet (idno, date, timein, timeout, employee_fname, employee_lname, employee_idno) VALUES('$idno', '$date', '$timein', '$timeout', '$employee_fname', '$employee_lname', '$employee_idno')";
-  mysqli_query($conn, $insert);
-  header('location: timesheet.php');
-
-};
+    $insert = "INSERT INTO timesheet (idno, date, timein, timeout, employee_fname, employee_lname, employee_idno) VALUES('$idno', '$date', '$timein', '$timeout', '$employee_fname', '$employee_lname', '$employee_idno')";
+    mysqli_query($conn, $insert);
+    header('location: timesheet.php');
+  };
+// END ADD TIME FUNCTION
 
 // Delete Department
 if(isset($_GET['timeID'])) {
@@ -50,7 +49,21 @@ if(isset($_GET['timeID'])) {
 
 
 
-  if (isset($_POST['approved']))
+  if (isset($_POST['approved-status']))
+    {
+        $date = mysqli_real_escape_string($conn, $_POST['date']);
+        $timein = mysqli_real_escape_string($conn, $_POST['timein']);
+        $timeout = mysqli_real_escape_string($conn, $_POST['timeout']);
+        
+
+        $appUpdateQuery = "UPDATE timesheet SET date = '$date', timein = '$timein', timeout = '$timeout', new_date = null, new_timein = null, new_timeout = null, reason = null, approval_status = 'approved' WHERE timeID = '".$_POST['timeID']."'";
+        $appUpdateResult = mysqli_query($conn, $appUpdateQuery);
+        header('location: timesheet.php');
+        // $appInsertQuery = "INSERT INTO approved(id,status) VALUES ('".$_POST['row_id']."','Approved')";
+        // $appInsertResult = mysqli_query($conn, $appInsertQuery);
+    }
+
+    if (isset($_POST['approved-time']))
     {
         $date = mysqli_real_escape_string($conn, $_POST['date']);
         $timein = mysqli_real_escape_string($conn, $_POST['timein']);
@@ -198,6 +211,7 @@ if(isset($_GET['timeID'])) {
           <th scope="row"><a class="text-decoration-none text-dark" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>"><?php echo $idno; ?></a></th>
           <td>
             <div class="forms d-flex" style="">
+          <?php if($new_date == null && $new_timein == null && $new_timeout == null) { ?>
           <form class="me-2" method="post" action="">
           <?php $timeid = $row['timeID']; ?>
             <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
@@ -207,6 +221,12 @@ if(isset($_GET['timeID'])) {
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved"><span class="badge text-bg-success">Approve</span></button>
           </form>
           &nbsp;
+          <?php } else { ?>
+          <form method="post" action="">
+            <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
+            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="rejected"><span class="badge text-bg-danger">Reject</span></button>
+          </form>
+          <?php } ?>
           <form method="post" action="">
             <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="rejected"><span class="badge text-bg-danger">Reject</span></button>
