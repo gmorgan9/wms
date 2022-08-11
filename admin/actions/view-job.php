@@ -280,10 +280,17 @@ if(!isLoggedIn()){
         <label for="start_date" style="font-size: 14px;">Start Date</label>
         <input class="form-control" id="start_date" type="date" name="start_date" value="<?php echo $row['start_date']; ?>">
       </div>
-      <div class="form-group pt-3">
-        <label for="end_date" style="font-size: 14px;">End Date</label>
-        <input class="form-control" id="end_date" type="date" name="end_date" value="<?php echo $row['end_date']; ?>">
-      </div>
+      <?php if($row['end_date'] == null) { ?>
+        <div class="form-group pt-3">
+          <label for="end_date" style="font-size: 14px;">End Date</label>
+          <input class="form-control" id="end_date" type="date" name="end_date" value="null">
+        </div>
+      <?php } else { ?>
+        <div class="form-group pt-3">
+          <label for="end_date" style="font-size: 14px;">End Date</label>
+          <input class="form-control" id="end_date" type="date" name="end_date" value="<?php echo $row['end_date']; ?>">
+        </div>
+      <?php } ?>
       <div class="form-group pt-3">
         <label for="note" style="font-size: 14px;">Notes</label>
         <textarea class="form-control" id="note" type="text" name="note" value="<?php echo $row['note']; ?>"></textarea>
