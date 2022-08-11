@@ -12,7 +12,7 @@ if(!isLoggedIn()){
 }
 
 
-// Add Department
+// ADD TIME
 if(isset($_POST['add-time'])){
 
   $timeID = mysqli_real_escape_string($conn, $_POST['jobID']);
@@ -262,7 +262,7 @@ if(isset($_GET['timeID'])) {
     <?php
 
             $day = date('w');
-            $week_start = date('Y-m-d', strtotime('-'.(5-$day).' days'));
+            $week_start = date('Y-m-d', strtotime('-'.(7-$day).' days'));
             $week_end = date('Y-m-d', strtotime('+'.(5-$day).' days'));
             $week_num = date('W', strtotime($week_start));
 
