@@ -98,10 +98,10 @@ if(!isLoggedIn()){
                       </div>
                       <div class="col-sm-9 text-secondary">
                         <?php if(!isset($jobtitle)) { ?>
-                          not
-                          <?php } else { ?>
-                      <span class="text-capitalize"><?php echo $jobtitle; ?></span>
-                      <?php } ?>
+                          <span class="text-capitalize">No Current Job</span>
+                        <?php } else { ?>
+                          <span class="text-capitalize"><?php echo $jobtitle; ?></span>
+                        <?php } ?>
                       </div>
                     </div>
                     <hr>
@@ -110,7 +110,11 @@ if(!isLoggedIn()){
                         <h6 class="mb-0">Company</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                      <span class="text-capitalize"><?php echo $companyname; ?></span>
+                        <?php if(!isset($companyname)) { ?>
+                          <span class="text-capitalize">No Current Company</span>
+                        <?php } else { ?>
+                          <span class="text-capitalize"><?php echo $companyname; ?></span>
+                        <?php } ?>
                       </div>
                     </div>
                     <hr>
@@ -119,7 +123,11 @@ if(!isLoggedIn()){
                         <h6 class="mb-0">Department</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                      <span class="text-capitalize"><?php echo $deptname; ?></span>
+                        <?php if(!isset($deptname)) { ?>
+                          <span class="text-capitalize">No Current Department</span>
+                        <?php } else { ?>
+                          <span class="text-capitalize"><?php echo $deptname; ?></span>
+                        <?php } ?>
                       </div>
                     </div>
                     <hr>
@@ -128,7 +136,11 @@ if(!isLoggedIn()){
                         <h6 class="mb-0">Pay</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                      <span class="text-capitalize">$<?php echo $pay; ?>.00</span>
+                      <?php if(!isset($pay)) { ?>
+                          <span class="text-capitalize">No Current Pay</span>
+                        <?php } else { ?>
+                          <span class="text-capitalize">$<?php echo $pay; ?>.00</span>
+                        <?php } ?>
                       </div>
                     </div>
                     <hr>
@@ -137,7 +149,9 @@ if(!isLoggedIn()){
                         <h6 class="mb-0">Status</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                        <?php if($status == 'active') { ?>
+                      <?php if(!isset($jobtitle)) { ?>
+                          <span class="text-capitalize">No Current Job</span>
+                        <?php } if($status == 'active') { ?>
                           <span class="text-capitalize text-success"><?php echo $status; ?></span>
                         <?php } if($status == 'inactive') { ?>
                           <span class="text-capitalize text-danger"><?php echo $status; ?></span>
