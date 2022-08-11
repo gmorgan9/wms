@@ -94,7 +94,7 @@ if(!isLoggedIn()){
       
     <div class="page-content mx-auto mt-2">
     <form action="" method="post">
-    <h3 class="mx-auto">Timesheet View</h3>
+    <h3 class="text-center">Timesheet View</h3>
           <div class="col-md-8 me-4">
                   <div class="card mb-3">
                     <div class="card-body">
