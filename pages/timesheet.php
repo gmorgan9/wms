@@ -238,7 +238,7 @@ if(isset($_GET['timeID'])) {
     <!-- start PAGE-CONTENT -->
     <?php
       $day = date('w');
-      $week_start = date('Y-m-d', strtotime('-'.(5-$day).' days'));
+      $week_start = date('Y-m-d', strtotime('-'.(7-$day).' days'));
       $week_end = date('Y-m-d', strtotime('+'.(5-$day).' days'));
       $week_num = date('W', strtotime($week_start));
       $display_week_start = date('F d, Y', strtotime('-'.(7-$day).' days'));
