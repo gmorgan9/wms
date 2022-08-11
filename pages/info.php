@@ -67,7 +67,7 @@ if(!isLoggedIn()){
     <?php 
 
     $empID = $_SESSION['employee_idno'];
-    $select = " SELECT * FROM job WHERE employee_idno = '$empID' ";
+    $select = " SELECT * FROM job WHERE employee_idno = '{$_SESSION['employee_idno']}' ";
     $result = mysqli_query($conn, $select);
     if (mysqli_num_rows($result) > 0) {
      while($row = mysqli_fetch_assoc($result)) {
