@@ -204,15 +204,15 @@ if(isset($_GET['timeID'])) {
           <th scope="row"><a class="text-decoration-none text-dark" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>"><?php echo $idno; ?></a></th>
           <td>
             <div class="forms d-flex" style="">
-          <?php if($new_date == null && $new_timein == null && $new_timeout == null) { ?>
-          <form class="me-2" method="post" action="">
-          <?php $timeid = $row['timeID']; ?>
-            <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
-            <input type="hidden" name="date" value="<?php echo $new_date; ?>" />
-            <input type="hidden" name="timein" value="<?php echo $new_timein; ?>" />
-            <input type="hidden" name="timeout" value="<?php echo $new_timeout; ?>" />
-            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-status"><span class="badge text-bg-success">Approve</span></button>
-          </form>
+          <?php if(($new_date == null) && ($new_timein == null) && ($new_timeout == null)) { ?>
+            <form class="me-2" method="post" action="">
+            <?php $timeid = $row['timeID']; ?>
+              <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
+              <input type="hidden" name="date" value="<?php echo $new_date; ?>" />
+              <input type="hidden" name="timein" value="<?php echo $new_timein; ?>" />
+              <input type="hidden" name="timeout" value="<?php echo $new_timeout; ?>" />
+              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-status"><span class="badge text-bg-success">Approve</span></button>
+            </form>
           &nbsp;
           <?php } else { ?>
             &nbsp;
