@@ -97,7 +97,11 @@ if(!isLoggedIn()){
                         <h6 class="mb-0">Current Job</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
+                        <?php if(!isset($jobtitle)) { ?>
+                          not
+                          <?php } else { ?>
                       <span class="text-capitalize"><?php echo $jobtitle; ?></span>
+                      <?php } ?>
                       </div>
                     </div>
                     <hr>
