@@ -10,10 +10,9 @@ session_start();
 if(!isLoggedIn()){
    header('location:' . BASE_URL . '/pages/entry/login.php');
 }
-// if(!isAdmin()){
-//    header('location:' . BASE_URL . '/pages/dashboard.php');
-// }
-
+if(!isAdmin()){
+   header('location:' . BASE_URL . '/pages/dashboard.php');
+}
 
 // UPDATE TIME FUNCTION
   if(isset($_POST['update-job'])){
@@ -42,11 +41,6 @@ if(!isLoggedIn()){
     }
   };  
 // END UPDATE TIME FUNCTION
-
-
-
-
-
 
 ?>
 
