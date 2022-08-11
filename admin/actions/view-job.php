@@ -31,9 +31,15 @@ if(!isAdmin()){
     $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
     $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
 
+    if(!isset($end_date)) {
+    $update = "UPDATE job SET approval_status = 'approved', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = null, note = '$note' WHERE jobID = '$id'";
+    mysqli_query($conn, $update);
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    } else {
     $update = "UPDATE job SET approval_status = 'approved', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = '$end_date', note = '$note' WHERE jobID = '$id'";
     mysqli_query($conn, $update);
     header('Location: ' . $_SERVER['HTTP_REFERER']);
+    }
   };  
 // END UPDATE TIME FUNCTION
 
