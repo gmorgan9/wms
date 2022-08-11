@@ -68,10 +68,10 @@ if (mysqli_num_rows($result) > 0) {
 
 <div class="page-content mx-auto mt-2">
 <form action="" method="post">
-      <h3 class="mx-auto">Job View</h3>
+      <h3 class="text-center">Job View</h3>
 
 
-      <div class="col-md-8">
+      <div class="col-md-8 mx-auto">
               <div class="card mb-3">
                 <div class="card-body">
                   <div class="row">
