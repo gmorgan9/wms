@@ -144,7 +144,7 @@ if(!isAdmin()){
                       <?php if($row['pay'] == null) { ?>
                         <span class="text-warning">Needs a Pay/Salary.</span>
                       <?php } else { ?>
-                        <?php echo $row['pay']; ?>
+                        $<?php echo $row['pay']; ?>.00
                       <?php } ?>
                     </div>
                   </div>
