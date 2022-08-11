@@ -72,6 +72,7 @@ if(!isLoggedIn()){
     $result = mysqli_query($conn, $select);
     if (mysqli_num_rows($result) > 0) {
      while($row = mysqli_fetch_assoc($result)) {
+        $jobID = $row['jobID'];
         $jobtitle = $row['jobtitle'];
         $companyname = $row['companyname'];
         $deptname = $row['deptname'];
@@ -277,7 +278,7 @@ if(!isLoggedIn()){
 
     <?php 
     $id = $_SESSION['employee_idno'];
-    $select = " SELECT * FROM job WHERE employee_idno = '$id' ";
+    $select = " SELECT * FROM job WHERE employee_idno = '$id' AND status = 'active' ";
     $result = mysqli_query($conn, $select);
 
     if (mysqli_num_rows($result) > 0) {
