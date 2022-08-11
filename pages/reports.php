@@ -66,10 +66,10 @@ if(!isLoggedIn()){
           <td><i class="bi bi-people"></i> Employee Report</td>
         </tr>
         <tr>
-          <td>Employee Timesheet Report</td>
+          <td><i class="bi bi-clock"></i> Employee Timesheet Report</td>
         </tr>
         <tr>
-          <td>Job Report</td>
+          <td><i class="bi bi-briefcase"></i> Job Report</td>
         </tr>
       </tbody>
     </table> 
