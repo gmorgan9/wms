@@ -63,13 +63,13 @@ if(!isLoggedIn()){
       </thead>
       <tbody class="table-group-divider">
         <tr>
-          <td><i class="bi bi-people"></i> Employee Report</td>
+          <td><a href=""><i class="bi bi-people"></i> Employee Report</a></td>
         </tr>
         <tr>
-          <td><i class="bi bi-clock"></i> Employee Timesheet Report</td>
+          <td><a href=""><i class="bi bi-clock"></i> Employee Timesheet Report</a></td>
         </tr>
         <tr>
-          <td><i class="bi bi-briefcase"></i> Job Report</td>
+          <td><a href=""><i class="bi bi-briefcase"></i> Job Report</a></td>
         </tr>
       </tbody>
     </table> 
