@@ -203,7 +203,7 @@ if(isset($_GET['jobID'])) {
         <!-- <td><?php //echo $companyname; ?></td> -->
         <td>
           <form method="post" action="">
-            <input type="hidden" name="jobID" value="<?php echo $jobid; ?>" />
+            <input type="text" name="jobID" value="<?php echo $jobid; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="terminated"><span class="badge text-bg-danger">Delete</span></button>
           </form>
         </td>
