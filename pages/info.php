@@ -111,7 +111,7 @@ if(!isLoggedIn()){
                       </div>
                       <div class="col-sm-9 text-secondary">
                         <?php if(!isset($companyname)) { ?>
-                          <span class="text-capitalize">No Current Company</span>
+                          <span class="text-capitalize">No Current Job</span>
                         <?php } else { ?>
                           <span class="text-capitalize"><?php echo $companyname; ?></span>
                         <?php } ?>
@@ -124,7 +124,7 @@ if(!isLoggedIn()){
                       </div>
                       <div class="col-sm-9 text-secondary">
                         <?php if(!isset($deptname)) { ?>
-                          <span class="text-capitalize">No Current Department</span>
+                          <span class="text-capitalize">No Current Job</span>
                         <?php } else { ?>
                           <span class="text-capitalize"><?php echo $deptname; ?></span>
                         <?php } ?>
@@ -137,7 +137,7 @@ if(!isLoggedIn()){
                       </div>
                       <div class="col-sm-9 text-secondary">
                       <?php if(!isset($pay)) { ?>
-                          <span class="text-capitalize">No Current Pay</span>
+                          <span class="text-capitalize">No Current Job</span>
                         <?php } else { ?>
                           <span class="text-capitalize">$<?php echo $pay; ?>.00</span>
                         <?php } ?>
@@ -165,7 +165,11 @@ if(!isLoggedIn()){
                         <h6 class="mb-0">Actions</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                      <a class="text-decoration-none badge text-bg-success" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Edit</a>
+                      <?php if(!isset($jobtitle)) { ?>
+                          <span class="text-capitalize">No Current Job</span>
+                        <?php } else { ?>
+                          <a class="text-decoration-none badge text-bg-success" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Edit</a>
+                        <?php } ?>
                       </div>
                     </div>
                   </div>
