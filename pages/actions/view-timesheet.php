@@ -284,14 +284,14 @@ if(!isLoggedIn()){
                             $timeout_form = date("h:i A", strtotime($Timeout));
                             ?>
                         <div class="col-sm-3">
-                          <?php if($orgTimeout == $Timeout || $orgTimeout == null) { ?>
+                          <?php if($orgTimeout == $Timeout) { ?>
                             <h6 class="mb-0">Time Out</h6>
                           <?php } else { ?>
                             <h6 class="mb-0">New Time Out</h6>
                           <?php } ?>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          <?php if($orgTimeout == $Timeout) { ?>
+                          <?php if($orgTimeout == $Timeout || $orgTimeout == null) { ?>
                                 <?php echo $timeout_form; ?>
                             <?php } else { ?>
                               <span class="text-warning"><?php echo $new_timeout; ?>&nbsp;&nbsp;<span class="text-warning" style="font-size: 10px;">Change in Progress</span></span>
