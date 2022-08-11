@@ -245,7 +245,7 @@ if(isset($_GET['timeID'])) {
       $display_week_end   = date('F d, Y', strtotime('+'.(5-$day).' days'));
     ?>
     <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
-    <p class="text-center fs-4"><span>Timesheet for <span class="text-muted text-capitalize"><?php echo $display_week_start; ?> - <?php echo $display_week_end; ?></span></span></p>
+    <p class="text-center fs-4"><span>Timesheet for <span class="text-muted text-capitalize"><?php echo $week_start; ?> - <?php echo $display_week_end; ?></span></span></p>
       <table class="table">
     <thead>
       <tr>
