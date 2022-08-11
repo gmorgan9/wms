@@ -33,42 +33,22 @@ if(isset($_POST['submit'])){
 
       $row = mysqli_fetch_array($result);
       $sql = "UPDATE employee SET loggedin='1' WHERE uname='$uname'";
-      if($row['acc_type'] == 1){
-         if (mysqli_query($conn, $sql)) {
-            echo "Record updated successfully";
-          } else {
-            echo "Error updating record: " . mysqli_error($conn);
-          }
-         
-          $_SESSION['fname']           = $row['fname'];
-          $_SESSION['empID']           = $row['employeeID'];
-          $_SESSION['employee_idno']   = $row['idno'];
-          $_SESSION['loggedin']        = $row['loggedin'];
-          $_SESSION['lname']           = $row['lname'];
-          $_SESSION['acc_type']        = $row['acc_type'];
-          $_SESSION['uname']           = $row['uname'];
-          $_SESSION['email']           = $row['email'];
-          $_SESSION['pass']            = $row['password'];
-          $_SESSION['cpass']           = $row['cpassword'];
-          header('location:' . BASE_URL . '/pages/dashboard.php');
-      }else{
-         if (mysqli_query($conn, $sql)) {
-            echo "Record updated successfully";
-          } else {
-            echo "Error updating record: " . mysqli_error($conn);
-          }
-          $_SESSION['fname']           = $row['fname'];
-          $_SESSION['empID']           = $row['employeeID'];
-          $_SESSION['loggedin']        = $row['loggedin'];
-          $_SESSION['employee_idno']   = $row['idno'];
-          $_SESSION['lname']           = $row['lname'];
-          $_SESSION['acc_type']        = $row['acc_type'];
-          $_SESSION['uname']           = $row['uname'];
-         $_SESSION['email']            = $row['email'];
-         $_SESSION['pass']             = $row['password'];
-         $_SESSION['cpass']            = $row['cpassword'];
-         header('location:' . BASE_URL . '/pages/dashboard.php');
-      }
+      if (mysqli_query($conn, $sql)) {
+         echo "Record updated successfully";
+       } else {
+         echo "Error updating record: " . mysqli_error($conn);
+       }
+       $_SESSION['fname']           = $row['fname'];
+       $_SESSION['empID']           = $row['employeeID'];
+       $_SESSION['loggedin']        = $row['loggedin'];
+       $_SESSION['employee_idno']   = $row['idno'];
+       $_SESSION['lname']           = $row['lname'];
+       $_SESSION['acc_type']        = $row['acc_type'];
+       $_SESSION['uname']           = $row['uname'];
+      $_SESSION['email']            = $row['email'];
+      $_SESSION['pass']             = $row['password'];
+      $_SESSION['cpass']            = $row['cpassword'];
+      header('location:' . BASE_URL . '/pages/dashboard.php');
      
    }else{
       $error[] = 'incorrect email or password!';
