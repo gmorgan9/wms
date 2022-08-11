@@ -205,9 +205,9 @@ if(isset($_GET['timeID'])) {
           <th scope="row"><a class="text-decoration-none text-dark" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>"><?php echo $idno; ?></a></th>
           <td>
             <?php if(($new_date != null) && ($new_timein != null) && ($new_timeout != null)) { ?>
-              Time Change
+              Change
             <?php } else { ?>
-              Time Submission
+              Submission
             <?php } ?>
 
 
