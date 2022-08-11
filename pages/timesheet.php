@@ -204,9 +204,14 @@ if(isset($_GET['timeID'])) {
     ?>
       <tr>
           <th scope="row"><a class="text-decoration-none text-dark" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>"><?php echo $idno; ?></a></th>
-          <!-- <td>
+          <td>
+            <?php if($row['new_idno'] != null) { ?>
+              Change
+            <?php } else { ?>
+              Submission 
+            <?php } ?>
 
-          </td> -->
+          </td>
           <td>
             <div class="forms d-flex" style="">
               <?php if($row['new_idno'] != null) { ?>
