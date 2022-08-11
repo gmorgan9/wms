@@ -54,9 +54,10 @@ if(isset($_GET['timeID'])) {
         $date = mysqli_real_escape_string($conn, $_POST['date']);
         $timein = mysqli_real_escape_string($conn, $_POST['timein']);
         $timeout = mysqli_real_escape_string($conn, $_POST['timeout']);
+        $new_idno = rand(1000000, 9999999); // figure how to not allow duplicates
         
 
-        $appUpdateQuery = "UPDATE timesheet SET date = '$date', timein = '$timein', timeout = '$timeout', new_date = null, new_timein = null, new_timeout = null, reason = null, approval_status = 'approved' WHERE timeID = '".$_POST['timeID']."'";
+        $appUpdateQuery = "UPDATE timesheet SET new_idno = '$new_idno', date = '$date', timein = '$timein', timeout = '$timeout', new_date = null, new_timein = null, new_timeout = null, reason = null, approval_status = 'approved' WHERE timeID = '".$_POST['timeID']."'";
         $appUpdateResult = mysqli_query($conn, $appUpdateQuery);
         header('location: timesheet.php');
         // $appInsertQuery = "INSERT INTO approved(id,status) VALUES ('".$_POST['row_id']."','Approved')";
@@ -204,14 +205,6 @@ if(isset($_GET['timeID'])) {
       <tr>
           <th scope="row"><a class="text-decoration-none text-dark" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>"><?php echo $idno; ?></a></th>
           <td>
-            <?php if(($new_date != null) || ($new_timein != null) || ($new_timeout != null)) { ?>
-              Change
-            <?php } else { ?>
-              Submission
-            <?php } ?>
-
-
-
 
           </td>
           <td>
