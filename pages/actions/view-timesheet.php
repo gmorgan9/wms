@@ -190,6 +190,7 @@ if(!isLoggedIn()){
     if (mysqli_num_rows($result) > 0) {
        while($row = mysqli_fetch_assoc($result)) {
           //$acc_type = $row['acc_type'];
+
     ?>
       <div class="page-header mx-auto">
         <p class="page_title" style="float: left; padding-top: 2px;"></p>
@@ -239,7 +240,7 @@ if(!isLoggedIn()){
                               <?php if($orgDate != $row['date']) { ?>
                                 <span class="text-warning"><?php echo $new_date; ?></span>
                               <?php } else { ?>
-                                <?php echo $date; ?>
+                                <?php echo $row['date']; ?>
                               <?php } ?>
                             <?php //} ?>
                         </div>
