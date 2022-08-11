@@ -213,13 +213,15 @@ if (mysqli_num_rows($result) > 0) {
         <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
         <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
         <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employee_idno; ?>">
-      <div class="form-group pt-3 mx-auto" style="width: 95%;">
-        <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
-        <input class="form-control" id="companyname" type="text" name="companyname" value="<?php echo $row['companyname']; ?>" required>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 95%;">
-        <label for="deptname" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
-        <input class="form-control" id="deptname" type="text" name="deptname" value="<?php echo $row['deptname']; ?>" required>
+      <div class="row">
+        <div class="form-group pt-3 mx-auto" style="width: 48%;">
+          <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
+          <input class="form-control" id="companyname" type="text" name="companyname" value="<?php echo $row['companyname']; ?>" required>
+        </div>
+        <div class="form-group pt-3 mx-auto" style="width: 48%;">
+          <label for="deptname" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
+          <input class="form-control" id="deptname" type="text" name="deptname" value="<?php echo $row['deptname']; ?>" required>
+        </div>
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 95%;">
         <label for="jobtitle" style="font-size: 14px;">Job Title / Position <span class="text-muted" style="font-size: 10px;">e.g. "Cheif Executive Officer"</span></label>
