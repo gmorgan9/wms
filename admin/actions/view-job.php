@@ -244,12 +244,10 @@ if (mysqli_num_rows($result) > 0) {
         <textarea class="form-control" id="reason" type="text" name="reason" value="" required></textarea>
       </div>
 
-      <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="margin-bottom: 10px;">
-        <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-time" class="badge text-bg-secondary">Update Time</button>
-      </div>
-      </form>
+      
+      
 
-                <?php }} ?>
+                
 
 
 
@@ -258,9 +256,13 @@ if (mysqli_num_rows($result) > 0) {
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="margin-bottom: 10px;">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-time" class="badge text-bg-secondary">Update Time</button>
+          </div>
         </div>
-
+        </form>
+        <?php }} ?>
       </div>
     </div>
     
