@@ -226,6 +226,10 @@ if (mysqli_num_rows($result) > 0) {
         <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="<?php echo $row['jobtitle']; ?>" required>
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 95%;">
+        <label for="pay" style="font-size: 14px;">Pay</label>
+        <input class="form-control" id="pay" type="number" name="pay" value="<?php echo $row['pay']; ?>">
+      </div>
+      <div class="form-group pt-3 mx-auto" style="width: 95%;">
         <label for="start_date" style="font-size: 14px;">Start Date</label>
         <input class="form-control" id="start_date" type="date" name="start_date" value="<?php echo $row['start_date']; ?>">
       </div>
