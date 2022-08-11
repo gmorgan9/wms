@@ -94,7 +94,7 @@ $week_end = date('Y-m-d', strtotime('+'.(5-$day).' days'));
       <?php } else { ?>
         <h6 class="card-subtitle mb-2 text-muted text-end" style="font-size: 40px !important;"><?php echo $rowcount; ?></h6>
       <?php } ?>
-    <p class="card-text text-end"><a href="#" class="detail-btn" style="">View Details</a></p>
+    <p class="card-text text-end"><a href="timesheet.php" class="detail-btn" style="">View Details</a></p>
     </div>
     <p style="float: left; font-size: 40px; margin-top: 20px;"><i class="bi bi-file-earmark-text"></i></p>
     <?php } ?>
