@@ -31,7 +31,7 @@ if(!isLoggedIn()){
     </style>
 
 
-    <title>ETES | Dashboard</title>
+    <title>WMS | Dashboard</title>
 </head>
 <body>
     
@@ -60,11 +60,23 @@ if(!isLoggedIn()){
   <div class="card" style="width: 24.1rem; margin-right: 10px; border-radius: 0 !important; border-color: #fff;">
   <div class="card-body">
   <div class="card-content" style="float: right;">
+  <?php 
+
+$day = date('w');
+$week_start = date('Y-m-d', strtotime('-'.(7-$day).' days'));
+$week_end = date('Y-m-d', strtotime('+'.(5-$day).' days'));
+
+
+  $sql = " SELECT * FROM timesheet WHERE date BETWEEN '$week_start' AND '$week_end'";
+                if ($result = mysqli_query($conn, $sql)) {
+                    $rowcount = mysqli_num_rows( $result );
+                    ?>
     <h5 class="card-title text-end">Total Timesheets</h5>
-    <h6 class="card-subtitle mb-2 text-muted text-end" style="font-size: 40px !important;">3</h6>
+    <h6 class="card-subtitle mb-2 text-muted text-end" style="font-size: 40px !important;"><?php echo $rowcount; ?></h6>
     <p class="card-text text-end"><a href="#" class="detail-btn" style="">View Details</a></p>
     </div>
     <p style="float: left; font-size: 40px; margin-top: 20px;"><i class="bi bi-briefcase"></i></p>
+    <?php }?>
   </div>
 </div>
 

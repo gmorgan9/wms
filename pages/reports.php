@@ -39,16 +39,32 @@ if(!isLoggedIn()){
 
 
 <?php include(ROOT_PATH . "/app/includes/sidebar.php") ?>
-        
-<div class="main">
-  <div class="page-header mx-auto">
-    <p class="page_title" style="float: left; padding-top: 2px;">Reports</p>
-    <ul class="breadcrumb">
-      <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
-      <li>Reports</li>
-    </ul>
+
+<!-- START MAIN -->
+  <div class="main">
+    <div class="page-header mx-auto">
+      <p class="page_title" style="float: left; padding-top: 2px;">Reports</p>
+      <ul class="breadcrumb">
+        <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
+        <li>Reports</li>
+      </ul>
+    </div>
+
+
+  <!-- START REPORTS -->
+
+
+
+
+
+
+
+
+
+
+
   </div>
-</div>
+<!-- END MAIN -->
 
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
