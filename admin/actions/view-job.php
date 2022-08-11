@@ -292,6 +292,21 @@ if(!isAdmin()){
         <label for="note" style="font-size: 14px;">Notes</label>
         <textarea class="form-control" id="note" type="text" name="note"><?php echo $row['note']; ?></textarea>
       </div>
+      <?php if($row['status'] == 1) { ?>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="1" id="status" name="status" checked>
+          <label class="form-check-label" for="status">
+          Checked checkbox
+          </label>
+        </div>
+      <?php } else { ?>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="0" id="status" name="status">
+          <label class="form-check-label" for="status">
+          Checked checkbox
+          </label>
+        </div>
+      <?php } ?>
 
         </div>
         <div class="modal-footer">
