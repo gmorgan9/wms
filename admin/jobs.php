@@ -235,7 +235,9 @@ if(isset($_GET['jobID'])) {
           <td><span class="text-capitalize text-danger"><?php echo $app_status; ?><span></td>
         <?php }?>
         <td>
-          <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-job.php?jobID=<?php echo $jobid; ?>">View</a>
+          <?php if($app_status != 'terminated') { ?>
+            <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-job.php?jobID=<?php echo $jobid; ?>">View</a>
+          <?php } else {} ?>
           <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobid; ?>">Delete</a>
         </td>
         <?php } ?>
