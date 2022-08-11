@@ -220,12 +220,14 @@ if(isset($_GET['timeID'])) {
             </form>
             <?php } else { ?>
           <form method="post" action="">
+          <?php $timeid = $row['timeID']; ?>
             <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-time"><span class="badge text-bg-warning">Approve</span></button>
           </form>
           <?php } ?>
           &nbsp;
           <form method="post" action="">
+          <?php $timeid = $row['timeID']; ?>
             <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="rejected"><span class="badge text-bg-danger">Reject</span></button>
           </form>
