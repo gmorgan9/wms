@@ -31,7 +31,7 @@ if(!isLoggedIn()){
     </style>
 
 
-    <title>ETES | Reports</title>
+    <title>WMS | Reports</title>
 </head>
 <body>
     
@@ -65,7 +65,7 @@ if(!isLoggedIn()){
       <tbody class="table-group-divider">
         <tr>
           <th scope="row"><?php echo $idno; ?></th>
-          <td>Employee Report</td>
+          <td><i class="bi bi-people"></i> Employee Report</td>
         </tr>
         <tr>
           <th scope="row"><?php echo $idno; ?></th>
