@@ -245,7 +245,7 @@ if(!isLoggedIn()){
                           <?php } ?>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            <?php if($orgDate == $date) { ?>
+                            <?php if($orgDate == $date || $orgDate == null) { ?>
                                 <?php echo $date_form; ?>
                             <?php } else { ?>
                               <span class="text-warning"><?php echo $new_date; ?>&nbsp;&nbsp;<span class="text-warning" style="font-size: 10px;">Change in Progress</span></span>
