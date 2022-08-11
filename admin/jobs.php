@@ -128,12 +128,6 @@ if(isset($_GET['jobID'])) {
     </ul>
   </div>
 
-  <!-- <div class="jumbotron jumbotron-fluid bg-white m-2 mx-auto" style="width: 98%;">
-  <div class="container">
-    <h3 class="display-6 text-center" style="padding-top: 5px !important;padding-bottom: 10px !important;">Welcome, <span style="text-transform: capitalize;"><?php //echo $row['fname'] ?>!</span></h3>
-  </div>
-</div> -->
-
 
 <!-- start PAGE-CONTENT -->
 <div class="page-content float-start" style="margin-top: 12px; width: 34%;margin-left: -45px; height: unset !important;">
