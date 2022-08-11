@@ -209,7 +209,7 @@ if(isset($_GET['timeID'])) {
           </td> -->
           <td>
             <div class="forms d-flex" style="">
-              <?php if($row['new_idno'] == null) { ?>
+              <?php if($row['new_idno'] != null) { ?>
             <form class="me-2" method="post" action="">
             <?php $timeid = $row['timeID']; ?>
               <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
