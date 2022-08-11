@@ -163,7 +163,7 @@ if(!isLoggedIn()){
                     </div>
                     <div class="col-sm-9 text-secondary">
                       <?php if($row['end_date'] == null) { ?>
-                        <span class="text-warning">Please enter end date when job is terminated.</span>
+                        <span class="text-warning">Enter end date when job is terminated.</span>
                       <?php } else { ?>
                         <?php echo $row['end_date']; ?>
                       <?php } ?>
