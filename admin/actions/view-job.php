@@ -296,7 +296,7 @@ if(!isAdmin()){
           <option selected>Select One...</option>
           <option value="active">Active</option>
           <option value="inactive">Inactive</option>
-        </div>
+        </select>
         <div class="modal-footer">
           <div class="form-group pt-3">
             <button type="button" style="border-color: rgba(0,0,0,0);" class="badge text-bg-secondary" data-bs-dismiss="modal">Close</button>
