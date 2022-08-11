@@ -232,9 +232,11 @@ if(!isLoggedIn()){
                             <?php 
                             $orgDate = $row['new_date'];
                             $new_date = date("M d, Y", strtotime($orgDate));
+                            $date = $row['date'];
+                            $date_form = date("M d, Y", strtotime($date));
                             ?>
                             <?php if($orgDate == null) { ?>
-                                <?php echo $row['date']; ?>
+                                <?php echo $date_form; ?>
                             <?php } else { ?>
                               <span class="text-warning"><?php echo $new_date; ?></span>
                             <?php } ?>
