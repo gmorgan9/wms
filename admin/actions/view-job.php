@@ -259,9 +259,9 @@ if(!isLoggedIn()){
       // $fname = $_SESSION['fname'];
       // $lname = $_SESSION['lname']; 
       // $employee_idno = $_SESSION['employee_idno'];?>
-        <input class="form-control" id="employee_fname" type="text" name="employee_fname" value="<?php echo $row['employee_fname']; ?>">
-        <input class="form-control" id="employee_lname" type="text" name="employee_lname" value="<?php echo $row['employee_lname']; ?>">
-        <input class="form-control" id="employee_idno" type="text" name="employee_idno" value="<?php echo $row['employee_idno']; ?>">
+        <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $row['employee_fname']; ?>">
+        <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $row['employee_lname']; ?>">
+        <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $row['employee_idno']; ?>">
       <div class="row">
         <div class="form-group pt-3" style="width: 48%;">
           <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
