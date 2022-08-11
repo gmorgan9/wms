@@ -204,7 +204,7 @@ if(isset($_GET['timeID'])) {
           <th scope="row"><a class="text-decoration-none text-dark" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>"><?php echo $idno; ?></a></th>
           <td>
             <div class="forms d-flex" style="">
-          <?php if(($new_date == null) && ($new_timein == null) && ($new_timeout == null)) { ?>
+          <?php if(($new_date != null) && ($new_timein != null) && ($new_timeout != null)) { ?>
             <form class="me-2" method="post" action="">
             <?php $timeid = $row['timeID']; ?>
               <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
