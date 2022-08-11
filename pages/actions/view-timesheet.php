@@ -240,7 +240,7 @@ if(!isLoggedIn()){
                           <?php } ?>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            <?php if($orgDate == null) { ?>
+                            <?php if($orgDate == $date) { ?>
                                 <?php echo $date_form; ?>
                             <?php } else { ?>
                               <span class="text-warning"><?php echo $new_date; ?></span>
@@ -256,14 +256,14 @@ if(!isLoggedIn()){
                             $timein_form = date("h:i A", strtotime($Timein));
                         ?>
                         <div class="col-sm-3">
-                          <?php if($orgTimein == null) { ?>
+                          <?php if($orgTimein == $Timein) { ?>
                             <h6 class="mb-0">Time In</h6>
                           <?php } else { ?>
                             <h6 class="mb-0">New Time In</h6>
                           <?php } ?>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            <?php if($orgTimein == null) { ?>
+                            <?php if($orgTimein == $Timein) { ?>
                                 <?php echo $timein_form; ?>
                             <?php } else { ?>
                               <span class="text-warning"><?php echo $new_timein; ?></span>
