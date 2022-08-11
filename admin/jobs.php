@@ -219,11 +219,13 @@ if(isset($_GET['jobID'])) {
             $companyname = $row['companyname'];
             $deptname    = $row['deptname'];
             $employee_fname = $row['employee_fname'];
+            $status = $row['approval_status'];
             // $companyname    = $row['companyname'];
   ?>
     <tr>
         <th scope="row"><?php echo $idno; ?></th>
         <td><?php echo $jobtitle; ?></td>
+        <td><?php echo $status; ?></td>
         <td>
           <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-job.php?jobID=<?php echo $jobid; ?>">View</a>
           <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="jobs.php?jobID=<?php echo $jobid; ?>">Delete</a>
