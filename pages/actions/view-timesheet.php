@@ -238,7 +238,7 @@ if(!isLoggedIn()){
                             $date_form = date("M d, Y", strtotime($date));
                           ?>
                         <div class="col-sm-3">
-                          <?php if($orgDate == $date) { ?>
+                          <?php if($orgDate == $date || $orgDate == null) { ?>
                             <h6 class="mb-0">Date</h6>
                           <?php } else { ?>
                             <h6 class="mb-0">New Date</h6>
@@ -261,7 +261,7 @@ if(!isLoggedIn()){
                             $timein_form = date("h:i A", strtotime($Timein));
                         ?>
                         <div class="col-sm-3">
-                          <?php if($orgTimein == $Timein) { ?>
+                          <?php if($orgTimein == $Timein || $orgTimein == null) { ?>
                             <h6 class="mb-0">Time In</h6>
                           <?php } else { ?>
                             <h6 class="mb-0">New Time In</h6>
@@ -284,7 +284,7 @@ if(!isLoggedIn()){
                             $timeout_form = date("h:i A", strtotime($Timeout));
                             ?>
                         <div class="col-sm-3">
-                          <?php if($orgTimeout == $Timeout) { ?>
+                          <?php if($orgTimeout == $Timeout || $orgTimeout == null) { ?>
                             <h6 class="mb-0">Time Out</h6>
                           <?php } else { ?>
                             <h6 class="mb-0">New Time Out</h6>
