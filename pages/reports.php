@@ -65,7 +65,15 @@ if(!isLoggedIn()){
       <tbody class="table-group-divider">
         <tr>
           <th scope="row"><?php echo $idno; ?></th>
-          <td>Employee Timesheet View</td>
+          <td>Employee Report</td>
+        </tr>
+        <tr>
+          <th scope="row"><?php echo $idno; ?></th>
+          <td>Employee Timesheet Report</td>
+        </tr>
+        <tr>
+          <th scope="row"><?php echo $idno; ?></th>
+          <td>Job Report</td>
         </tr>
       </tbody>
     </table> 
