@@ -15,10 +15,6 @@
                 <span>  Timesheet</span>
             </a>
             <?php } ?>
-            <a href="<?php echo BASE_URL . '/pages/reports.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
-                <i class="bi bi-bar-chart"></i>
-                <span>  Reports</span>
-            </a>
             <a href="<?php echo BASE_URL . '/pages/projects.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                 <i class="bi bi-journal-bookmark"></i>
                 <span>  Projects</span>
@@ -57,6 +53,10 @@
                     <?php } else { ?>
                         <span>  Timesheet history</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
                     <?php }} ?>
+                </a>
+                <a href="<?php echo BASE_URL . '/pages/reports.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="bi bi-bar-chart"></i>
+                    <span>  Reports</span>
                 </a>
                 <?php } ?>
             <?php } else {?>
