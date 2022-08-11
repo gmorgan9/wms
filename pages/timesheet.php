@@ -209,6 +209,7 @@ if(isset($_GET['timeID'])) {
           </td> -->
           <td>
             <div class="forms d-flex" style="">
+              <?php if($row['new_idno'] == null) { ?>
             <form class="me-2" method="post" action="">
             <?php $timeid = $row['timeID']; ?>
               <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
@@ -217,11 +218,12 @@ if(isset($_GET['timeID'])) {
               <input type="hidden" name="timeout" value="<?php echo $new_timeout; ?>" />
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-status"><span class="badge text-bg-success">Approve</span></button>
             </form>
-            &nbsp;
+            <?php } else { ?>
           <form method="post" action="">
             <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-time"><span class="badge text-bg-warning">Approve</span></button>
           </form>
+          <?php } ?>
           &nbsp;
           <form method="post" action="">
             <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
