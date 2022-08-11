@@ -84,7 +84,7 @@ if(!isLoggedIn()){
           //$acc_type = $row['acc_type'];
     ?>
       <div class="page-header mx-auto">
-        <p class="page_title" style="padding-top: 2px;"></p>
+        <p class="page_title" style="float: left; padding-top: 2px;"></p>
         <ul class="breadcrumb">
           <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
           <li><a href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">Timesheets</a></li>
