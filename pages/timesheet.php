@@ -171,7 +171,7 @@ if(isset($_GET['timeID'])) {
     <thead>
       <tr>
         <th scope="col" style="font-size: 14px;">Timesheet ID</th>
-        <th scope="col" style="font-size: 14px;">Type</th>
+        <!-- <th scope="col" style="font-size: 14px;">Type</th> -->
         <th scope="col" style="font-size: 14px;">Actions</th>
       </tr>
     </thead>
@@ -204,9 +204,9 @@ if(isset($_GET['timeID'])) {
     ?>
       <tr>
           <th scope="row"><a class="text-decoration-none text-dark" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>"><?php echo $idno; ?></a></th>
-          <td>
+          <!-- <td>
 
-          </td>
+          </td> -->
           <td>
             <div class="forms d-flex" style="">
             <form class="me-2" method="post" action="">
