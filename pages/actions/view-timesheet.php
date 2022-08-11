@@ -225,6 +225,12 @@ if(!isLoggedIn()){
                       </div>
                       <hr>
                       <div class="row">
+                          <?php 
+                            $orgDate = $row['new_date'];
+                            $new_date = date("M d, Y", strtotime($orgDate));
+                            $date = $row['date'];
+                            $date_form = date("M d, Y", strtotime($date));
+                          ?>
                         <div class="col-sm-3">
                           <?php if($orgDate == null) { ?>
                             <h6 class="mb-0">Date</h6>
@@ -233,12 +239,6 @@ if(!isLoggedIn()){
                           <?php } ?>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            <?php 
-                            $orgDate = $row['new_date'];
-                            $new_date = date("M d, Y", strtotime($orgDate));
-                            $date = $row['date'];
-                            $date_form = date("M d, Y", strtotime($date));
-                            ?>
                             <?php if($orgDate == null) { ?>
                                 <?php echo $date_form; ?>
                             <?php } else { ?>
@@ -248,35 +248,47 @@ if(!isLoggedIn()){
                       </div>
                       <hr>
                       <div class="row">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0">New Time In</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                            <?php 
+                        <?php 
                             $orgTimein = $row['new_timein'];
                             $new_timein = date("h:i A", strtotime($orgTimein));
-                            ?>
-                            <?php if($orgTimein != null) { ?>
-                                <span class="text-warning"><?php echo $new_timein; ?></span>
+                            $Timein = $row['timein'];
+                            $timein_form = date("h:i A", strtotime($Timein));
+                        ?>
+                        <div class="col-sm-3">
+                          <?php if($orgTimein == null) { ?>
+                            <h6 class="mb-0">Time In</h6>
+                          <?php } else { ?>
+                            <h6 class="mb-0">New Time In</h6>
+                          <?php } ?>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <?php if($orgTimein == null) { ?>
+                                <?php echo $timein_form; ?>
                             <?php } else { ?>
-                                <?php echo $new_timein; ?>
+                              <span class="text-warning"><?php echo $new_timein; ?></span>
                             <?php } ?>
                         </div>
                       </div>
                       <hr>
                       <div class="row">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0">New Time Out</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                            <?php 
+                          <?php 
                             $orgTimeout = $row['new_timeout'];
                             $new_timeout = date("h:i A", strtotime($orgTimeout));
+                            $Timeout = $row['timeout'];
+                            $timeout_form = date("h:i A", strtotime($Timeout));
                             ?>
-                            <?php if($orgTimeout != $row['timeout']) { ?>
-                                <span class="text-warning"><?php echo $new_timeout; ?></span>
+                        <div class="col-sm-3">
+                          <?php if($orgTimeout == null) { ?>
+                            <h6 class="mb-0">Time Out</h6>
+                          <?php } else { ?>
+                            <h6 class="mb-0">New Time Out</h6>
+                          <?php } ?>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          <?php if($orgTimeout == null) { ?>
+                                <?php echo $timeout_form; ?>
                             <?php } else { ?>
-                                <?php echo $new_timeout; ?>
+                              <span class="text-warning"><?php echo $new_timeout; ?></span>
                             <?php } ?>
                         </div>
                       </div>
