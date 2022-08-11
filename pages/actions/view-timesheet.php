@@ -268,7 +268,7 @@ if(!isLoggedIn()){
                           <?php } ?>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            <?php if($orgTimein == $Timein) { ?>
+                            <?php if($orgTimein == $Timein || $orgTimein == null) { ?>
                                 <?php echo $timein_form; ?>
                             <?php } else { ?>
                               <span class="text-warning"><?php echo $new_timein; ?>&nbsp;&nbsp;<span class="text-warning" style="font-size: 10px;">Change in Progress</span></span>
@@ -284,7 +284,7 @@ if(!isLoggedIn()){
                             $timeout_form = date("h:i A", strtotime($Timeout));
                             ?>
                         <div class="col-sm-3">
-                          <?php if($orgTimeout == $Timeout) { ?>
+                          <?php if($orgTimeout == $Timeout || $orgTimeout == null) { ?>
                             <h6 class="mb-0">Time Out</h6>
                           <?php } else { ?>
                             <h6 class="mb-0">New Time Out</h6>
