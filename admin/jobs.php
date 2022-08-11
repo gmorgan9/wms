@@ -236,7 +236,7 @@ if(isset($_GET['jobID'])) {
           <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-job.php?jobID=<?php echo $jobid; ?>">View</a>
           <form method="post" action="">
           <input type="hidden" name="jobID" value="<?php echo $jobid; ?>" />
-          <button onclick="return confirm('Be Careful! \r\nOK to delete?')" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="terminated"><span class="badge text-bg-danger">Delete</span></button>
+          <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="terminated"><span class="badge text-bg-danger">Delete</span></button>
         </form>
         </td>
         <?php } ?>
