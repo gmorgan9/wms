@@ -25,8 +25,9 @@ if(!isLoggedIn()){
     $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
     $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
     $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
+    $new_idno = rand(1000000, 9999999); // figure how to not allow duplicates
   
-    $update = "UPDATE timesheet SET approval_status = 'pending', new_date = '$date', new_timein = '$timein', new_timeout = '$timeout', reason = '$reason' WHERE timeID = '$id'";
+    $update = "UPDATE timesheet SET approval_status = 'pending', new_idno = '$new_idno', new_date = '$date', new_timein = '$timein', new_timeout = '$timeout', reason = '$reason' WHERE timeID = '$id'";
     mysqli_query($conn, $update);
     header('Location: ' . $_SERVER['HTTP_REFERER']);
   
