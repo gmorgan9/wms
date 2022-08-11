@@ -49,9 +49,9 @@
                 <a href="<?php echo BASE_URL . '/pages/timesheet.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                     <i class="bi bi-clock-history"></i>
                     <?php if($rowcount == 0){ ?>
-                        <span>  Timesheet History</span>
+                        <span>  Timesheet</span>
                     <?php } else { ?>
-                        <span>  Timesheet history</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
+                        <span>  Timesheet</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
                     <?php }} ?>
                 </a>
                 <a href="<?php echo BASE_URL . '/admin/reports.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
