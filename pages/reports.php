@@ -53,6 +53,67 @@ if(!isLoggedIn()){
 
   <!-- START REPORTS -->
 
+  <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
+    <!-- <span class="mx-auto">Timesheet for <span class="text-muted text-capitalize"><?php //echo $_SESSION['fname']; ?></span></span> -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" style="font-size: 14px;">ID #</th>
+          <th scope="col" style="font-size: 14px;">Employee</th>
+          <th scope="col" style="font-size: 14px;">Status</th>
+          <th scope="col" style="font-size: 14px;">Actions</th>
+        </tr>
+      </thead>
+    <tbody class="table-group-divider">
+
+    <?php
+        $sql = "SELECT * FROM timesheet";
+        $all = mysqli_query($conn, $sql);
+        if($all) {
+            while ($row = mysqli_fetch_assoc($all)) {
+              $timeID           = $row['timeID'];
+              $idno             = $row['idno'];
+              $orgDate          = $row['date'];
+              $date             = date("M d, Y", strtotime($orgDate));
+              $orgTimein        = $row['timein'];
+              $timein           = date("h:i A", strtotime($orgTimein));
+              $orgTimeout       = $row['timeout'];
+              $timeout          = date("h:i A", strtotime($orgTimeout));
+              $totalhours       = $row['totalhours'];
+              $employee_fname   = $row['employee_fname'];
+              $employee_lname   = $row['employee_lname'];
+              $employee_idno    = $row['employee_idno'];
+              $comment          = $row['comment'];
+              $reason           = $row['reason'];
+              $app_status       = $row['approval_status'];
+              // $companyname    = $row['companyname'];
+    ?>
+      <tr>
+          <th scope="row"><?php echo $idno; ?></th>
+          <td><?php echo $employee_lname; ?>, <?php echo $employee_fname; ?></td>
+          <?php if($app_status == 'approved'){ ?>
+          <td><span class="text-capitalize text-success"><?php echo $app_status; ?><span></td>
+          <?php } if($app_status == 'rejected') { ?>
+            <td><span class="text-capitalize text-danger"><?php echo $app_status; ?><span></td>
+          <?php } if($app_status == 'pending') { ?>
+            <td><span class="text-capitalize text-primary"><?php echo $app_status; ?><span></td>
+          <?php }?>
+          <!-- <td><?php //echo $companyname; ?></td> -->
+          <td>
+            <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
+          <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="timesheet.php?timeID=<?php echo $timeID; ?>">Delete</a></td>
+          <?php } ?>
+          
+          
+        </tbody>
+    </table> 
+    <?php 
+    } else {
+      echo "0 results";
+    }
+    ?>
+    <!-- end PAGE-CONTENT -->
+    </div>
 
 
 
