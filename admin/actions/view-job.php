@@ -44,18 +44,18 @@ if(!isAdmin()){
 <?php include(ROOT_PATH . "/app/includes/sidebar.php") ?>
         
 <!-- start MAIN -->
-<div class="main"> 
+  <div class="main"> 
    
-<?php 
+  <?php 
 
-$id = $_GET['jobID'];
-$select = " SELECT * FROM job WHERE jobID = '$id' ";
-$result = mysqli_query($conn, $select);
+  $id = $_GET['jobID'];
+  $select = " SELECT * FROM job WHERE jobID = '$id' ";
+  $result = mysqli_query($conn, $select);
 
-if (mysqli_num_rows($result) > 0) {
+  if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
       //$acc_type = $row['acc_type'];
-?>
+  ?>
 
   <div class="page-header mx-auto">
     <p class="page_title" style="float: left; padding-top: 2px;"></p>
@@ -66,8 +66,8 @@ if (mysqli_num_rows($result) > 0) {
     </ul>
   </div>
 
-<div class="page-content mx-auto mt-2">
-<form action="" method="post">
+  <div class="page-content mx-auto mt-2">
+  <form action="" method="post">
       <h3 class="text-center">Job View</h3>
 
 
@@ -138,6 +138,19 @@ if (mysqli_num_rows($result) > 0) {
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
+                      <h6 class="mb-0">Pay</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <?php if($row['pay'] == null) { ?>
+                        <span class="text-warning">Needs a Pay/Salary.</span>
+                      <?php } else { ?>
+                        <?php echo $row['pay']; ?>
+                      <?php } ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
                       <h6 class="mb-0">Status</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
@@ -175,15 +188,16 @@ if (mysqli_num_rows($result) > 0) {
    }
       ?>
    </form>
-</div>
+  </div>
 
  
+
+  </div> 
 <!-- end MAIN -->
-</div> 
 
 
 <!-- EDIT MODAL -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
