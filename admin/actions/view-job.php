@@ -109,7 +109,7 @@ if (mysqli_num_rows($result) > 0) {
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Department</h6>
+                      <h6 class="mb-0">Start Date</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                       <?php if($row['start_date'] == null) { ?>
@@ -122,10 +122,14 @@ if (mysqli_num_rows($result) > 0) {
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Department</h6>
+                      <h6 class="mb-0">End Date</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <?php echo $row['end_date']; ?>
+                      <?php if($row['end_date'] == null) { ?>
+                        <span class="text-warning">Please enter end date when job is terminated.</span>
+                      <?php } else { ?>
+                        <?php echo $row['end_date']; ?>
+                      <?php } ?>
                     </div>
                   </div>
                   <hr>
