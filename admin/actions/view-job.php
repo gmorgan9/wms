@@ -196,7 +196,7 @@ if(!isLoggedIn()){
                             <span class="text-primary text-capitalize"><?php echo $row['approval_status']; ?></span>
                         <?php } if($row['approval_status'] == 'terminated') { ?>
                             <span class="text-danger"><span class="text-capitalize"><?php echo $row['approval_status']; ?></span>
-                            <span class="text-danger" style="font-size: 10px;">Most likely will need to be deleted</span></span>
+                            <span class="text-muted" style="font-size: 10px;">Most likely will need to be deleted</span></span>
                         <?php } ?>
                     </div>
                   </div>
