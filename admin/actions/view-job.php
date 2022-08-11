@@ -294,16 +294,16 @@ if(!isAdmin()){
       </div>
       <?php if($row['status'] == 1) { ?>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="1" id="status" name="status" checked>
+          <input class="form-check-input" type="checkbox" value="active" id="status" name="status" checked>
           <label class="form-check-label" for="status">
-          Checked checkbox
+          Job Status
           </label>
         </div>
       <?php } else { ?>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="0" id="status" name="status">
+          <input class="form-check-input" type="checkbox" value="inactive" id="status" name="status">
           <label class="form-check-label" for="status">
-          Checked checkbox
+          Job Status
           </label>
         </div>
       <?php } ?>
