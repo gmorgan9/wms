@@ -243,7 +243,7 @@ if(!isLoggedIn()){
                             <?php if($orgDate == $date) { ?>
                                 <?php echo $date_form; ?>
                             <?php } else { ?>
-                              <span class="text-warning"><?php echo $new_date; ?><span class="text-warning" style="font-size: 10px;">Change in Progress</span></span>
+                              <span class="text-warning"><?php echo $new_date; ?>&nbsp;&nbsp;<span class="text-warning" style="font-size: 10px;">Change in Progress</span></span>
                             <?php } ?>
                         </div>
                       </div>
@@ -266,7 +266,7 @@ if(!isLoggedIn()){
                             <?php if($orgTimein == $Timein) { ?>
                                 <?php echo $timein_form; ?>
                             <?php } else { ?>
-                              <span class="text-warning"><?php echo $new_timein; ?><span class="text-warning" style="font-size: 10px;">Change in Progress</span></span>
+                              <span class="text-warning"><?php echo $new_timein; ?>&nbsp;&nbsp;<span class="text-warning" style="font-size: 10px;">Change in Progress</span></span>
                             <?php } ?>
                         </div>
                       </div>
@@ -289,7 +289,7 @@ if(!isLoggedIn()){
                           <?php if($orgTimeout == $Timeout) { ?>
                                 <?php echo $timeout_form; ?>
                             <?php } else { ?>
-                              <span class="text-warning"><?php echo $new_timeout; ?><span class="text-warning" style="font-size: 10px;">Change in Progress</span></span>
+                              <span class="text-warning"><?php echo $new_timeout; ?>&nbsp;&nbsp;<span class="text-warning" style="font-size: 10px;">Change in Progress</span></span>
                             <?php } ?>
                         </div>
                       </div>
