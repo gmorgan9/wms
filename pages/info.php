@@ -77,14 +77,9 @@ if(!isLoggedIn()){
         $deptname = $row['deptname'];
         $pay = $row['pay'];
         $approval_status = $row['approval_status'];
-
-        echo $_SESSION['employee_idno'];
  
         }
      } 
-    //  else {
-    //    echo "0 results" . $_SESSION['empID'];
-    //  }
     ?>
 
 
@@ -156,6 +151,9 @@ if(!isLoggedIn()){
                 
      </form>
     </div>
+  <!-- END EMPLOYMENY INFO -->
+
+  <!-- ADMIN EMPLOYMENY INFO -->
     <?php } else { ?>
       <div class="page-content mx-auto mt-2">
     <form action="" method="post">
@@ -236,7 +234,7 @@ if(!isLoggedIn()){
      </form>
     </div>
     <?php } ?>
-  <!-- END EMPLOYMENT INFO -->
+  <!-- END ADMIN EMPLOYMENT INFO -->
 
   </div>
 <!-- END MAIN -->
