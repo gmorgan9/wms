@@ -77,7 +77,7 @@ if(!isLoggedIn()){
         $pay = $row['pay'];
         $approval_status = $row['approval_status'];
 
-
+        echo $_SESSION['employee_idno'];
  
         }
      } 
