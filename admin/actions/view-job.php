@@ -170,6 +170,7 @@ if(!isAdmin()){
                     </div>
                     <div class="col-sm-9 text-secondary">
                     <a class="text-decoration-none badge text-bg-success" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Edit</a>
+                    <a class="text-decoration-none badge text-bg-primary" href="javascript:history.back()">Back</a>
                     </div>
                   </div>
 
