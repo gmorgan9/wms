@@ -58,21 +58,17 @@ if(!isLoggedIn()){
     <table class="table">
       <thead>
         <tr>
-          <th scope="col" style="font-size: 14px;">ID #</th>
           <th scope="col" style="font-size: 14px;">Report Name</th>
         </tr>
       </thead>
       <tbody class="table-group-divider">
         <tr>
-          <th scope="row"><?php echo $idno; ?></th>
           <td><i class="bi bi-people"></i> Employee Report</td>
         </tr>
         <tr>
-          <th scope="row"><?php echo $idno; ?></th>
           <td>Employee Timesheet Report</td>
         </tr>
         <tr>
-          <th scope="row"><?php echo $idno; ?></th>
           <td>Job Report</td>
         </tr>
       </tbody>
