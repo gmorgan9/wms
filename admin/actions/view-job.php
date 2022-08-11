@@ -213,33 +213,33 @@ if (mysqli_num_rows($result) > 0) {
         <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
         <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
         <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employee_idno; ?>">
-      <div class="row max-auto" style="width: 95%;">
-        <div class="form-group pt-3 mx-auto" style="width: 48%;">
+      <div class="row">
+        <div class="form-group pt-3" style="width: 48%;">
           <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
           <input class="form-control" id="companyname" type="text" name="companyname" value="<?php echo $row['companyname']; ?>" required>
         </div>
-        <div class="form-group pt-3 mx-auto" style="width: 48%;">
+        <div class="form-group pt-3" style="width: 48%;">
           <label for="deptname" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
           <input class="form-control" id="deptname" type="text" name="deptname" value="<?php echo $row['deptname']; ?>" required>
         </div>
       </div>
-      <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <div class="form-group pt-3">
         <label for="jobtitle" style="font-size: 14px;">Job Title / Position <span class="text-muted" style="font-size: 10px;">e.g. "Cheif Executive Officer"</span></label>
         <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="<?php echo $row['jobtitle']; ?>" required>
       </div>
-      <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <div class="form-group pt-3">
         <label for="pay" style="font-size: 14px;">Pay</label>
         <input class="form-control" id="pay" type="number" name="pay" value="<?php echo $row['pay']; ?>">
       </div>
-      <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <div class="form-group pt-3">
         <label for="start_date" style="font-size: 14px;">Start Date</label>
         <input class="form-control" id="start_date" type="date" name="start_date" value="<?php echo $row['start_date']; ?>">
       </div>
-      <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <div class="form-group pt-3">
         <label for="end_date" style="font-size: 14px;">End Date</label>
         <input class="form-control" id="end_date" type="date" name="end_date" value="<?php echo $row['end_date']; ?>">
       </div>
-      <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <div class="form-group pt-3">
         <label for="reason" style="font-size: 14px;">Reason <span class="text-muted" style="font-size: 10px;">Give reason for changing time</span></label>
         <textarea class="form-control" id="reason" type="text" name="reason" value="" required></textarea>
       </div>
