@@ -227,7 +227,7 @@ if(!isLoggedIn()){
                         <h6 class="mb-0">View All Jobs</h6>
                       </div>
                       <div class="col-sm-9 text-warning">
-                      <a class="text-decoration-none badge text-bg-primary" href="../admin/jobs.php">View</a> -->
+                      <a class="text-decoration-none badge text-bg-primary" href="../admin/jobs.php">View</a>
                       </div>
                     </div>
                   </div>
