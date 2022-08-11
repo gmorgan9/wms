@@ -16,26 +16,25 @@ if(!isAdmin()){
 
 
 // UPDATE TIME FUNCTION
-if(isset($_POST['update-job'])){
-  $id = $_GET['jobID'];
-  $timeID = mysqli_real_escape_string($conn, $_POST['jobID']);
-  $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
-  $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
-  $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
-  $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
-  $pay = mysqli_real_escape_string($conn, $_POST['pay']);
-  $start_date = mysqli_real_escape_string($conn, $_POST['start_date']);
-  $end_date = mysqli_real_escape_string($conn, $_POST['end_date']);
-  // $reason = mysqli_real_escape_string($conn, $_POST['reason']);
-  $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
-  $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
-  $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
+  if(isset($_POST['update-job'])){
+    $id = $_GET['jobID'];
+    $timeID = mysqli_real_escape_string($conn, $_POST['jobID']);
+    $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
+    $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
+    $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
+    $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
+    $pay = mysqli_real_escape_string($conn, $_POST['pay']);
+    $start_date = mysqli_real_escape_string($conn, $_POST['start_date']);
+    $end_date = mysqli_real_escape_string($conn, $_POST['end_date']);
+    $note = mysqli_real_escape_string($conn, $_POST['note']);
+    $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
+    $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
+    $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
 
-  $update = "UPDATE job SET approval_status = 'approved', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = '$end_date' WHERE jobID = '$id'";
-  mysqli_query($conn, $update);
-  header('Location: ' . $_SERVER['HTTP_REFERER']);
-
-};
+    $update = "UPDATE job SET approval_status = 'approved', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = '$end_date', note = '$note' WHERE jobID = '$id'";
+    mysqli_query($conn, $update);
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+  };  
 // END UPDATE TIME FUNCTION
 
 
@@ -283,10 +282,10 @@ if(isset($_POST['update-job'])){
         <label for="end_date" style="font-size: 14px;">End Date</label>
         <input class="form-control" id="end_date" type="date" name="end_date" value="<?php echo $row['end_date']; ?>">
       </div>
-      <!-- <div class="form-group pt-3">
-        <label for="reason" style="font-size: 14px;">Reason <span class="text-muted" style="font-size: 10px;">Give reason for changing time</span></label>
-        <textarea class="form-control" id="reason" type="text" name="reason" value="" required></textarea>
-      </div> -->
+      <div class="form-group pt-3">
+        <label for="note" style="font-size: 14px;">Notes</label>
+        <textarea class="form-control" id="note" type="text" name="note" value="<?php echo $row['note']; ?>"></textarea>
+      </div>
 
       
       
