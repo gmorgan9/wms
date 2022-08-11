@@ -233,14 +233,10 @@ if(!isLoggedIn()){
                             $orgDate = $row['new_date'];
                             $new_date = date("M d, Y", strtotime($orgDate));
                             ?>
-                            <?php if($new_date == null) { ?>
-                              <?php echo $row['date']; ?>
-                            <?php } else { ?>
-                              <?php if($orgDate != $row['date']) { ?>
+                            <?php if($orgDate != $row['date']) { ?>
                                 <span class="text-warning"><?php echo $new_date; ?></span>
-                              <?php } else { ?>
+                            <?php } else { ?>
                                 <?php echo $new_date; ?>
-                              <?php } ?>
                             <?php } ?>
                         </div>
                       </div>

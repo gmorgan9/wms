@@ -375,7 +375,8 @@ if(isset($_GET['timeID'])) {
             <td><span class="text-capitalize text-primary"><?php echo $app_status; ?><span></td>
           <?php }?>
           <!-- <td><?php //echo $companyname; ?></td> -->
-          <td><a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>">View</a>
+          <td>
+            <!-- <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-timesheet.php?timeID=<?php //echo $timeID; ?>">View</a> -->
           <a onclick="return confirm('Be Careful! \r\nOK to delete?')" style="text-decoration: none;" class="badge text-bg-danger" href="timesheet.php?timeID=<?php echo $timeID; ?>">Delete</a></td>
           <?php } ?>
           
