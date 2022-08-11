@@ -417,7 +417,6 @@ if(!isLoggedIn()){
   </div>
 <!-- END EDIT MODAL -->
 
-
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
 </body>
