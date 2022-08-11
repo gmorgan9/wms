@@ -17,10 +17,10 @@
                 <span>  Timesheet</span>
             </a>
             <?php } ?>
-            <a href="<?php echo BASE_URL . '/pages/projects.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+            <!-- <a href="<?php //echo BASE_URL . '/pages/projects.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                 <i class="bi bi-journal-bookmark"></i>
                 <span>  Projects</span>
-            </a>
+            </a> -->
 
             <?php if($_SESSION['acc_type'] == 1){ ?>
                 <br>
