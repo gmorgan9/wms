@@ -59,17 +59,21 @@ if(!isLoggedIn()){
       <thead>
         <tr>
           <th scope="col" style="font-size: 14px;">Report Name</th>
+          <th scope="col" style="font-size: 14px;">Decription</th>
         </tr>
       </thead>
       <tbody class="table-group-divider">
         <tr>
           <td><a class="text-decoration-none text-black" href=""><i class="bi bi-people"></i> Employee Report</a></td>
+          <td>This report will include all of the employees and necessary information about the employee.</td>
         </tr>
         <tr>
           <td><a class="text-decoration-none text-black" href=""><i class="bi bi-clock"></i> Employee Timesheet Report</a></td>
+          <td>This report will include timesheets from the selected employee and date range.</td>
         </tr>
         <tr>
           <td><a class="text-decoration-none text-black" href=""><i class="bi bi-briefcase"></i> Job Report</a></td>
+          <td>This report will include all of the jobs and the employee working that job.</td>
         </tr>
       </tbody>
     </table> 
