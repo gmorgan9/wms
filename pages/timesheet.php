@@ -63,22 +63,15 @@ if(isset($_GET['timeID'])) {
         // $appInsertResult = mysqli_query($conn, $appInsertQuery);
     }
 
-    if (isset($_POST['approved-time']))
-    {
-        $date = mysqli_real_escape_string($conn, $_POST['date']);
-        $timein = mysqli_real_escape_string($conn, $_POST['timein']);
-        $timeout = mysqli_real_escape_string($conn, $_POST['timeout']);
-        
-
-        $appUpdateQuery = "UPDATE timesheet SET date = '$date', timein = '$timein', timeout = '$timeout', new_date = null, new_timein = null, new_timeout = null, reason = null, approval_status = 'approved' WHERE timeID = '".$_POST['timeID']."'";
+    if (isset($_POST['approved-time'])) {
+        $appUpdateQuery = "UPDATE timesheet SET approval_status = 'approved' WHERE timeID = '".$_POST['timeID']."'";
         $appUpdateResult = mysqli_query($conn, $appUpdateQuery);
         header('location: timesheet.php');
         // $appInsertQuery = "INSERT INTO approved(id,status) VALUES ('".$_POST['row_id']."','Approved')";
         // $appInsertResult = mysqli_query($conn, $appInsertQuery);
     }
         
-    if (isset($_POST['rejected']))
-    {
+    if (isset($_POST['rejected'])) {
         $rejUpdateQuery = "UPDATE timesheet SET approval_status = 'rejected' WHERE timeID = '".$_POST['timeID']."'";
         $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
         header('location: timesheet.php');
@@ -218,13 +211,13 @@ if(isset($_GET['timeID'])) {
             <input type="hidden" name="date" value="<?php echo $new_date; ?>" />
             <input type="hidden" name="timein" value="<?php echo $new_timein; ?>" />
             <input type="hidden" name="timeout" value="<?php echo $new_timeout; ?>" />
-            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved"><span class="badge text-bg-success">Approve</span></button>
+            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-status"><span class="badge text-bg-success">Approve</span></button>
           </form>
           &nbsp;
           <?php } else { ?>
           <form method="post" action="">
             <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
-            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="rejected"><span class="badge text-bg-danger">Reject</span></button>
+            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-time"><span class="badge text-bg-danger">Reject</span></button>
           </form>
           <?php } ?>
           <form method="post" action="">
