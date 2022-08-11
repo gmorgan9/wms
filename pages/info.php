@@ -65,7 +65,8 @@ if(!isLoggedIn()){
 
   <!-- START EMPLOYMENT INFO -->
     <?php 
-
+    if($_SESSION['acc_type'] == 0) {
+    
     $empID = $_SESSION['employee_idno'];
     $select = " SELECT * FROM job WHERE employee_idno = '{$_SESSION['employee_idno']}' ";
     $result = mysqli_query($conn, $select);
@@ -155,6 +156,77 @@ if(!isLoggedIn()){
                 
      </form>
     </div>
+    <?php } else { ?>
+      <div class="page-content mx-auto mt-2">
+    <form action="" method="post">
+        <h3 class="text-center">Employment Information</h3>
+
+
+
+        <div class="col-md-8 mx-auto">
+                <div class="card mb-3">
+                  <div class="card-body">
+                  <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Current Job</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                      <span class="text-capitalize">No Current Job</span>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Company</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                      <span class="text-capitalize">No Current Company</span>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Department</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                      <span class="text-capitalize">No Current Department</span>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Pay</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                      <span class="text-capitalize">$0.00</span>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Status</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                      <span class="text-capitalize">Admin</span>
+                      </div>
+                    </div>
+
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Actions</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        Admin doesn't obtain a job.
+                      <!-- <a class="text-decoration-none badge text-bg-success" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Edit</a> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+     </form>
+    </div>
+    <?php } ?>
   <!-- END EMPLOYMENT INFO -->
 
   </div>
