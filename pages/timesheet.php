@@ -1,9 +1,11 @@
 <!-- WORKING -->
 <?php
 
-require_once "../app/database/connection.php";
-require_once "../app/database/functions.php";
-require_once "../path.php";
+// REQUIRE
+  require_once "../app/database/connection.php";
+  require_once "../app/database/functions.php";
+  require_once "../path.php";
+// END REQUIRE
 
 session_start();
 
@@ -32,8 +34,8 @@ if(!isLoggedIn()){
   };
 // END ADD TIME FUNCTION
 
-// Delete Department
-if(isset($_GET['timeID'])) {
+// DELETE TIME
+  if(isset($_GET['timeID'])) {
     $id = $_GET['timeID'];
 
     $sql = "DELETE FROM timesheet WHERE timeID = $id";
@@ -45,40 +47,38 @@ if(isset($_GET['timeID'])) {
         die(mysqli_error($conn));
     }
   }
+// END DELETE TIME FUNCTION
 
 
 
+// APPROVED STATUS FUNCTION
+  if (isset($_POST['approved-status'])) {
+    $date = mysqli_real_escape_string($conn, $_POST['date']);
+    $timein = mysqli_real_escape_string($conn, $_POST['timein']);
+    $timeout = mysqli_real_escape_string($conn, $_POST['timeout']);
+    $new_idno = rand(1000000, 9999999); // figure how to not allow duplicates
+    
+    $appUpdateQuery = "UPDATE timesheet SET new_idno = null, date = '$date', timein = '$timein', timeout = '$timeout', new_date = null, new_timein = null, new_timeout = null, reason = null, approval_status = 'approved' WHERE timeID = '".$_POST['timeID']."'";
+    $appUpdateResult = mysqli_query($conn, $appUpdateQuery);
+    header('location: timesheet.php');
+  }
+// END APPROVED STATUS FUNCTION
 
-  if (isset($_POST['approved-status']))
-    {
-        $date = mysqli_real_escape_string($conn, $_POST['date']);
-        $timein = mysqli_real_escape_string($conn, $_POST['timein']);
-        $timeout = mysqli_real_escape_string($conn, $_POST['timeout']);
-        $new_idno = rand(1000000, 9999999); // figure how to not allow duplicates
-        
+// APPROVED TIME FUNCTION
+  if (isset($_POST['approved-time'])) {
+    $apptUpdateQuery = "UPDATE timesheet SET approval_status = 'approved' WHERE timeID = '".$_POST['timeID']."'";
+    $apptUpdateResult = mysqli_query($conn, $apptUpdateQuery);
+    header('location: timesheet.php');
+  }
+// END APPROVED TIME FUNCTION
 
-        $appUpdateQuery = "UPDATE timesheet SET new_idno = null, date = '$date', timein = '$timein', timeout = '$timeout', new_date = null, new_timein = null, new_timeout = null, reason = null, approval_status = 'approved' WHERE timeID = '".$_POST['timeID']."'";
-        $appUpdateResult = mysqli_query($conn, $appUpdateQuery);
-        header('location: timesheet.php');
-        // $appInsertQuery = "INSERT INTO approved(id,status) VALUES ('".$_POST['row_id']."','Approved')";
-        // $appInsertResult = mysqli_query($conn, $appInsertQuery);
-    }
-
-    if (isset($_POST['approved-time'])) {
-        $apptUpdateQuery = "UPDATE timesheet SET approval_status = 'approved' WHERE timeID = '".$_POST['timeID']."'";
-        $apptUpdateResult = mysqli_query($conn, $apptUpdateQuery);
-        header('location: timesheet.php');
-        // $appInsertQuery = "INSERT INTO approved(id,status) VALUES ('".$_POST['row_id']."','Approved')";
-        // $appInsertResult = mysqli_query($conn, $appInsertQuery);
-    }
-        
-    if (isset($_POST['rejected'])) {
-        $rejUpdateQuery = "UPDATE timesheet SET approval_status = 'rejected' WHERE timeID = '".$_POST['timeID']."'";
-        $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
-        header('location: timesheet.php');
-        // $rejInsertQuery = "INSERT INTO rejected(id,status) VALUES ('".$_POST['row_id']."','Rejected')";
-        // $rejInsertResult = mysqli_query($conn, $rejInsertQuery);
-    }
+// REJECTED TIME STATUS FUNCTION
+  if (isset($_POST['rejected'])) {
+    $rejUpdateQuery = "UPDATE timesheet SET approval_status = 'rejected' WHERE timeID = '".$_POST['timeID']."'";
+    $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
+    header('location: timesheet.php');
+  }
+// END REJECTED TIME STATUS FUNCTION
 
 ?>
 
@@ -90,24 +90,24 @@ if(isset($_GET['timeID'])) {
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>WMS | Timesheet</title>
 
-   <!-- Custom Styles -->
-   <link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/other-style.css?v='. time(); ?>">
+  <!-- SCRIPTS -->
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/other-style.css?v='. time(); ?>">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
-<!-- Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
-<!-- scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- END SCRIPTS -->
 
 
 </head>
 <body>
 
 <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
-
-
 <?php include(ROOT_PATH . "/app/includes/sidebar.php") ?>
         
 <!-- start MAIN -->
@@ -227,7 +227,7 @@ if(isset($_GET['timeID'])) {
           <form method="post" action="">
           <?php $timeid = $row['timeID']; ?>
             <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
-            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-time"><span class="badge text-bg-warning">Approve</span></button>
+            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-time"><span class="badge text-bg-success">Approve</span></button>
           </form>
           <?php } ?>
           &nbsp;
