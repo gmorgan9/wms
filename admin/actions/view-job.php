@@ -194,6 +194,8 @@ if(!isLoggedIn()){
                             <span class="text-danger text-capitalize"><?php echo $row['approval_status']; ?></span>
                         <?php } if($row['approval_status'] == 'pending') { ?>
                             <span class="text-primary text-capitalize"><?php echo $row['approval_status']; ?></span>
+                        <?php } if($row['approval_status'] == 'terminated') { ?>
+                            <span class="text-danger text-capitalize"><?php echo $row['approval_status']; ?></span>
                         <?php } ?>
                     </div>
                   </div>
