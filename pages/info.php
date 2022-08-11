@@ -71,7 +71,19 @@ if(!isLoggedIn()){
     $result = mysqli_query($conn, $select);
     if (mysqli_num_rows($result) > 0) {
      while($row = mysqli_fetch_assoc($result)) {
-        //$acc_type = $row['acc_type'];
+        $jobtitle = $row['jobtitle'];
+        $companyname = $row['companyname'];
+        $deptname = $row['deptname'];
+        $pay = $row['pay'];
+        $approval_status = $row['approval_status'];
+
+
+ 
+        }
+     } 
+    //  else {
+    //    echo "0 results" . $_SESSION['empID'];
+    //  }
     ?>
 
 
@@ -89,7 +101,7 @@ if(!isLoggedIn()){
                         <h6 class="mb-0">Current Job</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                      <span class="text-capitalize"><?php echo $row['jobtitle']; ?></span>
+                      <span class="text-capitalize"><?php echo $jobtitle; ?></span>
                       </div>
                     </div>
                     <hr>
@@ -98,7 +110,7 @@ if(!isLoggedIn()){
                         <h6 class="mb-0">Company</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                      <span class="text-capitalize"><?php echo $row['companyname']; ?></span>
+                      <span class="text-capitalize"><?php echo $companyname; ?></span>
                       </div>
                     </div>
                     <hr>
@@ -107,7 +119,7 @@ if(!isLoggedIn()){
                         <h6 class="mb-0">Department</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                      <span class="text-capitalize"><?php echo $row['deptname']; ?></span>
+                      <span class="text-capitalize"><?php echo $deptname; ?></span>
                       </div>
                     </div>
                     <hr>
@@ -116,7 +128,7 @@ if(!isLoggedIn()){
                         <h6 class="mb-0">Pay</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                      <span class="text-capitalize">$<?php echo $row['pay']; ?>.00</span>
+                      <span class="text-capitalize">$<?php echo $pay; ?>.00</span>
                       </div>
                     </div>
                     <hr>
@@ -125,7 +137,7 @@ if(!isLoggedIn()){
                         <h6 class="mb-0">Status</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                      <span class="text-capitalize"><?php echo $row['approval_status']; ?></span>
+                      <span class="text-capitalize"><?php echo $approval_status; ?></span>
                       </div>
                     </div>
 
@@ -140,12 +152,7 @@ if(!isLoggedIn()){
                     </div>
                   </div>
                 </div>
-                <?php 
-        }
-     } else {
-       echo "0 results" . $_SESSION['empID'];
-     }
-        ?>
+                
      </form>
     </div>
   <!-- END EMPLOYMENT INFO -->
