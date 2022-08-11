@@ -90,7 +90,7 @@ $week_end = date('Y-m-d', strtotime('+'.(5-$day).' days'));
     ?>
     <h5 class="card-title text-end">Pending Timesheets</h5>
       <?php if($rowcount > 0) { ?>
-        <h6 class="card-subtitle mb-2 text-muted text-end" style="font-size: 40px !important;"><span class="text-primary"><?php echo $rowcount; ?></span></h6>
+        <h6 class="card-subtitle mb-2 text-end" style="font-size: 40px !important;"><span class="text-primary"><?php echo $rowcount; ?></span></h6>
       <?php } else { ?>
         <h6 class="card-subtitle mb-2 text-muted text-end" style="font-size: 40px !important;"><?php echo $rowcount; ?></h6>
       <?php } ?>
