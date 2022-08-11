@@ -292,6 +292,7 @@ if(!isAdmin()){
         <label for="note" style="font-size: 14px;">Notes</label>
         <textarea class="form-control" id="note" type="text" name="note"><?php echo $row['note']; ?></textarea>
       </div>
+      </div>
         <div class="modal-footer">
           <div class="form-group pt-3">
             <button type="button" style="border-color: rgba(0,0,0,0);" class="badge text-bg-secondary" data-bs-dismiss="modal">Close</button>
