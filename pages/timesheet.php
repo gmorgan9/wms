@@ -216,7 +216,7 @@ if(isset($_GET['timeID'])) {
           <?php } else { ?>
           <form method="post" action="">
             <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
-            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-time"><span class="badge text-bg-warning">Approve</span></button>
+            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-time"><span class="badge text-bg-success">Approve</span></button>
           </form>
           <?php } ?>
           &nbsp;
