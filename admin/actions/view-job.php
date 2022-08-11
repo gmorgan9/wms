@@ -293,7 +293,7 @@ if(!isLoggedIn()){
       <?php } ?>
       <div class="form-group pt-3">
         <label for="note" style="font-size: 14px;">Notes</label>
-        <textarea class="form-control" id="note" type="text" name="note" value="<?php echo $row['note']; ?>"></textarea>
+        <textarea class="form-control" id="note" type="text" name="note"><?php echo $row['note']; ?></textarea>
       </div>
 
         </div>
