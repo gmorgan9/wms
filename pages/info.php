@@ -170,7 +170,7 @@ if(!isLoggedIn()){
                       <div class="col-sm-3">
                         <h6 class="mb-0">Current Job</h6>
                       </div>
-                      <div class="col-sm-9 text-secondary">
+                      <div class="col-sm-9 text-warning">
                       <span class="text-capitalize">No Current Job</span>
                       </div>
                     </div>
@@ -179,7 +179,7 @@ if(!isLoggedIn()){
                       <div class="col-sm-3">
                         <h6 class="mb-0">Company</h6>
                       </div>
-                      <div class="col-sm-9 text-secondary">
+                      <div class="col-sm-9 text-warning">
                       <span class="text-capitalize">No Current Company</span>
                       </div>
                     </div>
@@ -188,7 +188,7 @@ if(!isLoggedIn()){
                       <div class="col-sm-3">
                         <h6 class="mb-0">Department</h6>
                       </div>
-                      <div class="col-sm-9 text-secondary">
+                      <div class="col-sm-9 text-warning">
                       <span class="text-capitalize">No Current Department</span>
                       </div>
                     </div>
@@ -197,7 +197,7 @@ if(!isLoggedIn()){
                       <div class="col-sm-3">
                         <h6 class="mb-0">Pay</h6>
                       </div>
-                      <div class="col-sm-9 text-secondary">
+                      <div class="col-sm-9 text-warning">
                       <span class="text-capitalize">$0.00</span>
                       </div>
                     </div>
@@ -206,7 +206,7 @@ if(!isLoggedIn()){
                       <div class="col-sm-3">
                         <h6 class="mb-0">Status</h6>
                       </div>
-                      <div class="col-sm-9 text-secondary">
+                      <div class="col-sm-9 text-warning">
                       <span class="text-capitalize">Admin</span>
                       </div>
                     </div>
