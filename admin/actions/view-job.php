@@ -292,21 +292,10 @@ if(!isAdmin()){
         <label for="note" style="font-size: 14px;">Notes</label>
         <textarea class="form-control" id="note" type="text" name="note"><?php echo $row['note']; ?></textarea>
       </div>
-      <?php if($row['status'] == 1) { ?>
         <select class="form-select" name="status" aria-label="Default select example">
           <option selected>Select One...</option>
           <option value="active">Active</option>
           <option value="inactive">Inactive</option>
-        </select>
-      <?php } else { ?>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="inactive" id="status" name="status">
-          <label class="form-check-label" for="status">
-          Job Status
-          </label>
-        </div>
-      <?php } ?>
-
         </div>
         <div class="modal-footer">
           <div class="form-group pt-3">
