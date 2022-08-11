@@ -190,7 +190,6 @@ if(!isLoggedIn()){
     if (mysqli_num_rows($result) > 0) {
        while($row = mysqli_fetch_assoc($result)) {
           //$acc_type = $row['acc_type'];
-
     ?>
       <div class="page-header mx-auto">
         <p class="page_title" style="float: left; padding-top: 2px;"></p>
@@ -234,15 +233,15 @@ if(!isLoggedIn()){
                             $orgDate = $row['new_date'];
                             $new_date = date("M d, Y", strtotime($orgDate));
                             ?>
-                            <?php //if($new_date == null) { ?>
-                              <?php //echo $date; ?>
-                            <?php //} else { ?>
+                            <?php if($new_date == null) { ?>
+                              <?php echo $row['date']; ?>
+                            <?php } else { ?>
                               <?php if($orgDate != $row['date']) { ?>
                                 <span class="text-warning"><?php echo $new_date; ?></span>
                               <?php } else { ?>
-                                <?php echo $row['date']; ?>
+                                <?php echo $new_date; ?>
                               <?php } ?>
-                            <?php //} ?>
+                            <?php } ?>
                         </div>
                       </div>
                       <hr>
