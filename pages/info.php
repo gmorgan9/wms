@@ -76,7 +76,7 @@ if(!isLoggedIn()){
         $companyname = $row['companyname'];
         $deptname = $row['deptname'];
         $pay = $row['pay'];
-        $approval_status = $row['approval_status'];
+        $status = $row['status'];
  
         }
      } 
@@ -133,7 +133,11 @@ if(!isLoggedIn()){
                         <h6 class="mb-0">Status</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                      <span class="text-capitalize"><?php echo $approval_status; ?></span>
+                        <?php if($status == 'active') { ?>
+                          <span class="text-capitalize text-success"><?php echo $status; ?></span>
+                        <?php } if($status == 'inactive') { ?>
+                          <span class="text-capitalize text-danger"><?php echo $status; ?></span>
+                        <?php } ?>
                       </div>
                     </div>
 
