@@ -31,11 +31,11 @@ if(!isAdmin()){
     $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
 
     if($end_date == null) {
-      $update = "UPDATE job SET approval_status = 'approved', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = null, note = '$note' WHERE jobID = '$id'";
+      $update = "UPDATE job SET approval_status = 'approved', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = null, status = 'active', note = '$note' WHERE jobID = '$id'";
       mysqli_query($conn, $update);
       header('Location: ' . $_SERVER['HTTP_REFERER']);
     } else {
-      $update = "UPDATE job SET approval_status = 'approved', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = '$end_date', note = '$note' WHERE jobID = '$id'";
+      $update = "UPDATE job SET approval_status = 'approved', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = '$end_date', status = 'active', note = '$note' WHERE jobID = '$id'";
       mysqli_query($conn, $update);
       header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
@@ -292,11 +292,6 @@ if(!isAdmin()){
         <label for="note" style="font-size: 14px;">Notes</label>
         <textarea class="form-control" id="note" type="text" name="note"><?php echo $row['note']; ?></textarea>
       </div>
-        <select class="form-select" name="status" aria-label="Default select example">
-          <option selected>Select One...</option>
-          <option value="active">Active</option>
-          <option value="inactive">Inactive</option>
-        </select>
         <div class="modal-footer">
           <div class="form-group pt-3">
             <button type="button" style="border-color: rgba(0,0,0,0);" class="badge text-bg-secondary" data-bs-dismiss="modal">Close</button>
