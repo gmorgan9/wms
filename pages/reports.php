@@ -53,7 +53,7 @@ if(!isLoggedIn()){
 
   <!-- START REPORTS -->
 
-  <div class="page-content mx-auto mt-2 float-end" style=" margin-right: 10px;">
+  <div class="page-content mx-auto mt-2">
     <!-- <span class="mx-auto">Timesheet for <span class="text-muted text-capitalize"><?php //echo $_SESSION['fname']; ?></span></span> -->
     <table class="table">
       <thead>
