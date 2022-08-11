@@ -10,9 +10,9 @@ session_start();
 if(!isLoggedIn()){
    header('location:' . BASE_URL . '/pages/entry/login.php');
 }
-if(!isAdmin()){
-   header('location:' . BASE_URL . '/pages/dashboard.php');
-}
+// if(!isAdmin()){
+//    header('location:' . BASE_URL . '/pages/dashboard.php');
+// }
 
 
 // UPDATE TIME FUNCTION
@@ -259,9 +259,9 @@ if(!isAdmin()){
       $fname = $_SESSION['fname'];
       $lname = $_SESSION['lname']; 
       $employee_idno = $_SESSION['employee_idno'];?>
-        <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
-        <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
-        <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employee_idno; ?>">
+        <input class="form-control" id="employee_fname" type="text" name="employee_fname" value="<?php echo $fname; ?>">
+        <input class="form-control" id="employee_lname" type="text" name="employee_lname" value="<?php echo $lname; ?>">
+        <input class="form-control" id="employee_idno" type="text" name="employee_idno" value="<?php echo $employee_idno; ?>">
       <div class="row">
         <div class="form-group pt-3" style="width: 48%;">
           <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
@@ -278,7 +278,7 @@ if(!isAdmin()){
       </div>
       <div class="form-group pt-3">
         <label for="pay" style="font-size: 14px;">Pay</label>
-        <input class="form-control" id="pay" type="number" name="pay" value="<?php echo $row['pay']; ?>">
+        <input class="form-control" id="pay" type="text" name="pay" value="<?php echo $row['pay']; ?>">
       </div>
       <div class="form-group pt-3">
         <label for="start_date" style="font-size: 14px;">Start Date</label>
@@ -307,7 +307,7 @@ if(!isAdmin()){
         <div class="modal-footer">
           <div class="form-group pt-3">
             <button type="button" style="border-color: rgba(0,0,0,0);" class="badge text-bg-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-job" class="badge text-bg-secondary">Update Time</button>
+            <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-job" class="badge text-bg-secondary">Approve</button>
           </div>
         </div>
         </form>
