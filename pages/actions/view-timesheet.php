@@ -250,7 +250,7 @@ if(!isLoggedIn()){
                             $orgTimein = $row['new_timein'];
                             $new_timein = date("h:i A", strtotime($orgTimein));
                             ?>
-                            <?php if($orgTimein != $row['timein']) { ?>
+                            <?php if($orgTimein != null) { ?>
                                 <span class="text-warning"><?php echo $new_timein; ?></span>
                             <?php } else { ?>
                                 <?php echo $new_timein; ?>
