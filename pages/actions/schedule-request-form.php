@@ -115,10 +115,10 @@ if(!isLoggedIn()){
 
 
   <!-- START ADD COMPANY (LEFT SIDE) -->
-    <div class="page-content mex-auto" style="margin-top: 10px;">
+    <div class="page-content mx-auto" style="margin-top: 10px;">
     <form action="" method="post">
     <div class="section-header pt-2">
-      <span class="text-muted pt-4" style="width: 95%;">S Requests</span>
+      <span class="text-muted text-center pt-4" style="width: 95%;">Schedule Requests</span>
     </div>
     <hr style="margin-bottom: -5px; margin-top: 5px;">
     <?php 
