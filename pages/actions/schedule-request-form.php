@@ -136,6 +136,16 @@ if(!isLoggedIn()){
     $companyname = $row['companyname']; 
     $deptname = $row['deptname'];?>
     <?php }} ?>
+
+    <?php 
+
+    $monday     = date( 'Y-m-d', strtotime( 'monday next week' ) );
+    $tuesday    = date( 'Y-m-d', strtotime( 'tuesday next week' ) );
+    $wednesday  = date( 'Y-m-d', strtotime( 'wednesday next week' ) );
+    $thursday   = date( 'Y-m-d', strtotime( 'thursday next week' ) );
+    $friday     = date( 'Y-m-d', strtotime( 'friday next week' ) );
+
+    ?>
     <div class="row mx-auto">
       <div class="form-group pt-3 mx-auto" style="width: 25%;">
         <label for="employee_fname" style="font-size: 14px;">First Name</label>
@@ -169,7 +179,7 @@ if(!isLoggedIn()){
     <div class="row">
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="mon_date" style="font-size: 14px;">Monday Date</label>
-        <input class="form-control" id="mon_date" type="text" name="mon_date" value="" required>
+        <input class="form-control" id="mon_date" type="text" name="mon_date" value="$monday" required>
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="mon_timein" style="font-size: 14px;">Monday Time in</label>
