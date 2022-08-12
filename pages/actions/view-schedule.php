@@ -131,7 +131,7 @@ if(!isLoggedIn()){
                     </div>
                   </div>
                 </div> -->
-                <h3 class="text-center">Timesheet View</h3>
+                <h3 class="text-center">Schedule View</h3>
           <div class="col-md-8 mx-auto">
                   <div class="card mb-3">
                     <div class="card-body">
