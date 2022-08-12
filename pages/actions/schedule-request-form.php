@@ -165,6 +165,7 @@ if(!isLoggedIn()){
         <input class="form-control" id="deptname" type="text" name="deptname" value="<?php echo $deptname; ?>">
       </div>
     </div>
+    <hr>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
       <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
