@@ -93,7 +93,7 @@ if(!isLoggedIn()){
       </div>
 
       <div class="page-content mx-auto mt-2">
-                <div class="col-md-8 float-start" style="width: 50%;">
+                <!-- <div class="col-md-8 float-start" style="width: 50%;">
                   <div class="card mb-3">
                     <div class="card-body">
                       <div class="row">
@@ -101,7 +101,7 @@ if(!isLoggedIn()){
                           <h6 class="mb-0">Employee ID</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                        <span class="text-capitalize"><?php echo $row['employee_idno']; ?></span>
+                        <span class="text-capitalize"><?php //echo $row['employee_idno']; ?></span>
                         </div>
                       </div>
                       <hr>
@@ -110,7 +110,7 @@ if(!isLoggedIn()){
                           <h6 class="mb-0">Employee</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                        <span class="text-capitalize"><?php echo $row['employee_lname']; ?>, <?php echo $row['employee_fname']; ?></span>
+                        <span class="text-capitalize"><?php //echo $row['employee_lname']; ?>, <?php //echo $row['employee_fname']; ?></span>
                         </div>
                       </div>
                       <hr>
@@ -119,7 +119,7 @@ if(!isLoggedIn()){
                           <h6 class="mb-0">Company</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                        <span class="text-capitalize"><?php echo $row['companyname']; ?></span>
+                        <span class="text-capitalize"><?php //echo $row['companyname']; ?></span>
                         </div>
                       </div>
                       <hr>
@@ -128,7 +128,7 @@ if(!isLoggedIn()){
                           <h6 class="mb-0">Department</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                        <span class="text-capitalize"><?php echo $row['deptname']; ?></span>
+                        <span class="text-capitalize"><?php //echo $row['deptname']; ?></span>
                         </div>
                       </div>
                       <hr>
@@ -137,14 +137,14 @@ if(!isLoggedIn()){
                           <h6 class="mb-0">Job Position</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                        <span class="text-capitalize"><?php echo $row['jobtitle']; ?></span>
+                        <span class="text-capitalize"><?php //echo $row['jobtitle']; ?></span>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
 
-          <div class="col-md-8 float-end" style="width: 48%;">
+          <div class="col-md-8 mx-auto">
                   <div class="card mb-3">
                     <div class="card-body">
                                 <div class="row">
