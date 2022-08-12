@@ -136,11 +136,6 @@ if(!isLoggedIn()){
     $companyname = $row['companyname']; 
     $deptname = $row['deptname'];?>
     <?php }} ?>
-
-    <div class="section-header pt-2" style="margin-top: 15px; margin-bottom: -10px;">
-      <span class="text-muted pt-4">Schedule Request For</span>
-    </div>
-    <hr>
     <div class="row mx-auto">
       <div class="form-group pt-3 mx-auto" style="width: 25%;">
         <label for="employee_fname" style="font-size: 14px;">First Name</label>
