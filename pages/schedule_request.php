@@ -162,7 +162,7 @@ if(!isLoggedIn()){
   <!-- END ADD JOB (LEFT SIDE) -->
 
   <!-- START JOB-REQUEST (RIGHT SIDE) -->
-    <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
+    <div class="page-content mt-2 mx-auto" style="margin-right: 10px;">
     <table class="table">
     <thead>
       <tr>
