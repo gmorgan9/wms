@@ -113,6 +113,7 @@ if(!isLoggedIn()){
     </ul>
   </div>
 
+  <?php if($_SESSION['acc_type'] == 0) { ?> 
   <!-- START SCHEDULE-REQUEST (RIGHT SIDE) -->
     <div class="page-content mt-2 mx-auto" style="margin-right: 10px;">
     <a class="badge text-bg-secondary text-decoration-none float-end mt-2" href="actions/schedule-request-form.php">Request Schedule</a>
@@ -180,6 +181,104 @@ if(!isLoggedIn()){
           ?>
       </div>
   <!-- END SCHEDULE-REQUEST (RIGHT SIDE) -->
+  <?php } else { ?>
+  <!-- START ADMIN SCHEDULE-REQUEST (RIGHT SIDE) -->
+  <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -100px; height: unset !important;">
+    <form action="" method="post">
+    <div class="section-header pt-2">
+        <span class="text-muted pt-4" style="width: 95%;">Pending Time Change Requests</span>
+      </div>
+      <hr style="margin-bottom: -5px; margin-top: 5px;">
+      <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" style="font-size: 14px;">Timesheet ID</th>
+        <th scope="col" style="font-size: 14px;">Type</th>
+        <th scope="col" style="font-size: 14px;">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+
+    <?php
+        $sql = "SELECT * FROM timesheet where approval_status = 'pending'";
+        $result = mysqli_query($conn, $sql);
+        if($result) {
+            while ($row = mysqli_fetch_assoc($result)) {
+              $timeID           = $row['timeID'];
+              $idno             = $row['idno'];
+              $orgDate          = $row['date'];
+              $date             = date("M d, Y", strtotime($orgDate));
+              $orgTimein        = $row['timein'];
+              $timein           = date("h:i A", strtotime($orgTimein));
+              $orgTimeout       = $row['timeout'];
+              $timeout          = date("h:i A", strtotime($orgTimeout));
+              $totalhours       = $row['totalhours'];
+              $employee_fname   = $row['employee_fname'];
+              $employee_lname   = $row['employee_lname'];
+              $employee_idno    = $row['employee_idno'];
+              $comment          = $row['comment'];
+              $reason           = $row['reason'];
+
+              $new_date         = $row['new_date'];
+              $new_timein       = $row['new_timein'];
+              $new_timeout      = $row['new_timeout'];
+              // $companyname    = $row['companyname'];
+    ?>
+      <tr>
+          <th scope="row"><a class="text-decoration-none text-dark" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>"><?php echo $idno; ?></a></th>
+          <td>
+            <?php if($row['new_idno'] != null) { ?>
+              Change
+            <?php } else { ?>
+              Submission 
+            <?php } ?>
+
+          </td>
+          <td>
+            <div class="forms d-flex" style="">
+              <?php if($row['new_idno'] != null) { ?>
+            <form class="me-2" method="post" action="">
+            <?php $timeid = $row['timeID']; ?>
+              <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
+              <input type="hidden" name="date" value="<?php echo $new_date; ?>" />
+              <input type="hidden" name="timein" value="<?php echo $new_timein; ?>" />
+              <input type="hidden" name="timeout" value="<?php echo $new_timeout; ?>" />
+              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-status"><span class="badge text-bg-success">Approve</span></button>
+            </form>
+            <?php } else { ?>
+          <form method="post" action="">
+          <?php $timeid = $row['timeID']; ?>
+            <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
+            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-time"><span class="badge text-bg-success">Approve</span></button>
+          </form>
+          <?php } ?>
+          &nbsp;
+          <form method="post" action="">
+          <?php $timeid = $row['timeID']; ?>
+            <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
+            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="rejected"><span class="badge text-bg-danger">Reject</span></button>
+          </form>
+          </div>
+          </td>
+          <!--  onclick="return confirm('Be Careful! \r\nOK to delete?')" -->
+          <?php } 
+
+          ?>
+
+            
+        </tbody>
+    </table> 
+    <?php 
+    } else {
+      echo "0 results";
+    }
+    ?>
+    </form>
+
+    <!-- end PAGE-CONTENT -->
+    </div>
+  <!-- END ADMIN SCHEDULE-REQUEST (RIGHT SIDE) -->
+  <?php } ?>
 
   </div> 
 <!-- END MAIN -->
