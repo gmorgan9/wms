@@ -177,7 +177,7 @@ if(!isLoggedIn()){
     <br>
     <hr>
     <div class="section-header pt-1 text-center fs-5">
-      <span class="text-muted pt-3" style="width: 95%;">Schedule for</span>
+      <span class="text-muted pt-3" style="width: 95%;">Schedule for <?php echo $monday; ?> - <?php echo $friday; ?></span>
     </div>
     <div class="row">
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
