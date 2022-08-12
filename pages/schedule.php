@@ -129,7 +129,7 @@ if(!isLoggedIn()){
     <tbody class="table-group-divider">
 
     <?php
-        $sql = "SELECT * FROM schedule";
+        $sql = "SELECT * FROM schedule WHERE approval_status != 'terminated'";
         $all = mysqli_query($conn, $sql);
         if($all) {
             while ($row = mysqli_fetch_assoc($all)) {
