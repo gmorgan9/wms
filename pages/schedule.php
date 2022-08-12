@@ -201,7 +201,7 @@ if(!isLoggedIn()){
     <tbody class="table-group-divider">
 
     <?php
-        $sql = "SELECT * FROM schedule where approval_status = 'pending'";
+        $sql = "SELECT * FROM schedule";
         $result = mysqli_query($conn, $sql);
         if($result) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -219,7 +219,7 @@ if(!isLoggedIn()){
               $employee_idno    = $row['employee_idno'];
               $comment          = $row['comment'];
               $reason           = $row['reason'];
-
+              $app_status       = $row['approval_status'];
               $new_date         = $row['new_date'];
               $new_timein       = $row['new_timein'];
               $new_timeout      = $row['new_timeout'];
@@ -228,9 +228,9 @@ if(!isLoggedIn()){
       <tr>
           <th scope="row"><a class="text-decoration-none text-dark" href="actions/view-schedule.php?scheduleID=<?php echo $scheduleID; ?>"><?php echo $idno; ?></a></th>
           <td>
-            <?php if($row['approval_status'] == 'pending') { ?>
+            <?php if($app_status == 'pending') { ?>
               Approval
-            <?php } elseif($row['approval_status'] == 'terminated') { ?>
+            <?php } elseif($app_status == 'terminated') { ?>
               Termination 
             <?php } ?>
 
