@@ -92,10 +92,10 @@ if(!isLoggedIn()){
         </ul>
       </div>
 
-      <div class="page-content mt-2 float-start" style="width: 48%;">
+      <div class="page-content mx-auto mt-2">
     <form action="" method="post">
     <h3 class="text-center">Schedule View</h3>
-          <div class="col-md-8 mx-auto">
+          <div class="col-md-8 float-start" style="width: 48%;">
                   <div class="card mb-3">
                     <div class="card-body">
                       <div class="row">
@@ -215,12 +215,12 @@ if(!isLoggedIn()){
                         </div>
                       </div>
                     </div>
-                  </div>
-      
-    <div class="page-content float-end mt-2" style="width: 48%;">
+
+
+
     <form action="" method="post">
     <h3 class="text-center">Schedule View</h3>
-          <div class="col-md-8 mx-auto">
+          <div class="col-md-8 float-start" style="width: 48%;">
                   <div class="card mb-3">
                     <div class="card-body">
                       <div class="row">
