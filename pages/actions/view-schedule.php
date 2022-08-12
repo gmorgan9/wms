@@ -310,7 +310,7 @@ if(!isLoggedIn()){
                 <?php }} ?>
 
         </div>
-        
+            </div>
     
     <div class="modal-footer">
         <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
