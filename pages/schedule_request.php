@@ -136,12 +136,12 @@ if(!isLoggedIn()){
     $companyname = $row['companyname']; 
     $deptname = $row['deptname'];?>
     <?php }} ?>
-      <input class="form-control" id="employee_fname" type="text" name="employee_fname" value="<?php echo $fname; ?>">
-      <input class="form-control" id="employee_lname" type="text" name="employee_lname" value="<?php echo $lname; ?>">
-      <input class="form-control" id="employee_idno" type="text" name="employee_idno" value="<?php echo $employeeID; ?>">
-      <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="<?php echo $jobtitle; ?>">
-      <input class="form-control" id="companyname" type="text" name="companyname" value="<?php echo $companyname; ?>">
-      <input class="form-control" id="deptname" type="text" name="deptname" value="<?php echo $deptname; ?>">
+      <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
+      <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
+      <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employeeID; ?>">
+      <input class="form-control" id="jobtitle" type="hidden" name="jobtitle" value="<?php echo $jobtitle; ?>">
+      <input class="form-control" id="companyname" type="hidden" name="companyname" value="<?php echo $companyname; ?>">
+      <input class="form-control" id="deptname" type="hidden" name="deptname" value="<?php echo $deptname; ?>">
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
       <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
