@@ -117,7 +117,7 @@ if(!isLoggedIn()){
   <!-- START ADD COMPANY (LEFT SIDE) -->
     <div class="page-content mx-auto" style="margin-top: 10px;">
     <form action="" method="post">
-    <div class="section-header pt-2 text-center fs-3">
+    <div class="section-header pt-2 text-center fs-4">
       <span class="text-muted pt-4" style="width: 95%;">Schedule Requests</span>
     </div>
     <hr style="margin-bottom: -5px; margin-top: 5px;">
@@ -137,6 +137,9 @@ if(!isLoggedIn()){
     $deptname = $row['deptname'];?>
     <?php }} ?>
 
+    <div class="section-header pt-2">
+      <span class="text-muted pt-4" style="width: 95%;">Schedule Request For</span>
+    </div>
     <div class="row">
       <div class="form-group pt-3 mx-auto" style="width: 20%;">
         <label for="employee_fname" style="font-size: 14px;">First Name</label>
