@@ -245,6 +245,22 @@ if(!isLoggedIn()){
                       <hr>
                                 <div class="row">
                                   <div class="col-sm-3">
+                                    <h6 class="mb-0">Status</h6>
+                                  </div>
+                                  <div class="col-sm-9 text-secondary">
+                                    <?php if($app_status == 'approved'){ ?>
+                                    <span class="text-capitalize text-success"><?php echo $app_status; ?><span>
+                                    <?php } if($app_status == 'rejected') { ?>
+                                      <span class="text-capitalize text-danger"><?php echo $app_status; ?><span>
+                                    <?php } if($app_status == 'pending') { ?>
+                                      <span class="text-capitalize text-primary"><?php echo $app_status; ?><span>
+                                    <?php } if($app_status == 'terminated') { ?>
+                                      <span class="text-capitalize text-danger"><?php echo $app_status; ?><span>
+                                    <?php }?>
+                                </div>
+                      <hr>
+                                <div class="row">
+                                  <div class="col-sm-3">
                                     <h6 class="mb-0">Actions</h6>
                                   </div>
                                   <div class="col-sm-9 text-secondary">
