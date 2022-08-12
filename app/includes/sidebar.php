@@ -52,6 +52,19 @@
                         <span>  Timesheet</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
                     <?php }} ?>
                 </a>
+                <?php 
+                $sql = " SELECT * FROM schedule WHERE approval_status = 'pending' ";
+                if ($result = mysqli_query($conn, $sql)) {
+                    $rowcount = mysqli_num_rows( $result );
+                ?>
+                <a href="<?php echo BASE_URL . '/pages/schedule.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="bi bi-calendar-range"></i>
+                    <?php if($rowcount == 0){ ?>
+                        <span>  Schedule</span>
+                    <?php } else { ?>
+                        <span>  Schedule</span> &nbsp;  <span class="badge rounded-pill text-bg-danger" style="margin-top: -10px !important;"><?php echo $rowcount; ?></span>
+                    <?php }} ?>
+                </a>
                 <a href="<?php echo BASE_URL . '/admin/reports.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                     <i class="bi bi-bar-chart"></i>
                     <span>  Reports</span>
