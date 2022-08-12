@@ -21,7 +21,7 @@ if(!isLoggedIn()){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-  <!-- START DCRIPTS -->
+  <!-- START SCRIPTS -->
     <!-- Custom Styles -->
     <link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/other-style.css?v='. time(); ?>">
 
@@ -55,8 +55,10 @@ if(!isLoggedIn()){
     <div class="card-content" style="float: right;">
           <?php 
         $day = date('w');
-        $week_start = date('Y-m-d', strtotime('-'.(7-$day).' days'));
-        $week_end = date('Y-m-d', strtotime('+'.(5-$day).' days'));
+        $monday = date( 'Y-m-d', strtotime( 'monday this week' ) );
+        $friday = date( 'Y-m-d', strtotime( 'friday this week' ) );
+        $week_start = date('Y-m-d', strtotime($monday));
+        $week_end = date('Y-m-d', strtotime($fiday));
 
         $sql = " SELECT * FROM timesheet WHERE date BETWEEN '$week_start' AND '$week_end'";
         if ($result = mysqli_query($conn, $sql)) {
