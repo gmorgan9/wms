@@ -124,40 +124,81 @@ if(!isLoggedIn()){
                             <?php //} ?>
                         </div>
                       </div>
-                      <hr>
                       <div class="row">
                         <div class="col-sm-3">
-                          <h6 class="mb-0">Time In</h6>
+                          <h6 class="mb-0">Tuesday</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
                             <?php 
-                            $orgTimein = $row['timein'];
-                            $timein = date("h:i A", strtotime($orgTimein));
+                            $tues_date = date("M d, Y", strtotime($row['tues_date']));
+                            $tues_timein = date("h:i A", strtotime($row['tues_timein']));
+                            $tues_timeout = date("h:i A", strtotime($row['tues_timeout']));
                             ?>
-                         <?php if($row['new_timein'] != null && $orgTimein != $row['new_timein']) { ?>
-                              <span class="text-warning">Change in Progress</span>  
-                            <?php } else { ?>
-                              <?php echo $timein; ?>
-                            <?php } ?>
+                            <?php //if($row['new_date'] != null && $orgDate != $row['new_date']) { ?>
+                              <!-- <span class="text-warning">Change in Progress</span> -->
+                            <?php //} else { ?>
+                              <?php echo $tues_date; ?> &nbsp; <?php echo $tues_timein; ?> - <?php echo $tues_timeout; ?>
+                            <?php //} ?>
                         </div>
                       </div>
                       <hr>
                       <div class="row">
                         <div class="col-sm-3">
-                          <h6 class="mb-0">Time Out</h6>
+                          <h6 class="mb-0">Wednesday</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
                             <?php 
-                            $orgTimeout = $row['timeout'];
-                            $timeout = date("h:i A", strtotime($orgTimeout));
+                            $wed_date = date("M d, Y", strtotime($row['wed_date']));
+                            $wed_timein = date("h:i A", strtotime($row['wed_timein']));
+                            $wed_timeout = date("h:i A", strtotime($row['wed_timeout']));
                             ?>
-                        <?php if($row['new_timeout'] != null && $orgTimeout != $row['new_timeout']) { ?>
-                              <span class="text-warning">Change in Progress</span>
-                            <?php } else { ?>
-                              <?php echo $timeout; ?>
-                            <?php } ?>
+                            <?php //if($row['new_date'] != null && $orgDate != $row['new_date']) { ?>
+                              <!-- <span class="text-warning">Change in Progress</span> -->
+                            <?php //} else { ?>
+                              <?php echo $wed_date; ?> &nbsp; <?php echo $wed_timein; ?> - <?php echo $wed_timeout; ?>
+                            <?php //} ?>
                         </div>
                       </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Thursday</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <?php 
+                            $thurs_date = date("M d, Y", strtotime($row['thurs_date']));
+                            $thurs_timein = date("h:i A", strtotime($row['thurs_timein']));
+                            $thurs_timeout = date("h:i A", strtotime($row['thurs_timeout']));
+                            ?>
+                            <?php //if($row['new_date'] != null && $orgDate != $row['new_date']) { ?>
+                              <!-- <span class="text-warning">Change in Progress</span> -->
+                            <?php //} else { ?>
+                              <?php echo $thurs_date; ?> &nbsp; <?php echo $thurs_timein; ?> - <?php echo $thurs_timeout; ?>
+                            <?php //} ?>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Friday</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <?php 
+                            $fri_date = date("M d, Y", strtotime($row['fri_date']));
+                            $fri_timein = date("h:i A", strtotime($row['fri_timein']));
+                            $fri_timeout = date("h:i A", strtotime($row['fri_timeout']));
+                            ?>
+                            <?php //if($row['new_date'] != null && $orgDate != $row['new_date']) { ?>
+                              <!-- <span class="text-warning">Change in Progress</span> -->
+                            <?php //} else { ?>
+                              <?php echo $fri_date; ?> &nbsp; <?php echo $fri_timein; ?> - <?php echo $fri_timeout; ?>
+                            <?php //} ?>
+                        </div>
+                      </div>
+                      <hr>
+
+
+
                       <hr>
                       <div class="row">
                         <div class="col-sm-3">
