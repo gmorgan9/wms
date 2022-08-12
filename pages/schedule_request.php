@@ -176,7 +176,7 @@ if(!isLoggedIn()){
     <tbody class="table-group-divider">
 
     <?php
-        $sql = "SELECT * FROM job WHERE approval_status != 'terminated'";
+        $sql = "SELECT * FROM schedule";
         $all = mysqli_query($conn, $sql);
         if($all) {
             while ($row = mysqli_fetch_assoc($all)) {
