@@ -305,17 +305,20 @@ if(!isLoggedIn()){
         <label for="notes" style="font-size: 14px;">Notes</label>
         <textarea class="form-control" id="reason" type="text" name="reason" value=""></textarea>
       </div>
-    <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
-      <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-schedule" class="badge text-bg-secondary">Update Schedule</button>
-    </div>
-    </form>
+    
 
                 <?php }} ?>
 
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+    
+    <div class="modal-footer">
+        <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-schedule" class="badge text-bg-secondary">Update Schedule</button>
         </div>
+        </form>
+    </div>
 
       </div>
     </div>
