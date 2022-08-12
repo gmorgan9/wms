@@ -176,8 +176,13 @@ if(!isLoggedIn()){
     </div>
     <br>
     <hr>
+    <?php 
+    $new_monday = date( 'F d, Y', strtotime($monday));
+    $new_friday = date( 'F d, Y', strtotime($friday));
+
+    ?>
     <div class="section-header pt-1 text-center fs-5">
-      <span class="text-muted pt-3" style="width: 95%;">Schedule for <?php echo $monday; ?> - <?php echo $friday; ?></span>
+      <span class="text-muted pt-3" style="width: 95%;">Schedule for <?php echo $new_monday; ?> - <?php echo $new_friday; ?></span>
     </div>
     <div class="row">
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
