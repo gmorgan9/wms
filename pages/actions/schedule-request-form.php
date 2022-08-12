@@ -179,7 +179,7 @@ if(!isLoggedIn()){
     <div class="row">
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="mon_date" style="font-size: 14px;">Monday Date</label>
-        <input class="form-control" id="mon_date" type="text" name="mon_date" value="<?php echo $monday; ?>" required>
+        <input class="form-control" id="mon_date" type="date" name="mon_date" value="<?php echo $monday; ?>" required>
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="mon_timein" style="font-size: 14px;">Monday Time in</label>
