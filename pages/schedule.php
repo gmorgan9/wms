@@ -44,7 +44,7 @@ if(!isLoggedIn()){
     $insert = "INSERT INTO job (idno, jobtitle, companyname, deptname, employee_fname, employee_lname, employee_idno) 
     VALUES('$idno', '$jobtitle', '$companyname', '$deptname', '$employee_fname', '$employee_lname', '$employee_idno')";
     mysqli_query($conn, $insert);
-    header('location: job_request.php');
+    header('location: schedule.php');
   };
 // END ADD JOB
 
@@ -67,7 +67,7 @@ if(!isLoggedIn()){
   if (isset($_POST['terminated'])) {
     $terUpdateQuery = "UPDATE schedule SET approval_status = 'terminated' WHERE scheduleID = '".$_POST['scheduleID']."'";
     $terUpdateResult = mysqli_query($conn, $terUpdateQuery);
-    header('location: schedule_request.php');
+    header('location: schedule.php');
   }
 // END SET TERMINATED
 
@@ -113,7 +113,7 @@ if(!isLoggedIn()){
     </ul>
   </div>
 
-  <!-- START JOB-REQUEST (RIGHT SIDE) -->
+  <!-- START SCHEDULE-REQUEST (RIGHT SIDE) -->
     <div class="page-content mt-2 mx-auto" style="margin-right: 10px;">
     <a class="badge text-bg-secondary text-decoration-none float-end mt-2" href="actions/schedule-request-form.php">Request Schedule</a>
     <table class="table">
@@ -164,7 +164,7 @@ if(!isLoggedIn()){
             <form method="post" action="">
               <input type="hidden" name="scheduleID" value="<?php echo $scheduleID; ?>" />
               <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-schedule.php?scheduleID=<?php echo $scheduleID; ?>">View</a>
-              <button onclick="return confirm('Be Careful, Can\'t be undone! \r\nOK to delete?')" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="terminated"><span class="badge text-bg-danger">Delete</span></button>
+              <button onclick="return confirm('Be Careful, Can\'t be undone! \r\nOK to Terminate?')" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="terminated"><span class="badge text-bg-danger">Delete</span></button>
             </form>
           </td>
           <?php } ?>
@@ -178,7 +178,7 @@ if(!isLoggedIn()){
         }
           ?>
       </div>
-  <!-- END JOB-REQUEST (RIGHT SIDE) -->
+  <!-- END SCHEDULE-REQUEST (RIGHT SIDE) -->
 
   </div> 
 <!-- END MAIN -->
