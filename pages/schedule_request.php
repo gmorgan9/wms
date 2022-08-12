@@ -113,54 +113,6 @@ if(!isLoggedIn()){
     </ul>
   </div>
 
-
-  <!-- START ADD COMPANY (LEFT SIDE) -->
-    <!-- <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -45px; height: unset !important;">
-    <form action="" method="post">
-    <div class="section-header pt-2">
-      <span class="text-muted pt-4" style="width: 95%;">S Requests</span>
-    </div>
-    <hr style="margin-bottom: -5px; margin-top: 5px;"> -->
-    <?php 
-
-    $employee_idno = $_SESSION['employee_idno'];
-    $sql = "SELECT * FROM job WHERE employee_idno = '$employee_idno' AND status = 'active'";
-    $all = mysqli_query($conn, $sql);
-      if($all) {
-        while ($row = mysqli_fetch_assoc($all)) {
-    
-    $fname = $row['employee_fname'];
-    $lname = $row['employee_lname']; 
-    $employeeID = $row['employee_idno'];
-    $jobtitle = $row['jobtitle'];
-    $companyname = $row['companyname']; 
-    $deptname = $row['deptname'];?>
-    <?php }} ?>
-      <!-- <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php //echo $fname; ?>">
-      <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php //echo $lname; ?>">
-      <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php //echo $employeeID; ?>">
-      <input class="form-control" id="jobtitle" type="hidden" name="jobtitle" value="<?php //echo $jobtitle; ?>">
-      <input class="form-control" id="companyname" type="hidden" name="companyname" value="<?php //echo $companyname; ?>">
-      <input class="form-control" id="deptname" type="hidden" name="deptname" value="<?php //echo $deptname; ?>">
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
-      <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
-    </div>
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="deptname" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
-      <input class="form-control" id="deptname" type="text" name="deptname" value="" required>
-    </div>
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="jobtitle" style="font-size: 14px;">Job Title / Position <span class="text-muted" style="font-size: 10px;">e.g. "Chief Executive Officer"</span></label>
-      <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="" required>
-    </div>
-    <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
-      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-job" class="badge text-bg-secondary">Request Job</button>
-    </div>
-    </form>
-    </div> -->
-  <!-- END ADD JOB (LEFT SIDE) -->
-
   <!-- START JOB-REQUEST (RIGHT SIDE) -->
     <div class="page-content mt-2 mx-auto" style="margin-right: 10px;">
     <a class="badge text-bg-secondary text-decoration-none float-end mt-2" href="actions/schedule-request-form.php">Request Schedule</a>
@@ -180,16 +132,16 @@ if(!isLoggedIn()){
         $all = mysqli_query($conn, $sql);
         if($all) {
             while ($row = mysqli_fetch_assoc($all)) {
-              $jobID       = $row['jobID'];
-              $idno        = $row['idno'];
-              $fname       = $row['employee_fname'];
-              $lname       = $row['employee_lname'];
-              $emp_idno    = $row['employee_idno'];
-              $deptname    = $row['deptname'];
-              $jobtitle    = $row['jobtitle'];
-              $companyname = $row['companyname'];
-              $deptname    = $row['deptname'];
-              $app_status  = $row['approval_status'];
+              $scheduleID       = $row['scheduleID'];
+              $idno             = $row['idno'];
+              $fname            = $row['employee_fname'];
+              $lname            = $row['employee_lname'];
+              $emp_idno         = $row['employee_idno'];
+              $deptname         = $row['deptname'];
+              $jobtitle         = $row['jobtitle'];
+              $companyname      = $row['companyname'];
+              $deptname         = $row['deptname'];
+              $app_status       = $row['approval_status'];
     ?>
       <tr>
           <th scope="row"><?php echo $idno; ?></th>
@@ -205,6 +157,7 @@ if(!isLoggedIn()){
           <?php }?>
           <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
+          <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-schedule.php?scheduleID=<?php echo $scheduleID; ?>">View</a>
             <form method="post" action="">
               <input type="hidden" name="jobID" value="<?php echo $jobID; ?>" />
               <button onclick="return confirm('Be Careful, Can\'t be undone! \r\nOK to delete?')" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="terminated"><span class="badge text-bg-danger">Delete</span></button>
