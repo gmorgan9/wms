@@ -182,8 +182,9 @@ if(!isLoggedIn()){
       </div>
   <!-- END SCHEDULE-REQUEST (RIGHT SIDE) -->
   <?php } else { ?>
-  <!-- START ADMIN SCHEDULE-REQUEST (RIGHT SIDE) -->
-  <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -90px; height: unset !important;">
+  <!-- START ADMIN SCHEDULE-REQUEST (LEFT SIDE) -->
+
+    <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -90px; height: unset !important;">
     <form action="" method="post">
     <div class="section-header pt-2">
         <span class="text-muted pt-4" style="width: 95%;">Pending Time Change Requests</span>
@@ -200,11 +201,11 @@ if(!isLoggedIn()){
     <tbody class="table-group-divider">
 
     <?php
-        $sql = "SELECT * FROM timesheet where approval_status = 'pending'";
+        $sql = "SELECT * FROM schedule where approval_status = 'pending'";
         $result = mysqli_query($conn, $sql);
         if($result) {
             while ($row = mysqli_fetch_assoc($result)) {
-              $timeID           = $row['timeID'];
+              $scheduleID       = $row['scheduleID'];
               $idno             = $row['idno'];
               $orgDate          = $row['date'];
               $date             = date("M d, Y", strtotime($orgDate));
@@ -225,12 +226,12 @@ if(!isLoggedIn()){
               // $companyname    = $row['companyname'];
     ?>
       <tr>
-          <th scope="row"><a class="text-decoration-none text-dark" href="actions/view-timesheet.php?timeID=<?php echo $timeID; ?>"><?php echo $idno; ?></a></th>
+          <th scope="row"><a class="text-decoration-none text-dark" href="actions/view-schedule.php?scheduleID=<?php echo $scheduleID; ?>"><?php echo $idno; ?></a></th>
           <td>
-            <?php if($row['new_idno'] != null) { ?>
-              Change
-            <?php } else { ?>
-              Submission 
+            <?php if($row['approval_status'] == 'pending') { ?>
+              Approval
+            <?php } if($row['approval_status'] == 'terminated') { ?>
+              Termination 
             <?php } ?>
 
           </td>
@@ -277,8 +278,9 @@ if(!isLoggedIn()){
 
     <!-- end PAGE-CONTENT -->
     </div>
+  <!-- END ADMIN SCHEDULE-REQUEST (LEFT SIDE) -->
 
-
+  <!-- START ADMIN SCHEDULE-REQUEST (RIGHT SIDE) -->
     <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
     <!-- <span class="mx-auto">Timesheet for <span class="text-muted text-capitalize"><?php //echo $_SESSION['fname']; ?></span></span> -->
     <table class="table">
