@@ -249,13 +249,13 @@ if(!isLoggedIn()){
                                   </div>
                                   <div class="col-sm-9 text-secondary">
                                     <?php if($row['approval_status'] == 'approved'){ ?>
-                                    <span class="text-capitalize text-success"><?php echo $app_status; ?><span>
+                                    <span class="text-capitalize text-success"><?php echo $row['approval_status']; ?><span>
                                     <?php } if($row['approval_status'] == 'rejected') { ?>
-                                      <span class="text-capitalize text-danger"><?php echo $app_status; ?><span>
+                                      <span class="text-capitalize text-danger"><?php echo $row['approval_status']; ?><span>
                                     <?php } if($row['approval_status'] == 'pending') { ?>
-                                      <span class="text-capitalize text-primary"><?php echo $app_status; ?><span>
+                                      <span class="text-capitalize text-primary"><?php echo $row['approval_status']; ?><span>
                                     <?php } if($row['approval_status'] == 'terminated') { ?>
-                                      <span class="text-capitalize text-danger"><?php echo $app_status; ?><span>
+                                      <span class="text-capitalize text-danger"><?php echo $row['approval_status']; ?><span>
                                     <?php }?>
                                   </div>
                                 </div>
