@@ -242,19 +242,19 @@ if(!isLoggedIn()){
             <?php $timeid = $row['scheduleID']; ?>
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-status"><span class="badge text-bg-success">Approve</span></button>
             </form>
-            <?php } if($row['approval_status'] == 'terminated') { ?>
-          <form method="post" action="">
-          <?php $timeid = $row['timeID']; ?>
-            <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
-            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-time"><span class="badge text-bg-success">Approve</span></button>
-          </form>
-          <?php } ?>
-          &nbsp;
-          <form method="post" action="">
+            &nbsp;
+            <form method="post" action="">
           <?php $timeid = $row['timeID']; ?>
             <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="rejected"><span class="badge text-bg-danger">Reject</span></button>
           </form>
+            <?php } if($row['approval_status'] == 'terminated') { ?>
+          <form method="post" action="">
+          <?php $timeid = $row['timeID']; ?>
+            <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
+            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-time"><span class="badge text-bg-danger">Terminate</span></button>
+          </form>
+          <?php } ?>
           </div>
           </td>
           <!--  onclick="return confirm('Be Careful! \r\nOK to delete?')" -->
