@@ -121,6 +121,7 @@ if(!isLoggedIn()){
       <tr>
         <th scope="col" style="font-size: 14px;">ID #</th>
         <th scope="col" style="font-size: 14px;">Employee</th>
+        <th scope="col" style="font-size: 14px;">Schedule Dates</th>
         <th scope="col" style="font-size: 14px;">Status</th>
         <th scope="col" style="font-size: 14px;">Actions</th>
       </tr>
@@ -142,10 +143,13 @@ if(!isLoggedIn()){
               $companyname      = $row['companyname'];
               $deptname         = $row['deptname'];
               $app_status       = $row['approval_status'];
+              $monday       = date( 'F d, Y', strtotime($row['mon_date']));
+              $friday       = date( 'F d, Y', strtotime($row['fri_date']));
     ?>
       <tr>
           <th scope="row"><?php echo $idno; ?></th>
           <td><?php echo $lname; ?>, <?php echo $fname; ?></td>
+          <td><?php echo $monday; ?> - <?php echo $friday; ?></td>
           <?php if($app_status == 'approved'){ ?>
           <td><span class="text-capitalize text-success"><?php echo $app_status; ?><span></td>
           <?php } if($app_status == 'rejected') { ?>
