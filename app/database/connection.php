@@ -1,5 +1,7 @@
 <!-- WORKING -->
 <?php
+date_default_timezone_set('America/Denver');
+
 
 $servername = "localhost";
 $username = "garrett";

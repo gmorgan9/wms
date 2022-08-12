@@ -1,6 +1,8 @@
 <!-- WORKING -->
 <?php
 
+date_default_timezone_set('America/Denver');
+
 // REQUIRE
   require_once "../app/database/connection.php";
   require_once "../app/database/functions.php";
@@ -263,7 +265,7 @@ if(!isLoggedIn()){
     <!-- start PAGE-CONTENT -->
     <?php
       $day = date('w');
-      $week_start = date('Y-m-d', strtotime('-'.(7-$day).' days'));
+      $week_start = date('Y-m-d', strtotime('-'.(5-$day).' days'));
       $week_end = date('Y-m-d', strtotime('+'.(5-$day).' days'));
       $week_num = date('W', strtotime($week_start));
       $display_week_start = date('F d, Y', strtotime('-'.(7-$day).' days'));
@@ -287,7 +289,7 @@ if(!isLoggedIn()){
     <?php
 
             $day = date('w');
-            $week_start = date('Y-m-d', strtotime('-'.(7-$day).' days'));
+            $week_start = date('Y-m-d', strtotime('-'.(5-$day).' days'));
             $week_end = date('Y-m-d', strtotime('+'.(5-$day).' days'));
             $week_num = date('W', strtotime($week_start));
 
