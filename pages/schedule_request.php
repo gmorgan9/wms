@@ -163,6 +163,7 @@ if(!isLoggedIn()){
 
   <!-- START JOB-REQUEST (RIGHT SIDE) -->
     <div class="page-content mt-2 mx-auto" style="margin-right: 10px;">
+    <a class="badge text-bg-secondary" href="schedule-request-form.php">Request Schedule</a>
     <table class="table">
     <thead>
       <tr>
