@@ -93,8 +93,7 @@ if(!isLoggedIn()){
       </div>
 
       <div class="page-content mx-auto mt-2">
-    <form action="" method="post">
-          <div class="col-md-8 float-start" style="width: 48%;">
+                <div class="col-md-8 float-start" style="width: 35%;">
                   <div class="card mb-3">
                     <div class="card-body">
                       <div class="row">
@@ -214,7 +213,7 @@ if(!isLoggedIn()){
                         </div>
                       </div>
                     </div>
-                  </div>
+                </div>
 
 
           <div class="col-md-8 float-end" style="width: 48%;">
