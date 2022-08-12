@@ -251,7 +251,7 @@ if(!isLoggedIn()){
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 48%;">
         <label for="note" style="font-size: 14px;">Notes</label>
-        <textarea class="form-control" id="note" type="text" name="note" value="" required></textarea>
+        <textarea class="form-control" id="note" type="text" name="note" value=""></textarea>
       </div>
     </div>
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
