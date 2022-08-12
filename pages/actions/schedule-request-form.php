@@ -139,6 +139,7 @@ if(!isLoggedIn()){
 
     <div class="section-header pt-2">
       <span class="text-muted pt-4" style="width: 95%;">Schedule Request For</span>
+      <hr>
     </div>
     <div class="row">
       <div class="form-group pt-3 mx-auto" style="width: 20%;">
