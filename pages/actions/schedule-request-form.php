@@ -41,7 +41,7 @@ if(!isLoggedIn()){
     $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
     $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
 
-    $insert = "INSERT INTO `schedule`(`idno`, `mon_date`, `mon_timein`, `mon_timeout`, `tues_date`, `tues_timein`, `tues_timeout`, `wed_date`, `wed_timein`, `wed_timeout`, `thurs_date`, `thurs_timein`, `thurs_timeout`, `fri_date`, `fri_timein`, `fri_timeout`, `notes`, `employee_fname`, `employee_lname`, `employee_idno`, `jobtitle`, `companyname`, `deptname`) VALUES (`$idno`, `$mon_date`, `$mon_timein`, `$mon_timeout`, `$tues_date`, `$tues_timein`, `$tues_timeout`, `$wed_date`, `$wed_timein`, `$wed_timeout`, `$thurs_date`, `$thurs_timein`, `$thurs_timeout`, `$fri_date`, `$fri_timein`, `$fri_timeout`, `$notes`, `$employee_fname`, `$employee_lname`, `$employee_idno`, `$jobtitle`, `$companyname`, `$deptname`)";
+    $insert = "INSERT INTO `schedule`(`idno`, `mon_date`, `mon_timein`, `mon_timeout`) VALUES (`$idno`, `$mon_date`, `$mon_timein`, `$mon_timeout`)";
     mysqli_query($conn, $insert);
     header('location: schedule-request-form.php');
   };
