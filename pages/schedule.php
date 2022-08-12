@@ -291,7 +291,7 @@ if(!isLoggedIn()){
     <tbody class="table-group-divider">
 
     <?php
-        $sql = "SELECT * FROM timesheet";
+        $sql = "SELECT * FROM schedule";
         $all = mysqli_query($conn, $sql);
         if($all) {
             while ($row = mysqli_fetch_assoc($all)) {
@@ -321,6 +321,8 @@ if(!isLoggedIn()){
             <td><span class="text-capitalize text-danger"><?php echo $app_status; ?><span></td>
           <?php } if($app_status == 'pending') { ?>
             <td><span class="text-capitalize text-primary"><?php echo $app_status; ?><span></td>
+            <?php } if($app_status == 'terminated') { ?>
+            <td><span class="text-capitalize text-danger"><?php echo $app_status; ?><span></td>
           <?php }?>
           <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
