@@ -58,7 +58,7 @@ if(!isLoggedIn()){
         $monday = date( 'Y-m-d', strtotime( 'monday this week' ) );
         $friday = date( 'Y-m-d', strtotime( 'friday this week' ) );
         $week_start = date('Y-m-d', strtotime($monday));
-        $week_end = date('Y-m-d', strtotime($fiday));
+        $week_end = date('Y-m-d', strtotime($friday));
 
         $sql = " SELECT * FROM timesheet WHERE date BETWEEN '$week_start' AND '$week_end'";
         if ($result = mysqli_query($conn, $sql)) {
