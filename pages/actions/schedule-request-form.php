@@ -223,6 +223,20 @@ if(!isLoggedIn()){
         <input class="form-control" id="tues_timeout" type="text" name="tues_timeout" value="" required>
       </div>
     </div>
+    <div class="row">
+      <div class="form-group pt-3 mx-auto" style="width: 15%;">
+        <label for="mon_date" style="font-size: 14px;">Friday Date</label>
+        <input class="form-control" id="mon_date" type="text" name="mon_date" value="" required>
+      </div>
+      <div class="form-group pt-3 mx-auto" style="width: 15%;">
+        <label for="mon_timein" style="font-size: 14px;">Friday Time in</label>
+        <input class="form-control" id="mon_timein" type="text" name="mon_timein" value="" required>
+      </div>
+      <div class="form-group pt-3 mx-auto" style="width: 15%;">
+        <label for="mon_timeout" style="font-size: 14px;">Friday Timeout</label>
+        <input class="form-control" id="mon_timeout" type="text" name="mon_timeout" value="" required>
+      </div>
+    </div>
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
       <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-job" class="badge text-bg-secondary">Request Job</button>
     </div>
