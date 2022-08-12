@@ -257,6 +257,7 @@ if(!isLoggedIn()){
                                     <?php } if($row['approval_status'] == 'terminated') { ?>
                                       <span class="text-capitalize text-danger"><?php echo $app_status; ?><span>
                                     <?php }?>
+                                  </div>
                                 </div>
                       <hr>
                                 <div class="row">
