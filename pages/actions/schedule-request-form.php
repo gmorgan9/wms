@@ -41,10 +41,10 @@ if(!isLoggedIn()){
     $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
     $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
 
-    $insert = "INSERT INTO job (idno, jobtitle, companyname, deptname, employee_fname, employee_lname, employee_idno) 
-    VALUES('$idno', '$jobtitle', '$companyname', '$deptname', '$employee_fname', '$employee_lname', '$employee_idno')";
+    $insert = "INSERT INTO schedule (idno, mon_date, mon_timein, mon_timeout, tues_date, tues_timein, tues_timeout, wed_date, wed_timein, wed_timeout, thurs_date, thurs_timein, thurs_timeout, fri_date, fri_timein, fri_timeout, notes, jobtitle, companyname, deptname, employee_fname, employee_lname, employee_idno) 
+    VALUES ('$idno', '$mon_date','$mon_timein','$mon_timeout', '$tues_date','$tues_timein','$tues_timeout','$wed_date','$wed_timein','$wed_timeout', '$thurs_date','$thurs_timein','$thurs_timeout', '$fri_date','$fri_timein','$fri_timeout', '$notes', '$jobtitle', '$companyname', '$deptname', '$employee_fname', '$employee_lname', '$employee_idno')";
     mysqli_query($conn, $insert);
-    header('location: job_request.php');
+    header('location: ../schedule-request-form.php.php');
   };
 // END ADD JOB
 
@@ -255,7 +255,7 @@ if(!isLoggedIn()){
       </div>
     </div>
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
-      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-job" class="badge text-bg-secondary">Request Job</button>
+      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-schedule" class="badge text-bg-secondary">Request Schedule</button>
     </div>
     </form>
     </div>
