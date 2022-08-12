@@ -93,7 +93,7 @@ if(!isLoggedIn()){
       </div>
 
       <div class="page-content mx-auto mt-2">
-                <div class="col-md-8 float-start" style="width: 45%;">
+                <div class="col-md-8 float-start" style="width: 50%;">
                   <div class="card mb-3">
                     <div class="card-body">
                       <div class="row">
@@ -153,7 +153,7 @@ if(!isLoggedIn()){
                   </div>
                 </div>
 
-          <div class="col-md-8 float-end" style="width: 55%;">
+          <div class="col-md-8 float-end" style="width: 48%;">
                   <div class="card mb-3">
                     <div class="card-body">
                                 <div class="row">
