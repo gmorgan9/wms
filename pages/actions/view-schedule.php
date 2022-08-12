@@ -214,7 +214,7 @@ if(!isLoggedIn()){
                       </div>
                     </div>
                 </div>
-
+                            </div>
 
           <div class="col-md-8 float-end" style="width: 48%;">
                   <div class="card mb-3">
@@ -337,8 +337,7 @@ if(!isLoggedIn()){
                                 </div>
                     </div>
                   </div>
-                                      </div>
-                                      </div>
+                                      </div>                   
                             
                             
                             
