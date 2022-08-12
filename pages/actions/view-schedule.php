@@ -320,7 +320,6 @@ if(!isLoggedIn()){
         </form>
     </div>
 
-      </div>
     </div>
     
   </div>
