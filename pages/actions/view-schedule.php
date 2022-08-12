@@ -291,20 +291,18 @@ if(!isLoggedIn()){
         ?>
 
     <form action="" method="post">
-    <div class="section-header pt-2 text-center fs-5">
-      <span class="text-muted pt-4" style="width: 95%;">Schedule Requests</span>
-    </div>
-    <hr style="margin-bottom: -5px; margin-top: 5px;">
-    <div class="form-group pt-3 mx-auto">
-        <label for="notes" style="font-size: 14px;">Notes</label>
-        <input class="form-control" id="reason" type="text" name="reason" value="<?php echo $row['idno'] ?>" readonly>
-      </div>
-    </div>
-    
-      <div class="form-group pt-3 mx-auto">
-        <label for="notes" style="font-size: 14px;">Notes</label>
-        <textarea class="form-control" id="reason" type="text" name="reason" value=""></textarea>
-      </div>
+        <div class="section-header pt-2 text-center fs-5">
+            <span class="text-muted pt-4" style="width: 95%;">Schedule Requests</span>
+        </div>
+        <hr style="margin-bottom: -5px; margin-top: 5px;">
+        <div class="form-group pt-3 mx-auto">
+            <label for="notes" style="font-size: 14px;">Notes</label>
+            <input class="form-control" id="reason" type="text" name="reason" value="<?php echo $row['idno'] ?>" readonly>
+        </div>
+        <div class="form-group pt-3 mx-auto">
+            <label for="notes" style="font-size: 14px;">Notes</label>
+            <textarea class="form-control" id="reason" type="text" name="reason" value=""></textarea>
+        </div>
     
 
                 <?php }} ?>
