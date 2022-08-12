@@ -186,7 +186,7 @@ if(!isLoggedIn()){
     <div class="row">
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="mon_date" style="font-size: 14px;">Monday Date</label>
-        <input class="form-control" id="mon_date" type="date" name="mon_date" value="<?php echo $monday; ?>" required>
+        <input class="form-control" id="mon_date" type="text" name="mon_date" value="<?php echo $monday; ?>" required>
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="mon_timein" style="font-size: 14px;">Monday Time in</label>
@@ -198,7 +198,7 @@ if(!isLoggedIn()){
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="tues_date" style="font-size: 14px;">Tuesday Date</label>
-        <input class="form-control" id="tues_date" type="date" name="tues_date" value="<?php echo $tuesday; ?>" required>
+        <input class="form-control" id="tues_date" type="text" name="tues_date" value="<?php echo $tuesday; ?>" required>
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="tues_timein" style="font-size: 14px;">Tuesday Time in</label>
@@ -212,7 +212,7 @@ if(!isLoggedIn()){
     <div class="row">
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="wed_date" style="font-size: 14px;">Wednesday Date</label>
-        <input class="form-control" id="wed_date" type="date" name="wed_date" value="<?php echo $wednesday; ?>" required>
+        <input class="form-control" id="wed_date" type="text" name="wed_date" value="<?php echo $wednesday; ?>" required>
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="wed_timein" style="font-size: 14px;">Wednesday Time in</label>
@@ -224,7 +224,7 @@ if(!isLoggedIn()){
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="thurs_date" style="font-size: 14px;">Thursday Date</label>
-        <input class="form-control" id="thurs_date" type="date" name="thurs_date" value="<?php echo $thursday; ?>" required>
+        <input class="form-control" id="thurs_date" type="text" name="thurs_date" value="<?php echo $thursday; ?>" required>
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="thurs_timein" style="font-size: 14px;">Thursday Time in</label>
@@ -238,7 +238,7 @@ if(!isLoggedIn()){
     <div class="row">
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="fri_date" style="font-size: 14px;">Friday Date</label>
-        <input class="form-control" id="fri_date" type="date" name="fri_date" value="<?php echo $friday; ?>" required>
+        <input class="form-control" id="fri_date" type="text" name="fri_date" value="<?php echo $friday; ?>" required>
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="fri_timein" style="font-size: 14px;">Friday Time in</label>
