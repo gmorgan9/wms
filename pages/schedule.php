@@ -187,13 +187,13 @@ if(!isLoggedIn()){
     <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -90px; height: unset !important;">
     <form action="" method="post">
     <div class="section-header pt-2">
-        <span class="text-muted pt-4" style="width: 95%;">Pending Time Change Requests</span>
+        <span class="text-muted pt-4" style="width: 95%;">Pending Schedule Requests</span>
       </div>
       <hr style="margin-bottom: -5px; margin-top: 5px;">
       <table class="table">
     <thead>
       <tr>
-        <th scope="col" style="font-size: 14px;">Timesheet ID</th>
+        <th scope="col" style="font-size: 14px;">Schedule ID</th>
         <th scope="col" style="font-size: 14px;">Type</th>
         <th scope="col" style="font-size: 14px;">Actions</th>
       </tr>
