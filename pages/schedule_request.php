@@ -157,14 +157,11 @@ if(!isLoggedIn()){
           <?php }?>
           <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
-            <div class="d-flex">
-              
-              <form method="post" action="">
-                <input type="hidden" name="jobID" value="<?php echo $jobID; ?>" />
-                <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-schedule.php?scheduleID=<?php echo $scheduleID; ?>">View</a>
-                <button onclick="return confirm('Be Careful, Can\'t be undone! \r\nOK to delete?')" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="terminated"><span class="badge text-bg-danger">Delete</span></button>
-              </form>
-            </div>
+            <form method="post" action="">
+              <input type="hidden" name="jobID" value="<?php echo $jobID; ?>" />
+              <a style="text-decoration: none;" class="badge text-bg-success" href="actions/view-schedule.php?scheduleID=<?php echo $scheduleID; ?>">View</a>
+              <button onclick="return confirm('Be Careful, Can\'t be undone! \r\nOK to delete?')" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="terminated"><span class="badge text-bg-danger">Delete</span></button>
+            </form>
           </td>
           <?php } ?>
           
