@@ -117,8 +117,8 @@ if(!isLoggedIn()){
   <!-- START ADD COMPANY (LEFT SIDE) -->
     <div class="page-content mx-auto" style="margin-top: 10px;">
     <form action="" method="post">
-    <div class="section-header pt-2">
-      <span class="text-muted text-center pt-4" style="width: 95%;">Schedule Requests</span>
+    <div class="section-header pt-2 text-center">
+      <span class="text-muted pt-4" style="width: 95%;">Schedule Requests</span>
     </div>
     <hr style="margin-bottom: -5px; margin-top: 5px;">
     <?php 
@@ -165,6 +165,7 @@ if(!isLoggedIn()){
         <input class="form-control" id="deptname" type="text" name="deptname" value="<?php echo $deptname; ?>">
       </div>
     </div>
+    <br>
     <hr>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
