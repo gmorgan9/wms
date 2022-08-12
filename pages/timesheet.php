@@ -289,7 +289,7 @@ if(!isLoggedIn()){
     <?php
 
             $day = date('w');
-            $week_start = date('Y-m-d', strtotime('-'.(5-$day).' days'));
+            $week_start = date('Y-m-d', strtotime('-'.(9-$day).' days'));
             $week_end = date('Y-m-d', strtotime('+'.(5-$day).' days'));
             $week_num = date('W', strtotime($week_start));
 
