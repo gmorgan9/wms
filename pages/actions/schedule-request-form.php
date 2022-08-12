@@ -170,7 +170,7 @@ if(!isLoggedIn()){
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 48%;">
         <label for="deptname" style="font-size: 14px;">Department</label>
-        <input class="form-control" id="deptname" type="text" name="deptname" value="<?php echo $deptname; ?>" disabled>
+        <input class="form-control" id="deptname" type="text" name="deptname" value="<?php echo $deptname; ?>" >
       </div>
     </div>
     <br>
