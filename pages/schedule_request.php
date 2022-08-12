@@ -143,8 +143,8 @@ if(!isLoggedIn()){
               $companyname      = $row['companyname'];
               $deptname         = $row['deptname'];
               $app_status       = $row['approval_status'];
-              $monday       = date( 'F d, Y', strtotime($row['mon_date']));
-              $friday       = date( 'F d, Y', strtotime($row['fri_date']));
+              $monday       = date( 'm d, y', strtotime($row['mon_date']));
+              $friday       = date( 'm d, y', strtotime($row['fri_date']));
     ?>
       <tr>
           <th scope="row"><?php echo $idno; ?></th>
