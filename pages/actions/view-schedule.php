@@ -114,8 +114,8 @@ if(!isLoggedIn()){
                         <div class="col-sm-9 text-secondary">
                             <?php 
                             $mon_date = date("M d, Y", strtotime($row['mon_date']));
-                            $mon_timein = date("h:i:s", strtotime($row['mon_timein']));
-                            $mon_timeout = date("h:i:s", strtotime($row['mon_timeout']));
+                            $mon_timein = date("h:i A", strtotime($row['mon_timein']));
+                            $mon_timeout = date("h:i A", strtotime($row['mon_timeout']));
                             ?>
                             <?php //if($row['new_date'] != null && $orgDate != $row['new_date']) { ?>
                               <!-- <span class="text-warning">Change in Progress</span> -->
