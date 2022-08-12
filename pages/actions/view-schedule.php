@@ -33,7 +33,7 @@ if(!isLoggedIn()){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>WMS | View Job</title>
+   <title>WMS | View Schedule</title>
 
   <!-- START SCRIPTS -->
     <!-- Custom Styles -->
@@ -276,7 +276,7 @@ if(!isLoggedIn()){
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Schedule Change Request</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
