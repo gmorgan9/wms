@@ -67,7 +67,7 @@ if(!isLoggedIn()){
   if (isset($_POST['terminated'])) {
     $terUpdateQuery = "UPDATE schedule SET approval_status = 'terminated' WHERE scheduleID = '".$_POST['scheduleID']."'";
     $terUpdateResult = mysqli_query($conn, $terUpdateQuery);
-    header('location: job_request.php');
+    header('location: schedule_request.php');
   }
 // END SET TERMINATED
 
