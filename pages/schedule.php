@@ -183,7 +183,7 @@ if(!isLoggedIn()){
   <!-- END SCHEDULE-REQUEST (RIGHT SIDE) -->
   <?php } else { ?>
   <!-- START ADMIN SCHEDULE-REQUEST (RIGHT SIDE) -->
-  <div class="page-content float-start mx-auto" style="margin-top: 12px; width: 32%;margin-left: -100px; height: unset !important;">
+  <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -90px; height: unset !important;">
     <form action="" method="post">
     <div class="section-header pt-2">
         <span class="text-muted pt-4" style="width: 95%;">Pending Time Change Requests</span>
