@@ -173,8 +173,8 @@ if(!isLoggedIn()){
     <hr>
     <div class="row">
       <div class="form-group pt-3 mx-auto" style="width: 30%;">
-        <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
-        <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
+        <label for="mon_date" style="font-size: 14px;">Monday Date</label>
+        <input class="form-control" id="mon_date" type="text" name="mon_date" value="" required>
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 30%;">
         <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
