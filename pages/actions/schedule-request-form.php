@@ -138,19 +138,19 @@ if(!isLoggedIn()){
     <?php }} ?>
 
     <div class="row">
-      <div class="form-group pt-3 mx-auto" style="width: 35%;">
+      <div class="form-group pt-3 mx-auto" style="width: 25%;">
         <label for="employee_fname" style="font-size: 14px;">First Name</label>
         <input class="form-control" id="employee_fname" type="text" name="employee_fname" value="<?php echo $fname; ?>">
       </div>
-      <div class="form-group pt-3 mx-auto" style="width: 35%;">
+      <div class="form-group pt-3 mx-auto" style="width: 25%;">
         <label for="employee_lname" style="font-size: 14px;">Last Name</label>
         <input class="form-control" id="employee_lname" type="text" name="employee_lname" value="<?php echo $lname; ?>">
       </div>
-      <div class="form-group pt-3 mx-auto" style="width: 20%;">
+      <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="employee_idno" style="font-size: 14px;">Employee ID #</label>
         <input class="form-control" id="employee_idno" type="text" name="employee_idno" value="<?php echo $employeeID; ?>">
       </div>
-      <div class="form-group pt-3 mx-auto" style="width: 35%;">
+      <div class="form-group pt-3 mx-auto" style="width: 25%;">
         <label for="jobtitle" style="font-size: 14px;">Job Title</label>
         <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="<?php echo $jobtitle; ?>">
       </div>
