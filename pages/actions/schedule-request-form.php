@@ -154,7 +154,7 @@ if(!isLoggedIn()){
         <label for="employee_idno" style="font-size: 14px;">Employee ID #</label>
         <input class="form-control" id="employee_idno" type="text" name="employee_idno" value="<?php echo $employeeID; ?>">
       </div>
-      <div class="form-group pt-3 mx-auto" style="width: 25%;">
+      <div class="form-group pt-3 mx-auto" style="width: 35%;">
         <label for="jobtitle" style="font-size: 14px;">Job Title</label>
         <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="<?php echo $jobtitle; ?>">
       </div>
