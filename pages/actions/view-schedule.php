@@ -161,7 +161,7 @@ if(!isLoggedIn()){
                                     <h6 class="mb-0">Employee</h6>
                                   </div>
                                   <div class="col-sm-9 text-secondary">
-                                  <span class="text-capitalize"><?php echo $row['employee_lname']; ?></span>
+                                  <span class="text-capitalize"><?php echo $row['employee_lname']; ?>, <?php echo $row['employee_fname']; ?></span>
                                   </div>
                                 </div>
                       <hr>
