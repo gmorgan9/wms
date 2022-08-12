@@ -148,25 +148,25 @@ if(!isLoggedIn()){
     <div class="row mx-auto">
       <div class="form-group pt-3 mx-auto" style="width: 25%;">
         <label for="employee_fname" style="font-size: 14px;">First Name</label>
-        <input class="form-control" id="employee_fname" type="text" name="employee_fname" value="test" disabled>
+        <input class="form-control" id="employee_fname" type="text" name="employee_fname" value="test" readonly>
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 25%;">
         <label for="employee_lname" style="font-size: 14px;">Last Name</label>
-        <input class="form-control" id="employee_lname" type="text" name="employee_lname" value="<?php echo $lname; ?>" disabled>
+        <input class="form-control" id="employee_lname" type="text" name="employee_lname" value="<?php echo $lname; ?>" readonly>
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="employee_idno" style="font-size: 14px;">Employee ID #</label>
-        <input class="form-control" id="employee_idno" type="text" name="employee_idno" value="<?php echo $employeeID; ?>" disabled>
+        <input class="form-control" id="employee_idno" type="text" name="employee_idno" value="<?php echo $employeeID; ?>" readonly>
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 35%;">
         <label for="jobtitle" style="font-size: 14px;">Job Title</label>
-        <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="<?php echo $jobtitle; ?>" disabled>
+        <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="<?php echo $jobtitle; ?>" readonly>
       </div>
     </div>
     <div class="row">
       <div class="form-group pt-3 mx-auto" style="width: 48%;">
         <label for="companyname" style="font-size: 14px;">Company</label>
-        <input class="form-control" id="companyname" type="text" name="companyname" value="<?php echo $companyname; ?>" disabled>
+        <input class="form-control" id="companyname" type="text" name="companyname" value="<?php echo $companyname; ?>" readonly>
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 48%;">
         <label for="deptname" style="font-size: 14px;">Department</label>
