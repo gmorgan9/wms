@@ -281,16 +281,16 @@ if(!isLoggedIn()){
         </div>
         <div class="modal-body">
 
-  <?php 
-  $id = $_GET['scheduleID'];
-  $select = " SELECT * FROM schedule WHERE scheduleID = '$id' ";
-  $result = mysqli_query($conn, $select);
+        <?php 
+        $id = $_GET['scheduleID'];
+        $select = " SELECT * FROM schedule WHERE scheduleID = '$id' ";
+        $result = mysqli_query($conn, $select);
 
-  if (mysqli_num_rows($result) > 0) {
-     while($row = mysqli_fetch_assoc($result)) {
-      ?>
+        if (mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+        ?>
 
-<form action="" method="post">
+    <form action="" method="post">
     <div class="section-header pt-2 text-center fs-5">
       <span class="text-muted pt-4" style="width: 95%;">Schedule Requests</span>
     </div>
@@ -305,7 +305,6 @@ if(!isLoggedIn()){
         <label for="notes" style="font-size: 14px;">Notes</label>
         <textarea class="form-control" id="reason" type="text" name="reason" value=""></textarea>
       </div>
-    </div>
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
       <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-schedule" class="badge text-bg-secondary">Update Schedule</button>
     </div>
