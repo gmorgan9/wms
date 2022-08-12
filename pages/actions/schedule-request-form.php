@@ -155,8 +155,16 @@ if(!isLoggedIn()){
         <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="<?php echo $jobtitle; ?>">
       </div>
     </div>
-      <input class="form-control" id="companyname" type="text" name="companyname" value="<?php echo $companyname; ?>">
-      <input class="form-control" id="deptname" type="text" name="deptname" value="<?php echo $deptname; ?>">
+    <div class="row">
+      <div class="form-group pt-3 mx-auto" style="width: 48%;">
+        <label for="companyname" style="font-size: 14px;">Company</label>
+        <input class="form-control" id="companyname" type="text" name="companyname" value="<?php echo $companyname; ?>">
+      </div>
+      <div class="form-group pt-3 mx-auto" style="width: 48%;">
+        <label for="deptname" style="font-size: 14px;">Department</label>
+        <input class="form-control" id="deptname" type="text" name="deptname" value="<?php echo $deptname; ?>">
+      </div>
+    </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
       <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
