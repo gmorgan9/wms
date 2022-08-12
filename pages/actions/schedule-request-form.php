@@ -138,7 +138,7 @@ if(!isLoggedIn()){
     <?php }} ?>
 
     <div class="section-header pt-2" style="margin-top: 15px; margin-bottom: -10px;">
-      <span class="text-muted pt-4" style="width: 95%;">Schedule Request For</span>
+      <span class="text-muted pt-4 mx-auto">Schedule Request For</span>
     </div>
     <hr>
     <div class="row mx-auto">
