@@ -141,7 +141,7 @@ if(!isLoggedIn()){
       <span class="text-muted pt-4" style="width: 95%;">Schedule Request For</span>
       <hr>
     </div>
-    <div class="row">
+    <div class="row mx-auto" width="95%">
       <div class="form-group pt-3 mx-auto" style="width: 20%;">
         <label for="employee_fname" style="font-size: 14px;">First Name</label>
         <input class="form-control" id="employee_fname" type="text" name="employee_fname" value="<?php echo $fname; ?>">
