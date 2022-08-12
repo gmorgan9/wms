@@ -148,7 +148,7 @@ if(!isLoggedIn()){
     <div class="row mx-auto">
       <div class="form-group pt-3 mx-auto" style="width: 25%;">
         <label for="employee_fname" style="font-size: 14px;">First Name</label>
-        <input class="form-control" id="employee_fname" type="text" name="employee_fname" value="<?php echo $fname; ?>" disabled>
+        <input class="form-control" id="employee_fname" type="text" name="employee_fname" value="test" disabled>
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 25%;">
         <label for="employee_lname" style="font-size: 14px;">Last Name</label>
