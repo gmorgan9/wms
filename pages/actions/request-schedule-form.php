@@ -115,12 +115,12 @@ if(!isLoggedIn()){
 
 
   <!-- START ADD COMPANY (LEFT SIDE) -->
-    <!-- <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -45px; height: unset !important;">
+    <div class="page-content mex-auto" style="margin-top: 10px;">
     <form action="" method="post">
     <div class="section-header pt-2">
       <span class="text-muted pt-4" style="width: 95%;">S Requests</span>
     </div>
-    <hr style="margin-bottom: -5px; margin-top: 5px;"> -->
+    <hr style="margin-bottom: -5px; margin-top: 5px;">
     <?php 
 
     $employee_idno = $_SESSION['employee_idno'];
@@ -136,12 +136,12 @@ if(!isLoggedIn()){
     $companyname = $row['companyname']; 
     $deptname = $row['deptname'];?>
     <?php }} ?>
-      <!-- <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php //echo $fname; ?>">
-      <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php //echo $lname; ?>">
-      <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php //echo $employeeID; ?>">
-      <input class="form-control" id="jobtitle" type="hidden" name="jobtitle" value="<?php //echo $jobtitle; ?>">
-      <input class="form-control" id="companyname" type="hidden" name="companyname" value="<?php //echo $companyname; ?>">
-      <input class="form-control" id="deptname" type="hidden" name="deptname" value="<?php //echo $deptname; ?>">
+      <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
+      <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
+      <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employeeID; ?>">
+      <input class="form-control" id="jobtitle" type="hidden" name="jobtitle" value="<?php echo $jobtitle; ?>">
+      <input class="form-control" id="companyname" type="hidden" name="companyname" value="<?php echo $companyname; ?>">
+      <input class="form-control" id="deptname" type="hidden" name="deptname" value="<?php echo $deptname; ?>">
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
       <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
@@ -158,70 +158,8 @@ if(!isLoggedIn()){
       <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-job" class="badge text-bg-secondary">Request Job</button>
     </div>
     </form>
-    </div> -->
+    </div>
   <!-- END ADD JOB (LEFT SIDE) -->
-
-  <!-- START JOB-REQUEST (RIGHT SIDE) -->
-    <div class="page-content mt-2 mx-auto" style="margin-right: 10px;">
-    <a class="badge text-bg-secondary text-decoration-none float-end mt-2" href="schedule-request-form.php">Request Schedule</a>
-    <table class="table">
-    <thead>
-      <tr>
-        <th scope="col" style="font-size: 14px;">ID #</th>
-        <th scope="col" style="font-size: 14px;">Employee</th>
-        <th scope="col" style="font-size: 14px;">Status</th>
-        <th scope="col" style="font-size: 14px;">Actions</th>
-      </tr>
-    </thead>
-    <tbody class="table-group-divider">
-
-    <?php
-        $sql = "SELECT * FROM schedule";
-        $all = mysqli_query($conn, $sql);
-        if($all) {
-            while ($row = mysqli_fetch_assoc($all)) {
-              $jobID       = $row['jobID'];
-              $idno        = $row['idno'];
-              $fname       = $row['employee_fname'];
-              $lname       = $row['employee_lname'];
-              $emp_idno    = $row['employee_idno'];
-              $deptname    = $row['deptname'];
-              $jobtitle    = $row['jobtitle'];
-              $companyname = $row['companyname'];
-              $deptname    = $row['deptname'];
-              $app_status  = $row['approval_status'];
-    ?>
-      <tr>
-          <th scope="row"><?php echo $idno; ?></th>
-          <td><?php echo $lname; ?>, <?php echo $fname; ?></td>
-          <?php if($app_status == 'approved'){ ?>
-          <td><span class="text-capitalize text-success"><?php echo $app_status; ?><span></td>
-          <?php } if($app_status == 'rejected') { ?>
-            <td><span class="text-capitalize text-danger"><?php echo $app_status; ?><span></td>
-          <?php } if($app_status == 'pending') { ?>
-            <td><span class="text-capitalize text-primary"><?php echo $app_status; ?><span></td>
-          <?php } if($app_status == 'terminated') { ?>
-            <td><span class="text-capitalize text-danger"><?php echo $app_status; ?><span></td>
-          <?php }?>
-          <!-- <td><?php //echo $companyname; ?></td> -->
-          <td>
-            <form method="post" action="">
-              <input type="hidden" name="jobID" value="<?php echo $jobID; ?>" />
-              <button onclick="return confirm('Be Careful, Can\'t be undone! \r\nOK to delete?')" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="terminated"><span class="badge text-bg-danger">Delete</span></button>
-            </form>
-          </td>
-          <?php } ?>
-          
-          
-        </tbody>
-        </table> 
-        <?php 
-        } else {
-          echo "0 results";
-        }
-          ?>
-      </div>
-  <!-- END JOB-REQUEST (RIGHT SIDE) -->
 
   </div> 
 <!-- END MAIN -->
