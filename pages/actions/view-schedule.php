@@ -14,22 +14,11 @@ if(!isLoggedIn()){
 }
 
 // UPDATE TIME FUNCTION
-  if(isset($_POST['update-time'])){
-    $id = $_GET['timeID'];
-    $timeID = mysqli_real_escape_string($conn, $_POST['jobID']);
-    $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
-    $date = mysqli_real_escape_string($conn, $_POST['new_date']);
-    $timein = mysqli_real_escape_string($conn, $_POST['new_timein']);
-    $timeout = mysqli_real_escape_string($conn, $_POST['new_timeout']);
-    $totalhours = mysqli_real_escape_string($conn, $_POST['totalhours']);
-    //$comment = mysqli_real_escape_string($conn, $_POST['comment']);
+  if(isset($_POST['update-schedule'])){
+    $id = $_GET['scheduleID'];
     $reason = mysqli_real_escape_string($conn, $_POST['reason']);
-    $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
-    $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
-    $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
-    $new_idno = rand(1000000, 9999999); // figure how to not allow duplicates
   
-    $update = "UPDATE timesheet SET approval_status = 'pending', new_idno = '$new_idno', new_date = '$date', new_timein = '$timein', new_timeout = '$timeout', reason = '$reason' WHERE timeID = '$id'";
+    $update = "UPDATE schedule SET approval_status = 'pending', reason = '$reason' WHERE scheduleID = '$id'";
     mysqli_query($conn, $update);
     header('Location: ' . $_SERVER['HTTP_REFERER']);
   
@@ -293,8 +282,8 @@ if(!isLoggedIn()){
         <div class="modal-body">
 
   <?php 
-  $id = $_GET['timeID'];
-  $select = " SELECT * FROM timesheet WHERE timeID = '$id' ";
+  $id = $_GET['scheduleID'];
+  $select = " SELECT * FROM schedule WHERE schedule = '$id' ";
   $result = mysqli_query($conn, $select);
 
   if (mysqli_num_rows($result) > 0) {
@@ -306,150 +295,23 @@ if(!isLoggedIn()){
       <span class="text-muted pt-4" style="width: 95%;">Schedule Requests</span>
     </div>
     <hr style="margin-bottom: -5px; margin-top: 5px;">
-    <?php 
-
-    $employee_idno = $_SESSION['employee_idno'];
-    $sql = "SELECT * FROM job WHERE employee_idno = '$employee_idno' AND status = 'active'";
-    $all = mysqli_query($conn, $sql);
-      if($all) {
-        while ($row = mysqli_fetch_assoc($all)) {
-    
-    $fname = $row['employee_fname'];
-    $lname = $row['employee_lname']; 
-    $employeeID = $row['employee_idno'];
-    $jobtitle = $row['jobtitle'];
-    $companyname = $row['companyname']; 
-    $deptname = $row['deptname'];?>
-    <?php }} ?>
-
-    <?php 
-
-    $monday     = date( 'Y-m-d', strtotime( 'monday next week' ) );
-    $tuesday    = date( 'Y-m-d', strtotime( 'tuesday next week' ) );
-    $wednesday  = date( 'Y-m-d', strtotime( 'wednesday next week' ) );
-    $thursday   = date( 'Y-m-d', strtotime( 'thursday next week' ) );
-    $friday     = date( 'Y-m-d', strtotime( 'friday next week' ) );
-
-    ?>
-    <div class="row mx-auto">
-      <div class="form-group pt-3 mx-auto" style="width: 25%;">
-        <label for="employee_fname" style="font-size: 14px;">First Name</label>
-        <input class="form-control" id="employee_fname" type="text" name="employee_fname" value="<?php echo $fname; ?>" readonly>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 25%;">
-        <label for="employee_lname" style="font-size: 14px;">Last Name</label>
-        <input class="form-control" id="employee_lname" type="text" name="employee_lname" value="<?php echo $lname; ?>" readonly>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 15%;">
-        <label for="employee_idno" style="font-size: 14px;">Employee ID #</label>
-        <input class="form-control" id="employee_idno" type="text" name="employee_idno" value="<?php echo $employeeID; ?>" readonly>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 35%;">
-        <label for="jobtitle" style="font-size: 14px;">Job Title</label>
-        <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="<?php echo $jobtitle; ?>" readonly>
-      </div>
-    </div>
-    <div class="row">
-      <div class="form-group pt-3 mx-auto" style="width: 48%;">
-        <label for="companyname" style="font-size: 14px;">Company</label>
-        <input class="form-control" id="companyname" type="text" name="companyname" value="<?php echo $companyname; ?>" readonly>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 48%;">
-        <label for="deptname" style="font-size: 14px;">Department</label>
-        <input class="form-control" id="deptname" type="text" name="deptname" value="<?php echo $deptname; ?>" readonly>
-      </div>
-    </div>
-    <br>
-    <hr>
-    <?php 
-    $new_monday = date( 'F d, Y', strtotime($monday));
-    $new_friday = date( 'F d, Y', strtotime($friday));
-
-    ?>
-    <div class="section-header pt-1 text-center fs-5">
-      <span class="pt-3" style="width: 95%;">Schedule for <span class="text-muted"><?php echo $new_monday; ?> - <?php echo $new_friday; ?></span></span>
-    </div>
-    <div class="row">
-      <div class="form-group pt-3 mx-auto" style="width: 15%;">
-        <label for="mon_date" style="font-size: 14px;">Monday Date</label>
-        <input class="form-control" id="mon_date" type="date" name="mon_date" value="<?php echo $monday; ?>" required>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 15%;">
-        <label for="mon_timein" style="font-size: 14px;">Monday Time in</label>
-        <input class="form-control" id="mon_timein" type="time" name="mon_timein" value="" required>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 15%;">
-        <label for="mon_timeout" style="font-size: 14px;">Monday Timeout</label>
-        <input class="form-control" id="mon_timeout" type="time" name="mon_timeout" value="" required>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 15%;">
-        <label for="tues_date" style="font-size: 14px;">Tuesday Date</label>
-        <input class="form-control" id="tues_date" type="date" name="tues_date" value="<?php echo $tuesday; ?>" required>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 15%;">
-        <label for="tues_timein" style="font-size: 14px;">Tuesday Time in</label>
-        <input class="form-control" id="tues_timein" type="time" name="tues_timein" value="" required>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 15%;">
-        <label for="tues_timeout" style="font-size: 14px;">Tuesday Time out</label>
-        <input class="form-control" id="tues_timeout" type="time" name="tues_timeout" value="" required>
-      </div>
-    </div>
-    <div class="row">
-      <div class="form-group pt-3 mx-auto" style="width: 15%;">
-        <label for="wed_date" style="font-size: 14px;">Wednesday Date</label>
-        <input class="form-control" id="wed_date" type="date" name="wed_date" value="<?php echo $wednesday; ?>" required>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 15%;">
-        <label for="wed_timein" style="font-size: 14px;">Wednesday Time in</label>
-        <input class="form-control" id="wed_timein" type="time" name="wed_timein" value="" required>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 15%;">
-        <label for="wed_timeout" style="font-size: 14px;">Wednesday Timeout</label>
-        <input class="form-control" id="wed_timeout" type="time" name="wed_timeout" value="" required>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 15%;">
-        <label for="thurs_date" style="font-size: 14px;">Thursday Date</label>
-        <input class="form-control" id="thurs_date" type="date" name="thurs_date" value="<?php echo $thursday; ?>" required>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 15%;">
-        <label for="thurs_timein" style="font-size: 14px;">Thursday Time in</label>
-        <input class="form-control" id="thurs_timein" type="time" name="thurs_timein" value="" required>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 15%;">
-        <label for="thurs_timeout" style="font-size: 14px;">Thursday Time out</label>
-        <input class="form-control" id="thurs_timeout" type="time" name="thurs_timeout" value="" required>
-      </div>
-    </div>
-    <div class="row">
-      <div class="form-group pt-3 mx-auto" style="width: 15%;">
-        <label for="fri_date" style="font-size: 14px;">Friday Date</label>
-        <input class="form-control" id="fri_date" type="date" name="fri_date" value="<?php echo $friday; ?>" required>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 15%;">
-        <label for="fri_timein" style="font-size: 14px;">Friday Time in</label>
-        <input class="form-control" id="fri_timein" type="time" name="fri_timein" value="" required>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 15%;">
-        <label for="fri_timeout" style="font-size: 14px;">Friday Timeout</label>
-        <input class="form-control" id="fri_timeout" type="time" name="fri_timeout" value="" required>
-      </div>
-      <div class="form-group pt-3 mx-auto" style="width: 48%;">
+    <div class="form-group pt-3 mx-auto">
         <label for="notes" style="font-size: 14px;">Notes</label>
-        <textarea class="form-control" id="notes" type="text" name="notes" value=""></textarea>
+        <input class="form-control" id="reason" type="text" name="reason" value="<?php echo $row['idno'] ?>" readonly>
+      </div>
+    </div>
+    
+      <div class="form-group pt-3 mx-auto">
+        <label for="notes" style="font-size: 14px;">Notes</label>
+        <textarea class="form-control" id="reason" type="text" name="reason" value=""></textarea>
       </div>
     </div>
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
-      <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-schedule" class="badge text-bg-secondary">Request Schedule</button>
+      <button type="submit" style="border-color: rgba(0,0,0,0);" name="update-schedule" class="badge text-bg-secondary">Update Schedule</button>
     </div>
     </form>
 
                 <?php }} ?>
-
-
-
-
-
 
         </div>
         <div class="modal-footer">
