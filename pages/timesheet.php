@@ -265,11 +265,13 @@ if(!isLoggedIn()){
     <!-- start PAGE-CONTENT -->
     <?php
       $day = date('w');
-      $week_start = date('Y-m-d', strtotime('-'.(9-$day).' days'));
-      $week_end = date('Y-m-d', strtotime('+'.(5-$day).' days'));
+      $monday = date( 'Y-m-d', strtotime( 'monday this week' ) );
+      $friday = date( 'Y-m-d', strtotime( 'friday this week' ) );
+      $week_start = date('Y-m-d', strtotime($monday));
+      $week_end = date('Y-m-d', strtotime($friday));
       $week_num = date('W', strtotime($week_start));
-      $display_week_start = date('F d, Y', strtotime('-'.(9-$day).' days'));
-      $display_week_end   = date('F d, Y', strtotime('+'.(5-$day).' days'));
+      $display_week_start = date('F d, Y', strtotime($monday));
+      $display_week_end   = date('F d, Y', strtotime($friday));
     ?>
     <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
     <p class="text-center fs-4"><span>Timesheet for <span class="text-muted text-capitalize"><?php echo $display_week_start; ?> - <?php echo $display_week_end; ?></span></span></p>
@@ -289,8 +291,10 @@ if(!isLoggedIn()){
     <?php
 
             $day = date('w');
-            $week_start = date('Y-m-d', strtotime('-'.(9-$day).' days'));
-            $week_end = date('Y-m-d', strtotime('+'.(5-$day).' days'));
+            $monday = date( 'Y-m-d', strtotime( 'monday this week' ) );
+            $friday = date( 'Y-m-d', strtotime( 'friday this week' ) );
+            $week_start = date('Y-m-d', strtotime($monday));
+            $week_end = date('Y-m-d', strtotime($friday));
             $week_num = date('W', strtotime($week_start));
 
         $sql = "SELECT * FROM timesheet where employee_idno = '{$_SESSION['employee_idno']}' AND date BETWEEN '$week_start' AND '$week_end' ";
