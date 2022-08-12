@@ -65,9 +65,9 @@
                     <i class="bi bi-briefcase"></i>
                     <span>  Request Job</span>
                 </a>
-                <a href="<?php echo BASE_URL . '/pages/schedule_request.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                <a href="<?php echo BASE_URL . '/pages/schedule.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                     <i class="bi bi-calendar-range"></i>
-                    <span>  Request Schedule</span>
+                    <span>  Schedule</span>
                 </a>
 
            <?php } ?>
