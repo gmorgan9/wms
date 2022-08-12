@@ -134,7 +134,7 @@ if(!isLoggedIn()){
                       <hr>
                       <div class="row">
                         <div class="col-sm-3">
-                          <h6 class="mb-0">Job Title / Position</h6>
+                          <h6 class="mb-0">Job Position</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
                         <span class="text-capitalize"><?php echo $row['jobtitle']; ?></span>
