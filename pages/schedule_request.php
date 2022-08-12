@@ -13,10 +13,27 @@ if(!isLoggedIn()){
    header('location: /login.php');
 }
 
-// ADD JOB
-  if(isset($_POST['add-job'])){
-    $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
+// ADD SCHEDULE
+  if(isset($_POST['add-schedule'])){
+    $scheduleID = mysqli_real_escape_string($conn, $_POST['scheduleID']);
     $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
+    $mon_date = mysqli_real_escape_string($conn, $_POST['mon_date']);
+    $mon_timein = mysqli_real_escape_string($conn, $_POST['mon_timein']);
+    $mon_timeout = mysqli_real_escape_string($conn, $_POST['mon_timeout']);
+    $tues_date = mysqli_real_escape_string($conn, $_POST['tues_date']);
+    $tues_timein = mysqli_real_escape_string($conn, $_POST['tues_timein']);
+    $tues_timeout = mysqli_real_escape_string($conn, $_POST['tues_timeout']);
+    $wed_date = mysqli_real_escape_string($conn, $_POST['wed_date']);
+    $wed_timein = mysqli_real_escape_string($conn, $_POST['wed_timein']);
+    $wed_timeout = mysqli_real_escape_string($conn, $_POST['wed_timeout']);
+    $thurs_date = mysqli_real_escape_string($conn, $_POST['thurs_date']);
+    $thurs_timein = mysqli_real_escape_string($conn, $_POST['thurs_timein']);
+    $thurs_timeout = mysqli_real_escape_string($conn, $_POST['thurs_timeout']);
+    $fri_date = mysqli_real_escape_string($conn, $_POST['fri_date']);
+    $fri_timein = mysqli_real_escape_string($conn, $_POST['fri_timein']);
+    $fri_timeout = mysqli_real_escape_string($conn, $_POST['fri_timeout']);
+    $notes = mysqli_real_escape_string($conn, $_POST['notes']);
+    $reason = mysqli_real_escape_string($conn, $_POST['reason']);
     $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
     $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
     $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
@@ -24,18 +41,10 @@ if(!isLoggedIn()){
     $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
     $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
 
-    $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
-    $result = mysqli_query($conn, $select);
-
-    if(mysqli_num_rows($result) > 0){
-      $error[] = 'Job already exist!';
-    }else{
-      // $insert2 = "INSERT INTO employee_company_data (employee_code, company_code, dept_code, job_code) SELECT employee_code, company_code, dept_code, jobID FROM job";
-      $insert = "INSERT INTO job (idno, jobtitle, companyname, deptname, employee_fname, employee_lname, employee_idno) VALUES('$idno', '$jobtitle', '$companyname', '$deptname', '$employee_fname', '$employee_lname', '$employee_idno')";
-      mysqli_query($conn, $insert);
-      // mysqli_query($conn, $insert2);
-      header('location: job_request.php');
-    }
+    $insert = "INSERT INTO job (idno, jobtitle, companyname, deptname, employee_fname, employee_lname, employee_idno) 
+    VALUES('$idno', '$jobtitle', '$companyname', '$deptname', '$employee_fname', '$employee_lname', '$employee_idno')";
+    mysqli_query($conn, $insert);
+    header('location: job_request.php');
   };
 // END ADD JOB
 
@@ -114,18 +123,25 @@ if(!isLoggedIn()){
     <hr style="margin-bottom: -5px; margin-top: 5px;">
     <?php 
 
-    $sql = "SELECT * FROM employee";
+    $employee_idno = $_SESSION['employee_idno'];
+    $sql = "SELECT * FROM job WHERE employee_idno = '$employee_idno' AND status = 'active'";
     $all = mysqli_query($conn, $sql);
       if($all) {
         while ($row = mysqli_fetch_assoc($all)) {
     
-    $fname = $row['fname'];
-    $lname = $row['lname']; 
-    $employeeID = $row['idno']?>
+    $fname = $row['employee_fname'];
+    $lname = $row['employee_lname']; 
+    $employeeID = $row['employee_idno'];
+    $jobtitle = $row['jobtitle'];
+    $companyname = $row['companyname']; 
+    $deptname = $row['deptname'];?>
     <?php }} ?>
-      <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
-      <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
-      <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employeeID; ?>">
+      <input class="form-control" id="employee_fname" type="text" name="employee_fname" value="<?php echo $fname; ?>">
+      <input class="form-control" id="employee_lname" type="text" name="employee_lname" value="<?php echo $lname; ?>">
+      <input class="form-control" id="employee_idno" type="text" name="employee_idno" value="<?php echo $employeeID; ?>">
+      <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="<?php echo $jobtitle; ?>">
+      <input class="form-control" id="companyname" type="text" name="companyname" value="<?php echo $companyname; ?>">
+      <input class="form-control" id="deptname" type="text" name="deptname" value="<?php echo $deptname; ?>">
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
       <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
