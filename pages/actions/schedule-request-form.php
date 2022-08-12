@@ -176,8 +176,8 @@ if(!isLoggedIn()){
     </div>
     <br>
     <hr>
-    <div class="section-header pt-2 text-center fs-5">
-      <span class="text-muted pt-4" style="width: 95%;">Schedule for</span>
+    <div class="section-header pt-1 text-center fs-5">
+      <span class="text-muted pt-3" style="width: 95%;">Schedule for</span>
     </div>
     <div class="row">
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
