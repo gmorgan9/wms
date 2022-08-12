@@ -231,7 +231,7 @@ if(!isLoggedIn()){
         <label for="mon_timeout" style="font-size: 14px;">Friday Timeout</label>
         <input class="form-control" id="mon_timeout" type="text" name="mon_timeout" value="" required>
       </div>
-      <div class="form-group pt-3 mx-auto" style="width: 55%;">
+      <div class="form-group pt-3 mx-auto" style="width: 45%;">
         <label for="note" style="font-size: 14px;">Notes</label>
         <textarea class="form-control" id="note" type="text" name="note" value="" required></textarea>
       </div>
