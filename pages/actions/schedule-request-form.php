@@ -117,7 +117,7 @@ if(!isLoggedIn()){
   <!-- START ADD COMPANY (LEFT SIDE) -->
     <div class="page-content mx-auto" style="margin-top: 10px;">
     <form action="" method="post">
-    <div class="section-header pt-2 text-center">
+    <div class="section-header pt-2 text-center fs-3">
       <span class="text-muted pt-4" style="width: 95%;">Schedule Requests</span>
     </div>
     <hr style="margin-bottom: -5px; margin-top: 5px;">
