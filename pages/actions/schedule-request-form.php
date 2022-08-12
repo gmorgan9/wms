@@ -176,7 +176,7 @@ if(!isLoggedIn()){
     </div>
     <br>
     <hr>
-    <span class="text-muted pt-4" style="width: 95%;">Schedule Requests</span>
+    <span class="text-muted text-center pt-4" style="width: 95%;">Schedule for</span>
     <div class="row">
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="mon_date" style="font-size: 14px;">Monday Date</label>
