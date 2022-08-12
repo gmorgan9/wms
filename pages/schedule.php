@@ -230,24 +230,19 @@ if(!isLoggedIn()){
           <td>
             <?php if($row['approval_status'] == 'pending') { ?>
               Approval
-            <?php } ?>
-            <?php if($row['approval_status'] == 'terminated') { ?>
+            <?php } if($row['approval_status'] == 'terminated') { ?>
               Termination 
             <?php } ?>
 
           </td>
           <td>
             <div class="forms d-flex" style="">
-              <?php if($row['new_idno'] != null) { ?>
+              <?php if($row['approval_status'] == 'pending') { ?>
             <form class="me-2" method="post" action="">
-            <?php $timeid = $row['timeID']; ?>
-              <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
-              <input type="hidden" name="date" value="<?php echo $new_date; ?>" />
-              <input type="hidden" name="timein" value="<?php echo $new_timein; ?>" />
-              <input type="hidden" name="timeout" value="<?php echo $new_timeout; ?>" />
+            <?php $timeid = $row['scheduleID']; ?>
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-status"><span class="badge text-bg-success">Approve</span></button>
             </form>
-            <?php } else { ?>
+            <?php } if($row['approval_status'] == 'terminated') { ?>
           <form method="post" action="">
           <?php $timeid = $row['timeID']; ?>
             <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
