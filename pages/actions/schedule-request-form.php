@@ -138,7 +138,7 @@ if(!isLoggedIn()){
     <?php }} ?>
 
     <div class="section-header pt-2" style="margin-top: 15px; margin-bottom: -10px;">
-      <span class="text-muted pt-4 mx-auto">Schedule Request For</span>
+      <span class="text-muted pt-4">Schedule Request For</span>
     </div>
     <hr>
     <div class="row mx-auto">
@@ -171,9 +171,19 @@ if(!isLoggedIn()){
     </div>
     <br>
     <hr>
-    <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
-      <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
+    <div class="row">
+      <div class="form-group pt-3 mx-auto" style="width: 30%;">
+        <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
+        <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
+      </div>
+      <div class="form-group pt-3 mx-auto" style="width: 30%;">
+        <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
+        <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
+      </div>
+      <div class="form-group pt-3 mx-auto" style="width: 30%;">
+        <label for="companyname" style="font-size: 14px;">Company <span class="text-muted" style="font-size: 10px;">e.g. "Apple Corporation"</span></label>
+        <input class="form-control" id="companyname" type="text" name="companyname" value="" required>
+      </div>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="deptname" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
