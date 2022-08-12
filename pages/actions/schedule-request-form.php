@@ -33,7 +33,7 @@ if(!isLoggedIn()){
     $fri_timein = mysqli_real_escape_string($conn, $_POST['fri_timein']);
     $fri_timeout = mysqli_real_escape_string($conn, $_POST['fri_timeout']);
     $notes = mysqli_real_escape_string($conn, $_POST['notes']);
-    $reason = mysqli_real_escape_string($conn, $_POST['reason']);
+    //$reason = mysqli_real_escape_string($conn, $_POST['reason']);
     $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
     $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
     $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
@@ -250,7 +250,7 @@ if(!isLoggedIn()){
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 48%;">
         <label for="notes" style="font-size: 14px;">Notes</label>
-        <textarea class="form-control" id="notes" type="text" name="notes" value=""></textarea>
+        <input class="form-control" id="notes" type="text" name="notes" value="">
       </div>
     </div>
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
