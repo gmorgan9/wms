@@ -139,8 +139,8 @@ if(!isLoggedIn()){
 
     <div class="section-header pt-2">
       <span class="text-muted pt-4" style="width: 95%;">Schedule Request For</span>
-      <hr>
     </div>
+    <hr>
     <div class="row mx-auto">
       <div class="form-group pt-3 mx-auto" style="width: 25%;">
         <label for="employee_fname" style="font-size: 14px;">First Name</label>
