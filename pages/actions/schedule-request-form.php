@@ -43,7 +43,7 @@ if(!isLoggedIn()){
 
     $insert = "INSERT INTO schedule (idno, mon_date, mon_timein, mon_timeout, tues_date, tues_timein, tues_timeout, wed_date, wed_timein, wed_timeout, thurs_date, thurs_timein, thurs_timeout, fri_date, fri_timein, fri_timeout, notes, employee_fname, employee_lname, employee_idno, jobtitle, companyname, deptname) VALUES ('$idno', '$mon_date', '$mon_timein', '$mon_timeout', '$tues_date', '$tues_timein', '$tues_timeout', '$wed_date', '$wed_timein', '$wed_timeout', '$thurs_date', '$thurs_timein', '$thurs_timeout', '$fri_date', '$fri_timein', '$fri_timeout', '$notes', '$employee_fname', '$employee_lname', '$employee_idno', '$jobtitle', '$companyname', '$deptname')";
     mysqli_query($conn, $insert);
-    header('location: schedule.php');
+    header('location: ../schedule.php');
   };
 // END ADD JOB
 
