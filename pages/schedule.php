@@ -230,7 +230,7 @@ if(!isLoggedIn()){
           <td>
             <?php if($row['approval_status'] == 'pending') { ?>
               Approval
-            <?php } if($row['approval_status'] == 'terminated') { ?>
+            <?php } elseif($row['approval_status'] == 'terminated') { ?>
               Termination 
             <?php } ?>
 
