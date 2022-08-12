@@ -313,7 +313,7 @@ if(!isLoggedIn()){
             </div>
         </form>
         </div>
-
+                </div>
     </div>
     
   </div>
