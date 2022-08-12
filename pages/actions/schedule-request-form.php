@@ -137,7 +137,7 @@ if(!isLoggedIn()){
     $deptname = $row['deptname'];?>
     <?php }} ?>
 
-    <div class="section-header pt-2">
+    <div class="section-header pt-2" style="margin-top: 15px;">
       <span class="text-muted pt-4" style="width: 95%;">Schedule Request For</span>
     </div>
     <hr>
