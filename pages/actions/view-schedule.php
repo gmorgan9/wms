@@ -300,7 +300,7 @@ if(!isLoggedIn()){
                     <input class="form-control" id="reason" type="text" name="reason" value="<?php echo $row['idno'] ?>" readonly>
                 </div>
                 <div class="form-group pt-3 mx-auto">
-                    <label for="notes" style="font-size: 14px;">Reason <span class="text-muted" style="font-size: 10px;">List dates and times wanted to be changed. Why?</span></label>
+                    <label for="notes" style="font-size: 14px;">Reason <span class="text-muted" style="font-size: 10px;">List dates and times wanted to be changed. Give reason behind change.</span></label>
                     <textarea class="form-control" id="reason" type="text" name="reason" value=""></textarea>
                 </div> <?php }} ?>
 
