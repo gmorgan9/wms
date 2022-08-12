@@ -283,7 +283,7 @@ if(!isLoggedIn()){
 
   <?php 
   $id = $_GET['scheduleID'];
-  $select = " SELECT * FROM schedule WHERE schedule = '$id' ";
+  $select = " SELECT * FROM schedule WHERE scheduleID = '$id' ";
   $result = mysqli_query($conn, $select);
 
   if (mysqli_num_rows($result) > 0) {
