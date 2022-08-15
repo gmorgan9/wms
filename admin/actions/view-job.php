@@ -30,16 +30,15 @@ if(!isAdmin()){
     $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
     $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
     $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
-    $status = $_POST['status'];
 
     if($end_date == null) {
-      $update = "UPDATE job SET approval_status = 'approved', status = '$status', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = null, status = 'active', note = '$note' WHERE jobID = '$id'";
+      $update = "UPDATE job SET approval_status = 'approved', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = null, status = 'active', note = '$note' WHERE jobID = '$id'";
       mysqli_query($conn, $update);
       header('Location: ' . $_SERVER['HTTP_REFERER']);
     } else {
-        $update = "UPDATE job SET approval_status = 'approved', status = '$status', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = '$end_date', status = 'active', note = '$note' WHERE jobID = '$id'";
-        mysqli_query($conn, $update);
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+      $update = "UPDATE job SET approval_status = 'approved', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = '$end_date', status = 'active', note = '$note' WHERE jobID = '$id'";
+      mysqli_query($conn, $update);
+      header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
   };  
 // END UPDATE TIME FUNCTION
@@ -291,25 +290,6 @@ if(!isAdmin()){
           </div>
         <?php } ?>
       </div>
-      <?php if($row['status'] == 'active') { ?>
-      <div class="form-group pt-3">
-        <label for="status" style="font-size: 14px;">Job Status <span class="text-muted" style="font-size: 10px;">e.g. "Active Job"</span></label>
-        <select class="form-control" name="status" id="status">
-          <option value="">Select One...</option>
-          <option value="active" selected>Active Job</option>
-          <option value="inactive">Inactive Job</option>
-        </select>
-      </div>
-      <?php } else { ?>
-        <div class="form-group pt-3">
-        <label for="status" style="font-size: 14px;">Job Status <span class="text-muted" style="font-size: 10px;">e.g. "Active Job"</span></label>
-        <select class="form-control" name="status" id="status">
-          <option value="">Select One...</option>
-          <option value="active">Active Job</option>
-          <option value="inactive" selected>Inactive Job</option>
-        </select>
-      </div>
-      <?php } ?>
       <div class="form-group pt-3">
         <label for="note" style="font-size: 14px;">Notes</label>
         <textarea class="form-control" id="note" type="text" name="note"><?php echo $row['note']; ?></textarea>
