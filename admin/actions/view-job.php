@@ -33,7 +33,7 @@ if(!isAdmin()){
     $status = mysqli_real_escape_string($conn, $_POST['status']);
 
     if($end_date == null) {
-      if($status == 'active'){
+      if($status == 1){
       $update = "UPDATE job SET approval_status = 'approved', status = 'active', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = null, status = 'active', note = '$note' WHERE jobID = '$id'";
       mysqli_query($conn, $update);
       header('Location: ' . $_SERVER['HTTP_REFERER']);
@@ -43,7 +43,7 @@ if(!isAdmin()){
         header('Location: ' . $_SERVER['HTTP_REFERER']);
       }
     } else {
-      if($status == 'active'){
+      if($status == 1){
         $update = "UPDATE job SET approval_status = 'approved', status = 'active, jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = '$end_date', status = 'active', note = '$note' WHERE jobID = '$id'";
         mysqli_query($conn, $update);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
@@ -308,8 +308,8 @@ if(!isAdmin()){
         <label for="status" style="font-size: 14px;">Job Status <span class="text-muted" style="font-size: 10px;">e.g. "Active Job"</span></label>
         <select class="form-control" name="status" id="status">
           <option value="">Select One...</option>
-          <option value="active" selected>Active Job</option>
-          <option value="inactive">Inactive Job</option>
+          <option value="1" selected>Active Job</option>
+          <option value="0">Inactive Job</option>
         </select>
       </div>
       <?php } else { ?>
@@ -317,8 +317,8 @@ if(!isAdmin()){
         <label for="status" style="font-size: 14px;">Job Status <span class="text-muted" style="font-size: 10px;">e.g. "Active Job"</span></label>
         <select class="form-control" name="status" id="status">
           <option value="">Select One...</option>
-          <option value="active">Active Job</option>
-          <option value="inactive" selected>Inactive Job</option>
+          <option value="1">Active Job</option>
+          <option value="0" selected>Inactive Job</option>
         </select>
       </div>
       <?php } ?>
