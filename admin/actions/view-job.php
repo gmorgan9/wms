@@ -30,7 +30,7 @@ if(!isAdmin()){
     $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
     $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
     $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
-    $status = mysqli_real_escape_string($conn, $_POST['status']);
+    $status = $_POST['status'];
 
     if($end_date == null) {
       if($status == 1){
