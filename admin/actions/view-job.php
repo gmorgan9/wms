@@ -290,11 +290,11 @@ if (isset($_POST['inactive'])) {
           <input class="form-control" id="companyname" type="text" name="companyname" value="<?php echo $row['companyname']; ?>" required>
         </div>
       <div class="row">
-        <div class="form-group pt-3" style="width: 48%;">
+        <div class="form-group pt-3" style="width: 50%;">
           <label for="deptname" style="font-size: 14px;">Department <span class="text-muted" style="font-size: 10px;">e.g. "Accounting"</span></label>
           <input class="form-control" id="deptname" type="text" name="deptname" value="<?php echo $row['deptname']; ?>" required>
         </div>
-        <div class="form-group pt-3" style="width: 48%;">
+        <div class="form-group pt-3" style="width: 50%;">
           <label for="jobtitle" style="font-size: 14px;">Job Title / Position <span class="text-muted" style="font-size: 10px;">e.g. "Cheif Executive Officer"</span></label>
           <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="<?php echo $row['jobtitle']; ?>" required>
         </div>
