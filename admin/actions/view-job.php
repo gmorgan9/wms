@@ -34,21 +34,21 @@ if(!isAdmin()){
 
     if($end_date == null) {
       if($_POST['status'] == 1){
-      $update = "UPDATE job SET approval_status = 'approved', status = 1, jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = null, status = 'active', note = '$note' WHERE jobID = '$id'";
+      $update = "UPDATE job SET approval_status = 'approved', status = 'active', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = null, status = 'active', note = '$note' WHERE jobID = '$id'";
       mysqli_query($conn, $update);
       header('Location: ' . $_SERVER['HTTP_REFERER']);
       } else {
-        $update = "UPDATE job SET approval_status = 'approved', status = 0, jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = null, status = 'active', note = '$note' WHERE jobID = '$id'";
+        $update = "UPDATE job SET approval_status = 'approved', status = 'inactive', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = null, status = 'active', note = '$note' WHERE jobID = '$id'";
         mysqli_query($conn, $update);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
       }
     } else {
       if($_POST['status'] == 1){
-        $update = "UPDATE job SET approval_status = 'approved', status = 1, jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = '$end_date', status = 'active', note = '$note' WHERE jobID = '$id'";
+        $update = "UPDATE job SET approval_status = 'approved', status = 'active', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = '$end_date', status = 'active', note = '$note' WHERE jobID = '$id'";
         mysqli_query($conn, $update);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
       } else {
-        $update = "UPDATE job SET approval_status = 'approved', status = 0, jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = '$end_date', status = 'active', note = '$note' WHERE jobID = '$id'";
+        $update = "UPDATE job SET approval_status = 'approved', status = 'inactive', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = '$end_date', status = 'active', note = '$note' WHERE jobID = '$id'";
         mysqli_query($conn, $update);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
       }
