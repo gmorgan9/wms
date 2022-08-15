@@ -71,6 +71,22 @@ if(!isLoggedIn()){
   }
 // END SET TERMINATED
 
+// APPROVED TIME FUNCTION
+if (isset($_POST['approved'])) {
+  $appUpdateQuery = "UPDATE schedule SET approval_status = 'approved' WHERE scheduleID = '".$_POST['scheduleID']."'";
+  $appUpdateResult = mysqli_query($conn, $appUpdateQuery);
+  header('location: schedule.php');
+}
+// END APPROVED TIME FUNCTION
+
+// REJECTED TIME STATUS FUNCTION
+if (isset($_POST['rejected'])) {
+  $rejUpdateQuery = "UPDATE schedule SET approval_status = 'rejected' WHERE scheduleID = '".$_POST['scheduleID']."'";
+  $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
+  header('location: schedule.php');
+}
+// END REJECTED TIME STATUS FUNCTION
+
 ?>
 
 <!DOCTYPE html>
@@ -237,24 +253,16 @@ if(!isLoggedIn()){
           </td>
           <td>
             <div class="forms d-flex" style="">
-              <?php if($row['approval_status'] == 'pending') { ?>
             <form class="me-2" method="post" action="">
-            <?php $timeid = $row['scheduleID']; ?>
-              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-status"><span class="badge text-bg-success">Approve</span></button>
+            <?php $scheduleid = $row['scheduleID']; ?>
+            <input type="hidden" name="scheduleID" value="<?php echo $scheduleid; ?>" />
+              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved"><span class="badge text-bg-success">Approve</span></button>
             </form>
-            &nbsp;
-            <form method="post" action="">
-          <?php $timeid = $row['timeID']; ?>
-            <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
+          <form method="post" action="">
+          <?php $scheduleid = $row['scheduleID']; ?>
+            <input type="hidden" name="scheduleID" value="<?php echo $scheduleid; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="rejected"><span class="badge text-bg-danger">Reject</span></button>
           </form>
-            <?php } if($row['approval_status'] == 'terminated') { ?>
-          <form method="post" action="">
-          <?php $timeid = $row['timeID']; ?>
-            <input type="hidden" name="timeID" value="<?php echo $timeid; ?>" />
-            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved-time"><span class="badge text-bg-danger">Terminate</span></button>
-          </form>
-          <?php } ?>
           </div>
           </td>
           <!--  onclick="return confirm('Be Careful! \r\nOK to delete?')" -->
