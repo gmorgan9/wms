@@ -296,8 +296,8 @@ if(!isAdmin()){
         <label for="status" style="font-size: 14px;">Job Status <span class="text-muted" style="font-size: 10px;">e.g. "Active Job"</span></label>
         <select class="form-control" name="status" id="status">
           <option value="">Select One...</option>
-          <option value="1" selected>Active Job</option>
-          <option value="0">Inactive Job</option>
+          <option value="active" selected>Active Job</option>
+          <option value="inactive">Inactive Job</option>
         </select>
       </div>
       <?php } else { ?>
@@ -305,8 +305,8 @@ if(!isAdmin()){
         <label for="status" style="font-size: 14px;">Job Status <span class="text-muted" style="font-size: 10px;">e.g. "Active Job"</span></label>
         <select class="form-control" name="status" id="status">
           <option value="">Select One...</option>
-          <option value="1">Active Job</option>
-          <option value="0" selected>Inactive Job</option>
+          <option value="active">Active Job</option>
+          <option value="inactive" selected>Inactive Job</option>
         </select>
       </div>
       <?php } ?>
