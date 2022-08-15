@@ -189,7 +189,28 @@ if (isset($_POST['inactive'])) {
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Status</h6>
+                      <h6 class="mb-0">Job Status</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <?php if($row['status'] == 'inactive') { ?>
+                          <form method="post" action="">
+                            <?php $jobid = $row['jobID']; ?>
+                            <input type="hidden" name="jobID" value="<?php echo $jobid; ?>" />
+                            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="active"><span class="badge text-bg-success">Activate</span></button>
+                          </form>
+                        <?php } if($row['status'] == 'active') { ?>
+                          <form method="post" action="">
+                            <?php $jobid = $row['jobID']; ?>
+                            <input type="hidden" name="jobID" value="<?php echo $jobid; ?>" />
+                            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="inactive"><span class="badge text-bg-danger">Deactivate</span></button>
+                          </form>
+                        <?php } ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Approval Status</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                         <?php if($row['approval_status'] == 'approved') { ?>
