@@ -43,6 +43,22 @@ if(!isAdmin()){
   };  
 // END UPDATE TIME FUNCTION
 
+// APPROVED TIME FUNCTION
+if (isset($_POST['active'])) {
+  $apptUpdateQuery = "UPDATE job SET status = 'active' WHERE jobID = '".$_POST['jobID']."'";
+  $apptUpdateResult = mysqli_query($conn, $apptUpdateQuery);
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
+}
+// END APPROVED TIME FUNCTION
+
+// REJECTED TIME STATUS FUNCTION
+if (isset($_POST['inactive'])) {
+  $rejUpdateQuery = "UPDATE job SET status = 'inactive' WHERE jobID = '".$_POST['jobID']."'";
+  $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
+}
+// END REJECTED TIME STATUS FUNCTION
+
 ?>
 
 <!DOCTYPE html>
@@ -144,23 +160,16 @@ if(!isAdmin()){
                       <h6 class="mb-0">Start Date</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
+                      <?php 
+                      $start_date = date("M d, Y", strtotime($row['start_date']));
+                      $end_date = date("M d, Y", strtotime($row['end_date']));
+                      ?>
                       <?php if($row['start_date'] == null) { ?>
-                        <span class="text-warning">Needs a Start Date</span>
+                        <span class="text-warning">Needs a Start Date</span> - <?php echo $row['end_date']; ?>
+                      <?php } else if ($row['end_date'] == null) { ?>
+                        <?php echo $row['start_date']; ?> - <span class="text-warning">Enter end date when job is terminated.</span>
                       <?php } else { ?>
-                        <?php echo $row['start_date']; ?>
-                      <?php } ?>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">End Date</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      <?php if($row['end_date'] == null) { ?>
-                        <span class="text-warning">Enter end date when job is terminated.</span>
-                      <?php } else { ?>
-                        <?php echo $row['end_date']; ?>
+                        <?php echo $row['start_date']; ?> - <?php echo $row['end_date']; ?>
                       <?php } ?>
                     </div>
                   </div>
