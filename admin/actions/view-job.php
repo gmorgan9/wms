@@ -291,6 +291,14 @@ if(!isAdmin()){
         <?php } ?>
       </div>
       <div class="form-group pt-3">
+        <label for="status" style="font-size: 14px;">Active Status <span class="text-muted" style="font-size: 10px;">e.g. "Active Job"</span></label>
+        <select name="status" id="status">
+          <option value="">Select One...</option>
+          <option value="1">Active Job</option>
+          <option value="0">Inactive Job</option>
+        </select>
+      </div>
+      <div class="form-group pt-3">
         <label for="note" style="font-size: 14px;">Notes</label>
         <textarea class="form-control" id="note" type="text" name="note"><?php echo $row['note']; ?></textarea>
       </div>
