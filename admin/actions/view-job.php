@@ -165,11 +165,11 @@ if (isset($_POST['inactive'])) {
                       $end_date = date("M d, Y", strtotime($row['end_date']));
                       ?>
                       <?php if($row['start_date'] == null) { ?>
-                        <span class="text-warning">Needs a Start Date</span> - <?php echo $row['end_date']; ?>
+                        <span class="text-warning">Needs a Start Date</span> - <?php echo $end_date; ?>
                       <?php } else if ($row['end_date'] == null) { ?>
-                        <?php echo $row['start_date']; ?> - <span class="text-warning">Enter end date when job is terminated.</span>
+                        <?php echo $start_date; ?> - <span class="text-warning">Enter end date when job is terminated.</span>
                       <?php } else { ?>
-                        <?php echo $row['start_date']; ?> - <?php echo $row['end_date']; ?>
+                        <?php echo $start_date; ?> - <?php echo $end_date; ?>
                       <?php } ?>
                     </div>
                   </div>
