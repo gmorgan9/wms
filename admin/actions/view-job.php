@@ -303,7 +303,7 @@ if(!isAdmin()){
           </div>
         <?php } ?>
       </div>
-      <?php if($row['status'] == 'active') { ?>
+      <?php if($row['status'] == 1) { ?>
       <div class="form-group pt-3">
         <label for="status" style="font-size: 14px;">Job Status <span class="text-muted" style="font-size: 10px;">e.g. "Active Job"</span></label>
         <select class="form-control" name="status" id="status">
