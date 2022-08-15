@@ -33,22 +33,22 @@ if(!isAdmin()){
     $status = mysqli_real_escape_string($conn, $_POST['status']);
 
     if($end_date == null) {
-      if($status == 1){
-      $update = "UPDATE job SET approval_status = 'approved', status = 1, jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = null, status = 'active', note = '$note' WHERE jobID = '$id'";
+      if($status == 'active'){
+      $update = "UPDATE job SET approval_status = 'approved', status = 'active', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = null, status = 'active', note = '$note' WHERE jobID = '$id'";
       mysqli_query($conn, $update);
       header('Location: ' . $_SERVER['HTTP_REFERER']);
       } else {
-        $update = "UPDATE job SET approval_status = 'approved', status = 0, jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = null, status = 'active', note = '$note' WHERE jobID = '$id'";
+        $update = "UPDATE job SET approval_status = 'approved', status = 'inactive', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = null, status = 'active', note = '$note' WHERE jobID = '$id'";
         mysqli_query($conn, $update);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
       }
     } else {
-      if($status == 1){
-        $update = "UPDATE job SET approval_status = 'approved', status = 1, jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = '$end_date', status = 'active', note = '$note' WHERE jobID = '$id'";
+      if($status == 'active'){
+        $update = "UPDATE job SET approval_status = 'approved', status = 'active, jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = '$end_date', status = 'active', note = '$note' WHERE jobID = '$id'";
         mysqli_query($conn, $update);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
       } else {
-        $update = "UPDATE job SET approval_status = 'approved', status = 0, jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = '$end_date', status = 'active', note = '$note' WHERE jobID = '$id'";
+        $update = "UPDATE job SET approval_status = 'approved', status = 'inactive', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = '$end_date', status = 'active', note = '$note' WHERE jobID = '$id'";
         mysqli_query($conn, $update);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
       }
@@ -303,13 +303,13 @@ if(!isAdmin()){
           </div>
         <?php } ?>
       </div>
-      <?php if($row['status'] == 1) { ?>
+      <?php if($row['status'] == 'active') { ?>
       <div class="form-group pt-3">
         <label for="status" style="font-size: 14px;">Job Status <span class="text-muted" style="font-size: 10px;">e.g. "Active Job"</span></label>
         <select class="form-control" name="status" id="status">
           <option value="">Select One...</option>
-          <option value="1" selected>Active Job</option>
-          <option value="0">Inactive Job</option>
+          <option value="active" selected>Active Job</option>
+          <option value="inactive">Inactive Job</option>
         </select>
       </div>
       <?php } else { ?>
@@ -317,8 +317,8 @@ if(!isAdmin()){
         <label for="status" style="font-size: 14px;">Job Status <span class="text-muted" style="font-size: 10px;">e.g. "Active Job"</span></label>
         <select class="form-control" name="status" id="status">
           <option value="">Select One...</option>
-          <option value="1">Active Job</option>
-          <option value="0" selected>Inactive Job</option>
+          <option value="active">Active Job</option>
+          <option value="inactive" selected>Inactive Job</option>
         </select>
       </div>
       <?php } ?>
