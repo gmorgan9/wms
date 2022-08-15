@@ -269,25 +269,27 @@ if(!isAdmin()){
         <label for="jobtitle" style="font-size: 14px;">Job Title / Position <span class="text-muted" style="font-size: 10px;">e.g. "Cheif Executive Officer"</span></label>
         <input class="form-control" id="jobtitle" type="text" name="jobtitle" value="<?php echo $row['jobtitle']; ?>" required>
       </div>
-      <div class="form-group pt-3">
-        <label for="pay" style="font-size: 14px;">Pay</label>
-        <input class="form-control" id="pay" type="text" name="pay" value="<?php echo $row['pay']; ?>">
-      </div>
-      <div class="form-group pt-3">
-        <label for="start_date" style="font-size: 14px;">Start Date</label>
-        <input class="form-control" id="start_date" type="date" name="start_date" value="<?php echo $row['start_date']; ?>">
-      </div>
-      <?php if($row['end_date'] == null) { ?>
-        <div class="form-group pt-3">
-          <label for="end_date" style="font-size: 14px;">End Date</label>
-          <input class="form-control" id="end_date" type="date" name="end_date" value="null">
+      <div class="row">
+        <div class="form-group pt-3" style="width: 33.3%;">
+          <label for="pay" style="font-size: 14px;">Pay</label>
+          <input class="form-control" id="pay" type="text" name="pay" value="<?php echo $row['pay']; ?>">
         </div>
-      <?php } else { ?>
-        <div class="form-group pt-3">
-          <label for="end_date" style="font-size: 14px;">End Date</label>
-          <input class="form-control" id="end_date" type="date" name="end_date" value="<?php echo $row['end_date']; ?>">
+        <div class="form-group pt-3" style="width: 33.3%;">
+          <label for="start_date" style="font-size: 14px;">Start Date</label>
+          <input class="form-control" id="start_date" type="date" name="start_date" value="<?php echo $row['start_date']; ?>">
         </div>
-      <?php } ?>
+        <?php if($row['end_date'] == null) { ?>
+          <div class="form-group pt-3" style="width: 33.3%;">
+            <label for="end_date" style="font-size: 14px;">End Date</label>
+            <input class="form-control" id="end_date" type="date" name="end_date" value="null">
+          </div>
+        <?php } else { ?>
+          <div class="form-group pt-3" style="width: 33.3%;">
+            <label for="end_date" style="font-size: 14px;">End Date</label>
+            <input class="form-control" id="end_date" type="date" name="end_date" value="<?php echo $row['end_date']; ?>">
+          </div>
+        <?php } ?>
+      </div>
       <div class="form-group pt-3">
         <label for="note" style="font-size: 14px;">Notes</label>
         <textarea class="form-control" id="note" type="text" name="note"><?php echo $row['note']; ?></textarea>
