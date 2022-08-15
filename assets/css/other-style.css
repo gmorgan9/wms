@@ -1,5 +1,6 @@
 /* WORKING */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@media only screen and (min-width: 1024px) {
 * {
     margin: 0;
     box-sizing: border-box;
@@ -174,4 +175,29 @@ ul.breadcrumb {
   ul.breadcrumb li a:hover {
     color: #01447e;
     text-decoration: underline;
+  }
+
+  .blocked-page {
+    display: none;
+ }
+ .blocked-footer {
+  display: none;
+ }
+ 
+ 
+ 
+    
+  }
+ 
+  @media only screen and (max-width: 1024px) {
+    .main-container {
+       display: none;
+    }
+    .blocked-page {
+       color: black;
+       display: block;
+    }
+    .blocked-footer {
+       display: block;
+      }
   }

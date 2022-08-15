@@ -34,7 +34,13 @@ if(!isLoggedIn()){
     <title>WMS | Dashboard</title>
 </head>
 <body>
+   
+<div class="blocked-page">
+  <?php include(ROOT_PATH . '/app/includes/blocked-page.php'); ?>
+</div>
+
     
+<div class="main-container">
 <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 <?php include(ROOT_PATH . "/app/includes/sidebar.php") ?>
   
@@ -103,6 +109,10 @@ if(!isLoggedIn()){
 <!-- END MAIN -->
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
+</div>
+<div class="blocked-footer">
+  <?php include(ROOT_PATH . "/app/includes/blocked-footer.php"); ?>
+</div>
 
 </body>
 </html>

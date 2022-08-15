@@ -32,7 +32,12 @@ if(isLoggedIn()){
     <title>WMS | Home Page</title>
 </head>
 <body>
+   
+<div class="blocked-page">
+  <?php include(ROOT_PATH . '/app/includes/blocked-page.php'); ?>
+</div>
     
+<div class="main-container">
 <?php include("app/includes/header.php"); ?>
 
     <div class="container text-start">
@@ -73,6 +78,10 @@ if(isLoggedIn()){
 
       <?php include("app/includes/footer.php"); ?>
 
+      </div>
+      <div class="blocked-footer">
+        <?php include(ROOT_PATH . "/app/includes/blocked-footer.php"); ?>
+      </div>
 
 </body>
 </html>
