@@ -33,7 +33,7 @@ if(!isAdmin()){
     $status = $_POST['status'];
 
     if($end_date == null) {
-      if($_POST['status'] == 1){
+      if($_POST['status'] == 'active'){
       $update = "UPDATE job SET approval_status = 'approved', status = 'active', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = null, status = 'active', note = '$note' WHERE jobID = '$id'";
       mysqli_query($conn, $update);
       header('Location: ' . $_SERVER['HTTP_REFERER']);
@@ -43,7 +43,7 @@ if(!isAdmin()){
         header('Location: ' . $_SERVER['HTTP_REFERER']);
       }
     } else {
-      if($_POST['status'] == 1){
+      if($_POST['status'] == 'active'){
         $update = "UPDATE job SET approval_status = 'approved', status = 'active', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', pay = '$pay', start_date = '$start_date', end_date = '$end_date', status = 'active', note = '$note' WHERE jobID = '$id'";
         mysqli_query($conn, $update);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
@@ -303,7 +303,7 @@ if(!isAdmin()){
           </div>
         <?php } ?>
       </div>
-      <?php if($row['status'] == 1) { ?>
+      <?php if($row['status'] == 'active') { ?>
       <div class="form-group pt-3">
         <label for="status" style="font-size: 14px;">Job Status <span class="text-muted" style="font-size: 10px;">e.g. "Active Job"</span></label>
         <select class="form-control" name="status" id="status">
