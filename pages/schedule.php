@@ -258,6 +258,7 @@ if (isset($_POST['rejected'])) {
             <input type="hidden" name="scheduleID" value="<?php echo $scheduleid; ?>" />
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="approved"><span class="badge text-bg-success">Approve</span></button>
             </form>
+            &nbsp;
           <form method="post" action="">
           <?php $scheduleid = $row['scheduleID']; ?>
             <input type="hidden" name="scheduleID" value="<?php echo $scheduleid; ?>" />
