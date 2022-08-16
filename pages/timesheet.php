@@ -449,10 +449,6 @@ if(isset($_POST['create-timesheet'])) {
             <td><span class="badge text-bg-warning">Clock In</span></td>
           <?php } else if($orgTimeout == null) { ?>
             <td><?php echo $timein; ?> - <span class="badge text-bg-warning">Clock Out</span></td>
-          <?php } else if($orgTimein == null) { ?>
-            <td><i class="bi bi-slash-circle"></i> - <?php echo $timeout; ?></td>
-          <?php //} else if ($row['end_date'] == null) { ?>
-            <!-- <?php //echo $start_date; ?> - <span class="text-warning">Enter end date when job is terminated.</span> -->
           <?php } else { ?>
             <td><?php echo $timein; ?> / <?php echo $timeout; ?></td>
           <?php } ?>
