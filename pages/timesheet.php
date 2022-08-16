@@ -205,10 +205,11 @@ if(isset($_POST['create-timesheet'])) {
           <div class="alert alert-primary text-center" role="alert">
             <span>
             Timesheet Submitted for <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?>! <br>
-            Thanks for your work today! <br>
-            We will see you tomorrow!
+            
           </span>
           </div>
+          <p class="text-muted" style="font-size: 14px; text-align: center;">Thanks for your work today! <br>
+            We will see you tomorrow!</p>
         <?php } else { ?>
        <form method="post" action="">
             <?php 
