@@ -228,7 +228,7 @@ if(isset($_POST['create-timesheet'])) {
             <input type="hidden" name="timein" value="<?php echo $time; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-success">Clock In</span></button>
         </form>
-        <?php if ($timein != null) {?>
+        <?php if ($date == null || $timein != null) {?>
             <style type="text/css">
                 #clockin{
                     display:none;
