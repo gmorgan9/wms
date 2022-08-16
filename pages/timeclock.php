@@ -23,7 +23,7 @@ if (isset($_POST['clockin'])) {
 // CLOCKOUT FUNCTION
 if (isset($_POST['clockout'])) {
 
-    $rejUpdateQuery = "UPDATE timeclock SET status = 'inactive' WHERE jobID = '".$_POST['jobID']."'";
+    $rejUpdateQuery = "UPDATE timeclock SET timeout = '".$_POST['timeout']."' WHERE employee_idno = '".$_POST['employee_idno']."'";
     $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
     header('Location: ' . $_SERVER['HTTP_REFERER']);
   }
@@ -88,6 +88,7 @@ if (isset($_POST['clockout'])) {
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-success">Clock In</span></button>
         </form>
         <form method="post" action="">
+
             <label for="employee_idno">Employee ID</label>
             <input class="form-control w-25" id="employee_idno" type="text" name="employee_idno">
             <input type="hidden" name="timein" value="<?php echo $time; ?>" />
