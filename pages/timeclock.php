@@ -66,6 +66,13 @@ if(!isLoggedIn()){
 
     <div class="page-content mx-auto mt-2">
 
+    <?php 
+
+        $timezone = date_default_timezone_get();
+        echo "The current server timezone is: " . $timezone;
+    
+    ?>
+
     </div>
 
 
