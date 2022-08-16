@@ -446,7 +446,7 @@ if(isset($_POST['create-timesheet'])) {
           
 
           <?php if($timein == null && $timeout == null) { ?>
-            <i class="bi bi-slash-circle"></i> - <i class="bi bi-slash-circle"></i>
+            <td><i class="bi bi-slash-circle"></i> - <i class="bi bi-slash-circle"></i></td>
           <?php } else if($row['end_date'] == null) { ?>
             <?php echo $start_date; ?> - <span class="text-warning">Needs a End Date</span>
           <?php } else if($row['start_date'] == null) { ?>
