@@ -10,24 +10,24 @@ if(!isLoggedIn()){
 }
 
 // CLOCKIN FUNCTION
-if (isset($_POST['clockin'])) {
-    $timein = $_POST['timein'];
-    $date = $_POST['date'];
-    $employee_idno = $_SESSION['employee_idno'];
-    $apptUpdateQuery = "INSERT INTO timeclock (employee_idno, date, timein) VALUES('$employee_idno', '$date', '$timein')";
-    $apptUpdateResult = mysqli_query($conn, $apptUpdateQuery);
-    header('Location: timeclock.php');
-  }
+    if (isset($_POST['clockin'])) {
+        $timein = $_POST['timein'];
+        $date = $_POST['date'];
+        $employee_idno = $_SESSION['employee_idno'];
+        $apptUpdateQuery = "INSERT INTO timeclock (employee_idno, date, timein) VALUES('$employee_idno', '$date', '$timein')";
+        $apptUpdateResult = mysqli_query($conn, $apptUpdateQuery);
+        header('Location: timeclock.php');
+    } 
 // END CLOCKIN FUNCTION
 
 // CLOCKOUT FUNCTION
-if (isset($_POST['clockout'])) {
-    $emp = $_POST['employee_idno'];
-    $timeout = $_POST['timeout'];
-    $rejUpdateQuery = "UPDATE timeclock SET timeout = '$timeout' WHERE employee_idno = '$emp'";
-    $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
-    header('Location: timeclock.php');
-  }
+    if (isset($_POST['clockout'])) {
+        $emp = $_POST['employee_idno'];
+        $timeout = $_POST['timeout'];
+        $rejUpdateQuery = "UPDATE timeclock SET timeout = '$timeout' WHERE employee_idno = '$emp'";
+        $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
+        header('Location: timeclock.php');
+    }
 // END CLOCKOUT FUNCTION
 
 ?>
@@ -71,16 +71,26 @@ if (isset($_POST['clockout'])) {
     <div class="page-content mx-auto mt-2">
 
     <?php 
-
         $timezone = date_default_timezone_get();
         date_default_timezone_set($timezone);
         $date = date('Y-m-d');
         $time = date('h:i:s');
         echo $date;  echo '&nbsp;';
         echo $time;
-
     ?>
 
+        <?php 
+        $employee_idno = $_SESSION['employee_idno'];
+        $select = " SELECT * FROM timeclock WHERE employee_idno = '$employee_idno' ";
+        $result = mysqli_query($conn, $select);
+
+        if (mysqli_num_rows($result) > 0) {
+         while($row = mysqli_fetch_assoc($result)) {
+
+        
+        
+        ?>
+        <?php if($row['timein'] == null) { ?>
         <form method="post" action="">
             <?php $empID = $_SESSION['employee_idno']; ?>
             <input type="text" name="employee_idno" value="<?php echo $empID; ?>" />
@@ -88,6 +98,7 @@ if (isset($_POST['clockout'])) {
             <input type="hidden" name="timein" value="<?php echo $time; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-success">Clock In</span></button>
         </form>
+        <?php } else if ($row['timeout'] == null) {?>
         <form method="post" action="">
 
             <label for="employee_idno">Employee ID</label>
@@ -95,6 +106,12 @@ if (isset($_POST['clockout'])) {
             <input type="hidden" name="timeout" value="<?php echo $time; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockout"><span class="badge text-bg-danger">Clock Out</span></button>
         </form>
+        <?php } ?>
+
+        <?php } }?>
+
+
+
 
     </div>
 
