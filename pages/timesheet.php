@@ -198,11 +198,11 @@ if(isset($_POST['create-timesheet'])) {
             <span class="text-muted pt-4" style="width: 95%; font-size: 14px;">Timesheet created for <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?></span>
           </div>
         <?php } else if($database_date == $date && $timeout == null) { ?>
-          <div class="section-header text-center pt-2">
+          <div class="alert alert-primary" role="alert">
             <span class="text-muted pt-4" style="width: 95%; font-size: 14px;">Timesheet created <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?></span>
           </div>
         <?php } else if($database_date == $date) { ?>
-          <div class="section-header text-center pt-2">
+          <div class="alert alert-primary" role="alert">
             <span class="text-muted pt-4" style="width: 95%; font-size: 14px;">
             Timesheet Submitted for <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?>! <br>
             Thanks for your work today! <br>
