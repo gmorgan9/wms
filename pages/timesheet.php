@@ -220,7 +220,7 @@ if(isset($_POST['create-timesheet'])) {
             <input type="hidden" name="employee_fname" value="<?php echo $emp_fname; ?>" />
             <input type="hidden" name="employee_lname" value="<?php echo $emp_lname; ?>" />
             <input type="hidden" name="date" value="<?php echo $date; ?>" />
-            <button style="margin-left: auto; margin-right: auto; background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
+            <button class="d-flex" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
         </form>
         <?php } ?>
         
