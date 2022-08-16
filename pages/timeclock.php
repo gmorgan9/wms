@@ -13,7 +13,8 @@ if(!isLoggedIn()){
 if (isset($_POST['clockin'])) {
     $timein = $_POST['timein'];
     $date = $_POST['date'];
-    $apptUpdateQuery = "INSERT INTO timeclock (date, timein) VALUES('$date', '$timein')";
+    $employee_idno = $_POST['employee_idno'];
+    $apptUpdateQuery = "INSERT INTO timeclock (employee_idno, date, timein) VALUES('$employee_idno', '$date', '$timein')";
     $apptUpdateResult = mysqli_query($conn, $apptUpdateQuery);
     header('Location: timeclock.php');
   }
@@ -80,6 +81,7 @@ if (isset($_POST['clockout'])) {
     ?>
 
         <form method="post" action="">
+            <input type="hidden" name="employee_idno" value="<?php echo $_SESSION['employee_idno']; ?>" />
             <input type="hidden" name="date" value="<?php echo $date; ?>" />
             <input type="hidden" name="timein" value="<?php echo $time; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-success">Clock In</span></button>
