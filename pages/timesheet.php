@@ -460,7 +460,7 @@ if(isset($_POST['create-timesheet'])) {
 
 
 
-          <td><?php echo $timein; ?> / <?php echo $timeout; ?></td>
+          <!-- <td><?php //echo $timein; ?> / <?php //echo $timeout; ?></td> -->
           <td>
 
           <?php
