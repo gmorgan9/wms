@@ -235,7 +235,7 @@ if(!isLoggedIn()){
                                       $fri_timein = date("h:i A", strtotime($row['fri_timein']));
                                       $fri_timeout = date("h:i A", strtotime($row['fri_timeout']));
                                       ?>
-                                      <?php if($row['fri_date'] != null) { ?>
+                                      <?php if($row['fri_date'] == null) { ?>
                                         <span class="text-warning">Change in Progress</span>
                                       <?php } else { ?>
                                         <?php echo $fri_date; ?> &nbsp; <?php echo $fri_timein; ?> - <?php echo $fri_timeout; ?>
