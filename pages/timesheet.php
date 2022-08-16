@@ -189,7 +189,7 @@ if(isset($_POST['create-timesheet'])) {
          <span class="pt-4" style="width: 95%;">Today's Date is <span class="text-muted"><?php echo $for_date; ?></span></span>
        </div>
        <!-- create-timesheet -->
-       <form id="clockout" method="post" action="">
+       <form method="post" action="">
             <?php 
             $empID     = $_SESSION['employee_idno'];
             $emp_fname = $_SESSION['fname'];
@@ -199,7 +199,7 @@ if(isset($_POST['create-timesheet'])) {
             <input type="text" name="employee_fname" value="<?php echo $emp_fname; ?>" />
             <input type="text" name="employee_lname" value="<?php echo $emp_lname; ?>" />
             <input type="text" name="date" value="<?php echo $date; ?>" />
-            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create TimeSheet</span></button>
+            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
         </form>
         
         <form id="clockin" method="post" action="">
