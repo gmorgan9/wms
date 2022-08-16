@@ -234,19 +234,12 @@ if(isset($_POST['create-timesheet'])) {
                     display:none;
                 }
             </style>
-            <?php } if ($database_date != null) { ?>
-              <style type="text/css">
-                #clockin{
-                    display:block;
-                }
-            </style>
-            <?php } if ($timein != null) {?>
+            <?php } if ($timein != null) { ?>
               <style type="text/css">
                 #clockin{
                     display:none;
                 }
             </style>
-
             <?php } ?>
 
             <?php if ($timein != null) {?>
