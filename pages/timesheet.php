@@ -264,8 +264,10 @@ if(isset($_POST['create-timesheet'])) {
             <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
             <input type="hidden" name="date" value="<?php echo $date; ?>" />
             <input type="hidden" name="timeout" value="<?php echo $time; ?>" />
-            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockout"><span class="badge text-bg-danger">Clock Out</span></button>
-        </form>
+            <div class="col text-center mt-3">
+              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockout"><span class="badge text-bg-danger">Clock Out</span></button>
+            </div>
+            </form>
         <?php } ?>
         <?php if ($timeout != null) { ?>
             <style type="text/css">
