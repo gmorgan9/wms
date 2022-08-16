@@ -446,7 +446,7 @@ if(isset($_POST['create-timesheet'])) {
           
 
           <?php if($orgTimein == null && $orgTimeout == null) { ?>
-            <td><span style="background: rgb(253,243,209); color: rgb(98,78,23); border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;">Clock In</span></td>
+            <td><span style="background: rgb(253,243,209); color: rgb(98,78,23); border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" class="badge text-bg-primary">Clock In</span></td>
           <?php } else if($orgTimeout == null) { ?>
             <td><?php echo $timein; ?> - <span style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;">Clock Out</span></td>
           <?php } else { ?>
