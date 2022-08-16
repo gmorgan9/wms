@@ -147,7 +147,7 @@ if(!isLoggedIn()){
             $timein = $row['timein'];
             $timeout = $row['timeout'];
          } }?>
-        <div class="section-header pt-2">
+        <div class="section-header text-center pt-2">
          <span class="text-muted pt-4" style="width: 95%;">Today's Date is <?php echo $date ?></span>
        </div>
         
