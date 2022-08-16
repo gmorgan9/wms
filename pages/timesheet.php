@@ -456,13 +456,6 @@ if(isset($_POST['create-timesheet'])) {
           <?php } else { ?>
             <td><?php echo $timein; ?> / <?php echo $timeout; ?></td>
           <?php } ?>
-          
-
-
-
-          <!-- <td><?php //echo $timein; ?> / <?php //echo $timeout; ?></td> -->
-          <td>
-
           <?php
           $total_time = round((strtotime($timeout) - strtotime($timein))/3600, 1);
           $total = round($total_time / 3600);
@@ -470,8 +463,14 @@ if(isset($_POST['create-timesheet'])) {
           //$maxmin = '59';
           ?>
 
-          <?php echo $total_time ?>
-          </td>
+          <?php if($orgTimein == null && $orgTimeout == null) { ?>
+            <td><span class="text-warning">Clock In</span></td>
+          <?php } if($orgTimeout == null) { ?>
+            <td><span class="text-warning">Clock Out</span></td>
+          <?php } else { ?>
+            <td><?php echo $total_time ?></td>
+          <?php } ?>
+          
           <?php if($app_status == 'pending') { ?>
             <td><span class="text-primary">Pending</span></td>
           <?php } if($app_status == 'approved') { ?>
