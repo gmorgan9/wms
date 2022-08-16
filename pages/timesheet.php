@@ -454,7 +454,7 @@ if(isset($_POST['create-timesheet'])) {
           <?php //} else if ($row['end_date'] == null) { ?>
             <!-- <?php //echo $start_date; ?> - <span class="text-warning">Enter end date when job is terminated.</span> -->
           <?php } else { ?>
-            <?php echo $timein; ?> / <?php echo $timeout; ?>
+            <td><?php echo $timein; ?> / <?php echo $timeout; ?></td>
           <?php } ?>
           
 
