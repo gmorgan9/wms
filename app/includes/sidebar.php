@@ -5,6 +5,10 @@
                 <i class="bi bi-sliders2"></i>
                 <span>  Dashboard</span>
             </a>
+            <a href="<?php echo BASE_URL . '/pages/timeclock.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                <i class="bi bi-clock"></i>
+                <span>  Time Clock</span>
+            </a>
             <?php if($_SESSION['acc_type'] == 0) { ?>
             <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
                 <i class="bi bi-info-circle"></i>

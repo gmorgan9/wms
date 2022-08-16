@@ -51,8 +51,6 @@ if(!isLoggedIn()){
   }
 // END DELETE TIME FUNCTION
 
-
-
 // APPROVED STATUS FUNCTION
   if (isset($_POST['approved-status'])) {
     $date = mysqli_real_escape_string($conn, $_POST['date']);
