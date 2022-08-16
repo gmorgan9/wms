@@ -62,13 +62,14 @@ if (isset($_POST['timein'])) {
 
         $timezone = date_default_timezone_get();
         date_default_timezone_set($timezone);
-        $date = time();
+        $date = date('Y-m-d h:i:s', time());
         echo $date;
 
     ?>
 
         <form method="post" action="">
-            <input type="date" name="timein" value="<?php echo $$date; ?>" />
+            <input type="date" name="date" value="<?php echo $date; ?>" />
+            <input type="time" name="timein" value="<?php echo $date; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="timein"><span class="badge text-bg-success">Clock In</span></button>
         </form>
 
