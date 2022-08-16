@@ -22,10 +22,11 @@ if (isset($_POST['clockin'])) {
 
 // CLOCKOUT FUNCTION
 if (isset($_POST['clockout'])) {
-
-    $rejUpdateQuery = "UPDATE timeclock SET timeout = '".$_POST['timeout']."' WHERE employee_idno = '".$_POST['employee_idno']."'";
+    $emp = $_POST['employee_idno'];
+    $timeout = $_POST['timeout'];
+    $rejUpdateQuery = "UPDATE timeclock SET timeout = '$timeout' WHERE employee_idno = '$emp'";
     $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    header('Location: timeclock.php');
   }
 // END CLOCKOUT FUNCTION
 
