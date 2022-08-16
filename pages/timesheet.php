@@ -220,14 +220,7 @@ if(isset($_POST['create-timesheet'])) {
         </form>
         <?php } ?>
         
-         <!-- CLOCK IN FORM -->
-        <?php if ($datebase_date == null) { ?>
-            <style type="text/css">
-                #clockin{
-                    display:none;
-                }
-            </style>
-        <?php } else { ?>
+        <!-- CLOCK IN FORM -->
         <form id="clockin" method="post" action="">
             <?php $empID = $_SESSION['employee_idno']; ?>
             <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
@@ -235,13 +228,25 @@ if(isset($_POST['create-timesheet'])) {
             <input type="hidden" name="timein" value="<?php echo $time; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-success">Clock In</span></button>
         </form>
-        <?php } ?>
-            <?php if ($timein != null) { ?>
+        <?php if ($datebase_date == null) { ?>
+            <style type="text/css">
+                #clockin{
+                    display:none;
+                }
+            </style>
+            <?php } if ($database_date != null) { ?>
+              <style type="text/css">
+                #clockin{
+                    display:block;
+                }
+            </style>
+            <?php } if ($timein != null) {?>
               <style type="text/css">
                 #clockin{
                     display:none;
                 }
             </style>
+
             <?php } ?>
 
             <?php if ($timein != null) {?>
