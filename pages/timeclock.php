@@ -9,22 +9,13 @@ if(!isLoggedIn()){
   header('location:' . BASE_URL . '/pages/entry/login.php');
 }
 
-// UPDATE JOB FUNCTION
-  if(isset($_POST['update-job'])){
-    $id = $_GET['jobID'];
-    $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
-    $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
-    $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
-    $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
-    $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
-    $reason = mysqli_real_escape_string($conn, $_POST['reason']);
-  
-    $update = "UPDATE job SET approval_status = 'pending', jobtitle = '$jobtitle', companyname = '$companyname', deptname = '$deptname', reason = '$reason' WHERE jobID = '$id'";
-    mysqli_query($conn, $update);
+// APPROVED TIME FUNCTION
+if (isset($_POST['timein'])) {
+    $apptUpdateQuery = "UPDATE timeclock SET timein = '".$_POST['timein']."'";
+    $apptUpdateResult = mysqli_query($conn, $apptUpdateQuery);
     header('Location: ' . $_SERVER['HTTP_REFERER']);
-  
-  };
-// END UPDATE JOB FUNCTION
+  }
+// END APPROVED TIME FUNCTION
 
 ?>
 
@@ -74,6 +65,11 @@ if(!isLoggedIn()){
         echo $date;
 
     ?>
+
+                        <form method="post" action="">
+                            <input type="hidden" name="timein" value="<?php echo $$date; ?>" />
+                            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="timein"><span class="badge text-bg-success">Clock In</span></button>
+                        </form>
 
     </div>
 

@@ -44,11 +44,11 @@ if(!isAdmin()){
 // END UPDATE TIME FUNCTION
 
 // APPROVED TIME FUNCTION
-if (isset($_POST['active'])) {
-  $apptUpdateQuery = "UPDATE job SET status = 'active' WHERE jobID = '".$_POST['jobID']."'";
-  $apptUpdateResult = mysqli_query($conn, $apptUpdateQuery);
-  header('Location: ' . $_SERVER['HTTP_REFERER']);
-}
+  if (isset($_POST['active'])) {
+    $apptUpdateQuery = "UPDATE job SET status = 'active' WHERE jobID = '".$_POST['jobID']."'";
+    $apptUpdateResult = mysqli_query($conn, $apptUpdateQuery);
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+  }
 // END APPROVED TIME FUNCTION
 
 // REJECTED TIME STATUS FUNCTION
