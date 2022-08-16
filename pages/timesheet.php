@@ -447,14 +447,14 @@ if(isset($_POST['create-timesheet'])) {
 
           <?php if($timein == null && $timeout == null) { ?>
             <td><i class="bi bi-slash-circle"></i> - <i class="bi bi-slash-circle"></i></td>
-          <?php } else if($row['end_date'] == null) { ?>
-            <?php echo $start_date; ?> - <span class="text-warning">Needs a End Date</span>
-          <?php } else if($row['start_date'] == null) { ?>
-            <span class="text-warning">Needs a Start Date</span> - <?php echo $end_date; ?>
-          <?php } else if ($row['end_date'] == null) { ?>
-            <?php echo $start_date; ?> - <span class="text-warning">Enter end date when job is terminated.</span>
+          <?php } else if($timeout == null) { ?>
+            <td><?php echo $timein; ?> - <i class="bi bi-slash-circle"></i></td>
+          <?php } else if($timein == null) { ?>
+            <td><i class="bi bi-slash-circle"></i> - <?php echo $timeout; ?></td>
+          <?php //} else if ($row['end_date'] == null) { ?>
+            <!-- <?php //echo $start_date; ?> - <span class="text-warning">Enter end date when job is terminated.</span> -->
           <?php } else { ?>
-            <?php echo $start_date; ?> - <?php echo $end_date; ?>
+            <?php echo $timein; ?> / <?php echo $timeout; ?>
           <?php } ?>
           
 
