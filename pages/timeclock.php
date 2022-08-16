@@ -91,7 +91,7 @@ if (isset($_POST['clockout'])) {
 
             <label for="employee_idno">Employee ID</label>
             <input class="form-control w-25" id="employee_idno" type="text" name="employee_idno">
-            <input type="hidden" name="timein" value="<?php echo $time; ?>" />
+            <input type="hidden" name="timeout" value="<?php echo $time; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockout"><span class="badge text-bg-danger">Clock Out</span></button>
         </form>
 
