@@ -70,7 +70,7 @@ if(!isLoggedIn()){
 
         $timezone = date_default_timezone_get();
         date_default_timezone_set($timezone);
-        $date = date('m/d/Y h:i:s a', time());
+        $date = date('F d, Y h:i a', time());
         echo $date;
 
     ?>
