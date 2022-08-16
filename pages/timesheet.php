@@ -178,7 +178,7 @@ if(isset($_POST['create-timesheet'])) {
 
         if (mysqli_num_rows($result) > 0) {
          while($row = mysqli_fetch_assoc($result)) {
-
+            $database_date = $row['date'];
             $timein = $row['timein'];
             $timeout = $row['timeout'];
          } }?>
@@ -193,6 +193,9 @@ if(isset($_POST['create-timesheet'])) {
          <span class="pt-4" style="width: 95%;">Today's Date is <span class="text-muted"><?php echo $for_date; ?></span></span>
        </div>
        <!-- create-timesheet -->
+       <?php if($database_date == $date) {?>
+
+        <?php } else { ?>
        <form method="post" action="">
             <?php 
             $empID     = $_SESSION['employee_idno'];
@@ -205,7 +208,9 @@ if(isset($_POST['create-timesheet'])) {
             <input type="hidden" name="date" value="<?php echo $date; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
         </form>
+        <?php } ?>
         
+        <!-- CLOCK IN FORM -->
         <form id="clockin" method="post" action="">
             <?php $empID = $_SESSION['employee_idno']; ?>
             <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
@@ -223,6 +228,7 @@ if(isset($_POST['create-timesheet'])) {
             <?php } ?>
 
             <?php if ($timein != null) {?>
+        <!-- CLOCK OUT FORM -->
         <form id="clockout" method="post" action="">
             <?php $empID = $_SESSION['employee_idno']; ?>
             <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
