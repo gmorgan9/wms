@@ -124,7 +124,7 @@ if(!isLoggedIn()){
   <!-- NON ADMIN TIMESHEET (LEFT SIDE) -->
      <?php if($_SESSION['acc_type'] == 0){ ?>
      <!-- start PAGE-CONTENT -->
-     <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -100px; height: 50px; !important;">
+     <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -100px; height: 250px; !important;">
        <div class="section-header pt-2">
          <span class="text-muted pt-4" style="width: 95%;">Time Entry</span>
        </div>
