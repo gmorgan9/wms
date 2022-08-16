@@ -64,6 +64,14 @@ if(!isLoggedIn()){
   </div>
 
 
+    <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
+
+    </div>
+
+
+
+
+
   </div>
 <!-- END MAIN -->
 
