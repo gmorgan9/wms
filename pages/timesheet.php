@@ -125,34 +125,11 @@ if(!isLoggedIn()){
      <?php if($_SESSION['acc_type'] == 0){ ?>
      <!-- start PAGE-CONTENT -->
      <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -100px; height: unset !important;">
-     <form action="" method="post">
        <div class="section-header pt-2">
          <span class="text-muted pt-4" style="width: 95%;">Time Entry</span>
        </div>
        <hr style="margin-bottom: -5px; margin-top: 5px;">
-       <?php 
-       $fname = $_SESSION['fname'];
-       $lname = $_SESSION['lname']; 
-       $employee_idno = $_SESSION['employee_idno'];?>
-         <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
-         <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
-         <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employee_idno; ?>">
-         <div class="form-group pt-3 mx-auto" style="width: 95%;">
-         <label for="date" style="font-size: 14px;">Date <span class="text-muted" style="font-size: 10px;">e.g. "mm/dd/yyyy"</span></label>
-         <input class="form-control" id="date" type="date" name="date" value="" required>
-       </div>
-       <div class="form-group pt-3 mx-auto" style="width: 95%;">
-         <label for="timein" style="font-size: 14px;">Time In <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
-         <input class="form-control" id="timein" type="time" name="timein" value="" required>
-       </div>
-       <div class="form-group pt-3 mx-auto" style="width: 95%;">
-         <label for="timeout" style="font-size: 14px;">Time Out <span class="text-muted" style="font-size: 10px;">e.g. "hh:mm"</span></label>
-         <input class="form-control" id="timeout" type="time" name="timeout" value="" required>
-       </div>
-       <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
-         <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-time" class="badge text-bg-secondary">Add Time</button>
-       </div>
-     </form>
+      
 
      <!-- end PAGE-CONTENT -->
      </div>
