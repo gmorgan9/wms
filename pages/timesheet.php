@@ -148,7 +148,10 @@ if(!isLoggedIn()){
             $timeout = $row['timeout'];
          } }?>
         <div class="section-header text-center pt-2">
-          <?php $for_date = date("F d, Y", $date); ?>
+          <?php
+            $date = date('Y-m-d');
+            $for_date = date("F d, Y", $date); 
+           ?>
          <span class="pt-4" style="width: 95%;">Today's Date is <span class="text-muted"><?php echo $for_date; ?></span></span>
        </div>
         
