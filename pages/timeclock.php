@@ -11,7 +11,8 @@ if(!isLoggedIn()){
 
 // APPROVED TIME FUNCTION
 if (isset($_POST['timein'])) {
-    $apptUpdateQuery = "UPDATE timeclock SET timein = '".$_POST['timein']."'";
+    $timein = $_POST['timein'];
+    $apptUpdateQuery = "INSERT INTO timeclock (timein) VALUES('$timein')";
     $apptUpdateResult = mysqli_query($conn, $apptUpdateQuery);
     header('Location: ' . $_SERVER['HTTP_REFERER']);
   }
