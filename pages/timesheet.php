@@ -80,6 +80,40 @@ if(!isLoggedIn()){
   }
 // END REJECTED TIME STATUS FUNCTION
 
+// CREATE TIMESHEET FUNCTION
+if(isset($_POST['create-timesheet'])) {
+  $idno  = rand(1000000, 9999999);
+  $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
+  $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
+  $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
+
+  $insert = "INSERT INTO timesheet (idno, employee_fname, employee_lname, employee_idno) VALUES('$idno', '$employee_fname', '$employee_lname', '$employee_idno')";
+  mysqli_query($conn, $insert);
+  header('location: timesheet.php');
+};
+// END CLOCKIN FUNCTION
+
+// CLOCKIN FUNCTION
+  if (isset($_POST['clockin'])) {
+    $timein = $_POST['timein'];
+    $date = $_POST['date'];
+    $employee_idno = $_SESSION['employee_idno'];
+    $apptUpdateQuery = "INSERT INTO timeclock (employee_idno, date, timein) VALUES('$employee_idno', '$date', '$timein')";
+    $apptUpdateResult = mysqli_query($conn, $apptUpdateQuery);
+    header('Location: timeclock.php');
+  } 
+// END CLOCKIN FUNCTION
+
+// CLOCKOUT FUNCTION
+  if (isset($_POST['clockout'])) {
+    $emp = $_POST['employee_idno'];
+    $timeout = $_POST['timeout'];
+    $rejUpdateQuery = "UPDATE timeclock SET timeout = '$timeout' WHERE employee_idno = '$emp'";
+    $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
+    header('Location: timeclock.php');
+  }
+// END CLOCKOUT FUNCTION
+
 ?>
 
 <!DOCTYPE html>
@@ -154,6 +188,19 @@ if(!isLoggedIn()){
            ?>
          <span class="pt-4" style="width: 95%;">Today's Date is <span class="text-muted"><?php echo $for_date; ?></span></span>
        </div>
+       <!-- create-timesheet -->
+       <form id="clockout" method="post" action="">
+            <?php 
+            $empID     = $_SESSION['employee_idno'];
+            $emp_fname = $_SESSION['fname'];
+            $emp_lname = $_SESSION['lname'];
+            ?>
+            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
+            <input type="hidden" name="employee_fname" value="<?php echo $emp_fname; ?>" />
+            <input type="hidden" name="employee_lname" value="<?php echo $emp_lname; ?>" />
+            <input type="hidden" name="date" value="<?php echo $date; ?>" />
+            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create TimeSheet</span></button>
+        </form>
         
         <form id="clockin" method="post" action="">
             <?php $empID = $_SESSION['employee_idno']; ?>
