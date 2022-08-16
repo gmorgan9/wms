@@ -199,7 +199,7 @@ if(isset($_POST['create-timesheet'])) {
           </div>
         <?php } else if($database_date == $date && $timeout == null) { ?>
           <div class="alert alert-primary text-center mt-2" role="alert">
-            <span>Timesheet created <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?></span>
+            <span>Timesheet created for <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?></span>
           </div>
         <?php } else if($database_date == $date) { ?>
           <div class="alert alert-success text-center mt-2" role="alert">
