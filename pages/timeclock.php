@@ -91,7 +91,7 @@ if(!isLoggedIn()){
             $timeout = $row['timeout'];
          } }?>
         
-        <?php if ($timeout != null) {?>
+        <?php if ($date == null) {?>
         <form method="post" action="">
             <?php $empID = $_SESSION['employee_idno']; ?>
             <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
