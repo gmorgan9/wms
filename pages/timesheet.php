@@ -98,10 +98,9 @@ if(isset($_POST['create-timesheet'])) {
   if (isset($_POST['clockin'])) {
     $timein = $_POST['timein'];
     $date = $_POST['date'];
-    $employee_idno = $_SESSION['employee_idno'];
-    $apptUpdateQuery = "INSERT INTO timeclock (employee_idno, date, timein) VALUES('$employee_idno', '$date', '$timein')";
+    $apptUpdateQuery = "UPDATE timesheet SET timein = '$timein' WHERE date = '$date'";
     $apptUpdateResult = mysqli_query($conn, $apptUpdateQuery);
-    header('Location: timeclock.php');
+    header('location: timesheet.php');
   } 
 // END CLOCKIN FUNCTION
 
@@ -109,9 +108,10 @@ if(isset($_POST['create-timesheet'])) {
   if (isset($_POST['clockout'])) {
     $emp = $_POST['employee_idno'];
     $timeout = $_POST['timeout'];
-    $rejUpdateQuery = "UPDATE timeclock SET timeout = '$timeout' WHERE employee_idno = '$emp'";
+    $date = $_POST['date'];
+    $rejUpdateQuery = "UPDATE timesheet SET timeout = '$timeout' WHERE date = '$date'";
     $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
-    header('Location: timeclock.php');
+    header('location: timesheet.php');
   }
 // END CLOCKOUT FUNCTION
 
