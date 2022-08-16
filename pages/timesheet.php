@@ -195,15 +195,15 @@ if(isset($_POST['create-timesheet'])) {
        <!-- create-timesheet -->
        <?php if($database_date == $date && $timein == null && $timeout == null) {?>
         <div class="alert alert-primary" role="alert">
-            <span class="text-muted pt-4" style="width: 95%; font-size: 14px;">Timesheet created for <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?></span>
+            <span>Timesheet created for <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?></span>
           </div>
         <?php } else if($database_date == $date && $timeout == null) { ?>
           <div class="alert alert-primary" role="alert">
-            <span class="text-muted pt-4" style="width: 95%; font-size: 14px;">Timesheet created <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?></span>
+            <span>Timesheet created <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?></span>
           </div>
         <?php } else if($database_date == $date) { ?>
           <div class="alert alert-primary" role="alert">
-            <span class="text-muted pt-4" style="width: 95%; font-size: 14px;">
+            <span>
             Timesheet Submitted for <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?>! <br>
             Thanks for your work today! <br>
             We will see you tomorrow!
