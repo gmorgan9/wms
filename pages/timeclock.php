@@ -10,7 +10,7 @@ if(!isLoggedIn()){
 }
 
 // APPROVED TIME FUNCTION
-if (isset($_POST['timein'])) {
+if (isset($_POST['clockin'])) {
     $timein = $_POST['timein'];
     $date = $_POST['date'];
     $apptUpdateQuery = "INSERT INTO timeclock (date) VALUES('$date')";
@@ -73,7 +73,7 @@ if (isset($_POST['timein'])) {
         <form method="post" action="">
             <input type="hidden" name="date" value="<?php echo $date; ?>" />
             <!-- <input type="hidden" name="timein" value="<?php //echo $time; ?>" /> -->
-            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="timein"><span class="badge text-bg-success">Clock In</span></button>
+            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-success">Clock In</span></button>
         </form>
 
     </div>
