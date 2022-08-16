@@ -195,10 +195,10 @@ if(isset($_POST['create-timesheet'])) {
             $emp_fname = $_SESSION['fname'];
             $emp_lname = $_SESSION['lname'];
             ?>
-            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
-            <input type="hidden" name="employee_fname" value="<?php echo $emp_fname; ?>" />
-            <input type="hidden" name="employee_lname" value="<?php echo $emp_lname; ?>" />
-            <input type="hidden" name="date" value="<?php echo $date; ?>" />
+            <input type="text" name="employee_idno" value="<?php echo $empID; ?>" />
+            <input type="text" name="employee_fname" value="<?php echo $emp_fname; ?>" />
+            <input type="text" name="employee_lname" value="<?php echo $emp_lname; ?>" />
+            <input type="text" name="date" value="<?php echo $date; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create TimeSheet</span></button>
         </form>
         
