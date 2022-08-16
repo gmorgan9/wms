@@ -68,7 +68,7 @@ if(!isLoggedIn()){
     if($_SESSION['acc_type'] == 0) {
     
     $empID = $_SESSION['employee_idno'];
-    $select = " SELECT * FROM job WHERE employee_idno = '{$_SESSION['employee_idno']}' AND status = 1";
+    $select = " SELECT * FROM job WHERE employee_idno = '{$_SESSION['employee_idno']}' AND status = 'active";
     $result = mysqli_query($conn, $select);
     if (mysqli_num_rows($result) > 0) {
      while($row = mysqli_fetch_assoc($result)) {
