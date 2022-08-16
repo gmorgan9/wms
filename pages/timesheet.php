@@ -173,7 +173,7 @@ if(isset($_POST['create-timesheet'])) {
 
         <?php 
         $employee_idno = $_SESSION['employee_idno'];
-        $select = " SELECT * FROM timeclock WHERE employee_idno = '$employee_idno' ";
+        $select = " SELECT * FROM timesheet WHERE date = '$date' ";
         $result = mysqli_query($conn, $select);
 
         if (mysqli_num_rows($result) > 0) {
