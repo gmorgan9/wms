@@ -52,11 +52,11 @@ if(!isAdmin()){
 // END APPROVED TIME FUNCTION
 
 // REJECTED TIME STATUS FUNCTION
-if (isset($_POST['inactive'])) {
-  $rejUpdateQuery = "UPDATE job SET status = 'inactive' WHERE jobID = '".$_POST['jobID']."'";
-  $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
-  header('Location: ' . $_SERVER['HTTP_REFERER']);
-}
+  if (isset($_POST['inactive'])) {
+    $rejUpdateQuery = "UPDATE job SET status = 'inactive' WHERE jobID = '".$_POST['jobID']."'";
+    $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+  }
 // END REJECTED TIME STATUS FUNCTION
 
 ?>

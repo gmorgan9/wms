@@ -9,7 +9,7 @@ if(!isLoggedIn()){
   header('location:' . BASE_URL . '/pages/entry/login.php');
 }
 
-// APPROVED TIME FUNCTION
+// CLOCKIN FUNCTION
 if (isset($_POST['clockin'])) {
     $timein = $_POST['timein'];
     $date = $_POST['date'];
@@ -17,7 +17,16 @@ if (isset($_POST['clockin'])) {
     $apptUpdateResult = mysqli_query($conn, $apptUpdateQuery);
     header('Location: timeclock.php');
   }
-// END APPROVED TIME FUNCTION
+// END CLOCKIN FUNCTION
+
+// CLOCKOUT FUNCTION
+if (isset($_POST['clockout'])) {
+
+    $rejUpdateQuery = "UPDATE timeclock SET status = 'inactive' WHERE jobID = '".$_POST['jobID']."'";
+    $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+  }
+// END CLOCKOUT FUNCTION
 
 ?>
 
@@ -72,6 +81,11 @@ if (isset($_POST['clockin'])) {
 
         <form method="post" action="">
             <input type="hidden" name="date" value="<?php echo $date; ?>" />
+            <input type="hidden" name="timein" value="<?php echo $time; ?>" />
+            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-success">Clock In</span></button>
+        </form>
+        <form method="post" action="">
+            <input type="text" name="employee_idno">
             <input type="hidden" name="timein" value="<?php echo $time; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-success">Clock In</span></button>
         </form>
