@@ -15,7 +15,7 @@ if (isset($_POST['timein'])) {
     $date = $_POST['date'];
     $apptUpdateQuery = "INSERT INTO timeclock (date, timein) VALUES('$date', '$timein')";
     $apptUpdateResult = mysqli_query($conn, $apptUpdateQuery);
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    header('Location: timeclock.php');
   }
 // END APPROVED TIME FUNCTION
 
