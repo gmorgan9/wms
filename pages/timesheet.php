@@ -195,15 +195,15 @@ if(isset($_POST['create-timesheet'])) {
        <!-- create-timesheet -->
        <?php if($database_date == $date && $timein == null && $timeout == null) {?>
           <div class="section-header text-center pt-2">
-            <span class="text-muted pt-4" style="width: 95%; font-size: 14px;">Timesheet created for today</span>
+            <span class="text-muted pt-4" style="width: 95%; font-size: 14px;">Timesheet created</span>
           </div>
         <?php } else if($database_date == $date && $timeout == null) { ?>
           <div class="section-header text-center pt-2">
-            <span class="text-muted pt-4" style="width: 95%; font-size: 14px;">Timesheet created for today</span>
+            <span class="text-muted pt-4" style="width: 95%; font-size: 14px;">Timesheet created</span>
           </div>
         <?php } else if($database_date == $date) { ?>
           <div class="section-header text-center pt-2">
-            <span class="text-muted pt-4" style="width: 95%; font-size: 14px;">Timesheet Submitted for today</span>
+            <span class="text-muted pt-4" style="width: 95%; font-size: 14px;">Timesheet Submitted!</span>
           </div>
         <?php } else { ?>
        <form method="post" action="">
