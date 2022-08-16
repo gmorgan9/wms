@@ -463,7 +463,7 @@ if(isset($_POST['create-timesheet'])) {
           //$maxmin = '59';
           ?>
 
-          <?php if($orgTimein == null && $orgTimeout == null) { ?>
+          <?php if($orgTimein == null || $orgTimeout == null) { ?>
             <td><span>0</span></td>
           <?php } else { ?>
             <td><?php echo $total_time ?></td>
