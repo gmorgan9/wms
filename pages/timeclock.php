@@ -69,8 +69,10 @@ if(!isLoggedIn()){
     <?php 
 
         $timezone = date_default_timezone_get();
-        echo "The current server timezone is: " . $timezone;
-    
+        date_default_timezone_set($timezone);
+        $date = date('m/d/Y h:i:s a', time());
+        echo $date;
+
     ?>
 
     </div>
