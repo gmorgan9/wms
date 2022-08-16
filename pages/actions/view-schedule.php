@@ -163,7 +163,7 @@ if(!isLoggedIn()){
                                       $mon_timein = date("h:i A", strtotime($row['mon_timein']));
                                       $mon_timeout = date("h:i A", strtotime($row['mon_timeout']));
                                       ?>
-                                      <?php if($row['mon_date'] == null) { ?>
+                                      <?php if($row['mon_timein'] == null) { ?>
                                         <span class="text-warning">No Schedule</span>
                                       <?php } else { ?>
                                         <?php echo $mon_date; ?> &nbsp; <?php echo $mon_timein; ?> - <?php echo $mon_timeout; ?>
@@ -181,7 +181,7 @@ if(!isLoggedIn()){
                                       $tues_timein = date("h:i A", strtotime($row['tues_timein']));
                                       $tues_timeout = date("h:i A", strtotime($row['tues_timeout']));
                                       ?>
-                                      <?php if($row['tues_date'] == null) { ?>
+                                      <?php if($row['tues_timein'] == null) { ?>
                                         <span class="text-warning">No Schedule</span>
                                       <?php } else { ?>
                                         <?php echo $tues_date; ?> &nbsp; <?php echo $tues_timein; ?> - <?php echo $tues_timeout; ?>
@@ -199,7 +199,7 @@ if(!isLoggedIn()){
                                       $wed_timein = date("h:i A", strtotime($row['wed_timein']));
                                       $wed_timeout = date("h:i A", strtotime($row['wed_timeout']));
                                       ?>
-                                      <?php if($row['wed_date'] == null) { ?>
+                                      <?php if($row['wed_timein'] == null) { ?>
                                         <span class="text-warning">No Schedule</span>
                                       <?php } else { ?>
                                         <?php echo $wed_date; ?> &nbsp; <?php echo $wed_timein; ?> - <?php echo $wed_timeout; ?>
@@ -217,7 +217,7 @@ if(!isLoggedIn()){
                                       $thurs_timein = date("h:i A", strtotime($row['thurs_timein']));
                                       $thurs_timeout = date("h:i A", strtotime($row['thurs_timeout']));
                                       ?>
-                                      <?php if($row['thurs_date'] == null) { ?>
+                                      <?php if($row['thurs_timein'] == null) { ?>
                                         <span class="text-warning">No Schedule</span>
                                       <?php } else { ?>
                                         <?php echo $thurs_date; ?> &nbsp; <?php echo $thurs_timein; ?> - <?php echo $thurs_timeout; ?>
