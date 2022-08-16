@@ -443,6 +443,23 @@ if(isset($_POST['create-timesheet'])) {
       <tr>
           <th scope="row"><?php echo $idno; ?></th>
           <td><?php echo $date; ?></td>
+          
+
+          <?php if($timein == null && $timeout == null) { ?>
+            <i class="bi bi-slash-circle"></i> - <i class="bi bi-slash-circle"></i>
+          <?php } else if($row['end_date'] == null) { ?>
+            <?php echo $start_date; ?> - <span class="text-warning">Needs a End Date</span>
+          <?php } else if($row['start_date'] == null) { ?>
+            <span class="text-warning">Needs a Start Date</span> - <?php echo $end_date; ?>
+          <?php } else if ($row['end_date'] == null) { ?>
+            <?php echo $start_date; ?> - <span class="text-warning">Enter end date when job is terminated.</span>
+          <?php } else { ?>
+            <?php echo $start_date; ?> - <?php echo $end_date; ?>
+          <?php } ?>
+          
+
+
+
           <td><?php echo $timein; ?> / <?php echo $timeout; ?></td>
           <td>
 
