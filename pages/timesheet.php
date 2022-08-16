@@ -464,7 +464,7 @@ if(isset($_POST['create-timesheet'])) {
           ?>
 
           <?php if($orgTimein == null || $orgTimeout == null) { ?>
-            <td><span>0</span></td>
+            <td><span>-</span></td>
           <?php } else { ?>
             <td><?php echo $total_time ?></td>
           <?php } ?>
