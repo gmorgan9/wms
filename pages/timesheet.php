@@ -195,7 +195,7 @@ if(isset($_POST['create-timesheet'])) {
        <!-- create-timesheet -->
        <?php if($database_date == $date) {?>
           <div class="section-header text-center pt-2">
-            <span class="text-muted pt-4" style="width: 95%;">Timesheet already created for today</span>
+            <span class="text-muted pt-4 fs-6" style="width: 95%;">Timesheet already created for today</span>
           </div>
         <?php } else { ?>
        <form method="post" action="">
