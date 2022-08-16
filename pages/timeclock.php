@@ -85,9 +85,9 @@ if (isset($_POST['clockout'])) {
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-success">Clock In</span></button>
         </form>
         <form method="post" action="">
-            <input type="text" name="employee_idno">
+            <input class="form-control" type="text" name="employee_idno">
             <input type="hidden" name="timein" value="<?php echo $time; ?>" />
-            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-success">Clock In</span></button>
+            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockout"><span class="badge text-bg-danger">Clock Out</span></button>
         </form>
 
     </div>
