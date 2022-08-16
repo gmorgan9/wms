@@ -203,7 +203,7 @@ if(isset($_POST['create-timesheet'])) {
           </div>
         <?php } else if($database_date == $date) { ?>
           <div class="alert alert-primary" role="alert">
-            <span>
+            <span class="text-center">
             Timesheet Submitted for <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?>! <br>
             Thanks for your work today! <br>
             We will see you tomorrow!
