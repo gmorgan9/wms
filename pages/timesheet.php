@@ -193,7 +193,7 @@ if(isset($_POST['create-timesheet'])) {
          <span class="pt-4" style="width: 95%;">Today's Date is <span class="text-muted"><?php echo $for_date; ?></span></span>
        </div>
        <!-- create-timesheet -->
-       <?php if($database_date == $date && $timein == null && $timeout == null) {?>
+       <?php if($timein == null && $timeout == null) {?>
           <div class="section-header text-center pt-2">
             <span class="text-muted pt-4" style="width: 95%; font-size: 14px;">Timesheet created for today</span>
           </div>
