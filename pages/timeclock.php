@@ -108,13 +108,14 @@ if(!isLoggedIn()){
 
             <?php } ?>
 
-        
+            <?php if ($timein != null) {?>
         <form id="clockout" method="post" action="">
             <?php $empID = $_SESSION['employee_idno']; ?>
             <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
             <input type="hidden" name="timeout" value="<?php echo $time; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockout"><span class="badge text-bg-danger">Clock Out</span></button>
         </form>
+        <?php } ?>
         <?php if ($timeout != null) { ?>
             <style type="text/css">
                 #clockout{
