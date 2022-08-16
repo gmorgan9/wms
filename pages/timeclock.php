@@ -62,7 +62,7 @@ if (isset($_POST['timein'])) {
 
         $timezone = date_default_timezone_get();
         date_default_timezone_set($timezone);
-        $date = date('Y-m-d h:i:s', time());
+        $date = time();
         echo $date;
 
     ?>
