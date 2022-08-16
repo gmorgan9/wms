@@ -148,7 +148,8 @@ if(!isLoggedIn()){
             $timeout = $row['timeout'];
          } }?>
         <div class="section-header text-center pt-2">
-         <span class="pt-4" style="width: 95%;">Today's Date is <span class="text-muted"><?php echo $date ?></span></span>
+          <?php $formatted_date = date('F d, Y', stripos($date)); ?>
+         <span class="pt-4" style="width: 95%;">Today's Date is <span class="text-muted"><?php echo $formatted_date ?></span></span>
        </div>
         
         <form id="clockin" method="post" action="">
