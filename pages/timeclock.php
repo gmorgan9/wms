@@ -81,7 +81,8 @@ if (isset($_POST['clockout'])) {
     ?>
 
         <form method="post" action="">
-            <input type="hidden" name="employee_idno" value="<?php echo $_SESSION['employee_idno']; ?>" />
+            <?php $empID = $_SESSION['employee_idno']; ?>
+            <input type="hidden" name="employee_idno" value="<?php echo $empID ?>" />
             <input type="hidden" name="date" value="<?php echo $date; ?>" />
             <input type="hidden" name="timein" value="<?php echo $time; ?>" />
             <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-success">Clock In</span></button>
