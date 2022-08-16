@@ -194,7 +194,7 @@ if(isset($_POST['create-timesheet'])) {
        </div>
        <!-- create-timesheet -->
        <?php if($database_date == $date && $timein == null && $timeout == null) {?>
-        <div class="alert alert-primary" role="alert">
+        <div class="alert alert-primary mt-3" role="alert">
             <span>Timesheet created for <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?></span>
           </div>
         <?php } else if($database_date == $date && $timeout == null) { ?>
@@ -202,7 +202,7 @@ if(isset($_POST['create-timesheet'])) {
             <span>Timesheet created <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?></span>
           </div>
         <?php } else if($database_date == $date) { ?>
-          <div class="alert alert-primary text-center" role="alert">
+          <div class="alert alert-success text-center" role="alert">
             <span>
             Timesheet Submitted for <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?>! <br>
             
