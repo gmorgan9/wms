@@ -167,7 +167,7 @@ if(isset($_POST['create-timesheet'])) {
        <?php 
         $timezone = date_default_timezone_get();
         date_default_timezone_set($timezone);
-        $date = date('Y-m-d');
+        $date = date('Y-m-d', +1);
         $time = date('h:i:s');
     ?>
 
