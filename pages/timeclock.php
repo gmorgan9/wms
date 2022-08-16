@@ -13,7 +13,7 @@ if(!isLoggedIn()){
 if (isset($_POST['clockin'])) {
     $timein = $_POST['timein'];
     $date = $_POST['date'];
-    $employee_idno = $_POST['employee_idno'];
+    $employee_idno = $_SESSION['employee_idno'];
     $apptUpdateQuery = "INSERT INTO timeclock (employee_idno, date, timein) VALUES('$employee_idno', '$date', '$timein')";
     $apptUpdateResult = mysqli_query($conn, $apptUpdateQuery);
     header('Location: timeclock.php');
