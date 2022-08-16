@@ -83,11 +83,12 @@ if(!isLoggedIn()){
 // CREATE TIMESHEET FUNCTION
 if(isset($_POST['create-timesheet'])) {
   $idno  = rand(1000000, 9999999);
+  $date = mysqli_real_escape_string($conn, $_POST['date']);
   $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
   $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
   $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
 
-  $insert = "INSERT INTO timesheet (idno, employee_fname, employee_lname, employee_idno) VALUES('$idno', '$employee_fname', '$employee_lname', '$employee_idno')";
+  $insert = "INSERT INTO timesheet (idno, date, employee_fname, employee_lname, employee_idno) VALUES('$idno', '$date', '$employee_fname', '$employee_lname', '$employee_idno')";
   mysqli_query($conn, $insert);
   header('location: timesheet.php');
 };
@@ -183,7 +184,10 @@ if(isset($_POST['create-timesheet'])) {
          } }?>
         <div class="section-header text-center pt-2">
           <?php
+            $timezone = date_default_timezone_get();
+            date_default_timezone_set($timezone);
             $date = date('Y-m-d');
+            $time = date('h:i:s');
             $for_date = date("F d, Y", strtotime($date)); 
            ?>
          <span class="pt-4" style="width: 95%;">Today's Date is <span class="text-muted"><?php echo $for_date; ?></span></span>
