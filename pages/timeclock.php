@@ -64,7 +64,7 @@ if (isset($_POST['clockin'])) {
         $timezone = date_default_timezone_get();
         date_default_timezone_set($timezone);
         $date = date('Y-m-d');
-        $time = date('h:i:s');
+        $time = date('h:i a');
         echo $date;  echo '&nbsp;';
         echo $time;
 
