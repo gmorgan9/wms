@@ -143,7 +143,7 @@ if(isset($_POST['submit_time'])) {
                   </button>
                   </div>-->
                <!--<div class="alert alert-warning hide"></div>-->
-               <form id="register_form" novalidate  action="index.php" method="POST">
+               <form novalidate  action="" method="POST">
                   <div class="card" style="border-top: 4px solid orange;border-bottom: 4px solid orange;border-radius: 4px;">
                      <h3 class="card-header">Attendance Form</h3>
                      <div class="card-body">
