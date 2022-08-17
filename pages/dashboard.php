@@ -61,7 +61,7 @@ if(!isLoggedIn()){
     <div class="col me-3 ms-3" style="height: 350px; background-color: #c9b8a9;">
       2 of 3
     </div>
-    <div class="col me-5 ms-3" style="height: 350px; background-color: #c9b8a9;">
+    <div class="col me-3 ms-3" style="height: 350px; background-color: #c9b8a9;">
       3 of 3
     </div>
       </div>
@@ -69,7 +69,7 @@ if(!isLoggedIn()){
       <div class="col me-3 ms-3" style="height: 230px; background-color: #c9b8a9;">
       1 of 2
     </div>
-    <div class="col me-5 ms-3" style="height: 230px; background-color: #c9b8a9;">
+    <div class="col me-3 ms-3" style="height: 230px; background-color: #c9b8a9;">
       2 of 2
     </div>
       </div>
