@@ -205,13 +205,10 @@ if(isset($_POST['create-timesheet'])) {
         ?>
 
 <script type="text/javascript">
-    function doRefresh() {
-    $("#time").load("#time");
-    document.getElementById("refresh").innerHTML = Math.random();
+    function updateDiv()
+{ 
+    $( "#time" ).load(window.location.href + " #time" );
 }
-$(function () {
-    setInterval(doRefresh, 1000);
-});
 </script>
 
         <div class="section-header text-center pt-2">
