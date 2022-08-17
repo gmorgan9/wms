@@ -162,6 +162,44 @@ if(!isLoggedIn()){
            
 </script> <!--/. Script where the format of the interface time,month,day and year relies -->
 
+<script type="text/javascript">
+   $(document).ready (function(){
+               $("#success-alerts").fadeOut(15000);
+
+               $("#id").unbind('click').on("click", function () {
+                   $("#success-alerts").fadeTo(1000, 0).slideUp(5000, function(){
+                    //$(this).remove();
+                   });   
+               }, 5000);
+   
+               $("#success-alert").fadeOut(15000);
+               $("#id").unbind('click').on("click", function () {
+                   $("#success-alert").fadeTo(1000, 0).slideUp(5000, function(){
+                  // $(this).remove();
+                   });   
+               }, 5000);
+    });
+   
+</script>
+<script type="text/javascript">
+   $(document).ready (function(){
+               $("#danger-alert").fadeOut(15000);
+               $("#id").unbind('click').on("click", function () {
+                   $("#danger-alert").fadeTo(1000, 0).slideUp(5000, function(){
+                    //$(this).remove();
+                   });   
+               }, 5000);
+   
+               $("#danger-alerts").fadeOut(15000);
+               $("#id").unbind('click').on("click", function () {
+                   $("#danger-alerts").fadeTo(1000, 0).slideUp(5000, function(){
+                  // $(this).remove();
+                   });   
+               }, 5000);
+    });
+   
+</script>
+
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
 
