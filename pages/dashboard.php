@@ -55,6 +55,14 @@ if(!isLoggedIn()){
   <div class="page-content mt-2 mx-auto" style="margin-right: 10px;">
     <div class="container text-center">
       <div class="row mt-3">
+        <div class="col me-3 ms-3" style="height: 220px; background-color: #c9b8a9;">
+          Time Card
+        </div>
+        <div class="col me-3 ms-3" style="height: 220px; background-color: #c9b8a9;">
+          Current Date and Time
+        </div>
+      </div>
+      <div class="row mt-3">
         <div class="col me-3 ms-3" style="height: 350px; background-color: #c9b8a9;">
           Schedule
         </div>
@@ -63,14 +71,6 @@ if(!isLoggedIn()){
         </div>
         <div class="col me-3 ms-3" style="height: 350px; background-color: #c9b8a9;">
           My Profile
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col me-3 ms-3" style="height: 220px; background-color: #c9b8a9;">
-          Time Card
-        </div>
-        <div class="col me-3 ms-3" style="height: 220px; background-color: #c9b8a9;">
-          Current Date and Time
         </div>
       </div>
     </div>
