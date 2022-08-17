@@ -201,7 +201,7 @@ if(!isLoggedIn()){
        <!-- CURRENT TIME -->
        <div class="container">
       <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-6 text-center">
             <center>
                <div class="date">
                   <?php 
@@ -209,9 +209,8 @@ if(!isLoggedIn()){
                       $newtime = date("h:i:s",strtotime("+0 HOURS"));
                       $newdate = date("Y-m-d");
                       ?>
-                      <div class="text-center">
                   <strong style="font-size: 12px;"><?php echo  $newdate;?>&nbsp;&nbsp;<font style="color:#ffc107;">|</font>&nbsp;&nbsp; <span style="color: #ff6666;font-size: 12px;" id="tick2" class="timeh1"></strong>
-        </div>
+
             </center>
             </div>
          </div>
