@@ -270,17 +270,6 @@ if(!isLoggedIn()){
     });
    
 </script> -->
-
-<form method="post" action="">
-            <?php 
-            $empID     = $_SESSION['employee_idno'];
-            $emp_fname = $_SESSION['fname'];
-            $emp_lname = $_SESSION['lname'];
-            ?>
-            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
-            <input type="hidden" name="employee_fname" value="<?php echo $emp_fname; ?>" />
-            <input type="hidden" name="employee_lname" value="<?php echo $emp_lname; ?>" />
-            <input type="hidden" name="date" value="<?php echo $date; ?>" />
             <?php 
             $date = date('Y-m-d');
             $employee_idno = $_SESSION['employee_idno'];
@@ -294,10 +283,24 @@ if(!isLoggedIn()){
                 $database_timeout = $row['timeout'];
             }}
             ?>
+
+          <?php if($database_date != $date ) { ?>
+          <form method="post" action="">
+            <?php 
+            $empID     = $_SESSION['employee_idno'];
+            $emp_fname = $_SESSION['fname'];
+            $emp_lname = $_SESSION['lname'];
+            ?>
+            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
+            <input type="hidden" name="employee_fname" value="<?php echo $emp_fname; ?>" />
+            <input type="hidden" name="employee_lname" value="<?php echo $emp_lname; ?>" />
+            <input type="hidden" name="date" value="<?php echo $date; ?>" />
+            
             <div class="col text-center mt-3">
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
             </div>
           </form>
+          <?php } else {} ?>
        <!-- create-timesheet -->
        <?php if($database_date == $date && $timein == null && $timeout == null) {?>
         <div class="alert alert-primary text-center mt-2" role="alert">
