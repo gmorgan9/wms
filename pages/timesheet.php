@@ -203,6 +203,7 @@ if(isset($_POST['create-timesheet'])) {
         date_default_timezone_set("America/Denver");
         $currtime = date("h:i:s A");  
         ?>
+        <a href="#time" onclick="window.location.reload(true);">
         <div class="section-header text-center pt-2">
          <span class="pt-4" style="width: 95%;">Current Time is <span class="text-muted" id="time"><?php echo $currtime; ?></span></span>
        </div>
