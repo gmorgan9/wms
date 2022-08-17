@@ -342,7 +342,7 @@ if(!isLoggedIn()){
         <!-- CLOCK OUT FORM -->
         <form id="clockout" method="post" action="">
             <?php $empID = $_SESSION['employee_idno']; ?>
-            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
+            <input type="text" class="form-control" name="employee_idno" id="employee_idno" value="<?php echo $empID; ?>" required>
             <input type="hidden" name="date" value="<?php echo $newdate; ?>" />
             <input type="hidden" name="timeout" value="<?php echo $newtime; ?>" />
             <div class="col text-center mt-3">
