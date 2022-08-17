@@ -123,7 +123,10 @@ if(isset($_POST['create-timesheet'])) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv=’refresh’ content=’5’>
+   <?php
+// echo the meta tag or add it in the head section of your HTML document
+echo "<meta http-equiv='refresh' content='5'>";
+?>
    <title>WMS | Timesheet</title>
 
   <!-- SCRIPTS -->
