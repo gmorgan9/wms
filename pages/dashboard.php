@@ -50,7 +50,23 @@ if(!isLoggedIn()){
     <p class="page_title" style="float: left; padding-top: 2px;">Dashboard</p>
   </div>
 
-  <!-- DASHBOARD -->
+  <?php if($_SESSION['acc_type'] == 0) { ?> 
+  <!-- NON ADMIN DASHBOARD -->
+  <div class="container text-center">
+  <div class="row">
+    <div class="col">col</div>
+    <div class="col">col</div>
+    <div class="col">col</div>
+    <div class="col">col</div>
+  </div>
+  <div class="row">
+    <div class="col-8">col-8</div>
+    <div class="col-4">col-4</div>
+  </div>
+</div>
+  <!-- END NON ADMIN DASHBOARD -->
+  <?php } else { ?>
+  <!-- ADMIN DASHBOARD -->
     <div class="stats d-flex justify-content-center" style="margin-left: -1px; margin-top: 5px !important;">
 
 
@@ -103,15 +119,18 @@ if(!isLoggedIn()){
     </div>
 
     </div>
-  <!-- END DASHBOARD -->
+  <!-- END ADMIN DASHBOARD -->
+  <?php } ?>
 
 <!-- END MAIN -->
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 </div>
-<div class="blocked-footer">
-  <?php include(ROOT_PATH . "/app/includes/blocked-footer.php"); ?>
-</div>
+<!-- BLOCKED PAGE -->
+  <div class="blocked-footer">
+    <?php include(ROOT_PATH . "/app/includes/blocked-footer.php"); ?>
+  </div>
+<!-- END BLOCKED PAGE -->
 
 <!-- GUMROAD LINK -->
   <!-- <script src="https://gumroad.com/js/gumroad.js"></script>
