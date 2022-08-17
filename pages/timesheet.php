@@ -139,18 +139,23 @@ if(isset($_POST['create-timesheet'])) {
   <!-- END SCRIPTS -->
 
   <script>
- function display_ct() {
-var x = new Date()
-var x1=x.getMonth() + 1+ "/" + x.getDate() + "/" + x.getFullYear(); 
-x1 = x1 + " - " +  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds();
-document.getElementById('ct').innerHTML = x1;
-display_c();
- }
+$(document).ready(function() {
+    setInterval(timestamp, 1000);
+});
+
+function timestamp() {
+    $.ajax({
+        url: 'http://wms.morgancloud.us/pages/timestamp.php',
+        success: function(data) {
+            $('#timestamp').html(data);
+        },
+    });
+}
 </script>
 
 
 </head>
-<body onload=display_ct();>
+<body>
 
 <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 <?php include(ROOT_PATH . "/app/includes/sidebar.php") ?>
@@ -205,7 +210,7 @@ display_c();
        
  
        <!-- CURRENT TIME -->
-       <span id='ct' ></span>
+       <div id="timestamp"></div>
 
 
        <!-- create-timesheet -->
