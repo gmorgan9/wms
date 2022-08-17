@@ -149,7 +149,7 @@ if(isset($_POST['submit_time'])) {
                      <h3 class="card-header">Attendance Form</h3>
                      <div class="card-body">
                         <input type="hidden" name="date" value="<?php echo $newdate; ?>" />
-                        <input type="hidden" name="time" value="<?php echo $newtime; ?>" />
+                        <input type="hidden" name="timein" value="<?php echo $newtime; ?>" />
                         <input type="text" class="form-control" name="employee_idno" id="employee_idno" placeholder="EmployeeID" required>
                         <!-- <div class="input-group input-group-lg">
                            <span class="input-group-addon" id="sizing-addon1"><img src="icon/lock_blue.ico"></span>
