@@ -76,7 +76,7 @@ if(!isLoggedIn()){
           Notifications
         </div>
         <div class="col me-3 ms-3" style="height: 350px; background-color: #c9b8a9;">
-          ???
+          Current Date & Time
         </div>
       </div>
     </div>
