@@ -144,17 +144,13 @@ if(isset($_POST['submit_time'])) {
                   </button>
                   </div>-->
                <!--<div class="alert alert-warning hide"></div>-->
-               <form novalidate  action="" method="POST">
+               <form action="" method="POST">
                   <div class="card" style="border-top: 4px solid orange;border-bottom: 4px solid orange;border-radius: 4px;">
                      <h3 class="card-header">Attendance Form</h3>
                      <div class="card-body">
-                     <input type="hidden" name="date" value="<?php echo $newdate; ?>" />
-                    <input type="hidden" name="time" value="<?php echo $newtime; ?>" />
-                        <div class="input-group input-group-lg">
-                           <span class="input-group-addon" id="sizing-addon1"><i class="bi bi-person"></i></span>
-                           <input type="text" class="form-control" name="employee_idno" id="employee_idno" placeholder="EmployeeID" aria-describedby="sizing-addon1" required>
-                        </div>
-                        <br>
+                        <input type="hidden" name="date" value="<?php echo $newdate; ?>" />
+                        <input type="hidden" name="time" value="<?php echo $newtime; ?>" />
+                        <input type="text" class="form-control" name="employee_idno" id="employee_idno" placeholder="EmployeeID" required>
                         <!-- <div class="input-group input-group-lg">
                            <span class="input-group-addon" id="sizing-addon1"><img src="icon/lock_blue.ico"></span>
                            <input type="password" class="form-control" name="password" id="val5" placeholder="Password..." aria-describedby="sizing-addon1" required="" />
