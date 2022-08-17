@@ -204,25 +204,28 @@ if(isset($_POST['create-timesheet'])) {
        // $currtime = date("h:i:s A");  
         ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
   
  <script type="text/javascript">
- $(document).ready(function() {
-  setInterval(runningTime, 1000);
- });
- function runningTime() {
-   $.ajax({
-     url: 'timestamp.php',
-     success: function(data) {
-        $('#runningTime').html(data);
-      },
-   });
- }
+//  $(document).ready(function() {
+//   setInterval(runningTime, 1000);
+//  });
+//  function runningTime() {
+//    $.ajax({
+//      url: 'timestamp.php',
+//      success: function(data) {
+//         $('#runningTime').html(data);
+//       },
+//    });
+//  }
  </script>
+ <?php
+ $currtime = date("h:i A",strtotime("+0 HOURS"));
+ ?>
 
         <div class="section-header text-center pt-2">
-         <span class="pt-4" style="width: 95%;">Current Time is <span class="text-muted" id="runningTime"><?php //echo $currtime; ?></span></span>
+         <span class="pt-4" style="width: 95%;">Current Time is <span class="text-muted" id="runningTime"><?php echo $currtime; ?></span></span>
        </div>
 
 
