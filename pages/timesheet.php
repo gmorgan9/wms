@@ -106,7 +106,7 @@ if(!isLoggedIn()){
 
 // CLOCKOUT FUNCTION
   if (isset($_POST['clockout'])) {
-    $emp = $_POST['employee_idno'];
+    $emp = $_SESSION['employee_idno'];
     $timeout = $_POST['timeout'];
     $date = $_POST['date'];
     $rejUpdateQuery = "UPDATE timesheet SET timeout = '$timeout' WHERE employee_idno = '$emp'";
@@ -340,8 +340,8 @@ if(!isLoggedIn()){
         <!-- CLOCK OUT FORM -->
         <form id="clockout" method="post" action="">
             <?php $empID = $_SESSION['employee_idno']; ?>
-            <input type="hidden" name="date" value="<?php echo $newdate; ?>" />
-            <input type="hidden" name="timeout" value="<?php echo $newtime; ?>" />
+            <!-- <input type="hidden" name="date" value="<?php echo $date; ?>" /> -->
+            <input type="hidden" name="timeout" value="<?php echo $time; ?>" />
             <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>">
             <div class="col text-center mt-3">
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockout"><span class="badge text-bg-danger">Clock Out</span></button>
