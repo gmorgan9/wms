@@ -200,19 +200,30 @@ if(isset($_POST['create-timesheet'])) {
  
        <!-- CURRENT TIME -->
        <?php
-        date_default_timezone_set("America/Denver");
-        $currtime = date("h:i:s A");  
+        //date_default_timezone_set("America/Denver");
+       // $currtime = date("h:i:s A");  
         ?>
 
-<script type="text/javascript">
-    function updateDiv()
-{ 
-    $( "#time" ).load(window.location.href + " #time" );
-}
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ 
+ <div id="runningTime"></div>
+  
+ <script type="text/javascript">
+ $(document).ready(function() {
+  setInterval(runningTime, 1000);
+ });
+ function runningTime() {
+   $.ajax({
+     url: 'timeScript.php',
+     success: function(data) {
+        $('#runningTime').html(data);
+      },
+   });
+ }
+ </script>
 
         <div class="section-header text-center pt-2">
-         <span class="pt-4" style="width: 95%;">Current Time is <span class="text-muted" id="time"><?php echo $currtime; ?></span></span>
+         <span class="pt-4" style="width: 95%;">Current Time is <span class="text-muted" id="time"><?php //echo $currtime; ?></span></span>
        </div>
 
 
