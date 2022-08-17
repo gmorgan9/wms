@@ -220,6 +220,57 @@ if(!isLoggedIn()){
     <script src = "jquery.js"></script>
    <script src = "bootstrap.js"></script>
 
+   <script>
+   // <!--/. tells about the time  -->
+                 function show2(){
+                 if (!document.all&&!document.getElementById)
+                 return
+                 thelement=document.getElementById? document.getElementById("tick2"): document.all.tick2
+                 var Digital=new Date()
+                 var hours=Digital.getHours()
+                 var minutes=Digital.getMinutes()
+                 var seconds=Digital.getSeconds()
+                 var dn="PM"
+                 if (hours<12)
+                 dn="AM"
+                 if (hours>12)
+                 hours=hours-12
+                 if (hours==0)
+                 hours=12
+                 if (minutes<=9)
+                 minutes="0"+minutes
+                 if (seconds<=9)
+                 seconds="0"+seconds
+                 var ctime=hours+":"+minutes+":"+seconds+" "+dn
+                 thelement.innerHTML=ctime
+                 setTimeout("show2()",1000)
+                 }
+                 window.onload=show2
+         //-->
+          
+           
+</script> <!--/. Script where the format of the interface time,month,day and year relies -->
+
+<script type="text/javascript">
+   $(document).ready (function(){
+               $("#success-alerts").fadeOut(15000);
+
+               $("#id").unbind('click').on("click", function () {
+                   $("#success-alerts").fadeTo(1000, 0).slideUp(5000, function(){
+                    //$(this).remove();
+                   });   
+               }, 5000);
+   
+               $("#success-alert").fadeOut(15000);
+               $("#id").unbind('click').on("click", function () {
+                   $("#success-alert").fadeTo(1000, 0).slideUp(5000, function(){
+                  // $(this).remove();
+                   });   
+               }, 5000);
+    });
+   
+</script>
+
        <!-- create-timesheet -->
        <?php if($database_date == $date && $timein == null && $timeout == null) {?>
         <div class="alert alert-primary text-center mt-2" role="alert">
