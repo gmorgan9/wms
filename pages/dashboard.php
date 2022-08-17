@@ -52,7 +52,7 @@ if(!isLoggedIn()){
 
   <?php if($_SESSION['acc_type'] == 0) { ?> 
   <!-- NON ADMIN DASHBOARD -->
-  <div class="stats d-flex justify-content-center" style="margin-left: -1px; margin-top: 5px !important;">
+  <div class="page-content mt-2 mx-auto" style="margin-right: 10px;">
     <div class="container text-center">
       <div class="row">
         <div class="col">col</div>
