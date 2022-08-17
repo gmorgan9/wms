@@ -55,7 +55,7 @@ if(!isLoggedIn()){
   <div class="page-content mt-2 mx-auto" style="margin-right: 10px;">
     <div class="container text-center">
       <div class="row mt-2">
-      <div class="col me-3 ms-5" style="height: 350px; background-color: #c9b8a9;">
+      <div class="col me-3 ms-3" style="height: 350px; background-color: #c9b8a9;">
       1 of 3
     </div>
     <div class="col me-3 ms-3" style="height: 350px; background-color: #c9b8a9;">
@@ -66,7 +66,7 @@ if(!isLoggedIn()){
     </div>
       </div>
       <div class="row mt-3">
-      <div class="col me-3 ms-5" style="height: 230px; background-color: #c9b8a9;">
+      <div class="col me-3 ms-3" style="height: 230px; background-color: #c9b8a9;">
       1 of 2
     </div>
     <div class="col me-5 ms-3" style="height: 230px; background-color: #c9b8a9;">
