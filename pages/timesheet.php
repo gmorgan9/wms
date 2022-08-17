@@ -167,7 +167,7 @@ if(isset($_POST['create-timesheet'])) {
        <?php 
         $timezone = date_default_timezone_get();
         date_default_timezone_set($timezone);
-        $date = date('Y-m-d');
+        $date = date('Y-m-d', strtotime("monday this week"));
         $time = date('h:i:s');
     ?>
 
@@ -186,7 +186,7 @@ if(isset($_POST['create-timesheet'])) {
           <?php
             $timezone = date_default_timezone_get();
             date_default_timezone_set($timezone);
-            $date = date('Y-m-d');
+            $date = date('Y-m-d', strtotime("monday this week"));
             $time = date('H:i:s');
             $for_date = date("F d, Y", strtotime($date)); 
            ?>
