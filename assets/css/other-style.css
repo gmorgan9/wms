@@ -187,6 +187,12 @@ ul.breadcrumb {
 
 
 
+
+ .date{
+    font-family: "Times New Roman", Times, serif;
+  
+  }
+
  #clock {
 
     position: absolute;
