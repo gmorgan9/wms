@@ -199,8 +199,8 @@ if(!isLoggedIn()){
        
  
        <!-- CURRENT TIME -->
-       <div class="container">
-      <div class="row text-center">
+       <div class="container text-center">
+      <div class="row">
       <div class="col-lg-6">
             <center>
                <div class="date">
