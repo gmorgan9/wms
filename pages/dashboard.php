@@ -55,9 +55,9 @@ if(!isLoggedIn()){
   <div class="page-content mt-2 mx-auto" style="margin-right: 10px;">
     <div class="container text-center">
       <div class="row mt-3">
-        <div class="col me-3 ms-3" style="height: 150px; background-color: #c9b8a9;">
+        <div class="col me-3 ms-3" style="height: 75px; background-color: #c9b8a9;">
           Time Card
-          <div class="col me-3 ms-3" style="width: 150px !important; height: 220px; background-color: #c9b8a9;">
+          <div class="col me-3 ms-3" style="height: 220px; background-color: #c9b8a9;">
           Welcome
         </div>
         </div>
