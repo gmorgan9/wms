@@ -60,8 +60,12 @@ if(!isLoggedIn()){
         <div class="col">col3</div>
       </div>
       <div class="row">
-        <div class="col">col-5</div>
-        <div class="col">col-5</div>
+      <div class="col">
+      1 of 2
+    </div>
+    <div class="col">
+      2 of 2
+    </div>
       </div>
     </div>
   </div>
