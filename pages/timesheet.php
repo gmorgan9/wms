@@ -109,7 +109,7 @@ if(!isLoggedIn()){
     $emp = $_POST['employee_idno'];
     $timeout = $_POST['timeout'];
     $date = $_POST['date'];
-    $rejUpdateQuery = "UPDATE timesheet SET timeout = '$timeout' WHERE date = '$date'";
+    $rejUpdateQuery = "UPDATE timesheet SET timeout = '$timeout' WHERE employee_idno = '$emp'";
     $rejUpdateResult = mysqli_query($conn,$rejUpdateQuery);
     header('location: timesheet.php');
   }
