@@ -154,9 +154,16 @@ if(isset($_POST['update_time'])) {
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
-                  </div>-->
+
+-->
+<script>
+    $('#form').submit(function (e) {
+      e.preventDefault();
+  });
+</script>
+                  <!-- </div>-->
                <!--<div class="alert alert-warning hide"></div>-->
-               <form action="" method="POST">
+               <form id="form" action="" method="POST">
                   <div class="card" style="border-top: 4px solid orange;border-bottom: 4px solid orange;border-radius: 4px;">
                      <h3 class="card-header">Attendance Form</h3>
                      <div class="card-body">
@@ -174,6 +181,8 @@ if(isset($_POST['update_time'])) {
                $database_date = $row['date'];
                $timein = $row['timein'];
                $timeout = $row['timeout'];
+
+
             } }?>
                         <?php if($timein == null) { ?>
                         <div class="form-group">
