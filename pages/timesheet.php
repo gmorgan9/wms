@@ -201,7 +201,7 @@ if(isset($_POST['create-timesheet'])) {
         $tz_time = date("F j, Y h:i:s");
               
         ?>
-        <p id="clock"></p>
+        <p class="text-center" id="clock"></p>
               
         <script type="text/javascript">
         var currenttime = '<?php echo $tz_time;?>'; // Timestamp of the timezone you want to use, in this case, it's server time
@@ -213,7 +213,7 @@ if(isset($_POST['create-timesheet'])) {
         function digitalClock(){
             servertime.setSeconds(servertime.getSeconds()+1);
             var timestring=padlength(servertime.getHours())+":"+padlength(servertime.getMinutes())+":"+padlength(servertime.getSeconds());
-            document.getElementById("clock").innerHTML="<span class='text-center'>The Current Time is <span class='text-muted'>" + timestring + " MDT</span></span>";
+            document.getElementById("clock").innerHTML="The Current Time is <span class='text-muted'>" + timestring + " MDT</span>";
         }
         window.onload=function(){
         setInterval("digitalClock()", 1000);
