@@ -346,7 +346,7 @@ if(!isLoggedIn()){
                       $oldtime = date("h:i:s",strtotime("+0 HOURS"));
                       $olddate = date("Y-m-d");
                       ?>
-                  <strong style="font-size: 12px;"><?php echo  $newdate;?>&nbsp;&nbsp;<font style="color:#ffc107;">|</font>&nbsp;&nbsp; <span style="color: #ff6666;font-size: 12px;" id="tick2" class="timeh1"></strong>
+                  <strong style="font-size: 12px;"><?php echo  $olddate;?>&nbsp;&nbsp;<font style="color:#ffc107;">|</font>&nbsp;&nbsp; <span style="color: #ff6666;font-size: 12px;" id="tick2" class="timeh1"></strong>
             </center>
             <script src = "index.js"></script>
     <script src = "jquery.js"></script>
