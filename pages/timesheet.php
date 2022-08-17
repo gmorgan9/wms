@@ -251,7 +251,7 @@ if(!isLoggedIn()){
            
 </script> <!--/. Script where the format of the interface time,month,day and year relies -->
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
    $(document).ready (function(){
                $("#success-alerts").fadeOut(15000);
 
@@ -269,7 +269,7 @@ if(!isLoggedIn()){
                }, 5000);
     });
    
-</script>
+</script> -->
 
        <!-- create-timesheet -->
        <?php if($database_date == $date && $timein == null && $timeout == null) {?>
