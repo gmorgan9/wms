@@ -161,7 +161,7 @@ if(isset($_POST['create-timesheet'])) {
      <!-- start PAGE-CONTENT -->
      <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -100px; height: 250px; !important;">
        <div class="section-header pt-2">
-         <span class="text-muted pt-4" style="width: 95%;">Time Entry</span>
+         <span class="text-muted pt-4" style="width: 95%;">Time Entry</span><a class="float-end" href="<?php $_SERVER['PHP_SELF']; ?>">Recargar</a>
        </div>
        <hr style="margin-bottom: -5px; margin-top: 5px;">
        <?php 
@@ -196,10 +196,8 @@ if(isset($_POST['create-timesheet'])) {
  
        <!-- CURRENT TIME -->
        <?php
-
         date_default_timezone_set("America/Denver");
-        $currtime = date("h:i:s A");
-              
+        $currtime = date("h:i:s A");  
         ?>
         <div class="section-header text-center pt-2">
          <span class="pt-4" style="width: 95%;">Current Time is <span class="text-muted"><?php echo $currtime; ?></span></span>
