@@ -63,7 +63,7 @@ if(!isLoggedIn()){
         </div>
       </div>
       <div class="row mt-3">
-        <div class="col me-3 ms-3" style="height: 220px; background-color: #c9b8a9;">
+        <div class="col me-3 ms-3" style="width: 15px; height: 220px; background-color: #c9b8a9;">
           Time Card
         </div>
       </div>
