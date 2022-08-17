@@ -215,6 +215,7 @@ if(!isLoggedIn()){
             </center>
             </div>
          </div>
+        </div>
 
          <script src = "index.js"></script>
     <script src = "jquery.js"></script>
