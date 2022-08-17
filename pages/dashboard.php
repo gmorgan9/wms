@@ -55,13 +55,13 @@ if(!isLoggedIn()){
   <div class="page-content mt-2 mx-auto" style="margin-right: 10px;">
     <div class="container text-center">
       <div class="row">
-      <div class="col me-3 ms-3" style="height: 350px; background-color: #000;">
+      <div class="col me-3 ms-5" style="height: 350px; background-color: #000;">
       1 of 3
     </div>
     <div class="col me-3 ms-3" style="height: 350px; background-color: #000;">
       2 of 3
     </div>
-    <div class="col me-3 ms-3" style="height: 350px; background-color: #000;">
+    <div class="col me-5 ms-3" style="height: 350px; background-color: #000;">
       3 of 3
     </div>
       </div>
