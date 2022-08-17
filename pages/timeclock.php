@@ -152,10 +152,10 @@ if(isset($_POST['submit-time'])) {
                            <input type="text" class="form-control" name="employee_idno" id="employee_idno" placeholder="EmployeeID" aria-describedby="sizing-addon1" required>
                         </div>
                         <br>
-                        <div class="input-group input-group-lg">
+                        <!-- <div class="input-group input-group-lg">
                            <span class="input-group-addon" id="sizing-addon1"><img src="icon/lock_blue.ico"></span>
                            <input type="password" class="form-control" name="password" id="val5" placeholder="Password..." aria-describedby="sizing-addon1" required="" />
-                        </div>
+                        </div> -->
                         <br>
                         <div class="form-group">
                            <input type="submit" value="Enter"   class="btn btn-outline-primary btn-block btn-lg" id ="id" name="submit_time" />
