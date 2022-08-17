@@ -302,6 +302,7 @@ if(!isLoggedIn()){
 
 
             <?php 
+            $date = date('Y-m-d');
         $employee_idno = $_SESSION['employee_idno'];
         $select = " SELECT * FROM timesheet WHERE date = '$date' ";
         $result = mysqli_query($conn, $select);
