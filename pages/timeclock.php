@@ -45,6 +45,18 @@ if(isset($_POST['submit_time'])) {
   };
 // END CLOCKIN FUNCTION
 
+// UPDATE TIMESHEET FUNCTION
+if(isset($_POST['update_time'])) {
+    $date = mysqli_real_escape_string($conn, $_POST['date']);
+    $timeout = mysqli_real_escape_string($conn, $_POST['timeout']);
+    $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
+  
+    $insert = "UPDATE testing SET timeout = '$timeout' WHERE  `employee_idno` = '$employee_idno'";
+    mysqli_query($conn, $insert);
+    header('location: timeclock.php');
+  };
+// END CLOCKIN FUNCTION
+
 ?>
 
 <!DOCTYPE html>
@@ -156,9 +168,26 @@ if(isset($_POST['submit_time'])) {
                            <input type="password" class="form-control" name="password" id="val5" placeholder="Password..." aria-describedby="sizing-addon1" required="" />
                         </div> -->
                         <br>
+                        <?php
+                        $employee_idno = $_SESSION['employee_idno'];
+        $select = " SELECT * FROM testing WHERE employee_idno = '$employee_idno' ";
+        $result = mysqli_query($conn, $select);
+        if (mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+               $database_date = $row['date'];
+               $timein = $row['timein'];
+               $timeout = $row['timeout'];
+            } }?>
+                        <?php if($timeout == null) { ?>
                         <div class="form-group">
                            <input type="submit" value="Enter"   class="btn btn-outline-primary btn-block btn-lg" id ="id" name="submit_time" />
                         </div>
+                        <?php } else { ?>
+
+                            <div class="form-group">
+                           <input type="submit" value="Enter"   class="btn btn-outline-primary btn-block btn-lg" id ="id" name="update_time" />
+                        </div>
+                        <?php } ?>
                </form>
                </div>
                </div>
