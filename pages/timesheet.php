@@ -202,16 +202,14 @@ if(isset($_POST['create-timesheet'])) {
               
         ?>
               
-        <script type="text/javascript">
+        <script>
         $(document).ready(function() {
           setInterval(function(){
             $('#time').load('pages/timestamp.php')
           }, 1000);
         });
         </script> 
-<div id="time">
-00 : 00 : 00 PM
-</div>
+        <div id="time"></div>
 
 
        <!-- create-timesheet -->
