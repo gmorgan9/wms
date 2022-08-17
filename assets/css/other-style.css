@@ -307,6 +307,141 @@ ul.breadcrumb {
     transform: rotate(24deg);
   }
 
+  #alarm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: #f8f8f8;
+    width: 2.6em;
+    height: 2.6em;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    box-shadow: 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.1);
+  
+  }
+  #alarm:after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 0.4em;
+    height: 4.8em;
+    top: -4.6em;
+    background: linear-gradient(to bottom, #f6f6f6 0%, #f8f8f8 100%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: -3;
+    box-shadow: inset 0 1.2em 0 #4ca440, -0.2em -0.2em 0.3em 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  #sec {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: radial-gradient(ellipse at center, #ffd322 0%, #fbc900 100%);
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border: 0.14em solid #fbc900;
+    z-index: 3;
+  }
+  #sec:before, #sec:after {
+    display: block;
+    content: "";
+    position: absolute;
+  }
+  #sec:before {
+    background: #fbc900;
+    width: 0.8em;
+    height: 1.5em;
+    top: 1.8em;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 0 0 2em 2em;
+  }
+  #sec:after {
+    width: 0.18em;
+    height: 7.6em;
+    top: -7.6em;
+    background: #fbc900;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  
+  #min,
+  #hour {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fbc900;
+    transform-origin: bottom center;
+  }
+  
+  #min {
+    width: 0.6em;
+    height: 8.6em;
+    top: -8.6em;
+    border-radius: 2em 2em 0 0;
+    box-shadow: inset 0 0 0 0.16em #303030, inset 0 -6em 0 0 #303030, -0.2em -0.2em 0.4em 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  #hour {
+    width: 0.7em;
+    height: 7em;
+    top: -7em;
+    border-radius: 2em 2em 0 0;
+    box-shadow: inset 0 0 0 0.16em #303030, inset 0 -4.2em 0 0 #303030, -0.2em -0.2em 0.4em 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  ol {
+    position: relative;
+    height: inherit;
+    width: inherit;
+  }
+  ol li {
+    counter-increment: customlistcounter;
+    font-size: 1.4rem;
+    display: inline-block;
+    position: absolute;
+    letter-spacing: -0.1em;
+    color: #383838;
+    text-align: center;
+  }
+  ol li:before {
+    content: counter(customlistcounter) "";
+  }
+  ol li:nth-child(1), ol li:nth-child(2), ol li:nth-child(4), ol li:nth-child(5), ol li:nth-child(7), ol li:nth-child(8), ol li:nth-child(10), ol li:nth-child(11) {
+    font-size: 0;
+  }
+  ol li:nth-child(3) {
+    top: 6.95em;
+    right: 2.4em;
+  }
+  ol li:nth-child(9) {
+    top: 6.95em;
+    left: 2em;
+  }
+  ol li:nth-child(6) {
+    bottom: 2.1em;
+    left: 7.06em;
+  }
+  ol li:nth-child(12) {
+    top: 1.9em;
+    left: 6.78em;
+  }
+
 
 
 
