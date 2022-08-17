@@ -221,7 +221,7 @@ if(isset($_POST['create-timesheet'])) {
 //  }
  </script>
  <?php
- $currtime = date("h:i A",strtotime("+0 HOURS"));
+ $currtime = date("h:i:s A",strtotime("+0 HOURS"));
  ?>
 
         <div class="section-header text-center pt-2">
