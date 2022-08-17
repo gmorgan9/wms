@@ -212,7 +212,8 @@ if(isset($_POST['create-timesheet'])) {
     
     function startTime()
     {
-        document.getElementById('time').innerHTML = Date.getTime();  
+        const date = new Date("2020-05-12T23:50:21.817Z");
+        document.getElementById('time').innerHTML = date.toLocaleTimeString();  
     }
   </script>
        
