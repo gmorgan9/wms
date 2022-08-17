@@ -209,7 +209,7 @@ if(!isLoggedIn()){
                       $newtime = date("h:i:s",strtotime("+0 HOURS"));
                       $newdate = date("Y-m-d");
                       ?>
-                    <span>Current Time is <span class="text-muted" id="tick2" class="timeh1"></span>
+                    <span class="pt-4" style="width: 95%;">Current Time is <span class="text-muted" id="tick2" class="timeh1"></span>
         </div>
 
             </center>
