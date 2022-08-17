@@ -205,7 +205,7 @@ if(isset($_POST['create-timesheet'])) {
         <script type="text/javascript">
         $(document).ready(function() {
           setInterval(function(){
-            $('#time').load('timestamp.php')
+            $('#time').load('pages/timestamp.php')
           }, 1000);
         });
         </script> 
