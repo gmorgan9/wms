@@ -302,9 +302,9 @@ if(!isLoggedIn()){
 
 
             <?php 
-            //$date = date('Y-m-d');
+        $date = date('Y-m-d');
         $employee_idno = $_SESSION['employee_idno'];
-        $select = " SELECT * FROM timesheet WHERE date = '$newdate' ";
+        $select = " SELECT * FROM timesheet WHERE date = '$date' ";
         $result = mysqli_query($conn, $select);
 
         if (mysqli_num_rows($result) > 0) {
@@ -318,7 +318,7 @@ if(!isLoggedIn()){
             <div class="col text-center mt-3">
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
             </div>
-            <?php } else if ($row['timein'] == null) { ?>
+            <?php } else if ($database_date == $date && $timeout == null) { ?>
               <div class="col text-center mt-3">
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
             </div>
