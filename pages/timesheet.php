@@ -87,7 +87,7 @@ if(!isLoggedIn()){
     $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
     $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
     $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
-  
+
     $insert = "INSERT INTO timesheet (idno, date, employee_fname, employee_lname, employee_idno) VALUES('$idno', '$date', '$employee_fname', '$employee_lname', '$employee_idno')";
     mysqli_query($conn, $insert);
     header('location: timesheet.php');
@@ -199,34 +199,54 @@ if(!isLoggedIn()){
        
  
        <!-- CURRENT TIME -->
-       <?php
-        //date_default_timezone_set("America/Denver");
-       // $currtime = date("h:i:s A");  
-        ?>
-
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
-
-  
- <script type="text/javascript">
-//  $(document).ready(function() {
-//   setInterval(runningTime, 1000);
-//  });
-//  function runningTime() {
-//    $.ajax({
-//      url: 'timestamp.php',
-//      success: function(data) {
-//         $('#runningTime').html(data);
-//       },
-//    });
-//  }
- </script>
- <?php
- $currtime = date("h:i:s A",strtotime("+0 HOURS"));
- ?>
-
-        <div class="section-header text-center pt-2">
-         <span class="pt-4" style="width: 95%;">Current Time is <span class="text-muted" id="runningTime"><?php echo $currtime; ?></span></span>
-       </div>
+       <div class="container">
+      <div class="row">
+      <div class="col-lg-6">
+         <div id="clock">
+            <div class="hour">
+               <div class="min"></div>
+               <div class="min"></div>
+               <div class="min"></div>
+               <div class="min"></div>
+               <div class="min"></div>
+            </div>
+            <div class="hour">
+               <div class="min"></div>
+               <div class="min"></div>
+               <div class="min"></div>
+               <div class="min"></div>
+               <div class="min"></div>
+            </div>
+            <div id="alarm"> </div>
+            <div id="min"></div>
+            <div id="hour"></div>
+            <div id="sec"></div>
+            <ol>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+            </ol>
+            <hr>
+            <center>
+               <div class="date">
+                  <?php 
+                     date_default_timezone_set("America/Denver");
+                      $newtime = date("h:i:s",strtotime("+0 HOURS"));
+                      $newdate = date("Y-m-d");
+                      ?>
+                  <strong style="font-size: 1.6em;"><?php echo  $newdate;?>&nbsp;&nbsp;<font style="color:#ffc107;">|</font>&nbsp;&nbsp; <span style="color: #ff6666;font-size: 1em;" id="tick2" class="timeh1"></strong>
+            </center>
+            </div>
+         </div>
 
 
        <!-- create-timesheet -->
