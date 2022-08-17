@@ -322,7 +322,7 @@ if(!isLoggedIn()){
               <div class="col text-center mt-3">
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-success">Clock In</span></button>
             </div>
-              <?php } if ($database_date == $date) { ?>
+              <?php } if ($row['timeout'] == null) { ?>
                 <div class="col text-center mt-3">
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockout"><span class="badge text-bg-primary">Clock Out</span></button>
             </div>
