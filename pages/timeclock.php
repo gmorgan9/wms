@@ -31,7 +31,7 @@ if(!isLoggedIn()){
 // END CLOCKOUT FUNCTION
 
 // CREATE TIMESHEET FUNCTION
-if(isset($_POST['submit-time'])) {
+if(isset($_POST['submit_time'])) {
     $idno  = rand(1000000, 9999999);
     $date = mysqli_real_escape_string($conn, $_POST['date']);
     $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
@@ -124,7 +124,7 @@ if(isset($_POST['submit-time'])) {
             <center>
                <div class="date">
                   <?php 
-                     date_default_timezone_set("asia/manila");
+                     date_default_timezone_set("America/Denver");
                       $time = date("h:i A",strtotime("+0 HOURS"));
                       $date = date("M-d-Y");
                       ?>
