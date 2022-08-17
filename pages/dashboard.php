@@ -55,10 +55,9 @@ if(!isLoggedIn()){
   <div class="page-content mt-2 mx-auto" style="margin-right: 10px;">
     <div class="container text-center">
       <div class="row">
-        <div class="col">col</div>
-        <div class="col">col</div>
-        <div class="col">col</div>
-        <div class="col">col</div>
+        <div class="col">col1</div>
+        <div class="col">col2</div>
+        <div class="col">col3</div>
       </div>
       <div class="row">
         <div class="col-8">col-8</div>
