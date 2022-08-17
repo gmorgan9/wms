@@ -204,21 +204,15 @@ if(isset($_POST['create-timesheet'])) {
         <p class="text-center" id="clock"></p>
               
         <script type="text/javascript">
-        var currenttime = '<?php echo $tz_time;?>'; // Timestamp of the timezone you want to use, in this case, it's server time
-        var servertime=new Date(currenttime);
-        function padlength(l){
-            var output=(l.toString().length==1)? "0"+l : l;
-            return output;
-        }
-        function digitalClock(){
-            servertime.setSeconds(servertime.getSeconds()+1);
-            var timestring=padlength(servertime.getHours())+":"+padlength(servertime.getMinutes())+":"+padlength(servertime.getSeconds());
-            document.getElementById("clock").innerHTML="The Current Time is <span class='text-muted'>" + timestring + " MDT</span>";
-        }
-        window.onload=function(){
-        setInterval("digitalClock()", 1000);
-        }
+        $(document).ready(function() {
+          setInterval(function(){
+            $('#time').load('timestamp.php')
+          }, 1000);
+        });
 </script> 
+<div id="time">
+00 : 00 : 00 PM
+</div>
 
 
        <!-- create-timesheet -->
