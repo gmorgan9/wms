@@ -568,11 +568,12 @@ if(isset($_POST['create-timesheet'])) {
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
 <script>
-  function display_ct() {
+ function display_ct() {
 var x = new Date()
-var x1=x.toUTCString();// changing the display to UTC string
+var x1=x.getMonth() + 1+ "/" + x.getDate() + "/" + x.getFullYear(); 
+x1 = x1 + " - " +  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds();
 document.getElementById('ct').innerHTML = x1;
-tt=display_c();
+display_c();
  }
 </script>
 
