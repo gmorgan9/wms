@@ -202,39 +202,7 @@ if(!isLoggedIn()){
        <div class="container">
       <div class="row">
       <div class="col-lg-6">
-         <div id="clock">
-            <div class="hour">
-               <div class="min"></div>
-               <div class="min"></div>
-               <div class="min"></div>
-               <div class="min"></div>
-               <div class="min"></div>
-            </div>
-            <div class="hour">
-               <div class="min"></div>
-               <div class="min"></div>
-               <div class="min"></div>
-               <div class="min"></div>
-               <div class="min"></div>
-            </div>
-            <div id="alarm"> </div>
-            <div id="min"></div>
-            <div id="hour"></div>
-            <div id="sec"></div>
-            <ol>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-            </ol>
+         
             <hr>
             <center>
                <div class="date">
