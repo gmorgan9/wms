@@ -137,7 +137,7 @@ if(isset($_POST['update_time'])) {
             </ol>
             <hr>
             <script>
-                document.getElementById('time').contentWindow.location.reload();
+                $("#time").load("timeclock.php");
             </script>
             <iframe id="time" src="" frameborder="0">
             <center>
