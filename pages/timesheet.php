@@ -208,12 +208,12 @@ if(isset($_POST['create-timesheet'])) {
     
     function startTime()
     {
-        document.getElementById('time').innerHTML = Date();  
+        document.getElementById('time').innerHTML = Date("h:i:s A");  
     }
   </script>
        <?php
         date_default_timezone_set("America/Denver");
-        $currtime = date("h:i:s A");  
+        //$currtime = date("h:i:s A");  
         ?>
         <div class="section-header text-center pt-2">
          <span class="pt-4" style="width: 95%;">Current Time is <span class="text-muted" id="time"><?php echo $currtime; ?></span></span>
