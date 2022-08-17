@@ -138,21 +138,6 @@ if(isset($_POST['create-timesheet'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- END SCRIPTS -->
 
-  <script>
-$(document).ready(function() {
-    setInterval(timestamp, 1000);
-});
-
-function timestamp() {
-    $.ajax({
-        url: 'timestamp.php',
-        success: function(data) {
-            $('#timestamp').html(data);
-        },
-    });
-}
-</script>
-
 
 </head>
 <body>
@@ -210,7 +195,30 @@ function timestamp() {
        
  
        <!-- CURRENT TIME -->
-       <div id="timestamp"></div>
+       <?php
+
+        date_default_timezone_set("America/Denver");
+        $tz_time = date("F j, Y h:i:s");
+              
+        ?>
+        <p id="clock"></p>
+              
+        <script type="text/javascript">
+        var currenttime = '<?php echo $tz_time;?>'; // Timestamp of the timezone you want to use, in this case, it's server time
+        var servertime=new Date(currenttime);
+        function padlength(l){
+            var output=(l.toString().length==1)? "0"+l : l;
+            return output;
+        }
+        function digitalClock(){
+            servertime.setSeconds(servertime.getSeconds()+1);
+            var timestring=padlength(servertime.getHours())+":"+padlength(servertime.getMinutes())+":"+padlength(servertime.getSeconds());
+            document.getElementById("clock").innerHTML=timestring + " CEST";
+        }
+        window.onload=function(){
+        setInterval("digitalClock()", 1000);
+        }
+</script> 
 
 
        <!-- create-timesheet -->
