@@ -126,10 +126,10 @@ if(isset($_POST['submit_time'])) {
                <div class="date">
                   <?php 
                      date_default_timezone_set("America/Denver");
-                      $time = date("h:i A",strtotime("+0 HOURS"));
-                      $date = date("M-d-Y");
+                      $newtime = date("h:i A",strtotime("+0 HOURS"));
+                      $newdate = date("M-d-Y");
                       ?>
-                  <strong style="font-size: 1.6em;"><?php echo  $date;?>&nbsp;&nbsp;<font style="color:#ffc107;">|</font>&nbsp;&nbsp; <span style="color: #ff6666;font-size: 1em;" id="tick2" class="timeh1"></strong>
+                  <strong style="font-size: 1.6em;"><?php echo  $newdate;?>&nbsp;&nbsp;<font style="color:#ffc107;">|</font>&nbsp;&nbsp; <span style="color: #ff6666;font-size: 1em;" id="tick2" class="timeh1"></strong>
             </center>
             </div>
          </div>
@@ -148,8 +148,8 @@ if(isset($_POST['submit_time'])) {
                   <div class="card" style="border-top: 4px solid orange;border-bottom: 4px solid orange;border-radius: 4px;">
                      <h3 class="card-header">Attendance Form</h3>
                      <div class="card-body">
-                     <input type="hidden" name="date" value="<?php echo $date; ?>" />
-                    <input type="hidden" name="time" value="<?php echo $time; ?>" />
+                     <input type="hidden" name="date" value="<?php echo $newdate; ?>" />
+                    <input type="hidden" name="time" value="<?php echo $newtime; ?>" />
                         <div class="input-group input-group-lg">
                            <span class="input-group-addon" id="sizing-addon1"><i class="bi bi-person"></i></span>
                            <input type="text" class="form-control" name="employee_idno" id="employee_idno" placeholder="EmployeeID" aria-describedby="sizing-addon1" required>
