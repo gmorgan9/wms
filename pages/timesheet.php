@@ -199,9 +199,9 @@ if(!isLoggedIn()){
        
  
        <!-- CURRENT TIME -->
-       <div class="container text-center">
+       <div class="container">
       <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-6 mx-auto">
             <center>
                <div class="date">
                   <?php 
