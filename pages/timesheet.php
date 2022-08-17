@@ -209,7 +209,9 @@ if(!isLoggedIn()){
                       $newtime = date("h:i:s",strtotime("+0 HOURS"));
                       $newdate = date("Y-m-d");
                       ?>
+                      <div class="section-header text-center pt-2">
                       <span class="pt-4" style="width: 95%;">Today's Date is <span id="tick2" class="timeh1"><?php echo $for_date; ?></span></span>
+        </div>
         </div>
 
             </center>
