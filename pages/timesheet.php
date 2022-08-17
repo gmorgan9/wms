@@ -346,7 +346,7 @@ if(!isLoggedIn()){
                       $newtime = date("h:i:s",strtotime("+0 HOURS"));
                       $newdate = date("Y-m-d");
                       ?>
-                  <strong style="font-size: 1.6em;"><?php echo  $newdate;?>&nbsp;&nbsp;<font style="color:#ffc107;">|</font>&nbsp;&nbsp; <span style="color: #ff6666;font-size: 1em;" id="tick2" class="timeh1"></strong>
+                  <strong style="font-size: 12px;"><?php echo  $newdate;?>&nbsp;&nbsp;<font style="color:#ffc107;">|</font>&nbsp;&nbsp; <span style="color: #ff6666;font-size: 12px;" id="tick2" class="timeh1"></strong>
             </center>
         <!-- CLOCK OUT FORM -->
         <form id="clockout" method="post" action="">
