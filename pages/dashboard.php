@@ -65,11 +65,11 @@ if(!isLoggedIn()){
       3 of 3
     </div>
       </div>
-      <div class="row mt-2">
-      <div class="col me-3 ms-5" style="height: 240px; background-color: #000;">
+      <div class="row mt-3">
+      <div class="col me-3 ms-5" style="height: 230px; background-color: #000;">
       1 of 2
     </div>
-    <div class="col me-5 ms-3" style="height: 240px; background-color: #000;">
+    <div class="col me-5 ms-3" style="height: 230px; background-color: #000;">
       2 of 2
     </div>
       </div>
