@@ -216,6 +216,9 @@ if(!isLoggedIn()){
             </div>
          </div>
 
+         <script src = "index.js"></script>
+    <script src = "jquery.js"></script>
+   <script src = "bootstrap.js"></script>
 
        <!-- create-timesheet -->
        <?php if($database_date == $date && $timein == null && $timeout == null) {?>
