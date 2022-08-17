@@ -145,7 +145,7 @@ $(document).ready(function() {
 
 function timestamp() {
     $.ajax({
-        url: 'http://wms.morgancloud.us/pages/timestamp.php',
+        url: 'timestamp.php',
         success: function(data) {
             $('#timestamp').html(data);
         },
