@@ -65,6 +65,7 @@ if(isset($_POST['update_time'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv='refresh' content='1'>
     
     <!-- Custom Styles -->
    <link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/other-style.css?v='. time(); ?>">
@@ -156,11 +157,7 @@ if(isset($_POST['update_time'])) {
                   </button>
 
 -->
-<script>
-    $('#form').submit(function (e) {
-      e.preventDefault();
-  });
-</script>
+
                   <!-- </div>-->
                <!--<div class="alert alert-warning hide"></div>-->
                <form id="form" action="" method="POST">
