@@ -140,7 +140,7 @@ if(isset($_POST['create-timesheet'])) {
 
 
 </head>
-<body>
+<body onload=display_ct();>
 
 <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 <?php include(ROOT_PATH . "/app/includes/sidebar.php") ?>
@@ -192,26 +192,12 @@ if(isset($_POST['create-timesheet'])) {
            ?>
          <span class="pt-4" style="width: 95%;">Today's Date is <span class="text-muted"><?php echo $for_date; ?></span></span>
        </div>
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+       
  
-<div id="runningTime"></div>
- 
-<script type="text/javascript">
-$(document).ready(function() {
- setInterval(runningTime, 1000);
-});
-function runningTime() {
-  $.ajax({
-    url: 'timescheet.php',
-    success: function(data) {
-       $('#runningTime').html(data);
-     },
-  });
-}
-</script>
-       <?php
-        echo $runningTime = date('h:i:s');
-        ?>
+       <!-- CURRENT TIME -->
+       <span id='ct' ></span>
+
+
        <!-- create-timesheet -->
        <?php if($database_date == $date && $timein == null && $timeout == null) {?>
         <div class="alert alert-primary text-center mt-2" role="alert">
@@ -580,6 +566,15 @@ function runningTime() {
 <!-- end MAIN -->
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
+
+<script>
+  function display_ct() {
+var x = new Date()
+var x1=x.toUTCString();// changing the display to UTC string
+document.getElementById('ct').innerHTML = x1;
+tt=display_c();
+ }
+</script>
 
 </body>
 </html>
