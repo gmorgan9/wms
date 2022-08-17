@@ -105,9 +105,6 @@ if(!isLoggedIn()){
     </div>
   <!-- END DASHBOARD -->
 
-  <script src="https://gumroad.com/js/gumroad.js"></script>
-<a class="gumroad-button" href="https://garrettmorgan.gumroad.com/l/fwwwc">Buy on</a>
-  </div>
 <!-- END MAIN -->
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
@@ -115,6 +112,12 @@ if(!isLoggedIn()){
 <div class="blocked-footer">
   <?php include(ROOT_PATH . "/app/includes/blocked-footer.php"); ?>
 </div>
+
+<!-- GUMROAD LINK -->
+  <!-- <script src="https://gumroad.com/js/gumroad.js"></script>
+    <a class="gumroad-button" href="https://garrettmorgan.gumroad.com/l/fwwwc">Buy on</a>
+  </div> -->
+<!-- END GUMROAD LINK -->
 
 </body>
 </html>
