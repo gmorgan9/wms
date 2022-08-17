@@ -201,7 +201,6 @@ if(isset($_POST['create-timesheet'])) {
         $tz_time = date("F j, Y h:i:s");
               
         ?>
-        <p class="text-center" id="clock"></p>
               
         <script type="text/javascript">
         $(document).ready(function() {
@@ -209,7 +208,7 @@ if(isset($_POST['create-timesheet'])) {
             $('#time').load('timestamp.php')
           }, 1000);
         });
-</script> 
+        </script> 
 <div id="time">
 00 : 00 : 00 PM
 </div>
