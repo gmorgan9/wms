@@ -123,10 +123,10 @@ if(isset($_POST['create-timesheet'])) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <?php
+   <!-- <?php
 // echo the meta tag or add it in the head section of your HTML document
-echo "<meta http-equiv='refresh' content='1'>";
-?>
+//echo "<meta http-equiv='refresh' content='1'>";
+?> -->
    <title>WMS | Timesheet</title>
 
   <!-- SCRIPTS -->
@@ -199,12 +199,24 @@ echo "<meta http-equiv='refresh' content='1'>";
        
  
        <!-- CURRENT TIME -->
+       <script type="text/javascript">
+    window.onload = startInterval;
+    function startInterval()
+    {
+        setInterval("startTime();",1000);
+    }
+    
+    function startTime()
+    {
+        document.getElementById('time').innerHTML = Date();  
+    }
+  </script>
        <?php
         date_default_timezone_set("America/Denver");
         $currtime = date("h:i:s A");  
         ?>
         <div class="section-header text-center pt-2">
-         <span class="pt-4" style="width: 95%;">Current Time is <span class="text-muted"><?php echo $currtime; ?></span></span>
+         <span class="pt-4" style="width: 95%;">Current Time is <span class="text-muted" id="time"><?php echo $currtime; ?></span></span>
        </div>
 
 
