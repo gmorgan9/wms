@@ -271,69 +271,43 @@ if(!isLoggedIn()){
    
 </script> -->
 
+<form method="post" action="">
+            <?php 
+            $empID     = $_SESSION['employee_idno'];
+            $emp_fname = $_SESSION['fname'];
+            $emp_lname = $_SESSION['lname'];
+            ?>
+            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
+            <input type="hidden" name="employee_fname" value="<?php echo $emp_fname; ?>" />
+            <input type="hidden" name="employee_lname" value="<?php echo $emp_lname; ?>" />
+            <input type="hidden" name="date" value="<?php echo $date; ?>" />
+            <?php 
+            $date = date('Y-m-d');
+            $employee_idno = $_SESSION['employee_idno'];
+            $select = " SELECT * FROM timesheet WHERE date = '$date' ";
+            $result = mysqli_query($conn, $select);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+                $database_date = $row['date'];
+                $database_timein = $row['timein'];
+                $database_timeout = $row['timeout'];
+            }}
+            ?>
+            <div class="col text-center mt-3">
+              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
+            </div>
+          </form>
        <!-- create-timesheet -->
        <?php if($database_date == $date && $timein == null && $timeout == null) {?>
         <div class="alert alert-primary text-center mt-2" role="alert">
             <span>Timesheet created for <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?></span>
           </div>
-          <form method="post" action="">
-            <?php 
-            $empID     = $_SESSION['employee_idno'];
-            $emp_fname = $_SESSION['fname'];
-            $emp_lname = $_SESSION['lname'];
-            ?>
-            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
-            <input type="hidden" name="employee_fname" value="<?php echo $emp_fname; ?>" />
-            <input type="hidden" name="employee_lname" value="<?php echo $emp_lname; ?>" />
-            <input type="hidden" name="date" value="<?php echo $date; ?>" />
-            <?php 
-            $date = date('Y-m-d');
-            $employee_idno = $_SESSION['employee_idno'];
-            $select = " SELECT * FROM timesheet WHERE date = '$date' ";
-            $result = mysqli_query($conn, $select);
-
-            if (mysqli_num_rows($result) > 0) {
-             while($row = mysqli_fetch_assoc($result)) {
-                $database_date = $row['date'];
-                $database_timein = $row['timein'];
-                $database_timeout = $row['timeout'];
-            }}
-            ?>
-            <div class="col text-center mt-3">
-              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
-            </div>
-          </form>
+          
         <?php } else if($database_date == $date && $timeout == null) { ?>
           <div class="alert alert-primary text-center mt-2" role="alert">
             <span>Timesheet created for <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?></span>
           </div>
-          <form method="post" action="">
-            <?php 
-            $empID     = $_SESSION['employee_idno'];
-            $emp_fname = $_SESSION['fname'];
-            $emp_lname = $_SESSION['lname'];
-            ?>
-            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
-            <input type="hidden" name="employee_fname" value="<?php echo $emp_fname; ?>" />
-            <input type="hidden" name="employee_lname" value="<?php echo $emp_lname; ?>" />
-            <input type="hidden" name="date" value="<?php echo $date; ?>" />
-            <?php 
-            $date = date('Y-m-d');
-            $employee_idno = $_SESSION['employee_idno'];
-            $select = " SELECT * FROM timesheet WHERE date = '$date' ";
-            $result = mysqli_query($conn, $select);
-
-            if (mysqli_num_rows($result) > 0) {
-             while($row = mysqli_fetch_assoc($result)) {
-                $database_date = $row['date'];
-                $database_timein = $row['timein'];
-                $database_timeout = $row['timeout'];
-            }}
-            ?>
-            <div class="col text-center mt-3">
-              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
-            </div>
-          </form>
         <?php } else if($database_date == $date) { ?>
           <div class="alert alert-success text-center mt-2" role="alert">
             <span>
@@ -343,33 +317,6 @@ if(!isLoggedIn()){
           </div>
           <p class="text-muted" style="font-size: 14px; text-align: center;">Thanks for your work today! <br>
             We will see you tomorrow!</p>
-            <form method="post" action="">
-            <?php 
-            $empID     = $_SESSION['employee_idno'];
-            $emp_fname = $_SESSION['fname'];
-            $emp_lname = $_SESSION['lname'];
-            ?>
-            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
-            <input type="hidden" name="employee_fname" value="<?php echo $emp_fname; ?>" />
-            <input type="hidden" name="employee_lname" value="<?php echo $emp_lname; ?>" />
-            <input type="hidden" name="date" value="<?php echo $date; ?>" />
-            <?php 
-            $date = date('Y-m-d');
-            $employee_idno = $_SESSION['employee_idno'];
-            $select = " SELECT * FROM timesheet WHERE date = '$date' ";
-            $result = mysqli_query($conn, $select);
-
-            if (mysqli_num_rows($result) > 0) {
-             while($row = mysqli_fetch_assoc($result)) {
-                $database_date = $row['date'];
-                $database_timein = $row['timein'];
-                $database_timeout = $row['timeout'];
-            }}
-            ?>
-            <div class="col text-center mt-3">
-              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
-            </div>
-          </form>
         <?php }  ?>
         
         
