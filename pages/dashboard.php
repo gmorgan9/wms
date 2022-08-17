@@ -62,7 +62,7 @@ if(!isLoggedIn()){
         </div>
         </div>
         <div class="col me-3 ms-3" style="height: 220px; background-color: #c9b8a9;">
-          Current Date and Time
+          My Profile
         </div>
       </div>
       <div class="row mt-3">
@@ -76,7 +76,7 @@ if(!isLoggedIn()){
           Notifications
         </div>
         <div class="col me-3 ms-3" style="height: 350px; background-color: #c9b8a9;">
-          My Profile
+          ???
         </div>
       </div>
     </div>
