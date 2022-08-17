@@ -120,6 +120,36 @@ if(!isLoggedIn()){
          </div>
         
 
+         <div class="col align-self-center">
+            <div class="span10">
+               <br>  <br>
+               <!-- <div class="alert alert-warning hide alert-dismissible fade show" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  </div>-->
+               <!--<div class="alert alert-warning hide"></div>-->
+               <form id="register_form" novalidate  action="index.php" method="POST">
+                  <div class="card" style="border-top: 4px solid orange;border-bottom: 4px solid orange;border-radius: 4px;">
+                     <h3 class="card-header">Attendance Form</h3>
+                     <div class="card-body">
+                        <div class="input-group input-group-lg">
+                           <span class="input-group-addon" id="sizing-addon1"><img src="icon/users.ico"></span>
+                           <input type="text" class="form-control" name="user_no" id="val1" placeholder="EmployeeID" aria-describedby="sizing-addon1" required="" />
+                        </div>
+                        <br>
+                        <div class="input-group input-group-lg">
+                           <span class="input-group-addon" id="sizing-addon1"><img src="icon/lock_blue.ico"></span>
+                           <input type="password" class="form-control" name="password" id="val5" placeholder="Password..." aria-describedby="sizing-addon1" required="" />
+                        </div>
+                        <br>
+                        <div class="form-group">
+                           <input type="submit" value="Enter"   class="btn btn-outline-primary btn-block btn-lg" id ="id" name="search" />
+                        </div>
+               </form>
+               </div>
+               </div>
+
 
 
 
