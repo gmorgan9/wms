@@ -164,10 +164,6 @@ if(isset($_POST['update_time'])) {
                         <input type="hidden" name="timein" value="<?php echo $newtime; ?>" />
                         <input type="hidden" name="timeout" value="<?php echo $newtime; ?>" />
                         <input type="text" class="form-control" name="employee_idno" id="employee_idno" placeholder="EmployeeID" required>
-                        <!-- <div class="input-group input-group-lg">
-                           <span class="input-group-addon" id="sizing-addon1"><img src="icon/lock_blue.ico"></span>
-                           <input type="password" class="form-control" name="password" id="val5" placeholder="Password..." aria-describedby="sizing-addon1" required="" />
-                        </div> -->
                         <br>
                         <?php
                         $employee_idno = $_SESSION['employee_idno'];
