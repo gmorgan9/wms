@@ -210,6 +210,7 @@ if(!isLoggedIn()){
                       $newdate = date("Y-m-d");
                       ?>
                     <span>Current Time is <strong><span class="text-muted" id="tick2" class="timeh1"></strong></span>
+        </div>
 
             </center>
             </div>
