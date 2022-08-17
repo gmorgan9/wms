@@ -65,10 +65,8 @@ if(isset($_POST['update_time'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php
-// echo the meta tag or add it in the head section of your HTML document
-echo "<meta http-equiv='refresh' content='1'>";
-?>
+   
+
     
     <!-- Custom Styles -->
    <link rel="stylesheet" href="<?php echo BASE_URL . '/assets/css/other-style.css?v='. time(); ?>">
@@ -138,6 +136,10 @@ echo "<meta http-equiv='refresh' content='1'>";
                <li></li>
             </ol>
             <hr>
+            <script>
+                document.getElementById('#time').contentWindow.location.reload();
+            </script>
+            <iframe id="time" src="" frameborder="0">
             <center>
                <div class="date">
                   <?php 
@@ -147,6 +149,7 @@ echo "<meta http-equiv='refresh' content='1'>";
                       ?>
                   <strong style="font-size: 1.6em;"><?php echo  $newdate;?>&nbsp;&nbsp;<font style="color:#ffc107;">|</font>&nbsp;&nbsp; <span style="color: #ff6666;font-size: 1em;" id="tick2" class="timeh1"></strong>
             </center>
+            </iframe>
             </div>
          </div>
         
