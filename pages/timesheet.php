@@ -162,7 +162,7 @@ if(isset($_POST['create-timesheet'])) {
      <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -100px; height: 250px; !important;">
        <div class="section-header pt-2">
          <span class="text-muted pt-4" style="width: 95%;">Time Entry</span>
-         <a class="text-muted float-end" href="<?php $_SERVER['PHP_SELF']; ?>"><i class="bi bi-arrow-clockwise"></i> Refresh</a>
+         <a class="text-muted float-end text-decoration-none" href="<?php $_SERVER['PHP_SELF']; ?>"><i class="bi bi-arrow-clockwise"></i> Refresh</a>
        </div>
        <hr style="margin-bottom: -5px; margin-top: 5px;">
        <?php 
