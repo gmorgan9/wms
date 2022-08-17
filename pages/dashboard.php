@@ -66,10 +66,10 @@ if(!isLoggedIn()){
     </div>
       </div>
       <div class="row">
-      <div class="col" style="height: 350px; background-color: #000;">
+      <div class="col me-3 ms-5" style="height: 350px; background-color: #000;">
       1 of 2
     </div>
-    <div class="col" style="height: 350px; background-color: #000;">
+    <div class="col me-5 ms-3" style="height: 350px; background-color: #000;">
       2 of 2
     </div>
       </div>
