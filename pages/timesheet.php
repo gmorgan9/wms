@@ -201,7 +201,7 @@ if(isset($_POST['create-timesheet'])) {
        <!-- CURRENT TIME -->
        <?php
         date_default_timezone_set("America/Denver");
-        $currtime = date("h:i:s A");  
+        // $currtime = date("h:i:s A");  
         ?>
        <script type="text/javascript">
     window.onload = startInterval;
@@ -212,7 +212,7 @@ if(isset($_POST['create-timesheet'])) {
     
     function startTime()
     {
-        document.getElementById('#time').innerHTML = date("h:i:s A");  
+        document.getElementById('time').innerHTML = date("h:i:s A");  
     }
   </script>
        
