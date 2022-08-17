@@ -198,7 +198,7 @@ if(isset($_POST['create-timesheet'])) {
        <?php
 
         date_default_timezone_set("America/Denver");
-        $currtime = date("F j, Y h:i:s");
+        $currtime = date("h:i:s A");
               
         ?>
         <div class="section-header text-center pt-2">
