@@ -198,18 +198,12 @@ if(isset($_POST['create-timesheet'])) {
        <?php
 
         date_default_timezone_set("America/Denver");
-        $tz_time = date("F j, Y h:i:s");
+        $currtime = date("F j, Y h:i:s");
               
         ?>
-              
-        <script>
-        $(document).ready(function() {
-          setInterval(function(){
-            $('#time').load('pages/timestamp.php')
-          }, 1000);
-        });
-        </script> 
-        <div id="time"></div>
+        <div class="section-header text-center pt-2">
+         <span class="pt-4" style="width: 95%;">Current Time is <span class="text-muted"><?php echo $currtime; ?></span></span>
+       </div>
 
 
        <!-- create-timesheet -->
