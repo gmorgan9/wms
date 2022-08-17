@@ -179,7 +179,7 @@ if(isset($_POST['update_time'])) {
                $timein = $row['timein'];
                $timeout = $row['timeout'];
             } }?>
-                        <?php if($timeout == null) { ?>
+                        <?php if($timein == null) { ?>
                         <div class="form-group">
                            <input type="submit" value="Enter"   class="btn btn-outline-primary btn-block btn-lg" id ="id" name="submit_time" />
                         </div>
