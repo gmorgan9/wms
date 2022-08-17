@@ -185,7 +185,7 @@ if(isset($_POST['update_time'])) {
                         <?php } else { ?>
 
                             <div class="form-group">
-                           <input type="submit" value="Enter"   class="btn btn-outline-primary btn-block btn-lg" id ="id" name="update_time" />
+                           <input type="submit" value="Update"   class="btn btn-outline-primary btn-block btn-lg" id ="id" name="update_time" />
                         </div>
                         <?php } ?>
                </form>
