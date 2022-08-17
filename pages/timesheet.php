@@ -202,8 +202,6 @@ if(!isLoggedIn()){
        <div class="container">
       <div class="row">
       <div class="col-lg-6">
-         
-            <hr>
             <center>
                <div class="date">
                   <?php 
