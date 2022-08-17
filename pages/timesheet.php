@@ -200,8 +200,8 @@ if(!isLoggedIn()){
  
        <!-- CURRENT TIME -->
        <div class="container">
-      <div class="row">
-      <div class="col-lg-6 text-center">
+      <div class="row text-center">
+      <div class="col-lg-6">
             <center>
                <div class="date">
                   <?php 
