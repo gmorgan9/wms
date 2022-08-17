@@ -312,13 +312,13 @@ if(!isLoggedIn()){
             $database_date = $row['date'];
             $database_timein = $row['timein'];
             $database_timeout = $row['timeout'];
-         } }?>
+         ?>
 
             <?php if($database_date == null) { ?>
             <div class="col text-center mt-3">
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
             </div>
-            <?php } if ($database_timein == null) { ?>
+            <?php } if ($row['timein'] == null) { ?>
               <div class="col text-center mt-3">
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-success">Clock In</span></button>
             </div>
@@ -328,6 +328,7 @@ if(!isLoggedIn()){
             </div>
             <?php } ?>
           </form>
+        <?php } }?>
         <?php } ?>
         
 
