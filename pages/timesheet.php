@@ -81,17 +81,17 @@ if(!isLoggedIn()){
 // END REJECTED TIME STATUS FUNCTION
 
 // CREATE TIMESHEET FUNCTION
-  if(isset($_POST['create-timesheet'])) {
-    $idno  = rand(1000000, 9999999);
-    $date = mysqli_real_escape_string($conn, $_POST['date']);
-    $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
-    $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
-    $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
+if(isset($_POST['create-timesheet'])) {
+  $idno  = rand(1000000, 9999999);
+  $date = mysqli_real_escape_string($conn, $_POST['date']);
+  $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
+  $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
+  $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
 
-    $insert = "INSERT INTO timesheet (idno, date, employee_fname, employee_lname, employee_idno) VALUES('$idno', '$date', '$employee_fname', '$employee_lname', '$employee_idno')";
-    mysqli_query($conn, $insert);
-    header('location: timesheet.php');
-  };
+  $insert = "INSERT INTO timesheet (idno, date, employee_fname, employee_lname, employee_idno) VALUES('$idno', '$date', '$employee_fname', '$employee_lname', '$employee_idno')";
+  mysqli_query($conn, $insert);
+  header('location: timesheet.php');
+};
 // END CLOCKIN FUNCTION
 
 // CLOCKIN FUNCTION
@@ -106,7 +106,7 @@ if(!isLoggedIn()){
 
 // CLOCKOUT FUNCTION
   if (isset($_POST['clockout'])) {
-    $emp = $_SESSION['employee_idno'];
+    $emp = $_POST['employee_idno'];
     $timeout = $_POST['timeout'];
     $date = $_POST['date'];
     $rejUpdateQuery = "UPDATE timesheet SET timeout = '$timeout' WHERE date = '$date'";
@@ -123,10 +123,6 @@ if(!isLoggedIn()){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- <?php
-// echo the meta tag or add it in the head section of your HTML document
-//echo "<meta http-equiv='refresh' content='1'>";
-?> -->
    <title>WMS | Timesheet</title>
 
   <!-- SCRIPTS -->
@@ -165,7 +161,8 @@ if(!isLoggedIn()){
      <!-- start PAGE-CONTENT -->
      <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -100px; height: 250px; !important;">
        <div class="section-header pt-2">
-         <span class="text-muted pt-4" style="width: 95%;">Time Entry</span><a class="float-end text-decoration-none text-muted" href="<?php $_SERVER['PHP_SELF']; ?>"><i class="bi bi-arrow-clockwise"></i> Refresh</a>
+         <span class="text-muted pt-4" style="width: 95%;">Time Entry</span>
+         <a class="text-muted" href="<?php $_SERVER['PHP_SELF']; ?>">Refresh</a>
        </div>
        <hr style="margin-bottom: -5px; margin-top: 5px;">
        <?php 
@@ -196,136 +193,15 @@ if(!isLoggedIn()){
            ?>
          <span class="pt-4" style="width: 95%;">Today's Date is <span class="text-muted"><?php echo $for_date; ?></span></span>
        </div>
-       
- 
-       <!-- CURRENT TIME -->
-       <div class="container">
-      <div class="row">
-      <div class="col-lg-6 mx-auto">
-            <center>
-               <div class="date">
-                  <?php 
-                     date_default_timezone_set("America/Denver");
-                      $newtime = date("h:i:s",strtotime("+0 HOURS"));
-                      $newdate = date("Y-m-d");
-                      ?>
-                   <strong><span style="color: #ff6666;" id="tick2" class="timeh1"></strong>
-
-            </center>
-            </div>
-         </div>
-        </div>
-
-         <script src = "index.js"></script>
-    <script src = "jquery.js"></script>
-   <script src = "bootstrap.js"></script>
-
-   <script>
-   // <!--/. tells about the time  -->
-                 function show2(){
-                 if (!document.all&&!document.getElementById)
-                 return
-                 thelement=document.getElementById? document.getElementById("tick2"): document.all.tick2
-                 var Digital=new Date()
-                 var hours=Digital.getHours()
-                 var minutes=Digital.getMinutes()
-                 var seconds=Digital.getSeconds()
-                 var dn="PM"
-                 if (hours<12)
-                 dn="AM"
-                 if (hours>12)
-                 hours=hours-12
-                 if (hours==0)
-                 hours=12
-                 if (minutes<=9)
-                 minutes="0"+minutes
-                 if (seconds<=9)
-                 seconds="0"+seconds
-                 var ctime=hours+":"+minutes+":"+seconds+" "+dn
-                 thelement.innerHTML=ctime
-                 setTimeout("show2()",1000)
-                 }
-                 window.onload=show2
-         //-->
-          
-           
-</script>
-
-            <?php 
-            $date = date('Y-m-d');
-            $employee_idno = $_SESSION['employee_idno'];
-            $select = " SELECT * FROM timesheet WHERE date = '$date' ";
-            $result = mysqli_query($conn, $select);
-
-            if (mysqli_num_rows($result) > 0) {
-             while($row = mysqli_fetch_assoc($result)) {
-                $database_date = $row['date'];
-                $database_timein = $row['timein'];
-                $database_timeout = $row['timeout'];
-            }}
-            ?>
-
-          <?php if($database_date != $date ) { ?>
-          <form method="post" action="">
-            <?php 
-            $empID     = $_SESSION['employee_idno'];
-            $emp_fname = $_SESSION['fname'];
-            $emp_lname = $_SESSION['lname'];
-            ?>
-            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
-            <input type="hidden" name="employee_fname" value="<?php echo $emp_fname; ?>" />
-            <input type="hidden" name="employee_lname" value="<?php echo $emp_lname; ?>" />
-            <input type="hidden" name="date" value="<?php echo $newdate; ?>" />
-            <input type="hidden" name="timein" value="<?php echo $newtime; ?>" />
-            <input type="hidden" name="timeout" value="<?php echo $newtime; ?>" />
-            
-            <div class="col text-center mt-3">
-              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
-            </div>
-          </form>
-          <?php } else {} ?>
        <!-- create-timesheet -->
        <?php if($database_date == $date && $timein == null && $timeout == null) {?>
         <div class="alert alert-primary text-center mt-2" role="alert">
             <span>Timesheet created for <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?></span>
           </div>
-          <form method="post" action="">
-            <?php 
-            $empID     = $_SESSION['employee_idno'];
-            $emp_fname = $_SESSION['fname'];
-            $emp_lname = $_SESSION['lname'];
-            ?>
-            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
-            <input type="hidden" name="employee_fname" value="<?php echo $emp_fname; ?>" />
-            <input type="hidden" name="employee_lname" value="<?php echo $emp_lname; ?>" />
-            <input type="hidden" name="date" value="<?php echo $newdate; ?>" />
-            <input type="hidden" name="timein" value="<?php echo $newtime; ?>" />
-            <input type="hidden" name="timeout" value="<?php echo $newtime; ?>" />
-            <div class="col text-center mt-3">
-              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-primary">Clock In</span></button>
-            </div>
-          </form>
-          
         <?php } else if($database_date == $date && $timeout == null) { ?>
           <div class="alert alert-primary text-center mt-2" role="alert">
             <span>Timesheet created for <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?></span>
           </div>
-          <form method="post" action="">
-            <?php 
-            $empID     = $_SESSION['employee_idno'];
-            $emp_fname = $_SESSION['fname'];
-            $emp_lname = $_SESSION['lname'];
-            ?>
-            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
-            <input type="hidden" name="employee_fname" value="<?php echo $emp_fname; ?>" />
-            <input type="hidden" name="employee_lname" value="<?php echo $emp_lname; ?>" />
-            <input type="hidden" name="date" value="<?php echo $newdate; ?>" />
-            <input type="hidden" name="timein" value="<?php echo $newtime; ?>" />
-            <input type="hidden" name="timeout" value="<?php echo $newtime; ?>" />
-            <div class="col text-center mt-3">
-              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockout"><span class="badge text-bg-primary">Clock Out</span></button>
-            </div>
-          </form>
         <?php } else if($database_date == $date) { ?>
           <div class="alert alert-success text-center mt-2" role="alert">
             <span>
@@ -335,10 +211,73 @@ if(!isLoggedIn()){
           </div>
           <p class="text-muted" style="font-size: 14px; text-align: center;">Thanks for your work today! <br>
             We will see you tomorrow!</p>
-        <?php }  ?>
+        <?php } else { ?>
+       <form method="post" action="">
+            <?php 
+            $empID     = $_SESSION['employee_idno'];
+            $emp_fname = $_SESSION['fname'];
+            $emp_lname = $_SESSION['lname'];
+            ?>
+            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
+            <input type="hidden" name="employee_fname" value="<?php echo $emp_fname; ?>" />
+            <input type="hidden" name="employee_lname" value="<?php echo $emp_lname; ?>" />
+            <input type="hidden" name="date" value="<?php echo $date; ?>" />
+            <div class="col text-center mt-3">
+              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
+            </div>
+          </form>
+        <?php } ?>
         
-        
+        <!-- CLOCK IN FORM -->
+        <form id="clockin" method="post" action="">
+            <?php $empID = $_SESSION['employee_idno']; ?>
+            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
+            <input type="hidden" name="date" value="<?php echo $date; ?>" />
+            <input type="hidden" name="timein" value="<?php echo $time; ?>" />
+            <div class="col text-center mt-3">
+              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-success">Clock In</span></button>
+            </div>
+            </form>
+        <?php if ($datebase_date == null) { ?>
+            <style type="text/css">
+                #clockin{
+                    display:none;
+                }
+            </style>
+            <?php } if ($database_date != null) { ?>
+              <style type="text/css">
+                #clockin{
+                    display:block;
+                }
+            </style>
+            <?php } if ($timein != null) {?>
+              <style type="text/css">
+                #clockin{
+                    display:none;
+                }
+            </style>
 
+            <?php } ?>
+
+            <?php if ($timein != null) {?>
+        <!-- CLOCK OUT FORM -->
+        <form id="clockout" method="post" action="">
+            <?php $empID = $_SESSION['employee_idno']; ?>
+            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
+            <input type="hidden" name="date" value="<?php echo $date; ?>" />
+            <input type="hidden" name="timeout" value="<?php echo $time; ?>" />
+            <div class="col text-center mt-3">
+              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockout"><span class="badge text-bg-danger">Clock Out</span></button>
+            </div>
+            </form>
+        <?php } ?>
+        <?php if ($timeout != null) { ?>
+            <style type="text/css">
+                #clockout{
+                    display:none;
+                }
+            </style>
+            <?php } ?>
 
      <!-- end PAGE-CONTENT -->
      </div>
@@ -622,8 +561,6 @@ if(!isLoggedIn()){
 <!-- end MAIN -->
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
-
-
 
 </body>
 </html>
