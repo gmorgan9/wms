@@ -126,7 +126,7 @@ if(isset($_POST['submit_time'])) {
                <div class="date">
                   <?php 
                      date_default_timezone_set("America/Denver");
-                      $newtime = date("h:i:s");
+                      $newtime = date("HH:MM:SS");
                       $newdate = date("Y-m-d");
                       ?>
                   <strong style="font-size: 1.6em;"><?php echo  $newdate;?>&nbsp;&nbsp;<font style="color:#ffc107;">|</font>&nbsp;&nbsp; <span style="color: #ff6666;font-size: 1em;" id="tick2" class="timeh1"></strong>
