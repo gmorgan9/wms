@@ -339,10 +339,15 @@ if(!isLoggedIn()){
             <?php } ?>
 
             <?php if ($timein != null) {?>
+              <?php 
+                     date_default_timezone_set("America/Denver");
+                      $newtime = date("h:i:s",strtotime("+0 HOURS"));
+                      $newdate = date("Y-m-d");
+                      ?>
         <!-- CLOCK OUT FORM -->
         <form id="clockout" method="post" action="">
             <?php $empID = $_SESSION['employee_idno']; ?>
-            <input type="text" class="form-control" name="employee_idno" id="employee_idno" value="<?php echo $empID; ?>" required>
+            <input type="text" name="employee_idno"value="<?php echo $empID; ?>" required>
             <input type="hidden" name="date" value="<?php echo $newdate; ?>" />
             <input type="hidden" name="timeout" value="<?php echo $newtime; ?>" />
             <div class="col text-center mt-3">
