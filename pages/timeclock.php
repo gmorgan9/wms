@@ -137,7 +137,7 @@ if(isset($_POST['update_time'])) {
             </ol>
             <hr>
             <script>
-                document.getElementById('#time').contentWindow.location.reload();
+                document.getElementById('time').contentWindow.location.reload();
             </script>
             <iframe id="time" src="" frameborder="0">
             <center>
