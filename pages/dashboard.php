@@ -67,10 +67,10 @@ if(!isLoggedIn()){
       </div>
       <div class="row mt-3">
         <div class="col me-3 ms-3" style="height: 220px; background-color: #c9b8a9;">
-          Time Cars
+          Time Card
         </div>
         <div class="col me-3 ms-3" style="height: 220px; background-color: #c9b8a9;">
-          2 of 2
+          Current Date and Time
         </div>
       </div>
     </div>
