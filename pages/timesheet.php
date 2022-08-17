@@ -300,20 +300,9 @@ if(!isLoggedIn()){
             $database_timein = $row['timein'];
             $database_timeout = $row['timeout'];
          ?>
-
-            <?php if($row['date'] == null) { ?>
             <div class="col text-center mt-3">
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
             </div>
-            <?php } else if ($database_date == $date && $timeout == null) { ?>
-              <div class="col text-center mt-3">
-              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
-            </div>
-              <?php } else if ($row['timeout'] == null) { ?>
-                <div class="col text-center mt-3">
-              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
-            </div>
-            <?php } ?>
           </form>
         <?php } }?>
         <?php } else if($database_date == $date && $timeout == null) { ?>
