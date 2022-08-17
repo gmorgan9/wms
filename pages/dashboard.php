@@ -54,15 +54,17 @@ if(!isLoggedIn()){
   <!-- NON ADMIN DASHBOARD -->
   <div class="page-content mt-2 mx-auto" style="margin-right: 10px;">
     <div class="container text-center">
-      <div class="row mt-3 row-cols-2">
+      <div class="row mt-3">
         <div class="col me-3 ms-3" style="height: 220px; background-color: #c9b8a9;">
           Time Card
         </div>
         <div class="col me-3 ms-3" style="height: 220px; background-color: #c9b8a9;">
           Current Date and Time
         </div>
+      </div>
+      <div class="row mt-3">
         <div class="col me-3 ms-3" style="height: 220px; background-color: #c9b8a9;">
-          Current Date and Time
+          Time Card
         </div>
       </div>
       <div class="row mt-3">
