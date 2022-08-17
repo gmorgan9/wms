@@ -58,10 +58,10 @@ if(!isLoggedIn()){
       <div class="col" style="height: 350px; background-color: #000;">
       1 of 3
     </div>
-    <div class="col">
+    <div class="col" style="height: 350px; background-color: #000;">
       2 of 3
     </div>
-    <div class="col">
+    <div class="col" style="height: 350px; background-color: #000;">
       3 of 3
     </div>
       </div>
