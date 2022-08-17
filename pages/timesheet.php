@@ -212,7 +212,7 @@ if(isset($_POST['create-timesheet'])) {
     
     function startTime()
     {
-        document.getElementById('time').innerHTML = Date();  
+        document.getElementById('time').innerHTML = Date(HH:mm:ss);  
     }
   </script>
        
