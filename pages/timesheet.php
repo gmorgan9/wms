@@ -202,7 +202,7 @@ $(document).ready(function() {
 });
 function runningTime() {
   $.ajax({
-    url: 'timeScript.php',
+    url: 'timescheet.php',
     success: function(data) {
        $('#runningTime').html(data);
      },
