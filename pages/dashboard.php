@@ -61,7 +61,7 @@ if(!isLoggedIn()){
       </div>
       <div class="row">
         <div class="col-6">col-5</div>
-        <div class="col-5">col-5</div>
+        <div class="col-6">col-5</div>
       </div>
     </div>
   </div>
