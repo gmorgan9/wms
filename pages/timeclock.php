@@ -126,7 +126,7 @@ if(!isLoggedIn()){
     </div>
 
 
-
+    <script src = "index.js"></script>
     <script src = "jquery.js"></script>
    <script src = "bootstrap.js"></script>
 
