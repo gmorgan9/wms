@@ -214,7 +214,7 @@ if(isset($_POST['create-timesheet'])) {
  });
  function runningTime() {
    $.ajax({
-     url: 'timeScript.php',
+     url: 'timestamp.php',
      success: function(data) {
         $('#runningTime').html(data);
       },
