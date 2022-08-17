@@ -64,7 +64,7 @@ if(!isLoggedIn()){
       </div>
       <div class="row mt-3">
         <div class="col me-3 ms-3" style="width: 150px !important; height: 220px; background-color: #c9b8a9;">
-          Time Card
+          Welcome
         </div>
       </div>
       <div class="row mt-3">
