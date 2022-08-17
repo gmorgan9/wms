@@ -209,7 +209,9 @@ if(!isLoggedIn()){
                       $newtime = date("h:i:s",strtotime("+0 HOURS"));
                       $newdate = date("Y-m-d");
                       ?>
-                  <strong class="text-center" style="font-size: 12px;"><?php echo  $newdate;?>&nbsp;&nbsp;<font style="color:#ffc107;">|</font>&nbsp;&nbsp; <span style="color: #ff6666;font-size: 12px;" id="tick2" class="timeh1"></strong>
+                      <div class="text-center">
+                  <strong style="font-size: 12px;"><?php echo  $newdate;?>&nbsp;&nbsp;<font style="color:#ffc107;">|</font>&nbsp;&nbsp; <span style="color: #ff6666;font-size: 12px;" id="tick2" class="timeh1"></strong>
+        </div>
             </center>
             </div>
          </div>
