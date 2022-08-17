@@ -289,7 +289,7 @@ if(!isLoggedIn()){
           </div>
           <p class="text-muted" style="font-size: 14px; text-align: center;">Thanks for your work today! <br>
             We will see you tomorrow!</p>
-        <?php } else { ?>
+        <?php }?>
        <form method="post" action="">
             <?php 
             $empID     = $_SESSION['employee_idno'];
