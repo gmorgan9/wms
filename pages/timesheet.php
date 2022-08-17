@@ -318,16 +318,17 @@ if(!isLoggedIn()){
             <div class="col text-center mt-3">
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
             </div>
-            <?php } ?> 
+            <?php } else {}?> 
             <?php if ($row['timein'] == null) { ?>
               <div class="col text-center mt-3">
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-success">Clock In</span></button>
             </div>
-              <?php } if ($row['timeout'] == null) { ?>
+              <?php } else {}?>
+              <?php if ($row['timeout'] == null) { ?>
                 <div class="col text-center mt-3">
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockout"><span class="badge text-bg-primary">Clock Out</span></button>
             </div>
-            <?php } ?>
+            <?php }else {} ?>
           </form>
         <?php } }?>
         <?php } ?>
