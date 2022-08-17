@@ -299,62 +299,23 @@ if(!isLoggedIn()){
             <input type="hidden" name="employee_fname" value="<?php echo $emp_fname; ?>" />
             <input type="hidden" name="employee_lname" value="<?php echo $emp_lname; ?>" />
             <input type="hidden" name="date" value="<?php echo $date; ?>" />
+            <?php if($date == null) { ?>
             <div class="col text-center mt-3">
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
             </div>
+            <?php } else if ($timein == null) { ?>
+              <div class="col text-center mt-3">
+              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Clock In</span></button>
+            </div>
+              <?php } else if ($timeout == null) { ?>
+                <div class="col text-center mt-3">
+              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
+            </div>
+            <?php } ?>
           </form>
         <?php } ?>
         
-        <!-- CLOCK IN FORM -->
-        <form id="clockin" method="post" action="">
-            <?php $empID = $_SESSION['employee_idno']; ?>
-            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
-            <input type="hidden" name="date" value="<?php echo $newdate; ?>" />
-            <input type="hidden" name="timein" value="<?php echo $newtime; ?>" />
-            <div class="col text-center mt-3">
-              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-success">Clock In</span></button>
-            </div>
-            </form>
-        <?php if ($datebase_date == null) { ?>
-            <style type="text/css">
-                #clockin{
-                    display:none;
-                }
-            </style>
-            <?php } if ($database_date != null) { ?>
-              <style type="text/css">
-                #clockin{
-                    display:block;
-                }
-            </style>
-            <?php } if ($timein != null) {?>
-              <style type="text/css">
-                #clockin{
-                    display:none;
-                }
-            </style>
 
-            <?php } ?>
-
-            <?php if ($timein != null) {?>
-        <!-- CLOCK OUT FORM -->
-        <form id="clockout" method="post" action="">
-            <?php $empID = $_SESSION['employee_idno']; ?>
-            <!-- <input type="hidden" name="date" value="<?php echo $date; ?>" /> -->
-            <input type="hidden" name="timeout" value="<?php echo $time; ?>" />
-            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>">
-            <div class="col text-center mt-3">
-              <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockout"><span class="badge text-bg-danger">Clock Out</span></button>
-            </div>
-            </form>
-        <?php } ?>
-        <?php if ($timeout != null) { ?>
-            <style type="text/css">
-                #clockout{
-                    display:none;
-                }
-            </style>
-            <?php } ?>
 
      <!-- end PAGE-CONTENT -->
      </div>
