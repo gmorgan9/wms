@@ -213,7 +213,7 @@ if(isset($_POST['create-timesheet'])) {
         function digitalClock(){
             servertime.setSeconds(servertime.getSeconds()+1);
             var timestring=padlength(servertime.getHours())+":"+padlength(servertime.getMinutes())+":"+padlength(servertime.getSeconds());
-            document.getElementById("clock").innerHTML="The Current Time is <span class='text-muted'>" + timestring + " MDT</span>";
+            document.getElementById("clock").innerHTML="<span class='text-center'>The Current Time is <span class='text-muted'>" + timestring + " MDT</span></span>";
         }
         window.onload=function(){
         setInterval("digitalClock()", 1000);
