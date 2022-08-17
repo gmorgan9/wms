@@ -212,7 +212,11 @@ if(isset($_POST['create-timesheet'])) {
     
     function startTime()
     {
-        document.getElementById('time').innerHTML = Date().toLocaleTimeString();  
+      var d = new Date(); // for now
+      var hours = d.getHours(); // => 9
+      var min = d.getMinutes(); // =>  30
+      var sec = d.getSeconds(); // => 51
+        document.getElementById('time').innerHTML = hours + ":" + min + ":" + sec;  
     }
   </script>
        
