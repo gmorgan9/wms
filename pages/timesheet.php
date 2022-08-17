@@ -192,6 +192,26 @@ if(isset($_POST['create-timesheet'])) {
            ?>
          <span class="pt-4" style="width: 95%;">Today's Date is <span class="text-muted"><?php echo $for_date; ?></span></span>
        </div>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ 
+<div id="runningTime"></div>
+ 
+<script type="text/javascript">
+$(document).ready(function() {
+ setInterval(runningTime, 1000);
+});
+function runningTime() {
+  $.ajax({
+    url: 'timeScript.php',
+    success: function(data) {
+       $('#runningTime').html(data);
+     },
+  });
+}
+</script>
+       <?php
+        echo $runningTime = date('h:i:s');
+        ?>
        <!-- create-timesheet -->
        <?php if($database_date == $date && $timein == null && $timeout == null) {?>
         <div class="alert alert-primary text-center mt-2" role="alert">
