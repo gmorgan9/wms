@@ -30,6 +30,20 @@ if(!isLoggedIn()){
     }
 // END CLOCKOUT FUNCTION
 
+// CREATE TIMESHEET FUNCTION
+if(isset($_POST['submit-time'])) {
+    $idno  = rand(1000000, 9999999);
+    $date = mysqli_real_escape_string($conn, $_POST['date']);
+    $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
+    $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
+    $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
+  
+    $insert = "INSERT INTO testing (employee_idno, date, timein) VALUES('$employee_idno', '$date', '$timein')";
+    mysqli_query($conn, $insert);
+    header('location: timeclock.php');
+  };
+// END CLOCKIN FUNCTION
+
 ?>
 
 <!DOCTYPE html>
@@ -134,8 +148,8 @@ if(!isLoggedIn()){
                      <h3 class="card-header">Attendance Form</h3>
                      <div class="card-body">
                         <div class="input-group input-group-lg">
-                           <span class="input-group-addon" id="sizing-addon1"><img src="icon/users.ico"></span>
-                           <input type="text" class="form-control" name="user_no" id="val1" placeholder="EmployeeID" aria-describedby="sizing-addon1" required="" />
+                           <span class="input-group-addon" id="sizing-addon1"><i class="bi bi-person"></i></span>
+                           <input type="text" class="form-control" name="employee_idno" id="employee_idno" placeholder="EmployeeID" aria-describedby="sizing-addon1" required>
                         </div>
                         <br>
                         <div class="input-group input-group-lg">
@@ -144,7 +158,7 @@ if(!isLoggedIn()){
                         </div>
                         <br>
                         <div class="form-group">
-                           <input type="submit" value="Enter"   class="btn btn-outline-primary btn-block btn-lg" id ="id" name="search" />
+                           <input type="submit" value="Enter"   class="btn btn-outline-primary btn-block btn-lg" id ="id" name="submit_time" />
                         </div>
                </form>
                </div>
