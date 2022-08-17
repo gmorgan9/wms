@@ -289,7 +289,7 @@ if(!isLoggedIn()){
           </div>
           <p class="text-muted" style="font-size: 14px; text-align: center;">Thanks for your work today! <br>
             We will see you tomorrow!</p>
-        <?php }?>
+        <?php }  ?>
        <form method="post" action="">
             <?php 
             $empID     = $_SESSION['employee_idno'];
@@ -301,18 +301,35 @@ if(!isLoggedIn()){
             <input type="hidden" name="employee_lname" value="<?php echo $emp_lname; ?>" />
             <input type="hidden" name="date" value="<?php echo $date; ?>" />
 
+
+            <?php 
+        $date = date('Y-m-d');
+        $employee_idno = $_SESSION['employee_idno'];
+        $select = " SELECT * FROM timesheet WHERE date = '$date' ";
+        $result = mysqli_query($conn, $select);
+
+        if (mysqli_num_rows($result) > 0) {
+         while($row = mysqli_fetch_assoc($result)) {
+            $database_date = $row['date'];
+            $database_timein = $row['timein'];
+            $database_timeout = $row['timeout'];
+         ?>
+
+            <?php if($row['date'] == null) { ?>
             <div class="col text-center mt-3">
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
             </div>
-            <div class="col text-center mt-3">
+            <?php } else if ($database_date == $date && $timeout == null) { ?>
+              <div class="col text-center mt-3">
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
             </div>
-            <div class="col text-center mt-3">
+              <?php } else if ($row['timeout'] == null) { ?>
+                <div class="col text-center mt-3">
               <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="create-timesheet"><span class="badge text-bg-primary">Create Timesheet</span></button>
             </div>
+            <?php }else {} ?>
           </form>
-        
-        <?php } ?>
+        <?php } }?>
         
 
 
