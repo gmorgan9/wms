@@ -70,60 +70,54 @@ if(!isLoggedIn()){
 
     <div class="page-content mx-auto mt-2">
 
-    <?php 
-        $timezone = date_default_timezone_get();
-        date_default_timezone_set($timezone);
-        $date = date('Y-m-d');
-        $time = date('h:i:s');
-        echo $date;  echo '&nbsp;';
-        echo $time;
-    ?>
-
-        <?php 
-        $employee_idno = $_SESSION['employee_idno'];
-        $select = " SELECT * FROM timeclock WHERE employee_idno = '$employee_idno' ";
-        $result = mysqli_query($conn, $select);
-
-        if (mysqli_num_rows($result) > 0) {
-         while($row = mysqli_fetch_assoc($result)) {
-
-            $timein = $row['timein'];
-            $timeout = $row['timeout'];
-         } }?>
-        
-        
-        <form id="clockin" method="post" action="">
-            <?php $empID = $_SESSION['employee_idno']; ?>
-            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
-            <input type="hidden" name="date" value="<?php echo $date; ?>" />
-            <input type="hidden" name="timein" value="<?php echo $time; ?>" />
-            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockin"><span class="badge text-bg-success">Clock In</span></button>
-        </form>
-        <?php if ($timein != null) {?>
-            <style type="text/css">
-                #clockin{
-                    display:none;
-                }
-            </style>
-
-            <?php } ?>
-
-            <?php if ($timein != null) {?>
-        <form id="clockout" method="post" action="">
-            <?php $empID = $_SESSION['employee_idno']; ?>
-            <input type="hidden" name="employee_idno" value="<?php echo $empID; ?>" />
-            <input type="hidden" name="timeout" value="<?php echo $time; ?>" />
-            <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="clockout"><span class="badge text-bg-danger">Clock Out</span></button>
-        </form>
-        <?php } ?>
-        <?php if ($timeout != null) { ?>
-            <style type="text/css">
-                #clockout{
-                    display:none;
-                }
-            </style>
-            <?php } ?>
-
+    <div class="container">
+      <div class="row">
+      <div class="col-lg-6">
+         <div id="clock">
+            <div class="hour">
+               <div class="min"></div>
+               <div class="min"></div>
+               <div class="min"></div>
+               <div class="min"></div>
+               <div class="min"></div>
+            </div>
+            <div class="hour">
+               <div class="min"></div>
+               <div class="min"></div>
+               <div class="min"></div>
+               <div class="min"></div>
+               <div class="min"></div>
+            </div>
+            <div id="alarm"> </div>
+            <div id="min"></div>
+            <div id="hour"></div>
+            <div id="sec"></div>
+            <ol>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+            </ol>
+            <hr>
+            <center>
+               <div class="date">
+                  <?php 
+                     date_default_timezone_set("asia/manila");
+                      $time = date("h:i A",strtotime("+0 HOURS"));
+                      $date = date("M-d-Y");
+                      ?>
+                  <strong style="font-size: 1.6em;"><?php echo  $date;?>&nbsp;&nbsp;<font style="color:#ffc107;">|</font>&nbsp;&nbsp; <span style="color: #ff6666;font-size: 1em;" id="tick2" class="timeh1"></strong>
+            </center>
+            </div>
+         </div>
         
 
 
