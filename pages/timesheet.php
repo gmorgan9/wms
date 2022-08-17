@@ -212,7 +212,7 @@ if(isset($_POST['create-timesheet'])) {
 $(function () {
     setInterval(doRefresh, 1000);
 });
-
+</script>
 
         <div class="section-header text-center pt-2">
          <span class="pt-4" style="width: 95%;">Current Time is <span class="text-muted" id="time"><?php echo $currtime; ?></span></span>
