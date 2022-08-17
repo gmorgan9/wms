@@ -52,18 +52,20 @@ if(!isLoggedIn()){
 
   <?php if($_SESSION['acc_type'] == 0) { ?> 
   <!-- NON ADMIN DASHBOARD -->
-  <div class="container text-center">
-  <div class="row">
-    <div class="col">col</div>
-    <div class="col">col</div>
-    <div class="col">col</div>
-    <div class="col">col</div>
+  <div class="stats d-flex justify-content-center" style="margin-left: -1px; margin-top: 5px !important;">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">col</div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+      </div>
+      <div class="row">
+        <div class="col-8">col-8</div>
+        <div class="col-4">col-4</div>
+      </div>
+    </div>
   </div>
-  <div class="row">
-    <div class="col-8">col-8</div>
-    <div class="col-4">col-4</div>
-  </div>
-</div>
   <!-- END NON ADMIN DASHBOARD -->
   <?php } else { ?>
   <!-- ADMIN DASHBOARD -->
