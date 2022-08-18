@@ -109,11 +109,12 @@ if(!isLoggedIn()){
                 <span class="text-warning fw-bold">
                   Not Clocked In Yet
                 </span>
-                <span>
-                  Time out:
+                <br>
+                <span class="fw-bold">
+                  Time out: &nbsp;
                 </span>
                 <span class="text-warning fw-bold">
-                  Not Clocked In Yet
+                  Not Clocked out Yet
                 </span>
               <?php } else if($db_timeout == null) { ?>
                 Timesheet was created, but not clocked out
