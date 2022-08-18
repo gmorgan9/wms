@@ -171,7 +171,7 @@ if(!isLoggedIn()){
                 </tr>
                 <tr>
                   <th scope="row">0</th>
-                  <td>Employee Requests</td>
+                  <td class="text-start">Employee Requests</td>
                 </tr>
               </tbody>
             </table>
