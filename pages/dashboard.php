@@ -134,7 +134,7 @@ if(!isLoggedIn()){
                   Not Clocked out Yet
                 </span>
               <?php } else if ($db_timeout != null) { ?>
-                <table class="table w-25 mx-auto">
+                <table class="table w-50 mx-auto">
               <thead>
                 <tr>
                   
