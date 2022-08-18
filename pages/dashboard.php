@@ -157,7 +157,8 @@ if(!isLoggedIn()){
               <h5>
                 My Notifications
               </h5>
-              <div class="list-group list-group-flush mx-3 mt-4">
+            </div>
+            <div class="list-group list-group-flush mx-3 mt-4">
                   <a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
                       <span>  Tasks</span>
                   </a>
@@ -174,7 +175,6 @@ if(!isLoggedIn()){
                       <span>  System Messages</span>
                   </a>
               </div>
-            </div>
         </div>
         <div class="col me-3 ms-3" style="height: 350px; background-color: #eee; border-radius: 15px;">
           <div class="col-content" style="padding-top: 10px;">
