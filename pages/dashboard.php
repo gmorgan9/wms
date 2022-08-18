@@ -152,6 +152,19 @@ if(!isLoggedIn()){
                 </tr>
               </thead>
               <tbody>
+              <tr>
+                  <th scope="row" style="font-size: 14px; border-bottom: 0;">
+                    <?php 
+                      $current_date = date('M d');
+                      echo $current_date;
+                    ?>
+                  </th>
+                  <td class="text-start" style="font-size: 14px; border-bottom: 0;">
+                    <?php 
+                      $f_timein = date('h:i a', strtotime($db_timein));
+                      echo $f_timein;
+                    ?>
+                  </td>
                 <tr>
                   <th scope="row" style="font-size: 14px; border-bottom: 0;">Time In</th>
                   <td class="text-start" style="font-size: 14px; border-bottom: 0;">
