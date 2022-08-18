@@ -177,11 +177,9 @@ if(!isLoggedIn()){
     <?php }} ?>
               <tr>
                   <th scope="row">
-                    Mon <br>
                     <?php echo $f_mon; ?>
                   </th>
                   <td class="text-start">
-                    <br>
                     <?php echo $f_mon_timein; ?> - <?php echo $f_mon_timeout; ?>
                   </td>
                 </tr>
