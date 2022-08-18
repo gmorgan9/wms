@@ -146,17 +146,7 @@ if(!isLoggedIn()){
       </div>
       <div class="row mt-3">
         <div class="col me-3 ms-3" style="height: 350px; background-color: #eee; border-radius: 15px;">
-          <div class="col-content" style="padding-top: 10px;">
-              <h5>
-                My Schedule
-              </h5>
-              <table class="table mt-3">
-              <thead>
-                <tr>
-                </tr>
-              </thead>
-              <tbody>
-              <?php
+        <?php
               $current_mon = date('Y-m-d', strtotime('monday this week'));
               $sql = "SELECT * FROM schedule WHERE mon_date = '$current_mon' ";
               $all = mysqli_query($conn, $sql);
@@ -176,6 +166,19 @@ if(!isLoggedIn()){
              
     ?>
     <?php }} ?>
+          <div class="col-content" style="padding-top: 10px;">
+              <h5>
+                My Schedule
+              </h5>
+              <h6>
+                <?php echo $current_mon; ?>
+              </h6>
+              <table class="table mt-3">
+              <thead>
+                <tr>
+                </tr>
+              </thead>
+              <tbody>
               <tr>
                   <th scope="row">
                     <?php echo $short_f_mon; ?>
