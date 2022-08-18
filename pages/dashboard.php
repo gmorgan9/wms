@@ -150,6 +150,35 @@ if(!isLoggedIn()){
               <h5>
                 My Schedule
               </h5>
+              <table class="table mt-3">
+              <thead>
+                <tr>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">0</th>
+                  <td class="text-start">Tasks</td>
+                </tr>
+                <tr>
+                  <th scope="row">0</th>
+                  <td class="text-start">Employee Requests</td>
+                </tr>
+                <tr>
+                  <th scope="row">0</th>
+                  <td class="text-start">My Requests</td>
+                </tr>
+                <tr>
+                  <th scope="row">0</th>
+                  <td class="text-start">Timekeeping</td>
+                </tr>
+                <tr>
+                  <th scope="row">0</th>
+                  <td class="text-start">System Messages</td>
+                </tr>
+              </tbody>
+            </table>
             </div>
         </div>
         <div class="col me-3 ms-3" style="height: 350px; background-color: #eee; border-radius: 15px;">
@@ -167,7 +196,7 @@ if(!isLoggedIn()){
               <tbody>
                 <tr>
                   <th scope="row">0</th>
-                  <td class="text-start">Task</td>
+                  <td class="text-start">Tasks</td>
                 </tr>
                 <tr>
                   <th scope="row">0</th>
