@@ -90,7 +90,7 @@ if(!isLoggedIn()){
                 </div>
               </div>
               <div class="col-md-8 float-end ms-4">
-                <div class="card mb-3" style="border-color: white;">
+                <div class="card mb-3 w-25" style="border-color: white;">
                 <div class="card-body">
                   <h5>
                     <?php echo $fname; ?> <?php echo $lname; ?>
