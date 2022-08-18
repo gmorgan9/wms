@@ -33,11 +33,7 @@ if(isset($_POST['submit'])){
 
       $row = mysqli_fetch_array($result);
       $sql = "UPDATE employee SET loggedin='1' WHERE uname='$uname'";
-      if (mysqli_query($conn, $sql)) {
-         echo "Record updated successfully";
-       } else {
-         echo "Error updating record: " . mysqli_error($conn);
-       }
+      mysqli_query($conn, $sql);
        $_SESSION['fname']           = $row['fname'];
        $_SESSION['empID']           = $row['employeeID'];
        $_SESSION['loggedin']        = $row['loggedin'];
@@ -48,7 +44,7 @@ if(isset($_POST['submit'])){
       $_SESSION['email']            = $row['email'];
       $_SESSION['pass']             = $row['password'];
       $_SESSION['cpass']            = $row['cpassword'];
-      header('location:' . BASE_URL . '/pages/dashboard.php');
+      header('location:' . BASE_URL . '/pages/profile.php');
      
    }else{
       $error[] = 'incorrect email or password!';
