@@ -32,11 +32,7 @@ if(isset($_POST['login-btn'])){
  
 	   $row = mysqli_fetch_array($result);
 	   $sql = "UPDATE employee SET loggedin='1' WHERE uname='$uname'";
-	   if (mysqli_query($conn, $sql)) {
-		  echo "Record updated successfully";
-		} else {
-		  echo "Error updating record: " . mysqli_error($conn);
-		}
+	   mysqli_query($conn, $sql);
 		$_SESSION['fname']           = $row['fname'];
 		$_SESSION['empID']           = $row['employeeID'];
 		$_SESSION['loggedin']        = $row['loggedin'];
