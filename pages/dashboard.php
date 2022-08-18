@@ -168,11 +168,11 @@ if(!isLoggedIn()){
                     <span>  Employee Requests</span>
                   </a>
                   <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple">
-                    <span class="text-black fw-bold">09</span> &nbsp;&nbsp;
+                    <span class="text-black fw-bold"><span class="text-white">0</span>8</span> &nbsp;&nbsp;
                     <span>  My Requests</span>
                   </a>
                   <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple">
-                    <span class="text-black fw-bold">03</span> &nbsp;&nbsp; 
+                    <span class="text-black fw-bold"><span class="text-white">0</span>8</span> &nbsp;&nbsp; 
                     <span>  Timekeeping</span>
                   </a>
                   <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple">
