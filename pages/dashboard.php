@@ -75,7 +75,7 @@ if(!isLoggedIn()){
       <div class="row mt-3">
         <div class="col me-3 ms-3" style="height: 75px; background-color: #c9b8a9;">
           <div class="col-content" style="padding-top: 15px;">
-            <span class="">Welcome, <?php echo $fname; ?>!</span>
+            <span class="">Welcome, <?php echo $fname; ?>!</span> <br>
             <?php if($email == null) { ?>
               <span class="text-danger">Your account isn't complete</span>
             <?php } else { ?>
