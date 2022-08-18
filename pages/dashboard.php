@@ -107,7 +107,7 @@ if(!isLoggedIn()){
               <?php } ?>
               </span>
               <br>
-              <span class="float-end" style="">
+              <span class="float-end pe-2" style="padding-top: 15px;">
                 My Timecard &nbsp; <i class="bi bi-arrow-right-circle"></i>
               </span>
           </div>
