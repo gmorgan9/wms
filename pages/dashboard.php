@@ -159,7 +159,7 @@ if(!isLoggedIn()){
               <tbody>
               <tr>
                   <th scope="row">
-                    Mon <br>
+                    Mon
                     8
                   </th>
                   <td class="text-start">Tasks</td>
