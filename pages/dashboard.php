@@ -100,7 +100,7 @@ if(!isLoggedIn()){
                     if($email != null) {
                     echo $email; 
                     } else {
-                      echo "No Email Found!";
+                      echo "<span class='text-warning'>No Email Found!</span>";
                     }
                     ?>
                   </span>
