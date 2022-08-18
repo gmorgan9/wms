@@ -180,7 +180,7 @@ if(!isLoggedIn()){
               <?php } else if ($db_timeout != null) { ?>
                 <table class="table w-50 mx-auto">
               <thead>
-                <tr>
+                <tr style="margin-bottom: -15px;">
                   <span style="font-size: 12px;">
                 <?php 
                       $curr_date_new = date('M d');
