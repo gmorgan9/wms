@@ -82,7 +82,13 @@ if(!isLoggedIn()){
           </div>
         </div>
         <div class="col me-3 ms-3" style="height: 220px; background-color: #c9b8a9;">
-          My Profile
+              <div class="col-md-8 float-start w-25 ms-4">
+                <div class="card mb-3">
+                <div class="card-body">
+                  <img class="ms-1" src="../../assets/img/pic_holder.jpg" style="height: 250px; width: 250px; border-radius: 150px;" alt="">
+                  </div>
+                </div>
+              </div>
         </div>
       </div>
       <div class="row mt-3">
