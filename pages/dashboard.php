@@ -77,7 +77,7 @@ if(!isLoggedIn()){
           <div class="col-content" style="padding-top: 15px;">
             <span class="">Welcome, <?php echo $fname; ?>!</span>
           </div>
-          <div class="col" style="margin-top: 65px; height: 130px; background-color: #c9b8a9;">
+          <div class="col" style="margin-top: 45px; height: 130px; background-color: #c9b8a9;">
             Time Card
           </div>
         </div>
