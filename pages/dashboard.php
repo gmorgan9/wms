@@ -74,7 +74,7 @@ if(!isLoggedIn()){
     <div class="container text-center">
       <div class="row mt-3">
         <div class="col me-3 ms-3" style="height: 75px; background-color: #c9b8a9;">
-          <div class="col-content" style="margin-top: 15px;">
+          <div class="col-content" style="padding-top: 15px;">
             <span class="">Welcome, <?php echo $fname; ?>!</span>
           </div>
           <div class="col" style="margin-top: 65px; height: 130px; background-color: #c9b8a9;">
