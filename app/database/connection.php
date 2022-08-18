@@ -3,7 +3,7 @@
 date_default_timezone_set('America/Denver');
 
 
-$servername = "10.147.20.2";
+$servername = "127.0.0.1";
 $username = "garrett";
 $password = "BIGmorgan1999!";
 $database = "wms";
