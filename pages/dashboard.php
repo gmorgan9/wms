@@ -210,7 +210,7 @@ if(!isLoggedIn()){
               <span class="text-muted" style="font-size: 13px;">
                 <?php echo $f_curr_mon; ?> - <?php echo $f_curr_fri; ?>
               </span>
-              <table class="table mt-3">
+              <table class="table mt-1">
               <thead>
                 <tr>
                 </tr>
