@@ -483,14 +483,14 @@ if(!isLoggedIn()){
                 #clockContainer {
                     position: relative;
                     margin: auto;
-                    height: 40vw;
+                    height: 150px;
                     /*to make the height and width responsive*/
-                    width: 40vw;
+                    width: 150px;
                     background: url(clock.png) no-repeat;
                     /*setting our background image*/
                     background-size: 100%;
                 }
-                  
+
                 #hour,
                 #minute,
                 #second {
@@ -499,7 +499,7 @@ if(!isLoggedIn()){
                     border-radius: 10px;
                     transform-origin: bottom;
                 }
-                  
+
                 #hour {
                     width: 1.8%;
                     height: 25%;
@@ -507,7 +507,7 @@ if(!isLoggedIn()){
                     left: 48.85%;
                     opacity: 0.8;
                 }
-                  
+
                 #minute {
                     width: 1.6%;
                     height: 30%;
@@ -515,7 +515,7 @@ if(!isLoggedIn()){
                     left: 48.9%;
                     opacity: 0.8;
                 }
-                  
+
                 #second {
                     width: 1%;
                     height: 40%;
