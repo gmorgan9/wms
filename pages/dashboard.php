@@ -172,7 +172,7 @@ if(!isLoggedIn()){
     ?>
               <tr>
                   <th scope="row">
-                    <?php echo $mon_date; ?>
+                    <?php echo $current_mon; ?>
                   </th>
                   <td class="text-start">Tasks</td>
                 </tr>
