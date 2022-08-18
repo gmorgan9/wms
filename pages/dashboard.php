@@ -78,9 +78,36 @@ if(!isLoggedIn()){
             <span>Welcome Back, <?php echo $fname; ?>!</span>
           </div>
           <div class="col" style="margin-top: 50px; height: 130px; background-color: #eee; border-radius: 15px;">
-          <div class="col-content" style="padding-top: 10px;">
-            <span>Time Card</span>
-          </div>
+            <div class="col-content" style="padding-top: 10px;">
+              <h5>
+                Time Card
+              </h5>
+            </div>
+            <?php
+              $curr_date = date('Y-m-d');
+              $empID = $_SESSION['employee_idno'];
+              $sql = "SELECT * FROM timesheet WHERE employee_idno = '$empID'";
+              $all = mysqli_query($conn, $sql);
+              if($all) {
+                while ($row = mysqli_fetch_assoc($all)) {
+                  $empID     = $row['employeeID'];
+                  $db_date   = $row['date'];
+                  $fname     = $row['fname'];
+                  $lname     = $row['lname'];
+                  $uname     = $row['uname'];
+                  $email     = $row['email'];
+                  $acc_type  = $row['acc_type'];
+                  $status    = $row['status'];
+                  $compID = $row['company_code'];
+              }}
+            ?>
+            <h6 style="padding-top: 10px;">
+              <?php if($db_date != $curr_date) { ?>
+                no timesheet
+              <?php } else { ?>
+                Timesheet was created
+              <?php } ?>
+            </h6>
           </div>
         </div>
         <div class="col me-3 ms-3" style="height: 220px; background-color: #eee; border-radius: 15px;">
