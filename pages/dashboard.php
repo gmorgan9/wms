@@ -136,14 +136,26 @@ if(!isLoggedIn()){
         
       </div>
       <div class="row mt-3">
-        <div class="col me-3 ms-3" style="height: 350px; background-color: #c9b8a9;">
-          Schedule
+        <div class="col me-3 ms-3" style="height: 350px; background-color: #eee; border-radius: 15px;">
+          <div class="col-content" style="padding-top: 10px;">
+              <h5>
+                My Schedule
+              </h5>
+            </div>
         </div>
-        <div class="col me-3 ms-3" style="height: 350px; background-color: #c9b8a9;">
-          Notifications
+        <div class="col me-3 ms-3" style="height: 350px; background-color: #eee; border-radius: 15px;">
+          <div class="col-content" style="padding-top: 10px;">
+              <h5>
+                My Notifications
+              </h5>
+            </div>
         </div>
-        <div class="col me-3 ms-3" style="height: 350px; background-color: #c9b8a9;">
-          Current Date & Time
+        <div class="col me-3 ms-3" style="height: 350px; background-color: #eee; border-radius: 15px;">
+          <div class="col-content" style="padding-top: 10px;">
+              <h5>
+                Current Date & Time
+              </h5>
+            </div>
         </div>
       </div>
     </div>
