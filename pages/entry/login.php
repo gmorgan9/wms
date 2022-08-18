@@ -15,14 +15,14 @@ if(isLoggedIn()){
 
 if(isset($_POST['login'])){
 
-   $empID = mysqli_real_escape_string($conn, $_POST['employeeID']);
-   $fname = mysqli_real_escape_string($conn, $_POST['fname']);
-   $lname = mysqli_real_escape_string($conn, $_POST['lname']);
+   //$empID = mysqli_real_escape_string($conn, $_POST['employeeID']);
+   //$fname = mysqli_real_escape_string($conn, $_POST['fname']);
+   //$lname = mysqli_real_escape_string($conn, $_POST['lname']);
    $uname = mysqli_real_escape_string($conn, $_POST['uname']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   //$email = mysqli_real_escape_string($conn, $_POST['email']);
    $pass = md5($_POST['password']);
    $cpass = md5($_POST['cpassword']);
-   $isadmin = $_POST['isadmin'];
+   //$isadmin = $_POST['isadmin'];
    $loggedin = $_POST['loggedin'];
 
    $select = " SELECT * FROM employee WHERE uname = '$uname' && password = '$pass' ";
