@@ -160,7 +160,9 @@ if(!isLoggedIn()){
             </div>
             <div class="list-group list-group-flush mx-3 mt-4">
                   <a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple" aria-current="true">
-                    <span class="text-black fw-bold">14</span> &nbsp;&nbsp;
+                    <div class="col">
+                      <span class="text-black fw-bold">14</span> &nbsp;&nbsp;
+                    </div>
                     <span>  Tasks</span>
                   </a>
                   <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple">
