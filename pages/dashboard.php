@@ -167,7 +167,9 @@ if(!isLoggedIn()){
                   $db_mon_date    = $row['mon_date'];
                   $f_mon          = date('M d, Y', strtotime($db_mon_date));
                   $db_mon_timein  = $row['mon_timein'];
+                  $f_mon_timein   = date('h:i A', strtotime($db_mon_timein));
                   $db_mon_timeout = $row['mon_timeout'];
+                  $f_mon_timeout   = date('h:i A', strtotime($db_mon_timeout));
                   $deptname    = $row['deptname'];
                   $app_status  = $row['approval_status'];
              
@@ -181,7 +183,7 @@ if(!isLoggedIn()){
                     <?php echo $f_mon; ?>
                   </th>
                   <td class="text-start">
-                    <?php echo $db_mon_timein; ?> - <?php echo $db_mon_timeout; ?>
+                    <?php echo $f_mon_timein; ?> - <?php echo $f_mon_timeout; ?>
                   </td>
                 </tr>
                 <tr>
