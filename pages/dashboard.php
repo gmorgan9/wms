@@ -74,10 +74,11 @@ if(!isLoggedIn()){
     <div class="container text-center">
       <div class="row mt-3">
         <div class="col me-3 ms-3" style="height: 75px; background-color: #eee; border-radius: 15px;">
-          <div class="col-content" style="padding-top: 18px;">
+          <div class="col-content" style="padding-top: 15px;">
             <h2>Welcome Back, <?php echo $fname; ?>!</h2>
+            <span class="text-muted">Check your notifications and messages.</span>
           </div>
-          <div class="col" style="margin-top: 50px; height: 130px; background-color: #eee; border-radius: 15px;">
+          <div class="col" style="margin-top: 35px; height: 130px; background-color: #eee; border-radius: 15px;">
             <div class="col-content" style="padding-top: 10px;">
               <h5>
                 Time Card
