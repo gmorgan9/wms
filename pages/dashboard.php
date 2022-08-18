@@ -165,7 +165,7 @@ if(!isLoggedIn()){
                   $scheduleID       = $row['scheduleID'];
                   $idno        = $row['idno'];
                   $db_mon_date    = $row['mon_date'];
-                  $f_mon          = date('m d, Y', strtotime($db_mon_date));
+                  $f_mon          = date('M d, Y', strtotime($db_mon_date));
                   $db_mon_timein  = $row['mon_timein'];
                   $db_mon_timeout = $row['mon_timeout'];
                   $deptname    = $row['deptname'];
