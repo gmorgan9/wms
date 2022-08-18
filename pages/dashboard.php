@@ -490,7 +490,7 @@ if(!isLoggedIn()){
                   align-items: center;
                   background: url(../assets/img/clock.png);
                   background-size: cover;
-                  border: 4px solid #091921;
+                  border: 4px solid rgb(102, 109, 115);
                   border-radius: 50%;
                   box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
                   inset 0 -15px 15px rgba(255,255,255,0.05),
@@ -561,7 +561,7 @@ if(!isLoggedIn()){
                   content: '';
                   position: absolute;
                   width: 2px;
-                  height: 150px;
+                  height: 90px;
                   background: rgb(102, 109, 115);
                   z-index: 12;
                   border-radius: 6px 6px 0 0;
