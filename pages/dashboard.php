@@ -158,28 +158,23 @@ if(!isLoggedIn()){
                 My Notifications
               </h5>
             </div>
-            <div class="list-group list-group-flush mx-3 mt-4">
-                  <a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>" class="text-start list-group-item list-group-item-dark py-2 ripple" aria-current="true">
-                    <span class="text-black fw-bold">14</span> &nbsp;&nbsp;
-                    <span>  Tasks</span>
-                  </a>
-                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-dark py-2 ripple">
-                    <span class="text-black fw-bold"><span class="text-white">0</span>8</span> &nbsp;&nbsp;
-                    <span>  Employee Requests</span>
-                  </a>
-                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-dark py-2 ripple">
-                    <span class="text-black fw-bold"><span class="text-white">0</span>8</span> &nbsp;&nbsp;
-                    <span>  My Requests</span>
-                  </a>
-                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-dark py-2 ripple">
-                    <span class="text-black fw-bold"><span class="text-white">0</span>8</span> &nbsp;&nbsp; 
-                    <span>  Timekeeping</span>
-                  </a>
-                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-dark py-2 ripple">
-                    <span class="text-black fw-bold">19</span> &nbsp;&nbsp;  
-                    <span>  System Messages</span>
-                  </a>
-              </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">0</th>
+                  <td colspan="2">Task</td>
+                </tr>
+                <tr>
+                  <th scope="row">0</th>
+                  <td colspan="2">Employee Requests</td>
+                </tr>
+              </tbody>
+            </table>
         </div>
         <div class="col me-3 ms-3" style="height: 350px; background-color: #eee; border-radius: 15px;">
           <div class="col-content" style="padding-top: 10px;">
