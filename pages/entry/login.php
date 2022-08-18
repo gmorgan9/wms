@@ -13,7 +13,7 @@ if(isLoggedIn()){
 
 
 
-if(isset($_POST['submit'])){
+if(isset($_POST['login'])){
 
    $empID = mysqli_real_escape_string($conn, $_POST['employeeID']);
    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
@@ -92,7 +92,7 @@ if(isset($_POST['submit'])){
       ?>
       <input type="text" name="uname" required placeholder="enter your user name">
       <input type="password" name="password" required placeholder="enter your password">
-      <input type="submit" name="submit" value="Login" class="form-btn">
+      <input type="submit" name="login" value="Login" class="form-btn">
       <p>don't have an account? <a href="/pages/entry/register.php">register now</a></p>
    </form>
 
