@@ -157,6 +157,13 @@ if(!isLoggedIn()){
                 </tr>
               </thead>
               <tbody>
+              <tr>
+                  <th scope="row">
+                    Mon <br>
+                    8
+                  </th>
+                  <td class="text-start">Tasks</td>
+                </tr>
                 <tr>
                   <th scope="row">
                     Tues <br>
