@@ -180,17 +180,13 @@ if(!isLoggedIn()){
               <?php } else if ($db_timeout != null) { ?>
                 <table class="table w-50 mx-auto">
               <thead>
-                <tr style="margin-bottom: -15px;">
-                <?php 
-                      $curr_date_new = date('M d');
-                      echo $curr_date_new;
-                    ?>
+                <tr>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row" style="font-size: 14px; border-bottom: 0; margin-bottom: -15px;">Time In</th>
-                  <td class="text-start" style="font-size: 14px; border-bottom: 0; margin-bottom: -15px;">
+                  <th scope="row" style="font-size: 14px; border-bottom: 0;">Time In</th>
+                  <td class="text-start" style="font-size: 14px; border-bottom: 0;">
                     <?php 
                       $f_timein = date('h:i a', strtotime($db_timein));
                       echo $f_timein;
