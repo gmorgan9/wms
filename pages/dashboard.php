@@ -596,6 +596,7 @@ if(!isLoggedIn()){
                       hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
                       mn.style.transform = `rotateZ(${mm}deg)`;
                       sc.style.transform = `rotateZ(${ss}deg)`;
+                      document.getElementById("time").innerHTML=hh+":"+mm+":"+ss;
                       })
                       </script>
                       <!-- End script part -->
@@ -603,33 +604,7 @@ if(!isLoggedIn()){
                       <?php 
                       $cdt_current_date = date('l, F d, Y ')
                       ?>
-                      <script type="text/javascript">
-                        window.onload = setInterval(clock,1000);
-
-                        function clock()
-                        {
-	                      var d = new Date();
-                        
-	                      var date = d.getDate();
-                        
-	                      var month = d.getMonth();
-	                      var montharr =["Jan","Feb","Mar","April","May","June","July","Aug","Sep","Oct","Nov","Dec"];
-	                      month=montharr[month];
-                        
-	                      var year = d.getFullYear();
-                        
-	                      var day = d.getDay();
-	                      var dayarr =["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
-	                      day=dayarr[day];
-                        
-	                      var hour =d.getHours();
-                          var min = d.getMinutes();
-	                      var sec = d.getSeconds();
-                        
-	                      //document.getElementById("date").innerHTML=day+" "+date+" "+month+" "+year;
-	                      document.getElementById("time").innerHTML=hour+":"+min+":"+sec;
-                        }
-                      </script>
+                      
                       
                       <span class="text-center">
                         <?php echo $cdt_current_date; ?>
