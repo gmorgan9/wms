@@ -480,70 +480,39 @@ if(!isLoggedIn()){
                 Current Date & Time
               </h5>
               <style>
-                #clockContainer {
-                    position: relative;
-                    margin: auto;
-                    height: 150px;
-                    /*to make the height and width responsive*/
-                    width: 150px;
-                    background: url(clock.png) no-repeat;
-                    /*setting our background image*/
-                    background-size: 100%;
-                }
 
-                #hour,
-                #minute,
-                #second {
-                    position: absolute;
-                    background: black;
-                    border-radius: 10px;
-                    transform-origin: bottom;
-                }
-
-                #hour {
-                    width: 1.8%;
-                    height: 25%;
-                    top: 19%;
-                    left: 48.85%;
-                    opacity: 0.8;
-                }
-
-                #minute {
-                    width: 1.6%;
-                    height: 30%;
-                    top: 19%;
-                    left: 48.9%;
-                    opacity: 0.8;
-                }
-
-                #second {
-                    width: 1%;
-                    height: 40%;
-                    top: 9%;
-                    left: 49.25%;
-                    opacity: 0.8;
-                }
+                  .clock
+                  {
+                  width: 350px;
+                  height: 350px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  background: url(../assets/img/clock.png);
+                  background-size: cover;
+                  border: 4px solid #091921;
+                  border-radius: 50%;
+                  box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
+                  inset 0 -15px 15px rgba(255,255,255,0.05),
+                  0 15px 15px rgba(0,0,0,0.3),
+                  inset 0 15px 15px rgba(0,0,0,0.3);
+                  }
+                
               </style>
               <script>
-                setInterval(() => {
-                    d = new Date(); //object of date()
-                    hr = d.getHours();
-                    min = d.getMinutes();
-                    sec = d.getSeconds();
-                    hr_rotation = 30 * hr + min / 2; //converting current time
-                    min_rotation = 6 * min;
-                    sec_rotation = 6 * sec;
-
-                    hour.style.transform = `rotate(${hr_rotation}deg)`;
-                    minute.style.transform = `rotate(${min_rotation}deg)`;
-                    second.style.transform = `rotate(${sec_rotation}deg)`;
-                }, 1000);
+                
               </script>
-              <div id="clockContainer">
-                <div id="hour"></div>
-                <div id="minute"></div>
-                <div id="second"></div>
-              </div>
+                      <div class="clock">
+                      <div class="hour">
+                      <div class="hr" id="hr"></div>
+                      </div>
+                      <div class="min">
+                      <div class="mn" id="mn"></div>
+                      </div>
+                      <div class="sec">
+                      <div class="sc" id="sc"></div>
+                      </div>
+                      </div>
             </div>
         </div>
       </div>
