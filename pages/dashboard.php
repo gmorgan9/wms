@@ -552,7 +552,7 @@ if(!isLoggedIn()){
                   position: absolute;
                   width: 4px;
                   height: 90px;
-                  background: rgb(102, 109, 115);
+                  background: rgb(120, 120, 120);
                   z-index: 11;
                   border-radius: 6px 6px 0 0;
                   }
@@ -562,7 +562,7 @@ if(!isLoggedIn()){
                   position: absolute;
                   width: 2px;
                   height: 90px;
-                  background: rgb(102, 109, 115);
+                  background: rgb(120, 120, 120);
                   z-index: 12;
                   border-radius: 6px 6px 0 0;
                   }
