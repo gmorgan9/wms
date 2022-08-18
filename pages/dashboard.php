@@ -479,6 +479,11 @@ if(!isLoggedIn()){
               <h5>
                 Current Date & Time
               </h5>
+              <div id="clockContainer">
+                <div id="hour"></div>
+                <div id="minute"></div>
+                <div id="second"></div>
+              </div>
             </div>
         </div>
       </div>
