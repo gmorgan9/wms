@@ -2,14 +2,14 @@
 <?php
 
 require_once "../../app/database/connection.php";
-//require_once "../../app/database/functions.php";
+require_once "../../app/database/functions.php";
 require_once "../../path.php";
 
 session_start();
 
-// if(isLoggedIn()){
-//    header('location:' . BASE_URL . '/pages/dashboard.php');
-// }
+if(isLoggedIn()){
+   header('location:' . BASE_URL . '/pages/dashboard.php');
+}
 
 
 
@@ -33,7 +33,11 @@ if(isset($_POST['submit'])){
 
       $row = mysqli_fetch_array($result);
       $sql = "UPDATE employee SET loggedin='1' WHERE uname='$uname'";
-      mysqli_query($conn, $sql);
+      if (mysqli_query($conn, $sql)) {
+         echo "Record updated successfully";
+       } else {
+         echo "Error updating record: " . mysqli_error($conn);
+       }
        $_SESSION['fname']           = $row['fname'];
        $_SESSION['empID']           = $row['employeeID'];
        $_SESSION['loggedin']        = $row['loggedin'];
@@ -68,9 +72,6 @@ if(isset($_POST['submit'])){
 
 <!-- Bootstrap Icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-
-<!-- scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
 <body>
