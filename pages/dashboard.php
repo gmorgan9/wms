@@ -105,7 +105,7 @@ if(!isLoggedIn()){
               <?php } else if($db_timeout == null) { ?>
                 Timesheet was created, but not clocked out
               <?php } else if ($db_timeout != null) { ?>
-                Timesheet was created, but not clocked out
+                DONE
               <?php } ?>
               </span>
               <br><br>
