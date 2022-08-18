@@ -101,7 +101,9 @@ if(!isLoggedIn()){
               <?php if($db_date != $curr_date) { ?>
                 No timesheet created yet
               <?php } else if($db_timein == null) { ?>
-                Timesheet was created, but not clocked in
+                <span class="text-warning fw-bold">
+                  Clock In
+                </span>
               <?php } else if($db_timeout == null) { ?>
                 Timesheet was created, but not clocked out
               <?php } else if ($db_timeout != null) { ?>
