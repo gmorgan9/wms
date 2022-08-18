@@ -79,7 +79,7 @@ if(!isLoggedIn()){
             <?php if($email == null) { ?>
               <span class="text-danger">Your account isn't complete</span>
             <?php } else { ?>
-              <span class="alert alert-success" role="alert">Your account is compliant</span>
+              <span class="text-success">Your account is compliant</span>
             <?php } ?>  
           </div>
           <div class="col" style="margin-top: 25px; height: 130px; background-color: #c9b8a9;">
