@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
       $_SESSION['email']            = $row['email'];
       $_SESSION['pass']             = $row['password'];
       $_SESSION['cpass']            = $row['cpassword'];
-      //header('location:' . BASE_URL . '/pages/dashboard.php');
+      header('location:' . BASE_URL . '/pages/dashboard.php');
      
    }else{
       $error[] = 'incorrect email or password!';
