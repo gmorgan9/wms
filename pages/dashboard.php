@@ -150,7 +150,7 @@ if(!isLoggedIn()){
               $current_mon  = date('Y-m-d', strtotime('monday this week'));
               $f_curr_mon   = date('M d', strtotime('monday this week'));
               $f_curr_fri   = date('M d', strtotime('friday this week'));
-              $current_day  = date('D');
+              $current_day  = date('d');
               $sql = "SELECT * FROM schedule WHERE mon_date = '$current_mon' ";
               $all = mysqli_query($conn, $sql);
               if($all) {
