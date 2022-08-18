@@ -142,8 +142,8 @@ if(!isLoggedIn()){
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">Time In</th>
-                  <td class="text-start">
+                  <th scope="row" style="font-size: 14px; border-bottom: 0;">Time In</th>
+                  <td class="text-start" style="font-size: 14px; border-bottom: 0;">
                     <?php 
                       $f_timein = date('h:i a', strtotime($db_timein));
                       echo $f_timein;
@@ -151,8 +151,8 @@ if(!isLoggedIn()){
                   </td>
                 </tr>
                 <tr>
-                  <th scope="row">Time Out</th>
-                  <td class="text-start">
+                  <th scope="row" style="font-size: 14px; border-bottom: 0;">Time Out</th>
+                  <td class="text-start" style="font-size: 14px; border-bottom: 0;">
                     <?php 
                       $f_timeout = date('h:i a', strtotime($db_timeout));
                       echo $f_timeout;
