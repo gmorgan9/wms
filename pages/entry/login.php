@@ -1,5 +1,5 @@
 <!-- WORKING -->
-<pre><?php
+<?php
 
 //require_once "../../app/database/connection.php";
 require_once "../../app/database/functions.php";
@@ -11,11 +11,7 @@ if(isLoggedIn()){
    header('location:' . BASE_URL . '/pages/dashboard.php');
 }
 
-
-
-
 ?>
-</pre>
 <!DOCTYPE html>
 <html lang="en">
 <head>
