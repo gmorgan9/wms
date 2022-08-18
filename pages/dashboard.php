@@ -158,7 +158,7 @@ if(!isLoggedIn()){
                 My Notifications
               </h5>
             </div>
-            <table class="table">
+            <table class="table w-50">
               <thead>
                 <tr>
                   
