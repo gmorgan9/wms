@@ -157,6 +157,23 @@ if(!isLoggedIn()){
               <h5>
                 My Notifications
               </h5>
+              <div class="list-group list-group-flush mx-3 mt-4">
+                  <a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                      <span>  Tasks</span>
+                  </a>
+                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                      <span>  Employee Requests</span>
+                  </a>
+                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                      <span>  My Requests</span>
+                  </a>
+                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                      <span>  Timekeeping</span>
+                  </a>
+                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                      <span>  System Messages</span>
+                  </a>
+              </div>
             </div>
         </div>
         <div class="col me-3 ms-3" style="height: 350px; background-color: #eee; border-radius: 15px;">
