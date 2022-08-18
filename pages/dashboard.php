@@ -74,7 +74,7 @@ if(!isLoggedIn()){
     <div class="container text-center">
       <div class="row mt-3">
         <div class="col me-3 ms-3" style="height: 75px; background-color: #eee; border-radius: 15px;">
-          <div class="col-content" style="padding-top: 15px; padding-bottom: -25px;">
+          <div class="col-content" style="padding-top: 15px; padding-bottom: -35px;">
             <h2>Welcome Back, <?php echo $fname; ?>!</h2>
             <p class="text-muted" style="font-size: 12px;">Check your notifications and messages.</p>
           </div>
