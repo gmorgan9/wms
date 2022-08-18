@@ -187,7 +187,7 @@ if(!isLoggedIn()){
                     <?php echo $short_f_mon; ?>
                   </th>
                   <td class="text-start">
-                    <span style="line-height: 15px;">
+                    <span class="lh-1">
                       <?php echo $f_mon_timein; ?> - <?php echo $f_mon_timeout; ?>
                     </span>
                   </td>
