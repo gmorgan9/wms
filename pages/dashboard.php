@@ -76,6 +76,11 @@ if(!isLoggedIn()){
         <div class="col me-3 ms-3" style="height: 75px; background-color: #c9b8a9;">
           <div class="col-content" style="padding-top: 15px;">
             <span class="">Welcome, <?php echo $fname; ?>!</span>
+            <?php if($email == null) { ?>
+              <span class="text-danger">Your account isn't complete</span>
+            <?php } else { ?>
+              <span class="text-success">Your account is compliant</span>
+            <?php } ?>  
           </div>
           <div class="col" style="margin-top: 50px; height: 130px; background-color: #c9b8a9;">
             Time Card
