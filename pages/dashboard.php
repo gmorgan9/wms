@@ -175,6 +175,9 @@ if(!isLoggedIn()){
     <?php }} ?>
               <tr>
                   <th scope="row">
+                    Monday
+                  </th>
+                  <th scope="row">
                     <?php echo $f_mon; ?>
                   </th>
                   <td class="text-start">
