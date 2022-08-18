@@ -106,8 +106,8 @@ if(!isLoggedIn()){
                 Timesheet was created, but not clocked out
               <?php } ?>
               </span>
-              <br>
-              <span class="float-end pe-2" style="padding-top: 25px;">
+              <br><br>
+              <span class="float-end pe-2" style="">
                 My Timecard &nbsp; <i class="bi bi-arrow-right-circle"></i>
               </span>
           </div>
