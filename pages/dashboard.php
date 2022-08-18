@@ -95,9 +95,9 @@ if(!isLoggedIn()){
                   <h5>
                     <?php echo $fname; ?> <?php echo $lname; ?>
                   </h5>
-                  <p>
+                  <span>
                     <?php echo $email; ?>
-                  </p>
+                  </span>
                   </div>
                 </div>
               </div>
