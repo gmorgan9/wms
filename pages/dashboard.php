@@ -117,22 +117,39 @@ if(!isLoggedIn()){
                   Not Clocked out Yet
                 </span>
               <?php } else if($db_timeout == null) { ?>
-                <span class="fw-bold">
-                  Time in: &nbsp;
-                </span>
-                <span>
-                  <?php 
-                  $f_timein = date('h:i a', strtotime($db_timein));
-                  echo $f_timein;
-                  ?>
-                </span>
-                <br>
-                <span class="fw-bold">
-                  Time out: &nbsp;
-                </span>
-                <span class="text-warning">
+
+
+                <table class="table w-50 mx-auto">
+              <thead>
+                <tr>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" style="font-size: 14px; border-bottom: 0;">Time In</th>
+                  <td class="text-start" style="font-size: 14px; border-bottom: 0;">
+                    <?php 
+                      $f_timein = date('h:i a', strtotime($db_timein));
+                      echo $f_timein;
+                    ?>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" style="font-size: 14px; border-bottom: 0;">Time Out</th>
+                  <td class="text-start" style="font-size: 14px; border-bottom: 0;">
+                  <span class="text-warning">
                   Not Clocked out Yet
                 </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+
+            <span class="float-end pe-3 text-muted" style="font-size: 14px; margin-top: -30px;">
+              <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">My Timecard <i class="bi bi-chevron-compact-right text-white" style=" background-color: rgb(102, 109, 115); border-radius: 50%; padding-left: 2px; padding-right: 1px;"></i></a>
+            </span>
+
               <?php } else if ($db_timeout != null) { ?>
                 <table class="table w-50 mx-auto">
               <thead>
