@@ -117,7 +117,22 @@ if(!isLoggedIn()){
                   Not Clocked out Yet
                 </span>
               <?php } else if($db_timeout == null) { ?>
-                Timesheet was created, but not clocked out
+                <span class="fw-bold">
+                  Time in: &nbsp;
+                </span>
+                <span class="text-warning">
+                  <?php 
+                  $f_timein = date('h:i a', strtotime($db_timein));
+                  echo $f_timein;
+                  ?>
+                </span>
+                <br>
+                <span class="fw-bold">
+                  Time out: &nbsp;
+                </span>
+                <span class="text-warning">
+                  Not Clocked out Yet
+                </span>
               <?php } else if ($db_timeout != null) { ?>
                 DONE
               <?php } ?>
