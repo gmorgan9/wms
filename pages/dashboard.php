@@ -91,15 +91,19 @@ if(!isLoggedIn()){
               $all = mysqli_query($conn, $sql);
               if($all) {
                 while ($row = mysqli_fetch_assoc($all)) {
-                  $empID     = $row['employeeID'];
-                  $db_date   = $row['date'];
+                  $empID      = $row['employeeID'];
+                  $db_date    = $row['date'];
+                  $db_timein  = $row['timein'];
+                  $db_timeout = $row['timeout'];
               }}
             ?>
             <span style="padding-top: 10px;">
               <?php if($db_date != $curr_date) { ?>
                 no timesheet
-              <?php } else { ?>
-                Timesheet was created
+              <?php } else if($db_timein == null) { ?>
+                Timesheet was created, but not clocked in
+              <?php } else if($db_timeout == null) { ?>
+                Timesheet was created, but not clocked out
               <?php } ?>
               </span>
           </div>
