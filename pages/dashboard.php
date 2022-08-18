@@ -183,7 +183,7 @@ if(!isLoggedIn()){
               <tbody>
               <tr>
                   <th scope="row" style="font-size: 12px;">
-                    Mon <br>
+                    &nbsp; Mon <br>
                     <?php echo $short_f_mon; ?>
                   </th>
                   <td class="text-start">
