@@ -75,10 +75,12 @@ if(!isLoggedIn()){
       <div class="row mt-3">
         <div class="col me-3 ms-3" style="height: 75px; background-color: #eee; border-radius: 15px;">
           <div class="col-content" style="padding-top: 15px;">
-            <span class="">Welcome Back, <?php echo $fname; ?>!</span>
+            <span>Welcome Back, <?php echo $fname; ?>!</span>
           </div>
           <div class="col" style="margin-top: 50px; height: 130px; background-color: #eee; border-radius: 15px;">
-            Time Card
+          <div class="col-content" style="padding-top: 10px;">
+            <span>Time Card</span>
+          </div>
           </div>
         </div>
         <div class="col me-3 ms-3" style="height: 220px; background-color: #eee; border-radius: 15px;">
