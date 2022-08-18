@@ -181,6 +181,7 @@ if(!isLoggedIn()){
                     <?php echo $f_mon; ?>
                   </th>
                   <td class="text-start">
+                    <br>
                     <?php echo $f_mon_timein; ?> - <?php echo $f_mon_timeout; ?>
                   </td>
                 </tr>
