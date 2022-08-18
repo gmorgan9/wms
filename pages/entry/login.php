@@ -11,7 +11,6 @@ if(isLoggedIn()){
    header('location:' . BASE_URL . '/pages/dashboard.php');
 }
 
-echo "<pre>";
 if(isset($_POST['login-btn'])){
 
 	$empID = mysqli_real_escape_string($conn, $_POST['employeeID']);
@@ -50,9 +49,6 @@ if(isset($_POST['login-btn'])){
 	}
  
  };
-
- echo "</pre>";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
