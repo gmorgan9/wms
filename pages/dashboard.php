@@ -65,8 +65,6 @@ session_start();
             $uname     = $row['uname'];
             $email     = $row['email'];
             $acc_type  = $row['acc_type'];
-            $status    = $row['status'];
-            $compID = $row['company_code'];
           }}
             ?>
 
@@ -87,7 +85,7 @@ session_start();
               </h5>
             </div>
             <?php
-              $curr_date = date('Y-m-d');
+              //$curr_date = date('Y-m-d');
               $empID = $_SESSION['employee_idno'];
               $sql = "SELECT * FROM timesheet WHERE employee_idno = '$empID'";
               $all = mysqli_query($conn, $sql);
