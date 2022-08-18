@@ -166,6 +166,7 @@ if(!isLoggedIn()){
                   $idno        = $row['idno'];
                   $db_mon_date    = $row['mon_date'];
                   $f_mon          = date('M d, Y', strtotime($db_mon_date));
+                  $short_f_mon    = date('d', strtotime($db_mon_date));
                   $db_mon_timein  = $row['mon_timein'];
                   $f_mon_timein   = date('g:i A', strtotime($db_mon_timein));
                   $db_mon_timeout = $row['mon_timeout'];
@@ -177,7 +178,7 @@ if(!isLoggedIn()){
     <?php }} ?>
               <tr>
                   <th scope="row">
-                    <?php echo $f_mon; ?>
+                    <?php echo $short_f_mon; ?>
                   </th>
                   <td class="text-start">
                     <?php echo $f_mon_timein; ?> - <?php echo $f_mon_timeout; ?>
