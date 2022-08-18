@@ -165,20 +165,25 @@ if(!isLoggedIn()){
                   <td class="text-start">Tasks</td>
                 </tr>
                 <tr>
-                  <th scope="row">0</th>
+                <th scope="row">
+                    Wed <br>
+                    10
+                  </th>
                   <td class="text-start">Employee Requests</td>
                 </tr>
                 <tr>
-                  <th scope="row">0</th>
+                <th scope="row">
+                    Thurs <br>
+                    10
+                  </th>
                   <td class="text-start">My Requests</td>
                 </tr>
                 <tr>
-                  <th scope="row">0</th>
+                <th scope="row">
+                    Fri <br>
+                    11
+                  </th>
                   <td class="text-start">Timekeeping</td>
-                </tr>
-                <tr>
-                  <th scope="row">0</th>
-                  <td class="text-start">System Messages</td>
                 </tr>
               </tbody>
             </table>
