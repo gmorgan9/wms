@@ -108,7 +108,7 @@ if(!isLoggedIn()){
               </span>
               <br><br>
               <span class="float-end pe-2 mt-1 text-muted" style="">
-                My Timecard &nbsp; <i class="bi bi-arrow-right-circle-fill text-primary"></i>
+                My Timecard <i class="bi bi-arrow-right-circle-fill text-primary"></i>
               </span>
           </div>
         </div>
