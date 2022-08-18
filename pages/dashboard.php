@@ -256,7 +256,7 @@ if(!isLoggedIn()){
                   </td>
                 </tr>
                 <tr>
-                <th scope="row" style="font-size: 12px;">
+                <th scope="row" style="font-size: 12px; border-bottom: 0;">
                     &nbsp; Fri <br>
                     <?php echo $short_f_fri; ?>
                   </th>
