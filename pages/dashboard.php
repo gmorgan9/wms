@@ -287,7 +287,7 @@ if(!isLoggedIn()){
                 <?php } ?>
                 <?php if($short_f_thurs == $current_day) { ?>
                 <tr>
-                <th scope="row" class="bg-secondary text-white" style="font-size: 12px;">
+                <th scope="row" class="text-bg-secondary" style="font-size: 12px;">
                     &nbsp; Thurs <br>
                     <?php echo $short_f_thurs; ?>
                   </th>
