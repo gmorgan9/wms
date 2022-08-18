@@ -170,6 +170,7 @@ if(!isLoggedIn()){
               $app_status  = $row['approval_status'];
              
     ?>
+    <?php }} ?>
               <tr>
                   <th scope="row">
                     <?php echo $current_mon; ?>
@@ -206,7 +207,7 @@ if(!isLoggedIn()){
                 </tr>
               </tbody>
             </table>
-            <?php }} ?>
+            
             </div>
         </div>
         <div class="col me-3 ms-3" style="height: 350px; background-color: #eee; border-radius: 15px;">
