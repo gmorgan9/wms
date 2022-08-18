@@ -222,7 +222,7 @@ if(!isLoggedIn()){
                     <?php echo $short_f_mon; ?>
                   </th>
                   <td class="text-start">
-                    <div style="color: #eee; font-size: 5px;">test</div>
+                    <div style="opacity:0; font-size: 5px;">test</div>
                     <?php echo $f_mon_timein; ?> - <?php echo $f_mon_timeout; ?>
                   </td>
                 </tr>
@@ -232,7 +232,7 @@ if(!isLoggedIn()){
                     <?php echo $short_f_tues; ?>
                   </th>
                   <td class="text-start">
-                    <div style="color: #eee; font-size: 5px;">test</div>
+                    <div style="opacity:0; font-size: 5px;">test</div>
                     <?php echo $f_tues_timein; ?> - <?php echo $f_tues_timeout; ?>
                   </td>
                 </tr>
@@ -242,7 +242,7 @@ if(!isLoggedIn()){
                     <?php echo $short_f_wed; ?>
                   </th>
                   <td class="text-start">
-                    <div style="color: #eee; font-size: 5px;">test</div>
+                    <div style="opacity:0; font-size: 5px;">test</div>
                     <?php echo $f_wed_timein; ?> - <?php echo $f_wed_timeout; ?>
                   </td>
                 </tr>
@@ -264,7 +264,7 @@ if(!isLoggedIn()){
                     <?php echo $short_f_thurs; ?>
                   </th>
                   <td class="text-start">
-                    <div style="color: #eee; font-size: 5px;">test</div>
+                    <div style="opacity:0; font-size: 5px;">test</div>
                     <?php echo $f_thurs_timein; ?> - <?php echo $f_thurs_timeout; ?>
                   </td>
                 </tr>
