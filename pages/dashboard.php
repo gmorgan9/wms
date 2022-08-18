@@ -238,7 +238,7 @@ if(!isLoggedIn()){
                 <tr>
                 <th scope="row" style="font-size: 12px;">
                     &nbsp; Wed <br>
-                    <?php echo $short_f_mon; ?>
+                    <?php echo $short_f_wed; ?>
                   </th>
                   <td class="text-start">
                     <div style="color: #eee; font-size: 5px;">test</div>
@@ -248,7 +248,7 @@ if(!isLoggedIn()){
                 <tr>
                 <th scope="row" style="font-size: 12px;">
                     &nbsp; Thurs <br>
-                    <?php echo $short_f_mon; ?>
+                    <?php echo $short_f_thurs; ?>
                   </th>
                   <td class="text-start">
                     <div style="color: #eee; font-size: 5px;">test</div>
@@ -258,7 +258,7 @@ if(!isLoggedIn()){
                 <tr>
                 <th scope="row" style="font-size: 12px;">
                     &nbsp; Fri <br>
-                    <?php echo $short_f_mon; ?>
+                    <?php echo $short_f_fri; ?>
                   </th>
                   <td class="text-start">
                     <div style="color: #eee; font-size: 5px;">test</div>
