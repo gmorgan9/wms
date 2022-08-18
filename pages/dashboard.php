@@ -99,7 +99,7 @@ if(!isLoggedIn()){
             ?>
             <span style="padding-top: 10px;">
               <?php if($db_date != $curr_date) { ?>
-                <span class="text-info fw-bold">
+                <span class="text-black fw-bold">
                   Create Time Sheet
                 </span>
               <?php } else if($db_timein == null) { ?>
