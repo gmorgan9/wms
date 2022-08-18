@@ -188,7 +188,7 @@ if(!isLoggedIn()){
                   </th>
                   <td class="text-start">
                     <span class="lh-base">
-                      <br>
+                      <div style="color: #eee; font-size: 5px;">test</div>
                       <?php echo $f_mon_timein; ?> - <?php echo $f_mon_timeout; ?>
                     </span>
                   </td>
