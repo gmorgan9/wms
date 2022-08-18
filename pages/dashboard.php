@@ -97,7 +97,7 @@ if(!isLoggedIn()){
                   </h5>
                   <span>
                     <?php if($email != null) { ?>
-                      <span style="font-size: 16px;"><?php echo $email; ?></span>  
+                      <span style="font-size: 14px;"><?php echo $email; ?></span>  
                     <?php } else { ?>
                       <span class='text-warning'>No Email Found!</span>
                     <?php } ?>
