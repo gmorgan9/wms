@@ -253,7 +253,7 @@ if(!isLoggedIn()){
                     <?php echo $short_f_thurs; ?>
                   </th>
                   <td class="text-start bg-info" style="color: white;">
-                    <div style="color: #eee; font-size: 5px;">test</div>
+                    <div style="opacity:1; font-size: 5px;">test</div>
                     <?php echo $f_thurs_timein; ?> - <?php echo $f_thurs_timeout; ?>
                   </td>
                 </tr>
