@@ -108,7 +108,7 @@ if(!isLoggedIn()){
               </span>
               <br><br>
               <span class="float-end pe-3 mt-2 text-muted" style="font-size: 14px;">
-                <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">My Timecard <i class="bi bi-chevron-compact-right text-white" style=" background-color: rgb(50, 116, 190); border-radius: 50%; padding-left: 2px; padding-right: 1px;"></i></a>
+                <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">My Timecard <i class="bi bi-chevron-right text-white" style=" background-color: rgb(50, 116, 190); border-radius: 50%; padding-left: 2px; padding-right: 1px;"></i></a>
               </span>
           </div>
         </div>
