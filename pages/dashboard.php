@@ -603,9 +603,10 @@ if(!isLoggedIn()){
                       <?php 
                       $cdt_current_date = date('l, F d, Y ')
                       ?>
+                      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                       <span class="text-center">
                         <?php echo $cdt_current_date; ?>
-                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                        
  
 <div id="runningTime"></div>
  
