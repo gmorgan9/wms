@@ -158,13 +158,13 @@ if(!isLoggedIn()){
               <tbody>
               <?php
               $current_mon = date('Y-m-d', strtotime('monday this week'));
-        $sql = "SELECT * FROM schedule WHERE approval_status != 'terminated'";
+        $sql = "SELECT * FROM schedule WHERE mon_date == '$current_mon'";
         $all = mysqli_query($conn, $sql);
         if($all) {
             while ($row = mysqli_fetch_assoc($all)) {
               $jobID       = $row['jobID'];
               $idno        = $row['idno'];
-              $jobtitle    = $row['jobtitle'];
+              $mon_date    = $row['mon_date'];
               $companyname = $row['companyname'];
               $deptname    = $row['deptname'];
               $app_status  = $row['approval_status'];
@@ -172,7 +172,7 @@ if(!isLoggedIn()){
     ?>
               <tr>
                   <th scope="row">
-                    <?php echo $current_mon; ?>
+                    <?php echo $mon_date; ?>
                   </th>
                   <td class="text-start">Tasks</td>
                 </tr>
