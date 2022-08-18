@@ -77,7 +77,7 @@ if(!isLoggedIn()){
           <div class="col-content" style="padding-top: 15px;">
             <span class="">Welcome, <?php echo $fname; ?>!</span> <br><br>
             <?php if($email == null) { ?>
-              <span class="alert alert-danger" role="alert">Your account isn't complete</span>
+              <span class="alert alert-danger" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Missing Email Address" role="alert">Your account isn't complete</span>
             <?php } else { ?>
               <span class="alert alert-success" role="alert">Your account is compliant</span>
             <?php } ?>  
