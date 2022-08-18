@@ -85,7 +85,7 @@ if(!isLoggedIn()){
               </h5>
             </div>
             <?php
-              //$curr_date = date('Y-m-d');
+              $curr_date = date('Y-m-d');
               $empID = $_SESSION['employee_idno'];
               $sql = "SELECT * FROM timesheet WHERE employee_idno = '$empID'";
               $all = mysqli_query($conn, $sql);
