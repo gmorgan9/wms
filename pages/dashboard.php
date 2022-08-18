@@ -156,6 +156,7 @@ if(!isLoggedIn()){
                 while ($row = mysqli_fetch_assoc($all)) {
                   $scheduleID       = $row['scheduleID'];
                   $idno        = $row['idno'];
+                  // MONDAY
                   $db_mon_date    = $row['mon_date'];
                   $f_mon          = date('M d, Y', strtotime($db_mon_date));
                   $short_f_mon    = date('d', strtotime($db_mon_date));
@@ -163,6 +164,39 @@ if(!isLoggedIn()){
                   $f_mon_timein   = date('g:i A', strtotime($db_mon_timein));
                   $db_mon_timeout = $row['mon_timeout'];
                   $f_mon_timeout   = date('g:i A', strtotime($db_mon_timeout));
+                  // TUESDAY
+                  $db_tues_date    = $row['tues_date'];
+                  $f_tues          = date('M d, Y', strtotime($db_tues_date));
+                  $short_f_tues    = date('d', strtotime($db_tues_date));
+                  $db_tues_timein  = $row['tues_timein'];
+                  $f_tues_timein   = date('g:i A', strtotime($db_tues_timein));
+                  $db_tues_timeout = $row['tues_timeout'];
+                  $f_tues_timeout   = date('g:i A', strtotime($db_tues_timeout));
+                  // WEDNESDAY
+                  $db_wed_date    = $row['wed_date'];
+                  $f_wed          = date('M d, Y', strtotime($db_wed_date));
+                  $short_f_wed    = date('d', strtotime($db_wed_date));
+                  $db_wed_timein  = $row['wed_timein'];
+                  $f_wed_timein   = date('g:i A', strtotime($db_wed_timein));
+                  $db_wed_timeout = $row['wed_timeout'];
+                  $f_wed_timeout   = date('g:i A', strtotime($db_wed_timeout));
+                  // THURSDAY
+                  $db_thurs_date    = $row['thurs_date'];
+                  $f_thurs          = date('M d, Y', strtotime($db_thurs_date));
+                  $short_f_thurs    = date('d', strtotime($db_thurs_date));
+                  $db_thurs_timein  = $row['thurs_timein'];
+                  $f_thurs_timein   = date('g:i A', strtotime($db_thurs_timein));
+                  $db_thurs_timeout = $row['thurs_timeout'];
+                  $f_thurs_timeout   = date('g:i A', strtotime($db_thurs_timeout));
+                  // FRIDAY
+                  $db_fri_date    = $row['fri_date'];
+                  $f_fri          = date('M d, Y', strtotime($db_fri_date));
+                  $short_f_fri    = date('d', strtotime($db_fri_date));
+                  $db_fri_timein  = $row['fri_timein'];
+                  $f_fri_timein   = date('g:i A', strtotime($db_fri_timein));
+                  $db_fri_timeout = $row['fri_timeout'];
+                  $f_fri_timeout   = date('g:i A', strtotime($db_fri_timeout));
+                  // DATES DONE
                   $deptname    = $row['deptname'];
                   $app_status  = $row['approval_status'];
              
@@ -194,11 +228,11 @@ if(!isLoggedIn()){
                 <tr>
                 <th scope="row" style="font-size: 12px;">
                     &nbsp; Tues <br>
-                    <?php echo $short_f_mon; ?>
+                    <?php echo $short_f_tues; ?>
                   </th>
                   <td class="text-start">
                     <div style="color: #eee; font-size: 5px;">test</div>
-                    Tasks
+                    <?php echo $f_tues_timein; ?> - <?php echo $f_tues_timeout; ?>
                   </td>
                 </tr>
                 <tr>
@@ -206,21 +240,30 @@ if(!isLoggedIn()){
                     &nbsp; Wed <br>
                     <?php echo $short_f_mon; ?>
                   </th>
-                  <td class="text-start">Employee Requests</td>
+                  <td class="text-start">
+                    <div style="color: #eee; font-size: 5px;">test</div>
+                    <?php echo $f_wed_timein; ?> - <?php echo $f_wed_timeout; ?>
+                  </td>
                 </tr>
                 <tr>
                 <th scope="row" style="font-size: 12px;">
                     &nbsp; Thurs <br>
                     <?php echo $short_f_mon; ?>
                   </th>
-                  <td class="text-start">My Requests</td>
+                  <td class="text-start">
+                    <div style="color: #eee; font-size: 5px;">test</div>
+                    <?php echo $f_thurs_timein; ?> - <?php echo $f_thurs_timeout; ?>
+                  </td>
                 </tr>
                 <tr>
                 <th scope="row" style="font-size: 12px;">
                     &nbsp; Fri <br>
                     <?php echo $short_f_mon; ?>
                   </th>
-                  <td class="text-start">Timekeeping</td>
+                  <td class="text-start">
+                    <div style="color: #eee; font-size: 5px;">test</div>
+                    <?php echo $f_fri_timein; ?> - <?php echo $f_fri_timeout; ?>
+                  </td>
                 </tr>
               </tbody>
             </table>
