@@ -603,25 +603,19 @@ if(!isLoggedIn()){
                       <?php 
                       $cdt_current_date = date('l, F d, Y ')
                       ?>
-                      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                      
                       <span class="text-center">
                         <?php echo $cdt_current_date; ?>
-                        
- 
-<div id="runningTime"></div>
- 
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function() {
- setInterval(runningTime, 1000);
-});
-function runningTime() {
-  $.ajax({
-    url: 'timeScript.php',
-    success: function(data) {
-       $('#runningTime').html(data);
-     },
-  });
+var timestamp = '<?=time();?>';
+function updateTime(){
+  $('#time').html(Date(timestamp));
+  timestamp++;
 }
+$(function(){
+  setInterval(updateTime, 1000);
+});
 </script>
                       </span>
             </div>
