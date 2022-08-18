@@ -172,7 +172,7 @@ if(!isLoggedIn()){
               <h5>
                 My Schedule
               </h5>
-              <span>
+              <span class="text-muted" style="font-size: 12px;">
                 <?php echo $f_curr_mon; ?> - <?php echo $f_curr_fri; ?>
               </span>
               <table class="table mt-3">
