@@ -134,25 +134,37 @@ if(!isLoggedIn()){
                   Not Clocked out Yet
                 </span>
               <?php } else if ($db_timeout != null) { ?>
-                <span class="fw-bold">
-                  Time in: &nbsp;
-                </span>
-                <span>
-                  <?php 
-                  $f_timein = date('h:i a', strtotime($db_timein));
-                  echo $f_timein;
-                  ?>
-                </span>
-                <br>
-                <span class="fw-bold">
-                  Time out: &nbsp;
-                </span>
-                <span>
-                  <?php 
-                  $f_timeout = date('h:i a', strtotime($db_timeout));
-                  echo $f_timeout;
-                  ?>
-                </span>
+                <table class="table w-75 mx-auto mt-3">
+              <thead>
+                <tr>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Time In</th>
+                  <td class="text-start">
+                    <?php 
+                      $f_timein = date('h:i a', strtotime($db_timein));
+                      echo $f_timein;
+                    ?>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Time Out</th>
+                  <td class="text-start">
+                    <?php 
+                      $f_timeout = date('h:i a', strtotime($db_timeout));
+                      echo $f_timeout;
+                    ?>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+
               <?php } ?>
               </span>
               <br>
