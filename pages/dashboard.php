@@ -78,7 +78,7 @@ if(!isLoggedIn()){
             <h3>Welcome Back, <?php echo $fname; ?>!</h3>
             <p class="text-muted" style="margin-top: -5px; font-size: 12px;">Check your notifications and messages.</p>
           </div>
-          <div class="col" style="margin-top: 25px; height: 130px; background-color: #eee; border-radius: 15px;">
+          <div class="col" style="margin-top: 20px; height: 130px; background-color: #eee; border-radius: 15px;">
             <div class="col-content" style="padding-top: 10px;">
               <h5>
                 Time Card
