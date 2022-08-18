@@ -526,7 +526,7 @@ if(!isLoggedIn()){
                   .clock .sec, .sc
                   {
                   width: 230px;
-                  height: 230px;
+                  height: 190px;
                   }
                   .hr, .mn, .sc
                   {
@@ -561,9 +561,9 @@ if(!isLoggedIn()){
                   content: '';
                   position: absolute;
                   width: 2px;
-                  height: 90px;
+                  height: 150px;
                   background: rgb(102, 109, 115);
-                  z-index: 10;
+                  z-index: 12;
                   border-radius: 6px 6px 0 0;
                   }
                 
