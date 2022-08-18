@@ -175,7 +175,7 @@ if(!isLoggedIn()){
                     <span class="text-black fw-bold"><span class="text-white">0</span>8</span> &nbsp;&nbsp; 
                     <span>  Timekeeping</span>
                   </a>
-                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item py-2 ripple">
+                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item ">
                     <span class="text-black fw-bold">19</span> &nbsp;&nbsp;  
                     <span>  System Messages</span>
                   </a>
