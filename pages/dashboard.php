@@ -51,8 +51,8 @@ if(!isLoggedIn()){
   </div>
 
   <?php
-  $empID = $_SESSION['employee_idno'];
-      $sql = "SELECT * FROM employee WHERE idno = '$empID'";
+  $employee_idno = $_SESSION['employee_idno'];
+      $sql = "SELECT * FROM employee WHERE idno = '$employee_idno'";
       $all = mysqli_query($conn, $sql);
       if($all) {
           while ($row = mysqli_fetch_assoc($all)) {
@@ -95,18 +95,18 @@ if(!isLoggedIn()){
               //     $db_date    = $row['date'];
               //     $db_timein  = $row['timein'];
               //     $db_timeout = $row['timeout'];
-             // }}
+              // }}
             ?>
-            <span style="padding-top: 10px;">
+            <!-- <span style="padding-top: 10px;">
               <?php //if($db_date != $curr_date) { ?>
                 no timesheet
               <?php //} else if($db_timein == null) { ?>
-                <!-- Timesheet was created, but not clocked in -->
+                Timesheet was created, but not clocked in
               <?php //} else if($db_timeout == null) { ?>
-                <!-- Timesheet was created, but not clocked out -->
+                Timesheet was created, but not clocked out
               <?php //} ?>
               </span>
-          </div>
+          </div> -->
         </div>
         <div class="col me-3 ms-3" style="height: 220px; background-color: #eee; border-radius: 15px;">
               <div class="col-md-8 float-start ms-4" style="margin-top: 33px; width: 165px;">

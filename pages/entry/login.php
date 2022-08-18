@@ -7,9 +7,9 @@ require_once "../../path.php";
 
 session_start();
 
-// if(isLoggedIn()){
-//    header('location:' . BASE_URL . '/pages/dashboard.php');
-// }
+if(isLoggedIn()){
+   header('location:' . BASE_URL . '/pages/dashboard.php');
+}
 
 
 
@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $pass = md5($_POST['password']);
    $cpass = md5($_POST['cpassword']);
-   //$isadmin = $_POST['isadmin'];
+   $isadmin = $_POST['isadmin'];
    $loggedin = $_POST['loggedin'];
 
    $select = " SELECT * FROM employee WHERE uname = '$uname' && password = '$pass' ";
