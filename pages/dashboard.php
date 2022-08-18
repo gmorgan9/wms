@@ -181,10 +181,12 @@ if(!isLoggedIn()){
                 <table class="table w-50 mx-auto">
               <thead>
                 <tr>
+                  <span style="font-size: 12px;">
                 <?php 
                       $curr_date_new = date('M d');
                       echo $curr_date_new;
                     ?>
+                    </span>
                 </tr>
               </thead>
               <tbody>
