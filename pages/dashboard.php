@@ -291,7 +291,7 @@ if(!isLoggedIn()){
                     &nbsp; Thurs <br>
                     <?php echo $short_f_thurs; ?>
                   </th>
-                  <td class="text-start bg-info" style="color: white;">
+                  <td class="text-start text-bg-secondary" style="color: white;">
                     <div style="opacity:0; font-size: 5px;">test</div>
                     <?php echo $f_thurs_timein; ?> - <?php echo $f_thurs_timeout; ?>
                   </td>
