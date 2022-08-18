@@ -92,9 +92,9 @@ if(!isLoggedIn()){
               <div class="col-md-8 float-start ms-4" style="margin-top: 33px; width: 165px;">
                 <div class="card mb-3" style="border-color: white;">
                 <div class="card-body">
-                  <h3>
+                  <h5>
                     <?php echo $fname; ?> <?php echo $lname; ?>
-                  </h3>
+                  </h5>
                   </div>
                 </div>
               </div>
