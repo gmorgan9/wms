@@ -120,7 +120,7 @@ if(!isLoggedIn()){
                 <span class="fw-bold">
                   Time in: &nbsp;
                 </span>
-                <span class="text-warning">
+                <span>
                   <?php 
                   $f_timein = date('h:i a', strtotime($db_timein));
                   echo $f_timein;
