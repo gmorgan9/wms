@@ -7,9 +7,9 @@ require_once "../path.php";
 
 session_start();
 
-if(!isLoggedIn()){
-   header('location:' . BASE_URL . '/pages/entry/login.php');
-}
+// if(!isLoggedIn()){
+//    header('location:' . BASE_URL . '/pages/entry/login.php');
+// }
 
 $empID = $_SESSION['empID'];
 $select = " SELECT * FROM employee WHERE employeeID = '$empID' ";
