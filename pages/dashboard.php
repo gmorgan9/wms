@@ -599,6 +599,9 @@ if(!isLoggedIn()){
                       })
                       </script>
                       <!-- End script part -->
+                      <span class="text-center">
+                        hello
+                      </span>
             </div>
         </div>
       </div>
