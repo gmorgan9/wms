@@ -186,8 +186,10 @@ if(!isLoggedIn()){
                     &nbsp; Mon <br>
                     <?php echo $short_f_mon; ?>
                   </th>
-                  <td class="text-start" style="margin-top: 15px;">
-                    <?php echo $f_mon_timein; ?> - <?php echo $f_mon_timeout; ?>
+                  <td class="text-start">
+                    <span class="pt-2">
+                      <?php echo $f_mon_timein; ?> - <?php echo $f_mon_timeout; ?>
+                    </span>
                   </td>
                 </tr>
                 <tr>
