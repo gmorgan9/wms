@@ -148,6 +148,8 @@ if(!isLoggedIn()){
         <div class="col me-3 ms-3" style="height: 350px; background-color: #eee; border-radius: 15px;">
         <?php
               $current_mon = date('Y-m-d', strtotime('monday this week'));
+              $f_curr_mon  = date('M d', strtotime('monday this week'));
+              $f_curr_fri   = date('M d', strtotime('friday this week'));
               $sql = "SELECT * FROM schedule WHERE mon_date = '$current_mon' ";
               $all = mysqli_query($conn, $sql);
               if($all) {
@@ -170,9 +172,9 @@ if(!isLoggedIn()){
               <h5>
                 My Schedule
               </h5>
-              <h6>
-                <?php echo $current_mon; ?>
-              </h6>
+              <span>
+                <?php echo $f_curr_mon; ?> - <?php echo $f_curr_fri; ?>
+              </span>
               <table class="table mt-3">
               <thead>
                 <tr>
