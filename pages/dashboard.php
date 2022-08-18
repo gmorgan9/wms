@@ -159,23 +159,23 @@ if(!isLoggedIn()){
               </h5>
             </div>
             <div class="list-group list-group-flush mx-3 mt-4">
-                  <a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                  <a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>" class="text-start list-group-item py-2 ripple" aria-current="true">
                     <span class="text-black fw-bold">14</span> &nbsp;&nbsp;
                     <span>  Tasks</span>
                   </a>
-                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple">
+                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item py-2 ripple">
                     <span class="text-black fw-bold"><span class="text-white">0</span>8</span> &nbsp;&nbsp;
                     <span>  Employee Requests</span>
                   </a>
-                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple">
+                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item py-2 ripple">
                     <span class="text-black fw-bold"><span class="text-white">0</span>8</span> &nbsp;&nbsp;
                     <span>  My Requests</span>
                   </a>
-                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple">
+                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item py-2 ripple">
                     <span class="text-black fw-bold"><span class="text-white">0</span>8</span> &nbsp;&nbsp; 
                     <span>  Timekeeping</span>
                   </a>
-                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple">
+                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item py-2 ripple">
                     <span class="text-black fw-bold">19</span> &nbsp;&nbsp;  
                     <span>  System Messages</span>
                   </a>
