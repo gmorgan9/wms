@@ -503,7 +503,7 @@ if(!isLoggedIn()){
                 #hour {
                     width: 1.8%;
                     height: 25%;
-                    top: 25%;
+                    top: 19%;
                     left: 48.85%;
                     opacity: 0.8;
                 }
@@ -533,7 +533,7 @@ if(!isLoggedIn()){
                     hr_rotation = 30 * hr + min / 2; //converting current time
                     min_rotation = 6 * min;
                     sec_rotation = 6 * sec;
-                                
+
                     hour.style.transform = `rotate(${hr_rotation}deg)`;
                     minute.style.transform = `rotate(${min_rotation}deg)`;
                     second.style.transform = `rotate(${sec_rotation}deg)`;
