@@ -191,30 +191,30 @@ if(!isLoggedIn()){
                   </td>
                 </tr>
                 <tr>
-                  <th scope="row">
-                    Tues <br>
-                    9
+                <th scope="row" style="font-size: 12px;">
+                    &nbsp; Tues <br>
+                    <?php echo $short_f_mon; ?>
                   </th>
                   <td class="text-start">Tasks</td>
                 </tr>
                 <tr>
-                <th scope="row">
-                    Wed <br>
-                    10
+                <th scope="row" style="font-size: 12px;">
+                    &nbsp; Wed <br>
+                    <?php echo $short_f_mon; ?>
                   </th>
                   <td class="text-start">Employee Requests</td>
                 </tr>
                 <tr>
-                <th scope="row">
-                    Thurs <br>
-                    10
+                <th scope="row" style="font-size: 12px;">
+                    &nbsp; Thurs <br>
+                    <?php echo $short_f_mon; ?>
                   </th>
                   <td class="text-start">My Requests</td>
                 </tr>
                 <tr>
-                <th scope="row">
-                    Fri <br>
-                    11
+                <th scope="row" style="font-size: 12px;">
+                    &nbsp; Fri <br>
+                    <?php echo $short_f_mon; ?>
                   </th>
                   <td class="text-start">Timekeeping</td>
                 </tr>
