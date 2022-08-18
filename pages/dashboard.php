@@ -255,12 +255,12 @@ if(!isLoggedIn()){
                     <?php echo $f_thurs_timein; ?> - <?php echo $f_thurs_timeout; ?>
                   </td>
                 </tr>
-                <tr style="border-bottom: 0;">
-                <th scope="row" style="font-size: 12px;">
+                <tr>
+                <th scope="row" style="font-size: 12px; border-bottom: 0;">
                     &nbsp; Fri <br>
                     <?php echo $short_f_fri; ?>
                   </th>
-                  <td class="text-start">
+                  <td class="text-start" style="border-bottom: 0;">
                     <div style="color: #eee; font-size: 5px;">test</div>
                     <?php echo $f_fri_timein; ?> - <?php echo $f_fri_timeout; ?>
                   </td>
