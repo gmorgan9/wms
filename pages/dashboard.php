@@ -8,9 +8,9 @@
 
 session_start();
 
-// if(!isLoggedIn()){
-//   header('location:' . BASE_URL . '/pages/entry/login.php');
-// }
+if(!isLoggedIn()){
+  header('location:' . BASE_URL . '/pages/entry/login.php');
+}
 
 ?>
 
