@@ -215,7 +215,7 @@ if(!isLoggedIn()){
                 <tr>
                 </tr>
               </thead>
-              <tbody>
+              <tbody style="border-radius: 15px;">
               <tr>
                   <th scope="row" style="font-size: 12px;">
                     &nbsp; Mon <br>
@@ -258,8 +258,8 @@ if(!isLoggedIn()){
                   </td>
                 </tr>
                 <?php } else { ?>
-                <tr style="">
-                <th scope="row" style="font-size: 12px;border-radius: 15px;">
+                <tr>
+                <th scope="row" style="font-size: 12px;">
                     &nbsp; Thurs <br>
                     <?php echo $short_f_thurs; ?>
                   </th>
