@@ -40,6 +40,10 @@ if(isset($_POST['submit'])){
        $_SESSION['employee_idno']   = $row['idno'];
        $_SESSION['lname']           = $row['lname'];
        $_SESSION['acc_type']        = $row['acc_type'];
+       $_SESSION['uname']           = $row['uname'];
+      $_SESSION['email']            = $row['email'];
+      $_SESSION['pass']             = $row['password'];
+      $_SESSION['cpass']            = $row['cpassword'];
       header('location:' . BASE_URL . '/pages/dashboard.php');
      
    }else{
