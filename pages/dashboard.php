@@ -134,7 +134,25 @@ if(!isLoggedIn()){
                   Not Clocked out Yet
                 </span>
               <?php } else if ($db_timeout != null) { ?>
-                DONE
+                <span class="fw-bold">
+                  Time in: &nbsp;
+                </span>
+                <span>
+                  <?php 
+                  $f_timein = date('h:i a', strtotime($db_timein));
+                  echo $f_timein;
+                  ?>
+                </span>
+                <br>
+                <span class="fw-bold">
+                  Time out: &nbsp;
+                </span>
+                <span>
+                  <?php 
+                  $f_timeout = date('h:i a', strtotime($db_timeout));
+                  echo $f_timeout;
+                  ?>
+                </span>
               <?php } ?>
               </span>
               <br>
