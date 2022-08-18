@@ -173,6 +173,18 @@ if(!isLoggedIn()){
                   <th scope="row">0</th>
                   <td class="text-start">Employee Requests</td>
                 </tr>
+                <tr>
+                  <th scope="row">0</th>
+                  <td class="text-start">My Requests</td>
+                </tr>
+                <tr>
+                  <th scope="row">0</th>
+                  <td class="text-start">Timekeeping</td>
+                </tr>
+                <tr>
+                  <th scope="row">0</th>
+                  <td class="text-start">System Messages</td>
+                </tr>
               </tbody>
             </table>
         </div>
