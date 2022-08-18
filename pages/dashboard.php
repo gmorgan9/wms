@@ -563,7 +563,7 @@ if(!isLoggedIn()){
                   width: 2px;
                   height: 90px;
                   background: rgb(102, 109, 115);
-                  z-index: 12;
+                  z-index: 10;
                   border-radius: 6px 6px 0 0;
                   }
                 
