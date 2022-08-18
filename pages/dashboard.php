@@ -162,16 +162,16 @@ if(!isLoggedIn()){
                   <a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple" aria-current="true">
                       <span>  Tasks</span>
                   </a>
-                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple">
                       <span>  Employee Requests</span>
                   </a>
-                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple">
                       <span>  My Requests</span>
                   </a>
-                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple">
                       <span>  Timekeeping</span>
                   </a>
-                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                  <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple">
                       <span>  System Messages</span>
                   </a>
               </div>
