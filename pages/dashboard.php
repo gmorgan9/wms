@@ -167,7 +167,7 @@ if(!isLoggedIn()){
               <tbody>
                 <tr>
                   <th scope="row">0</th>
-                  <td>Task</td>
+                  <td class="text-start">Task</td>
                 </tr>
                 <tr>
                   <th scope="row">0</th>
