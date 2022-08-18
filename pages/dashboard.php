@@ -164,19 +164,19 @@ if(!isLoggedIn()){
                     <span>  Tasks</span>
                   </a>
                   <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple">
-                    <span class="text-black fw-bold">14</span> &nbsp;&nbsp;
+                    <span class="text-black fw-bold">8</span> &nbsp;&nbsp;
                     <span>  Employee Requests</span>
                   </a>
                   <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple">
-                    <span class="text-black fw-bold">14</span> &nbsp;&nbsp;
+                    <span class="text-black fw-bold">9</span> &nbsp;&nbsp;
                     <span>  My Requests</span>
                   </a>
                   <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple">
-                    <span class="text-black fw-bold">14</span> &nbsp;&nbsp; 
+                    <span class="text-black fw-bold">3</span> &nbsp;&nbsp; 
                     <span>  Timekeeping</span>
                   </a>
                   <a href="<?php echo BASE_URL . '/pages/info.php' ?>" class="text-start list-group-item list-group-item-action py-2 ripple">
-                    <span class="text-black fw-bold">14</span> &nbsp;&nbsp;  
+                    <span class="text-black fw-bold">19</span> &nbsp;&nbsp;  
                     <span>  System Messages</span>
                   </a>
               </div>
