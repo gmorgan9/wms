@@ -96,7 +96,13 @@ if(!isLoggedIn()){
                     <?php echo $fname; ?> <?php echo $lname; ?>
                   </h5>
                   <span>
-                    <?php echo $uname; ?>
+                    <?php 
+                    if($email != null) {
+                    echo $email; 
+                    } else {
+                      echo "No Email Found!";
+                    }
+                    ?>
                   </span>
                   </div>
                 </div>
