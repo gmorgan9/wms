@@ -93,10 +93,11 @@ if(!isLoggedIn()){
                 <div class="card mb-3" style="border-color: white; text-align: left;">
                 <div class="card-body">
                   <h5>
-                    <?php echo $fname; ?> <?php echo $lname; ?>
+                    <?php echo $fname; ?> <?php echo $lname; ?> <br>
+                    <?php echo $email; ?>
                   </h5>
                   <span>
-                    <?php echo $email; ?>
+                    
                   </span>
                   </div>
                 </div>
