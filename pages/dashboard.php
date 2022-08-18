@@ -8,9 +8,9 @@
 
 session_start();
 
-if(!isLoggedIn()){
-  header('location:' . BASE_URL . '/pages/entry/login.php');
-}
+// if(!isLoggedIn()){
+//   header('location:' . BASE_URL . '/pages/entry/login.php');
+// }
 
 ?>
 
@@ -50,33 +50,117 @@ if(!isLoggedIn()){
     <p class="page_title" style="float: left; padding-top: 2px;">Dashboard</p>
   </div>
 
+  <?php
+  $empID = $_SESSION['employee_idno'];
+      $sql = "SELECT * FROM employee WHERE idno = '$empID'";
+      $all = mysqli_query($conn, $sql);
+      if($all) {
+          while ($row = mysqli_fetch_assoc($all)) {
+            $empID     = $row['employeeID'];
+            $idno      = $row['idno'];
+            $fname     = $row['fname'];
+            $lname     = $row['lname'];
+            $uname     = $row['uname'];
+            $email     = $row['email'];
+            $acc_type  = $row['acc_type'];
+            $status    = $row['status'];
+            $compID = $row['company_code'];
+          }}
+            ?>
+
   <?php if($_SESSION['acc_type'] == 0) { ?> 
   <!-- NON ADMIN DASHBOARD -->
   <div class="page-content mt-2 mx-auto" style="margin-right: 10px;">
     <div class="container text-center">
       <div class="row mt-3">
-        <div class="col me-3 ms-3" style="height: 75px; background-color: #c9b8a9;">
-          Welcome back
-          <div class="col" style="margin-top: 65px; height: 130px; background-color: #c9b8a9;">
-          Time Card
+        <div class="col me-3 ms-3" style="height: 75px; background-color: #eee; border-radius: 15px;">
+          <div class="col-content" style="padding-top: 12.5px;">
+            <h3>Welcome Back, <?php echo $fname; ?>!</h3>
+            <p class="text-muted" style="margin-top: -5px; font-size: 12px;">Check your notifications and messages.</p>
+          </div>
+          <div class="col" style="margin-top: 22.5px; height: 130px; background-color: #eee; border-radius: 15px;">
+            <div class="col-content" style="padding-top: 10px;">
+              <h5>
+                Time Card
+              </h5>
+            </div>
+            <?php
+              $curr_date = date('Y-m-d');
+              $empID = $_SESSION['employee_idno'];
+              $sql = "SELECT * FROM timesheet WHERE employee_idno = '$empID'";
+              $all = mysqli_query($conn, $sql);
+              if($all) {
+                while ($row = mysqli_fetch_assoc($all)) {
+                  $empID      = $row['employeeID'];
+                  $db_date    = $row['date'];
+                  $db_timein  = $row['timein'];
+                  $db_timeout = $row['timeout'];
+              }}
+            ?>
+            <span style="padding-top: 10px;">
+              <?php if($db_date != $curr_date) { ?>
+                no timesheet
+              <?php } else if($db_timein == null) { ?>
+                Timesheet was created, but not clocked in
+              <?php } else if($db_timeout == null) { ?>
+                Timesheet was created, but not clocked out
+              <?php } ?>
+              </span>
+          </div>
         </div>
-        </div>
-        <div class="col me-3 ms-3" style="height: 220px; background-color: #c9b8a9;">
-          My Profile
+        <div class="col me-3 ms-3" style="height: 220px; background-color: #eee; border-radius: 15px;">
+              <div class="col-md-8 float-start ms-4" style="margin-top: 33px; width: 165px;">
+                <div class="card mb-3" style="border-color: white;">
+                <div class="card-body">
+                  <img class="ms-1" src="../../assets/img/pic_holder.jpg" style="height: 120px; width: 120px; border-radius: 150px;" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8 float-start ms-3" style="margin-top: 53px; width: 300px;">
+                <div class="card mb-3" style="border-color: white; text-align: left;">
+                <div class="card-body">
+                  <h5>
+                    <?php echo $fname; ?> <?php echo $lname; ?>
+                  </h5>
+                  <span>
+                    <i class="bi bi-person-badge"></i> &nbsp; <span style="font-size: 14px;"><?php echo $idno; ?></span> <br>
+                  </span>
+                  <span>
+                    <?php if($email != null) { ?>
+                      <i class="bi bi-envelope"></i> &nbsp; <span style="font-size: 14px;"><?php echo $email; ?></span>  
+                    <?php } else { ?>
+                      <span class='text-warning'>No Email Found!</span>
+                    <?php } ?>
+                  </span>
+                  </div>
+                </div>
+              </div>
         </div>
       </div>
       <div class="row mt-3">
         
       </div>
       <div class="row mt-3">
-        <div class="col me-3 ms-3" style="height: 350px; background-color: #c9b8a9;">
-          Schedule
+        <div class="col me-3 ms-3" style="height: 350px; background-color: #eee; border-radius: 15px;">
+          <div class="col-content" style="padding-top: 10px;">
+              <h5>
+                My Schedule
+              </h5>
+            </div>
         </div>
-        <div class="col me-3 ms-3" style="height: 350px; background-color: #c9b8a9;">
-          Notifications
+        <div class="col me-3 ms-3" style="height: 350px; background-color: #eee; border-radius: 15px;">
+          <div class="col-content" style="padding-top: 10px;">
+              <h5>
+                My Notifications
+              </h5>
+            </div>
         </div>
-        <div class="col me-3 ms-3" style="height: 350px; background-color: #c9b8a9;">
-          Current Date & Time
+        <div class="col me-3 ms-3" style="height: 350px; background-color: #eee; border-radius: 15px;">
+          <div class="col-content" style="padding-top: 10px;">
+              <h5>
+                Current Date & Time
+              </h5>
+            </div>
         </div>
       </div>
     </div>
