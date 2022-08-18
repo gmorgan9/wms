@@ -74,7 +74,7 @@ if(!isLoggedIn()){
     <div class="container text-center">
       <div class="row mt-3">
         <div class="col me-3 ms-3" style="height: 75px; background-color: #c9b8a9;">
-          <span class="" stlye="margin-top: 15px;">Welcome, <?php echo $fname; ?>!</span>
+          <span class="" stlye="margin-top: 15px !important;">Welcome, <?php echo $fname; ?>!</span>
           <div class="col" style="margin-top: 65px; height: 130px; background-color: #c9b8a9;">
           Time Card
         </div>
