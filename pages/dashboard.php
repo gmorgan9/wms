@@ -89,7 +89,7 @@ if(!isLoggedIn()){
                   </div>
                 </div>
               </div>
-              <div class="col-md-8 float-end ms-4">
+              <div class="col-md-8 float-end ms-5">
                 <div class="card mb-3 w-25" style="border-color: white;">
                 <div class="card-body">
                   <h5>
