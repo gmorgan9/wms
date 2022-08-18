@@ -542,7 +542,7 @@ if(!isLoggedIn()){
                   position: absolute;
                   width: 8px;
                   height: 80px;
-                  background: #ff105e;
+                  background: #ffaa48;
                   z-index: 10;
                   border-radius: 6px 6px 0 0;
                   }
