@@ -99,12 +99,15 @@ if(!isLoggedIn()){
             ?>
             <span style="padding-top: 10px;">
               <?php if($db_date != $curr_date) { ?>
-                no timesheet
+                No timesheet created yet
               <?php } else if($db_timein == null) { ?>
                 Timesheet was created, but not clocked in
               <?php } else if($db_timeout == null) { ?>
                 Timesheet was created, but not clocked out
               <?php } ?>
+              </span>
+              <span>
+                My Timecard &nbsp; <i class="bi bi-arrow-right-circle"></i>
               </span>
           </div>
         </div>
