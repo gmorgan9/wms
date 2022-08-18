@@ -502,7 +502,7 @@ if(!isLoggedIn()){
               <script>
                 
               </script>
-                      <div class="clock">
+                      <div class="clock mx-auto">
                       <div class="hour">
                       <div class="hr" id="hr"></div>
                       </div>
