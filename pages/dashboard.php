@@ -600,8 +600,11 @@ if(!isLoggedIn()){
                       </script>
                       <!-- End script part -->
                       <br>
+                      <?php 
+                      $cdt_current_date = date('l, F d, Y ')
+                      ?>
                       <span class="text-center">
-                        hello
+                        <?php echo $cdt_current_date; ?>
                       </span>
             </div>
         </div>
