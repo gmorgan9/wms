@@ -81,8 +81,8 @@ if(!isLoggedIn()){
             Time Card
           </div>
         </div>
-        <div class="col me-3 ms-3" style="height: 220px; background-color: #eee; border-radius: 15px; width: 15px !important;">
-              <div class="col-md-8 float-start ms-4" style="margin-top: 33px;">
+        <div class="col me-3 ms-3" style="height: 220px; background-color: #eee; border-radius: 15px;">
+              <div class="col-md-8 float-start ms-4" style="margin-top: 33px; width: 45px;">
                 <div class="card mb-3" style="border-color: white;">
                 <div class="card-body">
                   <img class="ms-1" src="../../assets/img/pic_holder.jpg" style="height: 120px; width: 120px; border-radius: 150px;" alt="">
