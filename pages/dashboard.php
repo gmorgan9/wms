@@ -606,50 +606,41 @@ if(!isLoggedIn()){
                       
                       <span class="text-center">
                         <?php echo $cdt_current_date; ?>
+                        <div class="digital-clock float-right">00:00:00</div>
                         <script>
-		    flag = true;
-			timer = '';
-			setInterval(function(){phpJavascriptClock();},1000);
+                          $(document).ready(function() {
+    clockUpdate();
+    setInterval(clockUpdate, 1000);
+});
 
-			function phpJavascriptClock()
-			{
-				if ( flag ) {
-					timer = <?php echo $current_timestamp;?>*1000;
-				}
-				var d = new Date(timer);
-				months = new Array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec');
+function clockUpdate() {
+    var date = new Date();
+    $('.digital-clock').css({'color': '#fff', 'text-shadow': '0 0 3px #ff0'});
+    function addZero(x) {
+        if (x < 10) {
+            return x = '0' + x;
+        } else {
+            return x;
+        }
+    }
 
-				month_array = new Array('January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'Augest', 'September', 'October', 'November', 'December');
+    function twelveHour(x) {
+        if (x > 12) {
+            return x = x - 12;
+        } else if (x == 0) {
+            return x = 12;
+        } else {
+            return x;
+        }
+    }
 
-				currentYear = d.getFullYear();
-				month = d.getMonth();
-				var currentMonth = months[month];
-				var currentMonth1 = month_array[month];
-				var currentDate = d.getDate();
-				currentDate = currentDate < 10 ? '0'+currentDate : currentDate;
+    var h = addZero(twelveHour(date.getHours()));
+    var m = addZero(date.getMinutes());
+    var s = addZero(date.getSeconds());
 
-				var hours = d.getHours();
-				var minutes = d.getMinutes();
-				var seconds = d.getSeconds();
-
-				var ampm = hours >= 12 ? 'PM' : 'AM';
-				hours = hours % 12;
-				hours = hours ? hours : 12; // the hour ’0' should be ’12'
-				minutes = minutes < 10 ? '0'+minutes : minutes;
-				seconds = seconds < 10 ? '0'+seconds : seconds;
-				var strTime = hours + ':' + minutes+ ':' + seconds + ' ' + ampm;
-				document.getElementById("demo").innerHTML= currentMonth+' ' + currentDate+' , ' + currentYear + ' ' + strTime ;
-
-				document.getElementById("demo1").innerHTML= currentMonth1+' ' + currentDate+' , ' + currentYear + ' ' + strTime ;
-
-				document.getElementById("demo2").innerHTML= currentDate+':' +month+':' +currentYear + ' ' + strTime ;
-
-				document.getElementById("demo3").innerHTML= strTime ;
-
-				flag = false;
-				timer = timer + 1000;
-			}
-</script>
+    $('.digital-clock').text(h + ':' + m + ':' + s)
+}
+                        </script>
                       </span>
             </div>
         </div>
