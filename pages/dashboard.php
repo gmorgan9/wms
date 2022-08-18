@@ -50,13 +50,31 @@ if(!isLoggedIn()){
     <p class="page_title" style="float: left; padding-top: 2px;">Dashboard</p>
   </div>
 
+  <?php
+  $empID = $_SESSION['employee_idno'];
+      $sql = "SELECT * FROM employee WHERE idno = '$empID'";
+      $all = mysqli_query($conn, $sql);
+      if($all) {
+          while ($row = mysqli_fetch_assoc($all)) {
+            $empID     = $row['employeeID'];
+            $idno      = $row['idno'];
+            $fname     = $row['fname'];
+            $lname     = $row['lname'];
+            $uname     = $row['uname'];
+            $email     = $row['email'];
+            $acc_type  = $row['acc_type'];
+            $status    = $row['status'];
+            $compID = $row['company_code'];
+          }}
+            ?>
+
   <?php if($_SESSION['acc_type'] == 0) { ?> 
   <!-- NON ADMIN DASHBOARD -->
   <div class="page-content mt-2 mx-auto" style="margin-right: 10px;">
     <div class="container text-center">
       <div class="row mt-3">
         <div class="col me-3 ms-3" style="height: 75px; background-color: #c9b8a9;">
-          Welcome back
+          Welcome, <?php echo $fname; ?>
           <div class="col" style="margin-top: 65px; height: 130px; background-color: #c9b8a9;">
           Time Card
         </div>
