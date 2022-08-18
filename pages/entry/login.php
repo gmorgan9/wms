@@ -93,7 +93,7 @@ session_start();
       ?>
       <input type="text" name="uname" required placeholder="enter your user name">
       <input type="password" name="password" required placeholder="enter your password">
-      <input type="submit" name="login" value="Login" class="form-btn">
+      <input type="submit" name="login_btn" value="Login" class="form-btn">
       <p>don't have an account? <a href="/pages/entry/register.php">register now</a></p>
    </form>
 
