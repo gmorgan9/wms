@@ -165,7 +165,8 @@ if(!isLoggedIn()){
                   $scheduleID       = $row['scheduleID'];
                   $idno        = $row['idno'];
                   $db_mon_date    = $row['mon_date'];
-                  $companyname = $row['companyname'];
+                  $db_mon_timein = $row['mon_timein'];
+                  $db_mon_timeout = $row['mon_timeout'];
                   $deptname    = $row['deptname'];
                   $app_status  = $row['approval_status'];
              
@@ -175,7 +176,9 @@ if(!isLoggedIn()){
                   <th scope="row">
                     <?php echo $db_mon_date; ?>
                   </th>
-                  <td class="text-start">Tasks</td>
+                  <td class="text-start">
+                    <?php echo $db_mon_timein; ?> - <?php echo $db_mon_timeout; ?>
+                  </td>
                 </tr>
                 <tr>
                   <th scope="row">
