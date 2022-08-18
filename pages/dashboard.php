@@ -108,7 +108,7 @@ if(!isLoggedIn()){
               </span>
               <br><br>
               <span class="float-end pe-3 mt-2 text-muted" style="font-size: 14px;">
-                <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">My Timecard <strong><i class="bi bi-chevron-right text-muted"></i></strong></a>
+                <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">My Timecard <i class="bi bi-chevron-right text-muted fw-bold"></i></a>
               </span>
           </div>
         </div>
