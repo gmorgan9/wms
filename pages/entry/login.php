@@ -34,16 +34,7 @@ if(isset($_POST['submit'])){
       $row = mysqli_fetch_array($result);
       $sql = "UPDATE employee SET loggedin='1' WHERE uname='$uname'";
       mysqli_query($conn, $sql);
-       $_SESSION['fname']           = $row['fname'];
-       $_SESSION['empID']           = $row['employeeID'];
-       $_SESSION['loggedin']        = $row['loggedin'];
        $_SESSION['employee_idno']   = $row['idno'];
-       $_SESSION['lname']           = $row['lname'];
-       $_SESSION['acc_type']        = $row['acc_type'];
-       $_SESSION['uname']           = $row['uname'];
-      $_SESSION['email']            = $row['email'];
-      $_SESSION['pass']             = $row['password'];
-      $_SESSION['cpass']            = $row['cpassword'];
       header('location:' . BASE_URL . '/pages/dashboard.php');
      
    }else{
