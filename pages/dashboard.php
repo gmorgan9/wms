@@ -188,9 +188,9 @@ if(!isLoggedIn()){
                 </tr>
               </thead>
               <tbody>
-                <tr style="margin-bottom: -15px;">
-                  <th scope="row" style="font-size: 14px; border-bottom: 0;">Time In</th>
-                  <td class="text-start" style="font-size: 14px; border-bottom: 0;">
+                <tr>
+                  <th scope="row" style="font-size: 14px; border-bottom: 0; margin-bottom: -15px;">Time In</th>
+                  <td class="text-start" style="font-size: 14px; border-bottom: 0; margin-bottom: -15px;">
                     <?php 
                       $f_timein = date('h:i a', strtotime($db_timein));
                       echo $f_timein;
