@@ -153,13 +153,26 @@ if(!isLoggedIn()){
               <table class="table mt-3">
               <thead>
                 <tr>
-                  
                 </tr>
               </thead>
               <tbody>
+              <?php
+              $current_mon = date('Y-m-d', strtotime('monday this week'));
+        $sql = "SELECT * FROM schedule WHERE approval_status != 'terminated'";
+        $all = mysqli_query($conn, $sql);
+        if($all) {
+            while ($row = mysqli_fetch_assoc($all)) {
+              $jobID       = $row['jobID'];
+              $idno        = $row['idno'];
+              $jobtitle    = $row['jobtitle'];
+              $companyname = $row['companyname'];
+              $deptname    = $row['deptname'];
+              $app_status  = $row['approval_status'];
+             }}
+    ?>
               <tr>
                   <th scope="row">
-                    Mon, Aug 8th
+                    <?php echo $current_mon; ?>
                   </th>
                   <td class="text-start">Tasks</td>
                 </tr>
