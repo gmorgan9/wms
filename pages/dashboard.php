@@ -88,6 +88,8 @@ if(!isLoggedIn()){
                   <img class="ms-1" src="../../assets/img/pic_holder.jpg" style="height: 120px; width: 120px; border-radius: 150px;" alt="">
                   </div>
                 </div>
+              </div>
+              <div class="col-md-8 float-end ms-4">
                 <div class="card mb-3" style="border-color: white;">
                 <div class="card-body">
                   <h5>
