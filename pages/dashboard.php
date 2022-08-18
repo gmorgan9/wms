@@ -161,6 +161,9 @@ if(!isLoggedIn()){
                 </tr>
               </tbody>
             </table>
+            <span class="text-muted" style="font-size: 14px; margin-top: 150px;">
+                <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">My Timecard <i class="bi bi-chevron-compact-right text-white" style=" background-color: rgb(102, 109, 115); border-radius: 50%; padding-left: 2px; padding-right: 1px;"></i></a>
+              </span>
 
 
 
@@ -168,9 +171,7 @@ if(!isLoggedIn()){
               <?php } ?>
               </span>
               <br>
-              <span class="text-muted" style="font-size: 14px; margin-top: 150px;">
-                <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">My Timecard <i class="bi bi-chevron-compact-right text-white" style=" background-color: rgb(102, 109, 115); border-radius: 50%; padding-left: 2px; padding-right: 1px;"></i></a>
-              </span>
+              
           </div>
         </div>
         <div class="col me-3 ms-3" style="height: 220px; background-color: #eee; border-radius: 15px;">
