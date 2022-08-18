@@ -82,7 +82,7 @@ if(!isLoggedIn()){
           </div>
         </div>
         <div class="col me-3 ms-3" style="height: 220px; background-color: #eee; border-radius: 15px;">
-              <div class="col-md-8 float-start w-25 ms-4 mt-3">
+              <div class="col-md-8 float-start w-25 ms-4 mt-4">
                 <div class="card mb-3" style="border-color: white;">
                 <div class="card-body">
                   <img class="ms-1" src="../../assets/img/pic_holder.jpg" style="height: 120px; width: 120px; border-radius: 150px;" alt="">
