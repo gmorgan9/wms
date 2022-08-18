@@ -147,9 +147,10 @@ if(!isLoggedIn()){
       <div class="row mt-3">
         <div class="col me-3 ms-3" style="height: 350px; background-color: #eee; border-radius: 15px;">
         <?php
-              $current_mon = date('Y-m-d', strtotime('monday this week'));
-              $f_curr_mon  = date('M d', strtotime('monday this week'));
+              $current_mon  = date('Y-m-d', strtotime('monday this week'));
+              $f_curr_mon   = date('M d', strtotime('monday this week'));
               $f_curr_fri   = date('M d', strtotime('friday this week'));
+              $current_day  = date('D');
               $sql = "SELECT * FROM schedule WHERE mon_date = '$current_mon' ";
               $all = mysqli_query($conn, $sql);
               if($all) {
@@ -245,6 +246,18 @@ if(!isLoggedIn()){
                     <?php echo $f_wed_timein; ?> - <?php echo $f_wed_timeout; ?>
                   </td>
                 </tr>
+                <?php if($short_f_thurs == $current_day) { ?>
+                <tr>
+                <th scope="row" style="font-size: 12px;">
+                    &nbsp; Than <br>
+                    <?php echo $short_f_thurs; ?>
+                  </th>
+                  <td class="text-start">
+                    <div style="color: #eee; font-size: 5px;">test</div>
+                    <?php echo $f_thurs_timein; ?> - <?php echo $f_thurs_timeout; ?>
+                  </td>
+                </tr>
+                <?php } else { ?>
                 <tr>
                 <th scope="row" style="font-size: 12px;">
                     &nbsp; Thurs <br>
@@ -255,6 +268,7 @@ if(!isLoggedIn()){
                     <?php echo $f_thurs_timein; ?> - <?php echo $f_thurs_timeout; ?>
                   </td>
                 </tr>
+                <?php } ?>
                 <tr>
                 <th scope="row" style="font-size: 12px; border-bottom: 0;">
                     &nbsp; Fri <br>
