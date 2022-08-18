@@ -85,7 +85,7 @@ if(!isLoggedIn()){
               <div class="col-md-8 float-start w-25 ms-4">
                 <div class="card mb-3">
                 <div class="card-body">
-                  <img class="ms-1" src="../../assets/img/pic_holder.jpg" style="height: 250px; width: 250px; border-radius: 150px;" alt="">
+                  <img class="ms-1" src="../../assets/img/pic_holder.jpg" style="height: 150px; width: 150px; border-radius: 150px;" alt="">
                   </div>
                 </div>
               </div>
