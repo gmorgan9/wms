@@ -29,10 +29,6 @@ if(!isLoggedIn()){
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    
-    <!-- scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
   <!-- END SCRIPTS -->
 
     <title>WMS | Dashboard</title>
@@ -77,16 +73,11 @@ if(!isLoggedIn()){
   <div class="page-content mt-2 mx-auto" style="margin-right: 10px;">
     <div class="container text-center">
       <div class="row mt-3">
-        <div class="col me-3 ms-3" style="height: 115px; background-color: #eee; border-radius: 15px;">
+        <div class="col me-3 ms-3" style="height: 75px; background-color: #c9b8a9;">
           <div class="col-content" style="padding-top: 15px;">
-            <span class="">Welcome, <?php echo $fname; ?>!</span> <br><br>
-            <?php if($email == null) { ?>
-              <span class="alert alert-danger" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Missing Email Address" role="alert">Your account isn't complete</span>
-            <?php } else { ?>
-              <span class="alert alert-success" role="alert">Your account is compliant</span>
-            <?php } ?>  
+            <span class="">Welcome, <?php echo $fname; ?>!</span>
           </div>
-          <div class="col" style="margin-top: 40px; height: 90px; background-color: #c9b8a9;">
+          <div class="col" style="margin-top: 50px; height: 130px; background-color: #c9b8a9;">
             Time Card
           </div>
         </div>
