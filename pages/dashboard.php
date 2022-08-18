@@ -103,8 +103,14 @@ if(!isLoggedIn()){
                   Create Time Sheet
                 </span>
               <?php } else if($db_timein == null) { ?>
+                <span class="fw-bold">
+                  Time in: &nbsp;
+                </span>
+                <span class="text-warning fw-bold">
+                  Not Clocked In Yet
+                </span>
                 <span>
-                  Time in:
+                  Time out:
                 </span>
                 <span class="text-warning fw-bold">
                   Not Clocked In Yet
