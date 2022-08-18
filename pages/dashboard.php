@@ -96,7 +96,7 @@ if(!isLoggedIn()){
                     <?php echo $fname; ?> <?php echo $lname; ?>
                   </h5>
                   <span>
-                    <i class="bi bi-person-badge"></i> &nbsp; <span style="font-size: 14px;"><?php echo $idno; ?></span>
+                    <i class="bi bi-person-badge"></i> &nbsp; <span style="font-size: 14px;"><?php echo $idno; ?></span> <br>
                   </span>
                   <span>
                     <?php if($email != null) { ?>
