@@ -92,13 +92,6 @@ if(!isLoggedIn()){
                 while ($row = mysqli_fetch_assoc($all)) {
                   $empID     = $row['employeeID'];
                   $db_date   = $row['date'];
-                  $fname     = $row['fname'];
-                  $lname     = $row['lname'];
-                  $uname     = $row['uname'];
-                  $email     = $row['email'];
-                  $acc_type  = $row['acc_type'];
-                  $status    = $row['status'];
-                  $compID = $row['company_code'];
               }}
             ?>
             <h6 style="padding-top: 10px;">
