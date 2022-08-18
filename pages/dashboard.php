@@ -102,6 +102,10 @@ if(!isLoggedIn()){
                 <span class="text-black fw-bold">
                   Create Time Sheet
                 </span>
+                <br>
+                <span class="text-muted" style="font-size: 12px;">
+                  You need to go create a timesheet.
+                </span>
               <?php } else if($db_timein == null) { ?>
 
 
