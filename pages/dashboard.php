@@ -103,7 +103,7 @@ if(!isLoggedIn()){
                   Create Time Sheet
                 </span>
                 <br>
-                <span class="text-muted" style="font-size: 12px;">
+                <span class="text-muted" style="padding-top: -5px; font-size: 12px;">
                   You need to go create a timesheet.
                 </span>
                 <span class="float-end pe-3 text-muted" style="font-size: 14px; margin-top: -30px;">
