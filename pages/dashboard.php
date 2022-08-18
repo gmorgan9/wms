@@ -94,13 +94,13 @@ if(!isLoggedIn()){
                   $db_date   = $row['date'];
               }}
             ?>
-            <h6 style="padding-top: 10px;">
+            <span style="padding-top: 10px;">
               <?php if($db_date != $curr_date) { ?>
                 no timesheet
               <?php } else { ?>
                 Timesheet was created
               <?php } ?>
-            </h6>
+              </span>
           </div>
         </div>
         <div class="col me-3 ms-3" style="height: 220px; background-color: #eee; border-radius: 15px;">
