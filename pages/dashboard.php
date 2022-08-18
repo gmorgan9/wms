@@ -99,7 +99,9 @@ if(!isLoggedIn()){
             ?>
             <span style="padding-top: 10px;">
               <?php if($db_date != $curr_date) { ?>
-                No timesheet created yet
+                <span class="text-info fw-bold">
+                  Create Time Sheet
+                </span>
               <?php } else if($db_timein == null) { ?>
                 <span class="text-warning fw-bold">
                   Clock In
