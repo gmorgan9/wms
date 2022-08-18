@@ -187,10 +187,8 @@ if(!isLoggedIn()){
                     <?php echo $short_f_mon; ?>
                   </th>
                   <td class="text-start">
-                    <span class="lh-base">
-                      <div style="color: #eee; font-size: 5px;">test</div>
-                      <?php echo $f_mon_timein; ?> - <?php echo $f_mon_timeout; ?>
-                    </span>
+                    <div style="color: #eee; font-size: 5px;">test</div>
+                    <?php echo $f_mon_timein; ?> - <?php echo $f_mon_timeout; ?>
                   </td>
                 </tr>
                 <tr>
@@ -198,7 +196,10 @@ if(!isLoggedIn()){
                     &nbsp; Tues <br>
                     <?php echo $short_f_mon; ?>
                   </th>
-                  <td class="text-start">Tasks</td>
+                  <td class="text-start">
+                    <div style="color: #eee; font-size: 5px;">test</div>
+                    Tasks
+                  </td>
                 </tr>
                 <tr>
                 <th scope="row" style="font-size: 12px;">
