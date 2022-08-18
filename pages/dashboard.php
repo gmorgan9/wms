@@ -255,8 +255,8 @@ if(!isLoggedIn()){
                     <?php echo $f_thurs_timein; ?> - <?php echo $f_thurs_timeout; ?>
                   </td>
                 </tr>
-                <tr>
-                <th scope="row" style="font-size: 12px; border-bottom: 0;">
+                <tr style="border-bottom: 0;">
+                <th scope="row" style="font-size: 12px;">
                     &nbsp; Fri <br>
                     <?php echo $short_f_fri; ?>
                   </th>
