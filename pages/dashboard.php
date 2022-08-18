@@ -603,44 +603,38 @@ if(!isLoggedIn()){
                       <?php 
                       $cdt_current_date = date('l, F d, Y ')
                       ?>
+                      <script type="text/javascript">
+                        window.onload = setInterval(clock,1000);
+
+                        function clock()
+                        {
+	                      var d = new Date();
+                        
+	                      var date = d.getDate();
+                        
+	                      var month = d.getMonth();
+	                      var montharr =["Jan","Feb","Mar","April","May","June","July","Aug","Sep","Oct","Nov","Dec"];
+	                      month=montharr[month];
+                        
+	                      var year = d.getFullYear();
+                        
+	                      var day = d.getDay();
+	                      var dayarr =["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
+	                      day=dayarr[day];
+                        
+	                      var hour =d.getHours();
+                          var min = d.getMinutes();
+	                      var sec = d.getSeconds();
+                        
+	                      document.getElementById("date").innerHTML=day+" "+date+" "+month+" "+year;
+	                      document.getElementById("time").innerHTML=hour+":"+min+":"+sec;
+                        }
+                      </script>
                       
                       <span class="text-center">
                         <?php echo $cdt_current_date; ?>
-                        <div class="digital-clock float-right">00:00:00</div>
-                        <script>
-                          $(document).ready(function() {
-    clockUpdate();
-    setInterval(clockUpdate, 1000);
-});
-
-function clockUpdate() {
-    var date = new Date();
-    $('.digital-clock').css({'color': '#fff', 'text-shadow': '0 0 3px #ff0'});
-    function addZero(x) {
-        if (x < 10) {
-            return x = '0' + x;
-        } else {
-            return x;
-        }
-    }
-
-    function twelveHour(x) {
-        if (x > 12) {
-            return x = x - 12;
-        } else if (x == 0) {
-            return x = 12;
-        } else {
-            return x;
-        }
-    }
-
-    var h = addZero(twelveHour(date.getHours()));
-    var m = addZero(date.getMinutes());
-    var s = addZero(date.getSeconds());
-
-    $('.digital-clock').text(h + ':' + m + ':' + s)
-}
-                        </script>
+                        <p id="time"></p>
+                        
                       </span>
             </div>
         </div>
