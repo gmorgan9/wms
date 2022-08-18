@@ -106,14 +106,14 @@ if(!isLoggedIn()){
                 <span class="fw-bold">
                   Time in: &nbsp;
                 </span>
-                <span class="text-warning fw-bold">
+                <span class="text-warning">
                   Not Clocked In Yet
                 </span>
                 <br>
                 <span class="fw-bold">
                   Time out: &nbsp;
                 </span>
-                <span class="text-warning fw-bold">
+                <span class="text-warning">
                   Not Clocked out Yet
                 </span>
               <?php } else if($db_timeout == null) { ?>
