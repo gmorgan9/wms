@@ -158,7 +158,7 @@ if(!isLoggedIn()){
               <tbody>
               <?php
               $current_mon = date('Y-m-d', strtotime('monday this week'));
-        $sql = "SELECT * FROM schedule WHERE mon_date == '$current_mon'";
+        $sql = "SELECT * FROM schedule";
         $all = mysqli_query($conn, $sql);
         if($all) {
             while ($row = mysqli_fetch_assoc($all)) {
