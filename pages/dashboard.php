@@ -82,7 +82,7 @@ if(!isLoggedIn()){
               <span class="alert alert-primary" role="alert">Your account is compliant</span>
             <?php } ?>  
           </div>
-          <div class="col" style="margin-top: 40px; height: 85px; background-color: #c9b8a9;">
+          <div class="col" style="margin-top: 40px; height: 90px; background-color: #c9b8a9;">
             Time Card
           </div>
         </div>
