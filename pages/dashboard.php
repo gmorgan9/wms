@@ -323,7 +323,6 @@ if(!isLoggedIn()){
           <div class="col-content" style="padding-top: 10px;">
               <h5>
                 My Schedule
-                <?php echo $rowcount; ?>
               </h5>
               <span class="text-muted" style="font-size: 13px;">
                 <?php echo $f_curr_mon; ?> - <?php echo $f_curr_fri; ?>
