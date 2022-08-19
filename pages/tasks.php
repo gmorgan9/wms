@@ -31,7 +31,7 @@ if(!isLoggedIn()){
       $error[] = 'Task already exist!';
     }else{
       // $insert2 = "INSERT INTO employee_company_data (employee_code, company_code, dept_code, job_code) SELECT employee_code, company_code, dept_code, jobID FROM job";
-      $insert = "INSERT INTO task (idno, title, details, due_date, employee_fname, employee_lname, employee_idno) VALUES('$idno', '$title', '$details', '$duedate', '$employee_fname', '$employee_lname', '$employee_idno')";
+      $insert = "INSERT INTO task (idno, title, details, category, due_date, employee_idno, employee_fname, employee_lname) VALUES ('$idno','$title','$details','$category','$due_date','$employee_idno','$employee_fname', '$employee_lname')";
       mysqli_query($conn, $insert);
       // mysqli_query($conn, $insert2);
       header('location: tasks.php');
