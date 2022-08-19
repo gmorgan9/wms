@@ -179,9 +179,9 @@ if(!isLoggedIn()){
               $category  = $row['category'];
               $status    = $row['status'];
     ?>
-      <tr id="<?php echo $id;?>">
+      <tr>
           <th scope="row"><?php echo $idno; ?></th>
-          <td data-bs-target="title"><?php echo $title; ?></td>
+          <td><?php echo $title; ?></td>
           <?php if($status == 'approved'){ ?>
           <td><span class="text-capitalize text-success"><?php echo $status; ?><span></td>
           <?php } if($status == 'rejected') { ?>
