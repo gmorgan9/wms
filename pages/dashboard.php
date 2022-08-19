@@ -547,7 +547,7 @@ if(!isLoggedIn()){
                 <tbody>
                   <tr>
                     <?php
-                    $sql = " SELECT * FROM task WHERE status = 'notstarted' AND status = 'inprogress' ";
+                    $sql = " SELECT * FROM task WHERE status = 'notstarted' OR status = 'inprogress' ";
                     if ($result = mysqli_query($conn, $sql)) {
                       $tCount = mysqli_num_rows( $result );
                     ?>
