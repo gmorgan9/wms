@@ -354,7 +354,7 @@ if(!isLoggedIn()){
                       <?php echo $s_f_tues; ?>
                     </th>
                     <?php if($f_tues_timein == null) { ?>
-                      <td>No Shift</td>
+                      <td class="text-start">No Shift</td>
                       <?php } else { ?>
                     <td class="text-start text-bg-secondary">
                       <div style="opacity:0; font-size: 5px;">test</div>
@@ -369,7 +369,7 @@ if(!isLoggedIn()){
                       <?php echo $s_f_tues; ?>
                     </th>
                     <?php if($f_tues_timein == null) { ?>
-                      <td>No Shift</td>
+                      <td class="text-start">No Shift</td>
                       <?php } else { ?>
                     <td class="text-start">
                       <div style="opacity:0; font-size: 5px;">test</div>
