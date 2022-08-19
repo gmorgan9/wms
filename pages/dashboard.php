@@ -410,7 +410,7 @@ if(!isLoggedIn()){
                     &nbsp; Thurs <br>
                     <?php echo $s_f_thurs; ?>
                   </th>
-                  <td class="text-start">
+                  <td class="text-start" style="width: 80%">
                     <div style="opacity:0; font-size: 5px;">test</div>
                     <?php echo $f_thurs_timein; ?> - <?php echo $f_thurs_timeout; ?>
                   </td>
