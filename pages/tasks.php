@@ -240,6 +240,8 @@ if(!isLoggedIn()){
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.esm.min.js"></script>
+
 <!-- SCRIPTS -->
     <script>
         $(document).ready(function () {
