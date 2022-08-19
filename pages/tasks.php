@@ -198,7 +198,7 @@ if(!isLoggedIn()){
                 <form method="post" action="" id="myform">
                   <input type="hidden" name="newid" value="<?php echo $taskID; ?>" />
 
-                  <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit"><span class="badge text-bg-danger viewbtn">Edit</span></button>
+                  <button type="submit"><span class="viewbtn">Edit</span></button>
                 </form>
                 <form method="post" action="">
                   <input type="hidden" name="taskID" value="<?php echo $taskID; ?>" />
