@@ -109,7 +109,7 @@ if(!isLoggedIn()){
                 </span>
                 <br>
                 <span class="float-end pe-3 text-muted" style="font-size: 14px;margin-top: 10px;">
-                  <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">My Timecard <i class="bi bi-chevron-compact-right text-white" style=" background-color: rgb(102, 109, 115); border-radius: 50%; padding-left: 2px; padding-right: 1px;"></i></a>
+                  <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">My Timecard <i class="bi bi-chevron-right"></i></a>
                 </span>
               <?php } else if($db_timein == null) { ?>
 
@@ -141,7 +141,7 @@ if(!isLoggedIn()){
 
 
             <span class="float-end pe-3 text-muted" style="font-size: 14px; margin-top: -30px;">
-              <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">My Timecard <i class="bi bi-chevron-compact-right text-white" style=" background-color: rgb(102, 109, 115); border-radius: 50%; padding-left: 2px; padding-right: 1px;"></i></a>
+              <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">My Timecard <i class="bi bi-chevron-right"></i></a>
             </span>
 
               <?php } else if($db_timeout == null) { ?>
@@ -175,7 +175,7 @@ if(!isLoggedIn()){
 
 
             <span class="float-end pe-3 text-muted" style="font-size: 14px; margin-top: -30px;">
-              <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">My Timecard <i class="bi bi-chevron-compact-right text-white" style=" background-color: rgb(102, 109, 115); border-radius: 50%; padding-left: 2px; padding-right: 1px;"></i></a>
+              <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">My Timecard <i class="bi bi-chevron-right"></i></a>
             </span>
 
               <?php } else if ($db_timeout != null) { ?>
@@ -207,7 +207,7 @@ if(!isLoggedIn()){
             </table>
 
             <span class="float-end pe-3 text-muted" style="font-size: 14px; margin-top: -30px;">
-              <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">My Timecard <i class="bi bi-chevron-compact-right text-white" style=" background-color: rgb(102, 109, 115); border-radius: 50%; padding-left: 2px; padding-right: 1px;"></i></a>
+              <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">My Timecard <i class="bi bi-chevron-right"></i></a>
             </span>
 
 
@@ -243,7 +243,7 @@ if(!isLoggedIn()){
                 </div>
               </div>
               <span class="float-end pe-1 mt-2 text-muted" style="font-size: 14px;">
-              <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/profile.php' ?>">My Profile <i class="bi bi-chevron-right" ></i></a>
+              <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/profile.php' ?>">My Profile <i class="bi bi-chevron-right"></i></a>
             </span>
         </div>
       </div>
