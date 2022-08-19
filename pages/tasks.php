@@ -194,7 +194,7 @@ if(!isLoggedIn()){
           <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
             <div class="d-flex">
-                <button data-id="<?php echo $idno; ?>"  style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit"><span class="badge text-bg-success viewbtn">Edit</span></button>
+                <button data-id="<?php echo $row['idno']; ?>"  style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit"><span class="badge text-bg-success viewbtn">Edit</span></button>
                 &nbsp;
                 <form method="post" action="">
                   <input type="hidden" name="jobID" value="<?php echo $jobID; ?>" />
