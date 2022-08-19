@@ -160,8 +160,8 @@ if(!isLoggedIn()){
       <input class="form-control" id="link" type="text" name="link" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="due_date" style="font-size: 14px;">Date</label>
-      <input class="form-control" id="due_date" type="date" name="due_date" value="" required>
+      <label for="date" style="font-size: 14px;">Date</label>
+      <input class="form-control" id="date" type="date" name="date" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
       <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-meeting" class="badge text-bg-secondary">Add Meeting</button>
