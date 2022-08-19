@@ -449,7 +449,7 @@ if(!isLoggedIn()){
                 <tr>
                 <th scope="row" class="text-bg-secondary" style="font-size: 12px; width: 30%;">
                     &nbsp; Thurs <br>
-                    <?php echo $s_f_thurs; ?>
+                    <?php echo $curr_th_s; ?>
                   </th>
                   <?php if ($db_thurs_timein != null) { ?>
                     <td class="text-start text-bg-secondary" style="width: 65%;">
