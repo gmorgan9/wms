@@ -233,8 +233,8 @@ if(!isLoggedIn()){
                         <input type="hidden" name="update_id" id="update_id">
 
                         <div class="form-group">
-                            <label> First Name </label>
-                            <input type="text" name="fname" id="fname" class="form-control"
+                            <label> Title </label>
+                            <input type="text" name="title" id="title" class="form-control"
                                 placeholder="Enter First Name">
                         </div>
 
