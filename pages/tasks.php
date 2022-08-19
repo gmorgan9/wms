@@ -258,7 +258,7 @@ if(!isLoggedIn()){
                 //$('#firstName').val(firstName);
                 //$('#lastName').val(lastName);
                 $('#title').val(title);
-                $('#taskID').val(id);
+                $('#id').val(id);
                 $('#myModal').modal('toggle');
           });
         });
