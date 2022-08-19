@@ -444,7 +444,8 @@ if(!isLoggedIn()){
                     <?php } ?>
                   </tr>
                 <?php } ?>
-                <?php if($short_f_thurs == $current_day) { ?>
+                <?php $curr_th_s = date('d'); ?>
+                <?php if($curr_th_s == $current_day) { ?>
                 <tr>
                 <th scope="row" class="text-bg-secondary" style="font-size: 12px; width: 30%;">
                     &nbsp; Thurs <br>
@@ -482,7 +483,7 @@ if(!isLoggedIn()){
                 </tr>
                 <?php } ?>
                 <?php $curr_f_s = date('d'); ?>
-                <?php if($curr_f_s == $s_f_fri) { ?>
+                <?php if($curr_f_s == $current_day) { ?>
                   <tr>
                     <th scope="row" class="text-bg-secondary" style="font-size: 12px; border-bottom: 0; width: 30%;">
                       &nbsp; Fri <br>
