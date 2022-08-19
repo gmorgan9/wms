@@ -243,7 +243,7 @@ if(!isLoggedIn()){
 <!-- SCRIPTS -->
     <script>
         $(document).ready(function () {
-            $('.button').click(function () {
+            $('button').click(function () {
                 $('#myModal').show();
             });
         });
