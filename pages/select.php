@@ -13,9 +13,8 @@ if(isset($_POST["task_id"]))
     $output .= '  
     <div class="table-responsive">  
          <table class="table table-bordered">';  
-    while($row = mysqli_fetch_array($result))  
-    {  
-         $output .= ' 
+    while($row = mysqli_fetch_array($result)) {  
+        $output .= ' 
     <div class="col-md-8 w-100">
         <div class="card mb-3">
             <div class="card-body">
@@ -56,7 +55,8 @@ if(isset($_POST["task_id"]))
                 </div>
             </div>
         </div>
-    </div>';  
+    </div>
+    ';  
     }  
     $output .= "</table></div>";  
     echo $output;  
