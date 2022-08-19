@@ -144,11 +144,11 @@ if(!isLoggedIn()){
       <input class="form-control" id="deptname" type="hidden" name="deptname" value="<?php echo $deptname; ?>">
       <input class="form-control" id="companyname" type="hidden" name="companyname" value="<?php echo $companyname; ?>">
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="title" style="font-size: 14px;">Title <span class="text-muted" style="font-size: 10px;">e.g. "Complete Assignment"</span></label>
+      <label for="title" style="font-size: 14px;">Title <span class="text-muted" style="font-size: 10px;">e.g. "Team Meeting"</span></label>
       <input class="form-control" id="title" type="text" name="title" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="details" style="font-size: 14px;">Details <span class="text-muted" style="font-size: 10px;">What is needing to be done?</span></label>
+      <label for="details" style="font-size: 14px;">Details <span class="text-muted" style="font-size: 10px;">What is being covered in this meeting?</span></label>
       <textarea class="form-control" id="details" type="text" name="details" value="" required></textarea>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
