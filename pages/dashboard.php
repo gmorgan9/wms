@@ -253,7 +253,8 @@ if(!isLoggedIn()){
               $f_curr_mon   = date('M d', strtotime('monday this week'));
               $f_curr_fri   = date('M d', strtotime('friday this week'));
               $current_day  = date('d');
-              $sql = "SELECT * FROM schedule WHERE mon_date = '$current_mon' ";
+              $employee_idno = $_SESSION['employee_idno'];
+              $sql = "SELECT * FROM schedule WHERE mon_date = '$current_mon' AND employee_idno = '$employee_idno' ";
               $all = mysqli_query($conn, $sql);
               if($all) {
                 while ($row = mysqli_fetch_assoc($all)) {
