@@ -14,27 +14,27 @@ if(!isLoggedIn()){
 }
 
 // ADD JOB
-  if(isset($_POST['add-job'])){
-    $jobID = mysqli_real_escape_string($conn, $_POST['jobID']);
+  if(isset($_POST['add-task'])){
+    $taskID = mysqli_real_escape_string($conn, $_POST['taskID']);
     $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
-    $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
-    $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
-    $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
+    $title = mysqli_real_escape_string($conn, $_POST['title']);
+    $details = mysqli_real_escape_string($conn, $_POST['details']);
+    $due_date = mysqli_real_escape_string($conn, $_POST['due_date']);
     $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
     $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
     $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
 
-    $select = " SELECT * FROM job WHERE jobtitle = '$jobtitle' ";
+    $select = " SELECT * FROM taks WHERE title = '$title' ";
     $result = mysqli_query($conn, $select);
 
     if(mysqli_num_rows($result) > 0){
-      $error[] = 'Job already exist!';
+      $error[] = 'Task already exist!';
     }else{
       // $insert2 = "INSERT INTO employee_company_data (employee_code, company_code, dept_code, job_code) SELECT employee_code, company_code, dept_code, jobID FROM job";
-      $insert = "INSERT INTO job (idno, jobtitle, companyname, deptname, employee_fname, employee_lname, employee_idno) VALUES('$idno', '$jobtitle', '$companyname', '$deptname', '$employee_fname', '$employee_lname', '$employee_idno')";
+      $insert = "INSERT INTO job (idno, title, details, due_date, employee_fname, employee_lname, employee_idno) VALUES('$idno', '$title', '$details', '$duedate', '$employee_fname', '$employee_lname', '$employee_idno')";
       mysqli_query($conn, $insert);
       // mysqli_query($conn, $insert2);
-      header('location: job_request.php');
+      header('location: tasks.php');
     }
   };
 // END ADD JOB
@@ -143,7 +143,7 @@ if(!isLoggedIn()){
       <input class="form-control" id="due_date" type="date" name="due_date" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
-      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-job" class="badge text-bg-secondary">Request Job</button>
+      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-task" class="badge text-bg-secondary">Add Task</button>
     </div>
     </form>
     </div>
