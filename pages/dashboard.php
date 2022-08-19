@@ -575,9 +575,9 @@ if(!isLoggedIn()){
                     if ($result = mysqli_query($conn, $sql)) {
                       $tsCount = mysqli_num_rows( $result );
                     ?>
-                    <th scope="row" class="text-center"><?php echo $tsCount; ?></th>
+                    <th scope="row" class="text-center" style="border-bottom: 0;"><?php echo $tsCount; ?></th>
                     <?php } ?>
-                    <td class="text-start">Timesheet Requests</td>
+                    <td class="text-start" style="border-bottom: 0;">Timesheet Requests</td>
                   </tr>
                   <!-- <tr>
                     <th scope="row" class="text-center">0</th>
