@@ -406,7 +406,7 @@ if(!isLoggedIn()){
                 </tr>
                 <?php } else { ?>
                 <tr>
-                <th scope="row" style="font-size: 12px;">
+                <th scope="row" style="font-size: 12px;" style="width: 25%">
                     &nbsp; Thurs <br>
                     <?php echo $s_f_thurs; ?>
                   </th>
