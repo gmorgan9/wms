@@ -593,7 +593,7 @@ if(!isLoggedIn()){
                       let hh = day.getHours() * 30;
                       let mm = day.getMinutes() * deg;
                       let ss = day.getSeconds() * deg;
-                      var hour =day.getHours() * 30;
+                      var hour =day.getHours() * 24;
                       var min = day.getMinutes();
 	                    var sec = day.getSeconds();
                       hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
