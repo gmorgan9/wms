@@ -599,7 +599,7 @@ if(!isLoggedIn()){
                       hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
                       mn.style.transform = `rotateZ(${mm}deg)`;
                       sc.style.transform = `rotateZ(${ss}deg)`;
-                      document.getElementById("time").innerHTML=hour+":"+min+":"+sec;
+                      document.getElementById("time").innerHTML=hr.style.transform +":"+min+":"+sec;
                       })
                       </script>
                       <!-- End script part -->
