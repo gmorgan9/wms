@@ -596,7 +596,7 @@ if(!isLoggedIn()){
                       hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
                       mn.style.transform = `rotateZ(${mm}deg)`;
                       sc.style.transform = `rotateZ(${ss}deg)`;
-                      document.getElementById("time").innerHTML=hh+":"+mm+":"+ss;
+                      document.getElementById("time").innerHTML=hr+":"+mm+":"+ss;
                       })
                       </script>
                       <!-- End script part -->
