@@ -33,7 +33,7 @@ if(isset($_POST["meeting_id"]))
                     </div>
                     '. $f_date = date('M d, Y', strtotime($row['date'])) .'
                     <div class="col-sm-9 text-start">
-                        '.$f_date.'
+                        <span class="ms-3">'.$f_date.'</span>
                     </div>
                 </div>
                 <hr>
