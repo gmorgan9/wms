@@ -273,7 +273,7 @@ if(!isLoggedIn()){
 
 
 <script>
-    $(document).ready(function () {
+    $( document ).ready(function() {
 
         $('.editbtn').on('click', function () {
             $('#editmodal').modal('show');
