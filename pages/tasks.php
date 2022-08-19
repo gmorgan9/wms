@@ -233,9 +233,11 @@ if(!isLoggedIn()){
 <script type="text/javascript">
     $( document ).ready(function() {
         $('.viewbtn').click(function () {
+            var id = $(this).attr('taskID');
+            var tid=$(this).find("i").attr("data-id") ;
             var taskid = $(this).data('taskID');
-            console.log(taskid)
-            alert(taskid)
+            console.log(id)
+            alert(id)
         });
         
     });
