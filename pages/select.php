@@ -20,7 +20,7 @@ if(isset($_POST["task_id"]))
         <div class="card mb-3">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                       <h6 class="mb-0">Title</h6>
                     </div>
                     <div class="col-sm-9">
