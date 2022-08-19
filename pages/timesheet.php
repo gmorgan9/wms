@@ -174,7 +174,7 @@ if(!isLoggedIn()){
 
         <?php 
         $employee_idno = $_SESSION['employee_idno'];
-        $select = " SELECT * FROM timesheet WHERE date = '$date' ";
+        $select = " SELECT * FROM timesheet WHERE date = '$date' AND employee_idno = '$employee_idno' ";
         $result = mysqli_query($conn, $select);
 
         if (mysqli_num_rows($result) > 0) {
