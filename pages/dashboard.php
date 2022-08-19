@@ -450,22 +450,35 @@ if(!isLoggedIn()){
                     &nbsp; Thurs <br>
                     <?php echo $s_f_thurs; ?>
                   </th>
-                  <td class="text-start text-bg-secondary" style="width: 65%;">
-                    <div style="opacity:0; font-size: 5px;">test</div>
-                    <?php echo $f_thurs_timein; ?> - <?php echo $f_thurs_timeout; ?>
-                  </td>
+                  <?php if ($db_thurs_timein != null) { ?>
+                    <td class="text-start text-bg-secondary" style="width: 65%;">
+                      <div style="opacity:0; font-size: 5px;">test</div>
+                      <?php echo $f_thurs_timein; ?> - <?php echo $f_thurs_timeout; ?>
+                    </td>
+                  <?php } else { ?>
+                    <td class="text-start text-bg-secondary" style="width: 65%;">
+                      <div style="opacity:0; font-size: 5px;">test</div>
+                      No Shift
+                    </td>
+                  <?php } ?>
                 </tr>
                 <?php } else { ?>
                 <tr>
-<!-- WORK HEREEEEEE style="width: 30%" -->
-                <th scope="row" style="font-size: 12px; width: 30%;"> 
+                  <th scope="row" style="font-size: 12px; width: 30%;"> 
                     &nbsp; Thurs <br>
                     <?php echo $s_f_thurs; ?>
                   </th>
-                  <td class="text-start" style="width: 65%;">
-                    <div style="opacity:0; font-size: 5px;">test</div>
-                    <?php echo $f_thurs_timein; ?> - <?php echo $f_thurs_timeout; ?>
-                  </td>
+                  <?php if ($db_thurs_timein != null) { ?>
+                    <td class="text-start" style="width: 65%;">
+                      <div style="opacity:0; font-size: 5px;">test</div>
+                      <?php echo $f_thurs_timein; ?> - <?php echo $f_thurs_timeout; ?>
+                    </td>
+                  <?php } else { ?>
+                    <td class="text-start" style="width: 65%;">
+                      <div style="opacity:0; font-size: 5px;">test</div>
+                      No Shift
+                    </td>
+                  <?php } ?>
                 </tr>
                 <?php } ?>
                 <?php if($short_f_fri == $current_day) { ?>
@@ -474,10 +487,17 @@ if(!isLoggedIn()){
                       &nbsp; Fri <br>
                       <?php echo $s_f_fri; ?>
                     </th>
-                    <td class="text-start text-bg-secondary" style="border-bottom: 0; width: 65%;">
-                      <div style="opacity:0; font-size: 5px;">test</div>
-                      <?php echo $f_fri_timein; ?> - <?php echo $f_fri_timeout; ?>
-                    </td>
+                    <?php if ($db_fri_timein != null) { ?>
+                      <td class="text-start text-bg-secondary" style="border-bottom: 0; width: 65%;">
+                        <div style="opacity:0; font-size: 5px;">test</div>
+                        <?php echo $f_fri_timein; ?> - <?php echo $f_fri_timeout; ?>
+                      </td>
+                    <?php } else { ?>
+                      <td class="text-start text-bg-secondary" style="border-bottom: 0; width: 65%;">
+                        <div style="opacity:0; font-size: 5px;">test</div>
+                        No Shift
+                      </td>
+                    <?php } ?>
                   </tr>
                 <?php } else { ?>
                   <tr>
@@ -485,10 +505,17 @@ if(!isLoggedIn()){
                       &nbsp; Fri <br>
                       <?php echo $s_f_fri; ?>
                     </th>
-                    <td class="text-start" style="border-bottom: 0; width: 65%;">
-                      <div style="opacity:0; font-size: 5px;">test</div>
-                      <?php echo $f_fri_timein; ?> - <?php echo $f_fri_timeout; ?>
-                    </td>
+                    <?php if ($db_fri_timein != null) { ?>
+                      <td class="text-start" style="border-bottom: 0; width: 65%;">
+                        <div style="opacity:0; font-size: 5px;">test</div>
+                        <?php echo $f_fri_timein; ?> - <?php echo $f_fri_timeout; ?>
+                      </td>
+                    <?php } else { ?>
+                      <td class="text-start" style="border-bottom: 0; width: 65%;">
+                        <div style="opacity:0; font-size: 5px;">test</div>
+                        No Shift
+                      </td>
+                    <?php } ?>
                   </tr>
                 <?php } ?> 
               </tbody>
