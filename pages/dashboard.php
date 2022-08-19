@@ -594,13 +594,15 @@ if(!isLoggedIn()){
                       let mm = day.getMinutes() * deg;
                       let ss = day.getSeconds() * deg;
                       var hour =day.getHours() % 12;
-                      currentHours = ("0" + hour).slice(-2);
+                      cHour = ("0" + hour).slice(-2);
                       var min = day.getMinutes() % 60;
+                      cMin = ("0" + min).slice(-2);
 	                    var sec = day.getSeconds();
+                      cSec = ("0" + sec).slice(-2);
                       hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
                       mn.style.transform = `rotateZ(${mm}deg)`;
                       sc.style.transform = `rotateZ(${ss}deg)`;
-                      document.getElementById("time").innerHTML=currentHours +":"+min+":"+sec;
+                      document.getElementById("time").innerHTML=cHour+":"+cMin+":"+cSec;
                       })
                       </script>
                       <!-- End script part -->
