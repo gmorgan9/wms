@@ -553,7 +553,7 @@ if(!isLoggedIn()){
                     ?>
                     <th scope="row" class="text-center"><?php echo $tCount; ?></th>
                     <?php } ?>
-                    <td class="text-start">Tasks to Complete</td>
+                    <td class="text-start">Tasks</td>
                   </tr>
                   <tr>
                   <?php
