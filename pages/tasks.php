@@ -191,7 +191,8 @@ if(!isLoggedIn()){
           <?php }?>
           <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
-          <button  style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit"><span class="badge text-bg-success editbtn">Edit</span></button>
+          <button type="button" class="btn btn-success editbtn"> EDIT </button>
+          <!-- <button  style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit"><span class="badge text-bg-success editbtn">Edit</span></button> -->
             <form method="post" action="">
               <input type="hidden" name="jobID" value="<?php echo $jobID; ?>" />
               
