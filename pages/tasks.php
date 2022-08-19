@@ -227,8 +227,8 @@ if(!isLoggedIn()){
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
-<!-- <script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js" crossorigin="anonymous"></script> -->
-
+<script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <script type="text/javascript">
     $( document ).ready(function() {
