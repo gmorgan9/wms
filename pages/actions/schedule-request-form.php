@@ -184,7 +184,7 @@ if(!isLoggedIn()){
     <div class="section-header text-center fs-5" style="margin-top: -10px;">
       <span class="pt-3" style="width: 95%;">Schedule for <span class="text-muted"><?php echo $new_monday; ?> - <?php echo $new_friday; ?></span></span>
     </div>
-    <div class="section-header pt-1 text-center">
+    <div class="section-header text-center">
       <span style="font-size: 12px; margin-bottom: -15px;" class="text-muted">Leave blank if no schedule</span>
     </div>
     <div class="row">
