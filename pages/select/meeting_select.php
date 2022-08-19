@@ -29,7 +29,7 @@ if(isset($_POST["meeting_id"]))
                 <hr>
                 <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Category</h6>
+                      <h6 class="mb-0">Date</h6>
                     </div>
                     '. $f_date = date('M d, Y', strtotime($row['date'])) .'
                     <div class="col-sm-9">
@@ -39,7 +39,7 @@ if(isset($_POST["meeting_id"]))
                 <hr>
                 <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Category</h6>
+                      <h6 class="mb-0">Details</h6>
                     </div>
                     <div class="col-sm-9">
                         '.$row["details"].'
@@ -48,7 +48,7 @@ if(isset($_POST["meeting_id"]))
                 <hr>
                 <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Details</h6>
+                      <h6 class="mb-0">Location</h6>
                     </div>
                     <div class="col-sm-9">
                         '.$row["location"].'
@@ -57,7 +57,7 @@ if(isset($_POST["meeting_id"]))
                 <hr>
                 <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Details</h6>
+                      <h6 class="mb-0">Meeting Link</h6>
                     </div>
                     <div class="col-sm-9">
                         '.$row["link"].'
