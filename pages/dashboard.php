@@ -29,8 +29,9 @@ if(!isLoggedIn()){
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    
     <!-- scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- END SCRIPTS -->
 
     <title>WMS | Dashboard</title>
@@ -241,6 +242,9 @@ if(!isLoggedIn()){
                   </div>
                 </div>
               </div>
+              <span class="float-end pe-3 text-muted" style="font-size: 14px; margin-top: -30px;">
+              <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/timesheet.php' ?>">My Timecard <i class="bi bi-chevron-compact-right text-white" style=" background-color: rgb(102, 109, 115); border-radius: 50%; padding-left: 2px; padding-right: 1px;"></i></a>
+            </span>
         </div>
       </div>
       <div class="row mt-3">
