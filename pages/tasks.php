@@ -244,18 +244,6 @@ if(!isLoggedIn()){
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
-<!-- JQuery -->
-<script type="text/javascript" src="/mdb_gallery/public/js/jquery-3.1.1.min.js"></script>
-
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="/mdb_gallery/public/js/tether.min.js"></script>
-
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="/mdb_gallery/public/js/bootstrap.min.js"></script>
-
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="/mdb_gallery/public/js/mdb.min.js"></script>
-
 
 
 </body>
