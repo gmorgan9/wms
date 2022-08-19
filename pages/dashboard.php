@@ -311,6 +311,15 @@ if(!isLoggedIn()){
              
     ?>
     <?php }} ?>
+
+    <?php
+    $count_employee     = $_SESSION['employee_idno'];
+    $count_curr_mon     = date('Y-m-d', strtotime('monday this week'));
+    $sql = " SELECT * FROM schedule WHERE mon_date = '$count_curr_mon' AND employee_idno = '$count_employee' ";
+    if ($result = mysqli_query($conn, $sql)) {
+        $rowcount = mysqli_num_rows( $result );}
+    
+    ?>
           <div class="col-content" style="padding-top: 10px;">
               <h5>
                 My Schedule
@@ -330,7 +339,7 @@ if(!isLoggedIn()){
                       &nbsp; Mon <br>
                       <?php echo $s_f_mon; ?>
                     </th>
-                    <?php if (!empty($db_mon_date)) { ?>
+                    <?php if ($rowcount > 0) { ?>
                     <td class="text-start text-bg-secondary" style="width: 65%;">
                       <div style="opacity:0; font-size: 5px;">test</div>
                       <?php echo $f_mon_timein; ?> - <?php echo $f_mon_timeout; ?>
