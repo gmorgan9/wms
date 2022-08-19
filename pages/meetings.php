@@ -110,7 +110,7 @@ if(!isLoggedIn()){
   </div>
 
 
-  <!-- START ADD COMPANY (LEFT SIDE) -->
+  <!-- START ADD MEETING (LEFT SIDE) -->
     <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -80px; height: unset !important;">
     <form action="" method="post">
     <div class="section-header pt-2">
@@ -168,9 +168,9 @@ if(!isLoggedIn()){
     </div>
     </form>
     </div>
-  <!-- END ADD JOB (LEFT SIDE) -->
+  <!-- END ADD MEETING (LEFT SIDE) -->
 
-  <!-- START JOB-REQUEST (RIGHT SIDE) -->
+  <!-- START MEETING-REQUEST (RIGHT SIDE) -->
     <div class="page-content mt-2 float-end" style="width: 65%; margin-right: 10px;">
     <table class="table">
     <thead>
@@ -224,7 +224,7 @@ if(!isLoggedIn()){
         }
           ?>
       </div>
-  <!-- END JOB-REQUEST (RIGHT SIDE) -->
+  <!-- END MEETING-REQUEST (RIGHT SIDE) -->
 
   </div> 
 <!-- END MAIN -->
