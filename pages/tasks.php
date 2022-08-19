@@ -233,8 +233,8 @@ if(!isLoggedIn()){
                         <input type="hidden" name="update_id" id="update_id">
 
                         <div class="form-group">
-                            <label> First Name </label>
-                            <input type="text" name="fname" id="fname" class="form-control"
+                            <label> Title </label>
+                            <input type="text" name="title" id="title" class="form-control"
                                 placeholder="Enter First Name">
                         </div>
 
@@ -284,8 +284,8 @@ if(!isLoggedIn()){
 
             console.log(data);
 
-            $('#update_id').val(data[0]);
-            $('#fname').val(data[1]);
+            $('#idno').val(data[0]);
+            $('#title').val(data[1]);
             $('#lname').val(data[2]);
             $('#course').val(data[3]);
             $('#contact').val(data[4]);
