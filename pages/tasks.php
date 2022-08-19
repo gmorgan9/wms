@@ -182,14 +182,12 @@ if(!isLoggedIn()){
       <tr>
           <th scope="row"><?php echo $idno; ?></th>
           <td><?php echo $title; ?></td>
-          <?php if($status == 'approved'){ ?>
-          <td><span class="text-capitalize text-success"><?php echo $status; ?><span></td>
-          <?php } if($status == 'rejected') { ?>
-            <td><span class="text-capitalize text-danger"><?php echo $status; ?><span></td>
+          <?php if($status == 'done'){ ?>
+          <td><span class="text-capitalize text-success">Completed<span></td>
           <?php } if($status == 'pending') { ?>
-            <td><span class="text-capitalize text-primary"><?php echo $status; ?><span></td>
-          <?php } if($status == 'terminated') { ?>
-            <td><span class="text-capitalize text-danger"><?php echo $status; ?><span></td>
+            <td><span class="text-capitalize text-primary">In Progress<span></td>
+          <?php } if($status == 'notstarted') { ?>
+            <td><span class="text-capitalize text-danger">Not Started><span></td>
           <?php }?>
           <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
