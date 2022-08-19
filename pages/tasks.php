@@ -106,7 +106,7 @@ if(!isLoggedIn()){
 
 
   <!-- START ADD COMPANY (LEFT SIDE) -->
-    <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -55px; height: unset !important;">
+    <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -52px; height: unset !important;">
     <form action="" method="post">
     <div class="section-header pt-2">
       <span class="text-muted pt-4" style="width: 95%;">Tasks Entry</span>
