@@ -326,22 +326,22 @@ if(!isLoggedIn()){
               <tbody style="border-radius: 15px;">
               <?php if($short_f_mon == $current_day) { ?>
                   <tr>
-                    <th scope="row" class="text-bg-secondary" style="font-size: 12px;">
+                    <th scope="row" class="text-bg-secondary" style="font-size: 12px; width: 30%;">
                       &nbsp; Mon <br>
                       <?php echo $s_f_mon; ?>
                     </th>
-                    <td class="text-start text-bg-secondary">
+                    <td class="text-start text-bg-secondary" style="width: 65%;">
                       <div style="opacity:0; font-size: 5px;">test</div>
                       <?php echo $f_mon_timein; ?> - <?php echo $f_mon_timeout; ?>
                     </td>
                   </tr>
                 <?php } else { ?>
                   <tr>
-                    <th scope="row" style="font-size: 12px;">
+                    <th scope="row" style="font-size: 12px; width: 30%;">
                       &nbsp; Mon <br>
                       <?php echo $s_f_mon; ?>
                     </th>
-                    <td class="text-start">
+                    <td class="text-start" style="width: 65%;">
                       <div style="opacity:0; font-size: 5px;">test</div>
                       <?php echo $f_mon_timein; ?> - <?php echo $f_mon_timeout; ?>
                     </td>
@@ -349,22 +349,22 @@ if(!isLoggedIn()){
                 <?php } ?>
                 <?php if($short_f_tues == $current_day) { ?>
                   <tr>
-                    <th scope="row" class="text-bg-secondary" style="font-size: 12px;">
+                    <th scope="row" class="text-bg-secondary" style="font-size: 12px; width: 30%;">
                       &nbsp; Tues <br>
                       <?php echo $s_f_tues; ?>
                     </th>
-                    <td class="text-start text-bg-secondary">
+                    <td class="text-start text-bg-secondary" style="width: 65%;">
                       <div style="opacity:0; font-size: 5px;">test</div>
                       <?php echo $f_tues_timein; ?> - <?php echo $f_tues_timeout; ?>
                     </td>
                   </tr>
                 <?php } else { ?>
                   <tr>
-                    <th scope="row" style="font-size: 12px;">
+                    <th scope="row" style="font-size: 12px; width: 30%;">
                       &nbsp; Tues <br>
                       <?php echo $s_f_tues; ?>
                     </th>
-                    <td class="text-start">
+                    <td class="text-start" style="width: 65%;">
                       <div style="opacity:0; font-size: 5px;">test</div>
                       <?php echo $f_tues_timein; ?> - <?php echo $f_tues_timeout; ?>
                     </td>
@@ -372,22 +372,22 @@ if(!isLoggedIn()){
                 <?php } ?>
                 <?php if($short_f_wed == $current_day) { ?>
                   <tr>
-                    <th scope="row" class="text-bg-secondary" style="font-size: 12px;">
+                    <th scope="row" class="text-bg-secondary" style="font-size: 12px; width: 30%;">
                       &nbsp; Wed <br>
                       <?php echo $s_f_wed; ?>
                     </th>
-                    <td class="text-start text-bg-secondary">
+                    <td class="text-start text-bg-secondary" style="width: 65%;">
                       <div style="opacity:0; font-size: 5px;">test</div>
                       <?php echo $f_wed_timein; ?> - <?php echo $f_wed_timeout; ?>
                     </td>
                   </tr>
                 <?php } else { ?>
                   <tr>
-                    <th scope="row" style="font-size: 12px;">
+                    <th scope="row" style="font-size: 12px; width: 30%;">
                       &nbsp; Wed <br>
                       <?php echo $s_f_wed; ?>
                     </th>
-                    <td class="text-start">
+                    <td class="text-start" style="width: 65%;">
                       <div style="opacity:0; font-size: 5px;">test</div>
                       <?php echo $f_wed_timein; ?> - <?php echo $f_wed_timeout; ?>
                     </td>
@@ -395,11 +395,11 @@ if(!isLoggedIn()){
                 <?php } ?>
                 <?php if($short_f_thurs == $current_day) { ?>
                 <tr>
-                <th scope="row" class="text-bg-secondary" style="font-size: 12px;">
+                <th scope="row" class="text-bg-secondary" style="font-size: 12px; width: 30%;">
                     &nbsp; Thurs <br>
                     <?php echo $s_f_thurs; ?>
                   </th>
-                  <td class="text-start text-bg-secondary" style="color: white;">
+                  <td class="text-start text-bg-secondary" style="width: 65%;">
                     <div style="opacity:0; font-size: 5px;">test</div>
                     <?php echo $f_thurs_timein; ?> - <?php echo $f_thurs_timeout; ?>
                   </td>
@@ -407,11 +407,11 @@ if(!isLoggedIn()){
                 <?php } else { ?>
                 <tr>
 <!-- WORK HEREEEEEE style="width: 30%" -->
-                <th scope="row" style="font-size: 12px;" style="width: 30%"> 
+                <th scope="row" style="font-size: 12px; width: 30%;"> 
                     &nbsp; Thurs <br>
                     <?php echo $s_f_thurs; ?>
                   </th>
-                  <td class="text-start" style="width: 65%">
+                  <td class="text-start" style="width: 65%;">
                     <div style="opacity:0; font-size: 5px;">test</div>
                     <?php echo $f_thurs_timein; ?> - <?php echo $f_thurs_timeout; ?>
                   </td>
@@ -419,23 +419,23 @@ if(!isLoggedIn()){
                 <?php } ?>
                 <?php if($short_f_fri == $current_day) { ?>
                   <tr>
-                    <th scope="row" class="text-bg-secondary" style="font-size: 12px; border-bottom: 0;">
+                    <th scope="row" class="text-bg-secondary" style="font-size: 12px; border-bottom: 0; width: 30%;">
                       &nbsp; Fri <br>
                       <?php echo $s_f_fri; ?>
                     </th>
-                    <td class="text-start text-bg-secondary" style="border-bottom: 0;">
-                      <div style="color: #eee; font-size: 5px;">test</div>
+                    <td class="text-start text-bg-secondary" style="border-bottom: 0; width: 65%;">
+                      <div style="opacity:0; font-size: 5px;">test</div>
                       <?php echo $f_fri_timein; ?> - <?php echo $f_fri_timeout; ?>
                     </td>
                   </tr>
                 <?php } else { ?>
                   <tr>
-                    <th scope="row" style="font-size: 12px; border-bottom: 0;">
+                    <th scope="row" style="font-size: 12px; border-bottom: 0; width: 30%;">
                       &nbsp; Fri <br>
                       <?php echo $s_f_fri; ?>
                     </th>
-                    <td class="text-start" style="border-bottom: 0;">
-                      <div style="color: #eee; font-size: 5px;">test</div>
+                    <td class="text-start" style="border-bottom: 0; width: 65%;">
+                      <div style="opacity:0; font-size: 5px;">test</div>
                       <?php echo $f_fri_timein; ?> - <?php echo $f_fri_timeout; ?>
                     </td>
                   </tr>
