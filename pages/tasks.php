@@ -233,7 +233,7 @@ if(!isLoggedIn()){
 <script type="text/javascript">
     $( document ).ready(function() {
         $('.viewbtn').click(function () {
-            var taskid = $(this).data('taskID');
+            var taskid = $val(this).data('taskID');
             alert(taskid)
         });
         
