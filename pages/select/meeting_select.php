@@ -59,7 +59,7 @@ if(isset($_POST["meeting_id"]))
                       <h6 class="mb-0">Link</h6>
                     </div>
                     <div class="col-sm-9 text-start">
-                        '.$row["link"].'
+                        <a class="text-decoration-none text-black" href="'.$row["link"].'" target="_blank">'.$row["link"].'</a>
                     </div>
                 </div>
                 
