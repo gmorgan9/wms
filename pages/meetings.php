@@ -14,12 +14,12 @@ if(!isLoggedIn()){
 }
 
 // ADD JOB
-  if(isset($_POST['add-task'])){
-    $taskID = mysqli_real_escape_string($conn, $_POST['taskID']);
+  if(isset($_POST['add-meeting'])){
+    $meetingID = mysqli_real_escape_string($conn, $_POST['meetingID']);
     $idno  = rand(1000000, 9999999); // figure how to not allow duplicates
     $title = mysqli_real_escape_string($conn, $_POST['title']);
     $details = mysqli_real_escape_string($conn, $_POST['details']);
-    $due_date = mysqli_real_escape_string($conn, $_POST['due_date']);
+    $date = mysqli_real_escape_string($conn, $_POST['date']);
     $category = mysqli_real_escape_string($conn, $_POST['category']);
     $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
     $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
@@ -29,7 +29,7 @@ if(!isLoggedIn()){
     $result = mysqli_query($conn, $select);
 
     if(mysqli_num_rows($result) > 0){
-      $error[] = 'Task already exist!';
+      $error[] = 'Meeting already exist!';
     }else{
       // $insert2 = "INSERT INTO employee_company_data (employee_code, company_code, dept_code, job_code) SELECT employee_code, company_code, dept_code, jobID FROM job";
       $insert = "INSERT INTO task (idno, title, details, category, due_date, employee_idno, employee_fname, employee_lname) VALUES ('$idno','$title','$details','$category','$due_date','$employee_idno','$employee_fname', '$employee_lname')";
@@ -71,7 +71,7 @@ if(!isLoggedIn()){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>WMS | Tasks</title>
+   <title>WMS | Meetings</title>
 
   <!-- LINKS -->
     <!-- Custom Styles -->
@@ -84,8 +84,6 @@ if(!isLoggedIn()){
 
     <!-- scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script> -->
 
   <!-- END LINKS -->
 
@@ -100,10 +98,10 @@ if(!isLoggedIn()){
   <div class="main"> 
 
   <div class="page-header mx-auto">
-    <p class="page_title" style="float: left; padding-top: 2px;">Tasks</p>
+    <p class="page_title" style="float: left; padding-top: 2px;">Meetings</p>
     <ul class="breadcrumb">
       <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
-      <li>Tasks</li>
+      <li>Meetings</li>
     </ul>
   </div>
 
@@ -112,24 +110,35 @@ if(!isLoggedIn()){
     <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -52px; height: unset !important;">
     <form action="" method="post">
     <div class="section-header pt-2">
-      <span class="text-muted pt-4" style="width: 95%;">Tasks Entry</span>
+      <span class="text-muted pt-4" style="width: 95%;">Meeting Entry</span>
     </div>
     <hr style="margin-bottom: -5px; margin-top: 5px;">
     <?php 
-
     $id = $_SESSION['employee_idno'];
     $sql = "SELECT * FROM employee WHERE idno = '$id' ";
     $all = mysqli_query($conn, $sql);
       if($all) {
         while ($row = mysqli_fetch_assoc($all)) {
-    
     $fname = $row['fname'];
     $lname = $row['lname']; 
     $employeeID = $row['idno']?>
     <?php }} ?>
+    <?php 
+    $id = $_SESSION['employee_idno'];
+    $sql = "SELECT * FROM job WHERE employee_idno = '$id' AND status = 'active' ";
+    $all = mysqli_query($conn, $sql);
+      if($all) {
+        while ($row = mysqli_fetch_assoc($all)) {
+    $jobtitle = $row['jobtitle'];
+    $deptname = $row['deptname']; 
+    $companyname = $row['companyname']?>
+    <?php }} ?>
       <input class="form-control" id="employee_fname" type="hidden" name="employee_fname" value="<?php echo $fname; ?>">
       <input class="form-control" id="employee_lname" type="hidden" name="employee_lname" value="<?php echo $lname; ?>">
       <input class="form-control" id="employee_idno" type="hidden" name="employee_idno" value="<?php echo $employeeID; ?>">
+      <input class="form-control" id="jobtitle" type="hidden" name="jobtitle" value="<?php echo $jobtitle; ?>">
+      <input class="form-control" id="deptname" type="hidden" name="deptname" value="<?php echo $deptname; ?>">
+      <input class="form-control" id="companyname" type="hidden" name="companyname" value="<?php echo $companyname; ?>">
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="title" style="font-size: 14px;">Title <span class="text-muted" style="font-size: 10px;">e.g. "Complete Assignment"</span></label>
       <input class="form-control" id="title" type="text" name="title" value="" required>
