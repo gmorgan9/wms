@@ -481,8 +481,8 @@ if(!isLoggedIn()){
                   <?php } ?>
                 </tr>
                 <?php } ?>
-                <?php $curr_f_s = date('D'); ?>
-                <?php if($curr_f_s == $s_f_fri) { ?>
+                <?php $curr_f_s = date('d'); ?>
+                <?php if($short_f_fri == $curr_f_s) { ?>
                   <tr>
                     <th scope="row" class="text-bg-secondary" style="font-size: 12px; border-bottom: 0; width: 30%;">
                       &nbsp; Fri <br>
