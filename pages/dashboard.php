@@ -551,26 +551,30 @@ if(!isLoggedIn()){
                     if ($result = mysqli_query($conn, $sql)) {
                       $tCount = mysqli_num_rows( $result );
                     ?>
-                    <th scope="row" class="text-end"><?php echo $tCount; ?></th>
+                    <?php if($tCount < 10) { ?>
+                      <th scope="row" class="text-center">0<?php echo $tCount; ?></th>
+                    <?php } else { ?>
+                      <th scope="row" class="text-center"><?php echo $tCount; ?></th>
+                    <?php } ?>
                     <?php
                     }
                     ?>
                     <td class="text-start">Tasks</td>
                   </tr>
                   <tr>
-                    <th scope="row" class="text-end">10</th>
+                    <th scope="row" class="text-center">0</th>
                     <td class="text-start">Employee Requests</td>
                   </tr>
                   <tr>
-                    <th scope="row" class="text-end">0</th>
+                    <th scope="row" class="text-center">0</th>
                     <td class="text-start">My Requests</td>
                   </tr>
                   <tr>
-                    <th scope="row" class="text-end">0</th>
+                    <th scope="row" class="text-center">0</th>
                     <td class="text-start">Timekeeping</td>
                   </tr>
                   <tr>
-                    <th scope="row" class="text-end">0</th>
+                    <th scope="row" class="text-center">0</th>
                     <td class="text-start">System Messages</td>
                   </tr>
                 </tbody>
