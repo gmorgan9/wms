@@ -237,12 +237,8 @@ if(!isLoggedIn()){
 <script type="text/javascript">
     $( document ).ready(function() {
         $('.viewbtn').click(function () {
-            var idid = document.getElementById("myform").elements["newid"]
-            //var id = $(this).attr('taskID');
-            var tid=$(this).find("i").attr("data-id") ;
-            //var taskid = $(this).data('taskID');
-            console.log(idid)
-            alert(idid)
+            var nameVar = document.getElementById("taskID").value;
+            alert(nameVar);
         });
         
     });
