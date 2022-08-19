@@ -330,7 +330,7 @@ if(!isLoggedIn()){
                       &nbsp; Mon <br>
                       <?php echo $s_f_mon; ?>
                     </th>
-                    <?php if ($f_mon_timein != null) { ?>
+                    <?php if ($db_mon_date != null) { ?>
                     <td class="text-start text-bg-secondary" style="width: 65%;">
                       <div style="opacity:0; font-size: 5px;">test</div>
                       <?php echo $f_mon_timein; ?> - <?php echo $f_mon_timeout; ?>
