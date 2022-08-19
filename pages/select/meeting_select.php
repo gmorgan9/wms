@@ -32,8 +32,8 @@ if(isset($_POST["meeting_id"]))
                       <h6 class="mb-0">Date</h6>
                     </div>
                     '. $f_date = date('M d, Y', strtotime($row['date'])) .'
-                    <div class="col-sm-9 text-start">
-                        <p style="margin-left: 15px;">'.$f_date.'</p>
+                    <div class="col-sm-9 text-start ms-3">
+                        '.$f_date.'
                     </div>
                 </div>
                 <hr>
