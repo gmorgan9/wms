@@ -248,7 +248,7 @@ if(!isLoggedIn()){
       $(document).ready(function(){
 
         //  append values in input fields
-          $(document).on('click','a[data-role=update]',function(){
+          $(document).on('click',function(){
                 var id  = $(this).data('id');
                 //var firstName  = $('#'+id).children('td[data-target=firstName]').text();
                 //var lastName  = $('#'+id).children('td[data-target=lastName]').text();
