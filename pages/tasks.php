@@ -248,10 +248,10 @@ if(!isLoggedIn()){
     <script>
         $(document).ready(function(){
     $('button').click(function(){
-        id_emp = $(this).attr('id')
+        id_task = $(this).attr('id')
         $.ajax({url: "select.php",
         method:'post',
-        data:{emp_id:id_emp},
+        data:{task_id:id_task},
          success: function(result){
     $(".modal-body").html(result);
   }});
