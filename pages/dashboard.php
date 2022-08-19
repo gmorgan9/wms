@@ -444,12 +444,12 @@ if(!isLoggedIn()){
                     <?php } ?>
                   </tr>
                 <?php } ?>
-                <?php $curr_th_s = date('d'); ?>
+                <?php $curr_th_s = date('d', strtotime('thursday this week')); ?>
                 <?php if($curr_th_s == $current_day) { ?>
                 <tr>
                 <th scope="row" class="text-bg-secondary" style="font-size: 12px; width: 30%;">
                     &nbsp; Thurs <br>
-                    <?php echo $curr_th_s; ?>
+                    <?php echo $s_f_thurs; ?>
                   </th>
                   <?php if ($db_thurs_timein != null) { ?>
                     <td class="text-start text-bg-secondary" style="width: 65%;">
