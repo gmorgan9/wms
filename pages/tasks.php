@@ -187,7 +187,7 @@ if(!isLoggedIn()){
           <?php } if($status == 'pending') { ?>
             <td><span class="text-capitalize text-primary">In Progress<span></td>
           <?php } if($status == 'notstarted') { ?>
-            <td><span class="text-capitalize text-danger">Not Started><span></td>
+            <td><span class="text-capitalize text-danger">Not Started<span></td>
           <?php }?>
           <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
