@@ -49,8 +49,9 @@ if(isset($_POST["task_id"]))
                     <div class="col-sm-3">
                       <h6 class="mb-0">Due Date</h6>
                     </div>
+                    '. $f_date = date('M d, Y', strtotime($row['due_date'])) .'
                     <div class="col-sm-9">
-                        '.$row["due_date"].'
+                        '.$f_date.'
                     </div>
                 </div>
             </div>
