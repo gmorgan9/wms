@@ -20,6 +20,7 @@ if(!isLoggedIn()){
     $title = mysqli_real_escape_string($conn, $_POST['title']);
     $details = mysqli_real_escape_string($conn, $_POST['details']);
     $due_date = mysqli_real_escape_string($conn, $_POST['due_date']);
+    $category = mysqli_real_escape_string($conn, $_POST['category']);
     $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
     $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
     $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
