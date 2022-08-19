@@ -431,10 +431,17 @@ if(!isLoggedIn()){
                       &nbsp; Wed <br>
                       <?php echo $s_f_wed; ?>
                     </th>
-                    <td class="text-start" style="width: 65%;">
-                      <div style="opacity:0; font-size: 5px;">test</div>
-                      <?php echo $f_wed_timein; ?> - <?php echo $f_wed_timeout; ?>
-                    </td>
+                    <?php if ($db_wed_timein != null) { ?>
+                      <td class="text-start" style="width: 65%;">
+                        <div style="opacity:0; font-size: 5px;">test</div>
+                        <?php echo $f_wed_timein; ?> - <?php echo $f_wed_timeout; ?>
+                      </td>
+                    <?php } else { ?>
+                      <td class="text-start" style="width: 65%;">
+                        <div style="opacity:0; font-size: 5px;">test</div>
+                        No Shift
+                      </td>
+                    <?php } ?>
                   </tr>
                 <?php } ?>
                 <?php if($short_f_thurs == $current_day) { ?>
