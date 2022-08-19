@@ -18,6 +18,10 @@
                 <i class="bi bi-list-check"></i>
                 <span>  Tasks</span>
             </a>
+            <a href="<?php echo BASE_URL . '/pages/meetings.php' ?>" class="list-group-item list-group-item-action py-2 ripple">
+                <i class="bi bi-people"></i>
+                <span>  Meetings</span>
+            </a>
             <?php } ?>
 
             <?php if($_SESSION['acc_type'] == 1){ ?>
