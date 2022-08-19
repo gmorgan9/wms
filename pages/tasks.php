@@ -237,8 +237,9 @@ if(!isLoggedIn()){
 <script type="text/javascript">
     $( document ).ready(function() {
         $('.viewbtn').click(function () {
-            var nameVar = document.getElementById("newid").value;
-            alert(nameVar);
+            var myForm = document.getElementById("myform")
+            console.log(myForm.newid.value)
+            //alert(nameVar);
         });
         
     });
