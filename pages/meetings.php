@@ -39,7 +39,7 @@ if(!isLoggedIn()){
       $insert = "INSERT INTO meeting(idno, title, details, location, link, date, employee_idno, employee_fname, employee_lname, jobtitle, deptname, companyname) VALUES ('$idno','$title','$details','$location','$link','$date','$employee_idno','$employee_fname','$employee_lname','$jobtitle','$deptname','$companyname')";
       mysqli_query($conn, $insert);
       // mysqli_query($conn, $insert2);
-      header('location: tasks.php');
+      header('location: meetings.php');
     }
   };
 // END ADD JOB
