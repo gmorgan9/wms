@@ -226,11 +226,11 @@ if(!isLoggedIn()){
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <form action="updatecode.php" method="POST">
+                <form action="" method="POST">
 
                     <div class="modal-body">
 
-                        <input type="hidden" name="update_id" id="update_id">
+                        <input type="hidden" name="idno" id="idno">
 
                         <div class="form-group">
                             <label> Title </label>
@@ -284,9 +284,9 @@ if(!isLoggedIn()){
 
             console.log(data);
 
-            $('#update_id').val(data[0]);
-            $('#idno').val(data[1]);
-            $('#title').val(data[2]);
+            $('#idno').val(data[0]);
+            $('#title').val(data[1]);
+            //$('#title').val(data[2]);
             //$('#course').val(data[3]);
             //$('#contact').val(data[4]);
         });
