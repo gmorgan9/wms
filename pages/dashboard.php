@@ -349,6 +349,9 @@ if(!isLoggedIn()){
                 <?php } ?>
                 <?php if($short_f_tues == $current_day) { ?>
                   <tr>
+                    <?php if($f_tues_timein == null) { ?>
+                      No Shift
+                      <?php } else { ?>
                     <th scope="row" class="text-bg-secondary" style="font-size: 12px;">
                       &nbsp; Tues <br>
                       <?php echo $s_f_tues; ?>
@@ -358,7 +361,11 @@ if(!isLoggedIn()){
                       <?php echo $f_tues_timein; ?> - <?php echo $f_tues_timeout; ?>
                     </td>
                   </tr>
+                  <?php } ?>
                 <?php } else { ?>
+                  <?php if($f_tues_timein == null) { ?>
+                      No Shift
+                      <?php } else { ?>
                   <tr>
                     <th scope="row" style="font-size: 12px;">
                       &nbsp; Tues <br>
@@ -369,6 +376,7 @@ if(!isLoggedIn()){
                       <?php echo $f_tues_timein; ?> - <?php echo $f_tues_timeout; ?>
                     </td>
                   </tr>
+                  <?php } ?>
                 <?php } ?>
                 <?php if($short_f_wed == $current_day) { ?>
                   <tr>
