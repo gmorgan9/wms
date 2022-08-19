@@ -231,7 +231,7 @@ if(!isLoggedIn()){
         $('.viewbtn').click(function () {
             var id = $(this).data('taskID');
             alert(id)
-        })
+        });
         
     });
 </script>
