@@ -181,7 +181,7 @@ if(!isLoggedIn()){
     ?>
       <tr id="<?php echo $id;?>">
           <th scope="row"><?php echo $idno; ?></th>
-          <td data-target="title"><?php echo $title; ?></td>
+          <td data-bs-target="title"><?php echo $title; ?></td>
           <?php if($status == 'approved'){ ?>
           <td><span class="text-capitalize text-success"><?php echo $status; ?><span></td>
           <?php } if($status == 'rejected') { ?>
