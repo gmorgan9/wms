@@ -24,7 +24,7 @@ if(!isLoggedIn()){
     $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
     $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
 
-    $select = " SELECT * FROM taks WHERE title = '$title' ";
+    $select = " SELECT * FROM task WHERE title = '$title' ";
     $result = mysqli_query($conn, $select);
 
     if(mysqli_num_rows($result) > 0){
