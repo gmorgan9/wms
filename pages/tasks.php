@@ -226,9 +226,12 @@ if(!isLoggedIn()){
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
 
-<script>
+<script type="text/javascript">
     $( document ).ready(function() {
-
+        $('.viewbtn').click(function () {
+            var id = $(this).data('taskID');
+            alert(id)
+        })
         
     });
 </script>
