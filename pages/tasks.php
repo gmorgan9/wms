@@ -194,7 +194,7 @@ if(!isLoggedIn()){
           <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
             <div class="d-flex">
-                <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" id="<?php echo $row['taskID']; ?>" class="btn btn-primary"><span class="badge text-bg-danger">Edit</span></button> &nbsp;
+                <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" id="<?php echo $row['taskID']; ?>" class="btn btn-primary"><span class="badge text-bg-success">View</span></button> &nbsp;
                 <form method="post" action="">
                   <input type="hidden" name="taskID" value="<?php echo $taskID; ?>" />
                   <button onclick="return confirm('Be Careful, Can\'t be undone! \r\nOK to delete?')" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="terminated"><span class="badge text-bg-danger">Delete</span></button>
