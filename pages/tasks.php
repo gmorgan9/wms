@@ -194,7 +194,7 @@ if(!isLoggedIn()){
           <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
             <div class="d-flex">
-            <button data-bs-toggle="modal" data-bs-target="#modal_<?php echo $idno; ?>" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;"><span class="badge text-bg-danger">Delete</span></button>
+            <button data-bs-toggle="modal" data-bs-target="#modal" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;"><span class="badge text-bg-danger">Delete</span></button>
                 <form method="post" action="">
                   <input type="hidden" name="taskID" value="<?php echo $taskID; ?>" />
 
@@ -222,7 +222,7 @@ if(!isLoggedIn()){
 
 <!-- MODAL -->
     <!-- Modal -->
-    <div class="modal fade" id="modal_<?php echo $idno; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
