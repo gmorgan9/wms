@@ -235,7 +235,7 @@ if(!isLoggedIn()){
         $('.viewbtn').click(function () {
             var taskid = $(this).data('idno');
             console.log('taskid')
-            alert(taskid)
+            alert('taskid')
         });
         
     });
