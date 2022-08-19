@@ -194,7 +194,7 @@ if(!isLoggedIn()){
           <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
             <div class="d-flex">
-            <button data-bs-toggle="modal" data-bs-target="#myModal" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;"><span class="badge text-bg-success">Edit</span></button>
+            <button data-role="update" data-bs-toggle="modal" data-bs-target="#myModal" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;"><span class="badge text-bg-success">Edit</span></button>
                 <form method="post" action="">
                   <input type="hidden" name="taskID" value="<?php echo $taskID; ?>" />
 
@@ -249,7 +249,7 @@ if(!isLoggedIn()){
       $(document).ready(function(){
 
         //  append values in input fields
-          $(document).on('click',function(){
+          $(document).on('click','a[data-role=update]',function(){
                 var id  = $(this).data('id');
                 var title  = $('#'+id).children('td[data-target=title]').text();
                 //var lastName  = $('#'+id).children('td[data-target=lastName]').text();
