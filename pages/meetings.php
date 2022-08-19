@@ -36,7 +36,7 @@ if(!isLoggedIn()){
       $error[] = 'Meeting already exist!';
     }else{
       // $insert2 = "INSERT INTO employee_company_data (employee_code, company_code, dept_code, job_code) SELECT employee_code, company_code, dept_code, jobID FROM job";
-      $insert = "INSERT INTO meeting (idno, title, details, location, link, date, employee_idno, employee_fname, employee_lname, jobtitle, deptname, companyname) VALUES ('$idno','$title','$details','$location', '$link', '$date','$employee_idno','$employee_fname', '$employee_lname', '$jobtitle','$deptname', '$companyname')";
+      $insert = "INSERT INTO meeting(idno, title, details, location, link, date, employee_idno, employee_fname, employee_lname, jobtitle, deptname, companyname) VALUES ('$idno','$title','$details','$location','$link','$date','$employee_idno','$employee_fname','$employee_lname','$jobtitle','$deptname','$companyname')";
       mysqli_query($conn, $insert);
       // mysqli_query($conn, $insert2);
       header('location: tasks.php');
