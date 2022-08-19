@@ -70,7 +70,7 @@ if(!isLoggedIn()){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>WMS | Departments</title>
+   <title>WMS | Tasks</title>
 
   <!-- LINKS -->
     <!-- Custom Styles -->
@@ -97,10 +97,10 @@ if(!isLoggedIn()){
   <div class="main"> 
 
   <div class="page-header mx-auto">
-    <p class="page_title" style="float: left; padding-top: 2px;">Jobs</p>
+    <p class="page_title" style="float: left; padding-top: 2px;">Tasks</p>
     <ul class="breadcrumb">
       <li><a href="<?php echo BASE_URL . '/pages/dashboard.php' ?>">Dashboard</a></li>
-      <li>Jobs</li>
+      <li>Tasks</li>
     </ul>
   </div>
 
@@ -109,7 +109,7 @@ if(!isLoggedIn()){
     <div class="page-content float-start" style="margin-top: 12px; width: 32%;margin-left: -45px; height: unset !important;">
     <form action="" method="post">
     <div class="section-header pt-2">
-      <span class="text-muted pt-4" style="width: 95%;">Job Requests</span>
+      <span class="text-muted pt-4" style="width: 95%;">Tasks Entry</span>
     </div>
     <hr style="margin-bottom: -5px; margin-top: 5px;">
     <?php 
