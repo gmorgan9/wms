@@ -551,11 +551,7 @@ if(!isLoggedIn()){
                     if ($result = mysqli_query($conn, $sql)) {
                       $tCount = mysqli_num_rows( $result );
                     ?>
-                    <?php if($tCount < 10) { ?>
-                      <th scope="row" class="text-center">0<?php echo $tCount; ?></th>
-                    <?php } else { ?>
-                      <th scope="row" class="text-center"><?php echo $tCount; ?></th>
-                    <?php } ?>
+                    <th scope="row" class="text-center"><?php echo $tCount; ?></th>
                     <?php
                     }
                     ?>
