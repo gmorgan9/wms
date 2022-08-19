@@ -233,8 +233,8 @@ if(!isLoggedIn()){
                         <input type="hidden" name="update_id" id="update_id">
 
                         <div class="form-group">
-                            <label> Title </label>
-                            <input type="text" name="title" id="title" class="form-control"
+                            <label> First Name </label>
+                            <input type="text" name="fname" id="fname" class="form-control"
                                 placeholder="Enter First Name">
                         </div>
 
@@ -257,7 +257,7 @@ if(!isLoggedIn()){
                         </div>
                     </div>
                     <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" name="updatedata" class="btn btn-primary">Update Data</button>
                     </div>
                 </form>
@@ -284,11 +284,11 @@ if(!isLoggedIn()){
 
             console.log(data);
 
-            $('#idno').val(data[0]);
-            $('#title').val(data[1]);
-            $('#lname').val(data[2]);
-            $('#course').val(data[3]);
-            $('#contact').val(data[4]);
+            $('#update_id').val(data[0]);
+            $('#idno').val(data[1]);
+            $('#title').val(data[2]);
+            //$('#course').val(data[3]);
+            //$('#contact').val(data[4]);
         });
     });
 </script>
