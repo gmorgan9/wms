@@ -229,17 +229,13 @@ if(!isLoggedIn()){
 
 <script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
 
 <script type="text/javascript">
     $( document ).ready(function() {
         $('.viewbtn').click(function () {
-            var id = $(this).attr('taskID');
+            //var id = $(this).attr('taskID');
             var tid=$(this).find("i").attr("data-id") ;
-            var taskid = $(this).data('taskID');
+            //var taskid = $(this).data('taskID');
             console.log(tid)
             alert(tid)
         });
