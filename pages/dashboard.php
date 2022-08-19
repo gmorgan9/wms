@@ -599,7 +599,7 @@ if(!isLoggedIn()){
                       cMin = ("0" + min).slice(-2);
 	                    var sec = day.getSeconds();
                       cSec = ("0" + sec).slice(-2);
-                      let ampmhours = date.getHours();
+                      let ampmhours = day.getHours();
                       let ampm = ampmhours >= 12 ? 'pm' : 'am';
                       hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
                       mn.style.transform = `rotateZ(${mm}deg)`;
