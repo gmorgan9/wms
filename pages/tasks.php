@@ -239,7 +239,7 @@ if(!isLoggedIn()){
         $('.viewbtn').click(function () {
             var myForm = document.getElementById("myform")
             console.log(myForm.newid.value)
-            //alert(nameVar);
+            alert(myForm.newid.value);
         });
         
     });
