@@ -85,7 +85,7 @@ if(!isLoggedIn()){
     <!-- scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script> -->
 
   <!-- END LINKS -->
 
@@ -197,7 +197,7 @@ if(!isLoggedIn()){
                 <button data-id="<?php echo $row['idno']; ?>"  style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit"><span class="badge text-bg-success viewbtn">Edit</span></button>
                 &nbsp;
                 <form method="post" action="">
-                  <input type="hidden" name="jobID" value="<?php echo $jobID; ?>" />
+                  <input type="hidden" name="taskID" value="<?php echo $taskID; ?>" />
 
                   <button onclick="return confirm('Be Careful, Can\'t be undone! \r\nOK to delete?')" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="terminated"><span class="badge text-bg-danger">Delete</span></button>
                 </form>
