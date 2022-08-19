@@ -230,7 +230,7 @@ if(!isLoggedIn()){
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-          <input type="hidden" id="taskID" class="form-control">
+          <input type="hidden" id="id" class="form-control">
             <input type="text" id="title" class="form-control">
 
           </div>
@@ -250,7 +250,7 @@ if(!isLoggedIn()){
 
         //  append values in input fields
           $(document).on('click',function(){
-                var id  = $(this).data('taskID');
+                var id  = $(this).data('id');
                 var title  = $('#'+id).children('td[data-target=title]').text();
                 //var lastName  = $('#'+id).children('td[data-target=lastName]').text();
                 //var email  = $('#'+id).children('td[data-target=email]').text();
@@ -258,7 +258,7 @@ if(!isLoggedIn()){
                 //$('#firstName').val(firstName);
                 //$('#lastName').val(lastName);
                 $('#title').val(title);
-                $('#taskID').val(id);
+                $('#id').val(id);
                 $('#myModal').modal('toggle');
           });
         });
