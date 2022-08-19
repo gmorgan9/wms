@@ -553,11 +553,17 @@ if(!isLoggedIn()){
                     ?>
                     <th scope="row" class="text-center"><?php echo $tCount; ?></th>
                     <?php } ?>
-                    <td class="text-start">Task to Complete</td>
+                    <td class="text-start">Tasks to Complete</td>
                   </tr>
                   <tr>
-                    <th scope="row" class="text-center">0</th>
-                    <td class="text-start">Employee Requests</td>
+                  <?php
+                    $sql = " SELECT * FROM project WHERE status = 'notstarted' OR status = 'inprogress' ";
+                    if ($result = mysqli_query($conn, $sql)) {
+                      $pCount = mysqli_num_rows( $result );
+                    ?>
+                    <th scope="row" class="text-center"><?php echo $pCount; ?></th>
+                    <?php } ?>
+                    <td class="text-start">Projects</td>
                   </tr>
                   <tr>
                     <th scope="row" class="text-center">0</th>
