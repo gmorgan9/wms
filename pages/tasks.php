@@ -184,12 +184,11 @@ if(!isLoggedIn()){
           <td><?php echo $title; ?></td>
           <?php if($status == 'done'){ ?>
           <td><span class="text-capitalize text-success">Completed<span></td>
-          <?php } if($status == 'pending') { ?>
+          <?php } if($status == 'inprogress') { ?>
             <td><span class="text-capitalize text-primary">In Progress<span></td>
           <?php } if($status == 'notstarted') { ?>
             <td><span class="text-capitalize text-danger">Not Started<span></td>
           <?php }?>
-          <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
             <div class="d-flex">
                 <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" id="<?php echo $row['taskID']; ?>" class="btn btn-primary"><span class="badge text-bg-success">View</span></button> &nbsp;
@@ -238,11 +237,11 @@ if(!isLoggedIn()){
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 <!-- SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script>
         $(document).ready(function(){
     $('button').click(function(){
@@ -252,12 +251,12 @@ if(!isLoggedIn()){
         data:{task_id:id_task},
          success: function(result){
     $(".modal-body").html(result);
-  }});
+    }});
 
 
-        $('#myModal').modal("show");
+            $('#myModal').modal("show");
+        })
     })
-})
     </script>
 <!-- END SCRIPTS -->
 
