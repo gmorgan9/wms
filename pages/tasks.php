@@ -163,22 +163,22 @@ if(!isLoggedIn()){
     <tbody class="table-group-divider">
 
     <?php
-        $sql = "SELECT * FROM job WHERE approval_status != 'terminated'";
+        $sql = "SELECT * FROM task";
         $all = mysqli_query($conn, $sql);
         if($all) {
             while ($row = mysqli_fetch_assoc($all)) {
-              $jobID       = $row['jobID'];
-              $idno        = $row['idno'];
-              $jobtitle    = $row['jobtitle'];
-              $companyname = $row['companyname'];
-              $deptname    = $row['deptname'];
-              $app_status  = $row['approval_status'];
-              // $companyname    = $row['companyname'];
+              $taskID    = $row['taskID'];
+              $idno      = $row['idno'];
+              $title     = $row['title'];
+              $details   = $row['details'];
+              $due_date  = $row['due_date'];
+              $category  = $row['category'];
+              $status    = $row['status'];
     ?>
       <tr>
           <th scope="row"><?php echo $idno; ?></th>
-          <td><?php echo $jobtitle; ?></td>
-          <?php if($app_status == 'approved'){ ?>
+          <td><?php echo $title; ?></td>
+          <?php if($status == 'approved'){ ?>
           <td><span class="text-capitalize text-success"><?php echo $app_status; ?><span></td>
           <?php } if($app_status == 'rejected') { ?>
             <td><span class="text-capitalize text-danger"><?php echo $app_status; ?><span></td>
