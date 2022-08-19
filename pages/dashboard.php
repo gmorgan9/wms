@@ -249,11 +249,16 @@ if(!isLoggedIn()){
       <div class="row mt-3">
         <div class="col me-3 ms-3" style="height: 350px; background-color: #eee; border-radius: 15px;">
         <?php
-              $current_mon  = date('Y-m-d', strtotime('monday this week'));
-              $f_curr_mon   = date('M d', strtotime('monday this week'));
-              $f_curr_fri   = date('M d', strtotime('friday this week'));
-              $current_day  = date('d');
-              $employee_idno = $_SESSION['employee_idno'];
+              $current_mon    = date('Y-m-d', strtotime('monday this week'));
+              $f_curr_mon     = date('M d', strtotime('monday this week'));
+              $f_curr_fri     = date('M d', strtotime('friday this week'));
+              $s_f_mon        = date('d', strtotime('monday this week'));
+              $s_f_tues       = date('d', strtotime('tuesday this week'));
+              $s_f_wed        = date('d', strtotime('wednesday this week'));
+              $s_f_thurs      = date('d', strtotime('thursday this week'));
+              $s_f_fri        = date('d', strtotime('friday this week'));
+              $current_day    = date('d');
+              $employee_idno  = $_SESSION['employee_idno'];
               $sql = "SELECT * FROM schedule WHERE mon_date = '$current_mon' AND employee_idno = '$employee_idno' ";
               $all = mysqli_query($conn, $sql);
               if($all) {
@@ -323,7 +328,7 @@ if(!isLoggedIn()){
                   <tr>
                     <th scope="row" class="text-bg-secondary" style="font-size: 12px;">
                       &nbsp; Mon <br>
-                      <?php echo $short_f_mon; ?>
+                      <?php echo $s_f_mon; ?>
                     </th>
                     <td class="text-start text-bg-secondary">
                       <div style="opacity:0; font-size: 5px;">test</div>
@@ -334,7 +339,7 @@ if(!isLoggedIn()){
                   <tr>
                     <th scope="row" style="font-size: 12px;">
                       &nbsp; Mon <br>
-                      <?php echo $short_f_mon; ?>
+                      <?php echo $s_f_mon; ?>
                     </th>
                     <td class="text-start">
                       <div style="opacity:0; font-size: 5px;">test</div>
@@ -346,7 +351,7 @@ if(!isLoggedIn()){
                   <tr>
                     <th scope="row" class="text-bg-secondary" style="font-size: 12px;">
                       &nbsp; Tues <br>
-                      <?php echo $short_f_tues; ?>
+                      <?php echo $s_f_tues; ?>
                     </th>
                     <td class="text-start text-bg-secondary">
                       <div style="opacity:0; font-size: 5px;">test</div>
@@ -357,7 +362,7 @@ if(!isLoggedIn()){
                   <tr>
                     <th scope="row" style="font-size: 12px;">
                       &nbsp; Tues <br>
-                      <?php echo $short_f_tues; ?>
+                      <?php echo $s_f_tues; ?>
                     </th>
                     <td class="text-start">
                       <div style="opacity:0; font-size: 5px;">test</div>
@@ -369,7 +374,7 @@ if(!isLoggedIn()){
                   <tr>
                     <th scope="row" class="text-bg-secondary" style="font-size: 12px;">
                       &nbsp; Wed <br>
-                      <?php echo $short_f_wed; ?>
+                      <?php echo $s_f_wed; ?>
                     </th>
                     <td class="text-start text-bg-secondary">
                       <div style="opacity:0; font-size: 5px;">test</div>
@@ -380,7 +385,7 @@ if(!isLoggedIn()){
                   <tr>
                     <th scope="row" style="font-size: 12px;">
                       &nbsp; Wed <br>
-                      <?php echo $short_f_wed; ?>
+                      <?php echo $s_f_wed; ?>
                     </th>
                     <td class="text-start">
                       <div style="opacity:0; font-size: 5px;">test</div>
@@ -392,7 +397,7 @@ if(!isLoggedIn()){
                 <tr>
                 <th scope="row" class="text-bg-secondary" style="font-size: 12px;">
                     &nbsp; Thurs <br>
-                    <?php echo $short_f_thurs; ?>
+                    <?php echo $s_f_thurs; ?>
                   </th>
                   <td class="text-start text-bg-secondary" style="color: white;">
                     <div style="opacity:0; font-size: 5px;">test</div>
@@ -403,7 +408,7 @@ if(!isLoggedIn()){
                 <tr>
                 <th scope="row" style="font-size: 12px;">
                     &nbsp; Thurs <br>
-                    <?php echo $short_f_thurs; ?>
+                    <?php echo $s_f_thurs; ?>
                   </th>
                   <td class="text-start">
                     <div style="opacity:0; font-size: 5px;">test</div>
@@ -415,7 +420,7 @@ if(!isLoggedIn()){
                   <tr>
                     <th scope="row" class="text-bg-secondary" style="font-size: 12px; border-bottom: 0;">
                       &nbsp; Fri <br>
-                      <?php echo $short_f_fri; ?>
+                      <?php echo $s_f_fri; ?>
                     </th>
                     <td class="text-start text-bg-secondary" style="border-bottom: 0;">
                       <div style="color: #eee; font-size: 5px;">test</div>
@@ -426,7 +431,7 @@ if(!isLoggedIn()){
                   <tr>
                     <th scope="row" style="font-size: 12px; border-bottom: 0;">
                       &nbsp; Fri <br>
-                      <?php echo $short_f_fri; ?>
+                      <?php echo $s_f_fri; ?>
                     </th>
                     <td class="text-start" style="border-bottom: 0;">
                       <div style="color: #eee; font-size: 5px;">test</div>
