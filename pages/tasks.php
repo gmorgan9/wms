@@ -250,7 +250,7 @@ if(!isLoggedIn()){
 
         //  append values in input fields
           $(document).on('click',function(){
-                var id  = $(this).data('id');
+                var id  = $(this).data('taskID');
                 var title  = $('#'+id).children('td[data-target=title]').text();
                 //var lastName  = $('#'+id).children('td[data-target=lastName]').text();
                 //var email  = $('#'+id).children('td[data-target=email]').text();
