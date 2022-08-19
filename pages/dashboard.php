@@ -532,7 +532,7 @@ if(!isLoggedIn()){
                       
               </div>
           </div>
-          <div class="col me-3 ms-3" style="height: 350px; background-color: #eee; border-radius: 15px;">
+          <div class="col me-3 ms-3" style="height: 150px; background-color: #eee; border-radius: 15px;">
             <div class="col-content" style="padding-top: 10px;">
                 <h5>
                   My Notifications
@@ -579,10 +579,10 @@ if(!isLoggedIn()){
                     <?php } ?>
                     <td class="text-start">Timesheet Requests</td>
                   </tr>
-                  <tr>
+                  <!-- <tr>
                     <th scope="row" class="text-center">0</th>
                     <td class="text-start">My Messages</td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
           </div>
