@@ -257,7 +257,7 @@ if(!isLoggedIn()){
                         </div>
                     </div>
                     <div class="modal-footer">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#my-modal" aria-label="Close">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" name="updatedata" class="btn btn-primary">Update Data</button>
                     </div>
                 </form>
