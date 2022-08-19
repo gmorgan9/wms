@@ -114,7 +114,8 @@ if(!isLoggedIn()){
     <hr style="margin-bottom: -5px; margin-top: 5px;">
     <?php 
 
-    $sql = "SELECT * FROM employee";
+    $id = $_SESSION['employee_idno'];
+    $sql = "SELECT * FROM employee WHERE idno = '$id' ";
     $all = mysqli_query($conn, $sql);
       if($all) {
         while ($row = mysqli_fetch_assoc($all)) {
