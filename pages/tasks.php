@@ -196,7 +196,7 @@ if(!isLoggedIn()){
             <div class="d-flex">
                 
                 <form method="post" action="" id="myform">
-                  <input type="hidden" name="taskID" value="<?php echo $taskID; ?>" />
+                  <input type="hidden" name="newid" value="<?php echo $taskID; ?>" />
 
                   <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit"><span class="badge text-bg-danger viewbtn">Edit</span></button>
                 </form>
@@ -237,7 +237,7 @@ if(!isLoggedIn()){
 <script type="text/javascript">
     $( document ).ready(function() {
         $('.viewbtn').click(function () {
-            var idid = document.getElementById("myform").elements["taskID"]
+            var idid = document.getElementById("myform").elements["newid"]
             //var id = $(this).attr('taskID');
             var tid=$(this).find("i").attr("data-id") ;
             //var taskid = $(this).data('taskID');
