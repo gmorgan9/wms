@@ -353,30 +353,22 @@ if(!isLoggedIn()){
                       &nbsp; Tues <br>
                       <?php echo $s_f_tues; ?>
                     </th>
-                    <?php if($f_tues_timein == null) { ?>
-                      <td class="text-start">No Shift</td>
-                      <?php } else { ?>
                     <td class="text-start text-bg-secondary">
                       <div style="opacity:0; font-size: 5px;">test</div>
                       <?php echo $f_tues_timein; ?> - <?php echo $f_tues_timeout; ?>
                     </td>
                   </tr>
-                  <?php } ?>
                 <?php } else { ?>
                   <tr>
                     <th scope="row" style="font-size: 12px;">
                       &nbsp; Tues <br>
                       <?php echo $s_f_tues; ?>
                     </th>
-                    <?php if($f_tues_timein == null) { ?>
-                      <td class="text-start">No Shift</td>
-                      <?php } else { ?>
                     <td class="text-start">
                       <div style="opacity:0; font-size: 5px;">test</div>
                       <?php echo $f_tues_timein; ?> - <?php echo $f_tues_timeout; ?>
                     </td>
                   </tr>
-                  <?php }?>
                 <?php } ?>
                 <?php if($short_f_wed == $current_day) { ?>
                   <tr>
