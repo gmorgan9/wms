@@ -251,14 +251,14 @@ if(!isLoggedIn()){
         //  append values in input fields
           $(document).on('click',function(){
                 var id  = $(this).data('id');
-                //var firstName  = $('#'+id).children('td[data-target=firstName]').text();
+                var title  = $('#'+id).children('td[data-target=title]').text();
                 //var lastName  = $('#'+id).children('td[data-target=lastName]').text();
                 //var email  = $('#'+id).children('td[data-target=email]').text();
 
                 //$('#firstName').val(firstName);
                 //$('#lastName').val(lastName);
                 $('#title').val(title);
-                $('#id').val(id);
+                $('#taskID').val(id);
                 $('#myModal').modal('toggle');
           });
         });
