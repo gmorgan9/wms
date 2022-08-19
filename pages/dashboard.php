@@ -333,7 +333,8 @@ if(!isLoggedIn()){
                 </tr>
               </thead>
               <tbody style="border-radius: 15px;">
-              <?php if($short_f_mon == $current_day) { ?>
+              <?php $curr_m_s = date('d', strtotime('monday this week')); ?>
+                <?php if($curr_m_s == $current_day) { ?>
                   <tr>
                     <th scope="row" class="text-bg-secondary" style="font-size: 12px; width: 30%;">
                       &nbsp; Mon <br>
@@ -370,7 +371,8 @@ if(!isLoggedIn()){
                     <?php } ?>
                   </tr>
                 <?php } ?>
-                <?php if($short_f_tues == $current_day) { ?>
+                <?php $curr_tu_s = date('d', strtotime('tuesday this week')); ?>
+                <?php if($curr_tu_s == $current_day) { ?>
                   <tr>
                     <th scope="row" class="text-bg-secondary" style="font-size: 12px; width: 30%;">
                       &nbsp; Tues <br>
@@ -407,7 +409,8 @@ if(!isLoggedIn()){
                     <?php } ?>
                   </tr>
                 <?php } ?>
-                <?php if($short_f_wed == $current_day) { ?>
+                <?php $curr_w_s = date('d', strtotime('wednesday this week')); ?>
+                <?php if($curr_w_s == $current_day) { ?>
                   <tr>
                     <th scope="row" class="text-bg-secondary" style="font-size: 12px; width: 30%;">
                       &nbsp; Wed <br>
