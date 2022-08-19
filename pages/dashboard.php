@@ -565,10 +565,10 @@ if(!isLoggedIn()){
                     <?php } ?>
                     <td class="text-start">Projects</td>
                   </tr>
-                  <tr>
+                  <!-- <tr>
                     <th scope="row" class="text-center">0</th>
                     <td class="text-start">My Requests</td>
-                  </tr>
+                  </tr> -->
                   <tr>
                   <?php
                     $sql = " SELECT * FROM timesheet WHERE approval_status = 'pending' ";
@@ -577,11 +577,11 @@ if(!isLoggedIn()){
                     ?>
                     <th scope="row" class="text-center"><?php echo $tsCount; ?></th>
                     <?php } ?>
-                    <td class="text-start">Timesheets</td>
+                    <td class="text-start">Timesheet Requests</td>
                   </tr>
                   <tr>
                     <th scope="row" class="text-center">0</th>
-                    <td class="text-start">Messages</td>
+                    <td class="text-start">My Messages</td>
                   </tr>
                 </tbody>
               </table>
