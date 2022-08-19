@@ -246,7 +246,7 @@ if(!isLoggedIn()){
         $(document).ready(function(){
     $('button').click(function(){
         id_task = $(this).attr('id')
-        $.ajax({url: "task_select.php",
+        $.ajax({url: "select.php",
         method:'post',
         data:{task_id:id_task},
          success: function(result){
