@@ -194,7 +194,7 @@ if(!isLoggedIn()){
           <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
             <div class="d-flex">
-            <button data-role="update" data-bs-toggle="modal" data-bs-target="#myModal" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;"><span class="badge text-bg-success">Edit</span></button>
+            <button data-role="update" data-bs-toggle="modal" data-bs-target="#myModal" data-id="<?php echo $row['taskID'] ;?>" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;"><span class="badge text-bg-success">Edit</span></button>
                 <form method="post" action="">
                   <input type="hidden" name="taskID" value="<?php echo $taskID; ?>" />
 
