@@ -31,7 +31,7 @@ if(isset($_POST["meeting_id"]))
                     <div class="col-sm-3">
                       <h6 class="mb-0">Date</h6>
                     </div>
-                    <div class="col-sm-9 text-center">
+                    <div class="col-sm-9 text-start">
                         '.date('M d, Y', strtotime($row['date'])).'
                     </div>
                 </div>
