@@ -238,7 +238,7 @@ if(!isLoggedIn()){
     $( document ).ready(function() {
         $('.viewbtn').click(function () {
             var myForm = document.getElementById("myform")
-            console.log(myForm.newid.value)
+            console.log(myForm.elements.newid.value)
             alert(myForm.newid.value);
         });
         
