@@ -156,7 +156,7 @@ if(!isLoggedIn()){
       <input class="form-control" id="location" type="text" name="location" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="link" style="font-size: 14px;">Link <span class="text-muted" style="font-size: 10px;">If online an meeting, include meeting link</span></label>
+      <label for="link" style="font-size: 14px;">Link <span class="text-muted" style="font-size: 10px;">If an online meeting, include meeting link</span></label>
       <input class="form-control" id="link" type="text" name="link" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
@@ -184,7 +184,7 @@ if(!isLoggedIn()){
     <tbody class="table-group-divider">
 
     <?php
-        $sql = "SELECT * FROM task";
+        $sql = "SELECT * FROM meeting";
         $all = mysqli_query($conn, $sql);
         if($all) {
             while ($row = mysqli_fetch_assoc($all)) {
@@ -192,8 +192,8 @@ if(!isLoggedIn()){
               $idno      = $row['idno'];
               $title     = $row['title'];
               $details   = $row['details'];
-              $due_date  = $row['due_date'];
-              $category  = $row['category'];
+              $date      = $row['date'];
+              $location  = $row['location'];
               $status    = $row['status'];
     ?>
       <tr>
@@ -201,16 +201,14 @@ if(!isLoggedIn()){
           <td><?php echo $title; ?></td>
           <?php if($status == 'done'){ ?>
           <td><span class="text-capitalize text-success">Completed<span></td>
-          <?php } if($status == 'inprogress') { ?>
-            <td><span class="text-capitalize text-primary">In Progress<span></td>
-          <?php } if($status == 'notstarted') { ?>
-            <td><span class="text-capitalize text-danger">Not Started<span></td>
+          <?php } if($status == 'notdone') { ?>
+            <td><span class="text-capitalize text-danger">Upcoming<span></td>
           <?php }?>
           <td>
             <div class="d-flex">
-                <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" id="<?php echo $row['taskID']; ?>" class="btn btn-primary"><span class="badge text-bg-success">View</span></button> &nbsp;
+                <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" id="<?php echo $row['meetingID']; ?>" class="btn btn-primary"><span class="badge text-bg-success">View</span></button> &nbsp;
                 <form method="post" action="">
-                  <input type="hidden" name="taskID" value="<?php echo $taskID; ?>" />
+                  <input type="hidden" name="meetingID" value="<?php echo $meetingID; ?>" />
                   <button onclick="return confirm('Be Careful, Can\'t be undone! \r\nOK to delete?')" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="terminated"><span class="badge text-bg-danger">Delete</span></button>
                 </form>
             </div>
@@ -262,10 +260,10 @@ if(!isLoggedIn()){
     <script>
         $(document).ready(function(){
     $('button').click(function(){
-        id_task = $(this).attr('id')
+        id_meeting = $(this).attr('id')
         $.ajax({url: "select/meeting_select.php",
         method:'post',
-        data:{task_id:id_task},
+        data:{meeting_id:id_meeting},
          success: function(result){
     $(".modal-body").html(result);
     }});

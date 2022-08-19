@@ -1,12 +1,12 @@
 <?php
 
 
-if(isset($_POST["task_id"]))  
+if(isset($_POST["meeting_id"]))  
 {
     $output = '';
 
     $connect = mysqli_connect("localhost", "root", "BIGmorgan1999!", "wms");  
-    $query = "SELECT * FROM task WHERE taskID = '".$_POST["task_id"]."'";  
+    $query = "SELECT * FROM meeting WHERE meetingID = '".$_POST["meeting_id"]."'";  
     $result = mysqli_query($connect, $query);  
 
 
