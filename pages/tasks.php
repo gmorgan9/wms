@@ -240,8 +240,8 @@ if(!isLoggedIn()){
             var id = $(this).attr('taskID');
             var tid=$(this).find("i").attr("data-id") ;
             var taskid = $(this).data('taskID');
-            console.log(id)
-            alert(id)
+            console.log(tid)
+            alert(tid)
         });
         
     });
