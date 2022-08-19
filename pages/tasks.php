@@ -196,7 +196,7 @@ if(!isLoggedIn()){
             <div class="d-flex">
                 
                 <form method="post" action="" id="myform">
-                  <input type="hidden" name="newid" value="<?php echo $taskID; ?>" />
+                  <input type="hidden" id="newid" value="<?php echo $taskID; ?>" />
 
                   <button type="submit"><span class="viewbtn">Edit</span></button>
                 </form>
