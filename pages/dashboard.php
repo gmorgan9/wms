@@ -406,11 +406,11 @@ if(!isLoggedIn()){
                 </tr>
                 <?php } else { ?>
                 <tr>
-                <th scope="row" style="font-size: 12px;" style="width: 10%">
+                <th scope="row" style="font-size: 12px;" style="width: 30%">
                     &nbsp; Thurs <br>
                     <?php echo $s_f_thurs; ?>
                   </th>
-                  <td class="text-start" style="width: 80%">
+                  <td class="text-start" style="width: 65%">
                     <div style="opacity:0; font-size: 5px;">test</div>
                     <?php echo $f_thurs_timein; ?> - <?php echo $f_thurs_timeout; ?>
                   </td>
