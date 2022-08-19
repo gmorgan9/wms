@@ -148,11 +148,15 @@ if(!isLoggedIn()){
       <textarea class="form-control" id="details" type="text" name="details" value="" required></textarea>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="category" style="font-size: 14px;">Category <span class="text-muted" style="font-size: 10px;">e.g. "School"</span></label>
-      <input class="form-control" id="category" type="text" name="category" value="" required>
+      <label for="location" style="font-size: 14px;">Location <span class="text-muted" style="font-size: 10px;">e.g. "Online"</span></label>
+      <input class="form-control" id="location" type="text" name="location" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="due_date" style="font-size: 14px;">Due Date</label>
+      <label for="link" style="font-size: 14px;">Link <span class="text-muted" style="font-size: 10px;">If online meeting, include meeting link</span></label>
+      <input class="form-control" id="link" type="text" name="link" value="" required>
+    </div>
+    <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <label for="due_date" style="font-size: 14px;">Date</label>
       <input class="form-control" id="due_date" type="date" name="due_date" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
