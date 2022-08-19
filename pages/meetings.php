@@ -29,7 +29,7 @@ if(!isLoggedIn()){
     $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
     $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
 
-    $select = " SELECT * FROM meeting";
+    $select = " SELECT * FROM meeting WHERE idno = '$idno'";
     $result = mysqli_query($conn, $select);
 
     if(mysqli_num_rows($result) > 0){
