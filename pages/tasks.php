@@ -179,7 +179,7 @@ if(!isLoggedIn()){
               $category  = $row['category'];
               $status    = $row['status'];
     ?>
-      <tr>
+      <tr id="<?php echo $row['taskID'];?>">
           <th scope="row"><?php echo $idno; ?></th>
           <td><?php echo $title; ?></td>
           <?php if($status == 'approved'){ ?>
@@ -194,7 +194,7 @@ if(!isLoggedIn()){
           <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
             <div class="d-flex">
-            <button value="<?php echo $idno;?>" data-bs-toggle="modal" data-bs-target="#modal-<?php echo $idno;?>" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;"><span class="badge text-bg-danger">Delete</span></button>
+            <button value="<?php echo $idno;?>" data-bs-toggle="modal" data-bs-target="#myModal" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;"><span class="badge text-bg-danger">Delete</span></button>
                 <form method="post" action="">
                   <input type="hidden" name="taskID" value="<?php echo $taskID; ?>" />
 
@@ -222,7 +222,7 @@ if(!isLoggedIn()){
 
 <!-- MODAL -->
     <!-- Modal -->
-    <div class="modal fade" id="modal-<?php echo $idno;?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -230,7 +230,8 @@ if(!isLoggedIn()){
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            ...
+          <input type="hidden" id="taskID" class="form-control">
+            <?php echo $taskID;?>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -242,6 +243,25 @@ if(!isLoggedIn()){
 <!-- END MODAL -->
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
+
+<script>
+      $(document).ready(function(){
+
+        //  append values in input fields
+          $(document).on('click','a[data-role=update]',function(){
+                var id  = $(this).data('id');
+                //var firstName  = $('#'+id).children('td[data-target=firstName]').text();
+                //var lastName  = $('#'+id).children('td[data-target=lastName]').text();
+                //var email  = $('#'+id).children('td[data-target=email]').text();
+
+                //$('#firstName').val(firstName);
+                //$('#lastName').val(lastName);
+                //$('#email').val(email);
+                $('#taskID').val(id);
+                $('#myModal').modal('toggle');
+          });
+        });
+ </script>
 
 </body>
 </html>
