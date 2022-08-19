@@ -185,7 +185,7 @@ if(!isLoggedIn()){
       <span class="pt-3" style="width: 95%;">Schedule for <span class="text-muted"><?php echo $new_monday; ?> - <?php echo $new_friday; ?></span></span>
     </div>
     <div class="section-header text-center" style="margin-bottom: -10px;">
-      <span style="font-size: 12px;" class="text-muted">Leave blank if no schedule</span>
+      <span style="font-size: 12px;" class="text-muted">If no desired schedule, leave timein and time out blank.</span>
     </div>
     <div class="row">
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
