@@ -585,7 +585,7 @@ if(!isLoggedIn()){
                   </tr> -->
                 </tbody>
               </table>
-              <div class="col-content" style="margin-top: 25px !important; width: 350px !important; margin-right: -20px; margin-left: -10px; padding-top: 12.5px; height: 160px; background-color: #eee; border-radius: 15px;">
+              <div class="col-content" style="margin-top: 25px !important; width: 350px !important; margin-right: -25px; margin-left: -10px; padding-top: 12.5px; height: 160px; background-color: #eee; border-radius: 15px;">
                 <h5>Welcome Back, <?php echo $fname; ?>!</h5>
                 <p class="text-muted" style="margin-top: -5px; font-size: 12px;">Check your notifications and messages.</p>
               </div>
