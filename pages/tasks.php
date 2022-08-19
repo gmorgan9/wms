@@ -231,7 +231,8 @@ if(!isLoggedIn()){
           </div>
           <div class="modal-body">
           <input type="hidden" id="taskID" class="form-control">
-            <?php echo $id;?>
+            <input type="text" id="title" class="form-control">
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -256,7 +257,7 @@ if(!isLoggedIn()){
 
                 //$('#firstName').val(firstName);
                 //$('#lastName').val(lastName);
-                //$('#email').val(email);
+                $('#title').val(title);
                 $('#taskID').val(id);
                 $('#myModal').modal('toggle');
           });
