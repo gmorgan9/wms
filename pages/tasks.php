@@ -221,7 +221,7 @@ if(!isLoggedIn()){
 
 
 <!-- MODAL -->
-<div class="modal fade" id="deletemodale<?php echo $row['taskID'];?>" role="dialog">
+<div class="modal fade" id="deletemodale<?php echo $taskID;?>" role="dialog">
     <div class="modal-dialog">
 
       <!-- Modal content-->
