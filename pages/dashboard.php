@@ -587,7 +587,6 @@ if(!isLoggedIn()){
               </table>
               <div class="col-content" style="margin-top: 25px !important; width: 350px !important; margin-right: -25px !important; margin-left: -8px; padding-top: 12.5px; height: 160px; background-color: #eee; border-radius: 15px;">
                 <h5>Upcoming Meetings</h5>
-                <p class="text-muted" style="margin-top: -5px; font-size: 12px;">Check your notifications and messages.</p>
               </div>
           </div>
           <div class="col me-3 ms-3" style="height: 350px; background-color: #eee; border-radius: 15px;">
