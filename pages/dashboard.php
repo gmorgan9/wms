@@ -317,7 +317,7 @@ if(!isLoggedIn()){
     $count_curr_mon     = date('Y-m-d', strtotime('monday this week'));
     $sql = " SELECT * FROM schedule WHERE mon_date = '$count_curr_mon' AND employee_idno = '$count_employee' ";
     if ($result = mysqli_query($conn, $sql)) {
-        $rowcount = mysqli_num_rows( $result );
+        $rowcount = mysqli_num_rows( $result );}
     
     ?>
           <div class="col-content" style="padding-top: 10px;">
@@ -349,7 +349,7 @@ if(!isLoggedIn()){
                         <div style="opacity:0; font-size: 5px;">test</div>
                           No Shift
                       </td>
-                    <?php }} ?>
+                    <?php } ?>
                   </tr>
                 <?php } else { ?>
                   <tr>
