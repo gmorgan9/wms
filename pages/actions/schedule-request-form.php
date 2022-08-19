@@ -191,11 +191,11 @@ if(!isLoggedIn()){
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="mon_timein" style="font-size: 14px;">Monday Time in</label>
-        <input class="form-control" id="mon_timein" type="time" name="mon_timein" value="" required>
+        <input class="form-control" id="mon_timein" type="time" name="mon_timein" value="">
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="mon_timeout" style="font-size: 14px;">Monday Timeout</label>
-        <input class="form-control" id="mon_timeout" type="time" name="mon_timeout" value="" required>
+        <input class="form-control" id="mon_timeout" type="time" name="mon_timeout" value="">
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="tues_date" style="font-size: 14px;">Tuesday Date</label>
@@ -203,11 +203,11 @@ if(!isLoggedIn()){
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="tues_timein" style="font-size: 14px;">Tuesday Time in</label>
-        <input class="form-control" id="tues_timein" type="time" name="tues_timein" value="" required>
+        <input class="form-control" id="tues_timein" type="time" name="tues_timein" value="">
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="tues_timeout" style="font-size: 14px;">Tuesday Time out</label>
-        <input class="form-control" id="tues_timeout" type="time" name="tues_timeout" value="" required>
+        <input class="form-control" id="tues_timeout" type="time" name="tues_timeout" value="">
       </div>
     </div>
     <div class="row">
@@ -217,11 +217,11 @@ if(!isLoggedIn()){
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="wed_timein" style="font-size: 14px;">Wednesday Time in</label>
-        <input class="form-control" id="wed_timein" type="time" name="wed_timein" value="" required>
+        <input class="form-control" id="wed_timein" type="time" name="wed_timein" value="">
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="wed_timeout" style="font-size: 14px;">Wednesday Timeout</label>
-        <input class="form-control" id="wed_timeout" type="time" name="wed_timeout" value="" required>
+        <input class="form-control" id="wed_timeout" type="time" name="wed_timeout" value="">
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="thurs_date" style="font-size: 14px;">Thursday Date</label>
@@ -229,11 +229,11 @@ if(!isLoggedIn()){
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="thurs_timein" style="font-size: 14px;">Thursday Time in</label>
-        <input class="form-control" id="thurs_timein" type="time" name="thurs_timein" value="" required>
+        <input class="form-control" id="thurs_timein" type="time" name="thurs_timein" value="">
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="thurs_timeout" style="font-size: 14px;">Thursday Time out</label>
-        <input class="form-control" id="thurs_timeout" type="time" name="thurs_timeout" value="" required>
+        <input class="form-control" id="thurs_timeout" type="time" name="thurs_timeout" value="">
       </div>
     </div>
     <div class="row">
@@ -243,11 +243,11 @@ if(!isLoggedIn()){
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="fri_timein" style="font-size: 14px;">Friday Time in</label>
-        <input class="form-control" id="fri_timein" type="time" name="fri_timein" value="" required>
+        <input class="form-control" id="fri_timein" type="time" name="fri_timein" value="">
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
         <label for="fri_timeout" style="font-size: 14px;">Friday Timeout</label>
-        <input class="form-control" id="fri_timeout" type="time" name="fri_timeout" value="" required>
+        <input class="form-control" id="fri_timeout" type="time" name="fri_timeout" value="">
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 48%;">
         <label for="notes" style="font-size: 14px;">Notes</label>
