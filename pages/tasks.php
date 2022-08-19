@@ -180,13 +180,13 @@ if(!isLoggedIn()){
           <th scope="row"><?php echo $idno; ?></th>
           <td><?php echo $title; ?></td>
           <?php if($status == 'approved'){ ?>
-          <td><span class="text-capitalize text-success"><?php echo $app_status; ?><span></td>
-          <?php } if($app_status == 'rejected') { ?>
-            <td><span class="text-capitalize text-danger"><?php echo $app_status; ?><span></td>
-          <?php } if($app_status == 'pending') { ?>
-            <td><span class="text-capitalize text-primary"><?php echo $app_status; ?><span></td>
-          <?php } if($app_status == 'terminated') { ?>
-            <td><span class="text-capitalize text-danger"><?php echo $app_status; ?><span></td>
+          <td><span class="text-capitalize text-success"><?php echo $status; ?><span></td>
+          <?php } if($status == 'rejected') { ?>
+            <td><span class="text-capitalize text-danger"><?php echo $status; ?><span></td>
+          <?php } if($status == 'pending') { ?>
+            <td><span class="text-capitalize text-primary"><?php echo $status; ?><span></td>
+          <?php } if($status == 'terminated') { ?>
+            <td><span class="text-capitalize text-danger"><?php echo $status; ?><span></td>
           <?php }?>
           <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
