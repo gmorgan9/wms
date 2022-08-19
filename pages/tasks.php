@@ -194,8 +194,12 @@ if(!isLoggedIn()){
           <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
             <div class="d-flex">
-                <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit"><span data-id="12345" class="badge text-bg-success viewbtn">Edit</span></button>
-                &nbsp;
+                
+                <form method="post" action="" id="myform">
+                  <input type="hidden" name="taskID" value="<?php echo $taskID; ?>" />
+
+                  <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit"><span class="badge text-bg-danger viewbtn">Edit</span></button>
+                </form>
                 <form method="post" action="">
                   <input type="hidden" name="taskID" value="<?php echo $taskID; ?>" />
 
@@ -233,11 +237,12 @@ if(!isLoggedIn()){
 <script type="text/javascript">
     $( document ).ready(function() {
         $('.viewbtn').click(function () {
+            var idid = document.getElementById("myform").elements["taskID"]
             //var id = $(this).attr('taskID');
             var tid=$(this).find("i").attr("data-id") ;
             //var taskid = $(this).data('taskID');
-            console.log(tid)
-            alert(tid)
+            console.log(idid)
+            alert(idid)
         });
         
     });
