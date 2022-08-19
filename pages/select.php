@@ -16,7 +16,7 @@ if(isset($_POST["task_id"]))
     while($row = mysqli_fetch_array($result))  
     {  
          $output .= ' 
-    <div class="col-md-8">
+    <div class="col-md-8 w-75">
         <div class="card mb-3">
             <div class="card-body">
                 <div class="row">
