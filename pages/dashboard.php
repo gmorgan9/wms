@@ -577,11 +577,11 @@ if(!isLoggedIn()){
                     ?>
                     <th scope="row" class="text-center"><?php echo $tsCount; ?></th>
                     <?php } ?>
-                    <td class="text-start">Timesheet Request</td>
+                    <td class="text-start">Timesheets</td>
                   </tr>
                   <tr>
                     <th scope="row" class="text-center">0</th>
-                    <td class="text-start">System Messages</td>
+                    <td class="text-start">Messages</td>
                   </tr>
                 </tbody>
               </table>
