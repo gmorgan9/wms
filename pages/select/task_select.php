@@ -22,7 +22,7 @@ if(isset($_POST["task_id"]))
                     <div class="col-sm-3">
                       <h6 class="mb-0">Title</h6>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-9 text-start">
                         '.$row["title"].'
                     </div>
                 </div>
@@ -31,7 +31,7 @@ if(isset($_POST["task_id"]))
                     <div class="col-sm-3">
                       <h6 class="mb-0">Category</h6>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-9 text-start">
                         '.$row["category"].'
                     </div>
                 </div>
@@ -40,7 +40,7 @@ if(isset($_POST["task_id"]))
                     <div class="col-sm-3">
                       <h6 class="mb-0">Details</h6>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-9 text-start">
                         '.$row["details"].'
                     </div>
                 </div>
@@ -49,7 +49,7 @@ if(isset($_POST["task_id"]))
                     <div class="col-sm-3">
                       <h6 class="mb-0">Due Date</h6>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-9 text-start">
                         '.date('M d, Y', strtotime($row['due_date'])).'
                     </div>
                 </div>
