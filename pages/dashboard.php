@@ -552,9 +552,7 @@ if(!isLoggedIn()){
                       $tCount = mysqli_num_rows( $result );
                     ?>
                     <th scope="row" class="text-center"><?php echo $tCount; ?></th>
-                    <?php
-                    }
-                    ?>
+                    <?php } ?>
                     <td class="text-start">Tasks</td>
                   </tr>
                   <tr>
@@ -566,8 +564,14 @@ if(!isLoggedIn()){
                     <td class="text-start">My Requests</td>
                   </tr>
                   <tr>
-                    <th scope="row" class="text-center">0</th>
-                    <td class="text-start">Timekeeping</td>
+                  <?php
+                    $sql = " SELECT * FROM timesheet WHERE approval_status = 'pending' ";
+                    if ($result = mysqli_query($conn, $sql)) {
+                      $tsCount = mysqli_num_rows( $result );
+                    ?>
+                    <th scope="row" class="text-center"><?php echo $tsCount; ?></th>
+                    <?php } ?>
+                    <td class="text-start">Timesheet Request</td>
                   </tr>
                   <tr>
                     <th scope="row" class="text-center">0</th>
