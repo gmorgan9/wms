@@ -532,13 +532,13 @@ if(!isLoggedIn()){
                       
               </div>
           </div>
-          <div class="col me-3 ms-3" style="height: 150px; background-color: #eee; border-radius: 15px;">
+          <div class="col me-3 ms-3" style="height: 175px; background-color: #eee; border-radius: 15px;">
             <div class="col-content" style="padding-top: 10px;">
                 <h5>
                   My Notifications
                 </h5>
               </div>
-              <table class="table w-75 mx-auto" style="margin-top: -15px;">
+              <table class="table w-75 mx-auto mt-2">
                 <thead>
                   <tr>
                       
