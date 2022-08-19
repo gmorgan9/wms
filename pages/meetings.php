@@ -29,14 +29,14 @@ if(!isLoggedIn()){
     $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
     $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
 
-    $select = " SELECT * FROM task WHERE title = '$title' ";
+    $select = " SELECT * FROM meeting";
     $result = mysqli_query($conn, $select);
 
     if(mysqli_num_rows($result) > 0){
       $error[] = 'Meeting already exist!';
     }else{
       // $insert2 = "INSERT INTO employee_company_data (employee_code, company_code, dept_code, job_code) SELECT employee_code, company_code, dept_code, jobID FROM job";
-      $insert = "INSERT INTO task (idno, title, details, category, due_date, employee_idno, employee_fname, employee_lname) VALUES ('$idno','$title','$details','$category','$due_date','$employee_idno','$employee_fname', '$employee_lname')";
+      $insert = "INSERT INTO meeting (idno, title, details, location, link, date, employee_idno, employee_fname, employee_lname, jobtitle, deptname, companyname) VALUES ('$idno','$title','$details','$location', '$link', '$date','$employee_idno','$employee_fname', '$employee_lname', '$jobtitle','$deptname', '$companyname')";
       mysqli_query($conn, $insert);
       // mysqli_query($conn, $insert2);
       header('location: tasks.php');
