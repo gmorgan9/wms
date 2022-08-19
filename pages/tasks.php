@@ -194,7 +194,7 @@ if(!isLoggedIn()){
           <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
             <div class="d-flex">
-                <button data-id="<?php echo $row['idno']; ?>"  style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit"><span class="badge text-bg-success viewbtn">Edit</span></button>
+                <button data-id="<?php echo $row['taskID']; ?>"  style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit"><span class="badge text-bg-success viewbtn">Edit</span></button>
                 &nbsp;
                 <form method="post" action="">
                   <input type="hidden" name="taskID" value="<?php echo $taskID; ?>" />
@@ -233,9 +233,9 @@ if(!isLoggedIn()){
 <script type="text/javascript">
     $( document ).ready(function() {
         $('.viewbtn').click(function () {
-            var taskid = $(this).data('idno');
-            console.log('taskid')
-            alert('taskid')
+            var taskid = $(this).data('taskID');
+            console.log(taskid)
+            alert(taskid)
         });
         
     });
