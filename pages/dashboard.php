@@ -243,7 +243,7 @@ if(!isLoggedIn()){
                 </div>
               </div>
               <span class="float-end pe-1 mt-2 text-muted" style="font-size: 14px;">
-              <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/profile.php' ?>">My Profile <i class="bi bi-chevron-compact-right text-white" ></i></a>
+              <a class="text-decoration-none text-muted" href="<?php echo BASE_URL . '/pages/profile.php' ?>">My Profile <i class="bi bi-chevron-compact-right" ></i></a>
             </span>
         </div>
       </div>
