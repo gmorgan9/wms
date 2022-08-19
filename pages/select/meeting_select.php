@@ -22,7 +22,7 @@ if(isset($_POST["meeting_id"]))
                     <div class="col-sm-3">
                       <h6 class="mb-0">Title</h6>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-9 text-start">
                         '.$row["title"].'
                     </div>
                 </div>
@@ -32,7 +32,7 @@ if(isset($_POST["meeting_id"]))
                       <h6 class="mb-0">Link</h6>
                     </div>
                     '. $f_date = date('M d, Y', strtotime($row['date'])) .'
-                    <div class="col-sm-9">
+                    <div class="col-sm-9 text-start">
                         '.$f_date.'
                     </div>
                 </div>
@@ -41,7 +41,7 @@ if(isset($_POST["meeting_id"]))
                     <div class="col-sm-3">
                       <h6 class="mb-0">Details</h6>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-9 text-start">
                         '.$row["details"].'
                     </div>
                 </div>
@@ -50,7 +50,7 @@ if(isset($_POST["meeting_id"]))
                     <div class="col-sm-3">
                       <h6 class="mb-0">Location</h6>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-9 text-start">
                         '.$row["location"].'
                     </div>
                 </div>
@@ -59,7 +59,7 @@ if(isset($_POST["meeting_id"]))
                     <div class="col-sm-3">
                       <h6 class="mb-0">Link</h6>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-9 text-start">
                         '.$row["link"].'
                     </div>
                 </div>
