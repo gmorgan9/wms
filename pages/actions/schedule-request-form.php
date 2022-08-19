@@ -181,7 +181,7 @@ if(!isLoggedIn()){
     $new_friday = date( 'F d, Y', strtotime($friday));
 
     ?>
-    <div class="section-header text-center fs-5" style="margin-top: -5px;">
+    <div class="section-header text-center fs-5" style="margin-top: -10px;">
       <span class="pt-3" style="width: 95%;">Schedule for <span class="text-muted"><?php echo $new_monday; ?> - <?php echo $new_friday; ?></span></span>
     </div>
     <div class="section-header pt-1 text-center">
