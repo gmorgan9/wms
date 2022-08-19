@@ -20,10 +20,14 @@ if(!isLoggedIn()){
     $title = mysqli_real_escape_string($conn, $_POST['title']);
     $details = mysqli_real_escape_string($conn, $_POST['details']);
     $date = mysqli_real_escape_string($conn, $_POST['date']);
-    $category = mysqli_real_escape_string($conn, $_POST['category']);
+    $location = mysqli_real_escape_string($conn, $_POST['location']);
+    $link = mysqli_real_escape_string($conn, $_POST['link']);
     $employee_fname = mysqli_real_escape_string($conn, $_POST['employee_fname']);
     $employee_lname = mysqli_real_escape_string($conn, $_POST['employee_lname']);
     $employee_idno = mysqli_real_escape_string($conn, $_POST['employee_idno']);
+    $jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
+    $deptname = mysqli_real_escape_string($conn, $_POST['deptname']);
+    $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
 
     $select = " SELECT * FROM task WHERE title = '$title' ";
     $result = mysqli_query($conn, $select);
@@ -152,7 +156,7 @@ if(!isLoggedIn()){
       <input class="form-control" id="location" type="text" name="location" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
-      <label for="link" style="font-size: 14px;">Link <span class="text-muted" style="font-size: 10px;">If online meeting, include meeting link</span></label>
+      <label for="link" style="font-size: 14px;">Link <span class="text-muted" style="font-size: 10px;">If online an meeting, include meeting link</span></label>
       <input class="form-control" id="link" type="text" name="link" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
@@ -160,7 +164,7 @@ if(!isLoggedIn()){
       <input class="form-control" id="due_date" type="date" name="due_date" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto d-grid d-md-flex justify-content-md-end" style="width: 95%; margin-bottom: 10px;">
-      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-task" class="badge text-bg-secondary">Add Task</button>
+      <button type="submit" style="border-color: rgba(0,0,0,0);" name="add-meeting" class="badge text-bg-secondary">Add Meeting</button>
     </div>
     </form>
     </div>
