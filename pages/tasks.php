@@ -222,7 +222,7 @@ if(!isLoggedIn()){
 
 <!-- MODAL -->
     <!-- Modal -->
-    <div class="modal fade" id="edit_modal_<?php echo $taskID; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="edit_modal_<%?php echo $taskID; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
