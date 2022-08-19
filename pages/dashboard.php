@@ -558,7 +558,7 @@ if(!isLoggedIn()){
                     <td class="text-start">Tasks</td>
                   </tr>
                   <tr>
-                    <th scope="row" class="text-end">0</th>
+                    <th scope="row" class="text-end">10</th>
                     <td class="text-start">Employee Requests</td>
                   </tr>
                   <tr>
