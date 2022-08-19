@@ -599,10 +599,11 @@ if(!isLoggedIn()){
                       cMin = ("0" + min).slice(-2);
 	                    var sec = day.getSeconds();
                       cSec = ("0" + sec).slice(-2);
+                      let ampm = hour >= 12 ? 'pm' : 'am';
                       hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
                       mn.style.transform = `rotateZ(${mm}deg)`;
                       sc.style.transform = `rotateZ(${ss}deg)`;
-                      document.getElementById("time").innerHTML=cHour+":"+cMin+":"+cSec;
+                      document.getElementById("time").innerHTML=cHour+":"+cMin+":"+cSec+" "+ampm;
                       })
                       </script>
                       <!-- End script part -->
