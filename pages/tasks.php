@@ -171,7 +171,7 @@ if(!isLoggedIn()){
         $all = mysqli_query($conn, $sql);
         if($all) {
             while ($row = mysqli_fetch_assoc($all)) {
-              $taskID    = $row['taskID'];
+              $id    = $row['taskID'];
               $idno      = $row['idno'];
               $title     = $row['title'];
               $details   = $row['details'];
@@ -179,7 +179,7 @@ if(!isLoggedIn()){
               $category  = $row['category'];
               $status    = $row['status'];
     ?>
-      <tr id="<?php echo $row['taskID'];?>">
+      <tr id="<?php echo $id;?>">
           <th scope="row"><?php echo $idno; ?></th>
           <td><?php echo $title; ?></td>
           <?php if($status == 'approved'){ ?>
@@ -194,7 +194,7 @@ if(!isLoggedIn()){
           <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
             <div class="d-flex">
-            <button value="<?php echo $idno;?>" data-bs-toggle="modal" data-bs-target="#myModal" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;"><span class="badge text-bg-success">Edit</span></button>
+            <button value="<?php echo $taskID;?>" data-bs-toggle="modal" data-bs-target="#myModal" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;"><span class="badge text-bg-success">Edit</span></button>
                 <form method="post" action="">
                   <input type="hidden" name="taskID" value="<?php echo $taskID; ?>" />
 
