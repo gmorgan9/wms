@@ -191,13 +191,14 @@ if(!isLoggedIn()){
           <?php }?>
           <!-- <td><?php //echo $companyname; ?></td> -->
           <td>
-          <button type="button" class="editbtn" data-bs-toggle="modal" data-bs-target="#editmodal">Launch modal</button>
-          <!-- <button  style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit"><span class="badge text-bg-success editbtn">Edit</span></button> -->
-            <form method="post" action="">
-              <input type="hidden" name="jobID" value="<?php echo $jobID; ?>" />
-              
-              <button onclick="return confirm('Be Careful, Can\'t be undone! \r\nOK to delete?')" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="terminated"><span class="badge text-bg-danger">Delete</span></button>
-            </form>
+            <div class="d-flex">
+                <button  style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit"><span class="badge text-bg-success editbtn">Edit</span></button>
+                <form method="post" action="">
+                  <input type="hidden" name="jobID" value="<?php echo $jobID; ?>" />
+                  
+                  <button onclick="return confirm('Be Careful, Can\'t be undone! \r\nOK to delete?')" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;" type="submit" name="terminated"><span class="badge text-bg-danger">Delete</span></button>
+                </form>
+            </div>
           </td>
           <?php } ?>
           
@@ -215,90 +216,19 @@ if(!isLoggedIn()){
   </div> 
 <!-- END MAIN -->
 
+
+
 <!-- MODAL -->
-    <!-- EDIT POP UP FORM (Bootstrap MODAL) -->
-    <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"> Edit Student Data </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <form action="" method="POST">
-
-                    <div class="modal-body">
-
-                        <input type="hidden" name="idno" id="idno">
-
-                        <div class="form-group">
-                            <label> Title </label>
-                            <input type="text" name="title" id="title" class="form-control"
-                                placeholder="Enter First Name">
-                        </div>
-
-                        <div class="form-group">
-                            <label> Last Name </label>
-                            <input type="text" name="lname" id="lname" class="form-control"
-                                placeholder="Enter Last Name">
-                        </div>
-
-                        <div class="form-group">
-                            <label> Course </label>
-                            <input type="text" name="course" id="course" class="form-control"
-                                placeholder="Enter Course">
-                        </div>
-
-                        <div class="form-group">
-                            <label> Phone Number </label>
-                            <input type="text" name="contact" id="contact" class="form-control"
-                                placeholder="Enter Phone Number">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" name="updatedata" class="btn btn-primary">Update Data</button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
+    
 <!-- END MODAL -->
 
 <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script> -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-
-    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
-
-
-
-
-
 <script>
     $( document ).ready(function() {
 
-        $('.editbtn').on('click', function () {
-            $('#editmodal').modal('show');
-            $tr = $(this).closest('tr');
-            var data = $tr.children("td").map(function () {
-                return $(this).text();
-            }).get();
-
-            console.log(data);
-
-            $('#idno').val(data[0]);
-            $('#title').val(data[1]);
-            //$('#title').val(data[2]);
-            //$('#course').val(data[3]);
-            //$('#contact').val(data[4]);
-        });
+        
     });
 </script>
 
