@@ -231,7 +231,7 @@ if(!isLoggedIn()){
           </div>
           <div class="modal-body">
           <input type="hidden" id="taskID" class="form-control">
-            <?php echo $taskID;?>
+            <?php echo $id;?>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
