@@ -185,7 +185,7 @@ if(!isLoggedIn()){
       <span class="pt-3" style="width: 95%;">Schedule for <span class="text-muted"><?php echo $new_monday; ?> - <?php echo $new_friday; ?></span></span>
     </div>
     <div class="section-header text-center" style="margin-bottom: -10px;">
-      <span style="font-size: 12px;" class="text-muted">If no desired schedule, leave timein and time out blank.</span>
+      <span style="font-size: 12px;" class="text-muted">If no desired schedule, leave time in and time out blank.</span>
     </div>
     <div class="row">
       <div class="form-group pt-3 mx-auto" style="width: 15%;">
@@ -253,7 +253,7 @@ if(!isLoggedIn()){
         <input class="form-control" id="fri_timeout" type="time" name="fri_timeout" value="">
       </div>
       <div class="form-group pt-3 mx-auto" style="width: 48%;">
-        <label for="notes" style="font-size: 14px;">Notes</label>
+        <label for="notes" style="font-size: 14px;">Notes <span class="text-muted" style="font-size: 10px;">Give details about your schedule this week</span></label>
         <textarea class="form-control" id="notes" type="text" name="notes" value=""></textarea>
       </div>
     </div>
