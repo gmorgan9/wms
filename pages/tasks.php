@@ -131,6 +131,10 @@ if(!isLoggedIn()){
       <input class="form-control" id="title" type="text" name="title" value="" required>
     </div>
     <div class="form-group pt-3 mx-auto" style="width: 95%;">
+      <label for="details" style="font-size: 14px;">Details <span class="text-muted" style="font-size: 10px;">What is needing to be done?</span></label>
+      <textarea class="form-control" id="details" type="text" name="details" value="" required></textarea>
+    </div>
+    <div class="form-group pt-3 mx-auto" style="width: 95%;">
       <label for="category" style="font-size: 14px;">Category <span class="text-muted" style="font-size: 10px;">e.g. "School"</span></label>
       <input class="form-control" id="category" type="text" name="category" value="" required>
     </div>
