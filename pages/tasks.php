@@ -155,7 +155,7 @@ if(!isLoggedIn()){
     <thead>
       <tr>
         <th scope="col" style="font-size: 14px;">ID #</th>
-        <th scope="col" style="font-size: 14px;">Job Title / Position</th>
+        <th scope="col" style="font-size: 14px;">Title</th>
         <th scope="col" style="font-size: 14px;">Status</th>
         <th scope="col" style="font-size: 14px;">Actions</th>
       </tr>
