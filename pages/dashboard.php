@@ -547,11 +547,11 @@ if(!isLoggedIn()){
                 <tbody>
                   <tr>
                     <?php
-                    $sql = " SELECT * FROM tasks WHERE status = 'notstarted' AND status = 'inprogress' ";
+                    $sql = " SELECT * FROM task WHERE status = 'notstarted' AND status = 'inprogress' ";
                     if ($result = mysqli_query($conn, $sql)) {
-                      $rowcount = mysqli_num_rows( $result );
+                      $tCount = mysqli_num_rows( $result );
                     ?>
-                    <th scope="row"><?php echo $rowcount; ?></th>
+                    <th scope="row"><?php echo $tCount; ?></th>
                     <?php
                     }
                     ?>
