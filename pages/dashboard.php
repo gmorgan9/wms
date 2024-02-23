@@ -135,7 +135,7 @@ session_start();
                                         <p>Task Activity</p>
                                     </div>
 
-                                    <canvas id="myChart" width="800" height="400" style="border: none; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); margin-left: -15px; max-width: 845px;background-color: white;"></canvas>
+                                    <canvas id="myChart" width="800" height="350" style="border: none; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); margin-left: -15px; max-width: 845px;background-color: white;"></canvas>
 
                                     <div class="mt-3"></div>
 
