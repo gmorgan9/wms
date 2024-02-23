@@ -143,7 +143,7 @@ session_start();
                                         <p class="" style="float: left;">Latest Task Updates</p> <a id="showMoreBtn" class="badge text-decoration-none" href="#">Show More</a>
                                     </div>
 
-                                    <div id="taskContainer" class="task-container" style="padding: 0;">
+                                    <div id="taskContainer" class="task-container" style="padding-bottom: -10px;">
                                         <?php
                                         // Include database connection
                                         // require_once "../database/connection.php";
