@@ -180,7 +180,7 @@ header .calendar-current-date {
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
         border-radius: 15px;
         /* padding: 10px; */
-        /* padding-top: 15px; */
+        padding-top: 15px;
         /* padding-bottom: 15px; */
         padding-left: 10px;
         padding-right: 10px;
