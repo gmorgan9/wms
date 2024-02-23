@@ -145,17 +145,19 @@ session_start();
 
                                     <div id="taskContainer" class="task-container">
                                         <?php
-                                        
-                                        $new="SELECT tasks.*, clients.client_name 
-                                        FROM tasks 
-                                        INNER JOIN clients ON tasks.client_idno = clients.idno
-                                        ORDER BY tasks.updated_at DESC 
-                                        LIMIT 2";
-                                        $newresult=mysqli_query($conn,$new);
-                                        $task=mysqli_fetch_array($newresult);
-
+                                        // Include database connection
+                                        require_once "../database/connection.php";
+                                    
+                                        // Fetch latest 2 tasks from the database along with client name
+                                        $new = "SELECT tasks.*, clients.client_name 
+                                                FROM tasks 
+                                                INNER JOIN clients ON tasks.client_idno = clients.idno
+                                                ORDER BY tasks.updated_at DESC 
+                                                LIMIT 2";
+                                        $newresult = mysqli_query($conn, $new);
+                                    
                                         // Iterate through tasks and display them
-                                        foreach ($tasks as $task) {
+                                        while ($task = mysqli_fetch_assoc($newresult)) {
                                             // Format date
                                             $formattedDate = date('j M Y', strtotime($task['updated_at']));
                                             // Output task card
@@ -169,8 +171,12 @@ session_start();
                                                     <p class="text-secondary my-auto end"><i class="bi bi-three-dots-vertical"></i></p>
                                                 </div>';
                                         }
+                                    
+                                        // Close database connection
+                                        mysqli_close($conn);
                                         ?>
                                     </div>
+
                                     
                                 
 
