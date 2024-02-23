@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     const taskContainer = document.getElementById("taskContainer");
-    const showMoreBtn = document.getElementById("showMoreBtn");
 
     // Function to format the date
     function formatDate(dateString) {
@@ -9,9 +8,12 @@ document.addEventListener("DOMContentLoaded", function() {
         return date.toLocaleDateString('en-GB', options);
     }
 
-    // Example usage:
-    // const formattedDate = formatDate(task.updated_at);
-
+    // Function to create and show Bootstrap modal
+    function showModal(taskId) {
+        // Here, you can customize the modal content and actions according to your requirements
+        // For now, let's just console log the selected task ID
+        console.log("Task ID:", taskId);
+    }
 
     // Function to fetch tasks from PHP file
     function fetchTasks() {
@@ -34,9 +36,20 @@ document.addEventListener("DOMContentLoaded", function() {
                             <div class="progress-bar" role="progressbar" style="width: ${task.progress}%" aria-valuenow="${task.progress}" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <p class="text-secondary my-auto" style="margin-left: 80px;">${task.client_name}</p>
-                        <p class="text-secondary my-auto end"><i class="bi bi-three-dots-vertical"></i></p>
+                        <p class="text-secondary my-auto end">
+                            <i class="bi bi-three-dots-vertical" data-task-id="${task.id}" style="cursor: pointer;"></i>
+                        </p>
                     `;
                     taskContainer.appendChild(taskCard);
+                });
+
+                // Add event listener to the three dots icon
+                const dotsIcons = document.querySelectorAll('.task-card .bi-three-dots-vertical');
+                dotsIcons.forEach(icon => {
+                    icon.addEventListener('click', function() {
+                        const taskId = this.getAttribute('data-task-id');
+                        showModal(taskId);
+                    });
                 });
             })
             .catch(error => {
@@ -47,12 +60,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Fetch tasks when the page loads
     fetchTasks();
-
-    // // Event listener for "Show More" button
-    // showMoreBtn.addEventListener("click", function() {
-    //     // Fetch more tasks and append them to the task container
-    //     fetchTasks();
-    //     // Hide the "Show More" button after clicking
-    //     showMoreBtn.style.display = "none";
-    // });
 });
