@@ -145,9 +145,15 @@ session_start();
 
                                     <div id="taskContainer" class="task-container">
                                         <?php
-                                        // Include the PHP file that fetches tasks
-                                        include "../app/functions/latestTasks.php";
-                                    
+                                        
+                                        $new="SELECT tasks.*, clients.client_name 
+                                        FROM tasks 
+                                        INNER JOIN clients ON tasks.client_idno = clients.idno
+                                        ORDER BY tasks.updated_at DESC 
+                                        LIMIT 2";
+                                        $newresult=mysqli_query($conn,$new);
+                                        $task=mysqli_fetch_array($newresult);
+
                                         // Iterate through tasks and display them
                                         foreach ($tasks as $task) {
                                             // Format date
