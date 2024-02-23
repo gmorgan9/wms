@@ -171,7 +171,7 @@ session_start();
                                             </div>
                                             <p class="text-secondary my-auto" style="margin-left: 80px;"><?php echo $task['client_name']; ?></p>
                                             <!-- <p class="text-secondary "> -->
-                                                <p type="button" class="btn btn-link my-auto end" data-bs-toggle="modal" data-bs-target="#taskModal<?php echo $task['id']; ?>" style="margin: 0;">
+                                                <p type="button" class="btn btn-link my-auto float-end" data-bs-toggle="modal" data-bs-target="#taskModal<?php echo $task['id']; ?>" style="margin: 0;">
                                                     <i class="bi bi-three-dots-vertical"></i>
                                                 </p>
                                                 <!-- Modal -->
