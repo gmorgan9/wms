@@ -135,7 +135,7 @@ session_start();
                                         <p>Task Activity</p>
                                     </div>
 
-                                    <canvas id="myChart" width="800" height="350" style="border: none; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); margin-left: -15px; max-width: 845px;background-color: white;"></canvas>
+                                    <canvas id="myChart" width="800" height="400" style="border: none; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); margin-left: -15px; max-width: 845px;background-color: white;"></canvas>
 
                                     <div class="mt-3"></div>
 
@@ -166,14 +166,14 @@ session_start();
                                         <div class="task-card">
                                             <p class="text-secondary fw-semibold my-auto text-truncate" style="max-width: 200px;"><?php echo $task['title']; ?></p>
                                             <p class="text-secondary my-auto ms-4"><?php echo $formattedDate; ?></p>
-                                            <div class="progress my-auto" style="margin: 0; padding: 0;">
+                                            <div class="progress">
                                                 <div class="progress-bar" role="progressbar" style="width: <?php echo $task['progress']; ?>%;" aria-valuenow="<?php echo $task['progress']; ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                             <p class="text-secondary my-auto" style="margin-left: 80px;"><?php echo $task['client_name']; ?></p>
-                                            <p class="text-secondary my-auto end">
-                                                <div type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#taskModal<?php echo $task['id']; ?>" style="">
+                                            <!-- <p class="text-secondary "> -->
+                                                <p type="button" class="btn btn-link my-auto end" data-bs-toggle="modal" data-bs-target="#taskModal<?php echo $task['id']; ?>">
                                                     <i class="bi bi-three-dots-vertical"></i>
-                                        </div>
+                                                </p>
                                                 <!-- Modal -->
                                                     <div class="modal fade" id="taskModal<?php echo $task['id']; ?>" tabindex="-1" aria-labelledby="taskModalLabel<?php echo $task['id']; ?>" aria-hidden="true">
                                                         <div class="modal-dialog">
@@ -197,7 +197,7 @@ session_start();
                                                         </div>
                                                     </div>
                                                 <!-- end modal -->
-                                            </p>
+                                            <!-- </p> -->
                                         </div>
                                        <?php }
                                     
