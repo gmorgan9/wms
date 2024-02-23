@@ -144,27 +144,27 @@ session_start();
                                     </div>
 
                                     <div id="taskContainer" class="task-container">
-    <?php
-    // Include the PHP file that fetches tasks
-    include "../app/functions/latestTasks.php";
-
-    // Iterate through tasks and display them
-    foreach ($tasks as $task) {
-        // Format date
-        $formattedDate = date('j M Y', strtotime($task['updated_at']));
-        // Output task card
-        echo '<div class="task-card">
-                <p class="text-secondary fw-semibold my-auto text-truncate" style="max-width: 200px;">' . $task['title'] . '</p>
-                <p class="text-secondary my-auto ms-4">' . $formattedDate . '</p>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: ' . $task['progress'] . '%" aria-valuenow="' . $task['progress'] . '" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="text-secondary my-auto" style="margin-left: 80px;">' . $task['client_name'] . '</p>
-                <p class="text-secondary my-auto end"><i class="bi bi-three-dots-vertical"></i></p>
-            </div>';
-    }
-    ?>
-</div>
+                                        <?php
+                                        // Include the PHP file that fetches tasks
+                                        include "../app/functions/latestTasks.php";
+                                    
+                                        // Iterate through tasks and display them
+                                        foreach ($tasks as $task) {
+                                            // Format date
+                                            $formattedDate = date('j M Y', strtotime($task['updated_at']));
+                                            // Output task card
+                                            echo '<div class="task-card">
+                                                    <p class="text-secondary fw-semibold my-auto text-truncate" style="max-width: 200px;">' . $task['title'] . '</p>
+                                                    <p class="text-secondary my-auto ms-4">' . $formattedDate . '</p>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: ' . $task['progress'] . '%" aria-valuenow="' . $task['progress'] . '" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                    <p class="text-secondary my-auto" style="margin-left: 80px;">' . $task['client_name'] . '</p>
+                                                    <p class="text-secondary my-auto end"><i class="bi bi-three-dots-vertical"></i></p>
+                                                </div>';
+                                        }
+                                        ?>
+                                    </div>
                                     
                                 
 
