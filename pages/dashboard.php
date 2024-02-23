@@ -135,7 +135,7 @@ session_start();
                                         <p>Task Activity</p>
                                     </div>
 
-                                    <canvas id="myChart" width="800" height="400" style="border: none; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); margin-left: -15px; max-width: 845px;background-color: white;"></canvas>
+                                    <canvas id="myChart" width="800" height="350" style="border: none; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); margin-left: -15px; max-width: 845px;background-color: white;"></canvas>
 
                                     <div class="mt-3"></div>
 
@@ -166,7 +166,7 @@ session_start();
                                         <div class="task-card">
                                             <p class="text-secondary fw-semibold my-auto text-truncate" style="max-width: 200px;"><?php echo $task['title']; ?></p>
                                             <p class="text-secondary my-auto ms-4"><?php echo $formattedDate; ?></p>
-                                            <div class="progress">
+                                            <div class="progress my-auto">
                                                 <div class="progress-bar" role="progressbar" style="width: <?php echo $task['progress']; ?>%;" aria-valuenow="<?php echo $task['progress']; ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                             <p class="text-secondary my-auto" style="margin-left: 80px;"><?php echo $task['client_name']; ?></p>
