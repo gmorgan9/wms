@@ -146,8 +146,8 @@ session_start();
                                     <div id="taskContainer" class="task-container">
                                         <?php
                                         // Include database connection
-                                        require_once "../database/connection.php";
-                                    
+                                        // require_once "../database/connection.php";
+
                                         // Fetch latest 2 tasks from the database along with client name
                                         $new = "SELECT tasks.*, clients.client_name 
                                                 FROM tasks 
@@ -155,7 +155,7 @@ session_start();
                                                 ORDER BY tasks.updated_at DESC 
                                                 LIMIT 2";
                                         $newresult = mysqli_query($conn, $new);
-                                    
+
                                         // Iterate through tasks and display them
                                         while ($task = mysqli_fetch_assoc($newresult)) {
                                             // Format date
