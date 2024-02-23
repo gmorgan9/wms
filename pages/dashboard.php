@@ -175,11 +175,11 @@ session_start();
                                                     <i class="bi bi-three-dots-vertical" styl="margin: 0 !important; padding: 0 !important;"></i>
                                                 </button>
                                                 <!-- Modal -->
-                                                    <div class="modal fade" id="taskModal<?php echo $task['id']; ?>" tabindex="-1" aria-labelledby="taskModalLabel<?php echo $task['id']; ?>" aria-hidden="true">
+                                                    <div class="modal fade" id="taskModal<?php echo $task['task_id']; ?>" tabindex="-1" aria-labelledby="taskModalLabel<?php echo $task['task_id']; ?>" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title" id="taskModalLabel<?php echo $task['id']; ?>">Task Details</h5>
+                                                                    <h5 class="modal-title" id="taskModalLabel<?php echo $task['task_id']; ?>">Task Details</h5>
                                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body">
