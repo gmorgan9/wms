@@ -170,7 +170,7 @@ session_start();
                                                 <div class="progress-bar" role="progressbar" style="width: <?php echo $task['progress']; ?>%;" aria-valuenow="<?php echo $task['progress']; ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                             <p class="text-secondary my-auto" style="margin-left: 80px;"><?php echo $task['client_name']; ?></p>
-                                            <p class="text-secondary my-auto end" style="padding: 0 !important; margin: 0 !important;">
+                                            <p class="text-secondary my-auto end" style="padding-right: 0 !important; margin-right: 0 !important:">
                                                 <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#taskModal<?php echo $task['id']; ?>">
                                                     <i class="bi bi-three-dots-vertical" styl="margin: 0 !important; padding: 0 !important;"></i>
                                                 </button>
