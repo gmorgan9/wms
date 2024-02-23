@@ -166,9 +166,9 @@ session_start();
                                         <div class="task-card">
                                             <p class="text-secondary fw-semibold my-auto text-truncate" style="max-width: 200px;"><?php echo $task['title']; ?></p>
                                             <p class="text-secondary my-auto ms-4"><?php echo $formattedDate; ?></p>
-                                            <div class="progress my-auto">
-                                                <div class="progress-bar" role="progressbar" style="width: <?php echo $task['progress']; ?>%;" aria-valuenow="<?php echo $task['progress']; ?>" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
+                                            <!-- <div class="progress my-auto" style> -->
+                                                <div class="progress-bar my-auto" role="progressbar" style="width: <?php echo $task['progress']; ?>%;" aria-valuenow="<?php echo $task['progress']; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <!-- </div> -->
                                             <p class="text-secondary my-auto" style="margin-left: 80px;"><?php echo $task['client_name']; ?></p>
                                             <!-- <p class="text-secondary "> -->
                                                 <p type="button" class="btn btn-link my-auto end" data-bs-toggle="modal" data-bs-target="#taskModal<?php echo $task['id']; ?>" style="margin: 0;">
