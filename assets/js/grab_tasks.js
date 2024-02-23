@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     const taskContainer = document.getElementById("taskContainer");
-    const showMoreBtn = document.getElementById("showMoreBtn");
 
     // Function to format the date
     function formatDate(dateString) {
@@ -9,9 +8,38 @@ document.addEventListener("DOMContentLoaded", function() {
         return date.toLocaleDateString('en-GB', options);
     }
 
-    // Example usage:
-    // const formattedDate = formatDate(task.updated_at);
+    // Function to create and show the popup menu
+    function showPopupMenu(event, taskId) {
+        // Create a popup menu
+        const popupMenu = document.createElement("div");
+        popupMenu.classList.add("popup-menu");
+        popupMenu.innerHTML = `
+            <ul>
+                <li onclick="viewTask(${taskId})">View</li>
+                <li onclick="editTask(${taskId})">Edit</li>
+                <li onclick="deleteTask(${taskId})">Delete</li>
+            </ul>
+        `;
 
+        // Position the popup menu relative to the click event
+        popupMenu.style.top = `${event.clientY}px`;
+        popupMenu.style.left = `${event.clientX}px`;
+
+        // Append the popup menu to the document body
+        document.body.appendChild(popupMenu);
+
+        // Close the popup menu when clicking outside of it
+        document.addEventListener("click", closePopupMenu);
+    }
+
+    // Function to close the popup menu
+    function closePopupMenu(event) {
+        const popupMenu = document.querySelector(".popup-menu");
+        if (popupMenu && !popupMenu.contains(event.target)) {
+            popupMenu.remove();
+            document.removeEventListener("click", closePopupMenu);
+        }
+    }
 
     // Function to fetch tasks from PHP file
     function fetchTasks() {
@@ -34,7 +62,9 @@ document.addEventListener("DOMContentLoaded", function() {
                             <div class="progress-bar" role="progressbar" style="width: ${task.progress}%" aria-valuenow="${task.progress}" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <p class="text-secondary my-auto" style="margin-left: 80px;">${task.client_name}</p>
-                        <p class="text-secondary my-auto end"><i class="bi bi-three-dots-vertical"></i></p>
+                        <p class="text-secondary my-auto end">
+                            <i class="bi bi-three-dots-vertical" onclick="showPopupMenu(event, ${task.id})"></i>
+                        </p>
                     `;
                     taskContainer.appendChild(taskCard);
                 });
@@ -47,12 +77,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Fetch tasks when the page loads
     fetchTasks();
-
-    // // Event listener for "Show More" button
-    // showMoreBtn.addEventListener("click", function() {
-    //     // Fetch more tasks and append them to the task container
-    //     fetchTasks();
-    //     // Hide the "Show More" button after clicking
-    //     showMoreBtn.style.display = "none";
-    // });
 });
